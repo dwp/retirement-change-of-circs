@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Prove your identity to continue - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/idv-redirect" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="invited-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Prove your identity to continue
+              </h1>
+            </legend>
+            <p class="govuk-body">You'll have an account if you've already proved your identity to access any of the services below:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Repay my debt</li>
+              <li>Access to work</li>
+            </ul>
+            <div class="govuk-radios govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sign-in" name="idv-choice" type="radio" value="sign-in">
+                <label class="govuk-label govuk-radios__label" for="invited">
+                  Sign in
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="create-account" name="idv-choice" type="radio" value="create-account">
+                <label class="govuk-label govuk-radios__label" for="friend">
+                  Create an account
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "idv-placeholder",
+            text: "ID&V CODES REQUIRED (opens in a new tab)",
+            attributes: {
+              target: "_blank"
+            }
+          },
+          {
+            href: "idv-success",
+            text: "SKIP ID&V SUCCESS"
+          },
+          {
+            href: "idv-fail",
+            text: "SKIP ID&V FAIL"
+          },
+          {
+            href: "https://govuk-prototype-kit.herokuapp.com/",
+            text: "GOV.UK Prototype Kit " + releaseVersion
+          },
+          {
+            href: "/prototype-admin/clear-data",
+            text: "Clear data"
+          }
+        ],
+        visuallyHiddenTitle: "Footer links"
+      }
+    }) }}
+  {% endblock %}

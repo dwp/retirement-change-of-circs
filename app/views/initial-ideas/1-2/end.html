@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="bank-playback" method="post">
+        <div class="govuk-form-group">
+          <h1 class="govuk-heading-l">
+            You have chosen not to change your bank details
+          </h1>
+          <p>
+            If you need to report other changes, like a change of address, <a href="https://www.gov.uk/contact-pension-service">contact the Pension Service</a>.
+          </p>  
+        </div>
+      </form>
+      <p><a href="https://www.gov.uk/">Return to GOV.UK</a></p>
+    </div>
+  </div>
+
+{% endblock %}

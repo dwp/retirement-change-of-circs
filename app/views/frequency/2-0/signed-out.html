@@ -1,0 +1,55 @@
+{% extends "layout_noback_nosignout.html" %}
+
+{% block pageTitle %}
+  You have signed out - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="bank-playback" method="post">
+        <div class="govuk-form-group">
+          <h1 class="govuk-heading-l">
+            You have signed out
+          </h1>
+          <p class="govuk-body">
+            You can <a href="idv-recreated-pages/sign-in.html">sign in again to manage your State Pension</a>.
+          </p>
+          <h2 class="govuk-heading-m">
+            Help improve this service
+          </h2>
+          <p class="govuk-body">
+            You can <a href="#">help improve this service by giving us your feedback</a>.
+          </p>
+          <p class="govuk-body">
+            It is now safe to close this window. 
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "/frequency/1-0/signed-you-out.html",
+            text: "Service sign out"
+          },
+          {
+            href: "https://govuk-prototype-kit.herokuapp.com/",
+            text: "GOV.UK Prototype Kit " + releaseVersion
+          },
+          {
+            href: "/prototype-admin/clear-data",
+            text: "Clear data"
+          }
+        ],
+        visuallyHiddenTitle: "Footer links"
+      }
+    }) }}
+  {% endblock %}

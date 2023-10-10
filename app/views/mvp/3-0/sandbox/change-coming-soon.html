@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  You have chosen not to change your bank details - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="bank-playback" method="post">
+        <div class="govuk-form-group">
+          <h1 class="govuk-heading-l">
+            You cannot do this online yet
+          </h1>
+          <p class="govuk-body">
+            You can only use this service to change your bank details. You’ll be able to report other changes online in the future.
+          </p>
+          <p class="govuk-body">
+            If you need to change how often you get your State Pension, or report a change, <a href="https://www.gov.uk/contact-pension-service">contact the Pension Service by phone or post</a>.
+          </p>  
+        </div>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

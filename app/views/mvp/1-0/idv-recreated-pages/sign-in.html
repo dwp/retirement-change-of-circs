@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Sign in - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  <!-- <a class="govuk-back-link" href="javascript:window.history.back()">Back</a> -->
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Sign in</h1>
+      <p>If you’ve used any of the services listed below, you may already have an account.</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          Repay and manage benefit money you owe
+        </li>
+        <li>
+          Access to Work
+        </li>
+      </ul>
+      <form class="form" action="sign-in-2fa" method="post">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="email">
+            Email address
+          </label>
+          <input class="govuk-input" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="password">
+            Password
+          </label>
+          <input class="govuk-input" id="password" name="password" type="text" spellcheck="false">
+        </div>
+        
+        <button class="govuk-button" data-module="govuk-button">
+          Sign in
+        </button>
+      </form>
+
+      <p><a href="#">Register now</a> if you have not used this service before.</p>
+
+      <h2 class="govuk-heading-m">Problems signing in</h2>
+
+      <p><a href="#">I forgot my password</a>
+      <br><a href="#">I cannot access the email I use to sign in</a></p>
+    </div>
+  </div>
+
+{% endblock %}

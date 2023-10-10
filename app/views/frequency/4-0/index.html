@@ -1,0 +1,115 @@
+
+{% extends "layout_nowelsh.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Third iteration of change payment frequency
+      </h1>
+      <h2 class="govuk-heading-m">Set up custom data</h2>
+      <div class="govuk-inset-text">
+        <p><a href="admin.html">Use this page to set up custom data</a> that will apply across the prototype journeys.</p>
+        <p>To clear any data entered, use the 'Clear data' link in the grey footer.</p>
+      </div>
+
+      <h2 class="govuk-heading-m">Happy path end-to-end journey</h2>
+      <a href="manage-state-pension.html" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">Start now</a>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Jump to a page in the journey
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <h3 class="govuk-heading-s">Pre OIDV</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="manage-state-pension.html">Mock GOV.UK start page</a></li>
+            <li><a href="how-did-you-find-the-service.html">How did you find out about this service?</a></li>
+            <li><a href="privacy-notice.html">Privacy notice</a></li>
+            <li><a href="cannot-use-service.html">You cannot use this service yet</a></li>
+          </ul>
+          <h3 class="govuk-heading-s">Your State Pension details</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="your-state-pension.html">Your State Pension overview if status is 'Receiving State Pension'</a></li>
+            <li><a href="your-state-pension&issues.html">Your State Pension overview if status is <strong>anything other than</strong> 'Receiving State Pension'</a></li>
+          </ul>
+          <h3 class="govuk-heading-s">Bank details change</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="do-you-want-uk-account.html">Do you want to use a UK bank or building society account?</a></li>
+            <li><a href="can-only-use-uk-account.html">You can only use this service with a UK bank or building society account</a></li>
+            <li><a href="bank-or-building-society-details.html">Enter new bank details</a></li>
+            <li><a href="check-your-details.html">Check your answers for bank details</a></li>
+            <li><a href="you-have-changed-your-bank-details.html">Bank details changed</a></li>
+          </ul>
+          <h3 class="govuk-heading-s">Payment frequency change</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="how-often-would-you-like-to-be-paid.html">Select payment frequency</a></li>
+            <li><a href="check-your-details&frequency.html">Check your answers for payment frequency</a></li>
+            <li><a href="frequency-confirmations/you-have-changed-your-payment-frequency&1.html">Payment frequency changed - new deferral letter wording</a></li>
+          </ul>
+          <h3 class="govuk-heading-s">Get help</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="contact-pension-service.html">Get help - iterated version of GOV.UK contact Pension Service page</a></li>
+            <li><a href="contact-pension-service&welsh.html">Get help Welsh version - iterated version of Welsh GOV.UK contact Pension Service page</a></li>
+          </ul>
+        </div>
+      </details>
+      <h2 class="govuk-heading-m">Version notes</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Based on <a href="https://app.mural.co/t/dwpdigital7412/m/dwpdigital7412/1685006605359/ab275f563771fc2125d6606263ab3d5195b2b001?sender=uf82923922d15a170bcd51219" target="_blank">feedback from third round of UR</a> - face-to-face on Thursday 29 June 2023</li>
+        <li>Changes to be tested in a fourth round of testing, with users who have been claiming SP for less than 12 months</li>
+        <li><a href="https://dwpdigital.atlassian.net/browse/RBCCC-658" target="_blank">JIRA ticket for iterations</a></li>
+        <li>Updated privacy notice page to link to web page version of NI privacy statement for improved accessibility</li>
+        <li>Updated content about NI privacy statement so it's no lgner referred to as 'ours' (DWP's) as it belongs to DfC</li>
+        <li>Referenced that user will need to telephone within 'Get help' content, as i still wasn't clear what form help would take</li>
+        <li>Made 'Get help' contact page into it's own GOV.UK style page, rather than part of 'Contact Pension Service' guide, as this info will not be part of the guides latest update</li>
+        <li>Reverted confirmation page to bulleted layout (from new deferral letters) as the sentence version caused confusion in last round of testing</li>
+        <li>Added content to help users understand why their next 4 weekly payment still had to go through - everyone in testing was confused as to why they couldn't just go straight onto their new chosen frequency payments</li>
+        <li>Updated overview page - all users in testing noticed the frequency had been updated, but commented that it looks like they will be getting £815 every 2 weeks now, even though that is the 4-weekly amount - experimented with content and future payment layouts to find something simple to test next round.
+      </ul>
+
+      <h2 class="govuk-heading-m">Payment frequency confirmation of change scenarios</h2>
+      <p>The content given to users at confirmation will depend on how close they are to their next payment, whether the payment due will be their first SP payment, and whether they will require a part payment to get onto the right schedule. All scenarios linked from the grey footer of each confirmation page.</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="frequency-confirmations/you-have-changed-your-payment-frequency&1.html">Scenario 1 - User has first/next payment due in the next 7 days and requires a part payment</a></li>
+        <li><a href="frequency-confirmations/you-have-changed-your-payment-frequency&2.html">Scenario 2 - User does not have first/next payment due in the next 7 days and requires a part payment</a></li>
+        <li><a href="frequency-confirmations/you-have-changed-your-payment-frequency&3.html">Scenario 3 - New frequency can be applied from the first/next payment date without needing a part payment</a></li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Alternative journey - only 1 different frequency option available</h2>
+      <p>Users must meet specific criteria to be able to change to 2 weekly payments. For those who do not meet the criteria, they will currently only be given 1 option to change to.</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="how-often-would-you-like-to-be-paid&single.html">Change frequency page for users who only have one option available</a></li>
+        <li><a href="payment-frequency-not-changed.html">User selects to stay on current frequency</a></li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Unhappy path pages</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="your-state-pension&amp;issues.html">Your State Pension account playback if status is <strong>anything other than</strong> 'Receiving State Pension'</a></li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Experimental design - reflect upcoming payments in YSP overview</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="sandbox/your-state-pension&upcoming1.html">Display future payments when moving to new frequency - One additional payment shown</a></li>
+        <li><a href="sandbox/your-state-pension&upcoming2.html">Display future payments when moving to new frequency - Two additional payment shown</a></li>
+        <li><a href="sandbox/your-state-pension&upcoming3.html">Annotate payments to show they are result of a change of frequency</a></li>
+        <li><a href="sandbox/your-state-pension&upcoming4.html">Details component - possibly not the right interaction for our user base?</a></li>
+        <li><a href="sandbox/your-state-pension&upcoming5.html">Mash up of preferred ideas</a></li>
+        <li><a href="sandbox/your-state-pension&upcoming6.html">Simple context content</a></li>
+        <li><a href="sandbox/your-state-pension&upcoming7.html">Simple context content, different positioning</a></li>
+        <li><a href="sandbox/your-state-pension&upcoming8.html">Change to payment schedule layout - would this be useful to all users?</a></li>
+        <li><a href="sandbox/your-state-pension&upcoming9.html">Change to payment schedule layout - addition of payment period dates</a></li>
+      </ul>
+
+{% endblock %}

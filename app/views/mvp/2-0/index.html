@@ -1,0 +1,86 @@
+
+{% extends "layout_nowelsh.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        First iterations to MVP journey
+      </h1>
+      <h2 class="govuk-heading-m">Set up custom data</h2>
+      <div class="govuk-inset-text">
+        <p><a href="admin.html">Use this page to set up custom data</a> that will apply across the prototype journeys.</p>
+        <p>To clear any data entered, use the 'Clear data' link in the grey footer.</p>
+      </div>
+
+      <h2 class="govuk-heading-m"><a href="start.html">Happy path journey</a></h2>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Jump to a page in the journey
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="start.html">Fake GOV.UK start page</a></li>
+            <li><a href="eligibility.html">Were you invited?</a></li>
+            <li><a href="ineligible.html">You cannot use this service yet</a></li>
+            <li><a href="idv-placeholder.html">ID&V placeholder and codes needed for the register and identify prototype</a></li>
+            <li><a href="state-pension-playback.html">Your State Pension account (playback if status is 'Receiving State Pension')</a></li>
+            <li><a href="bank-change-1.html">UK or overseas account?</a></li>
+            <li><a href="end-overseas.html">Overseas account - endpoint</a></li>
+            <li><a href="bank-change-2.html">Enter new bank details</a></li>
+            <li><a href="check-answers.html">Check your answers</a></li>
+            <li><a href="confirmation.html">Confirmation - change complete</a></li>
+            <li><a href="state-pension-playback-updated.html">Updated bank details in Your State Pension account (playback)</a></li>
+          </ul>
+        </div>
+      </details>
+      <h3 class="govuk-heading-m">Version notes</h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Iterations are based on feedback from Round 1 of UR, conducted on <a href="../1-0/index.html" target="_blank">version 1 of MVP</a></li>
+        <li><a href="https://dwpdigital.atlassian.net/wiki/spaces/RBCCC/pages/133140743260/Usability+testing+artefacts" target="_blank">Mockup of award notice letter</a> - Round 2 version has been iterated to:
+          <ul>
+            <li>use a gender neutral name (Alex);</li>
+            <li>include the short URL that will be used for the service, confirmed by GOV.UK team;</li>
+            <li>include a line about more changes coming in future, as some users in round 1 thought bank change was all they would ever be able to do</li>
+          </ul>
+        </li>
+        <li><a href="https://dwpdigital.atlassian.net/browse/RBCCC-205" target="_blank">JIRA tickets for prototype iterations</a></li>
+        <li>Updated ID&V journey to skip new credential confusion page they asked us to test and also skip the registration process with users to keep sessions to time</li>
+        <li>Added full name to SP overview page so it's clear whose account user has logged into</li>
+        <li>Added marital status into overview page, as 2 users mentioned seeing they needed to report a change to their marital status in the letter, but couldn’t see that info in the overview page</li>
+        <li>Moved payment frequency to top of payment schedule section to break the link for some users between amount and frequency</li>
+        <li>Looking into playing back correspondence address if different from residential - feedback from cross-retirement leads, code in but hidden for UR</li>
+        <li>Content updated in check answers page when roll number not provided - feedback from cross-retirement leads</li>
+        <li>Added additional info on overview screen that more changes are coming to online service (links with letter content) as some users were concerned the service would only ever cater to bank changes</li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Alternative / unhappy path pages</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="idv-placeholder.html">ID&V placeholder and codes needed for the register and identify prototype</a></li>
+        <li><a href="idv-fail.html">ID&V fail</a></li>
+        <li><a href="idv-success-no-gysp-match.html">ID&V success, but GUID doesn't match any GYSP record</a></li>
+        <li><a href="state-pension-playback-issues.html">Your State Pension account (playback if status is <strong>anything other than</strong> 'Receiving State Pension')</a></li>
+        <li><a href="confirmation-alt.html">Confirmation - change complete but too close to next payment date</a></li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Experimental sandbox (WIP)</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="sandbox/state-pension-playback-change.html">Change links for all to help user and advertise coming in future</a> - suggestion from cross-retirement</li>
+        <li><a href="sandbox/state-pension-playback-payments.html">Potential layout if we ever show more than 1 future payment</a></li>
+        <li><a href="sandbox/state-pension-playback-payments-previous.html">Potential layout if we ever show previous payment</a></li>
+        <li><a href="sandbox/bank-change-1-help.html">Adding in assisted digital content to develop</a></li>
+      </ul>
+
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Where would you like us to pay your State Pension? - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-error-summary" data-module="govuk-error-summary">
+          <div role="alert">
+            <h2 class="govuk-error-summary__title">
+              There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+              <ul class="govuk-list govuk-error-summary__list">
+                <li>
+                  <a href="#roll-number-error">Enter a building society roll number</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <form method="post" action="check-answers">
+          <h1 class="govuk-heading-l">Where would you like us to pay your State Pension?</h1>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="width-20">
+            Name on the account
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="account-holder" name="account-holder" type="text" value="M Jones">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sortcode">
+            Sort code
+          </label>
+          <div id="sort-code-hint" class="govuk-hint">
+            Must be 6 digits long
+          </div>
+          <input class="govuk-input govuk-input--width-10" id="sort-code" name="sort-code" type="text" value="123456">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="width-20">
+            Account number
+          </label>
+          <div id="sort-code-hint" class="govuk-hint">
+            Must be between 6 and 8 digits long
+          </div>
+          <input class="govuk-input govuk-input--width-20" id="account-number" name="account-number" type="text" value="22335566">
+        </div>
+
+        <div class="govuk-form-group govuk-form-group--error">
+          <label class="govuk-label" for="rollnumber">
+            Building society roll number (if you have one)
+          </label>
+          <div id="sort-code-hint" class="govuk-hint">
+            You can find it on your card, statement or passbook
+          </div>
+          <p id="roll-number-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Enter a building society roll number
+          </p>
+          <input class="govuk-input govuk-input--width-10 govuk-input--error" id="roll-number" name="roll-number" type="text" value="">
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+
+      </form>
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">
+        Get help
+      </h2>
+      <p><a href="https://www.gov.uk/contact-pension-service" target="_blank">Get technical help with the online service (opens in new tab)</a></p>
+    </div>
+  </div>
+
+{% endblock %}

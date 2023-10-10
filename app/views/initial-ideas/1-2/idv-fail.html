@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <!-- <a class="govuk-back-link" href="javascript:window.history.back()">Back</a> -->
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="idv-placeholder.html" method="post">
+        <div class="govuk-form-group">
+          <h1 class="govuk-heading-l">We could not confirm your identity</h1>
+          
+          <p class="govuk-body">The information you have entered does not match our records.</p>          
+        
+        <button class="govuk-button" data-module="govuk-button">
+          Try again
+        </button>
+        <p><a href="">Return to GOV.UK</a></p>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

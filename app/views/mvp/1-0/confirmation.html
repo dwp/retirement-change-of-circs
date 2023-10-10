@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  You have changed your bank details - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  <!-- <a class="govuk-back-link" href="javascript:window.history.back()">Back</a> -->
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          You have changed your bank details
+        </h1>
+      </div>
+      <!-- <p class="govuk-body">We have sent you a confirmation email.</p> -->
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p class="govuk-body">
+        Your State Pension payments will now be paid into your new account.
+      </p>
+      <p class="govuk-body">
+        We will send you a letter to confirm you have changed your bank details.
+      </p>
+      <h2 class="govuk-heading-m">
+        If you receive Pension Credit
+      </h2>
+      <p class="govuk-body">
+        If you want to change the bank details we use to pay your Pension Credit, <a href="https://www.gov.uk/contact-pension-service">contact the Pension Service</a>.
+      </p>
+      <h2 class="govuk-heading-m">
+        If you need to tell us about other changes
+      </h2>
+      <p class="govuk-body">
+        To report other changes, like a change of address, <a href="https://www.gov.uk/contact-pension-service">contact the Pension Service</a>. 
+      </p>
+      <h2 class="govuk-heading-m">
+        Help us improve this service
+      </h2>
+      <p class="govuk-body govuk-!-margin-bottom-9"">
+        <a href="#" class="govuk-link">Help make this service better by taking part in user research</a>
+      </p>
+      <p class="govuk-body">
+        <a href="state-pension-playback-updated.html" class="govuk-link">Return to your State Pension details</a>
+      </p>
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "confirmation-alt.html",
+            text: "Alternative confirmation page"
+          },
+          {
+            href: "https://govuk-prototype-kit.herokuapp.com/",
+            text: "GOV.UK Prototype Kit " + releaseVersion
+          },
+          {
+            href: "/prototype-admin/clear-data",
+            text: "Clear data"
+          }
+        ],
+        visuallyHiddenTitle: "Footer links"
+      }
+    }) }}
+  {% endblock %}

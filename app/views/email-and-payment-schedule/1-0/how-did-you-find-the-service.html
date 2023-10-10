@@ -1,0 +1,79 @@
+{% extends "layout_nosignout.html" %}
+
+{% block pageTitle %}
+  How did you find this service? - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/were-invited10" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="invited-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                How did you find out about this service?
+              </h1>
+            </legend>
+            <div class="govuk-radios govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="invited" name="invited" type="radio" value="letter">
+                <label class="govuk-label govuk-radios__label" for="invited">
+                  Letter from the State Pension Team
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="friend" name="invited" type="radio" value="friend">
+                <label class="govuk-label govuk-radios__label" for="friend">
+                  Friend or family member
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="other" name="invited" type="radio" value="other">
+                <label class="govuk-label govuk-radios__label" for="other">
+                  Somewhere else
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "idv-recreated-pages/idv-placeholder",
+            text: "ID&V CODES REQUIRED (opens in new tab)",
+            attributes: {
+              target: "_blank"
+            }
+          },
+          {
+            href: "idv-recreated-pages/success",
+            text: "SKIP ID&V SUCCESS"
+          },
+          {
+            href: "https://govuk-prototype-kit.herokuapp.com/",
+            text: "GOV.UK Prototype Kit " + releaseVersion
+          },
+          {
+            href: "/prototype-admin/clear-data",
+            text: "Clear data"
+          }
+        ],
+        visuallyHiddenTitle: "Footer links"
+      }
+    }) }}
+  {% endblock %}

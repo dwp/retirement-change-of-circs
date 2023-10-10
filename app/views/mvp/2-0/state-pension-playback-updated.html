@@ -1,0 +1,274 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Your State Pension - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  <!-- <a class="govuk-back-link" href="javascript:window.history.back()">Back</a> -->
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        <span class="govuk-caption-l">
+          {% if data['full-name'] %}
+            {{ data['full-name'] }}
+          {% else %}
+            Alex Jones
+          {% endif %}
+        </span>
+        Your State Pension
+      </h1>
+      <h2 class="govuk-heading-m">Payment schedule</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row" style="border-top: 1px solid #b1b4b6;padding-top:15px;">
+          <dt class="govuk-summary-list__key">
+            Payment frequency
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['payment-frequency'] %}
+              {{ data['payment-frequency'] }}
+            {% else %}
+              Every 4 weeks
+            {% endif %}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Next payment date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['next-payment-date'] %}
+              {{ data['next-payment-date'] }}
+            {% else %}
+              Monday 6 February 2023
+            {% endif %}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Next payment amount
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['next-payment-amount'] %}
+              £{{ data['next-payment-amount'] }}
+            {% else %}
+              £378.07
+            {% endif %}
+          </dd>
+        </div>
+      </dl>
+      <div style="display:inline-block;width:100%;">
+        <h2 class="govuk-heading-m" style="float:left;">Bank or building society details</h2>
+        <a class="govuk-link govuk-!-font-size-19" href="bank-change-1.html" style="float:right;vertical-align: baseline;">
+          Change<span class="govuk-visually-hidden"> the account your State Pension is paid into</span>
+        </a>
+      </div>
+      <!-- <div style="display:inline-block; width:100%;">
+        <p class="govuk-hint">You changed your bank details Wednesday 14 December 2022</p>
+      </div> -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row" style="border-top: 1px solid #b1b4b6;padding-top:15px;">
+          <dt class="govuk-summary-list__key">
+            Name on the account
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['account-holder'] %}
+              {{ data['account-holder'] }}
+            {% else %}
+              R Smith
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Sort code
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['sort-code'] %}
+              {{ data['sort-code'] }}
+            {% else %}
+              123456
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Account number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['account-number'] %}
+              {{ data['account-number'] }}
+            {% else %}
+              11223344
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        {% if data['roll-number'] %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Building society roll number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['roll-number'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        {% endif %}
+      </dl>
+      <h2 class="govuk-heading-m">Contact and personal details</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row" style="border-top: 1px solid #b1b4b6;padding-top:15px;">
+          <dt class="govuk-summary-list__key">
+            Address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['current-address-line-1'] %}
+              {{ data['current-address-line-1'] }}<br>
+            {% else %}
+              123 Square Street<br>
+            {% endif %}
+            {% if data['current-address-line-2'] %}
+              {{ data['current-address-line-2'] }}<br>
+            {% else %}
+              York<br>
+            {% endif %}
+            {% if data['current-address-line-3'] %}
+              {{ data['current-address-line-3'] }}<br>
+            {% endif %}
+            {% if data['current-postcode'] %}
+              {{ data['current-postcode'] }}
+            {% else %}
+              YO3 1SQ
+            {% endif %}
+          </dd>
+        </div>
+        <!-- <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Correspondence address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['correspondence-address-line-1'] %}
+              {{ data['correspondence-address-line-1'] }}<br>
+            {% else %}
+              123 Square Street<br>
+            {% endif %}
+            {% if data['correspondence-address-line-2'] %}
+              {{ data['correspondence-address-line-2'] }}<br>
+            {% else %}
+              York<br>
+            {% endif %}
+            {% if data['correspondence-address-line-3'] %}
+              {{ data['correspondence-address-line-3'] }}<br>
+            {% endif %}
+            {% if data['correspondence-postcode'] %}
+              {{ data['correspondence-postcode'] }}
+            {% else %}
+              YO3 1SQ
+            {% endif %}
+          </dd>
+        </div> -->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Home phone number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['current-home-phone'] %}
+              {{ data['current-home-phone'] }}
+            {% else %}
+              01904 4461056
+            {% endif %}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Alternative phone number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['current-alt-phone'] %}
+              {{ data['current-alt-phone'] }}
+            {% else %}
+              01904 4461056
+            {% endif %}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Mobile phone number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['current-mobile-phone'] %}
+              {{ data['current-mobile-phone'] }}
+            {% else %}
+              077123 45678
+            {% endif %}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Email address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['current-email'] %}
+              {{ data['current-email'] }}
+            {% else %}
+              email@me.co.uk
+            {% endif %}
+          </dd>
+        </div>
+        {% if data['show-letter-format'] == 'yes' %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Alternative format for letters
+          </dt>
+          <dd class="govuk-summary-list__value">
+              {{ data['letter-format'] }}
+          </dd>
+        </div>
+        {% endif %}
+      </dl>
+      <h2 class="govuk-heading-m">Personal details</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row" style="border-top: 1px solid #b1b4b6;padding-top:15px;">
+          <dt class="govuk-summary-list__key">
+            Marital status
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['marital-status'] %}
+              {{ data['marital-status'] }}
+            {% else %}
+              Never been married or in a civil partnership
+            {% endif %}
+          </dd>
+        </div>
+      </dl>
+      <h2 class="govuk-heading-m">
+        If you need to tell us about other changes
+      </h2>
+      <p class="govuk-body">
+        You can use this service to change your bank details.
+      </p>
+      <p class="govuk-body">
+        To report other changes, like a change of address, <a href="https://www.gov.uk/contact-pension-service">contact the Pension Service</a>. 
+      </p>
+      <p class="govuk-body">
+        You’ll be able to report other changes online in the future.
+      </p>
+    </div>
+    </div>
+  </div>
+
+{% endblock %}

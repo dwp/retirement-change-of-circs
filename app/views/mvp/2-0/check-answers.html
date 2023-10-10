@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your details - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Check your details before you submit them</h1>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              UK bank or building society account
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Yes
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="bank-change-1.html">
+                Change<span class="govuk-visually-hidden"> if you want to use a UK bank or building society account</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row" style="border:0;">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              New account details
+            </dt>
+            <dd class="govuk-summary-list__value">
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="bank-change-2.html">
+                Change<span class="govuk-visually-hidden"> new bank account details</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row" style="border:0;">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Name on the account
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['account-holder'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row" style="border:0;">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Sort code
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['sort-code'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row" style="border:0;">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Account number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['account-number'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Building society roll number (if you have one)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['roll-number'] %}
+                {{ data['roll-number'] }}
+              {% else %}
+                Not provided
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <!-- <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Email address for confirmation of change
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['confirmation-email'] == 'current' %}
+              testemail@hotmail.co.uk
+              {% elif data['confirmation-email'] == 'new' %}
+                {{ data['enter-email'] }}
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="email.html">
+                Change<span class="govuk-visually-hidden"> email address for confirmation of change</span>
+              </a>
+            </dd>
+          </div> -->
+        </dl>
+        
+        <h2 class="govuk-heading-m">Submit your new details</h2>
+        <p class="govuk-body">By submitting this change you are confirming that the information you are giving is complete and correct.</p>
+        <form action="confirmation" method="post" novalidate>
+          <input type="hidden" name="answers-checked" value="true">
+          <button class="govuk-button" data-module="govuk-button">
+            Confirm and submit
+          </button>
+        </form>
+    </div>
+  </div>
+
+{% endblock %}

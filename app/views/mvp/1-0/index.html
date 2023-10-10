@@ -1,0 +1,74 @@
+
+{% extends "layout_nowelsh.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        MVP journey: Presenting State Pension details and change of bank account
+      </h1>
+      <h2 class="govuk-heading-m">Set up custom data</h2>
+      <div class="govuk-inset-text">
+        <p><a href="admin.html">Use this page to set up custom data</a> that will apply across the prototype journeys.</p>
+        <p>To clear any data entered, use the 'Clear data' link in the grey footer.</p>
+      </div>
+
+      <h2 class="govuk-heading-m">Initial MVP - happy path journey</h2>
+      <p><a href="start.html">MVP release 1.0 - happy path for usability testing</a></p>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Jump to a page in the journey
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="start.html">Fake GOV.UK start page</a></li>
+            <li><a href="eligibility.html">Were you invited?</a></li>
+            <li><a href="ineligible.html">You cannot use this service yet</a></li>
+            <li><a href="idv-cred-confusion.html">ID&V context setting page - testing for ID&V team</a></li>
+            <li><a href="idv-placeholder.html">ID&V placeholder and codes needed for the register and identify prototype</a></li>
+            <li><a href="idv-success.html">ID&V success - hand back from ID&V service</a></li>
+            <li><a href="state-pension-playback.html">Your State Pension account (playback if status is 'Receiving State Pension')</a></li>
+            <li><a href="bank-change-1.html">UK or overseas account?</a></li>
+            <li><a href="end-overseas.html">Overseas account - endpoint</a></li>
+            <li><a href="bank-change-2.html">Enter new bank details</a></li>
+            <li><a href="check-answers.html">Check your answers</a></li>
+            <li><a href="confirmation.html">Confirmation - change complete</a></li>
+            <li><a href="state-pension-playback-updated.html">Updated bank details in Your State Pension account (playback)</a></li>
+          </ul>
+        </div>
+      </details>
+      <h3 class="govuk-heading-m">Version notes</h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Simple, 1-question eligibility based on Private Beta letter campaign approach</li>
+        <li>Streamlining eligibility to single question focusing on the agreed Private Beta letter campaign approach</li>
+        <li>Integration with ID&V prototype for registration and identity verification journeys</li>
+        <li>Accepting bank changes from users with payment status of 'Receiving State Pension' only</li>
+        <li><a href="https://dwpdigital.atlassian.net/wiki/spaces/RBCCC/pages/133140743260/Usability+testing+artefacts" target="_blank">Mockup of award notice letter</a> - Round 1 version
+      </ul>
+
+      <h2 class="govuk-heading-m">Alternative / unhappy path pages</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="idv-placeholder.html">ID&V placeholder and codes needed for the register and identify prototype</a></li>
+        <li><a href="idv-fail.html">ID&V fail</a></li>
+        <li><a href="idv-success-no-gysp-match.html">ID&V success, but GUID doesn't match any GYSP record</a></li>
+        <li><a href="state-pension-playback-issues.html">Your State Pension account (playback if status is <strong>anything other than</strong> 'Receiving State Pension')</a></li>
+        <li><a href="confirmation-alt.html">Confirmation - change complete but too close to next payment date</a></li>
+      </ul>
+      
+      <h2 class="govuk-heading-m">Bank validation error pages</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="bank-validation-errors/bank-account-does-not-accept-sp.html">Bank account cannot accept State Pension payments</a></li>
+        <li><a href="bank-validation-errors/bs-account-does-not-accept-sp.html">Building society account cannot accept State Pension payments</a></li>
+        <li><a href="bank-validation-errors/cannot-verify.html">Cannot verify account</a></li>
+        <li><a href="bank-validation-errors/cannot-find-account-number.html">Cannot find account number</a></li>
+        <li><a href="bank-validation-errors/non-uk-account.html">Non-UK account entered</a></li>
+      </ul>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Email confirmation - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Confirmation email</h1>
+      <p>We do not have an email address for you...</p>
+      <form class="form" action="../check-how-often-we-will-pay-you" method="post">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="enter-email-alt">
+            Email address
+          </label>
+          <div id="email-hint" class="govuk-hint">
+            We will only use this to send you confirmation of your change
+          </div>
+          <input class="govuk-input" id="enter-email-alt" name="enter-email-alt" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email">
+        </div>
+        
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

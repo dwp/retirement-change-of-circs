@@ -1,0 +1,111 @@
+
+{% extends "layout_nowelsh.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Second round of iterations to MVP journey
+      </h1>
+      <h2 class="govuk-heading-m">Set up custom data</h2>
+      <div class="govuk-inset-text">
+        <p><a href="admin.html">Use this page to set up custom data</a> that will apply across the prototype journeys.</p>
+        <p>To clear any data entered, use the 'Clear data' link in the grey footer.</p>
+      </div>
+
+      <h2 class="govuk-heading-m"><a href="start.html">Happy path journey</a></h2>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Jump to a page in the journey
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="start.html">Fake GOV.UK start page</a></li>
+            <li><a href="eligibility.html">Were you invited?</a></li>
+            <li><a href="ineligible.html">You cannot use this service yet</a></li>
+            <li><a href="idv-placeholder.html">ID&V placeholder and codes needed for the register and identify prototype</a></li>
+            <li><a href="state-pension-playback.html">Your State Pension account (playback if status is 'Receiving State Pension')</a></li>
+            <li><a href="bank-change-1.html">UK or overseas account?</a></li>
+            <li><a href="end-overseas.html">Overseas account - endpoint</a></li>
+            <li><a href="bank-change-2.html">Enter new bank details</a></li>
+            <li><a href="check-answers.html">Check your answers</a></li>
+            <li><a href="confirmation.html">Confirmation - change complete</a></li>
+            <li><a href="state-pension-playback-updated.html">Updated bank details in Your State Pension account (playback)</a></li>
+          </ul>
+        </div>
+      </details>
+      <h3 class="govuk-heading-m">Version notes</h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Iterations are based on feedback from Round 2 of UR, conducted on <a href="../2-0/index.html" target="_blank">version 2 of MVP</a></li>
+        <li><a href="https://dwpdigital.atlassian.net/wiki/spaces/RBCCC/pages/133140743260/Usability+testing+artefacts" target="_blank">Mockup of award notice letter (round 2 version used in UR)</a> - the following updates were made to the letter for round 3 of UR:
+          <ul>
+            <li>separated changes from other things they can do online</li>
+            <li>add the word ‘only’ to be more explicit thats it for changes online</li>
+            <li>added on same line as bank details what to do for other types of change</li>
+          </ul>
+        </li>
+        <li><a href="https://dwpdigital.atlassian.net/browse/RBCCC-233" target="_blank">JIRA ticket for prototype iterations</a></li>
+        <li>Added 'get help' content to bank detail question pages to see if users feel they would need it and if they can find the right contact details in the GOV.UK page</li>
+        <li>Added full GYSP declaration, exclamation mark and all, to the check answers page in order to see if users react negatively to it</li>
+        <li>Updated journey to skip the ID&V journey so we have more time in UR sessions to focus on our service. Will still be showing the register page to gague users understanding of signing in or creating a new account</li>
+        <li>Start page - Added mobile 'number' in start page registration info, so users didn't think they'd need a smartphone</li>
+        <li>Start page - Separated change and view content into separate lists to help make clear what the service can and can't do</li>
+        <li>Start page - Added sentence about how identity checks helps with fraud to help educate and encourage users to go through IDV process</li>
+        <li>Added 'by phone or post' to Contact Pension Service links across service to make clear we're not just sending users to another / different online form</li>
+        <li>Confirmation page - highlighted return link with inset styling and updated content so users will notice and understand this link will help them confirm their change has gone through</li>
+        <li>Your State Pension page - Added change link to every section with an explanation page that these changes will come in future. Want to see if that makes it clearer to users this is a service building up and if they may use it in the future.</li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Alternative / unhappy path pages</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="idv-fail.html">ID&V fail</a></li>
+        <li><a href="idv-success-no-gysp-match.html">ID&V success, but GUID doesn't match any GYSP record</a></li>
+        <li><a href="state-pension-playback-issues.html">Your State Pension account (playback if status is <strong>anything other than</strong> 'Receiving State Pension')</a></li>
+        <li><a href="confirmation-alt.html">Confirmation - alternative wording</a><br/>change complete but too close to next payment date</li>
+        <li><a href="state-pension-playback-not-provided.html">Your State pension page missing data</a><br/>View where we do not have certain contact details for a user</li>
+        <li><a href="service-problem.html">Problem with service</a><br/>Page to be displayed for a 500 or internal server error in our service or the bank validation service</li>
+        <li><a href="service-unavailable-planned.html">Service unavailable planned</a><br/>503 shutter page to be displayed if any part of our service or the bank validation service was shuttered for planned maintenance</li>
+        <li><a href="service-unavailable.html">Service unavailable unexpected</a><br/>503 shutter page to be displayed if any part of our service or the bank validation service was shuttered for unplanned maintenance</li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Experimental sandbox</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="https://dwpdigital.atlassian.net/browse/RBCCC-237" target="_blank">JIRA RBCCC - 237</a> - Explore how we can make it more clear what the service can and cannot do</li>
+        <li><a href="sandbox/state-pension-playback-change-explain.html">Overview page - Explanation of changes available online on each section of info</a></li>
+        <li><a href="sandbox/state-pension-playback-change-split.html">Overview page - Other changes info split into 2 places, top and bottom of page</a></li>
+        <li><a href="sandbox/state-pension-playback-change.html">Overview page - Change links for all to help user and advertise coming in future</a> - suggestion from cross-retirement</li>
+        <li><a href="https://dwpdigital.atlassian.net/browse/RBCCC-242" target="_blank">JIRA RBCCC - 242</a> - More guidance on updating bank details for other benefits and making other changes for SP</li>
+        <li><a href="sandbox/confirmation-jira242.html">More clear what to do for other benefit bank detail change</a></li>
+        <li><a href="sandbox/confirmation-alt-jira242.html">More clear what to do for other benefit bank detail change - when bank details can't be changed before next payment</a></li>
+        <li><a href="sandbox/ni-alt-contact.html">Potential design for alterntive NI contact details</a></li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Bank validation error messaging</h2>
+      <p>In-page errors</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="bank-validation-errors/bank-change-error-length.html">Bank details entry - Too long/short errors</a></li>
+        <li><a href="bank-validation-errors/bank-change-error-characters.html">Bank details entry - Invalid characters entered</a></li>
+        <li><a href="bank-validation-errors/bank-change-error-empty.html">Bank details entry - Fields left empty</a></li>
+      </ul>
+      <p>Separate page errors</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="bank-validation-errors/bank-account-does-not-accept-sp.html">Bank account cannot accept State Pension payments</a></li>
+        <li><a href="bank-validation-errors/bs-account-does-not-accept-sp.html">Building society account cannot accept State Pension payments</a></li>
+        <li><a href="bank-validation-errors/cannot-verify.html">Cannot verify account</a></li>
+        <li><a href="bank-validation-errors/cannot-find-account-number.html">Cannot find account number</a></li>
+        <li><a href="bank-validation-errors/non-uk-account.html">Non-UK account entered</a></li>
+      </ul>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+You can only use a UK account - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  <!-- <a class="govuk-back-link" href="javascript:window.history.back()">Back</a> -->
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">You can only use this service with a UK bank or building society account</h1>
+      <div class="govuk-inset-text">
+        This is not a UK account. Check the sort code and account number and try again.
+      </div>
+
+     <dl class="govuk-summary-list">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-half">Name on the account</dt>
+            <dd class="govuk-summary-list__value">John Snow</dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-half">Sort code</dt>
+            <dd class="govuk-summary-list__value">555555</dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-half">Account number</dt>
+            <dd class="govuk-summary-list__value">55555567</dd>
+          </div>
+
+        </dl>
+
+        <button class="govuk-button" data-module="govuk-button">Change account details</button>
+      
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">
+        Get help
+      </h2>
+      <p><a href="contact-pension-service.html" target="_blank">Get help using the online service (opens in new tab)</a></p>
+    </div>
+  </div>
+
+{% endblock %}

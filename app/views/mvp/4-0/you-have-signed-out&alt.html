@@ -1,0 +1,33 @@
+{% extends "layout_noback_nosignout.html" %}
+
+{% block pageTitle %}
+  You have signed out - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="bank-playback" method="post">
+        <div class="govuk-form-group">
+          <h1 class="govuk-heading-l">
+            You have signed out
+          </h1>
+          <p class="govuk-body">
+            You can now close this window.
+          </p>
+          <p class="govuk-body">
+            If this was a mistake you will need to sign in to manage your State Pension.
+          </p>
+          <p class="govuk-body">
+            <a href="survey">Help make this service better by taking part in user research (optional)</a>
+          </p>
+          <button class="govuk-button" data-module="govuk-button">
+            Sign in
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

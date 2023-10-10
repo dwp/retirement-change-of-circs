@@ -1,0 +1,104 @@
+
+{% extends "layout_nowelsh.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        First iteration of change payment frequency
+      </h1>
+      <h2 class="govuk-heading-m">Set up custom data</h2>
+      <div class="govuk-inset-text">
+        <p><a href="admin.html">Use this page to set up custom data</a> that will apply across the prototype journeys.</p>
+        <p>To clear any data entered, use the 'Clear data' link in the grey footer.</p>
+      </div>
+
+      <h2 class="govuk-heading-m">Happy path end-to-end journey</h2>
+      <a href="manage-state-pension.html" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">Start now</a>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Jump to a page in the journey
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <h3 class="govuk-heading-s">Pre OIDV</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="manage-state-pension.html">Mock GOV.UK start page</a></li>
+            <li><a href="how-did-you-find-the-service.html">How did you find out about this service?</a></li>
+            <li><a href="cannot-use-service.html">You cannot use this service yet</a></li>
+          </ul>
+          <h3 class="govuk-heading-s">Bank details change</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="your-state-pension.html">Your State Pension account (playback if status is 'Receiving State Pension')</a></li>
+            <li><a href="do-you-want-uk-account.html">Do you want to use a UK bank or building society account?</a></li>
+            <li><a href="can-only-use-uk-account.html">You can only use this service with a UK bank or building society account</a></li>
+            <li><a href="bank-or-building-society-details.html">Enter new bank details</a></li>
+            <li><a href="check-your-details.html">Check your answers for bank details</a></li>
+            <li><a href="you-have-changed-your-bank-details.html">Bank details changed</a></li>
+          </ul>
+          <h3 class="govuk-heading-s">Payment frequency change</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="how-often-would-you-like-to-be-paid.html">Select payment frequency</a></li>
+            <li><a href="check-your-details&frequency.html">Check your answers for payment frequency</a></li>
+            <li><a href="frequency-confirmations/you-have-changed-your-payment-frequency&2.html">Payment frequency changed</a></li>
+          </ul>
+          <h3 class="govuk-heading-s">Get help</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="contact-pension-service.html">Get help - iterated version of GOV.UK contact Pension Service page</a></li>
+            <li><a href="contact-pension-service&welsh.html">Get help Welsh version - iterated version of Welsh GOV.UK contact Pension Service page</a></li>
+          </ul>
+        </div>
+      </details>
+      <h2 class="govuk-heading-m">Version notes</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Based on <a href="https://app.mural.co/t/dwpdigital7412/m/dwpdigital7412/1684863096014/b7dfb70688d96c5bb67e094737ac9734ab15324c?sender=uf82923922d15a170bcd51219" target="_blank">feedback from first round of UR</a> - Tuesday 30 May to Friday 2 June 2023</li>
+        <li>Changes to be tested in second round of testing 13 to 15 June 2023</li>
+        <li><a href="https://dwpdigital.atlassian.net/browse/RBCCC-549?atlOrigin=eyJpIjoiNTI1Mjk2ZTM4NWVjNDU3NWEyNWY3NjExYzE0MGU0N2UiLCJwIjoiaiJ9">JIRA ticket for iterations</a></li>
+        <li>Added in a page with the <a href="https://intranet.dwp.gov.uk/page/standard-privacy-notices-dwp-products" target="_blank">privacy notice content as recommended by Data Protection team</a> - need to see how users interpret and understand as likely this notice will not be going into OIDV service before our release</li>
+        <li>Updated frequency change happy path to scenario where user has 2 options to choose from for frequency to gather user feedback on it</li>
+        <li>Added a correspondence address to the default overview page view to allow testing understanding with users</li>
+        <li>Removed declaration from check page and changed the H1 and button to better represent the thing they are checking - based on feedback from 2 userst that the existing declaration didn't make sense for changing frequency, asking to confirm details given but no details were given</li>
+        <li>Updated 'What happens next' section of confirmation page to follow letter content being tested by GYSP for deferral notice - want to test if this is a helpful detail level for frequency change</li>
+        <li>Added sign out link to bottom of confirmation page content to help users focussed ont he content to locate a sign out path easily</li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Payment frequency confirmation of change scenarios</h2>
+      <p>The content given to users at confirmation will depend on how close they are to their next payment, whether the payment due will be their first SP payment, and whether they will require a part payment to get onto the right schedule. All scenarios linked from the grey footer of each confirmation page.</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="frequency-confirmations/you-have-changed-your-payment-frequency&1.html">Scenario 1 - User has a payment due in the next 7 days which is their first payment</a></li>
+        <li><a href="frequency-confirmations/you-have-changed-your-payment-frequency&2.html">Scenario 2 - User has a payment due in the next 7 days which is NOT their first payment</a></li>
+        <li><a href="frequency-confirmations/you-have-changed-your-payment-frequency&3.html">Scenario 3 - User does not have a payment due in the next 7 days and the next payment is their first payment</a></li>
+        <li><a href="frequency-confirmations/you-have-changed-your-payment-frequency&4.html">Scenario 4 - User does not have a payment due in the next 7 days and the next payment is NOT their first payment</a></li>
+        <li><a href="frequency-confirmations/you-have-changed-your-payment-frequency&5.html">Scenario 5 - User not have a payment due in the next 7 days, the next payment is their first payment, and the new frequency can be applied from the first payment date without needing a part payment</a></li>
+        <li><a href="frequency-confirmations/you-have-changed-your-payment-frequency&6.html">Scenario 6 - User does not have a payment due in the next 7 days, the next payment is NOT their first payment, and the new frequency can be applied from the next cycle without needing a part payment</a></li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Alternative journey - only 1 frequency option available</h2>
+      <p>Users must meet specific criteria to be able to change to 2 weekly payments. For those who do not meet the criteria, they will currently only be given 1 option to change to.</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="would-you-like-to-be-paid-every-week.html">Change frequency page for users who only have one option available</a></li>
+        <li><a href="payment-frequency-not-changed.html">User says no to their one option available</a></li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Unhappy path pages</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="your-state-pension&amp;issues.html">Your State Pension account playback if status is <strong>anything other than</strong> 'Receiving State Pension'</a></li>
+      </ul>
+
+      <!-- <h2 class="govuk-heading-m">Experimental sandbox</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="">ToDo</a></li>
+      </ul> -->
+
+{% endblock %}

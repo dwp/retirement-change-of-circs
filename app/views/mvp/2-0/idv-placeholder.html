@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Placeholder page, not in service – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="sp-claim-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                ID&V journey to start here
+              </h1>
+            </legend>
+            <p><a href="https://prototype-dth.herokuapp.com/auth/dev-ready/register/start?service-name=manage-your-state-pension" target="_blank">ID&V prototype start (opens in new tab)</a></p>
+            <p>Codes for authentication steps:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Register email authentication: 283194</li>
+              <li>Register mobile authentication: 969862</li>
+              <li>Sign in mobile authentication: 471350</li>
+            </ul>
+          </fieldset>
+        </div>
+        
+        <!-- <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button> -->
+      </form>
+      <h2 class="govuk-heading-m">Success and failure scenarios</h2>
+      <p><a href="idv-success.html">User successful in ID&V, GUID matches, payment status of 'Receiving State Pension'</a></p>
+      <p><a href="idv-success-issues.html">User successful in ID&V, GUID matches, payment status anything other than 'Receiving State Pension'</a></p>
+      <p><a href="idv-success-no-match.html">User successful in ID&V, but GUID doesn't match any GYSP record</a></p>
+      <p><a href="idv-fail">User fails ID&V</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

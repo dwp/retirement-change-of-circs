@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  You have changed your bank details - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  <!-- <a class="govuk-back-link" href="javascript:window.history.back()">Back</a> -->
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          You have changed your bank details
+        </h1>
+      </div>
+      <p class="govuk-body">We have sent you a confirmation email.</p>
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p class="govuk-body">
+        Your State Pension payment on [DATE] will be paid into your previous account as the payment has already been sent.
+      </p>
+      <p class="govuk-body">
+        Your next State Pension payment on [FUTURE DATE] and all future payments will be paid into your new account.
+      </p>
+      <p class="govuk-body">
+        Your payment amount and when you are paid will not change.
+      </p>
+      <p class="govuk-body">
+        We will send a letter confirming your change in writing.
+      </p>
+      <h2 class="govuk-heading-m">
+        If you receive Pension Credit
+      </h2>
+      <p class="govuk-body">
+        If you want to change where your Pension Credit is paid <a href="https://www.gov.uk/contact-pension-service">contact the Pension Service</a>.
+      </p>
+      <h2 class="govuk-heading-m">
+        If you need to tell us about other changes
+      </h2>
+      <p class="govuk-body">
+        If you need to report other changes, like a change of address, <a href="https://www.gov.uk/contact-pension-service">contact the Pension Service</a>.
+      </p>
+      <h2 class="govuk-heading-m">
+        Help us improve this service
+      </h2>
+      <p class="govuk-body govuk-!-margin-bottom-9">
+        <a href="#" class="govuk-link">Help make this service better by taking part in user research</a>
+      </p>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

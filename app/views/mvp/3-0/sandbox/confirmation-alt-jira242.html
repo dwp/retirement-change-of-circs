@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  You have changed your bank details - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  <!-- <a class="govuk-back-link" href="javascript:window.history.back()">Back</a> -->
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          You have changed your bank details
+        </h1>
+      </div>
+      <!-- <p class="govuk-body">We have sent you a confirmation email.</p> -->
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p class="govuk-body">
+        We sent your next State Pension payment before you changed your bank details. It will be paid into your previous account on 
+        {% if data['next-payment-date'] %}
+          {{ data['next-payment-date'] }}.
+        {% else %}
+          Monday 6 February 2023.
+        {% endif %}
+      </p>
+      <p class="govuk-body">
+        Starting from 
+        {% if data['following-payment-date'] %}
+          {{ data['following-payment-date'] }},
+        {% else %}
+          Monday 6 March 2023,
+        {% endif %}
+        your State Pension payments will be paid into your new account.
+      </p>
+      <p class="govuk-body">
+        We will send you a letter to confirm you have changed your bank details.
+      </p>
+      <h2 class="govuk-heading-m">
+        Tell us about other changes
+      </h2>
+      <p class="govuk-body">
+        To report other changes, like a change of address, <a href="https://www.gov.uk/contact-pension-service">contact the Pension Service by phone or post (opens in a new tab)</a>. 
+      </p>
+      <h2 class="govuk-heading-m">
+        If you get Pension Credit or other benefits
+      </h2>
+      <p class="govuk-body">
+        You have only changed the banks details we use to pay your State Pension. Find out how to <a href="https://www.gov.uk/report-benefits-change-circumstances">report changes in your circumstances for different benefits (opens in a new tab)</a>.
+      </p>
+      <h2 class="govuk-heading-m">
+        Help us improve this service
+      </h2>
+      <p class="govuk-body govuk-!-margin-bottom-9"">
+        <a href="#" class="govuk-link">Help make this service better by taking part in user research (opens in a new tab)</a>
+      </p>
+      <div class="govuk-inset-text">
+        <a href="state-pension-playback-updated.html" class="govuk-link">Check your bank or building society details have changed</a>
+      </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

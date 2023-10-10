@@ -1,0 +1,144 @@
+{% extends "layout_noback.html" %}
+
+{% block pageTitle %}
+  You have changed your payment frequency - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          You have changed how often we will pay your State Pension
+        </h1>
+      </div>
+      <!-- <p class="govuk-body">We have sent you a confirmation email.</p> -->
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p class="govuk-body">
+        Your first payment will be 
+        {% if data['first-payment-amount-conf'] %}
+          £{{ data['first-payment-amount-conf'] }}
+        {% else %}
+          £815.40
+        {% endif %}
+        for 
+        {% if data['first-payment-length-conf'] %}
+          <span>{{ data['first-payment-length-conf'] }}</span>
+        {% else %}
+          4 weeks
+        {% endif %}
+         and will be paid on 
+         {% if data['first-payment-date-conf'] %}
+         <span>{{ data['first-payment-date-conf'] }}</span>.
+       {% else %}
+        2 June 2023.
+       {% endif %}
+      </p>
+      <p class="govuk-body">
+        To get you on a regular payment cycle, you will receive 
+        {% if data['part-payment-amount-conf'] %}
+          £{{ data['part-payment-amount-conf'] }}
+        {% else %}
+          £203.85
+        {% endif %}
+        for 
+        {% if data['part-payment-length-conf'] %}
+          <span>{{ data['part-payment-length-conf'] }}</span>
+        {% else %}
+          1 week
+        {% endif %}
+          on 
+         {% if data['part-payment-date-conf'] %}
+         <span>{{ data['part-payment-date-conf'] }}</span>.
+       {% else %}
+        9 June.
+       {% endif %}
+      </p>
+      <p class="govuk-body">
+        You will then be paid your regular payment of 
+        {% if data['regular-payment-amount-conf'] %}
+          £{{ data['regular-payment-amount-conf'] }}
+        {% else %}
+          £407.70
+        {% endif %} on 
+        {% if data['regular-payment-date-conf'] %}
+          {{ data['regular-payment-date-conf'] }}
+        {% else %}
+          23 June 2023
+        {% endif %} and 
+        {% if data['frequency-select'] %}
+          <span style="text-transform: lowercase;">{{ data['frequency-select'] }}</span>
+        {% else %}
+          every 2 weeks
+        {% endif %} after that.
+      </p>
+      <p class="govuk-body">
+        We will send you a letter to confirm you have changed how often we will pay your State Pension.
+      </p>
+      <h2 class="govuk-heading-m">
+        If you receive Pension Credit
+      </h2>
+      <p class="govuk-body">
+        If you need to change how often you get Pension Credit, <a href="../contact-pension-service.html" target="_blank">contact the Pension Service by phone or post (opens in new tab)</a>.
+      </p>
+      <h2 class="govuk-heading-m">
+        Check your State Pension details
+      </h2>
+      <p class="govuk-body">
+        You can <a href="../your-state-pension&updated.html">check your State Pension details and how to report other changes</a>. 
+      </p>
+      <h2 class="govuk-heading-m">
+        Help improve this service
+      </h2>
+      <p class="govuk-body">
+        You can <a href="#">help improve this service by giving us your feedback (opens in new tab)</a>.
+      </p>
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "you-have-changed-your-payment-frequency&2.html",
+            text: "Scenario 2"
+          },
+          {
+            href: "you-have-changed-your-payment-frequency&3.html",
+            text: "Scenario 3"
+          },
+          {
+            href: "you-have-changed-your-payment-frequency&4.html",
+            text: "Scenario 4"
+          },
+          {
+            href: "you-have-changed-your-payment-frequency&5.html",
+            text: "Scenario 5"
+          },
+          {
+            href: "you-have-changed-your-payment-frequency&6.html",
+            text: "Scenario 6"
+          },
+          {
+            href: "/frequency/1-0/signed-you-out.html",
+            text: "Service sign out"
+          },
+          {
+            href: "https://govuk-prototype-kit.herokuapp.com/",
+            text: "GOV.UK Prototype Kit " + releaseVersion
+          },
+          {
+            href: "/prototype-admin/clear-data",
+            text: "Clear data"
+          }
+        ],
+        visuallyHiddenTitle: "Footer links"
+      }
+    }) }}
+  {% endblock %}

@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  You have chosen not to change your bank details - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="bank-playback" method="post">
+        <div class="govuk-form-group">
+          <h1 class="govuk-heading-l">
+            Sorry, the service is unavailable
+          </h1>
+          <p class="govuk-body">You will be able to use the service later.</p>
+          <p class="govuk-body">
+            We have not saved your answers. When the service is available, you will have to start again.
+          </p>
+          <p>
+            If you need to report a change or speak to someone about your State Pension, <a href="https://www.gov.uk/contact-pension-service">contact the Pension Service by phone or post</a>.
+          </p>  
+        </div>
+      </form>
+      <p><a href="https://www.gov.uk/">Return to GOV.UK</a></p>
+    </div>
+  </div>
+
+{% endblock %}
