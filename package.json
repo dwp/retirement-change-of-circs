@@ -14,6 +14,7 @@
   "dependencies": {
     "@dwp/dwp-frontend": "^2.3.6",
     "@govuk-prototype-kit/step-by-step": "^2.0.0",
+    "@x-govuk/govuk-prototype-filters": "^1.2.0",
     "acorn": "^8.5.0",
     "ansi-colors": "^4.1.1",
     "body-parser": "^1.14.1",
