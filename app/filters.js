@@ -13,28 +13,16 @@ module.exports = function (env) {
       return  num.toFixed(2 || length);
   });
 
-  env.addFilter ('isoDateNoYearFromDateInput', function(object, namePrefix) {
-    let day, month
-  
-    if (namePrefix) {
-      day = Number(object[`${namePrefix}-day`])
-      month = Number(object[`${namePrefix}-month`])
-    } else {
-      day = Number(object?.day)
-      month = Number(object?.month)
-    }
-  
-    try {
-      if (!day) {
-        return DateTime.local(month).toFormat()
-      } else {
-        return DateTime.local(month, day).toISODate('dddd, MMMM')
-      }
-    } catch (error) {
-      return error.message.split(':')[0]
-    }
-  });
-
+  env.addFilter('dropYear', (date) => {
+    const monthNames = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ]
+    date = new Date(date)
+    let month = monthNames[date.getMonth()]
+    let day = date.getDate();
+    return day + ' ' + month
+  })
 
   /* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:
