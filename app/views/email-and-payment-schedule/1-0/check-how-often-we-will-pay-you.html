@@ -10,40 +10,6 @@
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">Check your details before you change how often we pay your State Pension</h1>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width:40%;">
-              Do you get any benefits?
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['other-benefits'] %}
-                {{ data['other-benefits'] }}
-              {% else %}
-                No
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="frequency-benefits/benefits.html">
-                Change<span class="govuk-visually-hidden"> if you get other benefits</span>
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width:40%;">
-              Do you get Pension Credit?
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['pc'] %}
-                {{ data['pc'] }}
-              {% else %}
-                No
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="frequency-benefits/pension-credit.html">
-                Change<span class="govuk-visually-hidden"> if you get Pension Credit</span>
-              </a>
-            </dd>
-          </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key" style="width:40%;">
                 How often do you want us to pay your State Pension?

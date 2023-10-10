@@ -10,41 +10,6 @@
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">Check your details before you submit them</h1>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-          
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width:40%;">
-              Do you get any benefits?
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['other-benefits'] %}
-                {{ data['other-benefits'] }}
-              {% else %}
-                No
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="bank-benefits/benefits.html">
-                Change<span class="govuk-visually-hidden"> if you get other benefits</span>
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width:40%;">
-              Do you get Pension Credit?
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['pc'] %}
-                {{ data['pc'] }}
-              {% else %}
-                No
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="bank-benefits/pension-credit.html">
-                Change<span class="govuk-visually-hidden"> if you get Pension Credit</span>
-              </a>
-            </dd>
-          </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
               UK bank or building society account
@@ -127,48 +92,23 @@
             <dd class="govuk-summary-list__actions">
             </dd>
           </div>
-          <div class="govuk-summary-list__row">
+          <!-- <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              Do you want a confirmation email?
+              Email address for confirmation of change
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['bank-email'] == 'bank-confirmation-yes' %}
-                Yes
-              {% else %}
-                No
+              {% if data['confirmation-email'] == 'current' %}
+              testemail@hotmail.co.uk
+              {% elif data['confirmation-email'] == 'new' %}
+                {{ data['enter-email'] }}
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="bank-email/would-you-like-email-confirmation.html">
-                Change<span class="govuk-visually-hidden"> if you want a confirmation email</span>
+              <a class="govuk-link" href="email.html">
+                Change<span class="govuk-visually-hidden"> email address for confirmation of change</span>
               </a>
             </dd>
-          </div>
-          {% if data['bank-email'] == 'bank-confirmation-yes' %}
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key" style="width:40%;">
-                Email address
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {% if data['confirmation-email'] == 'current' %}
-                  {% if data['current-email'] %}
-                    {{ data['current-email'] }}
-                  {% elif data['enter-email-alt'] %}
-                    {{ data['enter-email-alt'] }}
-                  {% else %}
-                    email@me.co.uk
-                  {% endif %}
-                {% elif data['confirmation-email'] == 'new' %}
-                  {{ data['enter-email'] }}
-                {% endif %}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="frequency-email/email.html">
-                  Change<span class="govuk-visually-hidden"> where we should send your confirmation email</span>
-                </a>
-              </dd>
-            </div>
-          {% endif %}
+          </div> -->
         </dl>
         
         <h2 class="govuk-heading-m">Submit your new details</h2>

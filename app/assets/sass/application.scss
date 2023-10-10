@@ -1,63 +1,18 @@
-//
-// For guidance on how to add CSS and SCSS see:
-// https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
-// 
+// global styles for <a> and <p> tags
+$govuk-global-styles: true;
+$govuk-new-link-styles: true;
 
-// Add extra styles here
-.hidden{
-  display: none;
-}
+// We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework.
+$govuk-assets-path: '/govuk/assets/';
 
-// Copy button
-.app-copy-button {
-  $copy-button-colour: #00823b;
-  font-size: 16;
-  position: relative;
-  z-index: 1;
-  right: 10px;
-  min-width: 110px;
-  padding: 3px 10px;
-  border: 1px solid #00823b;
-  color: #00823b;
-  background-color: #fff;
-  box-shadow: 0 2px 0 0 #00703c;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-}
+// Import GOV.UK Frontend and any extension styles if extensions have been configured
+@import ".tmp/sass/extensions";
 
-.app-copy-button :focus {
-  color: #0b0c0c;
-  background-color: #ffdd00;
-  box-shadow: 0 2px 0 0 #0b0c0c;
-}
+// Patterns that aren't in Frontend
+@import "patterns/contents-list";
+@import "patterns/mainstream-guide";
+@import "patterns/pagination";
+@import "patterns/related-items";
+@import "patterns/task-list";
 
-.app-copy-button :active :focus {
-  padding: 2px 10px; // Counter increased border size
-  border: 2px solid #ffdd00;
-  outline: 2px solid transparent;
-  box-shadow: none;
-}
-
-.app-copy-button :active {
-  margin-top: 2px;
-  box-shadow: none;
-}
-
-.app-copy-button:hover {
-  border: 1px solid #00823b;
-  color: #00823b;
-  background-color: #fff;
-}
-
-
-@media (min-width: 40.0625em) {
-    .govuk-summary-list__actions {
-      width:30%;
-    }
-  }
-
-// Components that aren't in Frontend
-  @import 'navigation-secondary';
-  @import 'navigation-global';
-  
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you

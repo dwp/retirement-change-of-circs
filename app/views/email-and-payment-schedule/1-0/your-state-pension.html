@@ -38,7 +38,7 @@
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link govuk-!-font-size-19" href="frequency-benefits/benefits.html">
+            <a class="govuk-link govuk-!-font-size-19" href="change-how-often-we-will-pay-you.html">
               Change<span class="govuk-visually-hidden"> how often we pay your State Pension</span>
             </a>
           </dd>
@@ -48,8 +48,8 @@
             Next payment date
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if data['next-payment-day'] %}
-              Friday {{ data | isoDateFromDateInput("next-payment") | govukDate }}
+            {% if data['next-payment-date'] %}
+              {{ data['next-payment-date'] }}
             {% else %}
               Friday 4 August 2023
             {% endif %}
@@ -76,7 +76,7 @@
       </dl>
       <div style="display:inline-block;width:100%;">
         <h2 class="govuk-heading-m" style="float:left;">Bank or building society details</h2>
-        <a class="govuk-link govuk-!-font-size-19" href="bank-benefits/benefits.html" style="float:right;vertical-align: baseline;">
+        <a class="govuk-link govuk-!-font-size-19" href="do-you-want-uk-account.html" style="float:right;vertical-align: baseline;">
           Change<span class="govuk-visually-hidden"> bank or building society details</span>
         </a>
       </div>

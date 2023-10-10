@@ -16,67 +16,31 @@
       <!-- <p class="govuk-body">We have sent you a confirmation email.</p> -->
       <h2 class="govuk-heading-m">What happens next</h2>
       <p class="govuk-body">
-        We sent your next State Pension payment before you changed your bank details. It will be paid into your previous account on
-        {% if data['next-payment-day'] %}
-            {{ data | isoDateFromDateInput("next-payment") | govukDate }}.
+        We sent your next State Pension payment before you changed your bank details. It will be paid into your previous account on 
+        {% if data['next-payment-date'] %}
+          {{ data['next-payment-date'] }}.
         {% else %}
-          Friday 4 August 2023.
+          Monday 6 February 2023.
         {% endif %}
       </p>
       <p class="govuk-body">
-        Starting from
-        {% if data['next-payment-day'] %}
-            {{ data | isoDateFromDateInput("next-payment") | duration(4, "weeks") | govukDate }},
+        Starting from 
+        {% if data['following-payment-date'] %}
+          {{ data['following-payment-date'] }},
         {% else %}
-          Friday 1 September 2023,
+          Monday 6 March 2023,
         {% endif %}
         your State Pension payments will be paid into your new account.
       </p>
       <p class="govuk-body">
-        {% if data['bank-email'] == 'bank-confirmation-yes' %}
-          We have sent you an email to confirm you have changed your bank details. We will also send you a letter in the post.
-          {% if data['show-letter-format'] == 'show-letter-format-yes' %}
-            Letters are sent in the format you requested.
-          {% endif %}
-        {% else %}
-          We will send you a letter to confirm you have changed your bank details.
-          {% if data['show-letter-format'] == 'show-letter-format-yes' %}
-            Letters are sent in the format you requested.
-          {% endif %}
-        {% endif %}
+        We will send you a letter to confirm you have changed your bank details.
       </p>
-      
-      {% if data['pc'] == 'Yes' %}
       <h2 class="govuk-heading-m">
-        Pension Credit bank details
+        If you receive Pension Credit
       </h2>
       <p class="govuk-body">
-        If you want to change the bank details we use to pay your Pension Credit, <a href="https://www.gov.uk/pension-credit/change-of-circumstances" target="_blank">contact the Pension Service by phone or post (opens in new tab)</a>.
+        If you want to change the bank details we use to pay your Pension Credit, <a href="contact-pension-service.html" target="_blank">contact the Pension Service by phone or post (opens in new tab)</a>.
       </p>
-    {% endif %}
-    {% if data['other-benefits'] == 'Attendance Allowance' %}
-      <h2 class="govuk-heading-m">
-        Attendance Allowance bank details
-      </h2>
-      <p class="govuk-body">
-        If you want to change the bank details we use to pay your Attendance Allowance, <a href="https://www.gov.uk/disability-benefits-helpline" target="_blank">contact the Disability Service Centre by phone or post (opens in new tab)</a>.
-      </p>
-    {% elif data['other-benefits'] == 'Disability Living Allowance (DLA)' %}
-      <h2 class="govuk-heading-m">
-        Disability Living Allowance (DLA) bank details
-      </h2>
-      <p class="govuk-body">
-        If you want to change the bank details we use to pay your DLA, <a href="https://www.gov.uk/disability-benefits-helpline" target="_blank">contact the Disability Service Centre by phone or post (opens in new tab)</a>.
-      </p>
-    {% elif data['other-benefits'] == 'Personal Independence Payment (PIP)' %}
-      <h2 class="govuk-heading-m">
-        Personal Independence Payment (PIP) bank details
-      </h2>
-      <p class="govuk-body">
-        If you want to change the bank details we use to pay your PIP, <a href="https://www.gov.uk/disability-benefits-helpline" target="_blank">contact the Disability Service Centre by phone or post (opens in new tab)</a>.
-      </p>
-    {% endif %}
-
       <h2 class="govuk-heading-m">
         Help improve this service
       </h2>

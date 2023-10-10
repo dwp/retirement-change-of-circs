@@ -59,8 +59,7 @@
                       Email address
                     </label>
                     <div id="email-hint" class="govuk-hint">
-
-                      We will only use this to send a confirmation email.
+                      We will only use this to confirm your change has been made.
                     </div>
                     <input class="govuk-input" id="enter-email" name="enter-email" type="email" spellcheck="false" autocomplete="email" value="{{ data['enter-email'] }}">
                   </div>
@@ -80,26 +79,3 @@
   </div>
 
 {% endblock %}
-
-{% block footer %}
-    {{ govukFooter({
-      meta: {
-        items: [
-          {
-            href: "email-alt",
-            text: "Email entry if none on record"
-          },
-          {
-            href: "https://govuk-prototype-kit.herokuapp.com/",
-            text: "GOV.UK Prototype Kit " + releaseVersion
-          },
-          {
-            href: "/prototype-admin/clear-data",
-            text: "Clear data"
-          }
-        ],
-        visuallyHiddenTitle: "Footer links"
-      }
-    }) }}
-  {% endblock %}
-

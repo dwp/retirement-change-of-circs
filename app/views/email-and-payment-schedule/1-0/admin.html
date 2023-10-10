@@ -22,7 +22,7 @@
         <hr class="govuk-!-margin-top-5 govuk-!-margin-bottom-5">
         <h2 class="govuk-heading-m">Payment schedule</h2>
         <div class="govuk-form-group">
-          <label class="govuk-label" for="next-payment">
+          <label class="govuk-label" for="next-payment-date">
             Next payment date
           </label>
             <div id="next-payment-hint" class="govuk-hint">
@@ -76,6 +76,16 @@
             <option value="Every week">Every week</option>
           </select>
         </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="following-payment-date">
+            Following months payment date
+          </label>
+          <div id="next-payment-hint" class="govuk-hint">
+            This will be used on <a href="you-have-changed-your-bank-details&alt.html">confirmation page for user changing bank details too close to next payment</a>.<br>Enter as day of week, day number, month and year, e.g. Monday 9 January 2023
+          </div>
+          <input class="govuk-input govuk-input--width-20" id="following-payment-date" name="following-payment-date" type="text" value="">
+        </div>
         <hr class="govuk-!-margin-top-5 govuk-!-margin-bottom-5">
 
         <h2 class="govuk-heading-m">Change of payment frequency</h2>
@@ -96,7 +106,7 @@
           <select class="govuk-select" id="frequency-scenario-select" name="frequency-scenario-select">
             <option value="1">Scenario 1 - Next payment, part-payment, new regular payment</option>
             <option value="2">Scenario 2 - Part-payment, new regular payment</option>
-            <option value="3">Scenario 3 - Straight onto new regular payment</option>
+            <option value="3">Scenario 3 - Straight to new regular payment</option>
           </select>
         </div>
         <hr class="govuk-!-margin-top-5 govuk-!-margin-bottom-5">
@@ -276,7 +286,7 @@
           </label>
           <div class="govuk-radios govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="show-letter-format-yes" name="show-letter-format" type="radio" value="show-letter-format-yes" data-aria-controls="conditional-letter"  {{ checked("show-letter-format", "show-letter-format-yes") }}>
+              <input class="govuk-radios__input" id="show-letter-format-yes" name="show-letter-format" type="radio" value="yes" data-aria-controls="conditional-letter"  {{ checked("show-letter-format", "yes") }}>
               <label class="govuk-label govuk-radios__label" for="show-letter-format-yes">
                 Yes
               </label>
@@ -286,17 +296,14 @@
                     Alternative format for letters
                   </label>
                   <select class="govuk-select" id="letter-format" name="letter-format">
-                    <option value="Audio cassette">Audio cassette</option>
-                    <option value="Audio CD">Audio CD</option>
-                    <option value="Audio MP3">Audio MP3</option>
-                    <option value="Braille">Braille</option>
                     <option value="Large print">Large print</option>
+                    <option value="Braille">Braille</option>
                   </select>
                 </div>
               </div>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="show-letter-format-no" name="show-letter-format" type="radio" value="show-letter-format-no"  {{ checked("show-letter-format", "show-letter-format-no") }}>
+              <input class="govuk-radios__input" id="show-letter-format-no" name="show-letter-format" type="radio" value="no"  {{ checked("show-letter-format", "no") }}>
               <label class="govuk-label govuk-radios__label" for="show-letter-format-no">
                 No
               </label>
