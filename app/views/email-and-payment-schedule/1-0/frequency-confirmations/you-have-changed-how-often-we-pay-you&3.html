@@ -41,9 +41,9 @@ We will now pay your State Pension
             every 2 weeks
           {% endif %} starting from
           {% if data['next-payment-day'] %}
-            <span>{{ data | isoDateFromDateInput("next-payment") | duration(2, "weeks") | govukDate }}</span>
+            <span>{{ data | isoDateFromDateInput("next-payment") | duration(2, "weeks") | govukDate }}.</span>
           {% else %}
-            Friday 25 August 2023
+            Friday 25 August 2023.
           {% endif %}
         </p>
 
@@ -51,19 +51,19 @@ We will now pay your State Pension
         <p class="govuk-body">
           We will pay you
           {% if data['next-payment-amount'] %}
-            {{ (data['next-payment-amount']/2) | fixed | currency }}
+            {{ (data['next-payment-amount']/4) | fixed | currency }}
           {% else %}
             £407.70
           {% endif %}
           {% if data['frequency-select'] %}
             <span style="text-transform:lowercase;">{{ data['frequency-select'] }}</span>
           {% else %}
-            every 2 weeks
+            every week
           {% endif %} starting from
           {% if data['next-payment-day'] %}
-            <span>{{ data | isoDateFromDateInput("next-payment") | duration(1, "weeks") | govukDate }}</span>
+            <span>{{ data | isoDateFromDateInput("next-payment") | duration(1, "weeks") | govukDate }}.</span>
           {% else %}
-            Friday 25 August 2023
+            Friday 25 August 2023.
           {% endif %}
         </p>
       {% else %}
@@ -80,9 +80,9 @@ We will now pay your State Pension
             every 2 weeks
           {% endif %} starting from
           {% if data['next-payment-day'] %}
-            <span>{{ data | isoDateFromDateInput("next-payment") | duration(2, "weeks") | govukDate }}</span>
+            <span>{{ data | isoDateFromDateInput("next-payment") | duration(2, "weeks") | govukDate }}.</span>
           {% else %}
-            Friday 25 August 2023
+            Friday 25 August 2023.
           {% endif %}
         </p>
       {% endif %}

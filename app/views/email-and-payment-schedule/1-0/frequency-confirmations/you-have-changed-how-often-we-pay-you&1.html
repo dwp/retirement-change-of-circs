@@ -84,7 +84,7 @@
         <p class="govuk-body">
           Your payment of
           {% if data['next-payment-amount'] %}
-            £{{ data['next-payment-amount'] }}
+            £{{ data['next-payment-amount'] | currency }}
           {% else %}
             £815.40
           {% endif %}
@@ -214,7 +214,7 @@
         <p class="govuk-body">
           Your payment of
           {% if data['next-payment-amount'] %}
-            £{{ data['next-payment-amount'] }}
+            {{ data['next-payment-amount'] | currency }}
           {% else %}
             £815.40
           {% endif %}
@@ -343,7 +343,7 @@
       <p class="govuk-body">
         Your payment of
         {% if data['next-payment-amount'] %}
-          £{{ data['next-payment-amount'] }}
+          £{{ data['next-payment-amount'] | currency }}
         {% else %}
           £815.40
         {% endif %}
