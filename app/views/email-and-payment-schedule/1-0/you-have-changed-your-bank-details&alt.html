@@ -17,18 +17,18 @@
       <h2 class="govuk-heading-m">What happens next</h2>
       <p class="govuk-body">
         We sent your next State Pension payment before you changed your bank details. It will be paid into your previous account on 
-        {% if data['next-payment-date'] %}
-          {{ data['next-payment-date'] }}.
+        {% if data['next-payment-day'] %}
+            {{ data | isoDateFromDateInput("next-payment") | govukDate }}.
         {% else %}
-          Monday 6 February 2023.
+          Friday 4 August 2023.
         {% endif %}
       </p>
       <p class="govuk-body">
         Starting from 
-        {% if data['following-payment-date'] %}
-          {{ data['following-payment-date'] }},
+        {% if data['next-payment-day'] %}
+            {{ data | isoDateFromDateInput("next-payment") | duration(4, "weeks") | govukDate }},
         {% else %}
-          Monday 6 March 2023,
+          Friday 1 September 2023,
         {% endif %}
         your State Pension payments will be paid into your new account.
       </p>

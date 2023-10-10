@@ -90,13 +90,13 @@ We will now pay your State Pension
       <p class="govuk-body">
         {% if data['frequency-email'] == 'frequency-confirmation-yes' %}
           We have sent you an email to confirm you have changed how often we will pay your State Pension. We will also send you a letter
-          {% if data['letter-format'] %}
+          {% if data['show-letter-format'] == 'show-letter-format-yes' %}
             in <span style="text-transform: lowercase;">{{ data['letter-format'] }}</span> format
           {% endif %}
            in the post.
         {% else %}
           We will send you a letter 
-          {% if data['letter-format'] %}
+          {% if data['show-letter-format'] == 'show-letter-format-yes' %}
             in <span style="text-transform: lowercase;">{{ data['letter-format'] }}</span> format
           {% endif %}
           to confirm you have changed how often we will pay your State Pension.
