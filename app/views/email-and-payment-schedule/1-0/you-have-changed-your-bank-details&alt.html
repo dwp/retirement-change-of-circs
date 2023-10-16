@@ -16,7 +16,7 @@
       <!-- <p class="govuk-body">We have sent you a confirmation email.</p> -->
       <h2 class="govuk-heading-m">What happens next</h2>
       <p class="govuk-body">
-        We sent your next State Pension payment before you changed your bank details. It will be paid into your previous account on 
+        We sent your next State Pension payment before you changed your bank details. It will be paid into your previous account on
         {% if data['next-payment-day'] %}
             {{ data | isoDateFromDateInput("next-payment") | govukDate }}.
         {% else %}
@@ -24,7 +24,7 @@
         {% endif %}
       </p>
       <p class="govuk-body">
-        Starting from 
+        Starting from
         {% if data['next-payment-day'] %}
             {{ data | isoDateFromDateInput("next-payment") | duration(4, "weeks") | govukDate }},
         {% else %}
@@ -39,7 +39,7 @@
         If you receive Pension Credit
       </h2>
       <p class="govuk-body">
-        If you want to change the bank details we use to pay your Pension Credit, <a href="contact-pension-service.html" target="_blank">contact the Pension Service by phone or post (opens in new tab)</a>.
+        If you want to change the bank details we use to pay your Pension Credit, <a href="https://www.gov.uk/pension-credit/change-of-circumstances" target="_blank">contact the Pension Service by phone or post (opens in new tab)</a>.
       </p>
       <h2 class="govuk-heading-m">
         Help improve this service
