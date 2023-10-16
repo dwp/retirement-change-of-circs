@@ -31,3 +31,26 @@
   </div>
 
 {% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "email",
+            text: "Email entry show current"
+          },
+          {
+            href: "https://govuk-prototype-kit.herokuapp.com/",
+            text: "GOV.UK Prototype Kit " + releaseVersion
+          },
+          {
+            href: "/prototype-admin/clear-data",
+            text: "Clear data"
+          }
+        ],
+        visuallyHiddenTitle: "Footer links"
+      }
+    }) }}
+  {% endblock %}
+
