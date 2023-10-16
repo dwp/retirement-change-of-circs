@@ -13,8 +13,8 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">Email confirmation</h1>
-      <p>We will send an email to confirm your change.</p>
-      <p>This is the email address you gave when you started receiving your State Pension.</p>
+      <p>We will send an email when your change has been made.</p>
+      <p>This is the email address you gave when you started to get your State Pension.</p>
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -29,7 +29,7 @@
           </dd>
         </div>
       </dl>
-      <form class="form" action="check-answers" method="post">
+      <form class="form" action="../check-your-details" method="post">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" role="group" aria-describedby="change-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -59,17 +59,18 @@
                       Email address
                     </label>
                     <div id="email-hint" class="govuk-hint">
-                      We will only use this to send you confirmation of your change
+
+                      We will only use this to send a confirmation email.
                     </div>
                     <input class="govuk-input" id="enter-email" name="enter-email" type="email" spellcheck="false" autocomplete="email" value="{{ data['enter-email'] }}">
                   </div>
                 </div>
               </div>
-              
+
             </div>
           </fieldset>
         </div>
-        
+
         <button class="govuk-button" data-module="govuk-button">
           Continue
         </button>
@@ -79,3 +80,25 @@
   </div>
 
 {% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "email-alt",
+            text: "Email entry if none on record"
+          },
+          {
+            href: "https://govuk-prototype-kit.herokuapp.com/",
+            text: "GOV.UK Prototype Kit " + releaseVersion
+          },
+          {
+            href: "/prototype-admin/clear-data",
+            text: "Clear data"
+          }
+        ],
+        visuallyHiddenTitle: "Footer links"
+      }
+    }) }}
+  {% endblock %}

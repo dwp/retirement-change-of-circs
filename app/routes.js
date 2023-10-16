@@ -929,6 +929,22 @@ router.post('/how-often-single6', function (req, res) {
 
 });
 
+// DO YOU WANT EMAIL BANK
+router.post('/email-conf-bank', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var frequencyBankConf = req.session.data['bank-email']
+
+  // Check whether the variable matches a condition
+  if (frequencyBankConf == "bank-confirmation-yes"){
+    // Send user to next page
+    res.redirect('/email-and-payment-schedule/1-0/bank-email/email.html')
+  } else {
+    res.redirect('/email-and-payment-schedule/1-0/check-your-details.html')
+  }
+
+});
+
 // DO YOU WANT EMAIL FREQUENCY
 router.post('/email-conf-frequency', function (req, res) {
 
