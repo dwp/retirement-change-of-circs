@@ -26,11 +26,11 @@
             {% else %}
               £815.40
             {% endif %}
-             on
+             on Friday
             {% if data['next-payment-day'] %}
               {{ data | isoDateFromDateInput("next-payment") | govukDate }}
             {% else %}
-              Friday 4 August 2023
+              4 August 2023
             {% endif %}
           </li>
           <li>
@@ -39,7 +39,7 @@
             {% else %}
               {{ (815.40/4) | fixed | currency  }}
             {% endif %}
-            on
+            on Friday
             {% if data['next-payment-day'] %}
               <span>{{ data | isoDateFromDateInput("next-payment") | duration(1, "weeks") | govukDate }}</span>
             {% else %}
@@ -57,11 +57,11 @@
             {% else %}
               every 2 weeks
             {% endif %}
-            starting from
+            starting from Friday
             {% if data['next-payment-day'] %}
               <span>{{ data | isoDateFromDateInput("next-payment") | duration(3, "weeks") | govukDate }}</span>
             {% else %}
-              Friday 25 August 2023
+              25 August 2023
             {% endif %}
           </li>
         </ul>
@@ -144,7 +144,7 @@
           {% if data['next-payment-day'] %}
               <span>{{ data | isoDateFromDateInput("next-payment") | duration(3, "weeks") | govukDate | dropYear }}.</span>
             {% else %}
-              Friday 25 August.
+              25 August.
           {% endif %}
         </p>
 
@@ -156,11 +156,11 @@
             {% else %}
               £815.40
             {% endif %}
-            on
+            on Friday
             {% if data['next-payment-day'] %}
               {{ data | isoDateFromDateInput("next-payment") | govukDate }}
             {% else %}
-              Friday 4 August 2023
+              4 August 2023
             {% endif %}
           </li>
           <li>
@@ -169,11 +169,11 @@
             {% else %}
               {{ ((815.40/4)*3) | fixed | currency  }}
             {% endif %}
-            on
+            on Friday
             {% if data['next-payment-day'] %}
               <span>{{ data | isoDateFromDateInput("next-payment") | duration(3, "weeks") | govukDate }}</span>
             {% else %}
-              Friday 25 August 2023
+              25 August 2023
             {% endif %}
           </li>
           <li>
@@ -187,11 +187,11 @@
             {% else %}
               every week
             {% endif %}
-            starting from
+            starting from Friday
             {% if data['next-payment-day'] %}
               <span>{{ data | isoDateFromDateInput("next-payment") | duration(4, "weeks") | govukDate }}</span>
             {% else %}
-              Friday 1 September 2023
+              1 September 2023
             {% endif %}
           </li>
         </ul>
@@ -274,7 +274,7 @@
           {% if data['next-payment-day'] %}
               <span>{{ data | isoDateFromDateInput("next-payment") | duration(4, "weeks") | govukDate | dropYear }}.</span>
             {% else %}
-              Friday 1 September.
+              1 September.
           {% endif %}
         </p>
       {% else %}
@@ -285,11 +285,11 @@
           {% else %}
             £815.40
           {% endif %}
-           on
+           on Friday
           {% if data['next-payment-day'] %}
             {{ data | isoDateFromDateInput("next-payment") | govukDate }}
           {% else %}
-            Friday 4 August 2023
+            4 August 2023
           {% endif %}
         </li>
         <li>
@@ -298,11 +298,11 @@
           {% else %}
             {{ (815.40/4) | fixed | currency  }}
           {% endif %}
-          on
+          on Friday
           {% if data['next-payment-day'] %}
             <span>{{ data | isoDateFromDateInput("next-payment") | duration(1, "weeks") | govukDate }}</span>
           {% else %}
-            Friday 11 August 2023
+            11 August 2023
           {% endif %}
         </li>
         <li>
@@ -316,11 +316,11 @@
           {% else %}
             every 2 weeks
           {% endif %}
-          starting from
+          starting from Friday
           {% if data['next-payment-day'] %}
             <span>{{ data | isoDateFromDateInput("next-payment") | duration(3, "weeks") | govukDate }}</span>
           {% else %}
-            Friday 25 August 2023
+            25 August 2023
           {% endif %}
         </li>
       </ul>
@@ -403,7 +403,7 @@
         {% if data['next-payment-day'] %}
             <span>{{ data | isoDateFromDateInput("next-payment") | duration(3, "weeks") | govukDate | dropYear  }}.</span>
           {% else %}
-            Friday 25 August.
+            25 August.
         {% endif %}
       </p>
       {% endif %}
