@@ -53,17 +53,15 @@
         </ul>
         <p class="govuk-body">
           {% if data['frequency-email'] == 'frequency-confirmation-yes' %}
-            We have sent you an email to confirm you have changed how often we will pay your State Pension. We will also send you a letter
+            We have sent you an email to confirm you have changed how often we will pay your State Pension. We will also send you a letter in the post.
             {% if data['show-letter-format'] == 'show-letter-format-yes' %}
-              in <span style="text-transform: lowercase;">{{ data['letter-format'] }}</span> format
+              Letters are sent in the format you requested.
             {% endif %}
-             in the post.
           {% else %}
-            We will send you a letter
+            We will send you a letter to confirm you have changed how often we will pay your State Pension.
             {% if data['show-letter-format'] == 'show-letter-format-yes' %}
-              in <span style="text-transform: lowercase;">{{ data['letter-format'] }}</span> format
+              Letters are sent in the format you requested.
             {% endif %}
-            to confirm you have changed how often we will pay your State Pension.
           {% endif %}
         </p>
         <h3 class="govuk-heading-s">Payment details</h3>
