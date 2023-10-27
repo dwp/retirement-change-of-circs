@@ -33,7 +33,17 @@
         your State Pension payments will be paid into your new account.
       </p>
       <p class="govuk-body">
-        We will send you a letter to confirm you have changed your bank details.
+        {% if data['bank-email'] == 'bank-confirmation-yes' %}
+          We have sent you an email to confirm you have changed your bank details. We will also send you a letter in the post.
+          {% if data['show-letter-format'] == 'show-letter-format-yes' %}
+            Letters are sent in the format you requested.
+          {% endif %}
+        {% else %}
+          We will send you a letter to confirm you have changed your bank details.
+          {% if data['show-letter-format'] == 'show-letter-format-yes' %}
+            Letters are sent in the format you requested.
+          {% endif %}
+        {% endif %}
       </p>
       <h2 class="govuk-heading-m">
         If you receive Pension Credit
