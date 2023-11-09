@@ -18,13 +18,13 @@
         </span>
         Your State Pension
       </h1>
-      <h2 class="govuk-heading-m">
-        This is a new service
-      </h2>
-      <p class="govuk-body">
-        You can use this service to change your bank details and how often we pay your State Pension. You'll be able to report other changes online in the future.
-      </p>
       <h2 class="govuk-heading-m">Payment schedule</h2>
+      <p class="govuk-body">
+        You can only change how often we pay your State Pension online when your payment schedule is available.
+      </p>
+      <p class="govuk-body">
+        <a href="contact-pension-service.html" target="_blank">Contact the Pension Service by phone or post (opens in new tab)</a> if there is a problem with your payment.
+      </p>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row" style="border-top: 1px solid #b1b4b6;padding-top:15px;">
           <dt class="govuk-summary-list__key">
@@ -37,25 +37,13 @@
               Every 4 weeks (13 payments a year)
             {% endif %}
           </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link govuk-!-font-size-19" href="frequency-benefits/benefits.html">
-              Change<span class="govuk-visually-hidden"> how often we pay your State Pension</span>
-            </a>
-          </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Next payment date
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if data['next-payment-date'] %}
-              {{ data['next-payment-date'] }}
-            {% else %}
-              Friday 4 August 2023
-            {% endif %}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-
+            Not available
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -63,23 +51,14 @@
             Next payment amount
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if data['next-payment-amount'] %}
-              {{ data['next-payment-amount'] | currency }}
-            {% else %}
-              £815.40
-            {% endif %}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-
+            Not available
           </dd>
         </div>
       </dl>
-      <div style="display:inline-block;width:100%;">
-        <h2 class="govuk-heading-m" style="float:left;">Bank or building society details</h2>
-        <a class="govuk-link govuk-!-font-size-19" href="bank-benefits/benefits.html" style="float:right;vertical-align: baseline;">
-          Change<span class="govuk-visually-hidden"> bank or building society details</span>
-        </a>
-      </div>
+      <h2 class="govuk-heading-m">Bank or building society details</h2>
+      <p class="govuk-body">
+        You can only change your bank or building society details online when your payment schedule is available.
+      </p>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row" style="border-top: 1px solid #b1b4b6;padding-top:15px;">
           <dt class="govuk-summary-list__key">
@@ -162,7 +141,6 @@
               YO3 1SQ
             {% endif %}
           </dd>
-          
         </div>
         <!-- <div class="govuk-summary-list__row" style="border-top: 1px solid #b1b4b6;padding-top:15px;">
           <dt class="govuk-summary-list__key">
@@ -200,7 +178,6 @@
               01904 4461056
             {% endif %}
           </dd>
-          
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -213,7 +190,6 @@
               01904 4461056
             {% endif %}
           </dd>
-          
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -226,7 +202,6 @@
               077123 45678
             {% endif %}
           </dd>
-          
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -239,7 +214,6 @@
               email@me.co.uk
             {% endif %}
           </dd>
-          
         </div>
         {% if data['show-letter-format'] == 'yes' %}
         <div class="govuk-summary-list__row">
@@ -249,7 +223,6 @@
           <dd class="govuk-summary-list__value">
               {{ data['letter-format'] }}
           </dd>
-          
         </div>
         {% endif %}
       </dl>
@@ -285,8 +258,8 @@
       meta: {
         items: [
           {
-            href: "your-state-pension&issues.html",
-            text: "Alternative overview page"
+            href: "cannot-show-details.html",
+            text: "Not found page"
           },
           {
             href: "https://govuk-prototype-kit.herokuapp.com/",

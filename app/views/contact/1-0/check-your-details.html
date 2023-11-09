@@ -1,0 +1,187 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your details - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Check your details before you submit them</h1>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              UK bank or building society account
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Yes
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="bank-change-1.html">
+                Change<span class="govuk-visually-hidden"> if you want to use a UK bank or building society account</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row" style="border:0;">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              New account details
+            </dt>
+            <dd class="govuk-summary-list__value">
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="bank-change-2.html">
+                Change<span class="govuk-visually-hidden"> new account details</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row" style="border:0;">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Name on the account
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['account-holder'] %}
+                {{ data['account-holder'] }}
+              {% else %}
+                M Jones
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row" style="border:0;">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Sort code
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['sort-code'] %}
+                {{ data['sort-code'] }}
+              {% else %}
+                112233
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row" style="border:0;">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Account number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['account-number'] %}
+                {{ data['account-number'] }}
+              {% else %}
+                12345678
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Building society roll number (if you have one)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['roll-number'] %}
+                {{ data['roll-number'] }}
+              {% else %}
+                Not provided
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Do you want a confirmation email?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['bank-email'] == 'bank-confirmation-yes' %}
+                Yes
+              {% else %}
+                No
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="bank-email/would-you-like-email-confirmation.html">
+                Change<span class="govuk-visually-hidden"> if you want a confirmation email</span>
+              </a>
+            </dd>
+          </div>
+          {% if data['bank-email'] == 'bank-confirmation-yes' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key" style="width:40%;">
+                Email address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['confirmation-email'] == 'current' %}
+                  {% if data['current-email'] %}
+                    {{ data['current-email'] }}
+                  {% elif data['enter-email-alt'] %}
+                    {{ data['enter-email-alt'] }}
+                  {% else %}
+                    email@me.co.uk
+                  {% endif %}
+                {% elif data['confirmation-email'] == 'new' %}
+                  {{ data['enter-email'] }}
+                {% endif %}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="frequency-email/email.html">
+                  Change<span class="govuk-visually-hidden"> where we should send your confirmation email</span>
+                </a>
+              </dd>
+            </div>
+          {% endif %}
+        </dl>
+        
+        <h2 class="govuk-heading-m">Submit your new details</h2>
+        <p class="govuk-body">By submitting this change you are confirming that the information you are giving is complete and correct.</p>
+        <!-- <p class="govuk-body">By submitting this change, you agree:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>the information you have given is complete and correct</li>
+          <li>to tell the Department for Work and Pensions (DWP) straight away if your circumstances change, such as your address, bank details or marital status</li>
+          <li>to pay back any State Pension if you are paid too much</li>
+        </ul>
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+            You may be prosecuted or have to pay a financial penalty if you give wrong or incomplete information, or if you don't report any changes straight away
+          </strong>
+        </div> -->
+        <form action="you-have-changed-your-bank-details" method="post" novalidate>
+          <input type="hidden" name="answers-checked" value="true">
+          <button class="govuk-button" data-module="govuk-button">
+            Confirm and submit
+          </button>
+        </form>
+    </div>
+  </div>
+
+{% endblock %}
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "../2-0/check-answers.html",
+            text: "Lighter declaration",
+            attributes: {
+              target: "_blank"
+            }
+          },
+          {
+            href: "https://govuk-prototype-kit.herokuapp.com/",
+            text: "GOV.UK Prototype Kit " + releaseVersion
+          },
+          {
+            href: "/prototype-admin/clear-data",
+            text: "Clear data"
+          }
+        ],
+        visuallyHiddenTitle: "Footer links"
+      }
+    }) }}
+  {% endblock %}

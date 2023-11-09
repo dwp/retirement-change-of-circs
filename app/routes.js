@@ -981,4 +981,162 @@ router.post('/frequency-scenario', function (req, res) {
 
 });
 
+
+// CONTACT DETAILS CHANGE 1-0
+// ELIGIBILITY ROUTING
+
+// Run this code when a form is submitted to 'were-invited'
+router.post('/were-invited11', function (req, res) {
+
+  // Make a variable and give it the value from 'invited'
+  var wereYouInvited = req.session.data['invited']
+
+  // Check whether the variable matches a condition
+  if (wereYouInvited == "letter"){
+    // Send user to next page
+    res.redirect('/contact/1-0/privacy-notice')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/contact/1-0/cannot-use-service')
+  }
+
+});
+
+//BANK QUESTION ROUTING
+
+// Run this code when a form is submitted to 'account-type-mvp'
+router.post('/account-type11', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var accountType = req.session.data['bank-or-build']
+
+  // Check whether the variable matches a condition
+  if (accountType == "uk-account"){
+    // Send user to next page
+    res.redirect('/contact/1-0/bank-or-building-society-details')
+  } else {
+    res.redirect('/contact/1-0/can-only-use-uk-account.html')
+  }
+
+});
+
+//PAYMENT FREQUENCY SINGLE OPTION ROUTING
+
+//PAYMENT FREQUENCY MULTIPLE OPTION ROUTING
+
+// Run this code when a form is submitted to 'account-type-mvp'
+router.post('/how-often7', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var frequencySelected = req.session.data['frequency-select']
+
+  // Check whether the variable matches a condition
+  if (frequencySelected == "Every 4 weeks"){
+    // Send user to next page
+    res.redirect('/contact/1-0/keep-how-often-we-will-pay-you.html')
+  } else {
+    res.redirect('/contact/1-0/frequency-email/would-you-like-email-confirmation.html')
+  }
+
+});
+
+// FOR ALT FREQUENCY OPTION VERSION
+router.post('/how-often-alt7', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var frequencySelected = req.session.data['frequency-select']
+
+  // Check whether the variable matches a condition
+  if (frequencySelected == "Every 2 weeks"){
+    // Send user to next page
+    res.redirect('/contact/1-0/keep-how-often-we-will-pay-you&alt.html')
+  } else {
+    res.redirect('/contact/1-0/frequency-email/would-you-like-email-confirmation.html')
+  }
+
+});
+
+// FOR SINGLE FREQUENCY OPTION VERSION
+router.post('/how-often-single7', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var frequencySelected = req.session.data['frequency-select']
+
+  // Check whether the variable matches a condition
+  if (frequencySelected == "Every 4 weeks"){
+    // Send user to next page
+    res.redirect('/contact/1-0/keep-how-often-we-will-pay-you.html')
+  } else {
+    res.redirect('/contact/1-0/frequency-email/would-you-like-email-confirmation.html')
+  }
+
+});
+
+// DO YOU WANT EMAIL BANK
+router.post('/email-conf-bank1', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var frequencyBankConf = req.session.data['bank-email']
+
+  // Check whether the variable matches a condition
+  if (frequencyBankConf == "bank-confirmation-yes"){
+    // Send user to next page
+    res.redirect('/contact/1-0/bank-email/email.html')
+  } else {
+    res.redirect('/contact/1-0/check-your-details.html')
+  }
+
+});
+
+// DO YOU WANT EMAIL FREQUENCY
+router.post('/email-conf-frequency1', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var frequencyEmailConf = req.session.data['frequency-email']
+
+  // Check whether the variable matches a condition
+  if (frequencyEmailConf == "frequency-confirmation-yes"){
+    // Send user to next page
+    res.redirect('/contact/1-0/frequency-email/email.html')
+  } else {
+    res.redirect('/contact/1-0/check-how-often-we-will-pay-you.html')
+  }
+
+});
+
+// DO YOU WANT EMAIL CONTACT DETAILS
+router.post('/email-conf-contact1', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var contactEmailConf = req.session.data['contact-email']
+
+  // Check whether the variable matches a condition
+  if (contactEmailConf == "contact-confirmation-yes"){
+    // Send user to next page
+    res.redirect('/contact/1-0/contact-email/email.html')
+  } else {
+    res.redirect('/contact/1-0/check-your-details-contact.html')
+  }
+
+});
+
+// ROUTING TO RIGHT CONFIRMATION VERSION FOR THE FREQUENCY CHANGE SCENARIO SELECTED
+router.post('/frequency-scenario1', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var frequencyScenario = req.session.data['frequency-scenario-select']
+
+  // Check whether the variable matches a condition
+  if (frequencyScenario == "1"){
+    // Send user to next page
+    res.redirect('/contact/1-0/frequency-confirmations/you-have-changed-how-often-we-pay-you&1.html')
+  } else if (frequencyScenario == "2"){
+    res.redirect('/contact/1-0/frequency-confirmations/you-have-changed-how-often-we-pay-you&2.html')
+  } else if (frequencyScenario == "3"){
+    res.redirect('/contact/1-0/frequency-confirmations/you-have-changed-how-often-we-pay-you&3.html')
+  } else {
+    res.redirect('/contact/1-0/frequency-confirmations/you-have-changed-how-often-we-pay-you&1.html')
+  }
+
+});
 module.exports = router

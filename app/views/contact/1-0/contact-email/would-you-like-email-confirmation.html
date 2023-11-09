@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Do you want an email to confirm when your change has been made? - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/email-conf-contact1" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Do you want an email to confirm when your change has been made?
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact-confirmation-yes" name="contact-email" type="radio" value="contact-confirmation-yes" {{ checked("contact-email", "contact-confirmation-yes") }}>
+                <label class="govuk-label govuk-radios__label" for="contact-confirmation-yes">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact-confirmation-no" name="contact-email" type="radio" value="contact-confirmation-no" {{ checked("frequency-email", "contact-confirmation-no") }}>
+                <label class="govuk-label govuk-radios__label" for="contact-confirmation-no">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
