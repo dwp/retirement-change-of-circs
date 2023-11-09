@@ -1,0 +1,53 @@
+{% extends "layout_noback.html" %}
+
+{% block pageTitle %}
+  We cannot show your State Pension details - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="state-pension-playback" method="post">
+        <div class="govuk-form-group">
+          <h1 class="govuk-heading-l">
+            We cannot show your State Pension details
+          </h1>
+          <p class="govuk-body">
+            If you need to report a change in your circumstances <a href="contact-pension-service.html">contact the Pension Service by phone or post</a>.
+          </p> 
+          <p class="govuk-body">
+            If you live in Northern Ireland, <a href="https://www.nidirect.gov.uk/contacts/northern-ireland-pension-centre">contact the Northern Ireland Pension Centre by phone or post</a>.
+          </p>
+      </div>
+    </form>
+    <p class="govuk-body">
+      <a href="https://www.gov.uk/">Return to GOV.UK</a>
+    </p>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "state-pension-playback.html",
+            text: "Original overview page"
+          },
+          {
+            href: "https://govuk-prototype-kit.herokuapp.com/",
+            text: "GOV.UK Prototype Kit " + releaseVersion
+          },
+          {
+            href: "/prototype-admin/clear-data",
+            text: "Clear data"
+          }
+        ],
+        visuallyHiddenTitle: "Footer links"
+      }
+    }) }}
+  {% endblock %}
