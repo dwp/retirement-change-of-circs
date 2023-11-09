@@ -38,7 +38,7 @@
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link govuk-!-font-size-19" href="frequency-benefits/benefits.html">
+            <a class="govuk-link govuk-!-font-size-19" href="change-how-often-we-will-pay-you.html">
               Change<span class="govuk-visually-hidden"> how often we pay your State Pension</span>
             </a>
           </dd>
@@ -76,7 +76,7 @@
       </dl>
       <div style="display:inline-block;width:100%;">
         <h2 class="govuk-heading-m" style="float:left;">Bank or building society details</h2>
-        <a class="govuk-link govuk-!-font-size-19" href="bank-benefits/benefits.html" style="float:right;vertical-align: baseline;">
+        <a class="govuk-link govuk-!-font-size-19" href="do-you-want-uk-account.html" style="float:right;vertical-align: baseline;">
           Change<span class="govuk-visually-hidden"> bank or building society details</span>
         </a>
       </div>
@@ -162,7 +162,9 @@
               YO3 1SQ
             {% endif %}
           </dd>
-          
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
         </div>
         <!-- <div class="govuk-summary-list__row" style="border-top: 1px solid #b1b4b6;padding-top:15px;">
           <dt class="govuk-summary-list__key">
@@ -197,10 +199,23 @@
             {% if data['current-home-phone'] %}
               {{ data['current-home-phone'] }}
             {% else %}
-              01904 4461056
+              Not provided
             {% endif %}
           </dd>
-          
+          <dd class="govuk-summary-list__actions">
+              {% if data['current-home-phone'] %}
+                <ul class="govuk-summary-list__actions-list">  
+                  <li class="govuk-summary-list__actions-list-item">
+                    <a class="govuk-link" href="enter-home-phone.html">Change<span class="govuk-visually-hidden"> home phone number</span></a>
+                  </li>
+                  <li class="govuk-summary-list__actions-list-item">
+                    <a class="govuk-link" href="remove-home-phone.html">Remove<span class="govuk-visually-hidden"> home phone number</span></a>
+                  </li>
+                </ul>
+              {% else %}
+                <a class="govuk-link" href="enter-home-phone">Add<span class="govuk-visually-hidden"> home phone number</span></a>
+              {% endif %}
+          </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
