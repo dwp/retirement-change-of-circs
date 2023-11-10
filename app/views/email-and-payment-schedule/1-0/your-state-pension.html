@@ -48,8 +48,8 @@
             Next payment date
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if data['next-payment-date'] %}
-              {{ data['next-payment-date'] }}
+            {% if data['next-payment-day'] %}
+              Friday {{ data | isoDateFromDateInput("next-payment") | govukDate }}
             {% else %}
               Friday 4 August 2023
             {% endif %}
