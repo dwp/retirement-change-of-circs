@@ -39,7 +39,26 @@
               {% else %}
                 Every 2 weeks
               {% endif %}
-              starting from Friday 25 August 2023
+              starting from Friday 
+              {% if data['payment-frequency'] == 'Every 4 weeks (13 payments a year)' and data['frequency-select'] == 'Every 2 weeks' %}
+                {% if data['next-payment-day'] %}
+                  {{ data | isoDateFromDateInput("next-payment") | duration(3, "weeks") | govukDate }}
+                {% else %}
+                  25 August 2023
+                {% endif %}
+              {% elif data['payment-frequency'] == 'Every 4 weeks (13 payments a year)' and data['frequency-select'] == 'Every week' %}
+                {% if data['next-payment-day'] %}
+                  {{ data | isoDateFromDateInput("next-payment") | duration(4, "weeks") | govukDate }}
+                {% else %}
+                  1 September 2023
+                {% endif %}
+              {% else %}
+                {% if data['next-payment-day'] %}
+                  {{ data | isoDateFromDateInput("next-payment") | duration(3, "weeks") | govukDate }}
+                {% else %}
+                  25 August 2023
+                {% endif %}
+              {% endif %}
             </p>
           </dd>
           <dd class="govuk-summary-list__actions">
@@ -53,8 +72,8 @@
             Next payment date
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if data['next-payment-date'] %}
-              {{ data['next-payment-date'] }}
+            {% if data['next-payment-day'] %}
+              Friday {{ data | isoDateFromDateInput("next-payment") | govukDate }}
             {% else %}
               Friday 4 August 2023
             {% endif %}
@@ -79,7 +98,7 @@
           </dd>
         </div>
       </dl>
-      <p class="govuk-body govuk-!-margin-bottom-9"><a class="govuk-link govuk-!-font-size-19" href="detailed-payment-schedule.html">Check future/detailed payment schedule?</a></p>
+      <!-- <p class="govuk-body govuk-!-margin-bottom-9"><a class="govuk-link govuk-!-font-size-19" href="detailed-payment-schedule.html">Check future/detailed payment schedule?</a></p> -->
       <div style="display:inline-block;width:100%;">
         <h2 class="govuk-heading-m" style="float:left;">Bank or building society details</h2>
         <a class="govuk-link govuk-!-font-size-19" href="do-you-want-uk-account.html" style="float:right;vertical-align: baseline;">
