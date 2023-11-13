@@ -16,7 +16,7 @@
       <!-- <p class="govuk-body">We have sent you a confirmation email.</p> -->
       <h2 class="govuk-heading-m">What happens next</h2>
       <p class="govuk-body">
-        We will pay you:
+        We will pay you: <a href="../email-pdf/r1frequencyconfirmation.pdf">TESTING</a>
       </p>
       {% if data['payment-frequency'] == 'Every 4 weeks (13 payments a year)' and data['frequency-select'] == 'Every 2 weeks' %}
         <ul class="govuk-list govuk-list--bullet">
@@ -456,6 +456,10 @@
     {{ govukFooter({
       meta: {
         items: [
+        {
+          href: "../email-pdf/R1-frequency-confirmation.pdf",
+          text: "Email confirmation"
+        },
         {
           href: "you-have-changed-how-often-we-pay-you&1.html",
           text: "Scenario 1"
