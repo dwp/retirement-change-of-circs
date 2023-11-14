@@ -68,7 +68,7 @@
           <p class="govuk-body" style="margin:20px;">We will pay you 
             {% if data['payment-frequency'] == 'Every 4 weeks (13 payments a year)' and data['frequency-select'] == 'Every 2 weeks' %}
               {% if data['next-payment-amount'] %}
-                £{{ (data['next-payment-amount']/2)  }}
+                £{{ (data['next-payment-amount']/2) | round }}
               {% else %}
                 £407
               {% endif %}
@@ -79,7 +79,7 @@
               {% endif %}
             {% elif data['payment-frequency'] == 'Every 4 weeks (13 payments a year)' and data['frequency-select'] == 'Every week' %}
               {% if data['next-payment-amount'] %}
-                £{{ (data['next-payment-amount']/4)  }}
+                £{{ (data['next-payment-amount']/4) | round }}
               {% else %}
                 £203
               {% endif %}
@@ -90,7 +90,7 @@
               {% endif %}
             {% else %}
               {% if data['next-payment-amount'] %}
-                £{{ (data['next-payment-amount']/2) }}
+                £{{ (data['next-payment-amount']/2) | round }}
               {% else %}
                 £407
               {% endif %}
