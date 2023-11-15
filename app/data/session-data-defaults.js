@@ -20,9 +20,9 @@ Example usage:
 module.exports = {
 
 "full-name": "Alex Jones",
-"next-payment-day": "17",
+"next-payment-day": "24",
 "next-payment-month": "11",
 "next-payment-year": "2023",
-"next-payment-amount": "657.99"
+"next-payment-amount": "815.40"
 
 }
