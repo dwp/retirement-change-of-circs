@@ -23,6 +23,9 @@ module.exports = {
 "next-payment-day": "24",
 "next-payment-month": "11",
 "next-payment-year": "2023",
-"next-payment-amount": "815.40"
+"next-payment-amount": "815.40",
+"payment-frequency": "Every 4 weeks (13 payments a year)",
+"entitled-to2": "entitled",
+"frequency-scenario-select": "1"
 
 }
