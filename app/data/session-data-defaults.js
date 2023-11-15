@@ -19,6 +19,10 @@ Example usage:
 
 module.exports = {
 
-  // Insert values here
+"full-name": "Alex Jones",
+"next-payment-day": "17",
+"next-payment-month": "11",
+"next-payment-year": "2023",
+"next-payment-amount": "657.99"
 
 }
