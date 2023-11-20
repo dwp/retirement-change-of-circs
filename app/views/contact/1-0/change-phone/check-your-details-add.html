@@ -15,8 +15,8 @@
               New home phone number
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['new-home-phone-number'] %}
-                {{ data['new-home-phone-number'] }}
+              {% if data['new-home-phone'] %}
+                {{ data['new-home-phone'] }}
               {% else %}
                 0191 264 0884
               {% endif %}
@@ -33,19 +33,19 @@
               Do you want a confirmation email?
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['contact-email'] == 'contact-confirmation-yes' %}
+              {% if data['phone-email'] == 'phone-confirmation-yes' %}
                 Yes
               {% else %}
                 No
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="contact-email/would-you-like-email-confirmation.html">
+              <a class="govuk-link" href="email/would-you-like-email-confirmation.html">
                 Change<span class="govuk-visually-hidden"> if you want a confirmation email</span>
               </a>
             </dd>
           </div>
-          {% if data['contact-email'] == 'contact-confirmation-yes' %}
+          {% if data['phone-email'] == 'phone-confirmation-yes' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key" style="width:40%;">
                 Email address
@@ -64,7 +64,7 @@
                 {% endif %}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="contact-email/email.html">
+                <a class="govuk-link" href="email/email.html">
                   Change<span class="govuk-visually-hidden"> where we should send your confirmation email</span>
                 </a>
               </dd>

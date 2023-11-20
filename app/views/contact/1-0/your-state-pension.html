@@ -190,6 +190,9 @@
               YO5 1AB
             {% endif %}
           </dd>
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
         </div> -->
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -206,14 +209,14 @@
               {% if data['current-home-phone'] %}
                 <ul class="govuk-summary-list__actions-list">  
                   <li class="govuk-summary-list__actions-list-item">
-                    <a class="govuk-link" href="enter-home-phone.html">Change<span class="govuk-visually-hidden"> home phone number</span></a>
+                    <a class="govuk-link" href="change-phone/enter-home-phone.html">Change<span class="govuk-visually-hidden"> home phone number</span></a>
                   </li>
                   <li class="govuk-summary-list__actions-list-item">
-                    <a class="govuk-link" href="remove-home-phone.html">Remove<span class="govuk-visually-hidden"> home phone number</span></a>
+                    <a class="govuk-link" href="change-phone/remove-home-phone.html">Remove<span class="govuk-visually-hidden"> home phone number</span></a>
                   </li>
                 </ul>
               {% else %}
-                <a class="govuk-link" href="enter-home-phone">Add<span class="govuk-visually-hidden"> home phone number</span></a>
+                <a class="govuk-link" href="change-phone/enter-home-phone-add.html">Add<span class="govuk-visually-hidden"> home phone number</span></a>
               {% endif %}
           </dd>
         </div>
@@ -228,7 +231,9 @@
               01904 4461056
             {% endif %}
           </dd>
-          
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -241,7 +246,9 @@
               077123 45678
             {% endif %}
           </dd>
-          
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -254,7 +261,9 @@
               email@me.co.uk
             {% endif %}
           </dd>
-          
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
         </div>
         {% if data['show-letter-format'] == 'yes' %}
         <div class="govuk-summary-list__row">
@@ -264,7 +273,9 @@
           <dd class="govuk-summary-list__value">
               {{ data['letter-format'] }}
           </dd>
-          
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
         </div>
         {% endif %}
       </dl>
