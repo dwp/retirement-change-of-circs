@@ -1013,9 +1013,9 @@ router.post('/account-type11', function (req, res) {
   // Check whether the variable matches a condition
   if (accountType == "uk-account"){
     // Send user to next page
-    res.redirect('/contact/1-0/bank-or-building-society-details')
+    res.redirect('/contact/1-0/change-bank/bank-or-building-society-details')
   } else {
-    res.redirect('/contact/1-0/can-only-use-uk-account.html')
+    res.redirect('/contact/1-0/change-bank/can-only-use-uk-account.html')
   }
 
 });
@@ -1033,9 +1033,9 @@ router.post('/how-often7', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencySelected == "Every 4 weeks"){
     // Send user to next page
-    res.redirect('/contact/1-0/keep-how-often-we-will-pay-you.html')
+    res.redirect('/contact/1-0/change-frequency/keep-how-often-we-will-pay-you.html')
   } else {
-    res.redirect('/contact/1-0/frequency-email/would-you-like-email-confirmation.html')
+    res.redirect('/contact/1-0/change-frequency/email/would-you-like-email-confirmation.html')
   }
 
 });
@@ -1049,9 +1049,9 @@ router.post('/how-often-alt7', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencySelected == "Every 2 weeks"){
     // Send user to next page
-    res.redirect('/contact/1-0/keep-how-often-we-will-pay-you&alt.html')
+    res.redirect('/contact/1-0/change-frequency/keep-how-often-we-will-pay-you&alt.html')
   } else {
-    res.redirect('/contact/1-0/frequency-email/would-you-like-email-confirmation.html')
+    res.redirect('/contact/1-0/change-frequency/email/would-you-like-email-confirmation.html')
   }
 
 });
@@ -1065,12 +1065,34 @@ router.post('/how-often-single7', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencySelected == "Every 4 weeks"){
     // Send user to next page
-    res.redirect('/contact/1-0/keep-how-often-we-will-pay-you.html')
+    res.redirect('/contact/1-0/change-frequency/keep-how-often-we-will-pay-you.html')
   } else {
-    res.redirect('/contact/1-0/frequency-email/would-you-like-email-confirmation.html')
+    res.redirect('/contact/1-0/change-frequency/email/would-you-like-email-confirmation.html')
   }
 
 });
+
+
+// ROUTING TO RIGHT CONFIRMATION VERSION FOR THE FREQUENCY CHANGE SCENARIO SELECTED
+router.post('/frequency-scenario1', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var frequencyScenario = req.session.data['frequency-scenario-select']
+
+  // Check whether the variable matches a condition
+  if (frequencyScenario == "1"){
+    // Send user to next page
+    res.redirect('/contact/1-0/change-frequency/frequency-confirmations/you-have-changed-how-often-we-pay-you&1.html')
+  } else if (frequencyScenario == "2"){
+    res.redirect('/contact/1-0/change-frequency/frequency-confirmations/you-have-changed-how-often-we-pay-you&2.html')
+  } else if (frequencyScenario == "3"){
+    res.redirect('/contact/1-0/change-frequency/frequency-confirmations/you-have-changed-how-often-we-pay-you&3.html')
+  } else {
+    res.redirect('/contact/1-0/change-frequency/frequency-confirmations/you-have-changed-how-often-we-pay-you&1.html')
+  }
+
+});
+
 
 // DO YOU WANT EMAIL BANK
 router.post('/email-conf-bank1', function (req, res) {
@@ -1081,9 +1103,9 @@ router.post('/email-conf-bank1', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencyBankConf == "bank-confirmation-yes"){
     // Send user to next page
-    res.redirect('/contact/1-0/bank-email/email.html')
+    res.redirect('/contact/1-0/change-bank/bank-email/email.html')
   } else {
-    res.redirect('/contact/1-0/check-your-details.html')
+    res.redirect('/contact/1-0/change-bank/check-your-details.html')
   }
 
 });
@@ -1097,46 +1119,76 @@ router.post('/email-conf-frequency1', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencyEmailConf == "frequency-confirmation-yes"){
     // Send user to next page
-    res.redirect('/contact/1-0/frequency-email/email.html')
+    res.redirect('/contact/1-0/change-frequency/frequency-email/email.html')
   } else {
-    res.redirect('/contact/1-0/check-how-often-we-will-pay-you.html')
+    res.redirect('/contact/1-0/change-frequency/check-how-often-we-will-pay-you.html')
   }
 
 });
 
-// DO YOU WANT EMAIL CONTACT DETAILS
-router.post('/email-conf-contact1', function (req, res) {
+// DO YOU WANT EMAIL CONTACT DETAILS - CHANGE HOME PHONE
+router.post('/email-conf-phone1', function (req, res) {
 
   // Make a variable and give it the value from 'bank-or-build'
-  var contactEmailConf = req.session.data['contact-email']
+  var phoneEmailConf = req.session.data['phone-email']
 
   // Check whether the variable matches a condition
-  if (contactEmailConf == "contact-confirmation-yes"){
+  if (phoneEmailConf == "phone-confirmation-yes"){
     // Send user to next page
-    res.redirect('/contact/1-0/contact-email/email.html')
+    res.redirect('/contact/1-0/change-phone/email/email.html')
   } else {
-    res.redirect('/contact/1-0/check-your-details-contact.html')
+    res.redirect('/contact/1-0/change-phone/check-your-details.html')
   }
 
 });
 
-// ROUTING TO RIGHT CONFIRMATION VERSION FOR THE FREQUENCY CHANGE SCENARIO SELECTED
-router.post('/frequency-scenario1', function (req, res) {
+// DO YOU WANT EMAIL CONTACT DETAILS - ADD HOME PHONE
+router.post('/email-conf-phone2', function (req, res) {
 
   // Make a variable and give it the value from 'bank-or-build'
-  var frequencyScenario = req.session.data['frequency-scenario-select']
+  var phoneEmailConf2 = req.session.data['phone-email']
 
   // Check whether the variable matches a condition
-  if (frequencyScenario == "1"){
+  if (phoneEmailConf2 == "phone-confirmation-yes"){
     // Send user to next page
-    res.redirect('/contact/1-0/frequency-confirmations/you-have-changed-how-often-we-pay-you&1.html')
-  } else if (frequencyScenario == "2"){
-    res.redirect('/contact/1-0/frequency-confirmations/you-have-changed-how-often-we-pay-you&2.html')
-  } else if (frequencyScenario == "3"){
-    res.redirect('/contact/1-0/frequency-confirmations/you-have-changed-how-often-we-pay-you&3.html')
+    res.redirect('/contact/1-0/change-phone/email-add/email.html')
   } else {
-    res.redirect('/contact/1-0/frequency-confirmations/you-have-changed-how-often-we-pay-you&1.html')
+    res.redirect('/contact/1-0/change-phone/check-your-details-add.html')
   }
 
 });
+
+// DO YOU WANT EMAIL CONTACT DETAILS - REMOVE HOME PHONE
+router.post('/email-conf-phone3', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var phoneEmailConf3 = req.session.data['phone-email']
+
+  // Check whether the variable matches a condition
+  if (phoneEmailConf3 == "phone-confirmation-yes"){
+    // Send user to next page
+    res.redirect('/contact/1-0/change-phone/email-remove/email.html')
+  } else {
+    res.redirect('/contact/1-0/change-phone/check-your-details-remove.html')
+  }
+
+});
+
+
+// ROUTING TO YES OR NO FOR REMOVING HOME PHONE NUMBER
+router.post('/remove-home-number', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var removeHomeNumber = req.session.data['remove-home-phone']
+
+  // Check whether the variable matches a condition
+  if (removeHomeNumber == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/1-0/change-phone/email-remove/would-you-like-email-confirmation.html')
+  } else if (removeHomeNumber == "No"){
+    res.redirect('/contact/1-0/change-phone/do-not-remove.html')
+  }
+
+});
+
 module.exports = router

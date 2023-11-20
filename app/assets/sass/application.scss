@@ -16,3 +16,8 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/task-list";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+@media (min-width: 40.0625em) {
+    .govuk-summary-list__actions {
+      width:30%;
+    }
+  }

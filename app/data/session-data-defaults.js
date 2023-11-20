@@ -26,6 +26,7 @@ module.exports = {
 "next-payment-amount": "815.40",
 "payment-frequency": "Every 4 weeks (13 payments a year)",
 "entitled-to2": "entitled",
-"frequency-scenario-select": "1"
+"frequency-scenario-select": "1",
+"current-home-phone": ""
 
 }
