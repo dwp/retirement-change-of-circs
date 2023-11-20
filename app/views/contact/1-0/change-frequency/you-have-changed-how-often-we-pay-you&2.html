@@ -300,12 +300,37 @@
       {% endif %}
 
 
-      <h2 class="govuk-heading-m">
-        If you receive Pension Credit
-      </h2>
-      <p class="govuk-body">
-        If you need to change how often you get Pension Credit, <a href="https://www.gov.uk/pension-credit/change-of-circumstances" target="_blank">contact the Pension Service by phone or post (opens in new tab)</a>.
-      </p>
+      {% if data['pc'] == 'Yes' %}
+        <h2 class="govuk-heading-m">
+          How often we pay your Pension Credit
+        </h2>
+        <p class="govuk-body">
+          If you need to change how often you get Pension Credit, <a href="https://www.gov.uk/pension-credit/change-of-circumstances" target="_blank">contact the Pension Service by phone or post (opens in new tab)</a>.
+        </p>
+      {% endif %}
+      {% if data['other-benefits'] == 'Attendance Allowance' %}
+        <h2 class="govuk-heading-m">
+          How often we pay your Attendance Allowance
+        </h2>
+        <p class="govuk-body">
+          If you need to change how often we pay your Attendance Allowance, <a href="https://www.gov.uk/disability-benefits-helpline" target="_blank">contact the Disability Service Centre by phone or post (opens in new tab)</a>.
+        </p>
+      {% elif data['other-benefits'] == 'Disability Living Allowance (DLA)' %}
+        <h2 class="govuk-heading-m">
+          How often we pay your Disability Living Allowance (DLA)
+        </h2>
+        <p class="govuk-body">
+          If you need to change how often we pay your DLA, <a href="https://www.gov.uk/disability-benefits-helpline" target="_blank">contact the Disability Service Centre by phone or post (opens in new tab)</a>.
+        </p>
+      {% elif data['other-benefits'] == 'Personal Independence Payment (PIP)' %}
+        <h2 class="govuk-heading-m">
+          How often we pay your Personal Independence Payment (PIP)
+        </h2>
+        <p class="govuk-body">
+          If you need to change how often we pay your PIP, <a href="https://www.gov.uk/disability-benefits-helpline" target="_blank">contact the Disability Service Centre by phone or post (opens in new tab)</a>.
+        </p>
+      {% endif %}
+      
       <h2 class="govuk-heading-m">
         Help improve this service
       </h2>
@@ -329,6 +354,13 @@
     {{ govukFooter({
       meta: {
         items: [
+        {
+          href: "../email-confirmation/r1-frequency-confirmation.html",
+          text: "Email confirmation",
+          attributes: {
+            target: "_blank"
+          }
+        },
         {
           href: "you-have-changed-how-often-we-pay-you&1.html",
           text: "Scenario 1"

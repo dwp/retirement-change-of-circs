@@ -7616,3 +7616,9 @@ html.no-scroll {
   margin-top: 0;
   margin-bottom: 0;
 }
+
+@media (min-width: 40.0625em) {
+  .govuk-summary-list__actions {
+    width: 30%;
+  }
+}
