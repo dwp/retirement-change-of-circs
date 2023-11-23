@@ -982,6 +982,149 @@ router.post('/frequency-scenario', function (req, res) {
 });
 
 
+// EMAIL AND PAYMENT SCHEDULE 2-0
+// ELIGIBILITY ROUTING
+
+// Run this code when a form is submitted to 'were-invited'
+router.post('/were-invited12', function (req, res) {
+
+  // Make a variable and give it the value from 'invited'
+  var wereYouInvited = req.session.data['invited']
+
+  // Check whether the variable matches a condition
+  if (wereYouInvited == "letter"){
+    // Send user to next page
+    res.redirect('/email-and-payment-schedule/2-0/privacy-notice')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/email-and-payment-schedule/2-0/cannot-use-service')
+  }
+
+});
+
+//BANK QUESTION ROUTING
+
+// Run this code when a form is submitted to 'account-type-mvp'
+router.post('/account-type12', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var accountType = req.session.data['bank-or-build']
+
+  // Check whether the variable matches a condition
+  if (accountType == "uk-account"){
+    // Send user to next page
+    res.redirect('/email-and-payment-schedule/2-0/bank-or-building-society-details')
+  } else {
+    res.redirect('/email-and-payment-schedule/2-0/can-only-use-uk-account.html')
+  }
+
+});
+
+//PAYMENT FREQUENCY SINGLE OPTION ROUTING
+
+//PAYMENT FREQUENCY MULTIPLE OPTION ROUTING
+
+// Run this code when a form is submitted to 'account-type-mvp'
+router.post('/how-often7', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var frequencySelected = req.session.data['frequency-select']
+
+  // Check whether the variable matches a condition
+  if (frequencySelected == "Every 4 weeks"){
+    // Send user to next page
+    res.redirect('/email-and-payment-schedule/2-0/keep-how-often-we-will-pay-you.html')
+  } else {
+    res.redirect('/email-and-payment-schedule/2-0/frequency-email/would-you-like-email-confirmation.html')
+  }
+
+});
+
+// FOR ALT FREQUENCY OPTION VERSION
+router.post('/how-often-alt7', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var frequencySelected = req.session.data['frequency-select']
+
+  // Check whether the variable matches a condition
+  if (frequencySelected == "Every 2 weeks"){
+    // Send user to next page
+    res.redirect('/email-and-payment-schedule/2-0/keep-how-often-we-will-pay-you&alt.html')
+  } else {
+    res.redirect('/email-and-payment-schedule/2-0/frequency-email/would-you-like-email-confirmation.html')
+  }
+
+});
+
+// FOR SINGLE FREQUENCY OPTION VERSION
+router.post('/how-often-single7', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var frequencySelected = req.session.data['frequency-select']
+
+  // Check whether the variable matches a condition
+  if (frequencySelected == "Every 4 weeks"){
+    // Send user to next page
+    res.redirect('/email-and-payment-schedule/2-0/keep-how-often-we-will-pay-you.html')
+  } else {
+    res.redirect('/email-and-payment-schedule/2-0/frequency-email/would-you-like-email-confirmation.html')
+  }
+
+});
+
+// DO YOU WANT EMAIL BANK
+router.post('/email-conf-bank1', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var frequencyBankConf = req.session.data['bank-email']
+
+  // Check whether the variable matches a condition
+  if (frequencyBankConf == "bank-confirmation-yes"){
+    // Send user to next page
+    res.redirect('/email-and-payment-schedule/2-0/bank-email/email.html')
+  } else {
+    res.redirect('/email-and-payment-schedule/2-0/check-your-details.html')
+  }
+
+});
+
+// DO YOU WANT EMAIL FREQUENCY
+router.post('/email-conf-frequency1', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var frequencyEmailConf = req.session.data['frequency-email']
+
+  // Check whether the variable matches a condition
+  if (frequencyEmailConf == "frequency-confirmation-yes"){
+    // Send user to next page
+    res.redirect('/email-and-payment-schedule/2-0/frequency-email/email.html')
+  } else {
+    res.redirect('/email-and-payment-schedule/2-0/check-how-often-we-will-pay-you.html')
+  }
+
+});
+
+// ROUTING TO RIGHT CONFIRMATION VERSION FOR THE FREQUENCY CHANGE SCENARIO SELECTED
+router.post('/frequency-scenario1', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var frequencyScenario = req.session.data['frequency-scenario-select']
+
+  // Check whether the variable matches a condition
+  if (frequencyScenario == "1"){
+    // Send user to next page
+    res.redirect('/email-and-payment-schedule/2-0/frequency-confirmations/you-have-changed-how-often-we-pay-you&1.html')
+  } else if (frequencyScenario == "2"){
+    res.redirect('/email-and-payment-schedule/2-0/frequency-confirmations/you-have-changed-how-often-we-pay-you&2.html')
+  } else if (frequencyScenario == "3"){
+    res.redirect('/email-and-payment-schedule/2-0/frequency-confirmations/you-have-changed-how-often-we-pay-you&3.html')
+  } else {
+    res.redirect('/email-and-payment-schedule/2-0/frequency-confirmations/you-have-changed-how-often-we-pay-you&1.html')
+  }
+
+});
+
+
 // CONTACT DETAILS CHANGE 1-0
 // ELIGIBILITY ROUTING
 
@@ -1135,9 +1278,9 @@ router.post('/email-conf-phone1', function (req, res) {
   // Check whether the variable matches a condition
   if (phoneEmailConf == "phone-confirmation-yes"){
     // Send user to next page
-    res.redirect('/contact/1-0/change-phone/email/email.html')
+    res.redirect('/contact/1-0/change-home-phone/email/email.html')
   } else {
-    res.redirect('/contact/1-0/change-phone/check-your-details.html')
+    res.redirect('/contact/1-0/change-home-phone/check-your-details.html')
   }
 
 });
@@ -1151,9 +1294,9 @@ router.post('/email-conf-phone2', function (req, res) {
   // Check whether the variable matches a condition
   if (phoneEmailConf2 == "phone-confirmation-yes"){
     // Send user to next page
-    res.redirect('/contact/1-0/change-phone/email-add/email.html')
+    res.redirect('/contact/1-0/change-home-phone/email-add/email.html')
   } else {
-    res.redirect('/contact/1-0/change-phone/check-your-details-add.html')
+    res.redirect('/contact/1-0/change-home-phone/check-your-details-add.html')
   }
 
 });
@@ -1167,9 +1310,9 @@ router.post('/email-conf-phone3', function (req, res) {
   // Check whether the variable matches a condition
   if (phoneEmailConf3 == "phone-confirmation-yes"){
     // Send user to next page
-    res.redirect('/contact/1-0/change-phone/email-remove/email.html')
+    res.redirect('/contact/1-0/change-home-phone/email-remove/email.html')
   } else {
-    res.redirect('/contact/1-0/change-phone/check-your-details-remove.html')
+    res.redirect('/contact/1-0/change-home-phone/check-your-details-remove.html')
   }
 
 });
@@ -1184,9 +1327,9 @@ router.post('/remove-home-number', function (req, res) {
   // Check whether the variable matches a condition
   if (removeHomeNumber == "Yes"){
     // Send user to next page
-    res.redirect('/contact/1-0/change-phone/email-remove/would-you-like-email-confirmation.html')
+    res.redirect('/contact/1-0/change-home-phone/email-remove/would-you-like-email-confirmation.html')
   } else if (removeHomeNumber == "No"){
-    res.redirect('/contact/1-0/change-phone/do-not-remove.html')
+    res.redirect('/contact/1-0/change-home-phone/do-not-remove.html')
   }
 
 });
