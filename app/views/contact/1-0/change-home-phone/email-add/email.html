@@ -12,68 +12,9 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">Email confirmation</h1>
-      <p>We will send an email when your change has been made.</p>
-      <p>This is the email address you gave when you started to get your State Pension.</p>
-      <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Email
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {% if data['current-email'] %}
-              {{ data['current-email'] }}
-            {% else %}
-              email@me.co.uk
-            {% endif %}
-          </dd>
-        </div>
-      </dl>
+      {% include 'includes/get-email.html' %}
       <form class="form" action="../check-your-details-add" method="post">
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" role="group" aria-describedby="change-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <h2 class="govuk-heading-m">
-                Where should we send your confirmation email?
-              </h2>
-            </legend>
-            <div class="govuk-radios govuk-radios" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="current-email" name="confirmation-email" type="radio" value="current" {{ checked("confirmation-email", "current") }}>
-                <label class="govuk-label govuk-radios__label" for="current-email">
-                  {% if data['current-email'] %}
-                    {{ data['current-email'] }}
-                  {% else %}
-                    email@me.co.uk
-                  {% endif %}
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="new-email" name="confirmation-email" type="radio" value="new" data-aria-controls="conditional-email" {{ checked("confirmation-email", "new") }}>
-                <label class="govuk-label govuk-radios__label" for="new-email">
-                  A different email address
-                </label>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-email">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="enter-email">
-                      Email address
-                    </label>
-                    <div id="email-hint" class="govuk-hint">
-
-                      We will only use this to send a confirmation email.
-                    </div>
-                    <input class="govuk-input" id="enter-email" name="enter-email" type="email" spellcheck="false" autocomplete="email" value="{{ data['enter-email'] }}">
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </fieldset>
-        </div>
-
-        <button class="govuk-button" data-module="govuk-button">
-          Continue
-        </button>
+        {% include 'includes/select-email.html' %}
       </form>
 
     </div>
