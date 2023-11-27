@@ -13,33 +13,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form class="form" action="/email-conf-bank1" method="post">
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <h1 class="govuk-fieldset__heading">
-                Do you want an email to confirm when your change has been made?
-              </h1>
-            </legend>
-            <div class="govuk-radios" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="bank-confirmation-yes" name="bank-email" type="radio" value="bank-confirmation-yes" {{ checked("frequency-email", "frequency-confirmation-yes") }}>
-                <label class="govuk-label govuk-radios__label" for="bank-confirmation-yes">
-                  Yes
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="bank-confirmation-no" name="bank-email" type="radio" value="bank-confirmation-no" {{ checked("frequency-email", "frequency-confirmation-no") }}>
-                <label class="govuk-label govuk-radios__label" for="bank-confirmation-no">
-                  No
-                </label>
-              </div>
-            </div>
-          </fieldset>
-        </div>
-
-        <button class="govuk-button" data-module="govuk-button">
-          Continue
-        </button>
+        {% include 'includes/want-email.html' %}
       </form>
 
     </div>
