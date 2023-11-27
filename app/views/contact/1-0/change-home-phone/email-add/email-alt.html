@@ -12,19 +12,9 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">Enter your email address</h1>
-      <p>We will only use this to send a confirmation email.</p>
+      {% include 'includes/no-email-on-record-heading.html' %}
       <form class="form" action="../check-your-details-add" method="post">
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="enter-email-alt">
-            Email address
-          </label>
-          <input class="govuk-input" id="enter-email-alt" name="enter-email-alt" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email">
-        </div>
-
-        <button class="govuk-button" data-module="govuk-button">
-          Continue
-        </button>
+        {% include 'includes/no-email-on-record-entry.html' %}
       </form>
 
     </div>

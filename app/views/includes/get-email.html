@@ -1,0 +1,17 @@
+<h1 class="govuk-heading-l">Email confirmation</h1>
+<p>We will send an email when your change has been made.</p>
+<p>This is the email address you gave when you started to get your State Pension.</p>
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Email
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {% if data['current-email'] %}
+        {{ data['current-email'] }}
+      {% else %}
+        email@me.co.uk
+      {% endif %}
+    </dd>
+  </div>
+</dl>
