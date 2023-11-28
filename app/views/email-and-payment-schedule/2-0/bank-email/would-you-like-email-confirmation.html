@@ -17,9 +17,12 @@
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                Do you want an email to confirm when your change has been made?
+                Do you want a confirmation email?
               </h1>
             </legend>
+            <p class="govuk-body">
+              We will send an email when you submit your details to confirm your change has been made.
+            </p>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="bank-confirmation-yes" name="bank-email" type="radio" value="bank-confirmation-yes" {{ checked("frequency-email", "frequency-confirmation-yes") }}>
