@@ -57,7 +57,7 @@
       </tr>
       <tr class="govuk-table__row">
         <td class="govuk-table__cell" colspan="2">
-          <p class="govuk-body" style="margin:20px;">Dear 
+          <p class="govuk-body" style="margin:20px;">Dear
             {% if data['full-name'] %}
               {{ data['full-name'] }},
             {% else %}
@@ -65,7 +65,7 @@
             {% endif %}
           </p>
           <p class="govuk-body" style="margin:20px;">You have changed how often we will pay your State Pension.</p>
-          <p class="govuk-body" style="margin:20px;">We will pay you 
+          <p class="govuk-body" style="margin:20px;">We will pay you
             {% if data['payment-frequency'] == 'Every 4 weeks (13 payments a year)' and data['frequency-select'] == 'Every 2 weeks' %}
               {% if data['next-payment-amount'] %}
                 £{{ (data['next-payment-amount']/2) | round }}
@@ -121,7 +121,6 @@
               {% endif %}
             {% endif %}
           </p>
-          <p class="govuk-body" style="margin:20px;">You may get payments before this so we can start paying you every week.</p>
           <p class="govuk-body" style="margin:20px;">To view your details and make changes online, go to: <a href="https://www.gov.uk/manage-state-pension" target="_blank">https://www.gov.uk/manage-state-pension</a></p>
           <p class="govuk-body" style="margin:20px;">Do not reply to this email.</p>
         </td>
