@@ -986,7 +986,7 @@ router.post('/frequency-scenario', function (req, res) {
 // ELIGIBILITY ROUTING
 
 // Run this code when a form is submitted to 'were-invited'
-router.post('/were-invited12', function (req, res) {
+router.post('/were-invited11', function (req, res) {
 
   // Make a variable and give it the value from 'invited'
   var wereYouInvited = req.session.data['invited']
@@ -1005,7 +1005,7 @@ router.post('/were-invited12', function (req, res) {
 //BANK QUESTION ROUTING
 
 // Run this code when a form is submitted to 'account-type-mvp'
-router.post('/account-type12', function (req, res) {
+router.post('/account-type11', function (req, res) {
 
   // Make a variable and give it the value from 'bank-or-build'
   var accountType = req.session.data['bank-or-build']
@@ -1129,7 +1129,7 @@ router.post('/frequency-scenario1', function (req, res) {
 // ELIGIBILITY ROUTING
 
 // Run this code when a form is submitted to 'were-invited'
-router.post('/were-invited11', function (req, res) {
+router.post('/were-invited12', function (req, res) {
 
   // Make a variable and give it the value from 'invited'
   var wereYouInvited = req.session.data['invited']
@@ -1148,7 +1148,7 @@ router.post('/were-invited11', function (req, res) {
 //BANK QUESTION ROUTING
 
 // Run this code when a form is submitted to 'account-type-mvp'
-router.post('/account-type11', function (req, res) {
+router.post('/account-type12', function (req, res) {
 
   // Make a variable and give it the value from 'bank-or-build'
   var accountType = req.session.data['bank-or-build']
@@ -1168,7 +1168,7 @@ router.post('/account-type11', function (req, res) {
 //PAYMENT FREQUENCY MULTIPLE OPTION ROUTING
 
 // Run this code when a form is submitted to 'account-type-mvp'
-router.post('/how-often7', function (req, res) {
+router.post('/how-often8', function (req, res) {
 
   // Make a variable and give it the value from 'bank-or-build'
   var frequencySelected = req.session.data['frequency-select']
@@ -1184,7 +1184,7 @@ router.post('/how-often7', function (req, res) {
 });
 
 // FOR ALT FREQUENCY OPTION VERSION
-router.post('/how-often-alt7', function (req, res) {
+router.post('/how-often-alt8', function (req, res) {
 
   // Make a variable and give it the value from 'bank-or-build'
   var frequencySelected = req.session.data['frequency-select']
@@ -1200,7 +1200,7 @@ router.post('/how-often-alt7', function (req, res) {
 });
 
 // FOR SINGLE FREQUENCY OPTION VERSION
-router.post('/how-often-single7', function (req, res) {
+router.post('/how-often-single8', function (req, res) {
 
   // Make a variable and give it the value from 'bank-or-build'
   var frequencySelected = req.session.data['frequency-select']
@@ -1217,7 +1217,7 @@ router.post('/how-often-single7', function (req, res) {
 
 
 // ROUTING TO RIGHT CONFIRMATION VERSION FOR THE FREQUENCY CHANGE SCENARIO SELECTED
-router.post('/frequency-scenario1', function (req, res) {
+router.post('/frequency-scenario2', function (req, res) {
 
   // Make a variable and give it the value from 'bank-or-build'
   var frequencyScenario = req.session.data['frequency-scenario-select']
@@ -1238,7 +1238,7 @@ router.post('/frequency-scenario1', function (req, res) {
 
 
 // DO YOU WANT EMAIL BANK
-router.post('/email-conf-bank1', function (req, res) {
+router.post('/email-conf-bank2', function (req, res) {
 
   // Make a variable and give it the value from 'bank-or-build'
   var frequencyBankConf = req.session.data['bank-email']
@@ -1254,7 +1254,7 @@ router.post('/email-conf-bank1', function (req, res) {
 });
 
 // DO YOU WANT EMAIL FREQUENCY
-router.post('/email-conf-frequency1', function (req, res) {
+router.post('/email-conf-frequency2', function (req, res) {
 
   // Make a variable and give it the value from 'bank-or-build'
   var frequencyEmailConf = req.session.data['frequency-email']
@@ -1273,10 +1273,10 @@ router.post('/email-conf-frequency1', function (req, res) {
 router.post('/email-conf-phone1', function (req, res) {
 
   // Make a variable and give it the value from 'bank-or-build'
-  var phoneEmailConf = req.session.data['phone-email']
+  var phoneEmailConf = req.session.data['phone-change-email']
 
   // Check whether the variable matches a condition
-  if (phoneEmailConf == "phone-confirmation-yes"){
+  if (phoneEmailConf == "phone-change-confirmation-yes"){
     // Send user to next page
     res.redirect('/contact/1-0/change-home-phone/email/email.html')
   } else {
@@ -1289,10 +1289,10 @@ router.post('/email-conf-phone1', function (req, res) {
 router.post('/email-conf-phone2', function (req, res) {
 
   // Make a variable and give it the value from 'bank-or-build'
-  var phoneEmailConf2 = req.session.data['phone-email']
+  var phoneEmailConf2 = req.session.data['phone-add-email']
 
   // Check whether the variable matches a condition
-  if (phoneEmailConf2 == "phone-confirmation-yes"){
+  if (phoneEmailConf2 == "phone-add-confirmation-yes"){
     // Send user to next page
     res.redirect('/contact/1-0/change-home-phone/email-add/email.html')
   } else {
@@ -1305,10 +1305,10 @@ router.post('/email-conf-phone2', function (req, res) {
 router.post('/email-conf-phone3', function (req, res) {
 
   // Make a variable and give it the value from 'bank-or-build'
-  var phoneEmailConf3 = req.session.data['phone-email']
+  var phoneEmailConf3 = req.session.data['phone-remove-email']
 
   // Check whether the variable matches a condition
-  if (phoneEmailConf3 == "phone-confirmation-yes"){
+  if (phoneEmailConf3 == "phone-remove-confirmation-yes"){
     // Send user to next page
     res.redirect('/contact/1-0/change-home-phone/email-remove/email.html')
   } else {
