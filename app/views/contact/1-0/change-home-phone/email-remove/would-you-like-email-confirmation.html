@@ -13,7 +13,28 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form class="form" action="/email-conf-phone3" method="post">
+        <div class="govuk-form-group">
         {% include 'includes/want-email.html' %}
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="phone-remove-confirmation-yes" name="phone-remove-email" type="radio" value="phone-remove-confirmation-yes">
+            <label class="govuk-label govuk-radios__label" for="phone-remove-confirmation-yes">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="phone-remove-confirmation-no" name="phone-remove-email" type="radio" value="phone-remove-confirmation-no">
+            <label class="govuk-label govuk-radios__label" for="phone-remove-confirmation-no">
+              No
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <button class="govuk-button" data-module="govuk-button">
+      Continue
+    </button>
       </form>
 
     </div>
