@@ -33,7 +33,7 @@
               Do you want a confirmation email?
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['phone-email'] == 'phone-confirmation-yes' %}
+              {% if data['phone-add-email'] == 'phone-add-confirmation-yes' %}
                 Yes
               {% else %}
                 No
@@ -45,7 +45,7 @@
               </a>
             </dd>
           </div>
-          {% if data['phone-email'] == 'phone-confirmation-yes' %}
+          {% if data['phone-add-email'] == 'phone-add-confirmation-yes' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key" style="width:40%;">
                 Email address
