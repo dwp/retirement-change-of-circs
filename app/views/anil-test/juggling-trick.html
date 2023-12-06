@@ -13,13 +13,19 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Heading or question goes here</h1>
+      <form class="form" action="check-answers" method="post">
 
-      <form class="form" action="/url/of/next/page" method="post">
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
-        <p>[Insert question content here]</p>
-
-        <p>[See <a href="https://design-system.service.gov.uk">the GOV.UK Design System</a> for examples]</p>
+        {{ govukTextarea({
+          name: "most-impressive-trick",
+          id: "most-impressive-trick",
+          label: {
+            text: "What is your most impressive juggling trick?",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          }
+        }) }}
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
