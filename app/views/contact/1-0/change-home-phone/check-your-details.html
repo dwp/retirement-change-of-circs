@@ -27,49 +27,6 @@
               </a>
             </dd>
           </div>
-          
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width:40%;">
-              Do you want a confirmation email?
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['phone-change-email'] == 'phone-change-confirmation-yes' %}
-                Yes
-              {% else %}
-                No
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="email/would-you-like-email-confirmation.html">
-                Change<span class="govuk-visually-hidden"> if you want a confirmation email</span>
-              </a>
-            </dd>
-          </div>
-          {% if data['phone-change-email'] == 'phone-change-confirmation-yes' %}
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key" style="width:40%;">
-                Email address
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {% if data['confirmation-email'] == 'current' %}
-                  {% if data['current-email'] %}
-                    {{ data['current-email'] }}
-                  {% elif data['enter-email-alt'] %}
-                    {{ data['enter-email-alt'] }}
-                  {% else %}
-                    email@me.co.uk
-                  {% endif %}
-                {% elif data['confirmation-email'] == 'new' %}
-                  {{ data['enter-email'] }}
-                {% endif %}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="email/email.html">
-                  Change<span class="govuk-visually-hidden"> where we should send your confirmation email</span>
-                </a>
-              </dd>
-            </div>
-          {% endif %}
         </dl>
         
         <h2 class="govuk-heading-m">Submit your new details</h2>

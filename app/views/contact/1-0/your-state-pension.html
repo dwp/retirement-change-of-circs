@@ -38,7 +38,7 @@
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link govuk-!-font-size-19" href="change-how-often-we-will-pay-you.html">
+            <a class="govuk-link govuk-!-font-size-19" href="change-frequency/change-how-often-we-will-pay-you.html">
               Change<span class="govuk-visually-hidden"> how often we pay your State Pension</span>
             </a>
           </dd>
@@ -76,7 +76,7 @@
       </dl>
       <div style="display:inline-block;width:100%;">
         <h2 class="govuk-heading-m" style="float:left;">Bank or building society details</h2>
-        <a class="govuk-link govuk-!-font-size-19" href="do-you-want-uk-account.html" style="float:right;vertical-align: baseline;">
+        <a class="govuk-link govuk-!-font-size-19" href="change-bank/do-you-want-uk-account.html" style="float:right;vertical-align: baseline;">
           Change<span class="govuk-visually-hidden"> bank or building society details</span>
         </a>
       </div>
@@ -206,20 +206,21 @@
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-              {% if data['current-home-phone'] %}
-                <ul class="govuk-summary-list__actions-list">  
-                  <li class="govuk-summary-list__actions-list-item">
-                    <a class="govuk-link" href="change-home-phone/enter-home-phone.html">Change<span class="govuk-visually-hidden"> home phone number</span></a>
-                  </li>
-                  <li class="govuk-summary-list__actions-list-item">
-                    <a class="govuk-link" href="change-home-phone/remove-home-phone.html">Remove<span class="govuk-visually-hidden"> home phone number</span></a>
-                  </li>
-                </ul>
-              {% else %}
-                <a class="govuk-link" href="change-home-phone/enter-home-phone-add.html">Add<span class="govuk-visually-hidden"> home phone number</span></a>
-              {% endif %}
+            {% if data['current-home-phone'] %}
+            <ul class="govuk-summary-list__actions-list">  
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="change-home-phone/enter-home-phone.html">Change<span class="govuk-visually-hidden"> home phone number</span></a>
+              </li>
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="change-home-phone/remove-home-phone.html">Remove<span class="govuk-visually-hidden"> home phone number</span></a>
+              </li>
+            </ul>
+            {% else %}
+              <a class="govuk-link" href="change-home-phone/enter-home-phone-add.html">Add<span class="govuk-visually-hidden"> home phone number</span></a>
+            {% endif %}
           </dd>
         </div>
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Alternative phone number
@@ -228,13 +229,25 @@
             {% if data['current-alt-phone'] %}
               {{ data['current-alt-phone'] }}
             {% else %}
-              01904 4461056
+              Not provided
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-
+            {% if data['current-alt-phone'] %}
+            <ul class="govuk-summary-list__actions-list">  
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="change-alt-phone/enter-alt-phone.html">Change<span class="govuk-visually-hidden"> alternative home number</span></a>
+              </li>
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="change-alt-phone/remove-alt-phone.html">Remove<span class="govuk-visually-hidden"> alternative phone number</span></a>
+              </li>
+            </ul>
+            {% else %}
+              <a class="govuk-link" href="change-alt-phone/enter-alt-phone-add.html">Add<span class="govuk-visually-hidden"> alternative phone number</span></a>
+            {% endif %}
           </dd>
         </div>
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Mobile phone number
@@ -243,13 +256,25 @@
             {% if data['current-mobile-phone'] %}
               {{ data['current-mobile-phone'] }}
             {% else %}
-              077123 45678
+              Not provided
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-
+            {% if data['current-mobile-phone'] %}
+            <ul class="govuk-summary-list__actions-list">  
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="change-mobile-phone/enter-mobile-phone.html">Change<span class="govuk-visually-hidden"> mobile home number</span></a>
+              </li>
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="change-mobile-phone/remove-mobile-phone.html">Remove<span class="govuk-visually-hidden"> mobile phone number</span></a>
+              </li>
+            </ul>
+            {% else %}
+              <a class="govuk-link" href="change-mobile-phone/enter-mobile-phone-add.html">Add<span class="govuk-visually-hidden"> mobile phone number</span></a>
+            {% endif %}
           </dd>
         </div>
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Email address
@@ -262,7 +287,18 @@
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-
+            {% if data['current-email-phone'] %}
+            <ul class="govuk-summary-list__actions-list">  
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="change-email/enter-email.html">Change<span class="govuk-visually-hidden"> alternative home number</span></a>
+              </li>
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="change-alt-phone/remove-alt-phone.html">Remove<span class="govuk-visually-hidden"> alternative phone number</span></a>
+              </li>
+            </ul>
+            {% else %}
+              <a class="govuk-link" href="change-alt-phone/enter-alt-phone-add.html">Add<span class="govuk-visually-hidden"> alternative phone number</span></a>
+            {% endif %}
           </dd>
         </div>
         {% if data['show-letter-format'] == 'yes' %}

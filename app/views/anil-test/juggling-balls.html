@@ -13,12 +13,13 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form" action="juggling-trick" method="post">
+    <form class="form" action="/juggling-balls-answer" method="post">
 
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
       {{ govukRadios({
         name: "how-many-balls",
+        value: data['how-many-balls'],
         fieldset: {
           legend: {
             text: "How many balls can you juggle?",
@@ -26,7 +27,8 @@
             classes: "govuk-fieldset__legend--xl"
           }
         },
-        items: [
+        items: 
+        [
           {
             value: "3 or more",
             text: "3 or more"
