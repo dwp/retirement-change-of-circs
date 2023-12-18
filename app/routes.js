@@ -1178,7 +1178,7 @@ router.post('/how-often8', function (req, res) {
     // Send user to next page
     res.redirect('/contact/1-0/change-frequency/keep-how-often-we-will-pay-you.html')
   } else {
-    res.redirect('/contact/1-0/change-frequency/email/would-you-like-email-confirmation.html')
+    res.redirect('/contact/1-0/change-frequency/check-how-often-we-will-pay-you')
   }
 
 });
@@ -1194,7 +1194,7 @@ router.post('/how-often-alt8', function (req, res) {
     // Send user to next page
     res.redirect('/contact/1-0/change-frequency/keep-how-often-we-will-pay-you&alt.html')
   } else {
-    res.redirect('/contact/1-0/change-frequency/email/would-you-like-email-confirmation.html')
+    res.redirect('/contact/1-0/change-frequency/check-how-often-we-will-pay-you')
   }
 
 });
@@ -1210,7 +1210,7 @@ router.post('/how-often-single8', function (req, res) {
     // Send user to next page
     res.redirect('/contact/1-0/change-frequency/keep-how-often-we-will-pay-you.html')
   } else {
-    res.redirect('/contact/1-0/change-frequency/email/would-you-like-email-confirmation.html')
+    res.redirect('/contact/1-0/change-frequency/check-how-often-we-will-pay-you')
   }
 
 });
@@ -1225,13 +1225,13 @@ router.post('/frequency-scenario2', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencyScenario == "1"){
     // Send user to next page
-    res.redirect('/contact/1-0/change-frequency/frequency-confirmations/you-have-changed-how-often-we-pay-you&1.html')
+    res.redirect('/contact/1-0/change-frequency/you-have-changed-how-often-we-pay-you&1.html')
   } else if (frequencyScenario == "2"){
-    res.redirect('/contact/1-0/change-frequency/frequency-confirmations/you-have-changed-how-often-we-pay-you&2.html')
+    res.redirect('/contact/1-0/change-frequency/you-have-changed-how-often-we-pay-you&2.html')
   } else if (frequencyScenario == "3"){
-    res.redirect('/contact/1-0/change-frequency/frequency-confirmations/you-have-changed-how-often-we-pay-you&3.html')
+    res.redirect('/contact/1-0/change-frequency/you-have-changed-how-often-we-pay-you&3.html')
   } else {
-    res.redirect('/contact/1-0/change-frequency/frequency-confirmations/you-have-changed-how-often-we-pay-you&1.html')
+    res.redirect('/contact/1-0/change-frequency/you-have-changed-how-often-we-pay-you&1.html')
   }
 
 });
@@ -1321,15 +1321,65 @@ router.post('/email-conf-phone3', function (req, res) {
 // ROUTING TO YES OR NO FOR REMOVING HOME PHONE NUMBER
 router.post('/remove-home-number', function (req, res) {
 
-  // Make a variable and give it the value from 'bank-or-build'
+  // Make a variable and give it the value from 'remove-home-number'
   var removeHomeNumber = req.session.data['remove-home-phone']
 
   // Check whether the variable matches a condition
   if (removeHomeNumber == "Yes"){
     // Send user to next page
-    res.redirect('/contact/1-0/change-home-phone/email-remove/would-you-like-email-confirmation.html')
+    res.redirect('/contact/1-0/change-home-phone/check-your-details-remove.html')
   } else if (removeHomeNumber == "No"){
     res.redirect('/contact/1-0/change-home-phone/do-not-remove.html')
+  }
+
+});
+
+// ROUTING TO YES OR NO FOR REMOVING ALTERNATIVE NUMBER
+router.post('/remove-alt-number', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-alt-number'
+  var removeAltNumber = req.session.data['remove-alt-phone']
+
+  // Check whether the variable matches a condition
+  if (removeAltNumber == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/1-0/change-alt-phone/check-your-details-remove.html')
+  } else if (removeAltNumber == "No"){
+    res.redirect('/contact/1-0/change-alt-phone/do-not-remove.html')
+  }
+
+});
+
+// ROUTING TO YES OR NO FOR REMOVING MOBILE NUMBER
+router.post('/remove-mobile-number', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-mobile-number'
+  var removeMobileNumber = req.session.data['remove-mobile-phone']
+
+  // Check whether the variable matches a condition
+  if (removeMobileNumber == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/1-0/change-mobile-phone/check-your-details-remove.html')
+  } else if (removeMobileNumber == "No"){
+    res.redirect('/contact/1-0/change-mobile-phone/do-not-remove.html')
+  }
+
+});
+
+
+// Run this code when a form is submitted to 'juggling-balls-answer'
+router.post('/juggling-balls-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var howManyBalls = req.session.data['how-many-balls']
+
+  // Check whether the variable matches a condition
+  if (howManyBalls == "3 or more"){
+    // Send user to next page
+    res.redirect('/anil-test/juggling-trick')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/anil-test/ineligible')
   }
 
 });
