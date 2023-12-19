@@ -15,12 +15,12 @@
               Are you sure you want to remove?
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['remove-mobile-phone'] %}
-                {{ data['remove-mobile-phone'] }}
+              {% if data['remove-email-address'] %}
+                {{ data['remove-email-address'] }}
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="remove-mobile-phone.html">
+              <a class="govuk-link" href="remove-email-address.html">
                 Change<span class="govuk-visually-hidden"> if you want to remove</span>
               </a>
             </dd>
@@ -30,7 +30,7 @@
         <h2 class="govuk-heading-m">Submit your new details</h2>
         <p class="govuk-body">By submitting this change you are confirming that the information you are giving is complete and correct.</p>
 
-        <form action="you-have-removed-your-contact-details?new-mobile-phone&current-mobile-phone" method="post" novalidate>
+        <form action="you-have-removed-your-contact-details?new-email-address&current-email-address" method="post" novalidate>
           <input type="hidden" name="answers-checked" value="true">
           <button class="govuk-button" data-module="govuk-button">
             Confirm and submit

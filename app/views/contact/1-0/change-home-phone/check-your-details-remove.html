@@ -15,8 +15,10 @@
               Remove home phone number?
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['remove-home-phone'] %}
-                {{ data['remove-home-phone'] }}
+              {% if data['new-home-phone'] %}
+                {{ data['new-home-phone'] }}
+              {% else %}
+                0191 264 0884
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
