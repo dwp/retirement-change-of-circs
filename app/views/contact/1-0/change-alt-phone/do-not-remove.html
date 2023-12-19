@@ -14,7 +14,11 @@
             You have not removed your alternative phone number
           </h1>
           <p class="govuk-body">
-            We will continue to use [ADD NUMBER] as your alternative phone number.
+            We will continue to use 
+              {% if data['new-alt-phone'] %}
+              {{ data['new-alt-phone'] }}
+              {% endif %}
+            as your alternative phone number.
           </p>
         </div>
       </form>

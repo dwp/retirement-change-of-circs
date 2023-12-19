@@ -14,7 +14,11 @@
             You have not removed your mobile phone number
           </h1>
           <p class="govuk-body">
-            We will continue to use [ADD NUMBER] as your mobile phone number.
+            We will continue to use 
+              {% if data['new-mobile-phone'] %}
+              {{ data['new-mobile-phone'] }}
+              {% endif %}
+            as your mobile phone number.
           </p>
         </div>
       </form>
