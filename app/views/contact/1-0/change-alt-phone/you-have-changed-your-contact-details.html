@@ -10,13 +10,24 @@
     <div class="govuk-grid-column-two-thirds">
       <div class="govuk-panel govuk-panel--confirmation">
         <h1 class="govuk-panel__title">
-          You have changed your alternative phone number to [ADD NUMBER]
+          You have changed your alternative phone number to
+          {% if data['new-alt-phone'] %}
+          {{ data['new-alt-phone'] }}
+          {% else %}
+            0191 264 0884
+          {% endif %}
         </h1>
       </div>
       <!-- <p class="govuk-body">We have sent you a confirmation email.</p> -->
       <h2 class="govuk-heading-m">What happens next</h2>
       <p class="govuk-body">
-        We will use [ADD NUMBER] as your alternative phone number.
+        We will use
+          {% if data['new-alt-phone'] %}
+          {{ data['new-alt-phone'] }}
+          {% else %}
+            0191 264 0884
+          {% endif %}
+        as your alternative phone number.
       </p>
       <!-- <h2 class="govuk-heading-m">
         If you receive Pension Credit

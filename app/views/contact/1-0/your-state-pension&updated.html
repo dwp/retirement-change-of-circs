@@ -37,7 +37,7 @@
               {% if data['frequency-select'] %}
                 {{ data['frequency-select'] }}
               {% else %}
-                Every 2 weeks
+                Every 4 weeks (13 payments a year)
               {% endif %}
               starting from Friday 25 August 2023
             </p>
@@ -239,7 +239,7 @@
                 </li>
               </ul>
             {% else %}
-              <a class="govuk-link" href="change-home-phone/enter-home-phone">Add<span class="govuk-visually-hidden"> home phone number</span></a>
+              <a class="govuk-link" href="change-home-phone/enter-home-phone-add.html">Add<span class="govuk-visually-hidden"> home phone number</span></a>
             {% endif %}
         </dd>
         </div>
@@ -276,7 +276,7 @@
                 </li>
               </ul>
             {% else %}
-              <a class="govuk-link" href="change-alt-phone/enter-alt-phone">Add<span class="govuk-visually-hidden"> alternative phone number</span></a>
+              <a class="govuk-link" href="change-alt-phone/enter-alt-phone-add.html">Add<span class="govuk-visually-hidden"> alternative phone number</span></a>
             {% endif %}
         </dd>
         </div>
@@ -313,7 +313,7 @@
                 </li>
               </ul>
             {% else %}
-              <a class="govuk-link" href="change-mobile-phone/enter-mobile-phone">Add<span class="govuk-visually-hidden"> mobile phone number</span></a>
+              <a class="govuk-link" href="change-mobile-phone/enter-mobile-phone-add.html">Add<span class="govuk-visually-hidden"> mobile phone number</span></a>
             {% endif %}
         </dd>
         </div>
@@ -322,14 +322,36 @@
             Email address
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if data['current-email'] %}
-              {{ data['current-email'] }}
+            {% if data['new-email-address'] %}
+              {{ data['new-email-address'] }}
+            {% elif data['current-email-address'] %}
+              {{ data['current-email-address'] }}
             {% else %}
-              email@me.co.uk
+              Not provided
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-
+            {% if data['new-email-address'] %}
+              <ul class="govuk-summary-list__actions-list">  
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="change-email-address/enter-email-address.html">Change<span class="govuk-visually-hidden"> email address</span></a>
+                </li>
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="change-email-address/remove-email-address.html">Remove<span class="govuk-visually-hidden"> email address</span></a>
+                </li>
+              </ul>
+            {% elif data['current-email-address'] %}
+              <ul class="govuk-summary-list__actions-list">  
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="change-email-address/enter-email-address.html">Change<span class="govuk-visually-hidden"> email address</span></a>
+                </li>
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="change-email-address/remove-email-address.html">Remove<span class="govuk-visually-hidden"> email address</span></a>
+                </li>
+              </ul>
+            {% else %}
+              <a class="govuk-link" href="change-email-address/enter-email-address-add.html">Add<span class="govuk-visually-hidden"> email address</span></a>
+            {% endif %}
           </dd>
         </div>
         {% if data['show-letter-format'] == 'yes' %}

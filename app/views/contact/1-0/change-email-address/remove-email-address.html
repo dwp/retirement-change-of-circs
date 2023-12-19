@@ -8,7 +8,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/remove-mobile-number" method="post">
+      <form class="form" action="/remove-email-address" method="post">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -19,14 +19,14 @@
             <p>** NEW CONTENT ** Paragraph to show if they are potentially removng the only phone number on their record - we will only be able to contact you by letter, will take longer?</p>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="mobile-phone-remove-yes" name="remove-mobile-phone" type="radio" value="Yes" {{ checked("remove-mobile-phone", "Yes") }}>
-                <label class="govuk-label govuk-radios__label" for="home-phone-remove-yes">
+                <input class="govuk-radios__input" id="email-address-remove-yes" name="remove-email-address" type="radio" value="Yes" {{ checked("remove-email-address", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="email-address-remove-yes">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="mobile-phone-remove-no" name="remove-mobile-phone" type="radio" value="No" {{ checked("remove-mobile-phone", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="mobile-phone-remove-no">
+                <input class="govuk-radios__input" id="email-address-remove-no" name="remove-email-address" type="radio" value="No" {{ checked("remove-email-address", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="email-address-remove-no">
                   No
                 </label>
               </div>
