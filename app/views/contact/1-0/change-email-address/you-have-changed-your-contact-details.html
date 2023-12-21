@@ -16,7 +16,13 @@
       <!-- <p class="govuk-body">We have sent you a confirmation email.</p> -->
       <h2 class="govuk-heading-m">What happens next</h2>
       <p class="govuk-body">
-        We will use [EMAIL ADDRESS] when contacting you by email.
+        We will use 
+        {% if data['new-email-address'] %}
+          {{ data['new-email-address'] }}
+        {% else %}
+          email@me.co.uk
+        {% endif %}
+          when contacting you by email.
       </p>
       <!-- <h2 class="govuk-heading-m">
         If you receive Pension Credit
