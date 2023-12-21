@@ -14,10 +14,10 @@
             You have not removed your email address
           </h1>
           <p class="govuk-body">
-            We will continue to use [EMAIL ADDRESS]
-            <!-- {% if data['new-home-phone'] %}
-              {{ data['new-home-phone'] }}
-            {% endif %} -->
+            We will continue to use
+              {% if data['new-email-address'] %}
+              {{ data['new-email-address'] }}
+              {% endif %}
             as your email address.
           </p>
         </div>
