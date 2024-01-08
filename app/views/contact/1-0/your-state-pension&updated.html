@@ -28,50 +28,54 @@
 
       <p class="govuk-body">
         {% if data['frequency-select'] == 'Every week' %}
-          We’ve sent a letter to explain any changes to your payments.
+          We've sent a letter to explain any changes to your payments.
         {% endif %}
         {% if data['frequency-select'] == 'Every 2 weeks' %}
-          We’ve sent a letter to explain any changes to your payments.
+          We've sent a letter to explain any changes to your payments.
         {% endif %}
         {% if data['frequency-select'] == 'Every 4 weeks' %}
-          We’ve sent a letter to explain any changes to your payments.
+          We've sent a letter to explain any changes to your payments.
         {% endif %}
       </p>
 
-      <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row" style="border-top: 1px solid #b1b4b6;padding-top:15px;">
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row" style="border-top:1px solid #B1B4B6;padding-top:15px;"">
           <dt class="govuk-summary-list__key">
             How often we pay your State Pension
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if data['frequency-select'] == 'Every 4 weeks' %}
-              Every 4 weeks (13 payments a year)
-          </dd>    
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link govuk-!-font-size-19" href="change-frequency/change-how-often-we-will-pay-you.html">
-              Change<span class="govuk-visually-hidden"> how often we pay your State Pension</span>
-            </a>
-          </dd>
-          {% endif %}
-          {% if data['frequency-select'] == 'Every 2 weeks' %}
-            Every 2 weeks
-          </dd>    
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link govuk-!-font-size-19" href="change-frequency/change-how-often-we-will-pay-you&alt.html">
-              Change<span class="govuk-visually-hidden"> how often we pay your State Pension</span>
-            </a>
-          </dd>
-          {% endif %}
-          {% if data['frequency-select'] == 'Every week' %}
-            Every week
-          </dd>    
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link govuk-!-font-size-19" href="change-frequency/change-how-often-we-will-pay-you&single.html">
-              Change<span class="govuk-visually-hidden"> how often we pay your State Pension</span>
-            </a>
-          </dd>
+            {% if data['frequency-select'] %}
+              {{ data['frequency-select'] }}
+            {% else %}
+            Every 4 weeks (13 payments a year)
             {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            {% if data['frequency-select'] == 'Every 4 weeks (13 payments a year)' %}
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="change-frequency/change-how-often-we-will-pay-you.html">Change<span class="govuk-visually-hidden"> how often we pay your state pension</span></a>
+                </li>
+              </ul>
+            {% elif data['frequency-select'] == 'Every 2 weeks' %}
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="change-frequency/change-how-often-we-will-pay-you&alt.html">Change<span class="govuk-visually-hidden"> how often we pay your state pension</span></a>
+                </li>
+              </ul>
+            
+            {% elif data['frequency-select'] == 'Every week' %}
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="change-frequency/change-how-often-we-will-pay-you&alt.html">Change<span class="govuk-visually-hidden"> how often we pay your state pension</span></a>
+                </li>
+              </ul>  
+            {% else %}
+              <a class="govuk-link" href="change-frequency/change-how-often-we-will-pay-you.html">Change<span class="govuk-visually-hidden"> how often we pay your state pension</span></a>
+            {% endif %}
+          </dd>
         </div>
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Next payment date

@@ -1216,6 +1216,7 @@ router.post('/how-often-single8', function (req, res) {
 });
 
 
+
 // ROUTING TO RIGHT CONFIRMATION VERSION FOR THE FREQUENCY CHANGE SCENARIO SELECTED
 router.post('/frequency-scenario2', function (req, res) {
 
