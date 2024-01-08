@@ -50,7 +50,6 @@
             Every 4 weeks (13 payments a year)
             {% endif %}
           </dd>
-        
           <dd class="govuk-summary-list__actions">
             {% if data['frequency-select'] == 'Every 4 weeks (13 payments a year)' %}
               <ul class="govuk-summary-list__actions-list">
@@ -64,6 +63,7 @@
                   <a class="govuk-link" href="change-frequency/change-how-often-we-will-pay-you&alt.html">Change<span class="govuk-visually-hidden"> how often we pay your state pension</span></a>
                 </li>
               </ul>
+            
             {% elif data['frequency-select'] == 'Every week' %}
               <ul class="govuk-summary-list__actions-list">
                 <li class="govuk-summary-list__actions-list-item">
