@@ -15,6 +15,25 @@
               Remove home phone number?
             </dt>
             <dd class="govuk-summary-list__value">
+              <!-- {% if data['new-home-phone'] %}
+                {{ data['new-home-phone'] }}
+              {% else %}
+                0191 264 0884
+              {% endif %} -->
+              Yes
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="remove-home-phone.html">
+                Change<span class="govuk-visually-hidden"> if you want to remove</span>
+              </a>
+            </dd>
+          </div>
+          
+          <!-- <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Your home phone number
+            </dt>
+            <dd class="govuk-summary-list__value">
               {% if data['new-home-phone'] %}
                 {{ data['new-home-phone'] }}
               {% else %}
@@ -26,7 +45,7 @@
                 Change<span class="govuk-visually-hidden"> if you want to remove</span>
               </a>
             </dd>
-          </div>
+          </div> -->
         </dl>
 
         <h2 class="govuk-heading-m">Submit your new details</h2>
