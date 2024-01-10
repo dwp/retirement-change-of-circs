@@ -27,6 +27,13 @@ module.exports = {
 "payment-frequency": "Every 4 weeks (13 payments a year)",
 "entitled-to2": "entitled",
 "frequency-scenario-select": "1",
-"current-home-phone": ""
+"current-home-phone": "0194345928",
+"new-home-phone": "0194345928",
+"current-alt-phone": "",
+"new-alt-phone": "",
+"current-mobile-phone": "",
+"new-mobile-phone": "",
+"current-email-address": "alex.jones@dwp.gov.uk",
+"new-email-address": "alex.jones@dwp.gov.uk"
 
 }
