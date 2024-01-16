@@ -1,0 +1,100 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set title =  "Which one of these benefits have you claimed previously?" %}
+
+{% set detailsTextHtml %}
+    <p class="govuk-body">
+        You can stay on this page for up to 20 minutes if you need to check your answer. Do not close the web page.
+    </p>
+
+    <p class="govuk-body">
+        If you need more time, you can come back and confirm your identity later. You might be asked for different information.
+    </p>
+{% endset %}
+
+{% set benefitsClaimedHintText %}
+    <div id="changed-name-hint" class="govuk-hint">
+        Select the benefit you have claimed at any time since {{ data['18-months-ago'] }}.
+    </div>
+{% endset %}
+
+
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <form class="form" action={{ formPostLink }} method="post" autocomplete="off">
+
+                <!--page heading with caption include-->
+                {% set pageHeadingH1 %}
+                    {{ title }}
+                {% endset %}
+                <span class="govuk-caption-l">
+                    Confirm your identity
+                </span>
+
+                {{ govukRadios({
+                idPrefix: "kbv-benefits-claimed-previously",
+                name: "kbv-benefits-claimed-previously",
+                fieldset: {
+                    legend: {
+                        html: pageHeadingH1,
+                        isPageHeading: true,
+                        classes: "govuk-fieldset__legend--l",
+                        attributes: {
+                            id: "page-heading"
+                        }
+                    }
+                },
+                hint: {
+                    html: benefitsClaimedHintText
+                },
+                items: [
+                    {
+                        value: "jsa",
+                        text: "Jobseeker's Allowance (JSA)"
+                    },
+                    {
+                        value: "tax-credits",
+                        text: "Tax credits"
+                    },
+                    {
+                        value: "universal-credit",
+                        text: "Universal Credit (UC)"
+                    },
+                    {
+                        value: "pip",
+                        text: "Personal Independence Payment (PIP)"
+                    },
+                    {
+                        value: "esa",
+                        text: "Employment and Support Allowance (ESA)"
+                    },
+                    {
+                        value: "income-support",
+                        text: "Income Support"
+                    }
+                ]
+                }) }}
+
+
+                {{ govukDetails({
+                summaryText: "I do not have this information now",
+                html: detailsTextHtml | safe
+                }) }}
+
+
+                {{ govukButton({
+                    text: "Continue"
+                }) }}
+
+                <p><a href={{ skipQuestionUrl }}>I cannot answer this question</a></p>
+
+            </form>
+            
+        </div>
+    </div>
+{% endblock %}

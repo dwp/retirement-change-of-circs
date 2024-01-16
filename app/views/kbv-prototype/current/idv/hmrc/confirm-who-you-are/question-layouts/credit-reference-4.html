@@ -1,0 +1,74 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set serviceName %}
+    Confirm who you are
+{% endset%}
+
+{% set title =  "When did you last open a personal current account?" %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-l">About your personal current account</span>
+
+            <!-- Redirects to second, third and fourth attempts via this page -->
+            {% if data['hmrc-failed-attempts'] === 'second-attempt' %}
+            <form action="../info-does-not-match-2" method="post">
+            {% elif data['hmrc-failed-attempts'] === 'third-attempt'  %}
+            <form action="../info-does-not-match-3" method="post">
+            {% elif data['hmrc-failed-attempts'] === 'fourth-attempt'  %}
+            <form action="../info-does-not-match-4" method="post">
+            {% elif data['hmrc-failed-attempts'] === 'fifth-attempt'  %}
+            <form action="/current/idv/kbv-uplift/cis-questions/unsuccessful" method="post">
+            {% else %}
+            <form action="../info-does-not-match" method="post">
+            {% endif %}
+
+                {{ govukRadios({
+                name: "personal-current-account",
+                fieldset: {
+                    legend: {
+                    text: title | safe,
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                    }
+                },
+                items: [
+                    {
+                    value: "",
+                    text: "Less than 1 year ago"
+                    },
+                    {
+                    value: "",
+                    text: "Between 1 and up to 3 years ago"
+                    },
+                    {
+                    value: "",
+                    text: "Over 3 and up to 5 years ago"
+                    },
+                    {
+                    value: "",
+                    text: "Over 5 years and up to 7 years ago"
+                    },
+                    {
+                    value: "",
+                    text: "Over 7 years ago"
+                    }
+                ]
+                }) }}
+
+
+                {{ govukButton({
+                    text: "Continue"
+                }) }}
+            </form>
+
+            <p>
+                <a href="">I do not have that information</a>
+            </p>
+            
+        </div>
+    </div>
+{% endblock %}

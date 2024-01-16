@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Do you want to use a UK bank or building society account? - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" action="what-is-the-sort-code-of-the-bank-or-building-society-your-state-pension-is-paid-into" method="post">
+
+            <!--page heading with caption include-->
+            {% set pageHeadingH1 %}
+                <span class="govuk-caption-l">
+                    Confirm your identity
+                </span>
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                      How much was your last state pension payment?
+                    </h1>
+                  </legend>
+            {% endset %}
+
+            <!--Insert the relevant component or pattern for this question-->
+            {{ govukInput({
+                id: "last-state-pension-payment",
+                name: "last-state-pension-payment",
+                label: {
+                    html: pageHeadingH1,
+                    classes: "govuk-label--l",
+                    isPageHeading: true
+                },
+                hint: {
+                    text: "Enter an amount in pounds and pence, for example, 125.67. This can be found on your most recent bank statement or by checking your online bank account."
+                },
+                prefix: {
+                    text: "£"
+                },
+                classes: "govuk-input--width-5",
+                spellcheck: false
+            }) }}
+            
+
+
+            {{ govukDetails({
+            summaryText: "I do not have this information now",
+            html: detailsTextHtml | safe
+            }) }}
+
+
+            {{ govukButton({
+                text: "Continue"
+            }) }}
+
+            <p><a href={{ skipQuestionUrl }}>I cannot answer this question</a></p>
+
+        </form>
+        
+
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set serviceName %}
+    Confirm who you are
+{% endset%}
+
+{% set title =  "Your UK passport details" %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-l">About your passport</span>
+            <h1 class="govuk-heading-l">{{title}}</h1>
+
+            {{ govukDetails({
+            summaryText: "Where to find these details on your passport",
+            text: "[image]"
+            }) }}
+
+            <form method="post" action={{ formPostLink }}>
+
+                {{ govukInput({
+                    label: {
+                        text: "Given names",
+                        classes: "govuk-label--m"
+                    },
+                    hint: {
+                        text: "As they appear on your passport, including all first and middle names"
+                    },
+                    classes: "govuk-!-width-two-thirds",
+                    id: "idv-hmrc-passport-given-names",
+                    name: "idv-hmrc-passport-given-names",
+                    autocomplete: "given-name",
+                    spellcheck: false
+                }) }}
+
+                {{ govukInput({
+                    label: {
+                        text: "Surname",
+                        classes: "govuk-label--m"
+                    },
+                    hint: {
+                        text: "As it appears on your passport"
+                    },
+                    classes: "govuk-!-width-two-thirds",
+                    id: "idv-hmrc-passport-surname",
+                    name: "idv-hmrc-passport-surname",
+                    autocomplete: "family-name",
+                    spellcheck: false
+                }) }}
+
+                {{ govukInput({
+                    label: {
+                        text: "Passport number",
+                        classes: "govuk-label--m"
+                    },
+                    hint: {
+                        text: "Contains 9 numbers and no letters"
+                    },
+                    classes: "govuk-!-width-two-thirds",
+                    id: "idv-hmrc-passport-number",
+                    name: "idv-hmrc-passport-number",
+                    autocomplete: false,
+                    spellcheck: false
+                }) }}
+
+                {{ govukDateInput({
+                    id: "idv-hmrc-passport-expiry",
+                    namePrefix: "idv-hmrc-passport-expiry",
+                    fieldset: {
+                    legend: {
+                        text: "Date of expiry",
+                        classes: "govuk-fieldset__legend--m"
+                        }
+                    },
+                    hint: {
+                        text: "For example 31 MAR 26 or 31 03 26"
+                    }
+                }) }}
+
+
+                {{ govukButton({
+                    text: "Continue"
+                }) }}
+            </form>
+
+            <p>
+                <a href="">I do not have that information</a>
+            </p>
+
+        </div>
+    </div>
+{% endblock %}

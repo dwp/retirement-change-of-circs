@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Do you want to use a UK bank or building society account? - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" action="when-did-you-become-eligible-to-receive-your-state-pension" method="post">
+
+            <!--page heading with caption include-->
+            {% set pageHeadingH1 %}
+                <span class="govuk-caption-l">
+                    Confirm your identity
+                </span>
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                      When did you start receiving your state pension?
+                    </h1>
+                  </legend>
+            {% endset %}
+
+                <!--Insert the relevant component or pattern for this question-->
+                {{ govukInput({
+                    id: "year-you-start-receiving-your-state-pension",
+                    name: "year-you-start-receiving-your-state-pension",
+                    label: {
+                        html: pageHeadingH1,
+                        classes: "govuk-label--l",
+                        isPageHeading: true
+                    },
+                    hint: {
+                        text: "Enter the year you first started receiving state pension payments. For example, 2015.
+                        This may be different to when you first became eligible. For example, if you deferred your state pension. "
+                    },
+                    classes: "govuk-input--width-4 govuk-input--extra-letter-spacing",
+                    inputmode: "numeric",
+                    spellcheck: false
+                }) }}
+
+
+                {{ govukDetails({
+                summaryText: "I do not have this information now",
+                html: detailsTextHtml | safe
+                }) }}
+
+
+                {{ govukButton({
+                    text: "Continue"
+                }) }}
+
+            <p><a href={{ skipQuestionUrl }}>I cannot answer this question</a></p>
+
+        </form>
+        
+
+
+    </div>
+  </div>
+
+{% endblock %}
+

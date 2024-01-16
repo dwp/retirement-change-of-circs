@@ -1,0 +1,63 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set serviceName %}
+    Confirm who you are
+{% endset%}
+
+{% set title =  "When did you last take out or renew a personal mobile phone contract?" %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-l">About your mobile phone contract</span>
+
+            <form action="./credit-reference-3" method="post">
+
+                {{ govukRadios({
+                name: "self-assessment",
+                fieldset: {
+                    legend: {
+                    text: title | safe,
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                    }
+                },
+                items: [
+                    {
+                    value: "",
+                    text: "Less than 1 year ago"
+                    },
+                    {
+                    value: "",
+                    text: "Between 1 and up to 3 years ago"
+                    },
+                    {
+                    value: "",
+                    text: "Over 3 and up to 5 years ago"
+                    },
+                    {
+                    value: "",
+                    text: "Over 5 years and up to 7 years ago"
+                    },
+                    {
+                    value: "",
+                    text: "Over 7 years ago"
+                    }
+                ]
+                }) }}
+
+
+                {{ govukButton({
+                    text: "Continue"
+                }) }}
+            </form>
+
+            <p>
+                <a href="">I do not have that information</a>
+            </p>
+            
+        </div>
+    </div>
+{% endblock %}

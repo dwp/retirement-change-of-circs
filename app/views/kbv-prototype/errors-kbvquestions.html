@@ -1,0 +1,36 @@
+{% extends "layouts/_base.html" %}
+
+{% block pageTitle %}
+  KBV question bank errors
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Dynamic Trust Hub</span>
+      KBV question bank errors
+    </h1>
+  </div>
+</div>
+
+  <div class="flex-layout__main">
+    <h2 class="govuk-heading-s" id="errors">CIS questions errors</h2>
+    <ul class="govuk-list govuk-list--bullet">
+        <li><a href="#">Question 1</a></li>
+        <li><a href="#">Question 2</a></li>
+        <li><a href="#">Question 3</a></li>
+        <li><a href="#">Question 4</a></li>
+    </ul>
+
+    <h2 class="govuk-heading-s" id="errors">GYSP/Pension Credit questions errors</h2>
+    <ul class="govuk-list govuk-list--bullet">
+        <li><a href="#">Question 1</a></li>
+        <li><a href="#">Question 2</a></li>
+        <li><a href="#">Question 3</a></li>
+        <li><a href="#">Question 4</a></li>
+    </ul>
+  </div>
+</div>
+{% endblock %}

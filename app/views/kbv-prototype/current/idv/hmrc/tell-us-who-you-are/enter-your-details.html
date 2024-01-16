@@ -1,0 +1,66 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set serviceName %}
+    Tell us who you are
+{% endset%}
+
+{% set title =  "Enter your details" %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-l">Check your identity</span>
+            <h1 class="govuk-heading-l">{{title}}</h1>
+
+            <form action="ni" method="post">
+
+                {{ govukInput({
+                    label: {
+                        text: "First name",
+                        classes: "govuk-label--m"
+                    },
+                    classes: "govuk-!-width-two-thirds",
+                    id: "idv-hmrc-first-name",
+                    name: "idv-hmrc-first-name",
+                    autocomplete: "given-name",
+                    spellcheck: false
+                }) }}
+
+                {{ govukInput({
+                    label: {
+                        text: "Last name",
+                        classes: "govuk-label--m"
+                    },
+                    classes: "govuk-!-width-two-thirds",
+                    id: "idv-hmrc-last-name",
+                    name: "idv-hmrc-last-name",
+                    autocomplete: "family-name",
+                    spellcheck: false
+                }) }}
+
+                {{ govukDateInput({
+                    id: "idv-hmrc-date-of-birth",
+                    namePrefix: "idv-hmrc-date-of-birth",
+                    fieldset: {
+                    legend: {
+                        text: "Date of birth",
+                        isPageHeading: true,
+                        classes: "govuk-fieldset__legend--m"
+                        }
+                    },
+                    hint: {
+                        text: "For example, 31 3 1980"
+                    }
+                }) }}
+
+
+                {{ govukButton({
+                    text: "Continue"
+                }) }}
+                
+            </form>
+        </div>
+    </div>
+{% endblock %}

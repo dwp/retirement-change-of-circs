@@ -1,0 +1,168 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set serviceName %}
+    Confirm who you are
+{% endset %}
+
+{% set title =  "Choose 2 items we can ask you about " %}
+
+
+
+<!-- Main content of the question -->
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+            {{ govukErrorSummary({
+                titleText: "There is a problem",
+                errorList: [
+                  {
+                    text: "Please select two options",
+                    href: "#checkbox-error"
+                  }
+                ]
+              }) }}
+
+
+
+            <h1 class="govuk-heading-xl ">
+                Choose 2 items we can ask you about
+              </h1>
+            <form action="/current/idv/hmrc/choose-items-routes" method="post">
+
+                <div class="govuk-form-group govuk-form-group--error">
+                    <fieldset data-minimum-options="2" data-error-multi="Select at least x options" class="govuk-fieldset"
+          data-error="Select an option">
+          <span id="checkbox-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Please select two options
+          </span>
+                      <!-- cycle around the radios -->
+                      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            
+                        <div class="govuk-radios__item">
+                          <input class="govuk-checkboxes__input" id="ukPassport" name="ukPassport" type="checkbox"
+                            value="true">
+            
+                          <label class="govuk-label govuk-checkboxes__label" for="ukPassport">
+                            UK passport
+                          </label>
+                          <span id="ukPassport-hint" class="govuk-hint govuk-radios__hint">
+                            You need a valid UK passport
+                          </span>
+                        </div>
+            
+            
+                        <div class="govuk-radios__item">
+                          <input class="govuk-checkboxes__input" id="payslipsP60" name="idv-hmrc-question-logic" type="checkbox"
+                            value="payslipsP60" aria-controls="target-payslipsP60" aria-expanded="false">
+            
+                          <label class="govuk-label govuk-checkboxes__label" for="payslipsP60">
+                            Payslip or P60
+                          </label>
+                          <span id="payslipsP60-hint" class="govuk-hint govuk-radios__hint">
+                            You need a payslip dated after {{ data['14-weeks-ago-hmrc'] }} or your most recent P60
+                          </span>
+                        </div>
+            
+                        <!-- Start the reveal panel -->
+            
+                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="target-payslipsP60">
+                          <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset">
+                              <!-- <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Which document do you want to use?
+                              </legend> -->
+                              <div class="govuk-radios">
+                                <div class="govuk-radios__item" data-children-count="1">
+                                    <input class="govuk-radios__input" id="idv-hmrc-payslip" name="idv-hmrc-payslip-p60" type="radio" value="payslip">
+                                    <label class="govuk-label govuk-radios__label" for="idv-hmrc-payslip">
+                                        Payslip
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item" data-children-count="1">
+                                    <input class="govuk-radios__input" id="idv-hmrc-p60" name="idv-hmrc-payslip-p60" type="radio" value="p60">
+                                    <label class="govuk-label govuk-radios__label" for="idv-hmrc-payslip">
+                                        P60
+                                    </label>
+                                </div>
+                              </div>
+                            </fieldset>
+                          </div>
+                        </div>
+            
+                        <div class="govuk-radios__item">
+                          <input class="govuk-checkboxes__input" id="self-assessment" name="self-assessment" type="checkbox" value="true" data-aria-controls="target-sa">
+            
+                          <label class="govuk-label govuk-checkboxes__label" for="self-assessment">
+                              Self Assessment
+                          </label>
+                          <span id="sa-hint" class="govuk-hint govuk-radios__hint">
+                              You need details from your recent Self Assessment returns
+                          </span>
+                        </div>
+            
+                        <div class="govuk-radios__item">
+                          <input class="govuk-checkboxes__input" id="taxCreditsPayments" name="ivQuestionLogic" type="checkbox"
+                            value="taxCreditsPayments" aria-controls="target-taxCreditsPayments" aria-expanded="false">
+            
+                          <label class="govuk-label govuk-checkboxes__label" for="taxCreditsPayments">
+                            Tax credits
+                          </label>
+                          <span id="taxCreditsPayments-hint" class="govuk-hint govuk-radios__hint">
+                            You need your claim details, you can use Voice ID
+                          </span>
+                        </div>
+            
+                        <!-- Start the reveal panel -->
+            
+                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                          id="target-taxCreditsPayments">
+                          <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset">
+                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Do you want to use Voice ID?</legend>
+                              <div class="govuk-radios">
+                                <div class="govuk-radios__item" data-children-count="1">  <input class="govuk-radios__input" id="idv-hmrc-voice-id-yes" name="idv-hmrc-payslip-tax-credits" type="radio" value="voice-id-yes">
+                                    <label class="govuk-label govuk-radios__label" for="idv-hmrc-voice-id-yes">
+                                        Yes
+                                    </label></div>
+                                <div class="govuk-radios__item" data-children-count="1">  <input class="govuk-radios__input" id="idv-hmrc-voice-id-no" name="idv-hmrc-payslip-tax-credits" type="radio" value="voice-id-no">
+                            <label class="govuk-label govuk-radios__label" for="idv-hmrc-voice-id-no">
+                                No
+                            </label></div>
+                              </div>
+                            </fieldset>
+                          </div>
+                        </div>
+            
+                        <!-- end the concealed panel -->
+            
+                        <div class="govuk-radios__item">
+                            <input class="govuk-checkboxes__input" id="transunion" name="transunion" type="checkbox" value="true">
+                            <label class="govuk-label govuk-checkboxes__label" for="transunion">
+                                Credit record questions
+                            </label>
+                            
+                        
+                          <span id="transunion-hint" class="govuk-hint govuk-radios__hint">
+                            For example, the year you took out a credit card or phone contract
+                          </span>
+                        </div>
+            
+                      </div>
+                    </fieldset>
+                  </div>
+
+                {{ govukButton({
+                    text: "Continue"
+                }) }}
+
+            </form>
+
+            <p class="govuk-body">
+                <a class="govuk-link" href="we-cannot-cyi-dropout">I do not have 2 of these items</a>
+            </p>
+        </div>
+    </div>
+{% endblock %}
