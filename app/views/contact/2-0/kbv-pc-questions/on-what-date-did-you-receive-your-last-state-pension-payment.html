@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Do you want to use a UK bank or building society account? - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="how-much-was-your-last-state-pension-payment" method="post">
+
+            <!--page heading with caption include-->
+            {% set pageHeadingH1 %}
+                <span class="govuk-caption-l">
+                    Confirm your identity
+                </span>
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    On what day did you receive your last state pension payment?
+                  </h1>
+                </legend>
+            {% endset %}
+
+            <!--Insert the relevant component or pattern for this question-->
+            {{ govukDateInput({
+                id: "date-for-pension-payment",
+                namePrefix: "date-for-pension-payment",
+                fieldset: {
+                    legend: {
+                    html: pageHeadingH1,
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                    }
+                },
+                hint: {
+                    text: "For example, 27 2 2022. You can find this on your latest bank statement or by checking your online banking account."
+                }
+            }) }}
+            
+
+
+            {{ govukDetails({
+            summaryText: "I do not have this information now",
+            html: detailsTextHtml | safe
+            }) }}
+
+
+            {{ govukButton({
+                text: "Continue"
+            }) }}
+
+            <p><a href={{ skipQuestionUrl }}>I cannot answer this question</a></p>
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}

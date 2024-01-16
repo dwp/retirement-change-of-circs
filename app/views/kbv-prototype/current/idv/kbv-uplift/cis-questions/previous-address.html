@@ -1,0 +1,83 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set title =  "What was your previous address?" %}
+
+{% set detailsTextHtml %}
+    <p class="govuk-body">
+        You can stay on this page for up to 20 minutes if you need to check your answer. Do not close the web page.
+    </p>
+
+    <p class="govuk-body">
+        If you need more time, you can come back and confirm your identity later. You might be asked for different information.
+    </p>
+{% endset %}
+
+
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <form class="form" action={{ formPostLink }} method="post" autocomplete="off">
+
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <span class="govuk-caption-l">
+                            Confirm your identity
+                        </span>
+                        <h1 class="govuk-fieldset__heading">
+                            {{ title }}
+                        </h1>
+                    </legend>
+
+                    <p class="govuk-body">
+                        This is your most recent address before you moved to your current address.
+                    </p>
+
+                    {{ govukInput({
+                        label: {
+                            text: 'Address line 1'
+                        },
+                        id: "address-line-1",
+                        name: "address-line-1"
+                    }) }}
+
+                    {{ govukInput({
+                        label: {
+                            text: 'Address line 2 (optional)'
+                        },
+                        id: "address-line-2",
+                        name: "address-line-2"
+                    }) }}
+                    
+                    {{ govukInput({
+                        label: {
+                            text: "Postcode"
+                        },
+                        classes: "govuk-input--width-10",
+                        id: "address-postcode",
+                        name: "address-postcode"
+                    }) }}
+
+                </fieldset>
+
+
+                {{ govukDetails({
+                summaryText: "I do not have this information now",
+                html: detailsTextHtml | safe
+                }) }}
+
+
+                {{ govukButton({
+                    text: "Continue"
+                }) }}
+
+                <p><a href={{ skipQuestionUrl }}>I cannot answer this question</a></p>
+
+            </form>
+            
+        </div>
+    </div>
+{% endblock %}

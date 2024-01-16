@@ -1,0 +1,192 @@
+{% extends "layout_noback.html" %}
+
+{% block pageTitle %}
+We will now pay your State Pension
+  {% if data['frequency-select'] %}
+    {{ data['frequency-select'] }}
+  {% else %}
+    every 2 weeks
+  {% endif %}
+  - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          We will now pay your State Pension
+          {% if data['frequency-select'] %}
+            <span style="text-transform:lowercase;">{{ data['frequency-select'] }}</span>
+          {% else %}
+            every 2 weeks
+          {% endif %}
+        </h1>
+      </div>
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      {% if data['payment-frequency'] == 'Every 4 weeks (13 payments a year)' and data['frequency-select'] == 'Every 2 weeks' %}
+        <p class="govuk-body">
+          We will pay you
+          {% if data['next-payment-amount'] %}
+            {{ (data['next-payment-amount']/2) | fixed | currency }}
+          {% else %}
+            £407.70
+          {% endif %}
+          {% if data['frequency-select'] %}
+            <span style="text-transform:lowercase;">{{ data['frequency-select'] }}</span>
+          {% else %}
+            every 2 weeks
+          {% endif %} starting from Friday
+          {% if data['next-payment-day'] %}
+            <span>{{ data | isoDateFromDateInput("next-payment") | duration(2, "weeks") | govukDate }}.</span>
+          {% else %}
+            25 August 2023.
+          {% endif %}
+        </p>
+
+      {% elif data['payment-frequency'] == 'Every 4 weeks (13 payments a year)' and data['frequency-select'] == 'Every week' %}
+        <p class="govuk-body">
+          We will pay you
+          {% if data['next-payment-amount'] %}
+            {{ (data['next-payment-amount']/4) | fixed | currency }}
+          {% else %}
+            £407.70
+          {% endif %}
+          {% if data['frequency-select'] %}
+            <span style="text-transform:lowercase;">{{ data['frequency-select'] }}</span>
+          {% else %}
+            every week
+          {% endif %} starting from Friday
+          {% if data['next-payment-day'] %}
+            <span>{{ data | isoDateFromDateInput("next-payment") | duration(1, "weeks") | govukDate }}.</span>
+          {% else %}
+            25 August 2023.
+          {% endif %}
+        </p>
+      {% else %}
+        <p class="govuk-body">
+          We will pay you
+          {% if data['next-payment-amount'] %}
+            {{ (data['next-payment-amount']/2) | fixed | currency }}
+          {% else %}
+            £407.70
+          {% endif %}
+          {% if data['frequency-select'] %}
+            <span style="text-transform:lowercase;">{{ data['frequency-select'] }}</span>
+          {% else %}
+            every 2 weeks
+          {% endif %} starting from Friday
+          {% if data['next-payment-day'] %}
+            <span>{{ data | isoDateFromDateInput("next-payment") | duration(2, "weeks") | govukDate }}.</span>
+          {% else %}
+            25 August 2023.
+          {% endif %}
+        </p>
+      {% endif %}
+
+      <p class="govuk-body">
+        {% if data['frequency-email'] == 'frequency-confirmation-yes' %}
+          We have sent you an email to confirm you have changed how often we will pay your State Pension. We will also send you a letter in the post.
+          {% if data['show-letter-format'] == 'show-letter-format-yes' %}
+            Letters are sent in the format you requested.
+          {% endif %}
+        {% else %}
+          We will send you a letter to confirm you have changed how often we will pay your State Pension.
+          {% if data['show-letter-format'] == 'show-letter-format-yes' %}
+            Letters are sent in the format you requested.
+          {% endif %}
+        {% endif %}
+      </p>
+
+      {% if data['pc'] == 'Yes' %}
+      <h2 class="govuk-heading-m">
+        How often we pay your Pension Credit
+      </h2>
+      <p class="govuk-body">
+        If you need to change how often you get Pension Credit, <a href="https://www.gov.uk/pension-credit/change-of-circumstances" target="_blank">contact the Pension Service by phone or post (opens in new tab)</a>.
+      </p>
+    {% endif %}
+    {% if data['other-benefits'] == 'Attendance Allowance' %}
+      <h2 class="govuk-heading-m">
+        How often we pay your Attendance Allowance
+      </h2>
+      <p class="govuk-body">
+        If you need to change how often we pay your Attendance Allowance, <a href="https://www.gov.uk/disability-benefits-helpline" target="_blank">contact the Disability Service Centre by phone or post (opens in new tab)</a>.
+      </p>
+    {% elif data['other-benefits'] == 'Disability Living Allowance (DLA)' %}
+      <h2 class="govuk-heading-m">
+        How often we pay your Disability Living Allowance (DLA)
+      </h2>
+      <p class="govuk-body">
+        If you need to change how often we pay your DLA, <a href="https://www.gov.uk/disability-benefits-helpline" target="_blank">contact the Disability Service Centre by phone or post (opens in new tab)</a>.
+      </p>
+    {% elif data['other-benefits'] == 'Personal Independence Payment (PIP)' %}
+      <h2 class="govuk-heading-m">
+        How often we pay your Personal Independence Payment (PIP)
+      </h2>
+      <p class="govuk-body">
+        If you need to change how often we pay your PIP, <a href="https://www.gov.uk/disability-benefits-helpline" target="_blank">contact the Disability Service Centre by phone or post (opens in new tab)</a>.
+      </p>
+    {% endif %}
+
+      <h2 class="govuk-heading-m">
+        Help improve this service
+      </h2>
+      <p class="govuk-body">
+        You can <a href="#">help improve this service by giving us your feedback (opens in new tab)</a>.
+      </p>
+      <div class="govuk-inset-text">
+        <a href="../your-state-pension&updated.html" class="govuk-link">Return to your State Pension details</a>
+      </div>
+      <p class="govuk-body">
+        <a href="../signed-out.html">Sign out</a>
+      </p>
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+        {
+          href: "../email-confirmation/r2-frequency-confirmation.html",
+          text: "Email confirmation",
+          attributes: {
+            target: "_blank"
+          }
+        },
+        {
+          href: "you-have-changed-how-often-we-pay-you&1.html",
+          text: "Scenario 1"
+        },
+        {
+          href: "you-have-changed-how-often-we-pay-you&2.html",
+          text: "Scenario 2"
+        },
+        {
+          href: "you-have-changed-how-often-we-pay-you&3.html",
+          text: "Scenario 3"
+        },
+          {
+            href: "/frequency/1-0/signed-you-out.html",
+            text: "Service sign out"
+          },
+          {
+            href: "https://govuk-prototype-kit.herokuapp.com/",
+            text: "GOV.UK Prototype Kit " + releaseVersion
+          },
+          {
+            href: "/prototype-admin/clear-data",
+            text: "Clear data"
+          }
+        ],
+        visuallyHiddenTitle: "Footer links"
+      }
+    }) }}
+  {% endblock %}

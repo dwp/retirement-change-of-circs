@@ -1,0 +1,56 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set title =  "What was your previous name?" %}
+
+<!--page heading with caption include-->
+{% set pageHeadingH1 %}
+  <span class="govuk-caption-l">
+    Confirm your identity
+  </span>
+  {{ title }}
+{% endset %}
+
+<!--Hint text for the label-->
+{% set previousNameHint %}
+  <p class="govuk-hint">
+    Enter both first and last name even if only the last name has changed.
+  </p>
+  <p class="govuk-hint">
+    If you have previously had more than one name, enter the most recent one.
+  </p>
+{% endset %}
+
+
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <form class="form" action={{ formPostLink }} method="post" autocomplete="off">
+
+                {{ govukInput({
+                    label: {
+                        html: pageHeadingH1,
+                        classes: "govuk-label--l",
+                        isPageHeading: true
+                    },
+                    hint: {
+                        html: previousNameHint
+                    },
+                    id: "previous-last-name",
+                    name: "previous-last-name"
+                }) }}
+
+                {{ govukButton({
+                    text: "Continue"
+                }) }}
+
+                <p><a href={{ skipQuestionUrl }}>I cannot answer this question</a></p>
+
+            </form>
+            
+        </div>
+    </div>
+{% endblock %}

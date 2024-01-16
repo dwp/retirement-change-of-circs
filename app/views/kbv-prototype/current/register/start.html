@@ -1,0 +1,73 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set title =  "Register" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">{{title}}</h1>
+
+        <p class="govuk-body">
+            Create an account so you can sign in securely each time you visit.
+        </p>
+
+        <div class="govuk-inset-text">
+            <a class="govuk-link" href="../authentication/sign-in">
+                Sign in if you have already created an account
+            </a>
+        </div>
+
+        <h2 class="govuk-heading-m">
+            Before you start
+        </h2>
+
+        <p class="govuk-body">
+            You will need:
+        </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+            <li>an email address</li>
+            <li>a mobile phone</li>
+            <li>your National Insurance number</li>
+        </ul>
+
+        <p class="govuk-body">
+            We will send security codes to your email and phone to check they belong to you.
+        </p>
+
+        <p class="govuk-body">
+            You will also need information from 2 sources so we can confirm your identity and help protect you from fraud.
+        </p>
+
+        <p class="govuk-body">
+            You can choose from:
+        </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+            <li>a valid UK passport</li>
+            <li>payslips or P60</li>
+            <li>Self Assessment</li>
+            <li>information about tax credits, if you claim them</li>
+            <li>details of your bank accounts, loans, mortgages or credit agreements</li>
+        </ul>
+        
+        {{ govukButton({
+            text: "Continue",
+            href: "email-address"
+        }) }}
+
+        {% if data['service-name'] === 'change-of-circumstances'  %}
+            <p class="govuk-body">
+                <a class="govuk-link" href="https://prototype-carers-allowance.herokuapp.com/changes/ACA-2447-3/details-about-you-and-dp">I do not have this information</a>
+            </p>
+        {% else %}
+            <p class="govuk-body">
+                <a class="govuk-link" href="">I do not have this information</a>
+            </p>
+        {% endif %}
+
+    </div>
+</div>
+{% endblock %}

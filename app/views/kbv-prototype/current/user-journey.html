@@ -1,0 +1,109 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+
+{% set title = 'Use case – KBV uplift' %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        <span class="govuk-caption-l">This page is not part of the journey</span>
+        {{title}}
+      </h1>
+
+      <p class="govuk-body">
+        This journey is for testing the KBV uplift journey to a medium level confidence where a user achieved an Eligibility Pass Count (EPC) of 1 from HMRC.
+      </p>
+
+      <p class="govuk-body">
+        If user achieved an EPC=1 within the HMRC IV, a <a href="#">dynamic link within HMRC</a> page will redirect users to OIDV KBV uplift landing page.
+      </p>
+
+      <h2 class="govuk-heading-m">
+        Static pages outside of the normal flow
+      </h2>
+
+      {{ govukAccordion({
+        id: "accordion-default",
+        items: [
+          {
+            heading: {
+              text: "Failure pages on HMRC IV"
+            },
+            content: {
+              html: 
+              "<p class='govuk-body'>
+                <a href='/auth/v13/idv/hmrciv/info-does-not-match'>
+                  Failed to get EPC=2 for the first time
+                </a>
+              </p>
+
+              <p class='govuk-body'>
+                <a href='/auth/v13/idv/hmrciv/info-does-not-match-2'>
+                  Failed to get EPC=2 for the second time
+                </a>
+              </p>
+
+              <p class='govuk-body'>
+                <a href='/auth/v13/idv/hmrciv/info-does-not-match-3'>
+                  Failed to get EPC=2 for the third time
+                </a>
+              </p>
+
+              <p class='govuk-body'>
+                <a href='/auth/v13/idv/hmrciv/info-does-not-match-4'>
+                  Failed to get EPC=2 for the fourth time
+                </a>
+              </p>
+
+              <p class='govuk-body'>
+                Failed to get EPC=2 for the fifth time
+              </p>
+
+              <ul class='govuk-list govuk-list--bullet'>
+                <li>
+                  <a href='/auth/dev-ready/unable-to-confirm-identity'>
+                    EPC=0
+                  </a>
+                </li>
+                <li>
+                  <a href='/auth/v13/kbv-uplift/confirm-your-identity'>
+                    EPC=1
+                  </a>
+                </li>
+              </ul>"
+            }
+          },
+          {
+            heading: {
+              text: "KBV results pages"
+            },
+            content: {
+              html: 
+              "<p class='govuk-body'>
+                <a href='/auth/v13/kbv-uplift/happy-path-1/success'>
+                  KBV successful
+                </a>
+              </p>
+
+              <p class='govuk-body'>
+                <a href='/auth/v13/kbv-uplift/unhappy-path-1/unsuccessful'>
+                  KBV not successful
+                </a>
+              </p>"
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Start this journey",
+        href: "/current/register/start",
+        isStartButton: true
+      }) }}
+
+  </div>
+</div>
+{% endblock %}

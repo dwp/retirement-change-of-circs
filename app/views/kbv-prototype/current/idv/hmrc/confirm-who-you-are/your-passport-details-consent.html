@@ -1,0 +1,71 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set serviceName %}
+    Confirm who you are
+{% endset %}
+
+{% block pageTitle %}
+    We need your consent to share your information - GOV.UK 
+{% endblock %}
+
+
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <span class="govuk-caption-l">
+                Passport details
+            </span>
+            <h1 class="govuk-heading-l">
+                We need your consent to share your information
+            </h1>
+
+            <p class="govuk-body">
+                To help confirm your identity using your passport details, we need your consent to share your information with the HM Passport Office.
+            </p>
+
+            <p class="govuk-body">
+                The Passport Office will compare the information you enter with their records, and confirm with HMRC if the details are correct.
+            </p>
+
+            <p class="govuk-body">
+                For details about how we store and process your information, see our <a href="" class="govuk-link">privacy notice (opens in new window or tab)</a>.
+            </p>
+ 
+
+             
+            <form method="post" novalidate action="/idv/hmrc/passport-routes">
+
+                {{ govukRadios({
+                classes: "govuk-radios--inline",
+                name: "changed-name",
+                fieldset: {
+                    legend: {
+                    text: "Do you consent to HMRC sharing your passport details with the HM Passport Office?",
+                    isPageHeading: false,
+                    classes: "govuk-body"
+                    }
+                },
+                items: [
+                    {
+                    value: "yes",
+                    text: "Yes"
+                    },
+                    {
+                    value: "no",
+                    text: "No"
+                    }
+                ]
+                }) }}
+
+
+                {{ govukButton({
+                text: "Continue"
+                }) }}
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set backLink = 'true' %}
+
+{% set title =  "GYSP/Pension Credit KBV's" %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+            {{ title }}
+        </h1>
+
+        <ul class="govuk-list govuk-list--bullet">
+            <li>
+                <a class="govuk-link" href="/current/idv/kbv-uplift/pc-questions/on-what-date-did-you-receive-your-last-state-pension-payment">On what date did you receive your last state pension payment?</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="/current/idv/kbv-uplift/pc-questions/how-much-was-your-last-state-pension-payment">How much was your last state pension payment?</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="/current/idv/kbv-uplift/pc-questions/what-is-the-sort-code-of-the-bank-or-building-society-your-state-pension-is-paid-into">What is the sort code of the bank or building society your state pension is paid into?</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="/current/idv/kbv-uplift/pc-questions/what-are-the-last-4-digits-of-the-account-number-your-state-pension-is-paid-into">What are the last 4 digits of the account number your state pension is paid into?</a>
+            <li>
+                <a class="govuk-link" href="/current/idv/kbv-uplift/pc-questions/what-is-the-name-of-the-bank-or-building-society-your-state-pension-is-paid-into">What is the name of the bank or building society your state pension is paid into?</a> ** DESCOPED **
+            </li>    
+            </li>
+            <li>
+                <a class="govuk-link" href="/current/idv/kbv-uplift/pc-questions/on-what-day-of-the-week-is-your-state-pension-paid">On what day of the week is your state pension paid?</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="/current/idv/kbv-uplift/pc-questions/when-did-you-start-receiving-your-state-pension">What year did you start receiving your state pension?</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="/current/idv/kbv-uplift/pc-questions/when-did-you-become-eligible-to-receive-your-state-pension">When did you become eligible to receive your state pension?</a>
+            </li>
+        </ul>
+
+
+    </div>
+</div>
+
+{% endblock %}
