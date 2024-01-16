@@ -1,0 +1,49 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set title =  "We’ve been unable to confirm your identity" %}
+
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-l">{{ title }}</h1>
+
+            <p>
+                We’ve been unable to confirm who you are. This is because the information you entered does not match our records.
+            </p>
+
+            <p>
+                If you think you may have entered the wrong information by mistake, you can start again.
+            </p>
+            
+            {{ govukButton({
+                text: "Start again",
+                href: "/current/authentication/sign-in"
+            }) }}
+
+            <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                        I have checked my details and I am still unable to proceed
+                    </span>
+                </summary>
+                <div class="govuk-details__text">
+                    {% if data['service-name'] === 'change-of-circumstances'  %}
+                        <p class="govuk-body">You can still <a class="govuk-link" href="https://prototype-carers-allowance.herokuapp.com/changes/ACA-2447-3/details-about-you-and-dp">tell us that you want to end your claim for Carer's Allowance</a>, even though we have been unable to verify your details.</p>
+                        <p>
+                            We will have to ask you some questions again so that your request can be processed manually.
+                        </p>
+                    {% else %}
+                        <p>
+                            [INSERT SUPPORTING INSTRUCTIONS]
+                        </p>
+                    {% endif %}
+                </div>
+            </details>
+            
+        </div>
+    </div>
+{% endblock %}

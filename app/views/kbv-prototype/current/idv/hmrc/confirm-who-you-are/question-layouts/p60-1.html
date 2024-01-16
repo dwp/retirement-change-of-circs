@@ -1,0 +1,49 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set serviceName %}
+    Confirm who you are
+{% endset %}
+
+{% set title =  "Enter the ‘Total for year’ figure on your P60" %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-l">About your P60</span>
+            <h1 class="govuk-heading-l">
+                {{ title }}
+            </h1>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>Use a P60 from the financial year 2020 to 2021</li>
+                <li>Get the figure from the ‘Pay’ column’ in the ‘Pay and Income Tax details’ section</li>
+                <li>Enter the ‘Total for year’ figure exactly, including pence</li>
+                <li>If you had more than one job, use the figure titled ‘In this employment’</li>
+                <li>The ‘Total for year’ figure must be more than 0.00</li>
+            </ul>
+            <form action={{ formPostLink }} method="post">
+                {{ govukInput({
+                label: {
+                    text: "Enter the exact amount in pounds and pence, for example £0.00",
+                    isPageHeading: false
+                },
+                id: "total-figure-from-p60",
+                name: "total-figure-from-p60"
+                }) }}
+
+                {{ govukDetails({
+                summaryText: "Where to find your total pay details",
+                text: "You can find the amount on your P60 from 2021/22"
+                }) }}
+
+                {{ govukButton({
+                    text: "Continue"
+                }) }}
+            </form>
+            <p>
+                <a href="">I do not have that information</a>
+            </p>
+        </div>
+    </div>
+{% endblock %}

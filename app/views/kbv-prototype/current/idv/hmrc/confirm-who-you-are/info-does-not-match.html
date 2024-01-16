@@ -1,0 +1,36 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set serviceName %}
+    Confirm your identity
+{% endset%}
+
+{% set title =  "We cannot confirm who you are" %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">{{title}}</h1>
+
+            <p class="govuk-body">
+                This means that some or all of the details you gave were incorrect. 
+            </p>
+
+            <p class="govuk-body">
+                You have <strong>4 more attempts</strong> to prove your identity.
+            </p>
+
+            <form method="post" action="/current/idv/hmrc/confirm-who-you-are/choose-2-items?hmrc-failed-attempts=second-attempt" name="" novalidate="">
+
+                <div class="govuk-button-group">
+                    <button class="govuk-button" data-module="govuk-button">
+                        Try again
+                    </button>
+                </div>
+                
+            </form>
+            
+        </div>
+    </div>
+{% endblock %}

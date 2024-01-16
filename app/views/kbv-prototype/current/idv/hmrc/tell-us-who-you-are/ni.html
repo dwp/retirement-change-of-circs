@@ -1,0 +1,44 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set serviceName %}
+    Tell us who you are
+{% endset%}
+
+{% set title =  "What is your National Insurance number?" %}
+
+{% set question %}
+    <span class="govuk-caption-l">Check your identity</span>
+    {{title}}
+{% endset%}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <form action="../confirm-who-you-are/cyi-instructions" method="post">
+                {{ govukInput({
+                    label: {
+                        html: question | safe,
+                        classes: "govuk-label--l",
+                        isPageHeading: true
+                    },
+                    id: "idv-hmrc-ni",
+                    name: "idv-hmrc-ni",
+                    hint: {
+                        text: "It's on your National Insurance card, benefit letter, payslip or P60. For example, QQ123456C."
+                    }
+                }) }}
+
+                <p class="govuk-body">
+                    <a href="">I do not have a National Insurance number, or have lost or forgotten it.</a>
+                </p>
+
+                {{ govukButton({
+                    text: "Continue"
+                }) }}
+            </form>
+        </div>
+    </div>
+{% endblock %}

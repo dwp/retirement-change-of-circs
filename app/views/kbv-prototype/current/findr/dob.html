@@ -1,0 +1,35 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set title =  "What is your date of birth?" %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    
+        <form action="postcode" method="post">
+            {{ govukDateInput({
+                id: "date-of-birth",
+                namePrefix: "date-of-birth",
+                fieldset: {
+                legend: {
+                    text: "What is your date of birth?",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                    }
+                },
+                hint: {
+                    text: "For example, 27 3 1979"
+                }
+            }) }}
+
+            {{ govukButton({
+                text: "Continue"
+            }) }}
+        </form>
+
+    </div>
+</div>
+{% endblock %}

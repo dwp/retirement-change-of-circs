@@ -1,0 +1,23 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  {{title}} - GOV.UK 
+{% endblock %}
+
+{% block beforeContent %}
+    {% if phaseBanner == 'true' %}
+        {% include '_includes/phase-banner.njk' %}
+    {% endif %}
+
+    {% if backLink == 'true' %}
+        {% include '_includes/back-link.njk' %}
+    {% endif %}
+
+    {% if languageToggle == 'true' %}
+        {% include '_includes/language-toggle.njk' %}
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set title =  "What is your landline telephone number?" %}
+
+{% set detailsTextHtml %}
+    <p class="govuk-body">
+        You can stay on this page for up to 20 minutes if you need to check your answer. Do not close the web page.
+    </p>
+
+    <p class="govuk-body">
+        If you need more time, you can come back and confirm your identity later. You might be asked for different information.
+    </p>
+{% endset %}
+
+
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <form class="form" action={{ formPostLink }} method="post" autocomplete="off">
+
+                <!--page heading with caption include-->
+                {% set pageHeadingH1 %}
+                    <span class="govuk-caption-l">
+                        Confirm your identity
+                    </span>
+                    {{ title }}
+                {% endset %}
+
+                {{ govukInput({
+                    label: {
+                        html: pageHeadingH1,
+                        classes: "govuk-label--l",
+                        isPageHeading: true
+                    },
+                    hint: {
+                        text: "For example, 01632 960000 or +44 1632 960999"
+                    },
+                    classes: "govuk-input--width-10",
+                    id: "kbv-landline-tel",
+                    name: "kbv-landline-tel"
+                }) }}
+
+
+                {{ govukDetails({
+                summaryText: "I do not have this information now",
+                html: detailsTextHtml | safe
+                }) }}
+
+
+                {{ govukButton({
+                    text: "Continue"
+                }) }}
+
+                <p><a href={{ skipQuestionUrl }}>I cannot answer this question</a></p>
+
+            </form>
+            
+        </div>
+    </div>
+{% endblock %}

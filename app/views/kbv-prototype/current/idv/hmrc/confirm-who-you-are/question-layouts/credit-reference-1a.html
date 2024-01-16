@@ -1,0 +1,71 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set serviceName %}
+    Confirm who you are
+{% endset %}
+
+{% block pageTitle %}
+    We need your consent to share your information - GOV.UK 
+{% endblock %}
+
+
+
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <span class="govuk-caption-l">
+                Credit record questions
+            </span>
+            <h1 class="govuk-heading-l">
+                We need your consent to share your information
+            </h1>
+
+            <p class="govuk-body">
+                We use a credit reference agency to ask these questions.
+            </p>
+
+            <p class="govuk-body">
+                Our nominated credit reference agency is <a href="#" class="govuk-link">TransUnion UK Limited (opens in new window or tab)</a>.
+            </p>
+
+            <p class="govuk-body">
+                Your credit rating will not be affected.
+            </p>
+
+            <form method="post" novalidate action="./question-layouts/credit-reference-3"
+            >
+
+                {{ govukRadios({
+                classes: "govuk-radios--inline",
+                name: "changed-name",
+                fieldset: {
+                    legend: {
+                    text: "Do you consent to HMRC sharing your name, address and date of birth with TransUnion UK Limited?",
+                    isPageHeading: false,
+                    classes: "govuk-body"
+                    }
+                },
+                items: [
+                    {
+                    value: "yes",
+                    text: "Yes"
+                    },
+                    {
+                    value: "no",
+                    text: "No"
+                    }
+                ]
+                }) }}
+
+
+                {{ govukButton({
+                text: "Continue"
+                }) }}
+            </form>
+        </div>
+    </div>
+{% endblock %}

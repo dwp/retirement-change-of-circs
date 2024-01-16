@@ -1,0 +1,38 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set serviceName %}
+    Confirm who you are
+{% endset %}
+
+{% set title =  "You’ve chosen to use voice ID" %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-l">About your Tax credits</span>
+            <h1 class="govuk-heading-l">
+                {{ title }}
+            </h1>
+
+            <p class="govuk-body">
+                We’re calling you now on the number you used to set up security.
+            </p>
+
+            <p class="govuk-body">
+                This may take up to 35 seconds. Please stay on this page.
+            </p>
+            
+            <form action={{ formPostLink }} method="post">
+                {{ govukButton({
+                    text: "Continue"
+                }) }}
+            </form>
+            
+            <p>
+                <a href="">I do not have that information</a>
+            </p>
+        </div>
+    </div>
+{% endblock %}

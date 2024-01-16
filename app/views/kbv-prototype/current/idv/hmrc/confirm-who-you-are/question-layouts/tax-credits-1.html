@@ -1,0 +1,45 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set serviceName %}
+    Confirm who you are
+{% endset %}
+
+{% set title =  "Enter the last 4 digits of the account your Tax credits are paid into" %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-l">About your Tax credits</span>
+            <h1 class="govuk-heading-l">
+                {{ title }}
+            </h1>
+            
+            <form action={{ formPostLink }} method="post">
+                {{ govukInput({
+                label: {
+                    text: "Get your account number from a bank card, online account, banking app, statement, paying in book or cheque book",
+                    isPageHeading: false
+                },
+                classes: "govuk-input--width-4",
+                id: "bank-account-number",
+                name: "bank-account-number"
+                }) }}
+
+                {{ govukDetails({
+                summaryText: "Where to find your account number",
+                text: "Your account number is usually on the bottom right of your bank card."
+                }) }}
+
+                {{ govukButton({
+                    text: "Continue"
+                }) }}
+            </form>
+            
+            <p>
+                <a href="">I do not have that information</a>
+            </p>
+        </div>
+    </div>
+{% endblock %}

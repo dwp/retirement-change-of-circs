@@ -1,0 +1,50 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+
+
+{% set title =  "Paths – KBV uplift" %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-l">This page is not part of the journey</span>
+            <h1 class="govuk-heading-l">{{title}}</h1>
+
+            <h2 class="govuk-heading-m">
+                Happy paths
+            </h2>
+
+            <ul class="govuk-list govuk-body-l">
+                <li>
+                <a class="govuk-link" href="../kbv-uplift/happy-path-1/child-dob">User journey 1</a>
+                </li>
+                <li>
+                <a class="govuk-link" href="../kbv-uplift/happy-path-2/child-name">User journey 2</a>
+                </li>
+                <li>
+                <a class="govuk-link" href="../kbv-uplift/happy-path-3/partner-nino">User journey 3</a>
+                </li>
+                <li>
+                <a class="govuk-link" href="../kbv-uplift/happy-path-4/phone-number-home">User journey 4</a>
+                </li>
+                <li>
+                <a class="govuk-link" href="../kbv-uplift/happy-path-5/benefits-claimed">User journey 5 (includes all the questions)</a>
+                </li>
+            </ul>
+
+            <h2 class="govuk-heading-m">
+                Unhappy paths
+            </h2>
+
+            <ul class="govuk-list govuk-body-l">
+                <li>
+                <a class="govuk-link" href="../kbv-uplift/unhappy-path-1/benefits-claimed">User journey 1</a>
+                </li>
+                <li>
+                <a class="govuk-link" href="../kbv-uplift/unhappy-path-2/child-name">User journey 2</a>
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+{% endblock %}

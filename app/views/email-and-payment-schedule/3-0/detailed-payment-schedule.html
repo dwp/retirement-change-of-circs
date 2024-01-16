@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Your State Pension - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        <span class="govuk-caption-l">
+          {% if data['full-name'] %}
+            {{ data['full-name'] }}
+          {% else %}
+            Alex Jones
+          {% endif %}
+        </span>
+        Your payment schedule
+      </h1>
+    
+      <p class="govuk-body">Your payments include any changes related to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>changing how often we pay you</li>
+        <li>the annual increase to your State Pension</li>
+        <li>deferring a State Pension</li>
+        <li>inheriting a deceased partner's State Pension</li>
+      </ul>
+      <table class="govuk-table govuk-!-margin-bottom-9 ">
+        <caption class="govuk-table__caption govuk-table__caption--m govuk-visually-hidden">Payment schedule</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Payment date</th>
+            <th scope="col" class="govuk-table__header">Period</th>
+            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Amount</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Friday 21 July 2023</th>
+            <td scope="row" class="govuk-table__cell">23 June to 21 July</td>
+            <td class="govuk-table__cell">£815.40</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Friday 28 July 2023</th>
+            <td scope="row" class="govuk-table__cell">22 July to 28 July</td>
+            <td class="govuk-table__cell">£203.85</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Friday 11 August 2023
+              <p class="govuk-body" style="margin-bottom:0;">and every 2 weeks after that</p>
+            </th>
+            <td scope="row" class="govuk-table__cell">29 July to 11 August</td>
+            <td class="govuk-table__cell">£407.70</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "your-state-pension&issues.html",
+            text: "Alternative overview page"
+          },
+          {
+            href: "https://govuk-prototype-kit.herokuapp.com/",
+            text: "GOV.UK Prototype Kit " + releaseVersion
+          },
+          {
+            href: "/prototype-admin/clear-data",
+            text: "Clear data"
+          }
+        ],
+        visuallyHiddenTitle: "Footer links"
+      }
+    }) }}
+  {% endblock %}

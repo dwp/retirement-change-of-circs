@@ -1,0 +1,49 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set title =  "Check your phone" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">{{title}}</h1>
+
+    <p class="govuk-body">
+      We have sent you a text message with your security code.
+    </p>
+
+    <p class="govuk-body">
+      It might take up to a minute to arrive.
+    </p>
+
+    <p class="govuk-body">
+      The code will expire in 15 minutes.
+    </p>
+
+    <form action="../findr/your-personal-details" method="post" class="form">
+      {{ govukInput({
+        label: {
+          text: "Enter your security code"
+        },
+        classes: "govuk-input--width-10",
+        id: "signin-security-code",
+        name: "signin-security-code"
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
+    <p><a href="sign-in-resend-2fa" class="govuk-link">
+      I did not get a text message</a>
+    </p>
+
+    <p><a href="account-recovery/start-new-phone" class="govuk-link">
+      I cannot access the mobile phone number I use to sign in</a>
+    </p>
+
+  </div>
+</div>
+{% endblock %}
