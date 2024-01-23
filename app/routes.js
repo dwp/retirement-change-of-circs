@@ -1233,6 +1233,7 @@ router.post('/how-often9', function (req, res) {
 
 });
 
+
 // FOR ALT FREQUENCY OPTION VERSION
 router.post('/how-often-alt9', function (req, res) {
 
@@ -1324,6 +1325,23 @@ router.post('/email-conf-bank2', function (req, res) {
 
 });
 
+
+// DO YOU WANT EMAIL BANK
+router.post('/email-conf-bank3', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var frequencyBankConf = req.session.data['bank-email']
+
+  // Check whether the variable matches a condition
+  if (frequencyBankConf == "bank-confirmation-yes"){
+    // Send user to next page
+    res.redirect('/contact/2-0/email-confirmation/email.html')
+  } else {
+    res.redirect('/contact/2-0/email-confirmation/email.html')
+  }
+
+});
+
 // DO YOU WANT EMAIL FREQUENCY
 router.post('/email-conf-frequency2', function (req, res) {
 
@@ -1405,6 +1423,22 @@ router.post('/remove-home-number', function (req, res) {
 
 });
 
+// ROUTING TO YES OR NO FOR REMOVING HOME PHONE NUMBER
+router.post('/remove-home-number2', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var removeHomeNumber = req.session.data['remove-home-phone']
+
+  // Check whether the variable matches a condition
+  if (removeHomeNumber == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/2-0/change-home-phone/check-your-details-remove.html')
+  } else if (removeHomeNumber == "No"){
+    res.redirect('/contact/2-0/change-home-phone/do-not-remove.html')
+  }
+
+});
+
 // ROUTING TO YES OR NO FOR REMOVING ALTERNATIVE NUMBER
 router.post('/remove-alt-number', function (req, res) {
 
@@ -1421,6 +1455,22 @@ router.post('/remove-alt-number', function (req, res) {
 
 });
 
+// ROUTING TO YES OR NO FOR REMOVING ALTERNATIVE NUMBER
+router.post('/remove-alt-number2', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-alt-number'
+  var removeAltNumber = req.session.data['remove-alt-phone']
+
+  // Check whether the variable matches a condition
+  if (removeAltNumber == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/2-0/change-alt-phone/check-your-details-remove.html')
+  } else if (removeAltNumber == "No"){
+    res.redirect('/contact/2-0/change-alt-phone/do-not-remove.html')
+  }
+
+});
+
 // ROUTING TO YES OR NO FOR REMOVING MOBILE NUMBER
 router.post('/remove-mobile-number', function (req, res) {
 
@@ -1433,6 +1483,22 @@ router.post('/remove-mobile-number', function (req, res) {
     res.redirect('/contact/1-0/change-mobile-phone/check-your-details-remove.html')
   } else if (removeMobileNumber == "No"){
     res.redirect('/contact/1-0/change-mobile-phone/do-not-remove.html')
+  }
+
+});
+
+// ROUTING TO YES OR NO FOR REMOVING MOBILE NUMBER
+router.post('/remove-mobile-number2', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-mobile-number'
+  var removeMobileNumber = req.session.data['remove-mobile-phone']
+
+  // Check whether the variable matches a condition
+  if (removeMobileNumber == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/2-0/change-mobile-phone/check-your-details-remove.html')
+  } else if (removeMobileNumber == "No"){
+    res.redirect('/contact/2-0/change-mobile-phone/do-not-remove.html')
   }
 
 });
