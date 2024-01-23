@@ -1453,6 +1453,22 @@ router.post('/remove-email-address', function (req, res) {
 
 });
 
+// ROUTING TO YES OR NO FOR REMOVING EMAIL ADDRESS
+router.post('/remove-email-address2', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var removeEmailAddress = req.session.data['remove-email-address']
+
+  // Check whether the variable matches a condition
+  if (removeEmailAddress == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/2-0/change-email-address/check-your-details-remove.html')
+  } else if (removeEmailAddress == "No"){
+    res.redirect('/contact/2-0/change-email-address/do-not-remove.html')
+  }
+
+});
+
 // CONTACT DETAILS CHANGE -0
 // ELIGIBILITY ROUTING
 
