@@ -1,0 +1,29 @@
+{% extends "layout_noback.html" %}
+
+{% block pageTitle %}
+  You have successfully confirmed your identity - Manage your State Pension - GOV.UK
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="../your-state-pension" method="post">
+        <div class="govuk-form-group">
+          <h1 class="govuk-heading-l">
+            Identity check complete
+          </h1>
+          <p class="govuk-body">
+            You have answered the security questions successfully.
+          </p>
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button> 
+      </div>
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}
