@@ -1439,6 +1439,38 @@ router.post('/remove-home-number2', function (req, res) {
 
 });
 
+// ROUTING TO YES OR NO FOR REMOVING HOME PHONE NUMBER
+router.post('/remove-home-number3', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var removeHomeNumber = req.session.data['remove-home-phone']
+
+  // Check whether the variable matches a condition
+  if (removeHomeNumber == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-home-phone/we-cant-call-you.html')
+  } else if (removeHomeNumber == "No"){
+    res.redirect('/contact/3-0/change-home-phone/do-not-remove.html')
+  }
+
+});
+
+// ROUTING TO YES OR NO FOR REMOVING HOME PHONE NUMBER
+router.post('/remove-home-number4', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var removeHomeNumber = req.session.data['remove-home-phone']
+
+  // Check whether the variable matches a condition
+  if (removeHomeNumber == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-home-phone/you-have-removed-your-only-home-phone-number.html')
+  } else if (removeHomeNumber == "No"){
+    res.redirect('/contact/3-0/change-home-phone/do-not-remove.html')
+  }
+
+});
+
 // ROUTING TO YES OR NO FOR REMOVING ALTERNATIVE NUMBER
 router.post('/remove-alt-number', function (req, res) {
 
@@ -1503,6 +1535,22 @@ router.post('/remove-mobile-number2', function (req, res) {
 
 });
 
+// ROUTING TO YES OR NO FOR REMOVING MOBILE NUMBER
+router.post('/remove-mobile-number3', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-mobile-number'
+  var removeMobileNumber = req.session.data['remove-mobile-phone']
+
+  // Check whether the variable matches a condition
+  if (removeMobileNumber == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-mobile-phone/you-have-removed-your-contact-details.html')
+  } else if (removeMobileNumber == "No"){
+    res.redirect('/contact/3-0/change-mobile-phone/do-not-remove.html')
+  }
+
+});
+
 // ROUTING TO YES OR NO FOR REMOVING EMAIL ADDRESS
 router.post('/remove-email-address', function (req, res) {
 
@@ -1518,6 +1566,7 @@ router.post('/remove-email-address', function (req, res) {
   }
 
 });
+
 
 // ROUTING TO YES OR NO FOR REMOVING EMAIL ADDRESS
 router.post('/remove-email-address2', function (req, res) {
@@ -1535,7 +1584,23 @@ router.post('/remove-email-address2', function (req, res) {
 
 });
 
-// CONTACT DETAILS CHANGE -0
+// ROUTING TO YES OR NO FOR REMOVING EMAIL ADDRESS
+router.post('/remove-email-addres3', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var removeEmailAddress = req.session.data['remove-email-address']
+
+  // Check whether the variable matches a condition
+  if (removeEmailAddress == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-email-address/we-cant-email-you.html')
+  } else if (removeEmailAddress == "No"){
+    res.redirect('/contact/3-0/change-email-address/do-not-remove.html')
+  }
+
+});
+
+// CONTACT DETAILS CHANGE 3-0
 // ELIGIBILITY ROUTING
 
 // Run this code when a form is submitted to 'were-invited'
@@ -1554,6 +1619,42 @@ router.post('/were-invited13', function (req, res) {
   }
 
 });
+
+// Run this code when a form is submitted to 'were-invited'
+router.post('/were-invited14', function (req, res) {
+
+  // Make a variable and give it the value from 'invited'
+  var wereYouInvited = req.session.data['invited']
+
+  // Check whether the variable matches a condition
+  if (wereYouInvited == "letter"){
+    // Send user to next page
+    res.redirect('/contact/3-0/privacy-notice')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/contact/3-0/cannot-use-service')
+  }
+
+});
+
+// CONTACT DETAILS CHANGE - 3-0
+
+// ROUTING TO YES OR NO PROPERTY TYPE
+router.post('/remove-email-address3', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var removeEmailAddress = req.session.data['remove-email-address']
+
+  // Check whether the variable matches a condition
+  if (removeEmailAddress == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-email-address/we-cant-email-you.html')
+  } else if (removeEmailAddress == "No"){
+    res.redirect('/contact/3-0/change-email-address/do-not-remove.html')
+  }
+
+});
+
 
 
 

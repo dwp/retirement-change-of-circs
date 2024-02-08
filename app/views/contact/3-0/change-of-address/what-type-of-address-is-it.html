@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What type of address is it? - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/remove-home-number2" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                What type of address is it?
+              </h1>
+            </legend>
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="residential-home" name="select-residential" type="radio" value="Yes" {{ checked("select-residential", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="home-phone-remove-yes">
+                  Residential home
+                </label>
+                <!-- <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                  You'll have a user ID if you've registered for Self Assessment or filed a tax return online before.
+                </div> -->
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-hospital" name="select-hospital" type="radio" value="No" {{ checked("select-hospital", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="select-hospital-no">
+                  Hopsital
+                </label>
+                <!-- <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                  You'll have a user ID if you've registered for Self Assessment or filed a tax return online before.
+                </div> -->
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-care-home" name="select-care-home" type="radio" value="No" {{ checked("select-care-home", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="select-care-home-no">
+                  Care home
+                <!-- <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                  You'll have a user ID if you've registered for Self Assessment or filed a tax return online before.
+                </div> -->
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">
+        Get help
+      </h2>
+      <p><a href="../contact-pension-service&help" target="_blank">Contact us by phone to get help with the online service (opens in new tab)</a></p>
+    </div>
+  </div>
+
+{% endblock %}
