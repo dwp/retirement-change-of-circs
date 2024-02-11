@@ -1544,7 +1544,7 @@ router.post('/remove-mobile-number3', function (req, res) {
   // Check whether the variable matches a condition
   if (removeMobileNumber == "Yes"){
     // Send user to next page
-    res.redirect('/contact/3-0/change-mobile-phone/you-have-removed-your-contact-details.html')
+    res.redirect('/contact/3-0/change-mobile-phone/you-have-removed-your-contact-details.html?new-mobile-phone&current-mobile-phone')
   } else if (removeMobileNumber == "No"){
     res.redirect('/contact/3-0/change-mobile-phone/do-not-remove.html')
   }

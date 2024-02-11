@@ -31,7 +31,7 @@ module.exports = {
 "new-home-phone": "01943 459286",
 "current-alt-phone": "",
 "new-alt-phone": "",
-"current-mobile-phone": "0779038462",
+"current-mobile-phone": "",
 "new-mobile-phone": "",
 "current-email-address": "alex.jones@dwp.gov.uk",
 "new-email-address": "alex.jones@dwp.gov.uk"
