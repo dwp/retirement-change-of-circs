@@ -18,16 +18,63 @@
           {% endif %}
         </h1>
       </div>
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p class="govuk-body">
+        If we need to contact you about your State Pension, we will call or write to you using these details.
+      </p>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="width:40%;">
+            Home address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>123 Square Street<br>York<br>YO3 1SQ</p>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="width:40%;">
+            Home phone number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['new-home-phone'] %}
+              {{ data['new-home-phone'] }}
+            {% else %}
+              01920 847390
+            {% endif %}
+          </dd>
+        </div> 
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="width:40%;">
+            Mobile phone number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['mobile-phone-number'] %}
+              {{ data['mobile-phone-number'] }}
+            {% else %}
+              0779028462
+            {% endif %}
+          </dd>
+        </div>
+
+        <!-- <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="width:40%;">
+            Correspondance address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Same as your home address<br>ddress</p>
+          </dd>          
+        </div> -->
+      </dl>
       <!-- <p class="govuk-body">We have sent you a confirmation email.</p> -->
       <!-- <h2 class="govuk-heading-m">What happens next</h2>
       <p class="govuk-body">
         We will use
-        {% if data['new-home-phone'] %}
-          {{ data['new-home-phone'] }}
+        {% if data['new-mobile-phone'] %}
+          {{ data['new-mobile-phone'] }}
         {% else %}
           0191 264 0884
-        {% endif %}
-        as your home phone number.
+        {% endif %} as your mobile phone number.
       </p> -->
       <!-- <h2 class="govuk-heading-m">
         If you receive Pension Credit
