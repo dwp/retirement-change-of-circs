@@ -1,0 +1,329 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set serviceName %}
+    Confirm your identity
+{% endset%}
+
+{% set title =  "The information you gave does not match our records" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      The information you gave does not match our records
+    </h1>
+    <p class="govuk-body">
+      This means that some or all of the details you entered were incorrect.
+    </p>
+
+    <p class="govuk-body">
+      You cannot use documents containing out of date information to confirm
+      your identity. If you have changed your personal details, like your name
+      for example, you must make sure your documents and records with HMRC and
+      other organisations are up to date.
+    </p>
+
+    <p class="govuk-body">
+      More detailed help and advice on confirming your identity is available
+      below.
+    </p>
+
+
+    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default-2">
+      <!-- Payslip or P60 -->
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+
+            <button type="button" id="accordion-default-heading-1" aria-controls="accordion-default-2-content-1"
+              class="govuk-accordion__section-button" aria-expanded="false">
+              Payslip or P60
+              <span class="govuk-accordion__icon" aria-hidden="true"></span></button>
+          </h2>
+        </div>
+        <div id="accordion-default-content-1" class="govuk-accordion__section-content"
+          aria-labelledby="accordion-default-heading-1">
+          <p class="govuk-body"><b>Payslip</b></p>
+
+          <p>
+            You need a payslip from within the last 3 months to use this option.
+            You cannot use a payslip that has a zero or negative (refund)
+            amount.
+          </p>
+
+          <p>You will need to tell us:</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>the amount of National Insurance</li>
+            <li>the amount of tax deducted</li>
+          </ul>
+
+          <p>
+            Get these figures from the ‘deductions’ section, and do not use the
+            ‘year to date’ figures. Enter the exact amount in pounds and pence,
+            for example 167.31
+          </p>
+
+          <p class="govuk-body"><b>P60</b></p>
+
+          <p>
+            You need a current P60 to use this option. Your P60 must have a
+            ‘total for year’ figure of more than zero.
+          </p>
+
+          <p>You will need to tell us the:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              ‘total for year’ figure - this is in the ‘Pay and Income Tax
+              details’ section. Use the figure in the column headed 'Pay'
+            </li>
+            <li>
+              ‘employee’s contributions’ figure - ​​this in the right-hand
+              column. If you had more than one job, use the figure titled ‘In
+              this employment’
+            </li>
+          </ul>
+
+          <p>Enter the exact amount in pounds and pence, for example 167.31</p>
+
+          <p class="govuk-body">Has this helped you?</p>
+
+          <div class="govuk-button-group">
+            <form action="choose-2-items" method="post" class="form">
+              <button class="govuk-button govuk-button--secondary" href="choose-2-items" data-module="govuk-button">
+                Yes, try again
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Tax Credits -->
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+
+            <button type="button" id="accordion-default-heading-2" aria-controls="accordion-default-2-content-2"
+              class="govuk-accordion__section-button" aria-expanded="false">
+              Tax Credits
+              <span class="govuk-accordion__icon" aria-hidden="true"></span></button>
+          </h2>
+        </div>
+        <div id="accordion-default-content-2" class="govuk-accordion__section-content"
+          aria-labelledby="accordion-default-heading-2">
+          <p>
+            The details you give must be from a current claim. You will be asked
+            to tell us:
+          </p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              the last 4 digits of the bank account your Tax Credits are paid
+              into. You can find these details on your bank card, statement,
+              online banking or a paying-in or cheque book
+            </li>
+            <li>
+              the amount of a recent Tax Credit payment that has been made to
+              you. Enter the exact amount, including pence. You may find it
+              useful to refer to your bank account to get this information.
+            </li>
+          </ul>
+
+          <p class="govuk-body">Has this helped you?</p>
+
+          <div class="govuk-button-group">
+            <form action="choose-2-items" method="post" class="form">
+              <button class="govuk-button govuk-button--secondary" href="choose-2-items" data-module="govuk-button">
+                Yes, try again
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- UK passport -->
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+
+            <button type="button" id="accordion-default-heading-4" aria-controls="accordion-default-2-content-3"
+              class="govuk-accordion__section-button" aria-expanded="false">
+              UK Passport
+              <span class="govuk-accordion__icon" aria-hidden="true"></span></button>
+          </h2>
+        </div>
+        <div id="accordion-default-content-4" class="govuk-accordion__section-content"
+          aria-labelledby="accordion-default-heading-4">
+          <p>To be able to use this option, your passport must be:</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>issued in the UK</li>
+            <li>not expired or cancelled</li>
+            <li>not reported as lost or stolen</li>
+          </ul>
+
+          <p>
+            Make sure you enter the details exactly as they appear on your
+            passport. You will need to tell us:
+          </p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>your passport number and the expiry date</li>
+            <li>your surname and given names as shown on your passport</li>
+          </ul>
+
+          <p class="govuk-body">
+            The data we use to match is provided by HMPO, and you will be asked
+            to give your consent to us sharing the details you enter with them
+            before you start.
+          </p>
+
+          <p class="govuk-body">Has this helped you?</p>
+
+          <div class="govuk-button-group">
+            <form action="choose-2-items" method="post" class="form">
+              <button class="govuk-button govuk-button--secondary" href="choose-2-items" data-module="govuk-button">
+                Yes, try again
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Self Assessment -->
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+
+            <button type="button" id="accordion-default-heading-3" aria-controls="accordion-default-2-content-4"
+              class="govuk-accordion__section-button" aria-expanded="false">
+              Self Assessment
+              <span class="govuk-accordion__icon" aria-hidden="true"></span></button>
+          </h2>
+        </div>
+        <div id="accordion-default-content-3" class="govuk-accordion__section-content"
+          aria-labelledby="accordion-default-heading-3">
+          <p class="govuk-body"><b>Self Assessment</b></p>
+
+          <p>
+            You will need to give us details of the most recent payment you made
+            towards your Self Assessment. You may find it useful to refer to
+            your bank account to get this information. You will need to tell us
+            the:
+          </p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>exact amount of the payment, including pence</li>
+            <li>date the payment left your bank account</li>
+          </ul>
+
+          <p>
+            It can take up to 5 working days for payments to show in our system.
+            If you made your last payment less than 5 working days ago, try
+            using the details of the previous payment.
+          </p>
+
+          <p class="govuk-body"><b>Pensions and benefits</b></p>
+
+          <p>
+            You may be asked to tell us about your pensions and benefits, if you
+            have any.
+          </p>
+
+          <p>
+            You need to use details from your tax returns from the last 2 years.
+            Enter the exact amounts, noting that these figures are whole pounds
+            and do not include pence. Enter 0 (zero) if a pension or benefit
+            does not apply to you.
+          </p>
+
+          <p class="govuk-body">Has this helped you?</p>
+
+          <div class="govuk-button-group">
+            <form action="choose-2-items" method="post" class="form">
+              <button class="govuk-button govuk-button--secondary" href="choose-2-items" data-module="govuk-button">
+                Yes, try again
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- credit reference -->
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+
+            <button type="button" id="accordion-default-heading-5" aria-controls="accordion-default-2-content-5"
+              class="govuk-accordion__section-button" aria-expanded="false">
+              Credit reference
+              <span class="govuk-accordion__icon" aria-hidden="true"></span></button>
+          </h2>
+        </div>
+        <div id="accordion-default-content-4" class="govuk-accordion__section-content"
+          aria-labelledby="accordion-default-heading-5">
+          <p>
+            Answering these questions will <strong>not</strong> affect your
+            credit rating.
+          </p>
+
+          <p>
+            You need a UK address and enough credit history to use this option.
+            The data we use to match is provided by TransUnion, and you will be
+            asked to give your consent to us sharing the details you enter with
+            them before you start.
+          </p>
+
+          <p>
+            You will be asked up to five multiple choice questions about
+            information that is held on your credit record, for example:
+          </p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              When you took out a mobile phone contract and which company
+              provided it
+            </li>
+            <li>
+              When you took out a personal loan, credit card or mortgage and
+              what the outstanding balance is
+            </li>
+            <li>
+              When you last opened a bank account and which bank provided it
+            </li>
+          </ul>
+
+          <p class="govuk-body">Has this helped you?</p>
+
+          <div class="govuk-button-group">
+            <form action="choose-2-items" method="post" class="form">
+              <button class="govuk-button govuk-button--secondary" href="choose-2-items" data-module="govuk-button">
+                Yes, try again
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="govuk-body">
+      <strong>You have 2 more attempts</strong> to prove your identity.
+    </p>
+
+    {% if data['service-name'] === 'change-of-circumstances'  %}
+      <p class="govuk-body">
+        If you cannot give us details to confirm your identity, you can <a href="https://prototype-carers-allowance.herokuapp.com/changes/ACA-2447-3/details-about-you-and-dp">
+        Confirm my identity another way</a>.
+      </p>
+    {% else %}
+      <p class="govuk-body">
+        If you cannot give us details to confirm your identity, you can <a href="/current/idv/kbv-uplift/confirm-your-identity">
+        Confirm my identity another way</a>.
+      </p>
+    {% endif %}
+
+    <form action="/current/idv/hmrc/confirm-who-you-are/choose-2-items?hmrc-failed-attempts=fourth-attempt" method="post" class="form">
+      <button class="govuk-button" data-module="govuk-button">Try again</button>
+    </form>
+
+  </div>
+</div>
+{% endblock %}

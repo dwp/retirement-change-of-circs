@@ -1,0 +1,56 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set title =  "Check your email" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">{{title}}</h1>
+
+    <div class="govuk-inset-text">
+      <p class="govuk-body">
+        We have sent an email to:<br>
+        <strong class="govuk-!-font-weight-bold">
+            {% if data['register-email-address-code'] %}
+                  {{ data['register-email-address-code'] | lower }}
+            {% else %} 
+                email@email.com
+            {% endif %}
+        </strong>
+      </p>
+    </div>
+
+    <p class="govuk-body">
+        It might take up to a minute to arrive.
+    </p>
+
+    <p class="govuk-body">
+        The email will come from DWP login and includes a security code. If you do not get an email, check your spam folder.
+    </p>
+
+    <p class="govuk-body">
+        The code will expire in 15 minutes.
+    </p>
+
+    <form action="password" method="post" class="form">
+      {{ govukInput({
+        label: {
+          text: "Enter your security code"
+        },
+        classes: "govuk-input--width-10",
+        id: "email-security-code",
+        name: "email-security-code"
+      }) }}
+
+      {{ govukButton({
+          text: "Continue"
+      }) }}
+    </form>
+
+    <p><a href="resend-email">I did not get an email</a></p>
+
+  </div>
+</div>
+{% endblock %}

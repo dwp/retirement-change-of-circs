@@ -1,0 +1,32 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set serviceName %}
+    Confirm your identity
+{% endset%}
+
+{% set title =  "We cannot confirm your identity" %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">{{title}}</h1>
+
+            {% if data['service-name'] === 'change-of-circumstances'  %}
+                <p class="govuk-body">
+                    If you cannot give us details to confirm your identity, you can <a href="https://prototype-carers-allowance.herokuapp.com/changes/ACA-2447-3/details-about-you-and-dp">confirm your identity another way</a>.
+                </p>
+            {% else %}
+                <p class="govuk-body">
+                    If you cannot give us details to confirm your identity, you can <a href="#">confirm your identity another way</a>.
+                </p>
+            {% endif %}
+
+            <p class="govuk-body">
+                If you can give us details to confirm your identity, you can <a href="javascript:history.back();">go back and try again</a>.
+            </p>
+            
+        </div>
+    </div>
+{% endblock %}

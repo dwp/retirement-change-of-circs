@@ -1,0 +1,51 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set serviceName %}
+    Confirm who you are
+{% endset %}
+
+{% set title =  "What type of Self Assessment did you complete in 2020 to 2021?" %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-l">Self Assessment questions</span>
+            
+            <form action={{ formPostLink }} method="post">
+                {{ govukRadios({
+                name: "self-assessment",
+                fieldset: {
+                    legend: {
+                    text: title | safe,
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                    }
+                },
+                hint: {
+                    text: "You will have completed a full tax return form (SA 100) unless HMRC told you to complete the short form (SA 200)."
+                },
+                items: [
+                    {
+                    value: "full-self-assessment",
+                    text: "Full Self Assessment"
+                    },
+                    {
+                    value: "short-self-assessment",
+                    text: "Short Self Assessment"
+                    }
+                ]
+                }) }}
+
+                {{ govukButton({
+                    text: "Continue"
+                }) }}
+            </form>
+            
+            <p>
+                <a href="">I do not have that information</a>
+            </p>
+        </div>
+    </div>
+{% endblock %}

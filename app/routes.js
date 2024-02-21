@@ -1603,7 +1603,7 @@ router.post('/remove-email-addres3', function (req, res) {
 // CONTACT DETAILS CHANGE 3-0
 // ELIGIBILITY ROUTING
 
-// Run this code when a form is submitted to 'were-invited'
+// Run this code when a form is submitted to 'were-invited13'
 router.post('/were-invited13', function (req, res) {
 
   // Make a variable and give it the value from 'invited'
@@ -1620,7 +1620,7 @@ router.post('/were-invited13', function (req, res) {
 
 });
 
-// Run this code when a form is submitted to 'were-invited'
+// Run this code when a form is submitted to 'were-invited14'
 router.post('/were-invited14', function (req, res) {
 
   // Make a variable and give it the value from 'invited'
@@ -1637,9 +1637,26 @@ router.post('/were-invited14', function (req, res) {
 
 });
 
+// Run this code when a form is submitted to 'were-invited14'
+router.post('/were-invited15', function (req, res) {
+
+  // Make a variable and give it the value from 'invited'
+  var wereYouInvited = req.session.data['invited']
+
+  // Check whether the variable matches a condition
+  if (wereYouInvited == "letter"){
+    // Send user to next page
+    res.redirect('/contact/4-0/privacy-notice')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/contact/4-0/cannot-use-service')
+  }
+
+});
+
 // CONTACT DETAILS CHANGE - 3-0
 
-// ROUTING TO YES OR NO PROPERTY TYPE
+// ROUTING TO YES OR NO FOR REMOVING EMAIL ADDRESS
 router.post('/remove-email-address3', function (req, res) {
 
   // Make a variable and give it the value from 'remove-home-number'
@@ -1655,7 +1672,53 @@ router.post('/remove-email-address3', function (req, res) {
 
 });
 
+// ROUTING TO YES OR NO HOME ADDRESS IN THE UK
+router.post('/home-address', function (req, res) {
 
+  // Make a variable and give it the value from 'remove-home-number'
+  var changeHomeAddress = req.session.data['home-address']
+
+  // Check whether the variable matches a condition
+  if (changeHomeAddress == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-of-address/what-type-of-address.html')
+  } else if (changeHomeAddress == "No"){
+    res.redirect('/contact/3-0/cannot-use-service.html')
+  }
+
+});
+
+// ROUTING TO YES OR NO TYPE OF HOME ADDRESS
+router.post('/type-of-address', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var changeTypeOfAddress = req.session.data['residential']
+
+  // Check whether the variable matches a condition
+  if (changeTypeOfAddress == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-of-address/do-you-have-access-to-the-property.html')
+  } else if (changeTypeOfAddress == "No"){
+    res.redirect('/contact/3-0/cannot-use-service.html')
+  }
+
+});
+
+// ROUTING TO YES OR NO ACCESS TO PROPERTY
+router.post('/property-access', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var changePropertyAccess = req.session.data['property-access']
+
+  // Check whether the variable matches a condition
+  if (changePropertyAccess == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-of-address/find-address.html')
+  } else if (changePropertyAccess == "No"){
+    res.redirect('/contact/3-0/report-change-after-move.html')
+  }
+
+});
 
 
 // Run this code when a form is submitted to 'juggling-balls-answer'

@@ -1,32 +1,34 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you? - Manage your State Pension - GOV.UK
+  Have you moved or have access to the property? - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/remove-home-number2" method="post">
+      <form class="form" action="/property-access" method="post">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                Is the new address in the UK?
+                Have you moved or have access to the property?
               </h1>
             </legend>
+            <p>You may have keys to the property but have not moved in yet.</p>
+
 
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="home-phone-remove-yes" name="remove-home-phone" type="radio" value="Yes" {{ checked("remove-home-phone", "Yes") }}>
-                <label class="govuk-label govuk-radios__label" for="home-phone-remove-yes">
+                <input class="govuk-radios__input" id="property-access-yes" name="property-access" type="radio" value="Yes" {{ checked("property-access", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="property-access-yes">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="home-phone-remove-no" name="remove-home-phone" type="radio" value="No" {{ checked("remove-home-phone", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="home-phone-remove-no">
+                <input class="govuk-radios__input" id="property-access-no" name="property-access" type="radio" value="No" {{ checked("property-access", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="property-access-no">
                   No
                 </label>
               </div>

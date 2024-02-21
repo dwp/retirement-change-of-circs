@@ -1,0 +1,95 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set title =  "On what day of the week is your state pension paid?" %}
+
+{% set detailsTextHtml %}
+    <p class="govuk-body">
+        You can stay on this page for up to 20 minutes if you need to check your answer. Do not close the web page.
+    </p>
+
+    <p class="govuk-body">
+        If you need more time, you can come back and confirm your identity later. You might be asked for different information.
+    </p>
+{% endset %}
+
+{% set benefitsClaimedHintText %}
+    <div id="changed-name-hint" class="govuk-hint">
+        Select the benefit you have claimed at any time since {{ data['18-months-ago'] }}.
+    </div>
+{% endset %}
+
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <form class="form" action={{ formPostLink }} method="post" autocomplete="off">
+
+            <!--page heading with caption include-->
+                {% set pageHeadingH1 %}
+                <span class="govuk-caption-l">
+                    Confirm your identity
+                </span>
+                {{ title }}
+                {% endset %}
+
+                {{ govukRadios({
+                idPrefix: "day-of-the-week-state-pension-is-paid",
+                name: "day-of-the-week-state-pension-is-paid",
+                fieldset: {
+                    legend: {
+                        html: pageHeadingH1,
+                        isPageHeading: true,
+                        classes: "govuk-fieldset__legend--l"
+                    }
+                },
+                hint: {
+                    text: "Select the day your state pension is usually paid. You don’t need to tell us about times when you were paid on a different day. For example, if your payment fell on a bank holiday. "
+                },
+                items: [
+                    {
+                        value: "monday",
+                        text: "Monday"
+                    },
+                    {
+                        value: "tuesday",
+                        text: "Tuesday"
+                    },
+                    {
+                        value: "wednesday",
+                        text: "Wednesday"
+                    },
+                    {
+                        value: "thursday",
+                        text: "Thursday"
+                    },
+                    {
+                        value: "friday",
+                        text: "Friday"
+                    },
+                    {
+                        value: "dont-know",
+                        text: "Don't know"
+                    }
+                ]
+                }) }}
+
+                {{ govukDetails({
+                summaryText: "I do not have this information now",
+                html: detailsTextHtml | safe
+                }) }}
+
+
+                {{ govukButton({
+                    text: "Continue"
+                }) }}
+
+                <p><a href={{ skipQuestionUrl }}>I cannot answer this question</a></p>
+
+            </form>
+            
+        </div>
+    </div>
+{% endblock %}

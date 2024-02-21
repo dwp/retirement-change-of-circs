@@ -1,0 +1,81 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set title =  "Sign in" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l"> Sign in</h1>
+
+        <form action="sign-in-2fa" method="post" class="form">
+            
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="sign-in-email-address">
+                Email address
+              </label>
+            
+            <input class="govuk-input" id="sign-in-email-address" name="sign-in-email-address" type="text">
+            
+            </div>
+            
+            
+                        
+            
+            <div class="govuk-show-password" data-module="show-password" data-disable-form-submit-check="false" data-show-text="Show" data-hide-text="Hide" data-show-full-text="Show password" data-hide-full-text="Hide password" data-announce-show="Your password is shown" data-announce-hide="Your password is hidden">
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="password">
+                        Enter password
+                    </label>
+                    <div class="govuk-show-password__input-wrapper">
+                        <input class="govuk-input govuk-password-input govuk-input--with-password" id="password" name="password" type="password" spellcheck="false" aria-describedby="password-hint" autocomplete="new-password">
+                        <span class="govuk-visually-hidden" aria-live="polite">Your password is shown</span>
+                    </div>
+                </div>
+            </div>
+            
+            
+                        
+            
+              
+                
+              
+            
+            <button class="govuk-button" data-module="govuk-button">
+              Continue
+            </button>
+            
+                    </form>
+
+        <p>
+            <a href="../register/start">
+                Register now
+            </a>
+            if you have not used this service before.
+        </p>
+
+        <h2 class="govuk-heading-m">
+            Problems signing in
+        </h2>
+
+        <ul class="govuk-list">
+            <li>
+                <a href="reset-password/start" class="govuk-link">I forgot my password</a>
+            </li>
+            <li>
+                <a href="account-recovery/start-new-email" class="govuk-link">I cannot access the email I use to sign in</a>
+            </li>
+        </ul>
+
+    </div>
+</div>
+{% endblock %}
+
+
+{% block pageScripts %}
+<script src="/public/javascripts/show-password.js"></script>
+
+{% endblock %}
+

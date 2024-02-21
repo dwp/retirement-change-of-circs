@@ -1,0 +1,31 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set title =  "Your personal details" %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">{{title}}</h1>
+
+            <p class="govuk-body">
+                You'll now be asked to enter your name, date of birth, and postcode. This information will help us match your details to our records.
+            </p>
+
+            <p class="govuk-body">
+                Once this is complete, you will then be asked  further questions to help us confirm who you are.
+            </p>
+
+            <p class="govuk-body">
+                You may need to re-enter details about yourself. This is nothing to worry about. It simply helps us confirm it is you and protect you from fraud.
+            </p>
+
+            {{ govukButton({
+                text: "Continue",
+                href: "name"
+            }) }}
+            
+        </div>
+    </div>
+{% endblock %}

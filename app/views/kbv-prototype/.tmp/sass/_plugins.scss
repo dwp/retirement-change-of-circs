@@ -1,0 +1,8 @@
+$govuk-extensions-url-context: "/plugin-assets";
+$govuk-plugins-url-context: "/plugin-assets";
+$govuk-prototype-kit-major-version: 13;
+@import "/Users/victor.ivan/Documents/prototypes/kbv-prototype/node_modules/govuk-frontend/govuk-prototype-kit/init.scss";
+@import "/Users/victor.ivan/Documents/prototypes/kbv-prototype/node_modules/@dwp/dwp-frontend/components/timeline/_timeline.scss";
+@import "/Users/victor.ivan/Documents/prototypes/kbv-prototype/node_modules/@dwp/dwp-frontend/components/key-details-bar/_key-details-bar.scss";
+@import "/Users/victor.ivan/Documents/prototypes/kbv-prototype/node_modules/@dwp/dwp-frontend/components/internal-service-header/_internal-service-header.scss";
+@import "/Users/victor.ivan/Documents/prototypes/kbv-prototype/node_modules/hmrc-frontend/hmrc/_prototype-kit.scss";

@@ -1,0 +1,57 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set backLink = 'true' %}
+
+{% set title =  "CIS KBV's" %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+            {{ title }}
+        </h1>
+
+        <ul class="govuk-list govuk-list--bullet">
+            <li>
+                <a class="govuk-link" href="/current/idv/kbv-uplift/cis-questions/benefits-claimed">Which one of these benefits have you claimed previously</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="/current/idv/kbv-uplift/cis-questions/child-dob">What is your eldest child's date of birth</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="/current/idv/kbv-uplift/cis-questions/child-name">What is your eldest child's full name</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="/current/idv/kbv-uplift/cis-questions/partner-dob">What is your partner's date of birth</a>
+            </li>
+
+            <li>
+                <a class="govuk-link" href="/current/idv/kbv-uplift/cis-questions/partner-nino">What is your partner's National Insurance number</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="/current/idv/kbv-uplift/cis-questions/phone-number-home">What is your landline telephone number</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="/current/idv/kbv-uplift/cis-questions/phone-number-mobile">What is your mobile telephone number</a>
+            </li>
+        </ul>
+
+        <h2 class="govuk-heading-l">
+            Questions not in production
+        </h2>
+
+        <ul class="govuk-list govuk-list--bullet">
+            <li>
+                <a class="govuk-link" href="/current/idv/kbv-uplift/cis-questions/previous-address"> What was your previous address?</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="/current/idv/kbv-uplift/cis-questions/previous-name">What was your previous name?</a>
+            </li>
+        </ul>
+
+    </div>
+</div>
+
+{% endblock %}
