@@ -1,0 +1,48 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set serviceName %}
+    Confirm who you are
+{% endset %}
+
+{% set title =  "We need you to confirm your identity" %}
+
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">{{title}}</h1>
+
+            <p class="govuk-body">
+                We will ask you about items you may have, like your:
+            </p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>UK passport</li>
+                <li>Payslips or P60</li>
+                <li>Self Assessment</li>
+                <li>Tax credits (optional Voice ID)</li>
+                <li>Credit record</li>
+            </ul>
+
+            <p class="govuk-body">
+                You will be able to choose how to confirm your identity.
+            </p>
+
+            <p class="govuk-body">
+                We do this to protect you against fraud.
+            </p>
+
+            {{ govukButton({
+                text: "Continue",
+                href: "choose-2-items"
+            }) }}
+            
+            <p class="govuk-body">
+                <a class="govuk-link" href="./we-cannot-cyi-dropout">I do not have any of these items</a>
+            </p>
+            
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set title =  "Check your phone" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">{{title}}</h1>
+
+    <div class="govuk-inset-text">
+      <p class="govuk-body">
+        We have sent a code to:<br>
+        <strong class="govuk-!-font-weight-bold">
+          {% if data['register-mobile-phone-number'] %}
+              {{ data['register-mobile-phone-number'] }}
+          {% else %} 
+            07771 900 900
+          {% endif %}
+        </strong>
+      </p>
+    </div>
+
+    <p class="govuk-body">
+      It might take up to a minute to arrive.
+    </p>
+
+    <p class="govuk-body">
+      The code will expire in 15 minutes.
+    </p>
+
+    <form action="complete" method="post" class="form">
+      {{ govukInput({
+        label: {
+          text: "Enter your security code"
+        },
+        classes: "govuk-input--width-10",
+        id: "mobile-security-code",
+        name: "mobile-security-code"
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
+    <p><a href="resend-code">I did not get a text message</a></p>
+
+  </div>
+</div>
+{% endblock %}

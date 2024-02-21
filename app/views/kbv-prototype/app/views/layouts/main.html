@@ -1,0 +1,32 @@
+{#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% block footer %}
+    {{ govukFooter({
+    meta: {
+        items: [
+        {
+            href: "https://dwpdigital.atlassian.net/l/cp/EpTqGNkZ",
+            text: "Design decisions"
+        },
+        {
+            href: "https://dwpdigital.atlassian.net/wiki/spaces/IDNT/pages/132940563240/Alpha+Phase",
+            text: "Research insights"
+        },
+        {
+            href: "/manage-prototype",
+            text: "Manage your prototype"
+        },
+        {
+            href: "/manage-prototype/clear-data",
+            text: "Clear data"
+        }
+        ],
+        visuallyHiddenTitle: "Footer links"
+    }
+    }) }}
+{% endblock %}

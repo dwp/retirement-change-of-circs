@@ -1,0 +1,48 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set serviceName %}
+    Confirm who you are
+{% endset %}
+
+{% set title =  "Enter the ‘Employee’s contribution’ figure on your P60" %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-l">About your P60</span>
+            <h1 class="govuk-heading-l">
+                {{ title }}
+            </h1>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>Use a P60 from the financial year 2020 to 2021</li>
+                <li>Get the figure from the ‘Employee’s contributions due on all earnings above the PT’ column</li>
+                <li>Enter the figure exactly, including pence</li>
+                <li>Employee’s contribution’ amount must be more than 0.00</li>
+            </ul>
+            <form action={{ formPostLink }} method="post">
+                {{ govukInput({
+                label: {
+                    text: "Enter the exact amount in pounds and pence, for example £0.00",
+                    isPageHeading: false
+                },
+                id: "total-figure-from-p60",
+                name: "total-figure-from-p60"
+                }) }}
+
+                {{ govukDetails({
+                summaryText: "Where to find the amount on a sample P60",
+                text: "You can find the amount on your P60 from 2021/22"
+                }) }}
+
+                {{ govukButton({
+                    text: "Continue"
+                }) }}
+            </form>
+            <p>
+                <a href="">I do not have that information</a>
+            </p>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set title =  "When did you become eligible to receive your state pension?" %}
+
+{% set detailsTextHtml %}
+    <p class="govuk-body">
+        You can stay on this page for up to 20 minutes if you need to check your answer. Do not close the web page.
+    </p>
+
+    <p class="govuk-body">
+        If you need more time, you can come back and confirm your identity later. You might be asked for different information.
+    </p>
+{% endset %}
+
+{% set benefitsClaimedHintText %}
+    <div id="changed-name-hint" class="govuk-hint">
+        Select the benefit you have claimed at any time since {{ data['18-months-ago'] }}.
+    </div>
+{% endset %}
+
+
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <form class="form" action={{ formPostLink }} method="post" autocomplete="off">
+
+                <!--page heading with caption include-->
+                {% set pageHeadingH1 %}
+                    <span class="govuk-caption-l">
+                            Confirm your identity
+                    </span>
+                    {{ title }}
+                {% endset %}
+
+                <!--Insert the relevant component or pattern for this question-->
+                {{ govukInput({
+                    id: "year-eligible-to-receive-your-state-pension",
+                    name: "year-eligible-to-receive-your-state-pension",
+                    label: {
+                        html: pageHeadingH1,
+                        classes: "govuk-label--l",
+                        isPageHeading: true
+                    },
+                    hint: {
+                        text: "This is the year you became eligible. For example, 2012. This may be different to the year you started receiving your state pension, for example, if you deferred your state pension payment. "
+                    },
+                    classes: "govuk-input--width-4 govuk-input--extra-letter-spacing",
+                    inputmode: "numeric",
+                    spellcheck: false
+                }) }}
+
+
+                {{ govukDetails({
+                summaryText: "I do not have this information now",
+                html: detailsTextHtml | safe
+                }) }}
+
+
+                {{ govukButton({
+                    text: "Continue"
+                }) }}
+
+                <p><a href={{ skipQuestionUrl }}>I cannot answer this question</a></p>
+
+            </form>
+            
+        </div>
+    </div>
+{% endblock %}

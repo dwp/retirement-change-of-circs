@@ -1,0 +1,93 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+
+{% set title =  "KBV uplift" %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-xl">Dynamic Trust Hub prototype</span>
+    <h1 class="govuk-heading-xl">
+      {{ title }}
+    </h1>
+
+    <span class="govuk-caption-l">version 1.0</span>
+    <h2 class="govuk-heading-l">
+      Notable changes
+    </h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-link" href="/current/idv/hmrc/confirm-who-you-are/cyi-instructions">CYI start</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="/current/idv/hmrc/confirm-who-you-are/info-does-not-match-2">HMRC 2nd failed attempt</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="/current/idv/kbv-uplift/confirm-your-identity">KBV uplift start</a>
+      </li>
+    </ul>
+
+
+    {{ govukButton({
+      text: "Start prototype",
+      href: "./current/register/start"
+    }) }}
+
+
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 class="govuk-heading-l">
+      KBV static questions
+    </h2>
+
+    <ul class="govuk-list govuk-list--spaced govuk-!-font-size-24 govuk-!-font-weight-bold">
+      <li>
+        <a class="govuk-link" href="/current/idv/kbv-uplift/cis-questions/index">CIS</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="/current/idv/kbv-uplift/pc-questions/index">GYSP/Pension Credit</a>
+      </li>
+    </ul>
+
+
+
+    
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 class="govuk-heading-m">Service breakdown</h2>
+    <p>
+      <a href="https://prototype-dth.herokuapp.com/errors-notifications">Errors, content pages and notifications (OIDV)
+
+      </a>
+</p>
+
+      <p>
+      <a href="errors-kbvquestions">KBV question bank errors
+
+      </a>
+      
+    </p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+    {{ govukTag({
+      text: "experimental"
+    }) }}
+    <h2 class="govuk-heading-m">Improvements</h2>
+    <p>
+      <a href="/current/experimental/index">View all the experimental journeys and pages</a>
+    </p>
+
+
+  </div>
+</div>
+
+{% endblock %}

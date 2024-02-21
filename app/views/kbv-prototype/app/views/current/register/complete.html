@@ -1,0 +1,45 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set title =  "Registration successful" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+        Your registration was successful
+    </h1>
+
+    <p class="govuk-body">
+        You’ve successfully registered for this service and can now sign in. 
+    </p>
+
+    <h2 class="govuk-heading-m">
+        What happens next
+    </h2>
+
+    <p class="govuk-body">
+        Before you start to use this service, we’ll need to confirm who you are so we can protect you from fraud. 
+    </p>
+
+    <p class="govuk-body">
+        Once you’ve signed in, you’ll need to answer some security questions about documents you may have or personal details about yourself.
+    </p>
+
+    <p class="govuk-body">
+        The answers you provide will only be used to help us confirm who you are. 
+    </p>
+
+    {{ govukInsetText({
+        text: "You may need to re-enter details about yourself. This is nothing to worry about. It simply helps us confirm it is you and protect you from fraud."
+    }) }}
+
+    {{ govukButton({
+        text: "Continue to sign in",
+        href: "../authentication/sign-in"
+    }) }}
+    </div>
+</div>
+{% endblock %}

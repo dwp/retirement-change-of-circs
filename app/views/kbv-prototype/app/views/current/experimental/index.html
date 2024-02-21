@@ -1,0 +1,26 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'false' %}
+
+{% set title =  "Improvements" %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+            <h2 class="govuk-heading-l">
+                Show password
+            </h2>
+
+            <p class="govuk-body">
+                Design concepts to explore show password option.
+            </p>
+
+            <ul class="govuk-list">
+                <li><a href="/current/experimental/show-password/show-password" class="govuk-link">Iteration 1</a></li>
+            </ul>
+
+        </div>
+    </div>
+{% endblock %}

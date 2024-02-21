@@ -1,0 +1,42 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set title =  "Enter your mobile phone number" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">{{title}}</h1>
+
+    <p class="govuk-body">
+      We will send a security code to this number.
+    </p>
+
+    <p class="govuk-body">
+      Whenever you sign in to this service we will send a new security code.
+    </p>
+
+    <form action="code" method="post" class="form">
+      {{ govukInput({
+        label: {
+          text: "Mobile phone number"
+        },
+        hint: {
+          text: "For international numbers include the country code"
+        },
+        classes: "govuk-input govuk-input--width-20",
+        id: "register-mobile-phone-number",
+        name: "register-mobile-phone-number",
+        type: "tel",
+        autocomplete: "tel"
+      }) }}
+
+      {{ govukButton({
+          text: "Continue"
+      }) }}
+    </form>
+
+  </div>
+</div>
+{% endblock %}

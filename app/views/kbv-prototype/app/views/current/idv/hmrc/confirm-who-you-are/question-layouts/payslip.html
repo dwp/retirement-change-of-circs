@@ -1,0 +1,49 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set serviceName %}
+    Confirm who you are
+{% endset %}
+
+{% set title =  "Enter the amount of National Insurance from a payslip" %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-l">About your payslip</span>
+            <h1 class="govuk-heading-l">
+                {{ title }}
+            </h1>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>Use a payslip dated after {{ data['14-weeks-ago-hmrc'] }}</li>
+                <li>Get the figure from the ‘Deductions’ section</li>
+                <li>Do not use the ‘Year to date’ figure</li>
+                <li>The amount of National Insurance you paid must be more than 0.00</li>
+            </ul>
+            <form method="post" action={{ formPostLink }}>
+                
+                {{ govukInput({
+                label: {
+                    text: "Enter the exact amount in pounds and pence, for example £0.00",
+                    isPageHeading: false
+                },
+                id: "ni-amount-from-pay-slip",
+                name: "ni-amount-from-pay-slip"
+                }) }}
+
+                {{ govukDetails({
+                summaryText: "Where to find how much National Insurance you paid",
+                text: "You can find this figure on any payslip from the last 3 months, in the ‘Deductions’ section."
+                }) }}
+
+                {{ govukButton({
+                    text: "Continue"
+                }) }}
+            </form>
+            <p>
+                <a href="">I do not have that information</a>
+            </p>
+        </div>
+    </div>
+{% endblock %}

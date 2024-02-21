@@ -1,0 +1,38 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set serviceName %}
+    Confirm who you are
+{% endset%}
+
+{% set title =  "We need to check your identity" %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">{{title}}</h1>
+
+            <p class="govuk-body">
+                We will ask you for personal details, like your: 
+            </p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>name</li>
+                <li>date of birth</li>
+                <li>National Insurance number</li>
+                <li>postcode</li>
+            </ul>
+
+            <p class="govuk-body">
+                We will check the details you give us with our records and then ask some security questions to confirm your identity. 
+            </p>
+
+            {{ govukButton({
+                text: "Continue",
+                href: "../tell-us-who-you-are/enter-your-details"
+            }) }}
+            
+        </div>
+    </div>
+{% endblock %}

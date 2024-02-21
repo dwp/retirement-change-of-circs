@@ -8,7 +8,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/remove-home-number2" method="post">
+      <form class="form" action="/home-address" method="post">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -19,14 +19,14 @@
 
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="home-phone-remove-yes" name="remove-home-phone" type="radio" value="Yes" {{ checked("remove-home-phone", "Yes") }}>
-                <label class="govuk-label govuk-radios__label" for="home-phone-remove-yes">
+                <input class="govuk-radios__input" id="home-address-yes" name="home-address" type="radio" value="Yes" {{ checked("home-address", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="home-address-yes">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="home-phone-remove-no" name="remove-home-phone" type="radio" value="No" {{ checked("remove-home-phone", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="home-phone-remove-no">
+                <input class="govuk-radios__input" id="home-address-no" name="home-address" type="radio" value="No" {{ checked("home-address", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="home-address-no">
                   No
                 </label>
               </div>
