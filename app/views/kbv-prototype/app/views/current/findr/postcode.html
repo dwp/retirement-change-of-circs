@@ -1,0 +1,32 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set title =  "What is your postcode?" %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">What is your postcode?</h1>
+        <form action="../idv/hmrc/confirm-who-you-are/start" method="post">
+            {{ govukInput({
+                label: {
+                text: "Postcode",
+                classes: "govuk-label"
+                },
+                hint: {
+                text: "For example, AA3 1AB."
+                },
+                id: "postcode",
+                name: "postcode",
+                classes: "govuk-input--width-10"
+                }) }}
+                {{ govukButton({
+                text: "Continue"
+                }) }}
+        </form>
+
+    </div>
+</div>
+{% endblock %}

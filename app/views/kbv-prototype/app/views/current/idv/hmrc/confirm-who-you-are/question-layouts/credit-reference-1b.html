@@ -1,0 +1,55 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set serviceName %}
+    Confirm who you are
+{% endset%}
+
+{% set title =  "Find your UK address" %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-l">Confirm your identity</span>
+            <h1 class="govuk-heading-l">{{title}}</h1>
+
+            <form action="./question-layouts/credit-reference-2" method="post">
+
+                {{ govukInput({
+                    label: {
+                        text: "Postcode",
+                        classes: "govuk-label--m"
+                    },
+                    classes: "govuk-!-width-one-third",
+                    id: "idv-hmrc-credit-reference-postcode",
+                    name: "idv-hmrc-credit-reference-postcode",
+                    autocomplete: "postcode",
+                    spellcheck: false
+                }) }}
+
+                {{ govukInput({
+                    label: {
+                        text: "House number or name (optional)",
+                        classes: "govuk-label--m"
+                    },
+                    classes: "govuk-!-width-two-thirds",
+                    id: "idv-hmrc-credit-reference-house-name",
+                    name: "idv-hmrc-credit-reference-house-name",
+                    autocomplete: "family-name",
+                    spellcheck: false
+                }) }}
+
+                <p class="govuk-body">
+                    <a href="#" class="govuk-link">Enter your address manually</a>
+                </p>
+
+
+                {{ govukButton({
+                    text: "Continue"
+                }) }}
+            </form>
+            
+        </div>
+    </div>
+{% endblock %}

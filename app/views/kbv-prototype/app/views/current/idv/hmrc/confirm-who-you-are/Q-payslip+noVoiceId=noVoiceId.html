@@ -1,0 +1,14 @@
+<!-- Redirects to second, third and fourth attempts via this page -->
+{% if data['hmrc-failed-attempts'] === 'second-attempt' %}
+    {% set formPostLink =  "./info-does-not-match-2" %}
+{% elif data['hmrc-failed-attempts'] === 'third-attempt'  %}
+    {% set formPostLink =  "./info-does-not-match-3" %}
+{% elif data['hmrc-failed-attempts'] === 'fourth-attempt'  %}
+    {% set formPostLink =  "./info-does-not-match-4" %}
+{% elif data['hmrc-failed-attempts'] === 'fifth-attempt'  %}
+    {% set formPostLink =  "/current/idv/kbv-uplift/unsuccess" %}
+{% else %}
+    {% set formPostLink =  "./info-does-not-match" %}
+{% endif %}
+
+{% extends "./question-layouts/tax-credits-1.html" %}

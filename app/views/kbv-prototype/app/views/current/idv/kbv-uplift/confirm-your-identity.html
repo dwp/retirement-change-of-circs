@@ -1,0 +1,37 @@
+{% extends "layouts/_base.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+
+{% set title =  "Confirm your identity in another way" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">{{title}}</h1>
+
+        <p class="govuk-body">
+            We need to ask you further questions. This is because either:
+        </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+            <li>
+                the information you have provided so far has not confirmed you are who you say you are
+            </li>
+            <li>
+                you have been unable to provide us with enough information about documents we have asked about
+            </li>
+        </ul>
+
+        <p class="govuk-body">
+            The answers you provide to the following questions will only be used to help us confirm your identity.
+        </p>
+
+        {{ govukButton({
+            text: "Continue",
+            href: "user-journey"
+        }) }}
+        
+    </div>
+</div>
+{% endblock %}
