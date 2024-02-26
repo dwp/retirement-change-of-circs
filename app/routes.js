@@ -1585,7 +1585,7 @@ router.post('/remove-email-address2', function (req, res) {
 });
 
 // ROUTING TO YES OR NO FOR REMOVING EMAIL ADDRESS
-router.post('/remove-email-addres3', function (req, res) {
+router.post('/remove-email-address3', function (req, res) {
 
   // Make a variable and give it the value from 'remove-home-number'
   var removeEmailAddress = req.session.data['remove-email-address']
@@ -1673,6 +1673,7 @@ router.post('/remove-email-address3', function (req, res) {
 });
 
 // ROUTING TO YES OR NO HOME ADDRESS IN THE UK
+
 router.post('/home-address', function (req, res) {
 
   // Make a variable and give it the value from 'remove-home-number'
@@ -1681,7 +1682,24 @@ router.post('/home-address', function (req, res) {
   // Check whether the variable matches a condition
   if (changeHomeAddress == "Yes"){
     // Send user to next page
-    res.redirect('/contact/3-0/change-of-address/what-type-of-address.html')
+    res.redirect('/contact/3-0/change-of-address/type-of-address.html')
+  } else if (changeHomeAddress == "No"){
+    res.redirect('/contact/3-0/cannot-use-service.html')
+  }
+
+});
+
+// ROUTING TO YES OR NO CORRESPONDENCE ADDRESS IN THE UK
+
+router.post('/correspondence-address', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var changeHomeAddress = req.session.data['correspondence-address']
+
+  // Check whether the variable matches a condition
+  if (changeHomeAddress == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/correspondence-address/access-to-the-property.html')
   } else if (changeHomeAddress == "No"){
     res.redirect('/contact/3-0/cannot-use-service.html')
   }
@@ -1697,14 +1715,32 @@ router.post('/type-of-address', function (req, res) {
   // Check whether the variable matches a condition
   if (changeTypeOfAddress == "Yes"){
     // Send user to next page
-    res.redirect('/contact/3-0/change-of-address/do-you-have-access-to-the-property.html')
+    res.redirect('/contact/3-0/change-of-address/access-to-the-property.html')
   } else if (changeTypeOfAddress == "No"){
     res.redirect('/contact/3-0/cannot-use-service.html')
   }
 
 });
 
-// ROUTING TO YES OR NO ACCESS TO PROPERTY
+// ROUTING TO YES OR NO REMOVE CORRESPONDENCE ADDRESS
+router.post('/remove-correspondence-address', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var changeTypeOfAddress = req.session.data['correspondence']
+
+  // Check whether the variable matches a condition
+  if (changeTypeOfAddress == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/correspondence-address/access-to-the-property.html')
+  } else if (changeTypeOfAddress == "No"){
+    res.redirect('/contact/3-0/correspondence-address/do-not-remove.html')
+  }
+
+});
+
+
+
+// ROUTING TO YES OR NO ACCESS TO HOME ADDRESS
 router.post('/property-access', function (req, res) {
 
   // Make a variable and give it the value from 'remove-home-number'
@@ -1720,20 +1756,173 @@ router.post('/property-access', function (req, res) {
 
 });
 
+// ROUTING TO YES OR NO TO ACCESS TO CORRESPONDENCE ADDRESS
 
-// Run this code when a form is submitted to 'juggling-balls-answer'
-router.post('/juggling-balls-answer', function (req, res) {
+router.post('/correspondence-property-access', function (req, res) {
 
-  // Make a variable and give it the value from 'how-many-balls'
-  var howManyBalls = req.session.data['how-many-balls']
+  // Make a variable and give it the value from 'remove-home-number'
+  var changeHomeAddress = req.session.data['correspondence-property-access']
 
   // Check whether the variable matches a condition
-  if (howManyBalls == "3 or more"){
+  if (changeHomeAddress == "Yes"){
     // Send user to next page
-    res.redirect('/anil-test/juggling-trick')
+    res.redirect('/contact/3-0/correspondence-address/find-address.html')
+  } else if (changeHomeAddress == "No"){
+    res.redirect('/contact/3-0/report-change-after-move.html')
+  }
+
+});
+
+
+// CONTACT DETAILS CHANGE - 4-0 MVP
+
+// FOR SINGLE FREQUENCY OPTION VERSION
+
+// Run this code when a form is submitted to 'payment frequency'
+router.post('/how-often10', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var frequencySelected = req.session.data['frequency-select']
+
+  // Check whether the variable matches a condition
+  if (frequencySelected == "Every 4 weeks"){
+    // Send user to next page
+    res.redirect('/contact/4-0/change-frequency/keep-how-often-we-will-pay-you.html')
   } else {
-    // Send user to ineligible page
-    res.redirect('/anil-test/ineligible')
+    res.redirect('/contact/4-0/change-frequency/check-how-often-we-will-pay-you')
+  }
+
+});
+
+
+// FOR ALT FREQUENCY OPTION VERSION
+router.post('/how-often-alt10', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var frequencySelected = req.session.data['frequency-select']
+
+  // Check whether the variable matches a condition
+  if (frequencySelected == "Every 2 weeks"){
+    // Send user to next page
+    res.redirect('/contact/4-0/change-frequency/keep-how-often-we-will-pay-you&alt.html')
+  } else {
+    res.redirect('/contact/4-0/change-frequency/check-how-often-we-will-pay-you')
+  }
+
+});
+
+// FOR SINGLE FREQUENCY OPTION VERSION
+router.post('/how-often-single10', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var frequencySelected = req.session.data['frequency-select']
+
+  // Check whether the variable matches a condition
+  if (frequencySelected == "Every 4 weeks"){
+    // Send user to next page
+    res.redirect('/contact/4-0/change-frequency/keep-how-often-we-will-pay-you.html')
+  } else {
+    res.redirect('/contact/4-0/change-frequency/check-how-often-we-will-pay-you')
+  }
+
+});
+
+// ROUTING TO RIGHT CONFIRMATION VERSION FOR THE FREQUENCY CHANGE SCENARIO SELECTED
+router.post('/frequency-scenario4', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var frequencyScenario = req.session.data['frequency-scenario-select']
+
+  // Check whether the variable matches a condition
+  if (frequencyScenario == "1"){
+    // Send user to next page
+    res.redirect('/contact/4-0/change-frequency/you-have-changed-how-often-we-pay-you&1.html')
+  } else if (frequencyScenario == "2"){
+    res.redirect('/contact/4-0/change-frequency/you-have-changed-how-often-we-pay-you&2.html')
+  } else if (frequencyScenario == "3"){
+    res.redirect('/contact/4-0/change-frequency/you-have-changed-how-often-we-pay-you&3.html')
+  } else {
+    res.redirect('/contact/4-0/change-frequency/you-have-changed-how-often-we-pay-you&1.html')
+  }
+
+});
+
+// Run this code when a form is submitted to 'account-type-mvp'
+router.post('/account-type13', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var accountType = req.session.data['bank-or-build']
+
+  // Check whether the variable matches a condition
+  if (accountType == "uk-account"){
+    // Send user to next page
+    res.redirect('/contact/4-0/change-bank/bank-or-building-society-details')
+  } else {
+    res.redirect('/contact/4-0/change-bank/can-only-use-uk-account.html')
+  }
+
+});
+
+// ROUTING TO YES OR NO FOR REMOVING HOME PHONE NUMBER
+router.post('/remove-home-number5', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var removeHomeNumber = req.session.data['remove-home-phone']
+
+  // Check whether the variable matches a condition
+  if (removeHomeNumber == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/4-0/change-home-phone/check-your-details-remove.html')
+  } else if (removeHomeNumber == "No"){
+    res.redirect('/contact/4-0/change-home-phone/do-not-remove.html')
+  }
+
+});
+
+// ROUTING TO YES OR NO FOR REMOVING ALTERNATIVE NUMBER
+router.post('/remove-alt-number3', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-alt-number'
+  var removeAltNumber = req.session.data['remove-alt-phone']
+
+  // Check whether the variable matches a condition
+  if (removeAltNumber == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/4-0/change-alt-phone/check-your-details-remove.html')
+  } else if (removeAltNumber == "No"){
+    res.redirect('/contact/4-0/change-alt-phone/do-not-remove.html')
+  }
+
+});
+
+// ROUTING TO YES OR NO FOR REMOVING MOBILE NUMBER
+router.post('/remove-mobile-number4', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-mobile-number'
+  var removeMobileNumber = req.session.data['remove-mobile-phone']
+
+  // Check whether the variable matches a condition
+  if (removeMobileNumber == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/4-0/change-mobile-phone/check-your-details-remove.html')
+  } else if (removeMobileNumber == "No"){
+    res.redirect('/contact/4-0/change-mobile-phone/do-not-remove.html')
+  }
+
+});
+
+// ROUTING TO YES OR NO FOR REMOVING EMAIL ADDRESS
+router.post('/remove-email-address4', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var removeEmailAddress = req.session.data['remove-email-address']
+
+  // Check whether the variable matches a condition
+  if (removeEmailAddress == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/4-0/change-email-address/check-your-details-remove.html')
+  } else if (removeEmailAddress == "No"){
+    res.redirect('/contact/4-0/change-email-address/do-not-remove.html')
   }
 
 });

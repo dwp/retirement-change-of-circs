@@ -16,14 +16,31 @@
                       Confirm address
                   </h1>
               </legend>
-              <p>1 address found for <b>wr11nl</b> and <b>1</b>. <a href="find-address.html">Search again</a></p>
               <div class="govuk-inset-text">
-                1 Washington Street, Worcester, WR1 1NL
+                {% if data['new-correspondence-address-line-1'] %}
+                {{ data['new-correspondence-address-line-1'] }},
+                 {% else %}
+                  123 Square Street,
+                {% endif %}
+                {% if data['new-correspondence-address-line-2'] %}
+                  {{ data['new-correspondence-address-line-2'] }},
+                {% else %}
+                 York,
+                {% endif %}
+                {% if data['new-correspondence-address-line-3'] %}
+                {{ data['new-correspondence-address-line-3'] }},
+                {% endif %}
+                {% if data['new-correspondence-postcode'] %}
+                {{ data['new-correspondence-postcode'] }}
+                {% else %}
+                  YO3 1SQ
+                {% endif %}
               </div>
               <button type="submit" class="govuk-button" data-module="govuk-button">
                 Use this address
               </button>
-              <p class="govuk-body"><a href="select-an-address" class="govuk-link">Use a different address</a></p>
+              <p class="govuk-body"><a href="find-address" class="govuk-link">Find an address</a></p>
+              <p class="govuk-body govuk-!-margin-bottom-0"><a href="enter-manual-address" class="govuk-link">Enter address manually</a></p>
 
           </fieldset>
         </div>

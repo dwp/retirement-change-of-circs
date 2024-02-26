@@ -15,17 +15,17 @@
               Is your new address in the UK?
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['home-address'] %}
-                {{ data['home-address'] }}
+              {% if data['correspondence-address'] %}
+                {{ data['correspondence-address'] }}
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="new-address-in-the-UK.html">
+              <a class="govuk-link" href="uk-address.html">
                 Change<span class="govuk-visually-hidden"> if you want to use a UK bank or building society account</span>
               </a>
             </dd>
           </div>
-          <div class="govuk-summary-list__row">
+          <!-- <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
               What type of address is it?
             </dt>
@@ -39,14 +39,14 @@
                 Change<span class="govuk-visually-hidden"> if you want to use a UK bank or building society account</span>
               </a>
             </dd>
-          </div>
+          </div> -->
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
               Do you have access to the property?
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['property-access'] %}
-                {{ data['property-access'] }}
+              {% if data['correspondence-property-access'] %}
+                {{ data['correspondence-property-access'] }}
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
@@ -60,24 +60,24 @@
               Your address details
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['new-address-line-1'] %}
-              {{ data['new-address-line-1'] }}<br>
-              {% else %}
-              1 Washington Street<br>
-              {% endif %}
-              {% if data['new-address-line-2'] %}
-              {{ data['new-address-line-2'] }}<br>
-              {% else %}
-              Worcester<br>
-              {% endif %}
-              {% if data['new-address-line-3'] %}
-              {{ data['new-address-line-3'] }}<br>
-              {% endif %}
-              {% if data['new-postcode'] %}
-              {{ data['new-postcode'] }}
-              {% else %}
-                WR1 1NL
-              {% endif %}
+              {% if data['new-correspondence-address-line-1'] %}
+                {{ data['new-correspondence-address-line-1'] }}<br>
+                 {% else %}
+                  123 Square Street<br>
+                {% endif %}
+                {% if data['new-correspondence-address-line-2'] %}
+                  {{ data['new-correspondence-address-line-2'] }}<br>
+                {% else %}
+                 York<br>
+                {% endif %}
+                {% if data['new-correspondence-address-line-3'] %}
+                {{ data['new-correspondence-address-line-3'] }}<br>
+                {% endif %}
+                {% if data['new-correspondence-postcode'] %}
+                {{ data['new-correspondence-postcode'] }}
+                {% else %}
+                  YO3 1SQ
+                {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="find-address.html">
