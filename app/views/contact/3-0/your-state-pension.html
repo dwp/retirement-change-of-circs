@@ -132,7 +132,7 @@
         {% endif %}
       </dl>
       <h2 class="govuk-heading-m">Contact details</h2>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-3">
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row" style="border-top: 1px solid #b1b4b6;padding-top:15px;">
           <dt class="govuk-summary-list__key">
             Address
@@ -272,47 +272,7 @@
           </dd>
         </div>
 
-        <!-- <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Correspondence address
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {% if data['correspondence-address-line-1'] %}
-              {{ data['correspondence-address-line-1'] }}<br>
-            {% else %}
-              58 Pigeon Street<br>
-            {% endif %}
-            {% if data['correspondence-address-line-2'] %}
-              {{ data['correspondence-address-line-2'] }}<br>
-            {% else %}
-              York<br>
-            {% endif %}
-            {% if data['correspondence-address-line-3'] %}
-              {{ data['correspondence-address-line-3'] }}<br>
-            {% endif %}
-            {% if data['correspondence-postcode'] %}
-              {{ data['correspondence-postcode'] }}
-            {% else %}
-              YO5 1AB
-            {% endif %}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            {% if data['current-correspondence-address'] %}
-            <ul class="govuk-summary-list__actions-list">  
-              <li class="govuk-summary-list__actions-list-item">
-                <a class="govuk-link" href="">Change<span class="govuk-visually-hidden"> correspondence address</span></a>
-              </li>
-              <li class="govuk-summary-list__actions-list-item">
-                <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> correspondence address</span></a>
-              </li>
-            </ul>
-            {% else %}
-            <a class="govuk-link" href="#">Add<span class="govuk-visually-hidden"> correspondence address</span></a>
-            {% endif %}
-          </dd>
-        </div> -->
-
-        <!-- {% if data['show-letter-format'] == 'yes' %}
+        {% if data['show-letter-format'] == 'yes' %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Alternative format for letters
@@ -324,18 +284,51 @@
 
           </dd>
         </div>
-        {% endif %} -->
+        {% endif %}
       </dl>
 
-      <div>
-        <dl class="govuk-summary-list govuk-!-margin-bottom-20">
-        <h2 class="govuk-heading-s">If you'd like your letters sent somewhere other than your home address,<a href="correspondence-address/uk-address.html" target="_blank"> add a new correspondence address.</a>
-          <div class="govuk-summary-list__row" style="border-top: 1px solid #b1b4b6;padding-top:15px;"></div>
-        </dl>
+      <!-- {% if data['correspondence-address'] %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Correspondence address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['correspondence-address-line-1'] %}
+            {{ data['correspondence-address-line-1'] }}<br>
+          {% else %}
+            58 Pigeon Street<br>
+          {% endif %}
+          {% if data['correspondence-address-line-2'] %}
+            {{ data['correspondence-address-line-2'] }}<br>
+          {% else %}
+            York<br>
+          {% endif %}
+          {% if data['correspondence-address-line-3'] %}
+            {{ data['correspondence-address-line-3'] }}<br>
+          {% endif %}
+          {% if data['correspondence-postcode'] %}
+            {{ data['correspondence-postcode'] }}
+          {% else %}
+            YO5 1AB
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          {% if data['correspondence-address'] %}
+          <ul class="govuk-summary-list__actions-list">  
+            <li class="govuk-summary-list__actions-list-item">
+              <a class="govuk-link" href="">Change<span class="govuk-visually-hidden"> correspondence address</span></a>
+            </li>
+            <li class="govuk-summary-list__actions-list-item">
+              <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> correspondence address</span></a>
+            </li>
+          </ul>
+          {% endif %}
+        </dd>
       </div>
-      
+      {% else %}
+      <p style="border-bottom: 1px solid #b1b4b6;padding-bottom:15px;" class="govuk-summary-list govuk-!-margin-bottom-9">If you'd like your letters sent somewhere other than your home address,<a href="correspondence-address/uk-address.html" target="_blank"> add a new correspondence address.</a></p>
+      {% endif %} -->
 
-    
 
       <h2 class="govuk-heading-m">Personal details</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -358,7 +351,6 @@
       <p class="govuk-body">
         To report other changes, like a change of address, <a href="contact-pension-service.html" target="_blank">contact the Pension Service by phone or post (opens in new tab)</a>. 
       </p>
-    </div>
     </div>
   </div>
 
@@ -385,3 +377,12 @@
       }
     }) }}
   {% endblock %}
+
+        
+
+
+
+    
+
+
+        
