@@ -1694,13 +1694,13 @@ router.post('/home-address', function (req, res) {
 router.post('/correspondence-address', function (req, res) {
 
   // Make a variable and give it the value from 'remove-home-number'
-  var changeHomeAddress = req.session.data['correspondence-address']
+  var changeCorrespondenceAddress = req.session.data['correspondence-address']
 
   // Check whether the variable matches a condition
-  if (changeHomeAddress == "Yes"){
+  if (changeCorrespondenceAddress == "Yes"){
     // Send user to next page
     res.redirect('/contact/3-0/correspondence-address/access-to-the-property.html')
-  } else if (changeHomeAddress == "No"){
+  } else if (changeCorrespondenceAddress == "No"){
     res.redirect('/contact/3-0/cannot-use-service.html')
   }
 
@@ -1725,14 +1725,14 @@ router.post('/type-of-address', function (req, res) {
 // ROUTING TO YES OR NO REMOVE CORRESPONDENCE ADDRESS
 router.post('/remove-correspondence-address', function (req, res) {
 
-  // Make a variable and give it the value from 'remove-home-number'
-  var changeTypeOfAddress = req.session.data['correspondence']
+  // Make a variable and give it the value from 'remove-correspondence-address'
+  var changeRemoveCorrespondenceAddress = req.session.data['remove-correspondence-address']
 
   // Check whether the variable matches a condition
-  if (changeTypeOfAddress == "Yes"){
+  if (changeRemoveCorrespondenceAddress == "Yes"){
     // Send user to next page
-    res.redirect('/contact/3-0/correspondence-address/access-to-the-property.html')
-  } else if (changeTypeOfAddress == "No"){
+    res.redirect('/contact/3-0/correspondence-address/letters-will-be-sent-to.html')
+  } else if (changeRemoveCorrespondenceAddress == "No"){
     res.redirect('/contact/3-0/correspondence-address/do-not-remove.html')
   }
 

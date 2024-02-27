@@ -8,7 +8,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="../correspondence-address/do-not-remove" method="post">
+      <form class="form" action="/remove-correspondence-address" method="post">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -20,12 +20,12 @@
               {% if data['correspondence-address-line-1'] %}
               {{ data['correspondence-address-line-1'] }}<br>
               {% else %}
-                58 Pigeon Street<br>
+                17 Abbey Street<br>
               {% endif %}
               {% if data['correspondence-address-line-2'] %}
               {{ data['correspondence-address-line-2'] }}<br>
               {% else %}
-                York<br>
+                Bath<br>
               {% endif %}
               {% if data['correspondence-address-line-3'] %}
               {{ data['correspondence-address-line-3'] }}<br>
@@ -33,18 +33,18 @@
               {% if data['correspondence-postcode'] %}
               {{ data['correspondence-postcode'] }}
               {% else %}
-                YO5 1AB
+                BA1 1DB
               {% endif %}
             </div>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="correspondence-address-remove-yes" name="remove-correspondence-address" type="radio" value="Yes" {{ checked("correspondence-address", "Yes") }}>
-                <label class="govuk-label govuk-radios__label" for="correspondence-address-remove-yes">
+                <input class="govuk-radios__input" id="correspondence-address-remove-yes" name="remove-correspondence-address" type="radio" value="Yes" {{ checked("remove-correspondence-address", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="home-phone-remove-yes">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="correspondence-address-remove-no" name="remove-correspondence-address" type="radio" value="No" {{ checked("correspondence-address", "No") }}>
+                <input class="govuk-radios__input" id="correspondence-address-remove-no" name="remove-correspondence-address" type="radio" value="No" {{ checked("remove-correspondence-address", "No") }}>
                 <label class="govuk-label govuk-radios__label" for="correspondence-address-remove-no">
                   No
                 </label>
@@ -68,3 +68,4 @@
   </div>
 
 {% endblock %}
+
