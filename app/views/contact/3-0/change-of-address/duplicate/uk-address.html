@@ -1,36 +1,32 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Are you sure you want to remove? - Manage your State Pension - GOV.UK
+  Is the new address in the UK? - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/remove-alt-number3" method="post">
+      <form class="form" action="/home-address-duplicate" method="post">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                Do you want to remove this alternative phone number?
+                Is the new address in the UK?
               </h1>
             </legend>
-            <div class="govuk-inset-text">
-              {% if data['new-alt-phone'] %}
-                {{ data['new-alt-phone'] }}
-              {% endif %}
-            </div>
+
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="alt-phone-remove-yes" name="remove-alt-phone" type="radio" value="Yes" {{ checked("remove-alt-phone", "Yes") }}>
-                <label class="govuk-label govuk-radios__label" for="alt-phone-remove-yes">
+                <input class="govuk-radios__input" id="home-address-duplicate-yes" name="home-address-duplicate" type="radio" value="Yes" {{ checked("home-address-duplicate", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="home-address-duplicate-yes">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="alt-phone-remove-no" name="remove-alt-phone" type="radio" value="No" {{ checked("remove-alt-phone", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="home-alt-remove-no">
+                <input class="govuk-radios__input" id="home-address-duplicate-no" name="home-address-duplicate" type="radio" value="No" {{ checked("home-address-duplicate", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="home-address-duplicate-no">
                   No
                 </label>
               </div>

@@ -15,12 +15,12 @@
               Is your new address in the UK?
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['home-address'] %}
-                {{ data['home-address'] }}
+              {% if data['home-address-duplicate'] %}
+                {{ data['home-address-duplicate'] }}
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="uk-address.html">
+              <a class="govuk-link" href="new-address-in-the-UK.html">
                 Change<span class="govuk-visually-hidden"> if you want to use a UK bank or building society account</span>
               </a>
             </dd>
@@ -30,8 +30,8 @@
               What type of address is it?
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['residential'] %}
-                {{ data['residential'] }}
+              {% if data['residential-duplicate'] %}
+                {{ data['residential-duplicate'] }}
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
@@ -45,8 +45,8 @@
               Do you have access to the property?
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['property-access'] %}
-                {{ data['property-access'] }}
+              {% if data['property-access-duplicate'] %}
+                {{ data['property-access-duplicate'] }}
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">

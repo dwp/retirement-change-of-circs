@@ -1689,6 +1689,23 @@ router.post('/home-address', function (req, res) {
 
 });
 
+// ROUTING TO YES OR NO DUPLICATE HOME ADDRESS IN THE UK
+
+router.post('/home-address-duplicate', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var changeHomeAddress = req.session.data['home-address-duplicate']
+
+  // Check whether the variable matches a condition
+  if (changeHomeAddress == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-of-address/duplicate/type-of-address.html')
+  } else if (changeHomeAddress == "No"){
+    res.redirect('/contact/3-0/cannot-use-service.html')
+  }
+
+});
+
 // ROUTING TO YES OR NO CORRESPONDENCE ADDRESS IN THE UK
 
 router.post('/correspondence-address', function (req, res) {
@@ -1716,6 +1733,22 @@ router.post('/type-of-address', function (req, res) {
   if (changeTypeOfAddress == "Yes"){
     // Send user to next page
     res.redirect('/contact/3-0/change-of-address/access-to-the-property.html')
+  } else if (changeTypeOfAddress == "No"){
+    res.redirect('/contact/3-0/cannot-use-service.html')
+  }
+
+});
+
+// ROUTING TO YES OR NO TYPE OF HOME ADDRESS DUPLICATE
+router.post('/type-of-address-duplicate', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var changeTypeOfAddress = req.session.data['residential-duplicate']
+
+  // Check whether the variable matches a condition
+  if (changeTypeOfAddress == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-of-address/duplicate/access-to-the-property.html')
   } else if (changeTypeOfAddress == "No"){
     res.redirect('/contact/3-0/cannot-use-service.html')
   }
@@ -1756,6 +1789,22 @@ router.post('/property-access', function (req, res) {
 
 });
 
+// ROUTING TO YES OR NO ACCESS TO HOME ADDRESS DUPLICATE
+router.post('/property-access-duplicate', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var changePropertyAccessDuplicate = req.session.data['property-access-duplicate']
+
+  // Check whether the variable matches a condition
+  if (changePropertyAccessDuplicate == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-of-address/duplicate/find-address.html')
+  } else if (changePropertyAccessDuplicate == "No"){
+    res.redirect('/contact/3-0/report-change-after-move.html')
+  }
+
+});
+
 // ROUTING TO YES OR NO TO ACCESS TO CORRESPONDENCE ADDRESS
 
 router.post('/correspondence-property-access', function (req, res) {
@@ -1774,7 +1823,7 @@ router.post('/correspondence-property-access', function (req, res) {
 });
 
 
-// CONTACT DETAILS CHANGE - 4-0 MVP
+// CONTACT DETAILS CHANGE - MVP
 
 // FOR SINGLE FREQUENCY OPTION VERSION
 
@@ -1787,9 +1836,9 @@ router.post('/how-often10', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencySelected == "Every 4 weeks"){
     // Send user to next page
-    res.redirect('/contact/4-0/change-frequency/keep-how-often-we-will-pay-you.html')
+    res.redirect('/contact/mvp/change-frequency/keep-how-often-we-will-pay-you.html')
   } else {
-    res.redirect('/contact/4-0/change-frequency/check-how-often-we-will-pay-you')
+    res.redirect('/contact/mvp/change-frequency/check-how-often-we-will-pay-you')
   }
 
 });
@@ -1804,9 +1853,9 @@ router.post('/how-often-alt10', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencySelected == "Every 2 weeks"){
     // Send user to next page
-    res.redirect('/contact/4-0/change-frequency/keep-how-often-we-will-pay-you&alt.html')
+    res.redirect('/contact/mvp/change-frequency/keep-how-often-we-will-pay-you&alt.html')
   } else {
-    res.redirect('/contact/4-0/change-frequency/check-how-often-we-will-pay-you')
+    res.redirect('/contact/mvp/change-frequency/check-how-often-we-will-pay-you')
   }
 
 });
@@ -1820,9 +1869,9 @@ router.post('/how-often-single10', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencySelected == "Every 4 weeks"){
     // Send user to next page
-    res.redirect('/contact/4-0/change-frequency/keep-how-often-we-will-pay-you.html')
+    res.redirect('/contact/mvp/change-frequency/keep-how-often-we-will-pay-you.html')
   } else {
-    res.redirect('/contact/4-0/change-frequency/check-how-often-we-will-pay-you')
+    res.redirect('/contact/mvp/change-frequency/check-how-often-we-will-pay-you')
   }
 
 });
@@ -1836,13 +1885,13 @@ router.post('/frequency-scenario4', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencyScenario == "1"){
     // Send user to next page
-    res.redirect('/contact/4-0/change-frequency/you-have-changed-how-often-we-pay-you&1.html')
+    res.redirect('/contact/mvp/change-frequency/you-have-changed-how-often-we-pay-you&1.html')
   } else if (frequencyScenario == "2"){
-    res.redirect('/contact/4-0/change-frequency/you-have-changed-how-often-we-pay-you&2.html')
+    res.redirect('/contact/mvp/change-frequency/you-have-changed-how-often-we-pay-you&2.html')
   } else if (frequencyScenario == "3"){
-    res.redirect('/contact/4-0/change-frequency/you-have-changed-how-often-we-pay-you&3.html')
+    res.redirect('/contact/mvp/change-frequency/you-have-changed-how-often-we-pay-you&3.html')
   } else {
-    res.redirect('/contact/4-0/change-frequency/you-have-changed-how-often-we-pay-you&1.html')
+    res.redirect('/contact/mvp/change-frequency/you-have-changed-how-often-we-pay-you&1.html')
   }
 
 });
@@ -1856,9 +1905,9 @@ router.post('/account-type13', function (req, res) {
   // Check whether the variable matches a condition
   if (accountType == "uk-account"){
     // Send user to next page
-    res.redirect('/contact/4-0/change-bank/bank-or-building-society-details')
+    res.redirect('/contact/mvp/change-bank/bank-or-building-society-details')
   } else {
-    res.redirect('/contact/4-0/change-bank/can-only-use-uk-account.html')
+    res.redirect('/contact/mvp/change-bank/can-only-use-uk-account.html')
   }
 
 });
@@ -1872,9 +1921,9 @@ router.post('/remove-home-number5', function (req, res) {
   // Check whether the variable matches a condition
   if (removeHomeNumber == "Yes"){
     // Send user to next page
-    res.redirect('/contact/4-0/change-home-phone/check-your-details-remove.html')
+    res.redirect('/contact/mvp/change-home-phone/check-your-details-remove.html')
   } else if (removeHomeNumber == "No"){
-    res.redirect('/contact/4-0/change-home-phone/do-not-remove.html')
+    res.redirect('/contact/mvp/change-home-phone/do-not-remove.html')
   }
 
 });
@@ -1888,9 +1937,9 @@ router.post('/remove-alt-number3', function (req, res) {
   // Check whether the variable matches a condition
   if (removeAltNumber == "Yes"){
     // Send user to next page
-    res.redirect('/contact/4-0/change-alt-phone/check-your-details-remove.html')
+    res.redirect('/contact/mvp/change-alt-phone/check-your-details-remove.html')
   } else if (removeAltNumber == "No"){
-    res.redirect('/contact/4-0/change-alt-phone/do-not-remove.html')
+    res.redirect('/contact/mvp/change-alt-phone/do-not-remove.html')
   }
 
 });
@@ -1904,9 +1953,9 @@ router.post('/remove-mobile-number4', function (req, res) {
   // Check whether the variable matches a condition
   if (removeMobileNumber == "Yes"){
     // Send user to next page
-    res.redirect('/contact/4-0/change-mobile-phone/check-your-details-remove.html')
+    res.redirect('/contact/mvp/change-mobile-phone/check-your-details-remove.html')
   } else if (removeMobileNumber == "No"){
-    res.redirect('/contact/4-0/change-mobile-phone/do-not-remove.html')
+    res.redirect('/contact/mvp/change-mobile-phone/do-not-remove.html')
   }
 
 });
@@ -1920,9 +1969,9 @@ router.post('/remove-email-address4', function (req, res) {
   // Check whether the variable matches a condition
   if (removeEmailAddress == "Yes"){
     // Send user to next page
-    res.redirect('/contact/4-0/change-email-address/check-your-details-remove.html')
+    res.redirect('/contact/mvp/change-email-address/check-your-details-remove.html')
   } else if (removeEmailAddress == "No"){
-    res.redirect('/contact/4-0/change-email-address/do-not-remove.html')
+    res.redirect('/contact/mvp/change-email-address/do-not-remove.html')
   }
 
 });

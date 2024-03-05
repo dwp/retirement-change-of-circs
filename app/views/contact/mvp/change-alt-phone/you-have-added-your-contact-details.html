@@ -1,7 +1,7 @@
 {% extends "layout_noback.html" %}
 
 {% block pageTitle %}
-  You have changed your contact details - Manage your State Pension - GOV.UK
+  You have added... - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
@@ -10,7 +10,7 @@
     <div class="govuk-grid-column-two-thirds">
       <div class="govuk-panel govuk-panel--confirmation">
         <h1 class="govuk-panel__title">
-          You have changed your alternative phone number to
+          You have added the work phone number
           {% if data['new-alt-phone'] %}
             {{ data['new-alt-phone'] }}
           {% else %}
@@ -23,7 +23,7 @@
       <p class="govuk-body">
         We will use
           {% if data['new-alt-phone'] %}
-          {{ data['new-alt-phone'] }}
+            {{ data['new-alt-phone'] }}
           {% else %}
             0191 264 0884
           {% endif %}
