@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What type of address is it? - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/type-of-address-duplicate" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                What type of address is it?
+              </h1>
+            </legend>
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="residential-duplicate-yes" name="residential-duplicate" type="radio" value="Yes" {{ checked("residential-duplicate", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="residential-duplicate-yes">
+                  Residential
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="residential-duplicate-no" name="residential-duplicate" type="radio" value="No" {{ checked("residential", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="residential-duplicate-no">
+                  Hospital
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="residential-duplicate-no" name="residential-duplicate" type="radio" value="No" {{ checked("residential", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="residential-duplicate-no">
+                  Care home
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="residential-duplicate-no" name="residential-duplicate" type="radio" value="No" {{ checked("residential", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="residential-duplicate-no">
+                  Prison
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">
+        Get help
+      </h2>
+      <p><a href="../contact-pension-service&help" target="_blank">Contact us by phone to get help with the online service (opens in new tab)</a></p>
+    </div>
+  </div>
+
+{% endblock %}
