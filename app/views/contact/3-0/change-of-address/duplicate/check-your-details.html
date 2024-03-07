@@ -1,0 +1,157 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your details - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Check your details before you submit them</h1>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Is your new address in the UK?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['home-address-duplicate'] %}
+                {{ data['home-address-duplicate'] }}
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="new-address-in-the-UK.html">
+                Change<span class="govuk-visually-hidden"> if you want to use a UK bank or building society account</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              What type of address is it?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['residential-duplicate'] %}
+                {{ data['residential-duplicate'] }}
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="type-of-address.html">
+                Change<span class="govuk-visually-hidden"> if you want to use a UK bank or building society account</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Do you have access to the property?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['property-access-duplicate'] %}
+                {{ data['property-access-duplicate'] }}
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="access-to-the-property.html">
+                Change<span class="govuk-visually-hidden"> if you want to use a UK bank or building society account</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Your address details
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['new-address-line-1'] %}
+              {{ data['new-address-line-1'] }}<br>
+              {% else %}
+              1 Washington Street<br>
+              {% endif %}
+              {% if data['new-address-line-2'] %}
+              {{ data['new-address-line-2'] }}<br>
+              {% else %}
+              Worcester<br>
+              {% endif %}
+              {% if data['new-address-line-3'] %}
+              {{ data['new-address-line-3'] }}<br>
+              {% endif %}
+              {% if data['new-postcode'] %}
+              {{ data['new-postcode'] }}
+              {% else %}
+                WR1 1NL
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="find-address.html">
+                Change<span class="govuk-visually-hidden"> your home address</span>
+              </a>
+            </dd>
+          </div>
+          
+
+          <!-- <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Email address for confirmation of change
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['confirmation-email'] == 'current' %}
+              testemail@hotmail.co.uk
+              {% elif data['confirmation-email'] == 'new' %}
+                {{ data['enter-email'] }}
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="email.html">
+                Change<span class="govuk-visually-hidden"> email address for confirmation of change</span>
+              </a>
+            </dd>
+          </div> -->
+        </dl>
+        
+        <h2 class="govuk-heading-m">Submit your new details</h2>
+        <p class="govuk-body">By submitting this change you are confirming that the information you are giving is complete and correct.</p>
+        <!-- <p class="govuk-body">By submitting this change, you agree:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>the information you have given is complete and correct</li>
+          <li>to tell the Department for Work and Pensions (DWP) straight away if your circumstances change, such as your address, bank details or marital status</li>
+          <li>to pay back any State Pension if you are paid too much</li>
+        </ul>
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+            You may be prosecuted or have to pay a financial penalty if you give wrong or incomplete information, or if you don't report any changes straight away
+          </strong>
+        </div> -->
+        <form action="you-have-changed-your-address" method="post" novalidate>
+          <input type="hidden" name="answers-checked" value="true">
+          <button class="govuk-button" data-module="govuk-button">
+            Confirm and submit
+          </button>
+        </form>
+    </div>
+  </div>
+
+{% endblock %}
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "../2-0/check-answers.html",
+            text: "Lighter declaration",
+            attributes: {
+              target: "_blank"
+            }
+          },
+          {
+            href: "https://govuk-prototype-kit.herokuapp.com/",
+            text: "GOV.UK Prototype Kit " + releaseVersion
+          },
+          {
+            href: "/prototype-admin/clear-data",
+            text: "Clear data"
+          }
+        ],
+        visuallyHiddenTitle: "Footer links"
+      }
+    }) }}
+  {% endblock %}

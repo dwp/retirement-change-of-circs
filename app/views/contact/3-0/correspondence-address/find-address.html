@@ -17,7 +17,7 @@
           <div id="postcode-hint" class="govuk-hint">
             For example, AA3 1AB.
           </div>
-          <input class="govuk-input govuk-input--width-10" id="postcode" name="postcode" type="text" value="{{ data['postcode'] }}">
+          <input class="govuk-input govuk-input--width-10" id="postcode" name="postcode" type="text" value="{{ data['correspondence-postcode'] }}">
         </div>
 
         <div class="govuk-form-group">
@@ -27,7 +27,7 @@
           <div id="searchString-hint" class="govuk-hint">
             For example, 15 or Prospect Cottage.
           </div>
-          <input class="govuk-input govuk-!-width-two-thirds" id="searchString" name="searchString" type="text" aria-describedby="searchString-hint" value="{{ data['building-number-or-name'] }}">
+          <input class="govuk-input govuk-!-width-two-thirds" id="searchString" name="searchString" type="text" aria-describedby="searchString-hint" value="{{ data['correspondence-building-number-or-name'] }}">
         </div>
 
         <button type="submit" class="govuk-button" data-module="govuk-button">
