@@ -1,7 +1,7 @@
 {% extends "layout_noback.html" %}
 
 {% block pageTitle %}
-  You have added... - Manage your State Pension - GOV.UK
+  You have added a work phone number - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
@@ -10,7 +10,7 @@
     <div class="govuk-grid-column-two-thirds">
       <div class="govuk-panel govuk-panel--confirmation">
         <h1 class="govuk-panel__title">
-          You have added the work phone number
+          You have added the work phone number<br>
           {% if data['new-alt-phone'] %}
             {{ data['new-alt-phone'] }}
           {% else %}
