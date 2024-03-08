@@ -9,7 +9,14 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">We will not be able to call you</h1>
-      <p class="govuk-body">If you remove this phone number, we will only contact you by post.</p>
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          If you remove your phone number, we will only contact you by post.
+        </strong>
+      </div>
+      <!-- <p class="govuk-body">If you remove your phone number, we will only contact you by post.</p> -->
       <!-- <div class="govuk-inset-text">
         {% if data['new-home-phone'] %}
         {{ data['new-home-phone'] }}

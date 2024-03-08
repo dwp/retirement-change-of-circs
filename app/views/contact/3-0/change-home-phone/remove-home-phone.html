@@ -1,14 +1,14 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Are you sure you want to remove? - Manage your State Pension - GOV.UK
+  Are you sure you want to remove - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/remove-home-number3" method="post">
+      <form class="form" action="/remove-home-number4" method="post">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -29,6 +29,9 @@
                 <label class="govuk-label govuk-radios__label" for="home-phone-remove-yes">
                   Yes
                 </label>
+                <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                  If you remove your phone number, we will only contact you by post.
+                </div>
               </div>
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="home-phone-remove-no" name="remove-home-phone" type="radio" value="No" {{ checked("remove-home-phone", "No") }}>
@@ -41,7 +44,7 @@
         </div>
 
         <button class="govuk-button" data-module="govuk-button">
-          Continue
+          Confirm change
         </button>
       </form>
 
