@@ -1464,7 +1464,7 @@ router.post('/remove-home-number4', function (req, res) {
   // Check whether the variable matches a condition
   if (removeHomeNumber == "Yes"){
     // Send user to next page
-    res.redirect('/contact/3-0/change-home-phone/you-have-removed-your-only-home-phone-number.html')
+    res.redirect('/contact/3-0/change-home-phone/you-have-removed-your-only-home-phone-number.html?new-home-phone&current-home-phone')
   } else if (removeHomeNumber == "No"){
     res.redirect('/contact/3-0/change-home-phone/do-not-remove.html')
   }
@@ -1584,6 +1584,7 @@ router.post('/remove-email-address2', function (req, res) {
 
 });
 
+
 // ROUTING TO YES OR NO FOR REMOVING EMAIL ADDRESS
 router.post('/remove-email-address3', function (req, res) {
 
@@ -1593,7 +1594,7 @@ router.post('/remove-email-address3', function (req, res) {
   // Check whether the variable matches a condition
   if (removeEmailAddress == "Yes"){
     // Send user to next page
-    res.redirect('/contact/3-0/change-email-address/we-cant-email-you.html')
+    res.redirect('/contact/3-0/change-email-address/you-have-removed-your-email-address.html?new-email-address&current-email-address')
   } else if (removeEmailAddress == "No"){
     res.redirect('/contact/3-0/change-email-address/do-not-remove.html')
   }
