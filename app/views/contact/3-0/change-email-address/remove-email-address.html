@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Are you sure you want to remove? - Manage your State Pension - GOV.UK
+  Are you sure you want to remove - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
@@ -27,6 +27,9 @@
                 <label class="govuk-label govuk-radios__label" for="email-address-remove-yes">
                   Yes
                 </label>
+                <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                  If you remove your email address we will only contact you by phone or post
+                </div>
               </div>
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="email-address-remove-no" name="remove-email-address" type="radio" value="No" {{ checked("remove-email-address", "No") }}>
@@ -39,7 +42,7 @@
         </div>
 
         <button class="govuk-button" data-module="govuk-button">
-          Continue
+          Confirm change
         </button>
       </form>
 
