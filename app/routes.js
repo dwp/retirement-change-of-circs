@@ -1647,10 +1647,10 @@ router.post('/were-invited15', function (req, res) {
   // Check whether the variable matches a condition
   if (wereYouInvited == "letter"){
     // Send user to next page
-    res.redirect('/contact/4-0/privacy-notice')
+    res.redirect('/contact/mvp/privacy-notice')
   } else {
     // Send user to ineligible page
-    res.redirect('/contact/4-0/cannot-use-service')
+    res.redirect('/contact/mvp/cannot-use-service')
   }
 
 });
