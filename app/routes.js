@@ -1683,7 +1683,7 @@ router.post('/home-address', function (req, res) {
   // Check whether the variable matches a condition
   if (changeHomeAddress == "Yes"){
     // Send user to next page
-    res.redirect('/contact/3-0/change-of-address/type-of-address.html')
+    res.redirect('/contact/3-0/change-of-address/find-address.html')
   } else if (changeHomeAddress == "No"){
     res.redirect('/contact/3-0/cannot-use-service.html')
   }
@@ -1783,7 +1783,7 @@ router.post('/property-access', function (req, res) {
   // Check whether the variable matches a condition
   if (changePropertyAccess == "Yes"){
     // Send user to next page
-    res.redirect('/contact/3-0/change-of-address/find-address.html')
+    res.redirect('/contact/3-0/change-of-address/uk-address.html')
   } else if (changePropertyAccess == "No"){
     res.redirect('/contact/3-0/report-change-after-move.html')
   }
@@ -1961,10 +1961,11 @@ router.post('/remove-mobile-number4', function (req, res) {
 
 });
 
+
 // ROUTING TO YES OR NO FOR REMOVING EMAIL ADDRESS
 router.post('/remove-email-address4', function (req, res) {
 
-  // Make a variable and give it the value from 'remove-home-number'
+  // Make a variable and give it the value from 'remove-email-address'
   var removeEmailAddress = req.session.data['remove-email-address']
 
   // Check whether the variable matches a condition
@@ -1973,6 +1974,22 @@ router.post('/remove-email-address4', function (req, res) {
     res.redirect('/contact/mvp/change-email-address/check-your-details-remove.html')
   } else if (removeEmailAddress == "No"){
     res.redirect('/contact/mvp/change-email-address/do-not-remove.html')
+  }
+
+});
+
+// ROUTING TO NEW ENTRY OR DUPLICATE FOR HOME ADDRESS
+router.post('/confirm-address1', function (req, res) {
+
+  // Make a variable and give it the value from '10 Washington Street, Worcester, WR1 1NL'
+  var selectAddress = req.session.data['select-an-address']
+
+  // Check whether the variable matches a condition
+  if (selectAddress == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-of-address/confirm-address2.html')
+  } else if (selectAddress == "No"){
+    res.redirect('/contact/3-0/change-of-address/confirm-address1.html')
   }
 
 });
