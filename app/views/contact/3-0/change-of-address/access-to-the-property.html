@@ -13,7 +13,7 @@
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                Do you have access to the property?
+                Have you already moved into this property?
               </h1>
             </legend>
 
@@ -25,9 +25,15 @@
                 </label>
               </div>
               <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="property-access-yes" name="property-access" type="radio" value="Yes" {{ checked("property-access", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="property-access-yes">
+                  Not yet but I have access
+                </label>
+              </div>
+              <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="property-access-no" name="property-access" type="radio" value="No" {{ checked("property-access", "No") }}>
                 <label class="govuk-label govuk-radios__label" for="property-access-no">
-                  No
+                  No, and I don't have access yet
                 </label>
               </div>
             </div>
