@@ -1685,7 +1685,7 @@ router.post('/home-address', function (req, res) {
     // Send user to next page
     res.redirect('/contact/3-0/change-of-address/find-address.html')
   } else if (changeHomeAddress == "No"){
-    res.redirect('/contact/3-0/cannot-use-service.html')
+    res.redirect('/contact/3-0/change-of-address/must-be-a-uk-address.html')
   }
 
 });
@@ -1735,7 +1735,7 @@ router.post('/type-of-address', function (req, res) {
     // Send user to next page
     res.redirect('/contact/3-0/change-of-address/access-to-the-property.html')
   } else if (changeTypeOfAddress == "No"){
-    res.redirect('/contact/3-0/cannot-use-service.html')
+    res.redirect('/contact/3-0/change-of-address/cannot-use-service.html')
   }
 
 });
@@ -1785,7 +1785,7 @@ router.post('/property-access', function (req, res) {
     // Send user to next page
     res.redirect('/contact/3-0/change-of-address/uk-address.html')
   } else if (changePropertyAccess == "No"){
-    res.redirect('/contact/3-0/report-change-after-move.html')
+    res.redirect('/contact/3-0/change-of-address/report-change-after-move.html')
   }
 
 });
@@ -1801,7 +1801,7 @@ router.post('/property-access-duplicate', function (req, res) {
     // Send user to next page
     res.redirect('/contact/3-0/change-of-address/duplicate/find-address.html')
   } else if (changePropertyAccessDuplicate == "No"){
-    res.redirect('/contact/3-0/report-change-after-move.html')
+    res.redirect('/contact/3-0/change-of-address/report-change-after-move.html')
   }
 
 });
