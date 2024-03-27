@@ -1,7 +1,7 @@
 {% extends "layout_noback.html" %}
 
 {% block pageTitle %}
-  You have changed your home phone number - Manage your State Pension - GOV.UK
+  You have removed your email address - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
@@ -10,26 +10,15 @@
     <div class="govuk-grid-column-two-thirds">
       <div class="govuk-panel govuk-panel--confirmation">
         <h1 class="govuk-panel__title">
-          You have changed your home phone number to<br>
-          {% if data['new-home-phone1.1'] %}
-            {{ data['new-home-phone1.1'] }}
-          {% else %}
-            0191 264 0884
-          {% endif %}
+          You have removed your email address
         </h1>
       </div>
       <!-- <p class="govuk-body">We have sent you a confirmation email.</p> -->
       <!-- <h2 class="govuk-heading-m">What happens next</h2>
       <p class="govuk-body">
-        We will use
-          {% if data['new-home-phone'] %}
-            {{ data['new-home-phone'] }}
-          {% else %}
-            0191 264 0884
-          {% endif %}
-        as your home phone number.
-      </p> -->
-      <!-- <h2 class="govuk-heading-m">
+        ** NEW CONTENT **
+      </p>
+      <h2 class="govuk-heading-m">
         If you receive Pension Credit
       </h2>
       <p class="govuk-body">

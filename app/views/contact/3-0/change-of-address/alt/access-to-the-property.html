@@ -1,37 +1,39 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Are you sure you want to remove your email address? - Manage your State Pension - GOV.UK
+  Have you moved or have access to the property? - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/remove-email-address4" method="post">
+      <form class="form" action="/property-access" method="post">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                Are you sure you want to remove this email address?
+                Have you already moved into this property?
               </h1>
             </legend>
-            <div class="govuk-inset-text">
-              {% if data['current-email-address'] %}
-                {{ data['current-email-address'] }}
-              {% endif %}
-            </div>
+
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="email-address-remove-yes" name="remove-email-address" type="radio" value="Yes" {{ checked("remove-email-address", "Yes") }}>
-                <label class="govuk-label govuk-radios__label" for="email-address-remove-yes">
+                <input class="govuk-radios__input" id="property-access-yes" name="property-access" type="radio" value="Yes" {{ checked("property-access", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="property-access-yes">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="email-address-remove-no" name="remove-email-address" type="radio" value="No" {{ checked("remove-email-address", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="email-address-remove-no">
-                  No
+                <input class="govuk-radios__input" id="property-access-yes" name="property-access" type="radio" value="Yes" {{ checked("property-access", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="property-access-yes">
+                  Not yet but I have access
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="property-access-no" name="property-access" type="radio" value="No" {{ checked("property-access", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="property-access-no">
+                  No, and I don't have access yet
                 </label>
               </div>
             </div>

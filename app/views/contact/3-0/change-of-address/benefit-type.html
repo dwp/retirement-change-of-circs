@@ -8,9 +8,9 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="type-of-address.html">
+      <form class="form" action="type-of-address" method="post">
         <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
+          <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
                 Do you get any of these benefits?
@@ -23,33 +23,33 @@
 
             <div class="govuk-checkboxes" data-module="govuk-checkboxes">
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="countries" name="countries" type="checkbox" value="france">
-                <label class="govuk-label govuk-checkboxes__label" for="countries">
+                <input class="govuk-checkboxes__input" id="benefits-yes" name="benefits" type="checkbox" value="Yes" {{ checked("benefits", "Yes") }}> 
+                <label class="govuk-label govuk-checkboxes__label" for="benefits-yes">
                   Attendance Allowance
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="countries-2" name="countries" type="checkbox" value="portugal">
-                <label class="govuk-label govuk-checkboxes__label" for="countries-2">
+                <input class="govuk-checkboxes__input" id="benefits-yes" name="benefits" type="checkbox" value="Yes" {{ checked("benefits", "Yes") }}>
+                <label class="govuk-label govuk-checkboxes__label" for="benefits-yes">
                   Disability Living Allowance (DLA)
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="countries-3" name="countries" type="checkbox" value="spain">
-                <label class="govuk-label govuk-checkboxes__label" for="countries-3">
+                <input class="govuk-checkboxes__input" id="benefits" name="benefits" type="checkbox" value="Yes" {{ checked("benefits", "Yes") }}>
+                <label class="govuk-label govuk-checkboxes__label" for="benefits-yes">
                   Pension Credit
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="countries-3" name="countries" type="checkbox" value="spain">
-                <label class="govuk-label govuk-checkboxes__label" for="countries-3">
+                <input class="govuk-checkboxes__input" id="benefits-yes" name="benefits" type="checkbox" value="Yes" {{ checked("benefits", "Yes") }}>
+                <label class="govuk-label govuk-checkboxes__label" for="benefits-yes">
                   Personal Independence Payment (PIP)
                 </label>
               </div>
               <div class="govuk-checkboxes__divider">or</div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="countries-5" name="countries" type="checkbox" value="none" data-behaviour="exclusive">
-                <label class="govuk-label govuk-checkboxes__label" for="countries-5">
+                <input class="govuk-checkboxes__input" id="benefits-yes" name="benefits" type="checkbox" value="No" {{ checked("benefits", "No") }}>
+                <label class="govuk-label govuk-checkboxes__label" for="benefits-no">
                   No, I do not get any of these benefits
                 </label>
               </div>

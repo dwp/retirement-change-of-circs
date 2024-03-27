@@ -1673,156 +1673,6 @@ router.post('/remove-email-address3', function (req, res) {
 
 });
 
-// ROUTING TO YES OR NO HOME ADDRESS IN THE UK
-
-router.post('/home-address', function (req, res) {
-
-  // Make a variable and give it the value from 'remove-home-number'
-  var changeHomeAddress = req.session.data['home-address']
-
-  // Check whether the variable matches a condition
-  if (changeHomeAddress == "Yes"){
-    // Send user to next page
-    res.redirect('/contact/3-0/change-of-address/find-address.html')
-  } else if (changeHomeAddress == "No"){
-    res.redirect('/contact/3-0/change-of-address/must-be-a-uk-address.html')
-  }
-
-});
-
-// ROUTING TO YES OR NO DUPLICATE HOME ADDRESS IN THE UK
-
-router.post('/home-address-duplicate', function (req, res) {
-
-  // Make a variable and give it the value from 'remove-home-number'
-  var changeHomeAddress = req.session.data['home-address-duplicate']
-
-  // Check whether the variable matches a condition
-  if (changeHomeAddress == "Yes"){
-    // Send user to next page
-    res.redirect('/contact/3-0/change-of-address/duplicate/type-of-address.html')
-  } else if (changeHomeAddress == "No"){
-    res.redirect('/contact/3-0/cannot-use-service.html')
-  }
-
-});
-
-// ROUTING TO YES OR NO CORRESPONDENCE ADDRESS IN THE UK
-
-router.post('/correspondence-address', function (req, res) {
-
-  // Make a variable and give it the value from 'remove-home-number'
-  var changeCorrespondenceAddress = req.session.data['correspondence-address']
-
-  // Check whether the variable matches a condition
-  if (changeCorrespondenceAddress == "Yes"){
-    // Send user to next page
-    res.redirect('/contact/3-0/correspondence-address/access-to-the-property.html')
-  } else if (changeCorrespondenceAddress == "No"){
-    res.redirect('/contact/3-0/cannot-use-service.html')
-  }
-
-});
-
-// ROUTING TO YES OR NO TYPE OF HOME ADDRESS
-router.post('/type-of-address', function (req, res) {
-
-  // Make a variable and give it the value from 'remove-home-number'
-  var changeTypeOfAddress = req.session.data['residential']
-
-  // Check whether the variable matches a condition
-  if (changeTypeOfAddress == "Yes"){
-    // Send user to next page
-    res.redirect('/contact/3-0/change-of-address/access-to-the-property.html')
-  } else if (changeTypeOfAddress == "No"){
-    res.redirect('/contact/3-0/change-of-address/cannot-use-service.html')
-  }
-
-});
-
-// ROUTING TO YES OR NO TYPE OF HOME ADDRESS DUPLICATE
-router.post('/type-of-address-duplicate', function (req, res) {
-
-  // Make a variable and give it the value from 'remove-home-number'
-  var changeTypeOfAddress = req.session.data['residential-duplicate']
-
-  // Check whether the variable matches a condition
-  if (changeTypeOfAddress == "Yes"){
-    // Send user to next page
-    res.redirect('/contact/3-0/change-of-address/duplicate/access-to-the-property.html')
-  } else if (changeTypeOfAddress == "No"){
-    res.redirect('/contact/3-0/cannot-use-service.html')
-  }
-
-});
-
-// ROUTING TO YES OR NO REMOVE CORRESPONDENCE ADDRESS
-router.post('/remove-correspondence-address', function (req, res) {
-
-  // Make a variable and give it the value from 'remove-correspondence-address'
-  var changeRemoveCorrespondenceAddress = req.session.data['remove-correspondence-address']
-
-  // Check whether the variable matches a condition
-  if (changeRemoveCorrespondenceAddress == "Yes"){
-    // Send user to next page
-    res.redirect('/contact/3-0/correspondence-address/letters-will-be-sent-to.html')
-  } else if (changeRemoveCorrespondenceAddress == "No"){
-    res.redirect('/contact/3-0/correspondence-address/do-not-remove.html')
-  }
-
-});
-
-
-
-// ROUTING TO YES OR NO ACCESS TO HOME ADDRESS
-router.post('/property-access', function (req, res) {
-
-  // Make a variable and give it the value from 'remove-home-number'
-  var changePropertyAccess = req.session.data['property-access']
-
-  // Check whether the variable matches a condition
-  if (changePropertyAccess == "Yes"){
-    // Send user to next page
-    res.redirect('/contact/3-0/change-of-address/uk-address.html')
-  } else if (changePropertyAccess == "No"){
-    res.redirect('/contact/3-0/change-of-address/report-change-after-move.html')
-  }
-
-});
-
-// ROUTING TO YES OR NO ACCESS TO HOME ADDRESS DUPLICATE
-router.post('/property-access-duplicate', function (req, res) {
-
-  // Make a variable and give it the value from 'remove-home-number'
-  var changePropertyAccessDuplicate = req.session.data['property-access-duplicate']
-
-  // Check whether the variable matches a condition
-  if (changePropertyAccessDuplicate == "Yes"){
-    // Send user to next page
-    res.redirect('/contact/3-0/change-of-address/duplicate/find-address.html')
-  } else if (changePropertyAccessDuplicate == "No"){
-    res.redirect('/contact/3-0/change-of-address/report-change-after-move.html')
-  }
-
-});
-
-// ROUTING TO YES OR NO TO ACCESS TO CORRESPONDENCE ADDRESS
-
-router.post('/correspondence-property-access', function (req, res) {
-
-  // Make a variable and give it the value from 'remove-home-number'
-  var changeHomeAddress = req.session.data['correspondence-property-access']
-
-  // Check whether the variable matches a condition
-  if (changeHomeAddress == "Yes"){
-    // Send user to next page
-    res.redirect('/contact/3-0/correspondence-address/find-address.html')
-  } else if (changeHomeAddress == "No"){
-    res.redirect('/contact/3-0/report-change-after-move.html')
-  }
-
-});
-
 
 // CONTACT DETAILS CHANGE - MVP
 
@@ -1974,6 +1824,174 @@ router.post('/remove-email-address4', function (req, res) {
     res.redirect('/contact/mvp/change-email-address/check-your-details-remove.html')
   } else if (removeEmailAddress == "No"){
     res.redirect('/contact/mvp/change-email-address/do-not-remove.html')
+  }
+
+});
+
+// ROUTING TO YES OR NO HOME ADDRESS IN THE UK
+
+router.post('/home-address', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var changeHomeAddress = req.session.data['home-address']
+
+  // Check whether the variable matches a condition
+  if (changeHomeAddress == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-of-address/find-address.html')
+  } else if (changeHomeAddress == "No"){
+    res.redirect('/contact/3-0/change-of-address/must-be-a-uk-address.html')
+  }
+
+});
+
+// ROUTING TO YES OR NO DUPLICATE HOME ADDRESS IN THE UK
+
+router.post('/home-address-duplicate', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var changeHomeAddress = req.session.data['home-address-duplicate']
+
+  // Check whether the variable matches a condition
+  if (changeHomeAddress == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-of-address/duplicate/type-of-address.html')
+  } else if (changeHomeAddress == "No"){
+    res.redirect('/contact/3-0/cannot-use-service.html')
+  }
+
+});
+
+// ROUTING TO YES OR NO CORRESPONDENCE ADDRESS IN THE UK
+
+router.post('/correspondence-address', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var changeCorrespondenceAddress = req.session.data['correspondence-address']
+
+  // Check whether the variable matches a condition
+  if (changeCorrespondenceAddress == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/correspondence-address/access-to-the-property.html')
+  } else if (changeCorrespondenceAddress == "No"){
+    res.redirect('/contact/3-0/cannot-use-service.html')
+  }
+
+});
+
+// ROUTING TO YES OR NO TYPE OF HOME ADDRESS
+router.post('/type-of-address', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var changeTypeOfAddress = req.session.data['residential']
+
+  // Check whether the variable matches a condition
+  if (changeTypeOfAddress == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-of-address/access-to-the-property.html')
+  } else if (changeTypeOfAddress == "No"){
+    res.redirect('/contact/3-0/change-of-address/cannot-use-service.html')
+  }
+
+});
+
+// ROUTING TO YES OR NO TYPE OF HOME ADDRESS DUPLICATE
+router.post('/type-of-address-duplicate', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var changeTypeOfAddress = req.session.data['residential-duplicate']
+
+  // Check whether the variable matches a condition
+  if (changeTypeOfAddress == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-of-address/duplicate/access-to-the-property.html')
+  } else if (changeTypeOfAddress == "No"){
+    res.redirect('/contact/3-0/cannot-use-service.html')
+  }
+
+});
+
+// ROUTING TO TYPE OF ADDRESS IF PERSON RECEIVES SP + OTHER BENEFITS
+router.post('/type-of-benefit', function (req, res) {
+
+  // Make a variable and give it the value from 'type-of-benefit'
+  var changeTypeOfBenefits = req.session.data['benefits']
+
+  // Check whether the variable matches a condition
+  if (changeTypeOfBenefits == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-of-address/type-of-address-alt.html')
+  } else if (changeTypeOfBenefits == "No"){
+    res.redirect('/contact/3-0/change-of-address/type-of-address.html')
+  }
+
+});
+
+
+
+// ROUTING TO YES OR NO REMOVE CORRESPONDENCE ADDRESS
+router.post('/remove-correspondence-address', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-correspondence-address'
+  var changeRemoveCorrespondenceAddress = req.session.data['remove-correspondence-address']
+
+  // Check whether the variable matches a condition
+  if (changeRemoveCorrespondenceAddress == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/correspondence-address/letters-will-be-sent-to.html')
+  } else if (changeRemoveCorrespondenceAddress == "No"){
+    res.redirect('/contact/3-0/correspondence-address/do-not-remove.html')
+  }
+
+});
+
+
+
+// ROUTING TO YES OR NO ACCESS TO HOME ADDRESS
+router.post('/property-access', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var changePropertyAccess = req.session.data['property-access']
+
+  // Check whether the variable matches a condition
+  if (changePropertyAccess == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-of-address/uk-address.html')
+  } else if (changePropertyAccess == "No"){
+    res.redirect('/contact/3-0/change-of-address/report-change-after-move.html')
+  }
+
+});
+
+// ROUTING TO YES OR NO ACCESS TO HOME ADDRESS DUPLICATE
+router.post('/property-access-duplicate', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var changePropertyAccessDuplicate = req.session.data['property-access-duplicate']
+
+  // Check whether the variable matches a condition
+  if (changePropertyAccessDuplicate == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-of-address/duplicate/find-address.html')
+  } else if (changePropertyAccessDuplicate == "No"){
+    res.redirect('/contact/3-0/change-of-address/report-change-after-move.html')
+  }
+
+});
+
+// ROUTING TO YES OR NO TO ACCESS TO CORRESPONDENCE ADDRESS
+
+router.post('/correspondence-property-access', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var changeHomeAddress = req.session.data['correspondence-property-access']
+
+  // Check whether the variable matches a condition
+  if (changeHomeAddress == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/correspondence-address/find-address.html')
+  } else if (changeHomeAddress == "No"){
+    res.redirect('/contact/3-0/report-change-after-move.html')
   }
 
 });
