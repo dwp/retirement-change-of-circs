@@ -1,36 +1,32 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Are you sure you want to remove your email address? - Manage your State Pension - GOV.UK
+  Is the new addres in the UK? - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/remove-email-address4" method="post">
+      <form class="form" action="/home-address" method="post">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                Are you sure you want to remove this email address?
+                Is the new address in the UK?
               </h1>
             </legend>
-            <div class="govuk-inset-text">
-              {% if data['current-email-address'] %}
-                {{ data['current-email-address'] }}
-              {% endif %}
-            </div>
+
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="email-address-remove-yes" name="remove-email-address" type="radio" value="Yes" {{ checked("remove-email-address", "Yes") }}>
-                <label class="govuk-label govuk-radios__label" for="email-address-remove-yes">
+                <input class="govuk-radios__input" id="home-address-yes" name="home-address" type="radio" value="Yes" {{ checked("home-address", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="home-address-yes">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="email-address-remove-no" name="remove-email-address" type="radio" value="No" {{ checked("remove-email-address", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="email-address-remove-no">
+                <input class="govuk-radios__input" id="home-address-no" name="home-address" type="radio" value="No" {{ checked("home-address", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="home-address-no">
                   No
                 </label>
               </div>
