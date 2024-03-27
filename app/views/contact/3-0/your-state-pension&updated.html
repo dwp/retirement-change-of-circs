@@ -199,8 +199,7 @@
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link govuk-!-font-size-19" href="change-of-address/uk-address.html">
-              Change<span class="govuk-visually-hidden"> your home address</span>
+            <a class="govuk-link" href="change-of-address/benefit-type.html">Change<span class="govuk-visually-hidden"> your home address</span></a>
             </a>
           </dd>
         </div>
@@ -210,8 +209,8 @@
             Home phone number
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if data['new-home-phone'] %}
-              {{ data['new-home-phone'] }}
+            {% if data['new-home-phone1.1'] %}
+              {{ data['new-home-phone1.1'] }}
             {% elif data['current-home-phone'] %}
               {{ data['current-home-phone'] }}
             {% else %}
@@ -323,8 +322,8 @@
             Email address
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if data['new-email-address'] %}
-              {{ data['new-email-address'] }}
+            {% if data['new-email-address1.1'] %}
+              {{ data['new-email-address1.1'] }}
             {% elif data['current-email-address'] %}
               {{ data['current-email-address'] }}
             {% else %}
@@ -332,7 +331,7 @@
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-            {% if data['new-email-address'] %}
+            {% if data['new-email-address1.1'] %}
               <ul class="govuk-summary-list__actions-list">
                 <li class="govuk-summary-list__actions-list-item">
                   <a class="govuk-link" href="change-email-address/enter-email-address.html">Change<span class="govuk-visually-hidden"> email address</span></a>

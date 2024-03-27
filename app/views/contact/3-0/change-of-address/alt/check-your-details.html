@@ -12,47 +12,6 @@
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              Do you get any of these benefits?
-            </dt>
-            <dd class="govuk-summary-list__value">
-              No, I do not get any of these benefits
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="benefit-type.html">
-                Change<span class="govuk-visually-hidden"> benefits</span>
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width:40%;">
-              Is it a residential address?
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Yes
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="type-of-address.html">
-                Change<span class="govuk-visually-hidden"> residential address</span>
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width:40%;">
-              Have you already moved into this property?
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['property-access'] %}
-                {{ data['property-access'] }}
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="access-to-the-property.html">
-                Change<span class="govuk-visually-hidden"> if your moving this property</span>
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width:40%;">
               Is your new address in the UK?
             </dt>
             <dd class="govuk-summary-list__value">
@@ -62,7 +21,35 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="uk-address.html">
-                Change<span class="govuk-visually-hidden"> the location of your new address</span>
+                Change<span class="govuk-visually-hidden"> if you want to use a UK bank or building society account</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              What type of address is it?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Residential
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="type-of-address.html">
+                Change<span class="govuk-visually-hidden"> if you want to use a UK bank or building society account</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Do you have access to the property?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['property-access'] %}
+                {{ data['property-access'] }}
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="access-to-the-property.html">
+                Change<span class="govuk-visually-hidden"> if you want to use a UK bank or building society account</span>
               </a>
             </dd>
           </div>
