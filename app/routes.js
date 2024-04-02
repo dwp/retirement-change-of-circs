@@ -1772,7 +1772,7 @@ router.post('/remove-home-number5', function (req, res) {
   // Check whether the variable matches a condition
   if (removeHomeNumber == "Yes"){
     // Send user to next page
-    res.redirect('/contact/mvp/change-home-phone/check-your-details-remove.html')
+    res.redirect('/contact/mvp/change-home-phone/you-have-removed-your-contact-details.html?current-home-phone&new-home-phone')
   } else if (removeHomeNumber == "No"){
     res.redirect('/contact/mvp/change-home-phone/do-not-remove.html')
   }
@@ -1788,7 +1788,7 @@ router.post('/remove-alt-number3', function (req, res) {
   // Check whether the variable matches a condition
   if (removeAltNumber == "Yes"){
     // Send user to next page
-    res.redirect('/contact/mvp/change-alt-phone/check-your-details-remove.html')
+    res.redirect('/contact/mvp/change-alt-phone/you-have-removed-your-contact-details.html?new-alt-phone&current-alt-phone')
   } else if (removeAltNumber == "No"){
     res.redirect('/contact/mvp/change-alt-phone/do-not-remove.html')
   }
@@ -1804,7 +1804,7 @@ router.post('/remove-mobile-number4', function (req, res) {
   // Check whether the variable matches a condition
   if (removeMobileNumber == "Yes"){
     // Send user to next page
-    res.redirect('/contact/mvp/change-mobile-phone/check-your-details-remove.html')
+    res.redirect('/contact/mvp/change-mobile-phone/you-have-removed-your-contact-details.html?current-mobile-phone&new-mobile-phone')
   } else if (removeMobileNumber == "No"){
     res.redirect('/contact/mvp/change-mobile-phone/do-not-remove.html')
   }
@@ -1821,7 +1821,7 @@ router.post('/remove-email-address4', function (req, res) {
   // Check whether the variable matches a condition
   if (removeEmailAddress == "Yes"){
     // Send user to next page
-    res.redirect('/contact/mvp/change-email-address/check-your-details-remove.html')
+    res.redirect('/contact/mvp/change-email-address/you-have-removed-your-contact-details.html?current-email-address&new-email-address')
   } else if (removeEmailAddress == "No"){
     res.redirect('/contact/mvp/change-email-address/do-not-remove.html')
   }

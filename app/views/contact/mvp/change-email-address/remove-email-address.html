@@ -17,9 +17,11 @@
               </h1>
             </legend>
             <div class="govuk-inset-text">
-              {% if data['current-email-address'] %}
-                {{ data['current-email-address'] }}
-              {% endif %}
+              {% if data['new-email-address'] %}
+                {{ data['new-email-address'] }}
+                {% else %}
+                alex.jones@dwp.gov.uk
+                {% endif %}
             </div>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
