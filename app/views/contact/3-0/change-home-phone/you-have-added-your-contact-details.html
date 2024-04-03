@@ -18,57 +18,18 @@
           {% endif %}
         </h1>
       </div>
-      <h2 class="govuk-heading-m">What happens next</h2>
-      <p class="govuk-body">
-        If we need to contact you about your State Pension, we will call or write to you using these details.
-      </p>
-
-      <dl class="govuk-summary-list govuk-!-margin-bottom-6">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key" style="width:40%;">
-            Home address
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <p>123 Square Street<br>York<br>YO3 1SQ</p>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key" style="width:40%;">
-            Home phone number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {% if data['new-home-phone'] %}
-              {{ data['new-home-phone'] }}
-            {% else %}
-              01920 847390
-            {% endif %}
-          </dd>
-        </div> 
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key" style="width:40%;">
-            Mobile phone number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {% if data['new-mobile-phone'] %}
-              {{ data['new-mobile-phone'] }}
-            {% else %}
-              0779028462
-            {% endif %}
-          </dd>
-        </div>
-      </dl>
-      <div class="govuk-inset-text">
-        To update your details <a href="../your-state-pension&updated">return to Your State Pension details</a>.
-      </div>
       <h2 class="govuk-heading-m">
         Help improve this service
       </h2>
       <p class="govuk-body">
         You can <a href="#">help improve this service by giving us your feedback (opens in new tab)</a>.
       </p>
-      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        Sign out
-      </button>
+      <div class="govuk-inset-text">
+        <a href="../your-state-pension&updated.html" class="govuk-link">Return to your State Pension details</a>
+      </div>
+      <p class="govuk-body">
+        <a href="signed-out.html">Sign out</a>
+      </p>
       </div>
     </div>
   </div>
