@@ -199,8 +199,8 @@
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <!-- <a class="govuk-link" href="change-of-address/benefit-type.html">Change<span class="govuk-visually-hidden"> your home address</span></a>
-            </a> -->
+            <a class="govuk-link" href="change-of-address/benefit-type.html">Change<span class="govuk-visually-hidden"> your home address</span></a>
+            </a>
           </dd>
         </div>
 
@@ -256,7 +256,7 @@
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <!-- {% if data['new-mobile-phone'] %}
+            {% if data['new-mobile-phone'] %}
               <ul class="govuk-summary-list__actions-list">
                 <li class="govuk-summary-list__actions-list-item">
                   <a class="govuk-link" href="change-mobile-phone/enter-mobile-phone.html">Change<span class="govuk-visually-hidden"> mobile phone number</span></a>
@@ -276,7 +276,7 @@
               </ul>
             {% else %}
               <a class="govuk-link" href="change-mobile-phone/enter-mobile-phone-add.html">Add<span class="govuk-visually-hidden"> mobile phone number</span></a>
-            {% endif %} -->
+            {% endif %}
         </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -284,17 +284,16 @@
             Work phone number
           </dt>
           <dd class="govuk-summary-list__value">
-            Not provided
-            <!-- {% if data['new-alt-phone'] %}
+            {% if data['new-alt-phone'] %}
               {{ data['new-alt-phone'] }}
             {% elif data['current-alt-phone'] %}
               {{ data['current-alt-phone'] }}
             {% else %}
               Not provided
-            {% endif %} -->
+            {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <!-- {% if data['new-alt-phone'] %}
+            {% if data['new-alt-phone'] %}
               <ul class="govuk-summary-list__actions-list">
                 <li class="govuk-summary-list__actions-list-item">
                   <a class="govuk-link" href="change-alt-phone/enter-alt-phone.html">Change<span class="govuk-visually-hidden"> work phone number</span></a>
@@ -314,7 +313,7 @@
               </ul>
             {% else %}
               <a class="govuk-link" href="change-alt-phone/enter-alt-phone-add.html">Add<span class="govuk-visually-hidden"> work phone number</span></a>
-            {% endif %} -->
+            {% endif %}
         </dd>
         </div>
 
