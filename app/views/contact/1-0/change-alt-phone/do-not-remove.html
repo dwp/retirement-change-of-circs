@@ -15,9 +15,11 @@
           </h1>
           <p class="govuk-body">
             We will continue to use 
-              {% if data['new-alt-phone'] %}
-                {{ data['new-alt-phone'] }}
-              {% endif %}
+            {% if data['new-alt-phone'] %}
+            {{ data['new-alt-phone'] }}
+          {% else %}
+            01928 382744
+          {% endif %}
             as your alternative phone number.
           </p>
         </div>
