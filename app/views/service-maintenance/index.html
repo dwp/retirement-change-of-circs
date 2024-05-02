@@ -1,0 +1,48 @@
+
+{% extends "layout_noback_nowelsh.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">
+        Change of Circumstances<br/>Retirement Services
+      </h1>
+
+      <table class="govuk-table govuk-!-margin-bottom-9">
+        <caption class="govuk-table__caption govuk-table__caption--l">Service maintenance tasks</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-!govuk-grid-column-two-thirds">Ticket</th>
+            <th scope="col" class="govuk-table__header">Description</th>
+            <th scope="col" class="govuk-table__header"></th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header govuk-!govuk-grid-column-two-thirds"><a href="https://dwpdigital.atlassian.net/browse/RFP-2590" target="_blank">RFP-2590</a></th>
+            <td class="govuk-table__cell">Payment run remedial action for MYSP</td>
+            <td class="govuk-table__cell"><a href="your-state-pension-pf-run.html">Open</a></td>
+          </tr>
+        </tbody>  
+      
+
+      <table class="govuk-table govuk-!-margin-bottom-9">
+      </table>
+
+
+
+      
+    </div>
+  </div>
+
+{% endblock %}
