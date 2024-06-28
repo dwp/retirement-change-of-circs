@@ -1,0 +1,27 @@
+{% extends "layout_noback_nosignout.html" %}
+
+{% block pageTitle %}
+You cannot change your address online - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="bank-playback" method="post">
+      <div class="govuk-form-group">
+        <h1 class="govuk-heading-l">
+          You cannot ask to get your letters sent somewhere else online
+        </h1>
+        <p class="govuk-body">
+          If you want your letters sent somewhere different to your new address, you need to <a href="https://www.gov.uk/contact-pension-service">contact the Pension Service by phone or post</a> to change your address.
+        </p>
+        <div class="govuk-inset-text">
+          <a href="../your-state-pension&updated.html" class="govuk-link">Return to your State Pension details</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
