@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Do you receive other benefits in addition to your State Pension? - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/other-benefits1" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Do you receive benefits in addition to your State Pension?
+              </h1>
+            </legend>
+
+            <p class="govuk-body">
+              This includes pension credit.
+            </p>
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="other-benefits-yes" name="other-benefits" type="radio" value="Yes" {{ checked("other-benefits", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="other-benefits-yes">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="other-benefits-no" name="other-benefits" type="radio" value="No, I only receive a State Pension" {{ checked("other-benefits", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="other-benefits-no">
+                  No, I only receive a State Pension 
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">
+        Get help
+      </h2>
+      <p><a href="../contact-pension-service&help" target="_blank">Contact us by phone to get help with the online service (opens in new tab)</a></p>
+    </div>
+  </div>
+
+{% endblock %}
