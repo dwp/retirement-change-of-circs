@@ -2012,4 +2012,130 @@ router.post('/confirm-address1', function (req, res) {
 
 });
 
+
+// CHANGE OF ADDRESS MVP ROUTING OPTIONS
+
+
+// ROUTING TO YES OR NO FOR CITIZEN RECIEVING THER BENEFITS
+
+router.post('/other-benefits1', function (req, res) {
+
+  // Make a variable and give it the value from 'other-benefits'
+  var changeOtherBenefits = req.session.data['other-benefits']
+
+  // Check whether the variable matches a condition
+  if (changeOtherBenefits == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-of-address-v2/benefits-disclaimer.html')
+  } else if (changeOtherBenefits == "No, I only receive a State Pension"){
+    res.redirect('/contact/3-0/change-of-address-v2/uk-address.html')
+  }
+
+});
+
+
+// ROUTING TO UPDATE BENEFITS SEPARATELY
+
+router.post('/update-other-benefits1', function (req, res) {
+
+  // Make a variable and give it the value from 'update-other-benefits'
+  var changeUpdateOtherBenefits = req.session.data['update-other-benefits']
+
+  // Check whether the variable matches a condition
+  if (changeUpdateOtherBenefits == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-of-address-v2/have-you-already-moved.html')
+  } else if (changeUpdateOtherBenefits == "No"){
+    res.redirect('/contact/3-0/change-of-address-v2/get-help-to-report-your-change-of-address.html')
+  }
+
+});
+
+// ROUTING TO YES OR NO ALREADY MOVED TO ADDRESS
+
+router.post('/already-moved1', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var changeAlreadyMoved = req.session.data['already-moved']
+
+  // Check whether the variable matches a condition
+  if (changeAlreadyMoved == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-of-address-v2/uk-address.html')
+  } else if (changeAlreadyMoved == "No"){
+    res.redirect('/contact/3-0/change-of-address-v2/report-change-after-move.html')
+  }
+
+});
+
+// ROUTING TO YES OR NO HOME ADDRESS IN THE UK
+
+router.post('/uk-address', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var changeUkAddress = req.session.data['uk-address']
+
+  // Check whether the variable matches a condition
+  if (changeUkAddress == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-of-address-v2/address-finder/find-address.html')
+  } else if (changeUkAddress == "No"){
+    res.redirect('/contact/3-0/change-of-address-v2/must-be-a-uk-address.html')
+  }
+
+});
+
+// ROUTING TO CONFIRM NEW ADDRESS OR THE SAME ADDRESS
+router.post('/select-an-address1', function (req, res) {
+
+  // Make a variable and give it the value from '10 Washington Street, Worcester, WR1 1NL'
+  var selectAddress = req.session.data['select-an-address']
+
+  // Check whether the variable matches a condition
+  if (selectAddress == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-of-address-v2/address-finder/confirm-address1.html')
+  } else if (selectAddress == "No"){
+    res.redirect('/contact/3-0/change-of-address-v2/address-finder/confirm-address2.html')
+  }
+
+});
+
+// ROUTING TO CONFIRM IF YOU WANT LETTER SENT TO RESIDENTIAL ADDRESS
+router.post('/send-letters', function (req, res) {
+
+  // Make a variable and give it the value from '10 Washington Street, Worcester, WR1 1NL'
+  var changeSendLetters = req.session.data['send-letters']
+
+  // Check whether the variable matches a condition
+  if (changeSendLetters == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-of-address-v2/check-your-details.html')
+  } else if (changeSendLetters == "No"){
+    res.redirect('/contact/3-0/change-of-address-v2/you-cannot-change-your-address-online.html')
+  }
+
+});
+
+// ROUTING TO RIGHT CONFIRMATION VERSION CHANGE OF ADDRESS
+router.post('/changed-residential-address', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var changeOtherBenefits = req.session.data['other-benefits']
+  console.log("high", req.session.data['other-benefits'])
+
+  // Check whether the variable matches a condition
+  if (changeOtherBenefits == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-of-address-v2/you-have-changed-your-address-alt.html')
+  } else {
+    res.redirect('/contact/3-0/change-of-address-v2/you-have-changed-your-address.html')
+  }
+
+
+
+
+});
+
+
 module.exports = router
