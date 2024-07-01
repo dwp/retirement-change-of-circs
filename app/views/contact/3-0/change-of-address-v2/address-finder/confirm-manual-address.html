@@ -8,7 +8,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="check-your-details" method="post">
+      <form class="form" action="../where-would-you-need-your-letters-sent" method="post">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -20,7 +20,7 @@
                 {% if data['new-address-line-1'] %}
                 {{ data['new-address-line-1'] }},
                  {% else %}
-                  123 Square Street,
+                  1 Square Street,
                 {% endif %}
                 {% if data['new-address-line-2'] %}
                   {{ data['new-address-line-2'] }},
@@ -30,12 +30,17 @@
                 {% if data['new-address-line-3'] %}
                 {{ data['new-address-line-3'] }},
                 {% endif %}
+                {% if data['new-town'] %}
+                {{ data['new-town'] }}
+                {% else %}
+                {% endif %}
                 {% if data['new-postcode'] %}
                 {{ data['new-postcode'] }}
                 {% else %}
                   YO3 1SQ
                 {% endif %}
               </div>
+
               <button type="submit" class="govuk-button" data-module="govuk-button">
                 Use this address
               </button>

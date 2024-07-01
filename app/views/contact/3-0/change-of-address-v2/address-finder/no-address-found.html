@@ -16,7 +16,16 @@
                       No address found
                   </h1>
               </legend>
-              <p>We could not find an address that matches <b>wr11nl</b> and <b>1</b>. You can search again or enter the address manually.</p>
+              <p>We could not find an address that matches
+                <b>{% if data['postcode-1'] %}
+                {{ data['postcode-1'] }}
+                {% else %}
+                {% endif %}</b>
+                  and <b>{% if data['building-name'] %}
+                    {{ data['building-name'] }}
+                    {% else %}
+                    {% endif %}</b>. You can search again or enter the address manually.</p>
+
               <p><a href="find-address.html">Search again</a></p>
               <p class="govuk-body govuk-!-margin-bottom-0"><a href="enter-manual-address.html" class="govuk-link">Enter address manually</a></p>
           </fieldset>
