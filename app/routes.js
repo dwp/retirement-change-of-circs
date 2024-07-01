@@ -2112,7 +2112,7 @@ router.post('/send-letters', function (req, res) {
     // Send user to next page
     res.redirect('/contact/3-0/change-of-address-v2/check-your-details.html')
   } else if (changeSendLetters == "No"){
-    res.redirect('/contact/3-0/change-of-address-v2/you-cannot-change-your-address-online.html')
+    res.redirect('/contact/3-0/change-of-address-v2/you-cannot-ask-to-get-your-letters-sent-somewhere-else-online.html')
   }
 
 });
