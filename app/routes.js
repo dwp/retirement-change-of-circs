@@ -2028,7 +2028,7 @@ router.post('/other-benefits1', function (req, res) {
     // Send user to next page
     res.redirect('/contact/3-0/change-of-address-v2/benefits-disclaimer.html')
   } else if (changeOtherBenefits == "No, I only receive a State Pension"){
-    res.redirect('/contact/3-0/change-of-address-v2/uk-address.html')
+    res.redirect('/contact/3-0/change-of-address-v2/have-you-already-moved.html')
   }
 
 });
@@ -2080,7 +2080,7 @@ router.post('/uk-address', function (req, res) {
     // Send user to next page
     res.redirect('/contact/3-0/change-of-address-v2/address-finder/find-address.html')
   } else if (changeUkAddress == "No"){
-    res.redirect('/contact/3-0/change-of-address-v2/must-be-a-uk-address.html')
+    res.redirect('/contact/3-0/change-of-address-v2/you-cannot-change-your-address-online.html')
   }
 
 });
@@ -2151,7 +2151,7 @@ router.post('/changed-residential-address', function (req, res) {
 
 });
 // ROUTING TO ADRESS RESULTS
-router.post('/manual-postcode-1', function (req, res) {
+router.post('/postcode-1', function (req, res) {
 
   // Make a variable and give it the value from 'bank-or-build'
   var changeManualPostcode = req.session.data['postcode-1']
@@ -2160,7 +2160,7 @@ router.post('/manual-postcode-1', function (req, res) {
   // Check whether the variable matches a condition
   if (changeManualPostcode == "Y031SQ"){
     // Send user to next page
-    res.redirect('/contact/3-0/change-of-address-v2/address-finder/confirm-manual-address.html')
+    res.redirect('/contact/3-0/change-of-address-v2/address-finder/confirm-address1.html')
   } else {
     res.redirect('/contact/3-0/change-of-address-v2/address-finder/no-address-found.html')
   }
