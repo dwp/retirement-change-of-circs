@@ -2132,8 +2132,38 @@ router.post('/changed-residential-address', function (req, res) {
     res.redirect('/contact/3-0/change-of-address-v2/you-have-changed-your-address.html')
   }
 
+});
 
+// ROUTING TO RIGHT CONFIRMATION VERSION CHANGE OF ADDRESS
+router.post('/changed-residential-address', function (req, res) {
 
+  // Make a variable and give it the value from 'bank-or-build'
+  var changeOtherBenefits = req.session.data['other-benefits']
+  console.log("high", req.session.data['other-benefits'])
+
+  // Check whether the variable matches a condition
+  if (changeOtherBenefits == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-of-address-v2/you-have-changed-your-address-alt.html')
+  } else {
+    res.redirect('/contact/3-0/change-of-address-v2/you-have-changed-your-address.html')
+  }
+
+});
+// ROUTING TO ADRESS RESULTS
+router.post('/manual-postcode-1', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var changeManualPostcode = req.session.data['postcode-1']
+  console.log("high", req.session.data['postcode-1'])
+
+  // Check whether the variable matches a condition
+  if (changeManualPostcode == "Y031SQ"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-of-address-v2/address-finder/confirm-manual-address.html')
+  } else {
+    res.redirect('/contact/3-0/change-of-address-v2/address-finder/no-address-found.html')
+  }
 
 });
 
