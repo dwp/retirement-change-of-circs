@@ -2101,6 +2101,22 @@ router.post('/select-an-address1', function (req, res) {
 
 });
 
+// ROUTING TO CONFIRM NEW MANUAL ADDRESS 
+router.post('/select-a-manual-address1', function (req, res) {
+
+  // Make a variable and give it the value from '10 Washington Street, Worcester, WR1 1NL'
+  var selectAddress = req.session.data['select-an-address']
+
+  // Check whether the variable matches a condition
+  if (selectAddress == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-of-address-v2/address-finder/select-a-manual-address.html')
+  } else if (selectAddress == "No"){
+    res.redirect('/contact/3-0/change-of-address-v2/address-finder/confirm-address2.html')
+  }
+
+});
+
 // ROUTING TO CONFIRM IF YOU WANT LETTER SENT TO RESIDENTIAL ADDRESS
 router.post('/send-letters', function (req, res) {
 
@@ -2160,7 +2176,7 @@ router.post('/postcode-1', function (req, res) {
   // Check whether the variable matches a condition
   if (changeManualPostcode == "Y031SQ"){
     // Send user to next page
-    res.redirect('/contact/3-0/change-of-address-v2/address-finder/confirm-address1.html')
+    res.redirect('/contact/3-0/change-of-address-v2/address-finder/select-an-address.html')
   } else {
     res.redirect('/contact/3-0/change-of-address-v2/address-finder/no-address-found.html')
   }
