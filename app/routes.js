@@ -2166,20 +2166,26 @@ router.post('/changed-residential-address', function (req, res) {
   }
 
 });
-// ROUTING TO ADRESS RESULTS
+// ROUTING TO ADdRESS RESULTS
 router.post('/postcode-1', function (req, res) {
 
-  // Make a variable and give it the value from 'bank-or-build'
+  // Make a variable and give it the value from 'Postcode'
   var changeManualPostcode = req.session.data['postcode-1']
   console.log("high", req.session.data['postcode-1'])
 
   // Check whether the variable matches a condition
-  if (changeManualPostcode == "Y031SQ"){
+  if (changeManualPostcode == "Y031SQ","Y03 1SQ","y031sq","y03 1sq"){
     // Send user to next page
     res.redirect('/contact/3-0/change-of-address-v2/address-finder/select-an-address.html')
+  // } else if (changeManualPostcode == "111"){
+  //   res.redirect('/contact/3-0/change-of-address-v2/address-finder/select-an-address.html')
+  // } else if (changeManualPostcode == "222"){
+  //   res.redirect('/contact/3-0/change-of-address-v2/address-finder/select-an-address.html')
   } else {
     res.redirect('/contact/3-0/change-of-address-v2/address-finder/no-address-found.html')
   }
+
+  
 
 });
 
