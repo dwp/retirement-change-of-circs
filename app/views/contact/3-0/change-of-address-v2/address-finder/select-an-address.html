@@ -18,7 +18,7 @@
                 Select an address
               </h1>
             </legend>
-            {% if (data['postcode-1'] == "YO31SQ", "YO3 1SQ", "yo31sq", "yo3 1sq", "111") %}
+            {% if (data['postcode-1'] == "YO31SQ", "YO3 1SQ", "yo31sq", "yo3 1sq") %}
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="select-an-address-yes" name="select-an-address" type="radio" value="Yes" {{ checked("select-an-address", "Yes") }}>
@@ -86,7 +86,7 @@
             </div>
             {% endif %} -->
             
-            {% if (data['postcode-1'] == "333") %}
+            {% if (data['postcode-1'] == "111") %}
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="select-an-address-yes" name="select-an-address" type="radio" value="Yes" {{ checked("select-an-address", "Yes") }}>
