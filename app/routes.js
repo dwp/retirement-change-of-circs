@@ -2192,7 +2192,7 @@ router.post('/postcode-1', function (req, res) {
     // Send user to next page
     res.redirect('contact/3-0/change-of-address-v2/address-finder/select-an-address.html')
   
-  }if (changeManualPostcode == "111"){
+  }if (changeManualPostcode == "E1 7ES"){
     // Send user to next page
     res.redirect('contact/3-0/change-of-address-v2/address-finder/select-an-address.html')
   } else {
