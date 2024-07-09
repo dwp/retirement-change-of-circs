@@ -18,7 +18,7 @@
                 Select an address
               </h1>
             </legend>
-            {% if (data['postcode-1'] == "Y031SQ","y031sq","Y03 1SQ", "y03 1sq") %}
+            {% if (data['postcode-1'] == "YO31SQ", "YO3 1SQ", "yo31sq", "yo3 1sq", "111") %}
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="select-an-address-yes" name="select-an-address" type="radio" value="Yes" {{ checked("select-an-address", "Yes") }}>
@@ -34,7 +34,59 @@
               </div>
             </div>
             {% endif %}
-            {% if (data['postcode-1'] == "111") %}
+
+            <!-- {% if (data['postcode-1'] == "YO3 1SQ") %}
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-an-address-yes" name="select-an-address" type="radio" value="Yes" {{ checked("select-an-address", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="select-an-address-yes">
+                  1 Square Street, York, YO3 1SQ
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-an-address-no" name="select-an-address" type="radio" value="No" {{ checked("select-an-address", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="select-an-address-no">
+                  123 Square Street, York, YO3 1SQ
+                </label>
+              </div>
+            </div>
+            {% endif %}
+
+            {% if (data['postcode-1'] == "yo31sq") %}
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-an-address-yes" name="select-an-address" type="radio" value="Yes" {{ checked("select-an-address", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="select-an-address-yes">
+                  1 Square Street, York, YO3 1SQ
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-an-address-no" name="select-an-address" type="radio" value="No" {{ checked("select-an-address", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="select-an-address-no">
+                  123 Square Street, York, YO3 1SQ
+                </label>
+              </div>
+            </div>
+            {% endif %}
+
+            {% if (data['postcode-1'] == "yo3 1sq") %}
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-an-address-yes" name="select-an-address" type="radio" value="Yes" {{ checked("select-an-address", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="select-an-address-yes">
+                  1 Square Street, York, YO3 1SQ
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-an-address-no" name="select-an-address" type="radio" value="No" {{ checked("select-an-address", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="select-an-address-no">
+                  123 Square Street, York, YO3 1SQ
+                </label>
+              </div>
+            </div>
+            {% endif %} -->
+            
+            {% if (data['postcode-1'] == "333") %}
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="select-an-address-yes" name="select-an-address" type="radio" value="Yes" {{ checked("select-an-address", "Yes") }}>
@@ -50,6 +102,7 @@
               </div>
             </div>
             {% endif %}
+
             {% if (data['postcode-1'] == "222") %}
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
