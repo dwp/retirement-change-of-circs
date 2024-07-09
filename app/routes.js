@@ -1,8 +1,6 @@
-const express = require('express');
-const { v1 } = require('uuid');
-const router = express.Router()
 
-
+const govukPrototypeKit = require('govuk-prototype-kit')
+const router = govukPrototypeKit.requests.setupRouter()
 
 function addDays(date, days) {
   var result = new Date(date);
