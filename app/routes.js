@@ -2166,28 +2166,38 @@ router.post('/changed-residential-address', function (req, res) {
   }
 
 });
-// ROUTING TO ADdRESS RESULTS
+
+
+// ROUTING TO ADDRESS RESULTS
 router.post('/postcode-1', function (req, res) {
 
-  // Make a variable and give it the value from 'Postcode'
+  // Make a variable and give it the value from 'bank-or-build'
   var changeManualPostcode = req.session.data['postcode-1']
   console.log("high", req.session.data['postcode-1'])
 
   // Check whether the variable matches a condition
-  if (changeManualPostcode == "Y031SQ","Y03 1SQ","y031sq","y03 1sq"){
+  if (changeManualPostcode == "YO31SQ"){
     // Send user to next page
-    res.redirect('/contact/3-0/change-of-address-v2/address-finder/select-an-address.html')
-  // } else if (changeManualPostcode == "111"){
-  //   res.redirect('/contact/3-0/change-of-address-v2/address-finder/select-an-address.html')
-  // } else if (changeManualPostcode == "222"){
-  //   res.redirect('/contact/3-0/change-of-address-v2/address-finder/select-an-address.html')
+    res.redirect('contact/3-0/change-of-address-v2/address-finder/select-an-address.html')
+
+  }if (changeManualPostcode == "YO3 1SQ"){
+    // Send user to next page
+    res.redirect('contact/3-0/change-of-address-v2/address-finder/select-an-address.html')
+
+  }if (changeManualPostcode == "yo31sq"){
+    // Send user to next page
+    res.redirect('contact/3-0/change-of-address-v2/address-finder/select-an-address.html')
+
+  }if (changeManualPostcode == "yo3 1sq"){
+    // Send user to next page
+    res.redirect('contact/3-0/change-of-address-v2/address-finder/select-an-address.html')
+  
+  }if (changeManualPostcode == "111"){
+    // Send user to next page
+    res.redirect('contact/3-0/change-of-address-v2/address-finder/select-an-address.html')
   } else {
     res.redirect('/contact/3-0/change-of-address-v2/address-finder/no-address-found.html')
-  }
-
-  
-
-});
+  }});
 
 
 module.exports = router
