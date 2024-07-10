@@ -2178,19 +2178,19 @@ router.post('/postcode-1', function (req, res) {
     // Send user to next page
     res.redirect('contact/3-0/change-of-address-v2/address-finder/select-an-address.html')
 
-  }if (changeManualPostcode == "YO3 1SQ"){
+  } else if (changeManualPostcode == "YO3 1SQ"){
     // Send user to next page
     res.redirect('contact/3-0/change-of-address-v2/address-finder/select-an-address.html')
 
-  }if (changeManualPostcode == "yo31sq"){
+  } else if (changeManualPostcode == "yo31sq"){
     // Send user to next page
     res.redirect('contact/3-0/change-of-address-v2/address-finder/select-an-address.html')
 
-  }if (changeManualPostcode == "yo3 1sq"){
+  } else if (changeManualPostcode == "yo3 1sq"){
     // Send user to next page
     res.redirect('contact/3-0/change-of-address-v2/address-finder/select-an-address.html')
   
-  }if (changeManualPostcode == "E1 7ES"){
+  } else if (changeManualPostcode == "E1 7ES"){
     // Send user to next page
     res.redirect('contact/3-0/change-of-address-v2/address-finder/select-an-address.html')
   } else {
