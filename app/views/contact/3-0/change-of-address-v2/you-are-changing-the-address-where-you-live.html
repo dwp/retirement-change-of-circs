@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  You are only changing the address where you live - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/update-residential1" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                You are only changing the address where you live
+              </h1>
+            </legend>
+
+
+            <p class="govuk-body">
+              We will send letters to this new address. If you would like your letters sent somewhere other than this address, you will have to  <a href="https://www.gov.uk/report-benefits-change-circumstances">contact the pension service</a>.
+            </p>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h2 class="govuk-fieldset__heading">
+                    Would you like to change the address where you live?
+                  </h2>
+                </legend>
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="update-residential-yes" name="update-residential" type="radio" value="Yes" {{ checked("update-residential", "Yes") }}>
+                    <label class="govuk-label govuk-radios__label" for="update-residential-yes">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="update-residential-no" name="update-residential" type="radio" value="No" {{ checked("update-residential", "No") }}>
+                    <label class="govuk-label govuk-radios__label" for="update-residential-no">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">
+        Get help
+      </h2>
+      <p><a href="../contact-pension-service&help" target="_blank">Contact us by phone to get help with the online service (opens in new tab)</a></p>
+    </div>
+  </div>
+
+{% endblock %}
