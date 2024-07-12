@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Matching address found - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/manual-address-1" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Matching address found
+              </h1>
+            </legend>
+            <div class="govuk-inset-text">
+              123 Square Street<br>
+              York<br>
+              YO3 1SQ
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h2 class="govuk-fieldset__heading">
+                    Do you want to use this address?
+                  </h2>
+                </legend>
+                
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="matching-address-yes" name="matching-address" type="radio" value="Yes" {{ checked("matching-address", "Yes") }}>
+                    <label class="govuk-label govuk-radios__label" for="matching-address-yes">
+                      Use this address
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="matching-address-no" name="matching-address" type="radio" value="No" {{ checked("matching-address", "No") }}>
+                    <label class="govuk-label govuk-radios__label" for="matching-address-no">
+                      Use the address I entered
+                    </label>
+                    <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                      The Bee Hive<br>
+                      Square Street<br>
+                      York<br>
+                      YO3 1SQ
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">
+        Get help
+      </h2>
+      <p><a href="../contact-pension-service&help" target="_blank">Contact us by phone to get help with the online service (opens in new tab)</a></p>
+    </div>
+  </div>
+
+{% endblock %}
