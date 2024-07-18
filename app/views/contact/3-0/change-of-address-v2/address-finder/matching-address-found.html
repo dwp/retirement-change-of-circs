@@ -32,21 +32,25 @@
                 
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="matching-address-yes" name="matching-address" type="radio" value="Yes" {{ checked("matching-address", "Yes") }}>
-                    <label class="govuk-label govuk-radios__label" for="matching-address-yes">
+                    <input class="govuk-radios__input" id="select-an-address-yes" name="select-an-address" type="radio" value="Select2" {{ checked("select-an-address", "Select2") }}>
+                    <label class="govuk-label govuk-radios__label" for="select-an-address-yes">
+                      <!-- <input class="govuk-radios__input" id="matching-address-yes" name="matching-address" type="radio" value="Yes" {{ checked("sel", "Yes") }}>
+                    <label class="govuk-label govuk-radios__label" for="matching-address-yes"> -->
                       Use this address
                     </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="matching-address-no" name="matching-address" type="radio" value="No" {{ checked("matching-address", "No") }}>
-                    <label class="govuk-label govuk-radios__label" for="matching-address-no">
+                    <input class="govuk-radios__input" id="select-an-address-yes" name="select-an-address" type="radio" value="Select3" {{ checked("select-an-address", "Select3") }}>
+                    <label class="govuk-label govuk-radios__label" for="select-an-address-yes">
+                    <!-- <input class="govuk-radios__input" id="matching-address-no" name="matching-address" type="radio" value="No" {{ checked("matching-address", "No") }}>
+                    <label class="govuk-label govuk-radios__label" for="matching-address-no"> -->
                       Use the address I entered
                     </label>
                     <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
-                      The Bee Hive<br>
-                      Square Street<br>
-                      York<br>
-                      YO3 1SQ
+                      {{ data['new-address-line-1'] }}<br>
+                      {{ data['new-address-line-2'] }}<br>
+                      {{ data['new-town-1'] }}<br>
+                      {{ data['new-postcode-1'] }}<br>
                     </div>
                   </div>
                 </div>

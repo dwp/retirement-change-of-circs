@@ -2175,9 +2175,6 @@ router.post('/postcode-1', function (req, res) {
     // Send user to next page
     res.redirect('contact/3-0/change-of-address-v2/address-finder/select-an-address.html')
   
-  } else if (changeManualPostcode == "E1 7ES"){
-    // Send user to next page
-    res.redirect('contact/3-0/change-of-address-v2/address-finder/select-an-address.html')
   } else {
     res.redirect('/contact/3-0/change-of-address-v2/address-finder/no-address-found.html')
   }
@@ -2193,9 +2190,12 @@ router.post('/select-an-address2', function (req, res) {
   console.log("high", req.session.data['select-an-address'])
 
   // Check whether the variable matches a condition
-  if (selectAddress == "Yes"){
+  if (selectAddress == "Select1"){
     // Send user to next page
-    res.redirect('/contact/3-0/change-of-address-v2/you-are-changing-the-address-where-you-live.html.html')
+    res.redirect('/contact/3-0/change-of-address-v2/you-are-changing-the-address-where-you-live.html')
+  } else if (selectAddress == "Select2"){
+    // Send user to next page
+    res.redirect('contact/3-0/change-of-address-v2/you-are-changing-the-address-where-you-live.html')
   } else if (selectAddress == "No"){
     // Send user to next page
     res.redirect('contact/3-0/change-of-address-v2/address-finder/already-your-address.html')
@@ -2205,24 +2205,23 @@ router.post('/select-an-address2', function (req, res) {
 
 });
 
-
 // ROUTING TO MATCHING ADDRESS OR MANUAL ENTRY
-  router.post('/manual-address-1', function (req, res) {
+router.post('/manual-address-1', function (req, res) {
 
-    // Make a variable and give it the value from 'bank-or-build'
-    var selectMatchingAddress = req.session.data['matching-address']
-    console.log("high", req.session.data['matching-address'])
-  
-    // Check whether the variable matches a condition
-    if (selectMatchingAddress == "Yes"){
-      // Send user to next page
-      res.redirect('/contact/3-0/change-of-address-v2/you-are-changing-the-address-where-you-live.html')
-    } else if (selectMatchingAddress == "No"){
-      // Send user to next page
-      res.redirect('contact/3-0/change-of-address-v2/you-are-changing-the-address-where-you-live.html')
-    }
-  
-  });
+  // Make a variable and give it the value from 'bank-or-build'
+  var selectAddress = req.session.data['select-an-address']
+  console.log("high", req.session.data['select-an-address'])
+
+  // Check whether the variable matches a condition
+  if (selectAddress == "Select2"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-of-address-v2/you-are-changing-the-address-where-you-live.html')
+  } else if (selectAddress == "Select3"){
+    // Send user to next page
+    res.redirect('contact/3-0/change-of-address-v2/you-are-changing-the-address-where-you-live.html')
+  }
+
+});
 
   // ROUTING TO MATCHING ADDRESS OR MANUAL ENTRY
   router.post('/update-residential1', function (req, res) {
