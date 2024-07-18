@@ -15,10 +15,27 @@
       </div>
       <h2 class="govuk-heading-s">Your home address has been updated to:</h2>
 
+      {% if (data['select-an-address'] == "Select1") %}   
       <p class="govuk-body">
         1 Square Street<br>
         York<br>
-        YO3 1SQ	<br>   
+        YO3 1SQ	<br>
+        {% endif %}
+      
+      {% if (data['select-an-address'] == "Select2") %}   
+      <p class="govuk-body">
+        123 Square Street<br>
+        York<br>
+        YO3 1SQ	<br>
+        {% endif %}
+
+      {% if (data['select-an-address'] == "Select3") %}   
+      <p class="govuk-body">
+        {{ data['new-address-line-1'] }}<br>
+        {{ data['new-address-line-2'] }}<br>
+        {{ data['new-town-1'] }}<br>
+        {{ data['new-postcode-1'] }}
+        {% endif %}
 
       <h2 class="govuk-heading-m">
         Help improve this service

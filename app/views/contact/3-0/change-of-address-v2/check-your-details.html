@@ -78,29 +78,16 @@
               </a>
             </dd>
           </div>
+
+          {% if (data['select-an-address'] == "Select1") %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
               Your address 
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['new-address-line-1'] %}
-              {{ data['new-address-line-1'] }}<br>
-              {% else %}
               1 Square Street<br>
-              {% endif %}
-              {% if data['new-address-line-2'] %}
-              {{ data['new-address-line-2'] }}<br>
-              {% else %}
               York<br>
-              {% endif %}
-              {% if data['new-address-line-3'] %}
-              {{ data['new-address-line-3'] }}<br>
-              {% endif %}
-              {% if data['new-postcode'] %}
-              {{ data['new-postcode'] }}
-              {% else %}
-                YO3 1SQ
-              {% endif %}
+              YO3 1SQ
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="../change-of-address-v2/address-finder/select-an-address.html">
@@ -108,6 +95,45 @@
               </a>
             </dd>
           </div>
+          {% endif %}
+          
+          {% if (data['select-an-address'] == "Select2") %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Your address 
+            </dt>
+            <dd class="govuk-summary-list__value">
+              123 Square Street<br>
+              York<br>
+              YO3 1SQ
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="../change-of-address-v2/address-finder/select-an-address.html">
+                Change<span class="govuk-visually-hidden"> your home address</span>
+              </a>
+            </dd>
+          </div>
+          {% endif %}
+
+          {% if (data['select-an-address'] == "Select3") %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Your address 
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['new-address-line-1'] }}<br>
+              {{ data['new-address-line-2'] }}<br>
+              {{ data['new-town-1'] }}<br>
+              {{ data['new-postcode-1'] }}<br>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="../change-of-address-v2/address-finder/select-an-address.html">
+                Change<span class="govuk-visually-hidden"> your home address</span>
+              </a>
+            </dd>
+          </div>
+          {% endif %}
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
               Would you like to change the address where you live?
@@ -121,7 +147,7 @@
               {% endif %}   -->
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="where-would-you-need-your-letters-sent.html">
+              <a class="govuk-link" href="you-are-changing-the-address-where-you-live.html">
                 Change<span class="govuk-visually-hidden"> if your moving this property</span>
               </a>
             </dd>
