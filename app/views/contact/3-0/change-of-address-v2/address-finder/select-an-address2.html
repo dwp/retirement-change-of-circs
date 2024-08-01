@@ -14,10 +14,10 @@
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                Select an addres 2
+                Select an address
               </h1>
             </legend>
-            <p>2 addresses found for <b>{{ data['postcode-1'] }}</b> and <b>1</b>. <a href="find-address.html">Search again</a></p>
+            <p>15 addresses found for <b>{{ data['postcode-1'] }}</b> and <b>1</b>. <a href="find-address.html">Search again</a></p>
 
             {% if (data['postcode-1'] == "YO31SQ") %}
             <div class="govuk-radios" data-module="govuk-radios">
@@ -51,19 +51,13 @@
                   13 Square Street, York, YO3 1SQ
                 </label>
               </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="select-an-address-no" name="select-an-address" type="radio" value="No" {{ checked("select-an-address", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="select-an-address-no">
-                  14 Square Street, York, YO3 1SQ
-                </label>
-              </div>
-              <div class="govuk-radios__divider">or</div>
+              <!-- <div class="govuk-radios__divider">or</div>
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="select-an-address-manual" name="select-an-address" type="radio" value="Manual" {{ checked("select-an-address", "Manual") }}>
                 <label class="govuk-label govuk-radios__label" for="select-an-address-manual">
                   I want to enter my address manually
                 </label>
-              </div>      
+              </div>       -->
             </div>
             {% endif %}
 
