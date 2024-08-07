@@ -2169,7 +2169,7 @@ router.post('/postcode-1', function (req, res) {
 
   } else if (changeManualPostcode == "yo31sq"){
     // Send user to next page
-    res.redirect('contact/3-0/change-of-address-v2/address-finder/select-an-address.html')
+    res.redirect('contact/3-0/change-of-address-v2/address-finder/is-this-your-address.html')
 
   } else if (changeManualPostcode == "yo3 1sq"){
     // Send user to next page
