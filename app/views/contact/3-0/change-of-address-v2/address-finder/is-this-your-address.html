@@ -1,22 +1,22 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
- Confirm address - Manage your State Pension - GOV.UK
+ Is this your address? - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="../where-do-you-need-your-letters-sent" method="post">
+      <form class="form" action="../you-are-changing-the-address-where-you-live" method="post">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                   <h1 class="govuk-fieldset__heading">
-                      Confirm address
+                      Is this your address?
                   </h1>
               </legend>
-              <p>2 address found for <b>{{ data['postcode-1'] }}</b> and <b>1</b>. <a href="find-address.html">Search again</a></p>
+              <p>1 address found for <b>{{ data['postcode-1'] }}</b> and <b>1</b>. <a href="find-address.html">Search again</a></p>
               <div class="govuk-inset-text">
                 1 Square Street, York, YO3 1SQ
               </div>
