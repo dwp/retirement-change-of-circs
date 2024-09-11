@@ -2192,7 +2192,7 @@ router.post('/select-an-address2', function (req, res) {
   // Check whether the variable matches a condition
   if (selectAddress == "Select1"){
     // Send user to next page
-    res.redirect('/contact/3-0/change-of-address-v2/you-are-changing-the-address-where-you-live.html')
+    res.redirect('/contact/3-0/change-of-address-v2/check-your-details.html')
   } else if (selectAddress == "Select2"){
     // Send user to next page
     res.redirect('contact/3-0/change-of-address-v2/you-are-changing-the-address-where-you-live.html')
@@ -2215,10 +2215,10 @@ router.post('/manual-address-1', function (req, res) {
   // Check whether the variable matches a condition
   if (selectAddress == "Select2"){
     // Send user to next page
-    res.redirect('/contact/3-0/change-of-address-v2/you-are-changing-the-address-where-you-live.html')
+    res.redirect('/contact/3-0/change-of-address-v2/check-your-details.html')
   } else if (selectAddress == "Select3"){
     // Send user to next page
-    res.redirect('contact/3-0/change-of-address-v2/you-are-changing-the-address-where-you-live.html')
+    res.redirect('contact/3-0/change-of-address-v2/check-your-details.html')
   }
 
 });
