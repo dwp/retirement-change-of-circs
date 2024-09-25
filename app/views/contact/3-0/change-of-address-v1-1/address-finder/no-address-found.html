@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ No address found - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="check-your-details-add" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                      No address found
+                  </h1>
+              </legend>
+              <p>We could not find an address that matches
+                <b>{% if data['postcode-1'] %}
+                {{ data['postcode-1'] }}
+                {% else %}
+                wr11n1
+                {% endif %}</b>
+                  and <b>{% if data['building-name'] %}
+                {{ data['building-name'] }}
+                {% else %}
+                  1
+                {% endif %}</b>. You can search again or enter the address manually.</p>
+
+              <p><a href="find-address.html">Search again</a></p>
+          </fieldset>
+        </div>
+      </form>
+
+    </div>
+    <!-- <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">
+        Get help
+      </h2>
+      <p><a href="../contact-pension-service&help" target="_blank">Contact us by phone to get help with the online service (opens in new tab)</a></p>
+    </div> -->
+  </div>
+
+{% endblock %}
