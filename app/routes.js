@@ -2031,6 +2031,40 @@ router.post('/other-benefits1', function (req, res) {
 
 });
 
+// ROUTING TO YES OR NO FOR CITIZEN RECIEVING THER BENEFITS
+
+router.post('/other-benefits2', function (req, res) {
+
+  // Make a variable and give it the value from 'other-benefits'
+  var changeOtherBenefits = req.session.data['other-benefits']
+
+  // Check whether the variable matches a condition
+  if (changeOtherBenefits == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-of-address-v3/benefits-disclaimer.html')
+  } else if (changeOtherBenefits == "No, I only receive a State Pension"){
+    res.redirect('/contact/3-0/change-of-address-v3/have-you-already-moved.html')
+  }
+
+});
+
+// ROUTING TO YES OR NO FOR CITIZEN RECIEVING THER BENEFITS
+
+router.post('/other-benefits3', function (req, res) {
+
+  // Make a variable and give it the value from 'other-benefits'
+  var changeOtherBenefits = req.session.data['other-benefits']
+
+  // Check whether the variable matches a condition
+  if (changeOtherBenefits == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-of-address-v1-1/benefits-disclaimer.html')
+  } else if (changeOtherBenefits == "No, I only receive a State Pension"){
+    res.redirect('/contact/3-0/change-of-address-v1-1/have-you-already-moved.html')
+  }
+
+});
+
 
 // ROUTING TO UPDATE BENEFITS SEPARATELY
 
@@ -2045,6 +2079,23 @@ router.post('/update-other-benefits1', function (req, res) {
     res.redirect('/contact/3-0/change-of-address-v2/have-you-already-moved.html')
   } else if (changeUpdateOtherBenefits == "No"){
     res.redirect('/contact/3-0/change-of-address-v2/get-help-to-report-your-change-of-address.html')
+  }
+
+});
+
+// ROUTING TO UPDATE BENEFITS SEPARATELY
+
+router.post('/update-other-benefits2', function (req, res) {
+
+  // Make a variable and give it the value from 'update-other-benefits'
+  var changeUpdateOtherBenefits = req.session.data['update-other-benefits']
+
+  // Check whether the variable matches a condition
+  if (changeUpdateOtherBenefits == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-of-address-v1-1/have-you-already-moved.html')
+  } else if (changeUpdateOtherBenefits == "No"){
+    res.redirect('/contact/3-0/change-of-address-v1-1/get-help-to-report-your-change-of-address.html')
   }
 
 });
@@ -2066,6 +2117,40 @@ router.post('/already-moved1', function (req, res) {
 
 });
 
+// ROUTING TO YES OR NO ALREADY MOVED TO ADDRESS
+
+router.post('/already-moved2', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var changeAlreadyMoved = req.session.data['already-moved']
+
+  // Check whether the variable matches a condition
+  if (changeAlreadyMoved == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-of-address-v3/uk-address.html')
+  } else if (changeAlreadyMoved == "No"){
+    res.redirect('/contact/3-0/change-of-address-v3/report-change-after-move.html')
+  }
+
+});
+
+// ROUTING TO YES OR NO ALREADY MOVED TO ADDRESS
+
+router.post('/already-moved3', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var changeAlreadyMoved = req.session.data['already-moved']
+
+  // Check whether the variable matches a condition
+  if (changeAlreadyMoved == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-of-address-v1-1/uk-address.html')
+  } else if (changeAlreadyMoved == "No"){
+    res.redirect('/contact/3-0/change-of-address-v1-1/report-change-after-move.html')
+  }
+
+});
+
 // ROUTING TO YES OR NO HOME ADDRESS IN THE UK
 
 router.post('/uk-address', function (req, res) {
@@ -2079,6 +2164,40 @@ router.post('/uk-address', function (req, res) {
     res.redirect('/contact/3-0/change-of-address-v2/address-finder/find-address.html')
   } else if (changeUkAddress == "No"){
     res.redirect('/contact/3-0/change-of-address-v2/you-cannot-change-your-address-online.html')
+  }
+
+});
+
+// ROUTING TO YES OR NO HOME ADDRESS IN THE UK
+
+router.post('/uk-address2', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var changeUkAddress = req.session.data['uk-address']
+
+  // Check whether the variable matches a condition
+  if (changeUkAddress == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-of-address-v3/address-finder/find-address.html')
+  } else if (changeUkAddress == "No"){
+    res.redirect('/contact/3-0/change-of-address-v3/you-cannot-change-your-address-online.html')
+  }
+
+});
+
+// ROUTING TO YES OR NO HOME ADDRESS IN THE UK
+
+router.post('/uk-address3', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var changeUkAddress = req.session.data['uk-address']
+
+  // Check whether the variable matches a condition
+  if (changeUkAddress == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-of-address-v1-1/address-finder/find-address.html')
+  } else if (changeUkAddress == "No"){
+    res.redirect('/contact/3-0/change-of-address-v1-1/you-cannot-change-your-address-online.html')
   }
 
 });
@@ -2150,6 +2269,23 @@ router.post('/changed-residential-address', function (req, res) {
 
 });
 
+// ROUTING TO RIGHT CONFIRMATION VERSION CHANGE OF ADDRESS
+router.post('/changed-residential-address2', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var changeOtherBenefits = req.session.data['other-benefits']
+  console.log("high", req.session.data['other-benefits'])
+
+  // Check whether the variable matches a condition
+  if (changeOtherBenefits == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-of-address-v1-1/you-have-changed-your-address-alt.html')
+  } else {
+    res.redirect('/contact/3-0/change-of-address-v1-1/you-have-changed-your-address.html')
+  }
+
+});
+
 
 // ROUTING TO ADDRESS RESULTS
 router.post('/postcode-1', function (req, res) {
@@ -2181,6 +2317,66 @@ router.post('/postcode-1', function (req, res) {
 
 });
 
+// ROUTING TO ADDRESS RESULTS
+router.post('/postcode-2', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var changeManualPostcode = req.session.data['postcode-1']
+  console.log("high", req.session.data['postcode-1'])
+
+  // Check whether the variable matches a condition
+  if (changeManualPostcode == "YO31SQ"){
+    // Send user to next page
+    res.redirect('contact/3-0/change-of-address-v3/address-finder/select-an-address.html')
+
+  } else if (changeManualPostcode == "YO3 1SQ"){
+    // Send user to next page
+    res.redirect('contact/3-0/change-of-address-v3/address-finder/select-an-address.html')
+
+  } else if (changeManualPostcode == "yo31sq"){
+    // Send user to next page
+    res.redirect('contact/3-0/change-of-address-v3/address-finder/is-this-your-address.html')
+
+  } else if (changeManualPostcode == "yo3 1sq"){
+    // Send user to next page
+    res.redirect('contact/3-0/change-of-address-v3/address-finder/select-an-address.html')
+  
+  } else {
+    res.redirect('/contact/3-0/change-of-address-v3/address-finder/no-address-found.html')
+  }
+
+});
+
+// ROUTING TO ADDRESS RESULTS
+router.post('/postcode-3', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var changeManualPostcode = req.session.data['postcode-1']
+  console.log("high", req.session.data['postcode-1'])
+
+  // Check whether the variable matches a condition
+  if (changeManualPostcode == "YO31SQ"){
+    // Send user to next page
+    res.redirect('contact/3-0/change-of-address-v1-1/address-finder/select-an-address.html')
+
+  } else if (changeManualPostcode == "YO3 1SQ"){
+    // Send user to next page
+    res.redirect('contact/3-0/change-of-address-v1-1/address-finder/select-an-address.html')
+
+  } else if (changeManualPostcode == "yo31sq"){
+    // Send user to next page
+    res.redirect('contact/3-0/change-of-address-v1-1/address-finder/is-this-your-address.html')
+
+  } else if (changeManualPostcode == "yo3 1sq"){
+    // Send user to next page
+    res.redirect('contact/3-0/change-of-address-v1-1/address-finder/select-an-address.html')
+  
+  } else {
+    res.redirect('/contact/3-0/change-of-address-v1-1/address-finder/no-address-found.html')
+  }
+
+});
+
 
   // ROUTING TO RIGHT ADDRESS
 router.post('/select-an-address2', function (req, res) {
@@ -2205,6 +2401,75 @@ router.post('/select-an-address2', function (req, res) {
 
 });
 
+  // ROUTING TO RIGHT ADDRESS
+  router.post('/select-an-address3', function (req, res) {
+
+    // Make a variable and give it the value from 'bank-or-build'
+    var selectAddress = req.session.data['select-an-address']
+    console.log("high", req.session.data['select-an-address'])
+  
+    // Check whether the variable matches a condition
+    if (selectAddress == "Select1"){
+      // Send user to next page
+      res.redirect('/contact/3-0/change-of-address-v2/check-your-details.html')
+    } else if (selectAddress == "Select2"){
+      // Send user to next page
+      res.redirect('contact/3-0/change-of-address-v2/check-your-details.html')
+    } else if (selectAddress == "No"){
+      // Send user to next page
+      res.redirect('contact/3-0/change-of-address-v2/address-finder/already-your-address.html')
+    } else {
+      res.redirect('/contact/3-0/change-of-address-v2/address-finder/enter-manual-address.html')
+    }
+  
+  });
+
+    // ROUTING TO RIGHT ADDRESS
+    router.post('/select-an-address4', function (req, res) {
+
+      // Make a variable and give it the value from 'bank-or-build'
+      var selectAddress = req.session.data['select-an-address']
+      console.log("high", req.session.data['select-an-address'])
+    
+      // Check whether the variable matches a condition
+      if (selectAddress == "Select1"){
+        // Send user to next page
+        res.redirect('/contact/3-0/change-of-address-v3/check-your-details.html')
+      } else if (selectAddress == "Select2"){
+        // Send user to next page
+        res.redirect('contact/3-0/change-of-address-v3/check-your-details.html')
+      } else if (selectAddress == "No"){
+        // Send user to next page
+        res.redirect('contact/3-0/change-of-address-v3/address-finder/already-your-address.html')
+      } else {
+        res.redirect('/contact/3-0/change-of-address-v3/address-finder/enter-manual-address.html')
+      }
+    
+    });
+
+        // ROUTING TO RIGHT ADDRESS
+        router.post('/select-an-address5', function (req, res) {
+
+          // Make a variable and give it the value from 'bank-or-build'
+          var selectAddress = req.session.data['select-an-address']
+          console.log("high", req.session.data['select-an-address'])
+        
+          // Check whether the variable matches a condition
+          if (selectAddress == "Select1"){
+            // Send user to next page
+            res.redirect('/contact/3-0/change-of-address-v1-1/check-your-details.html')
+          } else if (selectAddress == "Select2"){
+            // Send user to next page
+            res.redirect('contact/3-0/change-of-address-v1-1/check-your-details.html')
+          } else if (selectAddress == "No"){
+            // Send user to next page
+            res.redirect('contact/3-0/change-of-address-v1-1/address-finder/already-your-address.html')
+          } else {
+            res.redirect('/contact/3-0/change-of-address-v1-1/address-finder/enter-manual-address.html')
+          }
+        
+        });
+
 // ROUTING TO MATCHING ADDRESS OR MANUAL ENTRY
 router.post('/manual-address-1', function (req, res) {
 
@@ -2219,6 +2484,24 @@ router.post('/manual-address-1', function (req, res) {
   } else if (selectAddress == "Select3"){
     // Send user to next page
     res.redirect('contact/3-0/change-of-address-v2/you-are-changing-the-address-where-you-live.html')
+  }
+
+});
+
+// ROUTING TO MATCHING ADDRESS OR MANUAL ENTRY
+router.post('/manual-address-2', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var selectAddress = req.session.data['select-an-address']
+  console.log("high", req.session.data['select-an-address'])
+
+  // Check whether the variable matches a condition
+  if (selectAddress == "Select2"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-of-address-v3/check-your-details.html')
+  } else if (selectAddress == "Select3"){
+    // Send user to next page
+    res.redirect('contact/3-0/change-of-address-v3/check-your-details.html')
   }
 
 });
@@ -2241,6 +2524,23 @@ router.post('/manual-address-1', function (req, res) {
   
   });
 
+    // ROUTING TO MATCHING ADDRESS OR MANUAL ENTRY
+    router.post('/update-residential2', function (req, res) {
+
+      // Make a variable and give it the value from 'bank-or-build'
+      var selectUpdateResidential = req.session.data['update-residential']
+      console.log("high", req.session.data['update-residential'])
+    
+      // Check whether the variable matches a condition
+      if (selectUpdateResidential == "Yes"){
+        // Send user to next page
+        res.redirect('/contact/3-0/change-of-address-v3/check-your-details.html')
+      } else if (selectUpdateResidential == "No"){
+        // Send user to next page
+        res.redirect('contact/3-0/change-of-address-v3/contact-the-pension-service-to-change-your-address.html')
+      }
+    
+    });
   
 
 module.exports = router

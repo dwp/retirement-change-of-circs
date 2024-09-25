@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Find an address - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" action="/postcode-2">
+        <h1 class="govuk-heading-l">Find an address</h1>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="postcode-1">
+            Postcode
+          </label>
+          <div id="postcode-hint" class="govuk-hint">
+            For example, AA3 1AB.
+          </div>
+          <input class="govuk-input govuk-input--width-10" id="postcode-1" name="postcode-1" type="text" value="{{ data['postcode-1'] }}">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="building-name">
+            Building number or name
+          </label>
+          <div id="searchString-hint" class="govuk-hint">
+            For example, 15 or Prospect Cottage.
+          </div>
+          <input class="govuk-input govuk-!-width-two-thirds" id="searchString" name="searchString" type="text" aria-describedby="searchString-hint" value="{{ data['building-number-or-name'] }}">
+        </div>
+
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Find address
+        </button>
+        
+        <!-- <p class="govuk-body govuk-!-margin-bottom-0"><a href="enter-manual-address.html" class="govuk-link">Enter address manually</a></p> -->
+
+      </form>
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">
+        Get help
+      </h2>
+      <p><a href="contact-pension-service&help.html" target="_blank">Contact us by phone to get help with the online service (opens in new tab)</a></p>
+    </div>
+  </div>
+
+{% endblock %}

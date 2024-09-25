@@ -1,0 +1,410 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Contact the Pension Service
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+  <style>
+    #more {display: none;}
+  </style>
+{% endblock %}
+
+{% block beforeContent %}
+<!-- <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Section</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link">Subsection</a>
+      </li>
+    </ol>
+  </div> -->
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Contact the Pension Service
+      </h1>
+
+      <aside class="app-mainstream-guide-contents-list" role="complementary">
+        <nav class="app-contents-list" aria-label="Pages in this guide" role="navigation">
+          <h2 class="app-contents-list__title" id="contents">
+            Contents
+          </h2>
+          <ol class="app-contents-list__list">
+            <li class="app-contents-list__list-item app-contents-list__list-item--dashed app-contents-list__list-item--active">
+              <a href="#">
+                Get information about your pension
+              </a>
+            </li>
+            <li class="app-contents-list__list-item app-contents-list__list-item--dashed">
+              <a href="#">
+                Claim your State Pension by phone or post
+              </a>
+            </li>
+            <li class="app-contents-list__list-item app-contents-list__list-item--dashed">
+              
+                Report changes of address, bank details or other circumstances
+              
+            </li>
+            <li aria-current="true" class="app-contents-list__list-item app-contents-list__list-item--dashed">
+              <a href="contact-pension-service&help.html">
+                Get help using the online service
+              </a>
+            </li>
+          </ol>
+        </nav>
+      </aside>
+
+    </div>
+
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds app-mainstream-guide-body">
+      <!-- <div class="govuk-inset-text">
+        <p class="govuk-body">This guide is also available <a href="contact-pension-service&welsh.html">in Welsh (Cymraeg)</a>.</p>
+      </div> -->
+      
+      <h2 class="govuk-heading-m" id="claim">
+        Report changes of address, bank details or other circumstances
+      </h2>
+      
+      <p class="govuk-body">
+        You must tell the Pension Service if you:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>moved to a new address in the UK (only tell them after you've moved)</li>
+        <li>moved or intend to move to another country permanently</li>
+        <li>moved into a residential care home, even if only temporarily (only tell them after you've moved in)</li>
+        <li>start or stop getting a benefit from the Department for Work and Pensions (DWP)</li>
+        <li>change your bank details</li>
+        <li>marry or form a civil partnership</li>
+        <li>get divorced or your civil partnership is dissolved</li>
+        <li>are widowed or your civil partner dies</li>
+        <li>go to prison</li>
+        <li>are held in legal custody</li>
+      </ul>
+      <div class="govuk-inset-text">
+        <p class="govuk-body">
+          If you claim Pension Credit, there are <a href="#">extra changes that you need to report</a>.
+        </p>
+      </div>
+      <p class="govuk-body">
+        If you live abroad, contact the <a href="#">International Pension Centre</a> instead.
+      </p>
+      <p class="govuk-body">
+        If you're reporting a change on someone else's behalf, you can <a href="#">use the 'alternative enquiry' service</a>.
+      </p>
+
+      <h3 class="govuk-heading-s">
+        Call the Pension Service
+      </h3>
+
+      <div style="border-left: 1px solid #b1b4b6; padding-left: 15px; margin-bottom: 30px; margin-top: 30px;">
+        <p class="govuk-body">
+          Telephone: 0800 731 0469<br/>
+          Textphone: 0800 731 0464<br/>
+          <a href="https://www.relayuk.bt.com/">Relay UK</a> (if you cannot hear or speak on the phone): 18001 then 0800 731 0469<br/> 
+          British Sign Language (BSL) <a href="https://connect.interpreterslive.co.uk/vrs?ilc=DWP">video relay service</a> if you’re on a computer - find out how to <a href="https://www.youtube.com/watch?v=oELNMfAvDxw">use the service on mobile or tablet</a><br/>
+          Welsh language: 0800 731 0453<br/>
+          Welsh language textphone: 0800 731 0456
+        </p>
+        <p class="govuk-body">
+          Monday to Friday, 8am to 6pm<br/>
+          <a href="https://www.gov.uk/call-charges">Find out about call charges</a>
+        </p>
+      </div>
+      <h3 class="govuk-heading-s" id="write">
+        Write to the Pension Service
+      </h3>
+      <div style="border-left: 1px solid #b1b4b6; padding-left: 15px; margin-bottom: 30px; margin-top: 30px;">
+        <p class="govuk-body">
+          The Pension Service<br/> 
+          Post Handling Site A<br/> 
+          Wolverhampton<br/> 
+          WV98 1AF 
+        </p>
+      </div>
+      <h3 class="govuk-heading-s" id="write">
+        Report your change online
+      </h3>
+      <div style="border-left: 1px solid #b1b4b6; padding-left: 15px; margin-bottom: 30px; margin-top: 30px;">
+        <p class="govuk-body">
+          If you originally claimed your State Pension online, you can use the         
+          <a href="manage-state-pension.html">Manage your State Pension Service</a> to check when you'll get your next State Pension 
+          payment and report some changes.
+        </p>
+      </div>
+
+      <nav class="app-pagination" role="navigation" aria-label="Pagination">
+        <ul class="app-pagination__list">
+          <li class="app-pagination__item app-pagination__item--previous">
+            <a href="#" class="govuk-link app-pagination__link" rel="prev">
+              <span class="app-pagination__link-title">
+                <svg class="app-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+                  <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+                </svg>
+                <span class="app-pagination__link-text">
+                  Previous
+                </span>
+              </span>
+              <span class="app-pagination__link-divider visually-hidden">:</span>
+              <span class="app-pagination__link-label">
+                Claim your State Pension by phone or post
+              </span>
+            </a>
+          </li>
+         <li class="app-pagination__item app-pagination__item--next">
+            <a href="contact-pension-service&help.html" class="govuk-link app-pagination__link" rel="next">
+              <span class="app-pagination__link-title">
+                <svg class="app-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+                  <path d="m10.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                </svg>
+                <span class="app-pagination__link-text">
+                  Next
+                </span>
+              </span>
+              <span class="app-pagination__link-divider visually-hidden">:</span>
+              <span class="app-pagination__link-label">
+                Get help using the online service
+              </span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <p>
+        <a href="#">
+          View a printable version of the whole guide
+        </a>
+      </p>
+      <!-- <p class="govuk-body">
+        You can claim by phone if you reach <a href="https://www.gov.uk/state-pension-age">State Pension age</a> in the next 4 months.
+      </p>
+      <p class="govuk-body">
+        If you want to claim by post, phone the Pension Service to get a State Pension claim form sent to you.
+      </p>
+      
+      <h3 class="govuk-heading-s">
+        Claim by phone or ask for a form
+      </h3>
+      <div style="border-left: 1px solid #b1b4b6; padding-left: 15px; margin-bottom: 30px; margin-top: 30px;">
+        <p class="govuk-body">
+          Telephone: 0800 731 7898<br/>
+          Textphone: 0800 731 7339<br/>
+          <a href="https://www.relayuk.bt.com/">Relay UK</a> (if you cannot hear or speak on the phone): 18001 then 0800 731 7898<br/>
+          British Sign Language (BSL) <a href="https://connect.interpreterslive.co.uk/vrs?ilc=DWP">video relay service</a> if you’re on a computer - find out how to <a href="https://www.youtube.com/watch?v=oELNMfAvDxw">use the service on mobile or tablet</a><br/>
+          Welsh language: 0800 731 7936<br/>
+          Welsh language textphone: 0800 731 7013
+        </p>
+        <p class="govuk-body">
+          Monday to Friday, 8am to 6pm (except public holidays)<br/>
+          <a href="https://www.gov.uk/call-charges">Find out about call charges</a>
+        </p>
+      </div>
+
+      <h2 class="govuk-heading-m" id="help">
+        Get help using the online service
+      </h2>
+      <p class="govuk-body">
+        Contact the Pension Service if you need help using the online service.
+      </p>
+      <div style="border-left: 1px solid #b1b4b6; padding-left: 15px; margin-bottom: 30px; margin-top: 30px;">
+        <p class="govuk-body">
+          Telephone: 0800 169 0154<br/>
+          Textphone: 0800 169 0254<br/>
+          <a href="https://www.relayuk.bt.com/">Relay UK</a> (if you cannot hear or speak on the phone): 18001 then 0800 169 0154<br/>
+          British Sign Language (BSL) <a href="https://connect.interpreterslive.co.uk/vrs?ilc=DWP">video relay service</a> if you’re on a computer - find out how to <a href="https://www.youtube.com/watch?v=oELNMfAvDxw">use the service on mobile or tablet</a><br/>
+          Welsh language: 0800 169 0253<br/>
+          Welsh language textphone: 0800 169 0203
+        </p>
+        <p class="govuk-body">
+          Monday to Friday, 8am to 5pm (except public holidays)<br/>
+          <a href="https://www.gov.uk/call-charges">Find out about call charges</a>
+        </p>
+      </div>
+
+      <h2 class="govuk-heading-m" id="report">
+        Get pension information, or report a change
+      </h2>
+      
+      <p class="govuk-body">
+        Contact the Pension Service to:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          get information about your State Pension
+        </li>
+        <li>
+          report a change in your circumstances, such as a change of address or bank details 
+        </li>
+        <li>
+          report a death
+        </li>
+        <li>
+          ask any other questions you have related to your State Pension
+        </li>
+      </ul>
+
+      <div style="border-left: 1px solid #b1b4b6; padding-left: 15px; margin-bottom: 30px; margin-top: 30px;">
+        <p class="govuk-body">
+          Telephone: 0800 731 0469<br/>
+          Textphone: 0800 731 0464<br/>
+          <a href="https://www.relayuk.bt.com/">Relay UK</a> (if you cannot hear or speak on the phone): 18001 then 0800 731 0469<br/> 
+          British Sign Language (BSL) <a href="https://connect.interpreterslive.co.uk/vrs?ilc=DWP">video relay service</a> if you’re on a computer - find out how to <a href="https://www.youtube.com/watch?v=oELNMfAvDxw">use the service on mobile or tablet</a><br/>
+          Welsh language: 0800 731 0453<br/>
+          Welsh language textphone: 0800 731 0456
+        </p>
+        <p class="govuk-body">
+          Monday to Friday, 8am to 6pm<br/>
+          <a href="https://www.gov.uk/call-charges">Find out about call charges</a>
+        </p>
+      </div>
+      <p class="govuk-body">
+        Contact the <a href="https://www.gov.uk/international-pension-centre">International Pension Centre</a> if you live abroad.
+      </p>
+
+      <h2 class="govuk-heading-m" id="forecast">
+        Get a State Pension forecast
+      </h2>
+      <p>
+        You can check how much State Pension you could get when you reach State Pension age by:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          using the <a href="https://www.gov.uk/check-state-pension">check your State Pension forecast service</a>
+        </li>
+        <li>
+          contacting the <a href="https://www.gov.uk/future-pension-centre">Future Pension Centre</a>
+        </li>
+        <li>
+          filling in the <a href="https://www.gov.uk/government/publications/application-for-a-state-pension-statement">BR19 form</a> and sending it in the post
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-m" id="write">
+        Write to the Pension Service
+      </h2>
+      <div style="border-left: 1px solid #b1b4b6; padding-left: 15px; margin-bottom: 30px; margin-top: 30px;">
+        <p class="govuk-body">
+          The Pension Service<br/> 
+          Post Handling Site A<br/> 
+          Wolverhampton<br/> 
+          WV98 1AF 
+        </p>
+      </div>
+
+      <h2 class="govuk-heading-m" id="complain">
+        Complain about the Pension Service
+      </h2>
+      <p class="govuk-body">
+        Contact the Department for Work and Pensions to <a href="https://www.gov.uk/government/organisations/department-for-work-pensions/about/complaints-procedure">complain about the Pension Service</a>.
+      </p>
+
+      <div class="govuk-inset-text">
+        <p class="govuk-body">
+          You can get independent advice from <a href="http://www.citizensadvice.org.uk/">Citizens Advice</a>.
+        </p>
+      </div> -->
+
+      <!-- <div class="app-c-contents-list-with-body__link-container">
+        <a class="govuk-link app-c-back-to-top dont-print" href="#contents">
+          <svg class="app-c-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+          </svg>
+          Contents
+        </a>
+      </div>
+
+      <hr/>
+      <h3 class="govuk-heading-s">
+        Explore the topic
+      </h3>
+      <p class="govuk-body">
+        <a href="https://www.gov.uk/browse/working/state-pension">State Pension</a>
+      </p> -->
+
+    </div>
+
+    <!-- <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="https://www.gov.uk/state-pension">
+                The basic State Pension
+              </a>
+            </li>
+            <li>
+              <a href="https://www.gov.uk/pension-credit">
+                Pension Credit
+              </a>
+            </li>
+            <li>
+              <a href="https://www.gov.uk/attendance-allowance">
+                Attendance Allowance
+              </a>
+            </li>
+            <li>
+              <a href="https://www.gov.uk/winter-fuel-payment">
+                Winter Fuel Payment
+              </a>
+            </li>
+            <li>
+              <a href="https://www.gov.uk/new-state-pension">
+                The new State Pension
+              </a>
+            </li>
+            <li>
+              <a onclick="showFunction()" id="show-more">Show 2 more</a><br/>
+            </li>
+                <span id="more">
+                  <a href="https://www.gov.uk/after-a-death">What to do after someone dies</a> and <a href="https://www.gov.uk/guidance/get-help-with-benefits-and-pensions-if-you-have-accessibility-needs">Get help with benefits and pensions if you have accessibility needs</a>
+                </span>
+          </ul>
+        </nav>
+      </aside>
+
+    </div> -->
+
+  </main>
+</div>
+
+
+
+
+
+    </div>
+  </div>
+  <script>
+    function showFunction() {
+    var moreLinks = document.getElementById("more");
+    var linkText = document.getElementById("show-more");
+  
+    if (more.style.display === "none") {
+      linkText.innerHTML = "Show 2 more"; 
+      moreLinks.style.display = "none";
+    } else {
+      linkText.innerHTML = "Show fewer"; 
+      moreLinks.style.display = "inline";
+    }
+  }
+  </script>
+{% endblock %}
