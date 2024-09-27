@@ -8,42 +8,44 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/update-other-benefits2" method="post">
+      <form class="form" action="#" method="post">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                You need to change your address with each benefit office
+                This is a test
               </h1>
             </legend>
-
-            <p class="govuk-body">
-              You can only use this service to change your State Pension address.
-            </p>
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                   <h2 class="govuk-fieldset__heading">
-                    Would you like to continue to change your State Pension address online?
+                    Choose a scenario
                   </h2>
                 </legend>
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="update-other-benefits-yes" name="update-other-benefits" type="radio" value="Yes" {{ checked("update-other-benefits", "Yes") }}>
                     <label class="govuk-label govuk-radios__label" for="update-other-benefits-yes">
-                      I made my change online
+                      Day one on GYSP
                     </label>
                   </div>
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="update-other-benefits-no" name="update-other-benefits" type="radio" value="No" {{ checked("update-other-benefits", "No") }}>
                     <label class="govuk-label govuk-radios__label" for="update-other-benefits-no">
-                      Knockout page
+                      Day one (Knockout page)
                     </label>
                   </div>
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="update-other-benefits-no" name="update-other-benefits" type="radio" value="No" {{ checked("update-other-benefits", "No") }}>
                     <label class="govuk-label govuk-radios__label" for="update-other-benefits-no">
-                      Readonly
+                      Day 2 (Readonly)
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="update-other-benefits-no" name="update-other-benefits" type="radio" value="No" {{ checked("update-other-benefits", "No") }}>
+                    <label class="govuk-label govuk-radios__label" for="update-other-benefits-no">
+                      Day 3 (Change functionality)
                     </label>
                   </div>
                 </div>
