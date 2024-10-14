@@ -1,7 +1,7 @@
 {% extends "layout_noback.html" %}
 
 {% block pageTitle %}
-  Your home address has been updated - Manage your State Pension - GOV.UK
+  You have changed... - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
@@ -10,38 +10,33 @@
     <div class="govuk-grid-column-two-thirds">
       <div class="govuk-panel govuk-panel--confirmation">
         <h1 class="govuk-panel__title">
-          Your home address has been updated
+          You have changed your address
         </h1>
       </div>
-      <h2 class="govuk-heading-s">Your home address has been updated to:</h2>
-
-      {% if (data['select-an-address'] == "Select1") %}   
+      <h2 class="govuk-heading-m">
+        Are you receiving pension credit?
+      </h2>
       <p class="govuk-body">
-        1 Square Street<br>
-        York<br>
-        YO3 1SQ	<br>
-        {% endif %}
-      
-      {% if (data['select-an-address'] == "Select2") %}   
+        You've told us that you've changed your address. <a href="https://www.gov.uk/pension-credit/change-of-circumstances">Contact the Pension Service by phone or post (opens in new tab).</a>
+      </p>
+      <!-- <h2 class="govuk-heading-m">What happens next</h2>
       <p class="govuk-body">
-        84 Square Street<br>
-        York<br>
-        YO3 1SQ	<br>
-        {% endif %}
+        If we need to contact you about your State Pension, we will write to you using these details.
+      </p>
+      <p>123 Square Street<br>York<br>YO3 1SQ</p> -->
 
-      {% if (data['select-an-address'] == "Select3") %}   
+      <!-- <p class="govuk-body">We have sent you a confirmation email.</p> -->
+      <!-- <h2 class="govuk-heading-m">What happens next</h2>
       <p class="govuk-body">
-        {{ data['new-address-line-1'] }}<br>
-        {{ data['new-address-line-2'] }}<br>
-        {{ data['new-town-1'] }}<br>
-        {{ data['county-1'] }}<br>
-        {{ data['new-postcode-1'] }}<br>
-        {% endif %}
-
-        <p class="govuk-body">We will send you a letter to confirm you have changed your home address.</p>
-
-  
-  <h2 class="govuk-heading-m">
+        ** NEW CONTENT **
+      </p>
+      <h2 class="govuk-heading-m">
+        If you receive Pension Credit
+      </h2>
+      <p class="govuk-body">
+        ** NEW CONTENT **  If you want to change the bank details we use to pay your Pension Credit, <a href="https://www.gov.uk/pension-credit/change-of-circumstances" target="_blank">contact the Pension Service by phone or post (opens in new tab)</a>.
+      </p> -->
+      <h2 class="govuk-heading-m">
         Help improve this service
       </h2>
       <p class="govuk-body">
