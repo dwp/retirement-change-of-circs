@@ -10,7 +10,7 @@
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">Check your details</h1>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-          <div class="govuk-summary-list__row">
+          <!-- <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
               Do you receive benefits in addition to your State Pension?
             </dt>
@@ -26,7 +26,7 @@
                 Change<span class="govuk-visually-hidden"> benefits</span>
               </a>
             </dd>
-          </div>
+          </div> -->
           {% if (data['other-benefits'] == "Yes") %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
@@ -82,7 +82,7 @@
           {% if (data['select-an-address'] == "Select1") %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              Your address 
+              Home address 
             </dt>
             <dd class="govuk-summary-list__value">
               1 Square Street<br>
@@ -121,14 +121,12 @@
               Your address 
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['new-address-line-1'] }}<br>
-              {{ data['new-address-line-2'] }}<br>
-              {{ data['new-town-1'] }}<br>
-              {{ data['county-1'] }}<br>
-              {{ data['new-postcode-1'] }}<br>
+              11 Square Street<br>
+              York<br>
+              YO3 1SQ
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="../change-of-address-v3/address-finder/matching-address-found.html">
+              <a class="govuk-link" href="../change-of-address-v3/address-finder/select-an-address.html">
                 Change<span class="govuk-visually-hidden"> your home address</span>
               </a>
             </dd>
@@ -207,7 +205,7 @@
             You may be prosecuted or have to pay a financial penalty if you give wrong or incomplete information, or if you don't report any changes straight away
           </strong>
         </div> -->
-        <form action="/changed-residential-address" method="post" novalidate>
+        <form action="/changed-residential-address3" method="post" novalidate>
           <input type="hidden" name="answers-checked" value="true">
           <button class="govuk-button" data-module="govuk-button">
             Confirm and submit

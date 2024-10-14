@@ -29,13 +29,13 @@
             {% if data['payment-frequency'] %}
               {{ data['payment-frequency'] }}
             {% else %}
-              Every 4 weeks<br>(13 payments a year)
+              Every 4 weeks (13 payments a year)
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link govuk-!-font-size-19" href="change-frequency/change-how-often-we-will-pay-you.html">
+            <!-- <a class="govuk-link govuk-!-font-size-19" href="change-frequency/change-how-often-we-will-pay-you.html">
               Change<span class="govuk-visually-hidden"> how often we pay your State Pension</span>
-            </a>
+            </a> -->
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -71,9 +71,9 @@
       </dl>
       <div style="display:inline-block;width:100%;">
         <h2 class="govuk-heading-m" style="float:left;">Bank or building society details</h2>
-        <a class="govuk-link govuk-!-font-size-19" href="change-bank/do-you-want-uk-account.html" style="float:right;vertical-align: baseline;">
+        <!-- <a class="govuk-link govuk-!-font-size-19" href="change-bank/do-you-want-uk-account.html" style="float:right;vertical-align: baseline;">
           Change<span class="govuk-visually-hidden"> bank or building society details</span>
-        </a>
+        </a> -->
       </div>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row" style="border-top: 1px solid #b1b4b6;padding-top:15px;">
@@ -133,20 +133,20 @@
       </dl>
       <h2 class="govuk-heading-m">Contact details</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row" style="border-top: 1px solid #b1b4b6;padding-top:0px;">
+        <div class="govuk-summary-list__row" style="border-top: 1px solid #b1b4b6;padding-top:15px;">
           <dt class="govuk-summary-list__key">
-            Home address
+            Address
           </dt>
           <dd class="govuk-summary-list__value">
             {% if data['current-address-line-1'] %}
               {{ data['current-address-line-1'] }}<br>
             {% else %}
-              123 Square Street<br>
+              1 Washington Street<br>
             {% endif %}
             {% if data['current-address-line-2'] %}
               {{ data['current-address-line-2'] }}<br>
             {% else %}
-              York<br>
+              Worcester<br>
             {% endif %}
             {% if data['current-address-line-3'] %}
               {{ data['current-address-line-3'] }}<br>
@@ -154,12 +154,12 @@
             {% if data['current-postcode'] %}
               {{ data['current-postcode'] }}
             {% else %}
-              YO3 1SQ
+              WR1 1NL
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
             <li class="govuk-summary-list__actions-list-item">
-              <a class="govuk-link" href="have-you-already-moved.html">Change<span class="govuk-visually-hidden"> address</span></a>
+              <a class="govuk-link" href="uk-address">Change<span class="govuk-visually-hidden"> address</span></a>
             </li>
           </dd>        
         </div>
@@ -193,6 +193,33 @@
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
+            Alternative phone number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['current-alt-phone'] %}
+              {{ data['current-alt-phone'] }}
+            {% else %}
+              Not provided
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            {% if data['current-alt-phone'] %}
+            <ul class="govuk-summary-list__actions-list">  
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="change-alt-phone/enter-alt-phone.html">Change<span class="govuk-visually-hidden"> alternative home number</span></a>
+              </li>
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="change-alt-phone/remove-alt-phone.html">Remove<span class="govuk-visually-hidden"> alternative phone number</span></a>
+              </li>
+            </ul>
+            {% else %}
+              <a class="govuk-link" href="change-alt-phone/enter-alt-phone-add.html">Add<span class="govuk-visually-hidden"> alternative phone number</span></a>
+            {% endif %}
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Mobile phone number
           </dt>
           <dd class="govuk-summary-list__value">
@@ -206,7 +233,7 @@
             {% if data['current-mobile-phone'] %}
             <ul class="govuk-summary-list__actions-list">  
               <li class="govuk-summary-list__actions-list-item">
-                <a class="govuk-link" href="change-mobile-phone/enter-mobile-phone.html">Change<span class="govuk-visually-hidden"> mobile phone number</span></a>
+                <a class="govuk-link" href="change-mobile-phone/enter-mobile-phone.html">Change<span class="govuk-visually-hidden"> mobile home number</span></a>
               </li>
               <li class="govuk-summary-list__actions-list-item">
                 <a class="govuk-link" href="change-mobile-phone/remove-mobile-phone.html">Remove<span class="govuk-visually-hidden"> mobile phone number</span></a>
@@ -214,33 +241,6 @@
             </ul>
             {% else %}
               <a class="govuk-link" href="change-mobile-phone/enter-mobile-phone-add.html">Add<span class="govuk-visually-hidden"> mobile phone number</span></a>
-            {% endif %}
-          </dd>
-        </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Work phone number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {% if data['current-alt-phone'] %}
-              {{ data['current-alt-phone'] }}
-            {% else %}
-              Not provided
-            {% endif %}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            {% if data['current-alt-phone'] %}
-            <ul class="govuk-summary-list__actions-list">  
-              <li class="govuk-summary-list__actions-list-item">
-                <a class="govuk-link" href="change-alt-phone/enter-alt-phone.html">Change<span class="govuk-visually-hidden"> work phone number</span></a>
-              </li>
-              <li class="govuk-summary-list__actions-list-item">
-                <a class="govuk-link" href="change-alt-phone/remove-alt-phone.html">Remove<span class="govuk-visually-hidden"> work phone number</span></a>
-              </li>
-            </ul>
-            {% else %}
-              <a class="govuk-link" href="change-alt-phone/enter-alt-phone-add.html">Add<span class="govuk-visually-hidden"> work phone number</span></a>
             {% endif %}
           </dd>
         </div>
@@ -267,7 +267,7 @@
               </li>
             </ul>
             {% else %}
-            <a class="govuk-link" href="change-email-address/enter-email-address-add.html">Add<span class="govuk-visually-hidden"> email address</span></a>
+            <a class="govuk-link" href="change-email-address/enter-email-address-add.html">Add<span class="govuk-visually-hidden"> email phone number</span></a>
             {% endif %}
           </dd>
         </div>
@@ -288,30 +288,30 @@
       </dl>
 
       <!-- {% if data['correspondence-address'] %}
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row" style="border-top: 0px solid #b1b4b6;padding-bottom:15px;">
-          <dt class="govuk-summary-list__key">
-           Correspondence address
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {% if data['correspondence-address-line-1'] %}
-              {{ data['correspondence-address-line-1'] }}<br>
-            {% else %}
-              58 Pigeon Street<br>
-            {% endif %}
-            {% if data['correspondence-address-line-2'] %}
-              {{ data['correspondence-address-line-2'] }}<br>
-            {% else %}
-              York<br>
-            {% endif %}
-            {% if data['correspondence-address-line-3'] %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Correspondence address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['correspondence-address-line-1'] %}
+            {{ data['correspondence-address-line-1'] }}<br>
+          {% else %}
+            58 Pigeon Street<br>
+          {% endif %}
+          {% if data['correspondence-address-line-2'] %}
+            {{ data['correspondence-address-line-2'] }}<br>
+          {% else %}
+            York<br>
+          {% endif %}
+          {% if data['correspondence-address-line-3'] %}
             {{ data['correspondence-address-line-3'] }}<br>
-            {% endif %}
-            {% if data['correspondence-postcode'] %}
-              {{ data['correspondence-postcode'] }}
-            {% else %}
-              YO5 1AB
-            {% endif %}
+          {% endif %}
+          {% if data['correspondence-postcode'] %}
+            {{ data['correspondence-postcode'] }}
+          {% else %}
+            YO5 1AB
+          {% endif %}
+        </dd>
         <dd class="govuk-summary-list__actions">
           {% if data['correspondence-address'] %}
           <ul class="govuk-summary-list__actions-list">  
@@ -319,17 +319,16 @@
               <a class="govuk-link" href="">Change<span class="govuk-visually-hidden"> correspondence address</span></a>
             </li>
             <li class="govuk-summary-list__actions-list-item">
-              <a class="govuk-link" href="correspondence-address/remove-address.html">Remove<span class="govuk-visually-hidden"> correspondence address</span></a>
+              <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> correspondence address</span></a>
             </li>
           </ul>
           {% endif %}
         </dd>
-      </dl>
+      </div>
       {% else %}
-        <p style="border-bottom: 1px solid #b1b4b6;padding-bottom:15px;"> If you'd like your letters sent somewhere other than your home address,<a href="correspondence-address/uk-address.html" target="_blank"> add a new correspondence address.</a></p>
+      <p style="border-bottom: 1px solid #b1b4b6;padding-bottom:15px;" class="govuk-summary-list govuk-!-margin-bottom-9">If you'd like your letters sent somewhere other than your home address,<a href="correspondence-address/uk-address.html" target="_blank"> add a new correspondence address.</a></p>
       {% endif %} -->
 
- 
 
       <h2 class="govuk-heading-m">Personal details</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -378,8 +377,6 @@
       }
     }) }}
   {% endblock %}
-
-
 
         
 

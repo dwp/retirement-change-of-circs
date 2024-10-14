@@ -1653,6 +1653,24 @@ router.post('/were-invited15', function (req, res) {
 
 });
 
+// Run this code when a form is submitted to 'were-invited16'
+router.post('/were-invited16', function (req, res) {
+
+  // Make a variable and give it the value from 'invited'
+  var wereYouInvited = req.session.data['invited']
+
+  // Check whether the variable matches a condition
+  if (wereYouInvited == "letter"){
+    // Send user to next page
+    res.redirect('/contact/3-0/correspondence-address-v1/privacy-notice')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/contact/3-0/correspondence-address-v1//cannot-use-service')
+  }
+
+});
+
+
 // CONTACT DETAILS CHANGE - 3-0
 
 // ROUTING TO YES OR NO FOR REMOVING EMAIL ADDRESS
@@ -2236,21 +2254,7 @@ router.post('/select-a-manual-address1', function (req, res) {
 
 });
 
-// ROUTING TO CONFIRM IF YOU WANT LETTER SENT TO RESIDENTIAL ADDRESS
-router.post('/send-letters', function (req, res) {
 
-  // Make a variable and give it the value from '10 Washington Street, Worcester, WR1 1NL'
-  var changeSendLetters = req.session.data['send-letters']
-
-  // Check whether the variable matches a condition
-  if (changeSendLetters == "Yes"){
-    // Send user to next page
-    res.redirect('/contact/3-0/change-of-address-v2/check-your-details.html')
-  } else if (changeSendLetters == "No"){
-    res.redirect('/contact/3-0/change-of-address-v2/you-cannot-ask-to-get-your-letters-sent-somewhere-else-online.html')
-  }
-
-});
 
 // ROUTING TO RIGHT CONFIRMATION VERSION CHANGE OF ADDRESS
 router.post('/changed-residential-address', function (req, res) {
@@ -2285,6 +2289,88 @@ router.post('/changed-residential-address2', function (req, res) {
   }
 
 });
+
+// ROUTING TO RIGHT CONFIRMATION VERSION CHANGE OF ADDRESS
+router.post('/changed-residential-address3', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var changeSelectAnAddress = req.session.data['select-an-address']
+  console.log("high", req.session.data['select-an-address'])
+
+  // Check whether the variable matches a condition
+  if (changeSelectAnAddress == "Select3"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-of-address-v3/you-have-changed-your-address-alt.html')
+  } else {
+    res.redirect('/contact/3-0/change-of-address-v3/you-have-changed-your-address.html')
+  }
+
+});
+
+// // ROUTING TO RIGHT CONFIRMATION VERSION CHANGE OF ADDRESS
+// router.post('/changed-residential-addres3', function (req, res) {
+
+//   // Make a variable and give it the value from 'bank-or-build'
+//   var changeOtherBenefits = req.session.data['other-benefits']
+//   console.log("high", req.session.data['other-benefits'])
+
+//   // Check whether the variable matches a condition
+//   if (changeOtherBenefits == "Yes"){
+//     // Send user to next page
+//     res.redirect('/contact/3-0/change-of-address-v3/you-have-changed-your-address-alt.html')
+//   } else {
+//     res.redirect('/contact/3-0/change-of-address-v3/you-have-changed-your-address.html')
+//   }
+
+// });
+
+// ROUTING TO RIGHT CONFIRMATION VERSION CHANGE OF ADDRESS
+router.post('/select-correspondence-address1', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var changeCorrespondenceAddress = req.session.data['select-correspondence-address']
+  console.log("high", req.session.data['select-correspondence-address'])
+
+  // Check whether the variable matches a condition
+  if (changeCorrespondenceAddress == "Select1"){
+    // Send user to next page
+    res.redirect('/contact/3-0/correspondence-address-v1/you-have-changed-your-address.html')
+  } else if (changeCorrespondenceAddress == "Select3") {
+    // Send user to next page
+    res.redirect('/contact/3-0/correspondence-address-v1/you-have-changed-your-address-alt.html')
+  
+  } else if (changeCorrespondenceAddress == "Select4") {
+    // Send user to next page
+    res.redirect('/contact/3-0/correspondence-address-v1/you-have-changed-your-address-alt.html')
+
+  } else if (changeCorrespondenceAddress == "Select5") {
+    // Send user to next page
+    res.redirect('/contact/3-0/correspondence-address-v1/you-have-changed-your-address-alt.html')
+  
+  } else {
+    res.redirect('/contact/3-0/correspondence-address-v1/you-have-changed-your-address.html')
+  }
+
+});
+
+
+
+// ROUTING TO CONFIRM IF YOU WANT LETTER SENT TO RESIDENTIAL ADDRESS
+router.post('/send-letters2', function (req, res) {
+
+  // Make a variable and give it the value from '10 Washington Street, Worcester, WR1 1NL'
+  var changeSendLetters = req.session.data['select-correspondence-address']
+
+  // Check whether the variable matches a condition
+  if (changeSendLetters == "Select5"){
+    // Send user to next page
+    res.redirect('/contact/3-0/correspondence-address-v1/check-your-details')
+  } else if (changeSendLetters == "Select6"){
+    res.redirect('/contact/3-0/correspondence-address-v1/address-finder/find-address')
+  }
+
+});
+
 
 
 // ROUTING TO ADDRESS RESULTS
@@ -2378,6 +2464,44 @@ router.post('/postcode-3', function (req, res) {
 });
 
 
+// ROUTING TO CORRESPONDENCE ADDRESS RESULTS
+router.post('/correspondence-postcode-1', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var changeManualPostcode = req.session.data['correspondence-postcode-1']
+  console.log("high", req.session.data['correspondence-postcode-1'])
+
+  // Check whether the variable matches a condition
+  if (changeManualPostcode == "YO31ZF"){
+    // Send user to next page
+    res.redirect('contact/3-0/correspondence-address-v1/address-finder/select-an-address.html')
+
+  } else if (changeManualPostcode == "YO3 1ZF"){
+    // Send user to next page
+    res.redirect('contact/3-0/correspondence-address-v1/address-finder/select-an-address.html')
+  
+  } else if (changeManualPostcode == "YO31SQ"){
+    // Send user to next page
+    res.redirect('contact/3-0/correspondence-address-v1/address-finder/select-an-address.html')
+
+  } else if (changeManualPostcode == "yo31zf"){
+    // Send user to next page
+    res.redirect('contact/3-0/correspondence-address-v1/address-finder/is-this-your-address.html')
+
+  } else if (changeManualPostcode == "yo3 1zf"){
+    // Send user to next page
+    res.redirect('contact/3-0/correspondence-address-v1/address-finder/select-an-address.html')
+
+  var changeManualPostcode = req.session.data['correspondence-postcode-1']
+  console.log("high", req.session.data['correspondence-postcode-1'])
+  
+  } else {
+    res.redirect('/contact/3-0/correspondence-address-v1/address-finder/no-address-found.html')
+  }
+
+});
+
+
   // ROUTING TO RIGHT ADDRESS
 router.post('/select-an-address2', function (req, res) {
 
@@ -2435,7 +2559,7 @@ router.post('/select-an-address2', function (req, res) {
       if (selectAddress == "Select1"){
         // Send user to next page
         res.redirect('/contact/3-0/change-of-address-v3/check-your-details.html')
-      } else if (selectAddress == "Select2"){
+      } else if (selectAddress == "Select3"){
         // Send user to next page
         res.redirect('contact/3-0/change-of-address-v3/check-your-details.html')
       } else if (selectAddress == "No"){
@@ -2469,6 +2593,32 @@ router.post('/select-an-address2', function (req, res) {
           }
         
         });
+
+  // ROUTING TO RIGHT ADDRESS
+  router.post('/select-an-address6', function (req, res) {
+
+    // Make a variable and give it the value from 'bank-or-build'
+    var selectCorrespondenceAddress = req.session.data['select-correspondence-address']
+    console.log("high", req.session.data['select-correspondence-address'])
+  
+    // Check whether the variable matches a condition
+    if (selectCorrespondenceAddress == "Select1"){
+      // Send user to next page
+      res.redirect('/contact/3-0/correspondence-address-v1/check-your-details.html')
+    } else if (selectCorrespondenceAddress == "Select2"){
+      // Send user to next page
+      res.redirect('contact/3-0/correspondence-address-v1/address-finder/already-sending-letters-here.html')
+    } else if (selectCorrespondenceAddress == "Select3"){
+      // Send user to next page
+      res.redirect('contact/3-0/correspondence-address-v1/check-your-details.html')
+    } else if (selectCorrespondenceAddress == "Select4"){
+      // Send user to next page
+      res.redirect('contact/3-0/correspondence-address-v1/check-your-details.html')
+    } else {
+      res.redirect('/contact/3-0/correspondence-address-v1/address-finder/enter-manual-address.html')
+    }
+  
+  });        
 
 // ROUTING TO MATCHING ADDRESS OR MANUAL ENTRY
 router.post('/manual-address-1', function (req, res) {

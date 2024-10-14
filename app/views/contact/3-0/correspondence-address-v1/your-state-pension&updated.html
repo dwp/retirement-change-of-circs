@@ -174,51 +174,111 @@
 
       <h2 class="govuk-heading-m">Contact details</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-          <div class="govuk-summary-list__row" style="border-top: 1px solid #b1b4b6;padding-top:0px;">
-            <dt class="govuk-summary-list__key" style="width:40%;">
-              Home address 
-            </dt>
-            {% if (data['select-an-address'] == "Select1") %}
-            <dd class="govuk-summary-list__value">
-              1 Square Street<br>
+        <div class="govuk-summary-list__row" style="border-top: 1px solid #b1b4b6;padding-top:0px;">
+          <dt class="govuk-summary-list__key">
+            Home address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['current-address-line-1'] %}
+              {{ data['current-address-line-1'] }}<br>
+            {% else %}
+              123 Square Street<br>
+            {% endif %}
+            {% if data['current-address-line-2'] %}
+              {{ data['current-address-line-2'] }}<br>
+            {% else %}
               York<br>
+            {% endif %}
+            {% if data['current-address-line-3'] %}
+              {{ data['current-address-line-3'] }}<br>
+            {% endif %}
+            {% if data['current-postcode'] %}
+              {{ data['current-postcode'] }}
+            {% else %}
               YO3 1SQ
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="address-finder/find-address.html">
-                Change<span class="govuk-visually-hidden"> your home address</span>
-              </a>
-            </dd>
-          </div>
-          {% endif %}
-<!-- 
-          {% if (data['select-an-address'] == "Select2") %}
-            <dd class="govuk-summary-list__value">
-              84 Square Street<br>
-              York<br>
-              YO3 1SQ
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="change-of-address-v2/do-you-receive-other-benefits.html">
-                Change<span class="govuk-visually-hidden"> your home address</span>
-              </a>
-            </dd>
-          </div>
-          {% endif %} -->
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <li class="govuk-summary-list__actions-list-item">
+              <a class="govuk-link" href="do-you-receive-other-benefits.html">Change<span class="govuk-visually-hidden"> address</span></a>
+            </li>
+          </dd>        
+        </div>
 
           {% if (data['select-an-address'] == "Select3") %}
             <dd class="govuk-summary-list__value">
-              11 Square Street<br>
-              York<br>
-              YO3 1SQ
+              {{ data['new-address-line-1'] }}<br>
+              {{ data['new-address-line-2'] }}<br>
+              {{ data['new-town-1'] }}<br>
+              {{ data['county-1'] }}<br>
+              {{ data['new-postcode-1'] }}<br>
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="address-finder/find-address.html">
+              <a class="govuk-link" href="correspondence-address-v1/adress-findo-you-receive-other-benefits.html">
                 Change<span class="govuk-visually-hidden"> your home address</span>
               </a>
             </dd>
           </div>
           {% endif %}
+        
+          <div class="govuk-summary-list__row" style="border-top: 1px solid #b1b4b6;padding-top:0px;">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Address we send letters to
+            </dt>
+            {% if (data['select-correspondence-address'] == "Select1") %}
+            <dd class="govuk-summary-list__value">
+              1 Dale Street<br>
+              York<br>
+              YO3 1SQ
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="what-address-should-we-send-letters-to.html">
+                Change<span class="govuk-visually-hidden"> address we send letters to</span>
+              </a>
+            </dd>
+          </div>
+          {% endif %}
+
+
+          {% if (data['select-correspondence-address'] == "Select3") %}
+            <dd class="govuk-summary-list__value">
+              Your home address
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="address-finder/find-address.html">
+                Change<span class="govuk-visually-hidden"> address we send letters to</span>
+              </a>
+            </dd>
+          </div>
+          {% endif %}
+
+          {% if (data['select-correspondence-address'] == "Select4") %}
+            <dd class="govuk-summary-list__value">
+              123 Square Street<br>
+              York<br>
+              YO3 1SQ
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="address-finder/find-address.html">
+                Change<span class="govuk-visually-hidden"> address we send letters to</span>
+              </a>
+            </dd>
+          </div>
+          {% endif %}
+
+          {% if (data['select-correspondence-address'] == "Select5") %}
+            <dd class="govuk-summary-list__value">
+              Your home address
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="address-finder/find-address.html">
+                Change<span class="govuk-visually-hidden"> address we send letters to</span>
+              </a>
+            </dd>
+          </div>
+          {% endif %}
+          
+
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">

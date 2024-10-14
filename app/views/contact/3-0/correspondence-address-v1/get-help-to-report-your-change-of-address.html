@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    Get help to report your address change - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="bank-playback" method="post">
+      <div class="govuk-form-group">
+        <h1 class="govuk-heading-l">
+          Get help to report your address change
+        </h1>
+
+        <p class="govuk-body">
+          <a href="https://www.gov.uk/contact-pension-service/report-changes">Contact the Pension Service by phone or post</a> to change your State Pension address.
+        </p>
+        <p class="govuk-body">
+          Depending which additional benefits you receive, the Pension Service may be able to help you change your address with them too.
+        </p>
+        <p class="govuk-body">
+          If they cannot help you, you need to contact them separately. <a href="https://www.gov.uk/report-benefits-change-circumstances">Find the contact details for your benefit offices.</a> 
+        </p>
+        
+        <div class="govuk-inset-text">
+          <a href="../your-state-pension.html" class="govuk-link">Return to your State Pension details</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
