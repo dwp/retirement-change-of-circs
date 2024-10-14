@@ -159,10 +159,44 @@
           </dd>
           <dd class="govuk-summary-list__actions">
             <li class="govuk-summary-list__actions-list-item">
-              <a class="govuk-link" href="have-you-already-moved.html">Change<span class="govuk-visually-hidden"> address</span></a>
+              <a class="govuk-link" href="do-you-receive-other-benefits.html">Change<span class="govuk-visually-hidden"> address</span></a>
             </li>
           </dd>        
         </div>
+        <div class="govuk-summary-list__row" style="border-top: 1px solid #b1b4b6;padding-top:0px;">
+          <dt class="govuk-summary-list__key">
+            Address we send letters to
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['current-correspondence-line-1'] %}
+              {{ data['current-correspondence-line-1'] }}<br>
+            {% else %}
+              <!-- 123 Square Street<br> -->
+            {% endif %}
+            {% if data['current-correspondence-line-2'] %}
+              {{ data['current-correspondence-line-2'] }}<br>
+            {% else %}
+              <!-- York<br> -->
+            {% endif %}
+            {% if data['current-correspondence-line-3'] %}
+              {{ data['current-correspondence-line-3'] }}<br>
+            {% endif %}
+            {% if data['current-correspondence-postcode'] %}
+              {{ data['current-correspondence-postcode'] }}
+            {% else %}
+              Your home address <span class="govuk-visually-hidden"> address</span>
+              <!-- YO31SQ -->              
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <li class="govuk-summary-list__actions-list-item">
+              <a class="govuk-link" href="address-finder/find-address.html">Change<span class="govuk-visually-hidden"> address we send letters to</span></a>
+            </li>
+          </dd>        
+        </div>
+
+        
+           
       
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
