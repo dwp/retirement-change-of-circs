@@ -28,25 +28,7 @@
             </dd>
           </div> -->
           {% if (data['other-benefits'] == "Yes") %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width:40%;">
-              Would you like to continue to change your State Pension address online?
-            </dt>
-
-            <dd class="govuk-summary-list__value">
-              Yes, I will also update my other benefit offices separately
-              <!-- {% if data['update-other-benefits'] %}
-                {{ data['update-other-benefits'] }}
-              {% else %} -->
-
-              <!-- {% endif %}   -->
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="benefits-disclaimer.html">
-                Change<span class="govuk-visually-hidden"> benefits</span>
-              </a>
-            </dd>
-          </div>
+         
           {% endif %}  
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
@@ -63,7 +45,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              Is the new address in the UK?
+              Is your new address in the UK?
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['uk-address'] %}
