@@ -191,7 +191,7 @@
             </dd>
           </div>
           {% endif %}
-<!-- 
+
           {% if (data['select-an-address'] == "Select2") %}
             <dd class="govuk-summary-list__value">
               84 Square Street<br>
@@ -204,13 +204,29 @@
               </a>
             </dd>
           </div>
-          {% endif %} -->
+          {% endif %}
 
           {% if (data['select-an-address'] == "Select3") %}
             <dd class="govuk-summary-list__value">
               11 Square Street<br>
               York<br>
               YO3 1SQ
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="address-finder/find-address.html">
+                Change<span class="govuk-visually-hidden"> your home address</span>
+              </a>
+            </dd>
+          </div>
+          {% endif %}
+
+          {% if (data['select-an-address'] == "Select4") %}
+            <dd class="govuk-summary-list__value">
+              {{ data['new-address-line-1'] }}<br>
+              {{ data['new-address-line-2'] }}<br>
+              {{ data['new-town-1'] }}<br>
+              {{ data['county-1'] }}<br>
+              {{ data['new-postcode-1'] }}<br>
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="address-finder/find-address.html">
@@ -450,7 +466,7 @@
         If you need to tell us about other changes
       </h2>
       <p class="govuk-body">
-        To report other changes, like a change of address, <a href="contact-pension-service.html" target="_blank">contact the Pension Service by phone or post (opens in new tab)</a>. 
+        To report other changes <a href="contact-pension-service.html" target="_blank">contact the Pension Service by phone or post (opens in new tab)</a>. 
       </p>
     </div>
   </div>

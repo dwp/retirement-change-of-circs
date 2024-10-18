@@ -10,10 +10,10 @@
     <div class="govuk-grid-column-two-thirds">
       <div class="govuk-panel govuk-panel--confirmation">
         <h1 class="govuk-panel__title">
-          The address we send letters to has been updated
+          The address we will send letters to has been updated
         </h1>
       </div>
-      <h2 class="govuk-heading-s">This is the address we send letters to</h2>
+      <h2 class="govuk-heading-s">The address we will send letters to has been updated to:</h2>
 
       {% if (data['select-correspondence-address'] == "Select1") %}   
       <p class="govuk-body">
@@ -48,7 +48,12 @@
         YO3 1ZF	<br>
       {% endif %}
 
-      
+      {% if (data['select-correspondence-address'] == "Select6") %}   
+      <p class="govuk-body">
+        1 Chamberlain Street<br>
+        York<br>
+        YO3 1ZR	<br>
+      {% endif %}   
 
  
   <h2 class="govuk-heading-m">
