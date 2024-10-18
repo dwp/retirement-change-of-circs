@@ -38,6 +38,15 @@
         {{ data['new-postcode-1'] }}<br>
         {% endif %}
 
+      {% if (data['select-an-address'] == "Select4") %}   
+      <p class="govuk-body">
+        {{ data['new-address-line-1'] }}<br>
+        {{ data['new-address-line-2'] }}<br>
+        {{ data['new-town-1'] }}<br>
+        {{ data['county-1'] }}<br>
+        {{ data['new-postcode-1'] }}<br>
+        {% endif %}
+
         <p class="govuk-body">We will send you a letter to confirm you have changed your home address.</p>
 
   

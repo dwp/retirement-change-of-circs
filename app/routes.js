@@ -2220,6 +2220,23 @@ router.post('/uk-address3', function (req, res) {
 
 });
 
+// ROUTING TO YES OR NO HOME ADDRESS IN THE UK
+
+router.post('/uk-address4', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var changeUkAddress = req.session.data['uk-address']
+
+  // Check whether the variable matches a condition
+  if (changeUkAddress == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/3-0/correspondence-address-v1/address-finder/find-address.html')
+  } else if (changeUkAddress == "No"){
+    res.redirect('/contact/3-0/correspondence-address-v1/you-cannot-change-your-address-online.html')
+  }
+
+});
+
 // // ROUTING TO CONFIRM NEW ADDRESS OR THE SAME ADDRESS
 // router.post('/select-an-address1', function (req, res) {
 
@@ -2366,7 +2383,7 @@ router.post('/send-letters2', function (req, res) {
     // Send user to next page
     res.redirect('/contact/3-0/correspondence-address-v1/check-your-details')
   } else if (changeSendLetters == "Select6"){
-    res.redirect('/contact/3-0/correspondence-address-v1/address-finder/find-address')
+    res.redirect('/contact/3-0/correspondence-address-v1/uk-address')
   }
 
 });
@@ -2491,15 +2508,16 @@ router.post('/correspondence-postcode-1', function (req, res) {
   } else if (changeManualPostcode == "yo3 1zf"){
     // Send user to next page
     res.redirect('contact/3-0/correspondence-address-v1/address-finder/select-an-address.html')
-
-  var changeManualPostcode = req.session.data['correspondence-postcode-1']
-  console.log("high", req.session.data['correspondence-postcode-1'])
+  } else if (changeManualPostcode == "YO31ZR"){
+    // Send user to next page
+    res.redirect('contact/3-0/correspondence-address-v1/address-finder/select-an-address.html')
   
   } else {
     res.redirect('/contact/3-0/correspondence-address-v1/address-finder/no-address-found.html')
   }
 
 });
+
 
 
   // ROUTING TO RIGHT ADDRESS
@@ -2614,6 +2632,9 @@ router.post('/select-an-address2', function (req, res) {
     } else if (selectCorrespondenceAddress == "Select4"){
       // Send user to next page
       res.redirect('contact/3-0/correspondence-address-v1/check-your-details.html')
+    } else if (selectCorrespondenceAddress == "Select6"){
+      // Send user to next page
+      res.redirect('contact/3-0/correspondence-address-v1/check-your-details.html')
     } else {
       res.redirect('/contact/3-0/correspondence-address-v1/address-finder/enter-manual-address.html')
     }
@@ -2650,6 +2671,9 @@ router.post('/manual-address-2', function (req, res) {
     // Send user to next page
     res.redirect('/contact/3-0/change-of-address-v3/check-your-details.html')
   } else if (selectAddress == "Select3"){
+    // Send user to next page
+    res.redirect('contact/3-0/change-of-address-v3/check-your-details.html')
+  } else if (selectAddress == "Select4"){
     // Send user to next page
     res.redirect('contact/3-0/change-of-address-v3/check-your-details.html')
   }

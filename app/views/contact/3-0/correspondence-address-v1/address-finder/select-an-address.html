@@ -19,8 +19,8 @@
             </legend>
             <p>5 addresses found for <b>{{ data['correspondence-postcode-1'] }}</b> and <b>1</b>. <a href="find-address.html">Search again</a></p>
             
-
             {% if (data['correspondence-postcode-1'] == "YO31ZF") %}
+            {{ data['YO31ZF'] }}
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="select-correspondence-address-yes" name="select-correspondence-address" type="radio" value="Select1" {{ checked("select-correspondence-address", "Select1") }}>
@@ -53,147 +53,52 @@
                 </label>
               </div>
             </div>
-            {% endif %}
-
-            {% if (data['correspondence-postcode-1'] == "YO31SQ") %}
+            {% else %}
+            {% if (data['correspondence-postcode-1'] == "YO31ZR") %}
+            {{ data['YO31ZR'] }}
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="select-correspondence-address-yes" name="select-correspondence-address" type="radio" value="Select1" {{ checked("select-correspondence-address", "Select1") }}>
+                <input class="govuk-radios__input" id="select-correspondence-address-yes" name="select-correspondence-address" type="radio" value="Select6" {{ checked("select-correspondence-address", "Select6") }}>
                 <label class="govuk-label govuk-radios__label" for="select-correspondence-address-yes">
-                  1 Square Street, York, YO3 1SQ
+                  1 Chamberlain, York, YO3 1ZR (new address)
                 </label>
               </div>
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="select-correspondence-address-no" name="select-correspondence-address" type="radio" value="Select2" {{ checked("select-correspondence-address", "Select2") }}>
                 <label class="govuk-label govuk-radios__label" for="select-correspondence-address-no">
-                  10 Square Street, York, YO3 1SQ
+                  10 Chamberlain, York, YO3 1ZR (existing address)
                 </label>
               </div>
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="select-correspondence-address-no" name="select-correspondence-address" type="radio" value="Select3" {{ checked("select-correspondence-address", "Select3") }}>
                 <label class="govuk-label govuk-radios__label" for="select-correspondence-address-no">
-                  11 Square Street, York, YO3 1SQ
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="select-correspondence-address-no" name="select-correspondence-address" type="radio" value="Select4" {{ checked("select-correspondence-address", "Select4") }}>
-                <label class="govuk-label govuk-radios__label" for="select-correspondence-address-no">
-                  123 Square Street, York, YO3 1SQ
+                  11 Chamberlain, York, YO3 1ZR (current home address)
                 </label>
               </div>
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="select-correspondence-address-no" name="select-correspondence-address" type="radio" value="No" {{ checked("select-correspondence-address", "No") }}>
                 <label class="govuk-label govuk-radios__label" for="select-correspondence-address-no">
-                  13 Square Street, York, YO3 1SQ
+                  12 Chamberlain, York, YO3 1ZR
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-correspondence-address-no" name="select-correspondence-address" type="radio" value="No" {{ checked("select-correspondence-address", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="select-correspondence-address-no">
+                  13 Chamberlain, York, YO3 1ZR
                 </label>
               </div>
             </div>
             {% endif %}
 
-            <!-- {% if (data['postcode-1'] == "yo31sq") %}
-            <div class="govuk-radios" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="select-correspondence-address-yes" name="select-correspondence-address" type="radio" value="Select1" {{ checked("select-correspondence-address", "Select1") }}>
-                <label class="govuk-label govuk-radios__label" for="select-correspondence-address-yes">
-                  1 Dale Street, York, YO3 1ZF
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="select-correspondence-address-no" name="select-correspondence-address" type="radio" value="No" {{ checked("select-correspondence-address", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="select-correspondence-address-no">
-                  10 Dale Street, York, YO3 1ZF
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="select-correspondence-address-no" name="select-correspondence-address" type="radio" value="No" {{ checked("select-correspondence-address", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="select-correspondence-address-no">
-                  11 Dale Street, York, YO3 1ZF
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="select-correspondence-address-no" name="select-correspondence-address" type="radio" value="No" {{ checked("select-correspondence-address", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="select-correspondence-address-no">
-                  12 Dale Street, York, YO3 1ZF
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="select-correspondence-address-no" name="select-correspondence-address" type="radio" value="No" {{ checked("select-correspondence-address", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="select-correspondence-address-no">
-                  13 Dale Street, York, YO3 1ZF
-                </label>
-              </div>
-            </div>
+          
             {% endif %}
 
-            {% if (data['postcode-1'] == "yo3 1zf") %}
-            <div class="govuk-radios" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="select-correspondence-address-yes" name="select-correspondence-address" type="radio" value="Select1" {{ checked("select-correspondence-address", "Select1") }}>
-                <label class="govuk-label govuk-radios__label" for="select-correspondence-address-yes">
-                  1 Dale Street, York, YO3 1ZF
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="select-correspondence-address-no" name="select-correspondence-address" type="radio" value="No" {{ checked("select-correspondence-address", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="select-correspondence-address-no">
-                  10 Dale Street, York, YO3 1ZF
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="select-correspondence-address-no" name="select-correspondence-address" type="radio" value="No" {{ checked("select-correspondence-address", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="select-correspondence-address-no">
-                  11 Dale Street, York, YO3 1ZF
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="select-correspondence-address-no" name="select-correspondence-address" type="radio" value="No" {{ checked("select-correspondence-address", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="select-correspondence-address-no">
-                  112 Dale Street, York, YO3 1ZF
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="select-correspondence-address-no" name="select-correspondence-address" type="radio" value="No" {{ checked("select-correspondence-address", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="select-correspondence-address-no">
-                  13 Dale Street, York, YO3 1ZF
-                </label>
-              </div>
-            </div>
-            {% else %} -->
-            <!-- <div class="govuk-radios" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="select-an-address-yes" name="select-an-address" type="radio" value="Select1" {{ checked("select-an-address", "Select1") }}>
-                <label class="govuk-label govuk-radios__label" for="select-an-address-yes">
-                  1 Square Street, York, YO3 1SQ
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="select-an-address-no" name="select-an-address" type="radio" value="No" {{ checked("select-an-address", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="select-an-address-no">
-                  10 Square Street, York, YO3 1SQ
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="select-an-address-no" name="select-an-address" type="radio" value="No" {{ checked("select-an-address", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="select-an-address-no">
-                  11 Square Street, York, YO3 1SQ
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="select-an-address-no" name="select-an-address" type="radio" value="No" {{ checked("select-an-address", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="select-an-address-no">
-                  123 Square Street, York, YO3 1SQ
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="select-an-address-no" name="select-an-address" type="radio" value="No" {{ checked("select-an-address", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="select-an-address-no">
-                  13 Square Street, York, YO3 1SQ
-                </label>
-              </div> 
-            </div> -->
-            {% endif %}
+            
           </fieldset>
         </div>
+
+        
+
 
 
 
