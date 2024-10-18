@@ -245,7 +245,7 @@
               Your home address
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="address-finder/find-address.html">
+              <a class="govuk-link" href="uk-address.html">
                 Change<span class="govuk-visually-hidden"> address we send letters to</span>
               </a>
             </dd>
@@ -259,7 +259,7 @@
               YO3 1SQ
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="address-finder/find-address.html">
+              <a class="govuk-link" href="uk-address.html">
                 Change<span class="govuk-visually-hidden"> address we send letters to</span>
               </a>
             </dd>
@@ -271,14 +271,26 @@
               Your home address
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="address-finder/find-address.html">
+              <a class="govuk-link" href="uk-address.html">
                 Change<span class="govuk-visually-hidden"> address we send letters to</span>
               </a>
             </dd>
           </div>
           {% endif %}
-          
 
+          {% if (data['select-correspondence-address'] == "Select6") %}
+            <dd class="govuk-summary-list__value">
+              1 Chamberlain Street<br>
+              York<br>
+              YO31ZR
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="what-address-should-we-send-letters-to.html">
+                Change<span class="govuk-visually-hidden"> address we send letters to</span>
+              </a>
+            </dd>
+          </div>
+          {% endif %}          
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
