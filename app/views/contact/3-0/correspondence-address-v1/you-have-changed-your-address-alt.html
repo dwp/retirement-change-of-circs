@@ -1,35 +1,53 @@
 {% extends "layout_noback.html" %}
 
 {% block pageTitle %}
-  We will send letters to your home address - Manage your State Pension - GOV.UK
+  The address we send letters to has been updated - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      
+
+      {% if (data['select-correspondence-address'] == "Select3") %}
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          The address we will send letters to has been updated
+        </h1>
+      </div>
+      <h2 class="govuk-heading-s">The address we will send letters to has been updated to:</h2> 
+      <p class="govuk-body">
+       11 Dale Street<br>
+       York<br>
+       YO3 1ZF<br>
+
+       {% elif (data['correspondence-postcode-1'] == "yo3 1zf") %}
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          The address we will send letters to has been updated
+        </h1>
+      </div>
+      <h2 class="govuk-heading-s">The address we will send letters to has been updated to:</h2> 
+        <p class="govuk-body">
+         123 Square Street<br>
+         York<br>
+        YO3 1SQ	<br> 
+
+      {% else %}
       <div class="govuk-panel govuk-panel--confirmation">
         <h1 class="govuk-panel__title">
           We will send letters to your home address
         </h1>
       </div>
-      <h2 class="govuk-heading-s">The address we will send letters to has been updated to:</h2>
-
-      {% if (data['select-correspondence-address'] == "Select3") %}   
-      <p class="govuk-body">
-        11 Dale Street<br>
-        York<br>
-        YO3 1ZF	<br>
-      {% elif (data['select-correspondence-address'] == "Select5") %}
-      <p class="govuk-body">
-        123 Square Street<br>
-        York<br>
-        YO3 1SQ	<br>
-      {% endif %}
-
-      <!-- <p class="govuk-body">We will send you a letter to confirm you have changed your home address.</p> -->
-
+      <h2 class="govuk-heading-s">The address we will send letters to has been updated to:</h2> 
+        <p class="govuk-body">
+         123 Square Street<br>
+         York<br>
+        YO3 1SQ	<br> 
+      {% endif %} 
       
+
 
       <!-- {% if (data['select-correspondence-address'] == "Select1") %}   
       <p class="govuk-body">
@@ -46,12 +64,7 @@
         YO3 1SQ	<br>
         {% endif %}
 
-      {% if (data['select-correspondence-address'] == "Select3") %}   
-      <p class="govuk-body">
-        11 Dale Street<br>
-        York<br>
-        YO3 1ZF	<br>
-        {% endif %}
+      
 
         {% if (data['select-correspondence-address'] == "Select4") %}
         <p class="govuk-body">
@@ -60,9 +73,13 @@
           YO3 1SQ	<br>
           {% endif %}
 
-        {% if (data['select-correspondence-address'] == "Select5") %} -->
+        {% if (data['select-correspondence-address'] == "Select5") %}
+        <p class="govuk-body">
+          123 Square Street<br>
+          York<br>
+          YO3 1SQ	<br>
+          {% endif %} -->
         
-          <!-- {% endif %} -->
   
   <h2 class="govuk-heading-m">
         Help improve this service

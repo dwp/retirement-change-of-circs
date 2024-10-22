@@ -2507,7 +2507,8 @@ router.post('/correspondence-postcode-1', function (req, res) {
 
   } else if (changeManualPostcode == "yo3 1zf"){
     // Send user to next page
-    res.redirect('contact/3-0/correspondence-address-v1/address-finder/select-an-address.html')
+    res.redirect('contact/3-0/correspondence-address-v1/address-finder/is-this-your-address.html')
+    
   } else if (changeManualPostcode == "YO31ZR"){
     // Send user to next page
     res.redirect('contact/3-0/correspondence-address-v1/address-finder/select-an-address.html')
