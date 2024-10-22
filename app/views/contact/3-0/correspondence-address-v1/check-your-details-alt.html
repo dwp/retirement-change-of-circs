@@ -10,16 +10,34 @@
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">Check your details</h1>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-          
-          {% if (data['select-correspondence-address'] == "Select5") %}
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              Address we send letters to
+              Is the address you want letters sent to in the UK?
             </dt>
             <dd class="govuk-summary-list__value">
-              123 Square Street<br>
+              {% if data['uk-address'] %}
+                {{ data['uk-address'] }}
+              {% else %}
+                Yes
+              {% endif %}  
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="uk-address.html">
+                Change<span class="govuk-visually-hidden"> if your moving this property</span>
+              </a>
+            </dd>
+          </div>
+          
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Address we will send letters to
+            </dt>
+            <dd class="govuk-summary-list__value">
+              1 Dale Street<br>
               York<br>
-              YO3 1SQ
+              YO3 1ZF
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="what-address-should-we-send-letters-to.html">
@@ -27,7 +45,7 @@
               </a>
             </dd>
           </div>
-          {% endif %}
+
         </dl>
         
         <h2 class="govuk-heading-m">Submit your new details</h2>

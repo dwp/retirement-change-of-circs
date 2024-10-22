@@ -50,6 +50,23 @@
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key" style="width:40%;">
+                Is the address you want letters sent to in the UK?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['uk-address'] %}
+                  {{ data['uk-address'] }}
+                {% else %}
+                  Yes
+                {% endif %}  
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="uk-address.html">
+                  Change<span class="govuk-visually-hidden"> if your moving this property</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key" style="width:40%;">
               Address we will send letters to
             </dt>
             <dd class="govuk-summary-list__value">
@@ -94,7 +111,7 @@
             </dt>
             <dd class="govuk-summary-list__value">
               My home address
-            <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+            <div id="signIn-item-hint" class="govuk-hint">
               123 Square Street<br>
               York<br>
               YO3 1SQ
