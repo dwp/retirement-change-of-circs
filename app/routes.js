@@ -1628,7 +1628,7 @@ router.post('/were-invited14', function (req, res) {
   // Check whether the variable matches a condition
   if (wereYouInvited == "letter"){
     // Send user to next page
-    res.redirect('/contact/3-0/privacy-notice')
+    res.redirect('/contact/3-0//privacy-notice')
   } else {
     // Send user to ineligible page
     res.redirect('/contact/3-0/cannot-use-service')
@@ -1665,10 +1665,28 @@ router.post('/were-invited16', function (req, res) {
     res.redirect('/contact/3-0/correspondence-address-v1/privacy-notice')
   } else {
     // Send user to ineligible page
-    res.redirect('/contact/3-0/correspondence-address-v1//cannot-use-service')
+    res.redirect('/contact/3-0/correspondence-address-v1/cannot-use-service')
   }
 
 });
+
+// Run this code when a form is submitted to 'were-invited16'
+router.post('/were-invited17', function (req, res) {
+
+  // Make a variable and give it the value from 'invited'
+  var wereYouInvited = req.session.data['invited']
+
+  // Check whether the variable matches a condition
+  if (wereYouInvited == "letter"){
+    // Send user to next page
+    res.redirect('/contact/3-0/change-of-address-v3/privacy-notice')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/contact/3-0/change-of-address-v3/privacy-notice/cannot-use-service')
+  }
+
+});
+
 
 
 // CONTACT DETAILS CHANGE - 3-0
