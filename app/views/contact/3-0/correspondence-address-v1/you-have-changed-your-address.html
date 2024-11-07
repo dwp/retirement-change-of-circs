@@ -15,13 +15,19 @@
       </div>
       <h2 class="govuk-heading-s">The address we will send letters to has been updated to:</h2>
 
-      {% if (data['select-correspondence-address'] == "Select1") %}   
+      {% if (data['select-correspondence-address'] == "Select1") %}
+      {{ data['select-correspondence-address'] }}
       <p class="govuk-body">
         1 Dale Street<br>
         York<br>
         YO3 1ZF	<br>
-        {% elif (data['where-we-send-letters'] == "Yes") %}   
+      {% elif (data['where-we-send-letters'] == "Yes") %}   
         <p class="govuk-body">
+        123 Square Street<br>
+        York<br>
+        YO3 1SQ
+      {% else %}
+      <p class="govuk-body">
         123 Square Street<br>
         York<br>
         YO3 1SQ
