@@ -2498,6 +2498,28 @@ router.post('/postcode-3', function (req, res) {
 
 });
 
+// ROUTING TO ADDRESS RESULTS
+router.post('/postcode-4', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var changeManualPostcode = req.session.data['postcode-4']
+  console.log("high", req.session.data['postcode-4'])
+
+  // Check whether the variable matches a condition
+  if (changeManualPostcode == "YO31MN"){
+    // Send user to next page
+    res.redirect('oftd/1-0/findr/success.html')
+
+  } else if (changeManualPostcode == "YO3 1MN"){
+    // Send user to next page
+    res.redirect('oftd/1-0/findr/success.html')
+  
+  } else {
+    res.redirect('/oftd/1-0/cannot-make-changes-right-now.html')
+  }
+
+});
+
 
 // ROUTING TO CORRESPONDENCE ADDRESS RESULTS
 router.post('/correspondence-postcode-1', function (req, res) {
