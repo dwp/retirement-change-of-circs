@@ -16,13 +16,11 @@
               What is your postcode?
             </h1>
           </legend>
-          <div class="govuk-form-group">
-            <!-- <label class="govuk-label" for="address-postcode">
-              Postcode
-            </label> -->
-            <input class="govuk-input govuk-input--width-10" id="event-name" name="eventName" type="text">
+          <div id="postcode-hint" class="govuk-hint">
+            For example, AA3 1AB.
           </div>
-          </fieldset>
+          <input class="govuk-input govuk-input--width-10" id="postcode-1" name="postcode-1" type="text" value="{{ data['postcode-1'] }}">
+        </fieldset>
         </div>
         <button class="govuk-button" data-module="govuk-button">
           Continue
