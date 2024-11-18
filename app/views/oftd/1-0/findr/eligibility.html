@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Contact the Pension Service
+Manage your State Pension
 {% endblock %}
 
 {% block header %}
@@ -35,12 +35,27 @@
     <div class="govuk-grid-column-two-thirds">
       <form class="form" action="../findr/dob" method="post">
         <div class="govuk-form-group">
-          <h1 class="govuk-heading-l">
+                <h1 class="govuk-heading-l">
+
             Manage your State Pension
           </h1>
-          <h2 class="govuk-heading-m">Check if you can use this service</h2>
+
+
+        <p class="govuk-body">Use this service to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>change your bank details</li>
+          <li>change your phone number</li>
+          <li>change your email address</li>
+          <li>change how often we pay your State Pension</li>
+          <li>change the address where you live</li>
+        <li>check when you'll get your next State Pension payment</li></ul>
+
+
+            <p class="govuk-body"> This is a new service. You'll be able to report other changes online in the future.</p>
+
+          <h2 class="govuk-heading-m">Check you can use this service</h2>
           <p class="govuk-body">
-            To check if you can manage your state pension online, we need to ask you the following questions
+          Before you sign in or register, we will check that you can use this service. To do this we will ask your:
           </p>
           <ul class="govuk-list govuk-list--bullet">
             <li>date of birth</li>
@@ -69,9 +84,16 @@
             To find out more about how we use information and your information rights, read our <a class="govuk-link" href="https://www.gov.uk/government/organisations/department-for-work-pensions/about/personal-information-charter" target="_blank">Personal Information Charter (opens in new tab)</a>.
           </p>   -->
         </div>
-        <button class="govuk-button" data-module="govuk-button">
-          Continue
+        <button class="govuk-button govuk-button--start" data-module="govuk-button">
+          Start now <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+          </svg>
         </button>
+        <div class="govuk-inset-text">
+          <p class="govuk-body">
+            This service is also available in <a href="manage-state-pension&welsh">Welsh (Cymraeg)</a>.
+          </p>
+        </div>
       </form>
     </div>
   </div>
