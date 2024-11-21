@@ -1,0 +1,146 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{% include "includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+
+{% include 'includes/_header-nav-unselected.html' %}
+
+{% block headEnd %}
+{% endblock %}
+
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+              {% include 'includes/_bar.html' %}
+
+
+              <p>A citizen has requested a change to their bank account details. Review the request and update the details in PSCS.</p>
+
+          <h1 class="govuk-heading-l">1. Update the new bank account details</h1>
+
+
+          <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m">Bank account details</caption>
+
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Name on the account</th>
+                <td class="govuk-table__cell">Ross Mcdonald</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Sort code</th>
+                <td class="govuk-table__cell">309430</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Account number</th>
+                <td class="govuk-table__cell">00733445</td>
+              </tr>
+
+
+            </tbody>
+          </table>
+
+
+ <h1 class="govuk-heading-l">2. Select the next payment date</h1>
+
+ <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h2 class="govuk-fieldset__heading">
+        Next payment date
+      </h1>
+    </legend>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="paymentDate" name="paymentDate" type="radio" value="friday1">
+        <label class="govuk-label govuk-radios__label" for="paymentDate">
+          Friday 22 November 2024
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="paymentDate-2" name="paymentDate" type="radio" value="friday2">
+        <label class="govuk-label govuk-radios__label" for="paymentDate-2">
+          Friday 29 November 2024
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+
+            <h1 class="govuk-heading-l">3. Confirm you have checked the payment frequency</h1>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h2 class="govuk-fieldset__heading">
+                    Payment frequency checked
+                  </h1>
+                </legend>
+                <div id="waste-hint" class="govuk-hint">
+                  Confirm you have checked the payment frequency
+                </div>
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="paymentFrequency" name="paymentFrequency" type="checkbox" value="paymentFrequency">
+                    <label class="govuk-label govuk-checkboxes__label" for="paymentFrequency">
+                      I have checked the payment frequency
+                    </label>
+                  </div>
+
+                  
+                </div>
+              </fieldset>
+            </div>
+
+
+              </div>
+
+
+
+          </div>
+<br><br>
+
+<div class="govuk-button-group">
+  
+  <button class="govuk-button" data-module="govuk-button">
+  Confirm
+  </button>
+  <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Return task to queue
+  </button>
+</div>
+
+          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+   
+
+        </div>
+
+      </div>
+
+    </div>
+
+    </div>
+
+
+      {% endblock %}
+
+      {% block content %}
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+        </div>
+      </div>
+
+      {% endblock %}
