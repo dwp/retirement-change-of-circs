@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{% include "includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+
+{% include 'includes/_header-nav-unselected.html' %}
+
+{% block headEnd %}
+{% endblock %}
+
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">Update a citizen's bank account details
+        </h1>
+        <p>A citizen has requested a change to their bank account details. Review the request and update the details in PSCS.</p>
+
+        <form method="post" action="update_bank_account">
+          <br>
+          <button class="govuk-button" data-module="govuk-button">
+            Start this task
+          </button>
+          <a href="task_list" button type="submit" style="margin-left: 2%" class="govuk-button govuk-button--secondary">
+            Return task to queue
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+      {% endblock %}
+
+      {% block content %}
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+        </div>
+      </div>
+
+      {% endblock %}
