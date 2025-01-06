@@ -16,136 +16,133 @@ GOV.UK Prototype Kit
 
 
 <div class="govuk-width-container">
+  <nav class="hmrc-language-select" aria-label="Language switcher">
+    <a href="task_list.html" class="govuk-back-link">Back</a>
+    <ul class="hmrc-language-select__list">
+      <li class="hmrc-language-select__list-item">
+        <span aria-current="true">English</span>
+      </li>
+      <li class="hmrc-language-select__list-item">
+        <a href="?cy" hreflang="cy" lang="cy" rel="alternate" class="govuk-link" data-journey-click="link - click:lang-select:Cymraeg">
+          <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
+          <span aria-hidden="true">Cymraeg</span>
+        </a>
+      </li>
+    </ul>
+  </nav>  
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-
-              {% include 'includes/_bar.html' %}
-
-
-              <p>This citizen has requested a change to their bank account details. Review the request and update the details in PSCS.</p>
-
-              <h1 class="govuk-heading-l">1. Update bank account details in PSCS</h1>
+        {% include 'includes/_bar.html' %}
+        <h1 class="govuk-heading-l">1. Update (method of payment/bank account) details in PSCS</h1>
 
 
-              <table class="govuk-table">
-                <caption class="govuk-table__caption govuk-table__caption--m">New bank account details</caption>
-    
-                <tbody class="govuk-table__body">
-                  <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">Name on the account</th>
-                    <td class="govuk-table__cell">Ross Mcdonald</td>
-                  </tr>
-                  <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">Sort code</th>
-                    <td class="govuk-table__cell">309430</td>
-                  </tr>
-                  <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">Account number</th>
-                    <td class="govuk-table__cell">00733445</td>
-                  </tr>
-    
-    
-                </tbody>
-              </table>
-    
+        <table class="govuk-table">
+          <!-- <caption class="govuk-table__caption govuk-table__caption--m">New bank account details</caption>-->
 
-<h1 class="govuk-heading-l">2. Update contact history in CAM</h1>
+          <th class="govuk-table__header" scope="col"> New account details </th>
+          <th class="govuk-table__header" scope="col"> <strong class="govuk-tag govuk-tag--blue">
+            Verified
+          </strong> </th>
 
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-    </legend>
-    <div id="waste-hint" class="govuk-hint">
-     Add a note in CAM contact history that the bank details were changed via a MySP request
-    </div>
-    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="paymentFrequency" name="paymentFrequency" type="checkbox" value="paymentFrequency">
-        <label class="govuk-label govuk-checkboxes__label" for="paymentFrequency">
-          I have updated the contact history in CAM
-        </label>
-      </div>
-
-      
-    </div>
-  </fieldset>
-</div>
-    
-     <h1 class="govuk-heading-l">3. Confirm the payment date</h1>
-    
-
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Name on the account</th>
+              <td class="govuk-table__cell">Ross Mcdonald</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Sort code</th>
+              <td class="govuk-table__cell">309430</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Account number</th>
+              <td class="govuk-table__cell">00733445</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Building society roll number</th>
+              <td class="govuk-table__cell">19927384675</td>
+            </tr>
+          </tbody>
+        </table>
+          
+        <h1 class="govuk-heading-l">2. Update contact history in CAM</h1>
         <div class="govuk-form-group">
-          <label class="govuk-label" for="sort">
-            Choose the payment date
-          </label>
-          <select class="govuk-select" id="sort" name="sort">
-            <option value="day1">Friday 22 November 2024</option>
-            <option value="day2">Monday 25 November 2024</option>
-            <option value="day3">Tuesday 26 November 2024</option>
-            <option value="day4">Wednesday 27 November 2024</option>
-            <option value="day5">Thursday 28 November 2024</option>
-            <option value="day6">Friday 29 November 2024</option>
-          </select>
-        </div>
-    
-    
-                <h1 class="govuk-heading-l">4. Confirm you have checked the payment frequency</h1>
-    
-                <div class="govuk-form-group">
-                  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                    </legend>
-                    <div id="waste-hint" class="govuk-hint">
-                      Check the payment frequency
-                    </div>
-                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="paymentFrequency" name="paymentFrequency" type="checkbox" value="paymentFrequency">
-                        <label class="govuk-label govuk-checkboxes__label" for="paymentFrequency">
-                          I have checked the payment frequency
-                        </label>
-                      </div>
-    
-                      
-                    </div>
-                  </fieldset>
-                </div>
-    
-    
-                  </div>
-    
-    
-    
+          <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            </legend>
+            <div id="waste-hint" class="govuk-hint">
+             Add a note in CAM contact history that the bank details were changed via a MySP request
+            </div>
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="paymentFrequency" name="paymentFrequency" type="checkbox" value="paymentFrequency">
+                <label class="govuk-label govuk-checkboxes__label" for="paymentFrequency">
+                  I have updated the contact history in CAM
+                </label>
               </div>
-    <br><br>
-
-    <form method="post" action="task_list_confirm">
-      <div class="govuk-button-group">
         
-        <button class="govuk-button" data-module="govuk-button">
-        Confirm
-        </button>
-        <a href="task_list_returned" button type="submit" style="margin-left: 2%" class="govuk-button govuk-button--secondary">
-        Return task to queue
-        </a>
+              
+            </div>
+          </fieldset>
+        </div> 
+       
+        
+        
+        
+        
+        
+        <form class="form" action="/pscs-agent-action-1" method="post">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  3. Action taken
+                </h1>
+              </legend>
+              <p class="govuk-body">
+                Select which action you have taken.
+              </p>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="pscs-agent-action" name="pscs-agent-action" type="radio" value="Yes" {{ checked("pscs-agent-action", "Yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="pscs-agent-action">
+                    The bank details have been updated
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="pscs-agent-action" name="pscs-agent-action" type="radio" value="No" {{ checked("pscs-agent-action", "No") }}>
+                  <label class="govuk-label govuk-radios__label" for="pscs-agent-action">
+                    The task has been escalated or transferred
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+          <a href="task_list" button type="submit" style="margin-left: 2%" class="govuk-button govuk-button--secondary">
+            The task has already been actioned
+          </a>
+          <a href="task_list" button type="submit" style="margin-left:2%" class="govuk-button govuk-button--secondary">
+            No action required
+          </a>
+          <p class="govuk-body">
+            <a href="task_list_returned.html" class="govuk-link">Return this case to queue</a>
+          </p>
+          
+        </form>
       </div>
+  
+              
+  
 
-          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+    
+        
 
-
-   
-
-        </div>
-
-      </div>
-
-    </div>
-
-    </div>
-
-
-      {% endblock %}
+       
+    <!-- {% endblock %} -->
 
       {% block content %}
       <div class="govuk-grid-row">
