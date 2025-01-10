@@ -53,15 +53,25 @@
           <dd class="govuk-summary-list__value">
             01/07/1954
           </dd>
-</div></dl>
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    National Insurance number
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {% if data['NINO'] %}
+  {{ data['NINO'] }}{% else %}QQ123456C{% endif %}
+  </dd>
+</div>
+</dl>
 
 <h2 class="govuk-heading-m">Bank or building society details</h2>
 
 
 <p class="govuk-body">
-  We are currently updating your payment details. We will send you an email when this is done.
+  We are currently updating your payment details. We will send you an email when we have done this.</p>
 
-  <br>If you need to contact us about your payment details, you can call us on 0000 0000 0000.</p>
+  <p class="govuk-body">If you need to contact us about your payment details, you can call us on <strong>0800 731 0469</strong> .</p>
 
       <h2 class="govuk-heading-m">Payment schedule</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
