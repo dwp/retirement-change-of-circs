@@ -48,6 +48,38 @@ router.post('/invited-answer', function (req, res) {
 
 });
 
+
+router.post('/can-we-pay', function (req, res) {
+
+  var canWePay = req.session.data['can-we-pay']
+
+  // Check whether the variable matches a condition
+  if (canWePay == "yes"){
+    // Send user to next page
+    res.redirect('/oftd/pscs-bank-details/uk-account')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/oftd/pscs-bank-details/call-us')
+  }
+
+});
+
+router.post('/uk-account-q', function (req, res) {
+
+  var UKaccount = req.session.data['uk-account-q']
+
+  // Check whether the variable matches a condition
+  if (UKaccount == "yes"){
+    // Send user to next page
+    res.redirect('/oftd/pscs-bank-details/bank-or-building-society-details')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/oftd/pscs-bank-details/can-only-use-uk-account')
+  }
+
+});
+
+
 // Run this code when a form is submitted to 'bank-answer'
 router.post('/bank-answer', function (req, res) {
 
