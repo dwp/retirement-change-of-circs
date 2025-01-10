@@ -10,11 +10,8 @@
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
         <span class="govuk-caption-l">
-          {% if data['full-name'] %}
-            {{ data['full-name'] }}
-          {% else %}
-            Alex Jones
-          {% endif %}
+        
+          {{ data['first-name'] }}{{ data['last-name'] or "Alex Jones" }}
         </span>
         Your State Pension
       </h1>
