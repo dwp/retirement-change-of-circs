@@ -29,38 +29,77 @@ GOV.UK Prototype Kit
         </a>
       </li>
     </ul>
-  </nav>  
+  </nav> 
+   
+
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         {% include 'includes/_bar.html' %}
-        <h1 class="govuk-heading-l">1. Update (method of payment/bank account) details in PSCS</h1>
+        <!-- <p class="govuk-body">
+          A citizen has requested a change to their bank account details. Review the request and update the details in CAM or PSCS.<br>
+        </p>
 
+        <p class="govuk-body">
+          A receipt email was sent to abc@xyz.com.
+        </p> -->
+
+        <h1 class="govuk-heading-l">1. Find them in CAM or PSCS</h1>
+
+        <table class="govuk-table">         
+
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Name</th>
+              <td class="govuk-table__cell">Ross Mcdonald</td>
+              <td class="govuk-table__cell" scope="col"> <a class="govuk-link" href="#">Copy</a> </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Nino</th>
+              <td class="govuk-table__cell">QQ 12 34 56 X</td>
+              <td class="govuk-table__cell" scope="col"> <a class="govuk-link" href="#">Copy</a> </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Home address</th>
+              <td class="govuk-table__cell">
+                1 Square Street<br>
+                York<br>
+                YO3 1SQ</td>
+              <td class="govuk-table__cell" scope="col"> <a class="govuk-link" href="#">Copy</a> </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h1 class="govuk-heading-l">1. Update method of payment (MOP) details in PSCS</h1>
 
         <table class="govuk-table">
-          <!-- <caption class="govuk-table__caption govuk-table__caption--m">New bank account details</caption>-->
-
           <th class="govuk-table__header" scope="col"> New account details </th>
           <th class="govuk-table__header" scope="col"> <strong class="govuk-tag govuk-tag--blue">
             Verified
-          </strong> </th>
+          </strong></th>
+          <th class="govuk-table__header" scope="col"> <a class="govuk-link" href="#"></a> </th>
+          
 
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Name on the account</th>
               <td class="govuk-table__cell">Ross Mcdonald</td>
+              <td class="govuk-table__cell" scope="col"> <a class="govuk-link" href="#">Copy</a> </td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Sort code</th>
               <td class="govuk-table__cell">309430</td>
+              <td class="govuk-table__cell" scope="col"> <a class="govuk-link" href="#">Copy</a> </td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Account number</th>
               <td class="govuk-table__cell">00733445</td>
+              <td class="govuk-table__cell" scope="col"> <a class="govuk-link" href="#">Copy</a> </td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Building society roll number</th>
-              <td class="govuk-table__cell">19927384675</td>
+              <td class="govuk-table__cell">1992738467</td>
+              <td class="govuk-table__cell" scope="col"> <a class="govuk-link" href="#">Copy</a> </td>
             </tr>
           </tbody>
         </table>
@@ -122,10 +161,10 @@ GOV.UK Prototype Kit
           <button class="govuk-button" data-module="govuk-button">
             Continue
           </button>
-          <a href="task_list" button type="submit" style="margin-left: 2%" class="govuk-button govuk-button--secondary">
+          <!-- <a href="task_list_already_actioned.html" button type="submit" style="margin-left: 2%" class="govuk-button govuk-button--secondary">
             The task has already been actioned
-          </a>
-          <a href="task_list" button type="submit" style="margin-left:2%" class="govuk-button govuk-button--secondary">
+          </a> -->
+          <a href="task_list_no_action_needed.html" button type="submit" style="margin-left:2%" class="govuk-button govuk-button--secondary">
             No action required
           </a>
           <p class="govuk-body">
