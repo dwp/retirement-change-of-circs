@@ -17,10 +17,11 @@
                 Select an address
               </h1>
             </legend>
-            <p>5 addresses found for <b>{{ data['correspondence-postcode-1'] }}</b> and <b>1</b>. <a href="find-address.html">Search again</a></p>
+            <!-- <p>5 addresses found for <b>{{ data['correspondence-postcode-1'] }}</b> and <b>1</b>. <a href="find-address.html">Search again</a></p> -->
             
             {% if (data['correspondence-postcode-1'] == "YO31ZF") %}
             {{ data['YO31ZF'] }}
+            <p>5 addresses found for <b>{{ data['correspondence-postcode-1'] }}</b> and <b>1</b>. <a href="find-address.html">Search again</a></p>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="select-correspondence-address-yes" name="select-correspondence-address" type="radio" value="Select1" {{ checked("select-correspondence-address", "Select1") }}>
@@ -56,6 +57,7 @@
             {% else %}
             {% if (data['correspondence-postcode-1'] == "YO31ZR") %}
             {{ data['YO31ZR'] }}
+            <p>5 addresses found for <b>{{ data['correspondence-postcode-1'] }}</b> and <b>1</b>. <a href="find-address.html">Search again</a></p>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="select-correspondence-address-yes" name="select-correspondence-address" type="radio" value="Select6" {{ checked("select-correspondence-address", "Select6") }}>
@@ -88,12 +90,42 @@
                 </label>
               </div>
             </div>
+            {% else %}
+            <p>5 addresses found for <b>{{ data['correspondence-postcode-1'] }}</b> and <b>1</b>. <a href="find-address.html">Search again</a></p>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-correspondence-address-yes" name="select-correspondence-address" type="radio" value="Select1" {{ checked("select-correspondence-address", "Select1") }}>
+                <label class="govuk-label govuk-radios__label" for="select-correspondence-address-yes">
+                  1 Dale Street, York, YO3 1ZF (new address)
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-correspondence-address-no" name="select-correspondence-address" type="radio" value="Select2" {{ checked("select-correspondence-address", "Select2") }}>
+                <label class="govuk-label govuk-radios__label" for="select-correspondence-address-no">
+                  10 Dale Street, York, YO3 1ZF (existing address)
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-correspondence-address-no" name="select-correspondence-address" type="radio" value="Select3" {{ checked("select-correspondence-address", "Select3") }}>
+                <label class="govuk-label govuk-radios__label" for="select-correspondence-address-no">
+                  11 Dale Street, York, YO3 1ZF (current home address)
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-correspondence-address-no" name="select-correspondence-address" type="radio" value="No" {{ checked("select-correspondence-address", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="select-correspondence-address-no">
+                  12 Dale Street, York, YO3 1ZF
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-correspondence-address-no" name="select-correspondence-address" type="radio" value="No" {{ checked("select-correspondence-address", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="select-correspondence-address-no">
+                  13 Dale Street, York, YO3 1ZF
+                </label>
+              </div>
+            </div>
             {% endif %}
-
-          
-            {% endif %}
-
-            
+            {% endif %}           
           </fieldset>
         </div>
 

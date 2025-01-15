@@ -1,0 +1,86 @@
+<html><head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <title>Manage your State Pension email</title>
+  </head>
+  <body style="background-color: #DEE0E2; margin: 0; padding: 0;" onload="addAstrix()">
+  <div id="background" style="background-color: #DEE0E2; margin: 0; overflow: hidden;">
+    <table id="body" cellspacing="0" cellpadding="0" style="margin: 30px auto; max-width: 600px;">
+        <tbody><tr id="header">
+            <td style="font-family: Helvetica, Arial, sans-serif;">
+                <table width="100%" cellspacing="0" cellpadding="0" style="background: #000000;">
+                    <tbody><tr>
+                        <td width="30" style="font-family: Helvetica, Arial, sans-serif; padding: 4px 0; border-bottom: solid 10px #005EA5;">
+                            <a href="https://www.gov.uk/" title="Go to the GOV.UK homepage" style="font-size: 30px; font-weight: bold; text-decoration: none; color: #FFFFFF;">
+                                <img src="/public/images/govuk-crest.png" width="30" alt="" style="margin: 6px 6px 0 20px;">
+                            </a>
+                        </td>
+                        <td style="font-family: Helvetica, Arial, sans-serif; padding: 4px 0; border-bottom: solid 10px #005EA5;">
+                            <a href="https://www.gov.uk/" title="Go to the GOV.UK homepage" style="font-size: 30px; font-weight: bold; text-decoration: none; color: #FFFFFF;">GOV.UK</a>
+                        </td>
+                    </tr>
+                </tbody></table>
+            </td>
+        </tr>
+        <tr id="tagline">
+            <td style="font-family: Helvetica, Arial, sans-serif;">
+                <table width="100%" cellspacing="0" cellpadding="0" style="background: #FFFFFF;">
+                    <tbody><tr>
+                        <td width="34" style="font-family: Helvetica, Arial, sans-serif; padding: 10px 0; font-size: 18px; border-bottom: solid 1px #808080;">
+                            <img src="/public/images/hmrc_small.png" height="26" style="border-left: solid 2px #009390; padding-left: 6px; margin: 5px 6px 0 20px;">
+                        </td>
+                        <td style="font-family: Helvetica, Arial, sans-serif; padding: 10px 0; font-size: 18px; border-bottom: solid 1px #808080;">Your request to change your bank details for your State Pension </td>
+                    </tr>
+                </tbody></table>
+            </td>
+        </tr>
+        <tr id="contents">
+            <td style="font-family: Helvetica, Arial, sans-serif;">
+                <table width="100%" cellspacing="0" cellpadding="0" style="background: #FFFFFF;">
+                    <tbody><tr>
+                        <td style="font-family: Helvetica, Arial, sans-serif; padding: 25px 20px 20px;">
+                            <h1 style="margin: 0 0 30px; font-size: 36px;">We have received your request to change your bank details for State Pension. </h1>
+                            <p style="margin: 0 0 30px; font-size: 19px;">It may take us up to 8 days to update your bank details. We will send you another email when this is done.
+                            </p>
+                            
+                            <p style="margin: 0 0 30px; font-size: 19px;">If your next payment is due within 8 days, your next payment may:</p>
+                            <ul style="margin: 0 0 30px; font-size: 19px;">
+                            <li>be delayed</li>
+                            <li>be paid into your old bank account</li>
+                            </ul>
+                            <h2 class="govuk-heading-m">If you need to tell us about any other changes</h2>
+                            <p style="margin: 0 0 30px; font-size: 19px;">You can call us on <strong>0800 731 0469</strong> if this will cause any problems.
+                            </p>
+                            <p style="margin: 0 0 30px; font-size: 19px;">To report any other changes, like a change of address, contact the Pension Service by phone or by post. You can find their contact details at <strong>www.gov.uk/contact-pension-service/report-changes</strong></p>
+                            
+                        </td>
+                    </tr>
+                </tbody></table>
+            </td>
+        </tr>
+        <tr id="footer" style="font-size: 14px; color: #666666;">
+            <td style="font-family: Helvetica, Arial, sans-serif;">
+                <table width="100%" cellspacing="0" cellpadding="0">
+                    <tbody><tr>
+        
+    </tr>
+</tbody></table>
+  <form class="form" action="your-state-pension-in-progress" method="post">
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+      </form>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+  <script type="text/javascript">
+  function addAstrix() {
+    var str =  document.getElementById("ac").innerHTML;
+    var res = str.slice(4, 8);
+    document.getElementById("ac").innerHTML = "****"+res;
+  }
+  </script>
+  </body>
+  </html>
