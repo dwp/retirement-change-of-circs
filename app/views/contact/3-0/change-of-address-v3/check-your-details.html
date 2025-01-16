@@ -10,25 +10,7 @@
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">Check your details</h1>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-          <!-- <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width:40%;">
-              Do you receive benefits in addition to your State Pension?
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['other-benefits'] %}
-                {{ data['other-benefits'] }}
-              {% else %}
-                No, I only receive a State Pension
-              {% endif %}  
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="do-you-receive-other-benefits.html">
-                Change<span class="govuk-visually-hidden"> benefits</span>
-              </a>
-            </dd>
-          </div> -->
           {% if (data['other-benefits'] == "Yes") %}
-         
           {% endif %}  
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
@@ -62,6 +44,22 @@
           </div>
 
           {% if (data['select-an-address'] == "Select1") %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Home address 
+            </dt>
+            <dd class="govuk-summary-list__value">
+              1 Square Street<br>
+              York<br>
+              YO3 1SQ
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="../change-of-address-v3/address-finder/select-an-address.html">
+                Change<span class="govuk-visually-hidden"> your home address</span>
+              </a>
+            </dd>
+          </div>
+          {% else %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
               Home address 
