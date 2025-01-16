@@ -95,6 +95,22 @@
               </a>
             </dd>
           </div>
+          {% else %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Your address 
+            </dt>
+            <dd class="govuk-summary-list__value">
+              1 Square Street<br>
+              York<br>
+              YO3 1SQ
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="../change-of-address-v1-1/address-finder/select-an-address.html">
+                Change<span class="govuk-visually-hidden"> your home address</span>
+              </a>
+            </dd>
+          </div>
           {% endif %}
           
           {% if (data['select-an-address'] == "Select2") %}
