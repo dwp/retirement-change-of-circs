@@ -1,0 +1,88 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Manage your State Pension
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+<!-- <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Section</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link">Subsection</a>
+      </li>
+    </ol>
+  </div> -->
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        You cannot make changes online right now</h1>
+
+      <!-- <aside class="app-mainstream-guide-contents-list" role="complementary">
+        <nav class="app-contents-list" aria-label="Pages in this guide" role="navigation">
+          <h2 class="app-contents-list__title">
+            Contents
+          </h2>
+          <ol class="app-contents-list__list">
+            <li class="app-contents-list__list-item app-contents-list__list-item--dashed app-contents-list__list-item--active">
+              <a href="#">
+                Page 1
+              </a>
+            </li>
+            <li aria-current="true" class="app-contents-list__list-item app-contents-list__list-item--dashed">
+              Page 2
+            </li>
+            <li class="app-contents-list__list-item app-contents-list__list-item--dashed">
+              <a href="#">
+                Page 3
+              </a>
+            </li>
+          </ol>
+        </nav>
+      </aside> -->
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds app-mainstream-guide-body">
+
+      <p class="govuk-body">
+        If you need to report a change in your circumstances, <a href="contact-pension-service.html">contact the Pension Service by phone or post</a>.
+      </p>
+      <p class="govuk-body">
+        If you live in Northern Ireland, <a href="https://www.nidirect.gov.uk/contacts/northern-ireland-pension-centre">contact the Pension Service by phone or post</a>.
+      </p>
+      <p class="govuk-body">
+        <a href="https://www.gov.uk">Return to GOV.UK</a>
+      </p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+  </div>
+  </main>
+</div>
+
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

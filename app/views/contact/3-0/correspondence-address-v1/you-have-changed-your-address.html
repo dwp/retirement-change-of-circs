@@ -16,7 +16,7 @@
       <h2 class="govuk-heading-s">The address we will send letters to has been updated to:</h2>
 
       {% if (data['select-correspondence-address'] == "Select1") %}
-      {{ data['select-correspondence-address'] }}
+      <!-- {{ data['select-correspondence-address'] }} -->
       <p class="govuk-body">
         1 Dale Street<br>
         York<br>
@@ -27,18 +27,18 @@
         York<br>
         YO3 1SQ
       {% else %}
-      <p class="govuk-body">
+      <!-- <p class="govuk-body">
         1 Dale Street<br>
         York<br>
-        YO3 1ZF	<br>
+        YO3 1ZF	<br> -->
       {% endif %}
       
-      {% if (data['select-correspondence-address'] == "Select2") %}   
+      <!-- {% if (data['select-correspondence-address'] == "Select2") %}   
       <p class="govuk-body">
         84 Square Street<br>
         York<br>
         YO3 1SQ	<br>
-        {% endif %}
+        {% endif %} -->
 
       {% if (data['select-correspondence-address'] == "Select3") %}   
       <p class="govuk-body">
