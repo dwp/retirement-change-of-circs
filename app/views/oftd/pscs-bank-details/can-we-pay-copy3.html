@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Can we pay your next payment into your old account? - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="/can-we-pay" method="post">
+      
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              We might send your next payment to your old account
+            </h1>
+          </legend>
+          <p class="govuk-body">Your next payment is due on Friday 17th January and might be on its way to your old account.</p>
+          <p class="govuk-body">If you can still access your old account, you may wish to continue to change your bank details using this service.</p>
+          <h2 class="govuk-heading-m">
+            If you cannot access your old account
+          </h2>
+          <p class="govuk-body">If you do not have access to your old account, you will need to call us.</p>
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              Do you want to change your account details using this service?
+            </h2>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="can-we-pay" name="can-we-pay" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="can-we-pay">
+                Yes, I still have access to my old account
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="can-we-pay" name="can-we-pay" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="can-we-pay">
+              No, I need to call you
+              </label>
+            </div>
+          
+          </div>
+        </fieldset>
+      </div>
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+
+    </div>
+   
+
+{% endblock %}
