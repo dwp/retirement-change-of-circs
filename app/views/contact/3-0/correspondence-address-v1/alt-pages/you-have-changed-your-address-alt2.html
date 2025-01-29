@@ -10,63 +10,15 @@
     <div class="govuk-grid-column-two-thirds">
       <div class="govuk-panel govuk-panel--confirmation">
         <h1 class="govuk-panel__title">
-          The address we will send letters to has been updated
+          We will send letters to your home address
         </h1>
       </div>
       <h2 class="govuk-heading-s">The address we will send letters to has been updated to:</h2>
 
-      {% if (data['select-correspondence-address'] == "Select1") %}
-      <!-- {{ data['select-correspondence-address'] }} -->
       <p class="govuk-body">
-        1 Dale Street<br>
-        York<br>
-        YO3 1ZF	<br>
-      {% elif (data['where-we-send-letters'] == "Yes") %}   
-        <p class="govuk-body">
         123 Square Street<br>
         York<br>
         YO3 1SQ
-      {% else %}
-      <p class="govuk-body">
-        1 Dale Street<br>
-        York<br>
-        YO3 1ZF	<br>
-      {% endif %}
-      
-      <!-- {% if (data['select-correspondence-address'] == "Select2") %}   
-      <p class="govuk-body">
-        84 Square Street<br>
-        York<br>
-        YO3 1SQ	<br>
-        {% endif %} -->
-
-      {% if (data['select-correspondence-address'] == "Select3") %}   
-      <p class="govuk-body">
-        11 Dale Street<br>
-        York<br>
-        YO3 1ZF	<br>
-        {% endif %}
-
-      {% if (data['select-correspondence-address'] == "Select4") %}   
-      <p class="govuk-body">
-        11 Dale Street<br>
-        York<br>
-        YO3 1ZF	<br>
-      {% endif %}
-
-      {% if (data['select-correspondence-address'] == "Select5") %}   
-      <p class="govuk-body">
-        123 Square Street<br>
-        York<br>
-        YO3 1ZF<br>
-      {% endif %}   
-
-      {% if (data['select-correspondence-address'] == "Select6") %}   
-      <p class="govuk-body">
-        1 Chamberlain Street<br>
-        York<br>
-        YO3 1ZR	<br>
-      {% endif %}   
 
  
   <h2 class="govuk-heading-m">
