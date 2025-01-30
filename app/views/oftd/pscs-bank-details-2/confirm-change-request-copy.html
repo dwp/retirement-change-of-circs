@@ -1,0 +1,70 @@
+{% extends "layout_noback.html" %}
+
+{% block pageTitle %}
+  We will update your payment details within the next 8 days - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          We will update your payment details within the next 8 days
+
+
+        </h1>
+      </div>
+     <p class="govuk-body">We have sent you a confirmation email.</p>
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p class="govuk-body">
+        We will update your payment details within the next 8 days. We will send you an email when we have changed your payment details.
+      </p>
+      <p class="govuk-body">If your next payment is due within 8 days, your next payment might be paid into your old account. You can call us on <strong>0800 731 0469</strong> if this will cause any problems.
+      </p>
+      <h2 class="govuk-heading-m">
+        If you receive Pension Credit
+      </h2>
+      <p class="govuk-body">
+        If you want to change the payment details we use to pay your Pension Credit, <a href="contact-pension-service.html" target="_blank">contact the Pension Service by phone or post (opens in new tab)</a>.
+      </p>
+      <h2 class="govuk-heading-m">
+        If you need to tell us about other changes
+      </h2>
+      <p class="govuk-body">
+        To report other changes, like a change of address, <a href="contact-pension-service.html" target="_blank">contact the Pension Service by phone or post (opens in new tab)</a>. 
+      </p>
+
+      <div class="govuk-inset-text">
+        <a href="your-state-pension-in-progress" class="govuk-link">Return to your State Pension details</a>
+      </div>
+      <a href="confirm-email" class="govuk-link">Prototype link - email</a>
+      </div>
+    </div>
+  </div>
+
+ 
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "you-have-changed-your-bank-details&alt.html",
+            text: "Alternative confirmation page"
+          },
+          {
+            href: "https://govuk-prototype-kit.herokuapp.com/",
+            text: "GOV.UK Prototype Kit " + releaseVersion
+          },
+          {
+            href: "/prototype-admin/clear-data",
+            text: "Clear data"
+          }
+        ],
+        visuallyHiddenTitle: "Footer links"
+      }
+    }) }}
+  {% endblock %}
