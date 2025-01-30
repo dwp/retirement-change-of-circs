@@ -2831,7 +2831,11 @@ router.post('/manual-address-2', function (req, res) {
       } else if (selectPscsAgentAction == "No"){
         // Send user to next page
         res.redirect('/otfd-agent/2-0/task_list_closed.html')
+      } else if (selectPscsAgentAction == "No2"){
+        // Send user to next page
+        res.redirect('/otfd-agent/2-0/task_list_closed-alt.html')
       }
+      
     
     });
 
