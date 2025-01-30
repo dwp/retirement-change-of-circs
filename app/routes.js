@@ -56,10 +56,24 @@ router.post('/can-we-pay', function (req, res) {
   // Check whether the variable matches a condition
   if (canWePay == "yes"){
     // Send user to next page
-    res.redirect('/oftd/pscs-bank-details/uk-account')
+    res.redirect('/oftd/pscs-bank-details-1/uk-account')
   } else {
     // Send user to ineligible page
-    res.redirect('/oftd/pscs-bank-details/call-us')
+    res.redirect('/oftd/pscs-bank-details-1/call-us')
+  }
+
+});
+router.post('/can-we-pay-2', function (req, res) {
+
+  var canWePay2 = req.session.data['can-we-pay-2']
+
+  // Check whether the variable matches a condition
+  if (canWePay2 == "yes"){
+    // Send user to next page
+    res.redirect('/oftd/pscs-bank-details-2/uk-account')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/oftd/pscs-bank-details-2/call-us')
   }
 
 });
@@ -71,10 +85,24 @@ router.post('/uk-account-q', function (req, res) {
   // Check whether the variable matches a condition
   if (UKaccount == "yes"){
     // Send user to next page
-    res.redirect('/oftd/pscs-bank-details/bank-or-building-society-details')
+    res.redirect('/oftd/pscs-bank-details-1/bank-or-building-society-details')
   } else {
     // Send user to ineligible page
-    res.redirect('/oftd/pscs-bank-details/can-only-use-uk-account')
+    res.redirect('/oftd/pscs-bank-details-1/can-only-use-uk-account')
+  }
+
+});
+router.post('/uk-account-q-2', function (req, res) {
+
+  var UKaccount = req.session.data['uk-account-q-2']
+
+  // Check whether the variable matches a condition
+  if (UKaccount == "yes"){
+    // Send user to next page
+    res.redirect('/oftd/pscs-bank-details-2/bank-or-building-society-details')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/oftd/pscs-bank-details-2/can-only-use-uk-account')
   }
 
 });
