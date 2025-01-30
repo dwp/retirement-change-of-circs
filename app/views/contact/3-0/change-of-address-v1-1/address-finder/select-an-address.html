@@ -17,10 +17,11 @@
                 Select an address
               </h1>
             </legend>
-            <p>5 addresses found for <b>{{ data['postcode-1'] }}</b> and <b>1</b>. <a href="find-address.html">Search again</a></p>
+
             
 
             {% if (data['postcode-1'] == "YO31SQ") %}
+            <p>5 addresses found for <b>{{ data['postcode-1'] }}</b> and <b>1</b>. <a href="find-address.html">Search again</a></p>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="select-an-address-yes" name="select-an-address" type="radio" value="Select1" {{ checked("select-an-address", "Select1") }}>
@@ -53,9 +54,44 @@
                 </label>
               </div>
             </div>
+            {% else %}
+            <p>5 addresses found for <b>YO31SQ</b> and <b>1</b>. <a href="find-address.html">Search again</a></p>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-an-address-yes" name="select-an-address" type="radio" value="Select1" {{ checked("select-an-address", "Select1") }}>
+                <label class="govuk-label govuk-radios__label" for="select-an-address-yes">
+                  1 Square Street, York, YO3 1SQ
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-an-address-no" name="select-an-address" type="radio" value="No" {{ checked("select-an-address", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="select-an-address-no">
+                  10 Square Street, York, YO3 1SQ
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-an-address-no" name="select-an-address" type="radio" value="No" {{ checked("select-an-address", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="select-an-address-no">
+                  11 Square Street, York, YO3 1SQ
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-an-address-no" name="select-an-address" type="radio" value="No" {{ checked("select-an-address", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="select-an-address-no">
+                  123 Square Street, York, YO3 1SQ
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-an-address-no" name="select-an-address" type="radio" value="No" {{ checked("select-an-address", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="select-an-address-no">
+                  13 Square Street, York, YO3 1SQ
+                </label>
+              </div>
+            </div>
+
             {% endif %}
 
-            {% if (data['postcode-1'] == "YO3 1SQ") %}
+            <!-- {% if (data['postcode-1'] == "YO3 1SQ") %}
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="select-an-address-yes" name="select-an-address" type="radio" value="Select1" {{ checked("select-an-address", "Select1") }}>
@@ -158,7 +194,7 @@
                 </label>
               </div> 
             </div>
-            {% else %}
+            {% else %} -->
             <!-- <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="select-an-address-yes" name="select-an-address" type="radio" value="Select1" {{ checked("select-an-address", "Select1") }}>
@@ -191,7 +227,7 @@
                 </label>
               </div> 
             </div> -->
-            {% endif %}
+            <!-- {% endif %} -->
           </fieldset>
         </div>
 

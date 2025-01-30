@@ -15,6 +15,20 @@ GOV.UK Prototype Kit
 
 
 <div class="govuk-width-container">
+  <nav class="hmrc-language-select" aria-label="Language switcher">
+    <a href="#" class="govuk-back-link">Back</a>
+    <ul class="hmrc-language-select__list">
+      <li class="hmrc-language-select__list-item">
+        <span aria-current="true">English</span>
+      </li>
+      <li class="hmrc-language-select__list-item">
+        <a href="?cy" hreflang="cy" lang="cy" rel="alternate" class="govuk-link" data-journey-click="link - click:lang-select:Cymraeg">
+          <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
+          <span aria-hidden="true">Cymraeg</span>
+        </a>
+      </li>
+    </ul>
+  </nav>  
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
@@ -28,7 +42,7 @@ GOV.UK Prototype Kit
         </div>
         <div class="govuk-notification-banner__content">
           <h3 class="govuk-notification-banner__heading">
-            Task complete
+            Task complete and email sent to citizen
           </h3>
           </div>
       </div>
@@ -86,7 +100,7 @@ GOV.UK Prototype Kit
 
   <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-half">
-    <h1 class="govuk-heading-m">Update bank account details
+    <h1 class="govuk-heading-m">Method of payment (SP MOP)
     <p class="govuk-body-l"><a href="update_bank_account_interrupt.html" class="govuk-link"><b>Get next task</b></a></p></h1>
 
   </div>
@@ -105,9 +119,9 @@ GOV.UK Prototype Kit
   <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
   <br>
  
-  <div class="govuk-grid-row">
+  <!-- <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-half">
-      <h1 class="govuk-heading-m">Update bank account details - version 2
+      <h1 class="govuk-heading-m">Update method of payment - version 2
       <p class="govuk-body-l"><a href="update_bank_account_2.html" class="govuk-link"><b>Get next task</b></a></p></h1>
   
     </div>
@@ -124,7 +138,7 @@ GOV.UK Prototype Kit
     </div>
   
     <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
-    <br>
+    <br> -->
 
 </div>
 
@@ -133,7 +147,7 @@ GOV.UK Prototype Kit
     </div>
 
 
-      {% endblock %}
+      <!-- {% endblock %} -->
 
       {% block content %}
 
