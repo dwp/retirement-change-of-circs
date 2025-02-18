@@ -31,6 +31,42 @@ router.post('/claim-date', function (req, res) {
 
 });
 
+// ROUTING TO YES OR NO ALREADY MOVED TO ADDRESS-PSCS
+
+router.post('/already-moved-pscs', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var changeAlreadyMoved = req.session.data['already-moved']
+
+  // Check whether the variable matches a condition
+  if (changeAlreadyMoved == "Yes"){
+    // Send user to next page
+    res.redirect('/oftd/pscs-address-change/uk-address.html')
+  } else if (changeAlreadyMoved == "No"){
+    res.redirect('/oftd/pscs-address-change/report-change-after-move.html')
+  }
+
+});
+
+// ROUTING TO YES OR NO IF A UK ADDRESS
+
+router.post('/uk-address-pscs', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var changeUKaddress = req.session.data['uk-address']
+
+  // Check whether the variable matches a condition
+  if (changeUKaddress == "Yes"){
+    // Send user to next page
+    res.redirect('/oftd/pscs-address-change/find-address.html')
+  } else if (changeUKaddress == "No"){
+    res.redirect('/oftd/pscs-address-change/you-cannot-change-your-address-online.html')
+  }
+
+});
+
+
+
 // Run this code when a form is submitted to 'invited-answer'
 router.post('/invited-answer', function (req, res) {
 
