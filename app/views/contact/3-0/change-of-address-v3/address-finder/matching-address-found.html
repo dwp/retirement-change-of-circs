@@ -17,7 +17,7 @@
               </h1>
             </legend>
             <div class="govuk-inset-text">
-              84 Square Street<br>
+              123 Square Street<br>
               York<br>
               YO3 1SQ
             </div>
@@ -43,11 +43,35 @@
                       Use the address I entered
                     </label>
                     <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
-                      {{ data['new-address-line-1'] }}<br>
-                      {{ data['new-address-line-2'] }}<br>
-                      {{ data['new-town-1'] }}<br>
-                      {{ data['county-1'] }}<br>
-                      {{ data['new-postcode-1'] }}<br>
+
+                      
+                      {% if data['new-address-line-1'] %}
+                        {{ data['new-address-line-1'] }}<br>
+                      {% else %}
+                      1 Square Street<br>
+                      {% endif %}
+
+                      {% if data['new-address-line-2'] %}
+                        {{ data['new-address-line-2'] }}<br>
+                      {% else %}
+                      {% endif %}
+
+                      {% if data['new-town-1'] %}
+                        {{ data['new-town-1'] }}<br>
+                      {% else %}
+                      {% endif %}
+
+                      {% if data['county-1'] %}
+                        {{ data['county-1'] }}<br>
+                      {% else %}
+                        York<br>
+                      {% endif %}
+
+                      {% if data['new-postcode-1'] %}
+                        {{ data['new-postcode-1'] }}<br>
+                      {% else %}
+                        Y03 1SQ
+                      {% endif %}            
                     </div>
                   </div>
                 </div>
