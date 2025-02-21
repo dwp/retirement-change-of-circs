@@ -37,7 +37,7 @@ GOV.UK Prototype Kit
       <div class="govuk-grid-column-two-thirds">
         {% include 'includes/_bar.html' %}
         <p class="govuk-body">
-          A citizen has requested a change to their payment details. Review the request and update the details in CAM or PSCS.<br>
+          A citizen has requested a change to their address. Review the request and update the details in CAM or PSCS.<br>
         </p>
 
         <p class="govuk-body">
@@ -62,7 +62,7 @@ GOV.UK Prototype Kit
               <td class="govuk-table__cell" scope="col"> <a class="govuk-link" href="#">Copy</a> </td>
             </tr>
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Home address</th>
+              <th scope="row" class="govuk-table__header">Current address</th>
               <td class="govuk-table__cell">
                 1 Square Street<br>
                 York<br>
@@ -72,7 +72,36 @@ GOV.UK Prototype Kit
           </tbody>
         </table>
 
-        <h1 class="govuk-heading-l">2. Update method of payment (SP MOP) details </h1>
+        <h1 class="govuk-heading-l">2. Update change of address (SP COA) details </h1>
+
+        <table class="govuk-table govuk-!-margin-bottom-9">
+          <th class="govuk-table__header" scope="col"> New address details </th>
+          <th class="govuk-table__header" scope="col"> <strong class="govuk-tag govuk-tag--blue">
+            Verified
+          </strong></th>
+          <th class="govuk-table__header" scope="col"> <a class="govuk-link" href="#"></a> </th>
+          
+
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Line 1</th>
+              <td class="govuk-table__cell">11 Square Street</td>
+              <td class="govuk-table__cell" scope="col"> <a class="govuk-link" href="#">Copy</a> </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Town or city</th>
+              <td class="govuk-table__cell">York</td>
+              <td class="govuk-table__cell" scope="col"> <a class="govuk-link" href="#">Copy</a> </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Postcode</th>
+              <td class="govuk-table__cell">YO3 1SQ</td>
+              <td class="govuk-table__cell" scope="col"> <a class="govuk-link" href="#">Copy</a> </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h1 class="govuk-heading-l">3. Update method of payment (SP MOP) details </h1>
 
         <table class="govuk-table govuk-!-margin-bottom-9">
           <th class="govuk-table__header" scope="col"> New account details </th>
@@ -106,12 +135,12 @@ GOV.UK Prototype Kit
           </tbody>
         </table>
           
-        <h1 class="govuk-heading-l">3. Add a note about the action you have taken in CAM contact history </h1>
+        <h1 class="govuk-heading-l">4. Add a note about the action you have taken in CAM contact history </h1>
         <table class="govuk-table govuk">     
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Note text</th>
-              <td class="govuk-table__cell">SP MOP details changed via MySP request</td>
+              <td class="govuk-table__cell">SP COA details changed via MySP request</td>
               <td class="govuk-table__cell" scope="col"> <a class="govuk-link" href="#">Copy</a> </td>
             </tr>
           </tbody>
@@ -141,7 +170,7 @@ GOV.UK Prototype Kit
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
-                  4. Select which action you have taken
+                  5. Select which action you have taken
                 </h1>
               </legend>
               <!-- <p class="govuk-body">
