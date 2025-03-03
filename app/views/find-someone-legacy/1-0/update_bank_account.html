@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout_noback_nowelsh" %}
 
 {% block pageTitle %}
 GOV.UK Prototype Kit
@@ -8,18 +8,24 @@ GOV.UK Prototype Kit
 {% include "includes/cookie-banner.html" %}
 {# Set serviceName in config.js. #}
 
-{% include 'includes/_header-nav-unselected.html' %}
+{% include 'includes/_header-nav-tasks.html' %}
 
 {% block headEnd %}
+
+
+{% endblock %}
+
+{% block content %}
+
 {% endblock %}
 
 
 
 <div class="govuk-width-container">
   <nav class="hmrc-language-select" aria-label="Language switcher">
-    <a href="task_list.html" class="govuk-back-link">Back</a>
+    <a href="record-personal.html" class="govuk-back-link">Back</a>
     <ul class="hmrc-language-select__list">
-      <li class="hmrc-language-select__list-item">
+      <!-- <li class="hmrc-language-select__list-item">
         <span aria-current="true">English</span>
       </li>
       <li class="hmrc-language-select__list-item">
@@ -27,7 +33,7 @@ GOV.UK Prototype Kit
           <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
           <span aria-hidden="true">Cymraeg</span>
         </a>
-      </li>
+      </li> -->
     </ul>
   </nav> 
    
@@ -37,7 +43,7 @@ GOV.UK Prototype Kit
       <div class="govuk-grid-column-two-thirds">
         {% include 'includes/_bar.html' %}
         <p class="govuk-body">
-          A citizen has requested a change to their address. Review the request and update the details in CAM or PSCS.<br>
+          A citizen has requested a change to their payment details. Review the request and update the details in CAM or PSCS.<br>
         </p>
 
         <p class="govuk-body">
@@ -62,7 +68,7 @@ GOV.UK Prototype Kit
               <td class="govuk-table__cell" scope="col"> <a class="govuk-link" href="#">Copy</a> </td>
             </tr>
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Current address</th>
+              <th scope="row" class="govuk-table__header">Home address</th>
               <td class="govuk-table__cell">
                 1 Square Street<br>
                 York<br>
@@ -72,10 +78,10 @@ GOV.UK Prototype Kit
           </tbody>
         </table>
 
-        <h1 class="govuk-heading-l">2. Update change of address (SP COA) details </h1>
+        <h1 class="govuk-heading-l">2. Update method of payment (SP MOP) details </h1>
 
         <table class="govuk-table govuk-!-margin-bottom-9">
-          <th class="govuk-table__header" scope="col"> New address details </th>
+          <th class="govuk-table__header" scope="col"> New account details </th>
           <th class="govuk-table__header" scope="col"> <strong class="govuk-tag govuk-tag--blue">
             Verified
           </strong></th>
@@ -84,18 +90,23 @@ GOV.UK Prototype Kit
 
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Line 1</th>
-              <td class="govuk-table__cell">11 Square Street</td>
+              <th scope="row" class="govuk-table__header">Name on the account</th>
+              <td class="govuk-table__cell">Ross Mcdonald</td>
               <td class="govuk-table__cell" scope="col"> <a class="govuk-link" href="#">Copy</a> </td>
             </tr>
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Town or city</th>
-              <td class="govuk-table__cell">York</td>
+              <th scope="row" class="govuk-table__header">Sort code</th>
+              <td class="govuk-table__cell">309430</td>
               <td class="govuk-table__cell" scope="col"> <a class="govuk-link" href="#">Copy</a> </td>
             </tr>
             <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Postcode</th>
-              <td class="govuk-table__cell">YO3 1SQ</td>
+              <th scope="row" class="govuk-table__header">Account number</th>
+              <td class="govuk-table__cell">00733445</td>
+              <td class="govuk-table__cell" scope="col"> <a class="govuk-link" href="#">Copy</a> </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Building society roll number</th>
+              <td class="govuk-table__cell">1992738467</td>
               <td class="govuk-table__cell" scope="col"> <a class="govuk-link" href="#">Copy</a> </td>
             </tr>
           </tbody>
@@ -106,7 +117,7 @@ GOV.UK Prototype Kit
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Note text</th>
-              <td class="govuk-table__cell">SP COA details changed via MySP request</td>
+              <td class="govuk-table__cell">SP MOP details changed via MySP request</td>
               <td class="govuk-table__cell" scope="col"> <a class="govuk-link" href="#">Copy</a> </td>
             </tr>
           </tbody>
@@ -146,7 +157,7 @@ GOV.UK Prototype Kit
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="pscs-agent-action" name="pscs-agent-action" type="radio" value="Yes" {{ checked("pscs-agent-action", "Yes") }}>
                   <label class="govuk-label govuk-radios__label" for="pscs-agent-action">
-                    Updated the address
+                    Updated the method of payment 
                   </label>
                   <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
                     This will send a confirmation email to the citizen 
@@ -183,21 +194,7 @@ GOV.UK Prototype Kit
           
         </form>
       </div>
-  
-              
-  
+    </div>
+  </div>     
+{% endblock %}
 
-    
-        
-
-       
-    <!-- {% endblock %} -->
-
-      {% block content %}
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-
-        </div>
-      </div>
-
-      {% endblock %}

@@ -21,7 +21,7 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="have-you-already-moved.html">
-                Change<span class="govuk-visually-hidden"> residential address</span>
+                Change<span class="govuk-visually-hidden"> if you have already moved into this property</span>
               </a>
             </dd>
           </div>
@@ -38,7 +38,7 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="uk-address.html">
-                Change<span class="govuk-visually-hidden"> if your moving this property</span>
+                Change<span class="govuk-visually-hidden"> whether your new address is in the UK</span>
               </a>
             </dd>
           </div>
@@ -55,7 +55,7 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="../change-of-address-v3/address-finder/select-an-address.html">
-                Change<span class="govuk-visually-hidden"> your home address</span>
+                Change<span class="govuk-visually-hidden"> your new home address</span>
               </a>
             </dd>
           </div>
@@ -71,7 +71,7 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="../change-of-address-v3/address-finder/select-an-address.html">
-                Change<span class="govuk-visually-hidden"> your home address</span>
+                Change<span class="govuk-visually-hidden"> your new home address</span>
               </a>
             </dd>
           </div>
@@ -80,7 +80,7 @@
           {% if (data['select-an-address'] == "Select2") %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              Your address 
+              Home address 
             </dt>
             <dd class="govuk-summary-list__value">
               84 Square Street<br>
@@ -89,7 +89,7 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="../change-of-address-v3/address-finder/matching-address-found.html">
-                Change<span class="govuk-visually-hidden"> your home address</span>
+                Change<span class="govuk-visually-hidden"> your new home address</span>
               </a>
             </dd>
           </div>
@@ -98,7 +98,7 @@
           {% if (data['select-an-address'] == "Select3") %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              Your address 
+              Home address 
             </dt>
             <dd class="govuk-summary-list__value">
               11 Square Street<br>
@@ -107,7 +107,7 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="../change-of-address-v3/address-finder/select-an-address.html">
-                Change<span class="govuk-visually-hidden"> your home address</span>
+                Change<span class="govuk-visually-hidden"> your new home address</span>
               </a>
             </dd>
           </div>          
@@ -116,7 +116,7 @@
           {% if (data['select-an-address'] == "Select4") %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              Your address 
+              Home address 
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['new-address-line-1'] }}<br>
@@ -132,7 +132,19 @@
             </dd>
           </div>          
           {% endif %}
-
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Email address 
+            </dt>
+            <dd class="govuk-summary-list__value">
+              test@test.com
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="../change-of-address-v3/address-finder/select-an-address.html">
+                Change<span class="govuk-visually-hidden">your email address</span>
+              </a>
+            </dd>
+          </div>
           <!-- <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
               Would you like to change the address where you live?
@@ -196,7 +208,10 @@
           </button>
         </form>
     </div>
+    
   </div>
+  </div>
+  
 
 {% endblock %}
 {% block footer %}
