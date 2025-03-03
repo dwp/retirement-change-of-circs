@@ -8,7 +8,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form method="post" action="/postcode-2">
+      <form method="post" action="/postcode-find">
         <h1 class="govuk-heading-l">What is your new address?</h1>
         <div class="govuk-form-group">
           <label class="govuk-label" for="postcode-1">
@@ -17,7 +17,7 @@
           <div id="postcode-hint" class="govuk-hint">
             For example, AA3 1AB.
           </div>
-          <input class="govuk-input govuk-input--width-10" id="postcode-1" name="postcode-1" type="text" value="{{ data['postcode-1'] }}">
+          <input class="govuk-input govuk-input--width-10" id="postcode-entry" name="postcode-entry" type="text" value="{{ data['postcode-entry'] }}">
         </div>
 
         <div class="govuk-form-group">
