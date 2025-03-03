@@ -31,6 +31,36 @@ router.post('/claim-date', function (req, res) {
 
 });
 
+// ROUTING TO ADDRESS RESULTS
+router.post('/postcode-find', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var findPostcode = req.session.data['postcode-entry']
+  console.log("high", req.session.data['postcode-entry'])
+
+  // Check whether the variable matches a condition
+  if (findPostcode == "YO31SQ"){
+    // Send user to next page
+    res.redirect('oftd/pscs-address-change/select-an-address.html')
+
+  } else if (findPostcode == "YO3 1SQ"){
+    // Send user to next page
+    res.redirect('oftd/pscs-address-change/select-an-address.html')
+
+  } else if (findPostcode == "yo31sq"){
+    // Send user to next page
+    res.redirect('oftd/pscs-address-change/is-this-your-address.html')
+
+  } else if (findPostcode == "yo3 1sq"){
+    // Send user to next page
+    res.redirect('oftd/pscs-address-change/select-an-address.html')
+  
+  } else {
+    res.redirect('oftd/pscs-address-change/no-address-found.html')
+  }
+
+});
+
 // ROUTING TO YES OR NO ALREADY MOVED TO ADDRESS-PSCS
 
 router.post('/already-moved-pscs', function (req, res) {
