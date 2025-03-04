@@ -61,6 +61,30 @@ router.post('/postcode-find', function (req, res) {
 
 });
 
+// ROUTING TO RIGHT ADDRESS
+router.post('/select-an-address-pscs', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var selectAddress = req.session.data['select-an-address']
+  console.log("high", req.session.data['select-an-address'])
+
+  // Check whether the variable matches a condition
+  if (selectAddress == "Select1"){
+    // Send user to next page
+    res.redirect('/oftd/pscs-address-change/email-address.html')
+  } else if (selectAddress == "Select3"){
+    // Send user to next page
+    res.redirect('/oftd/pscs-address-change/email-address.html')
+  } else if (selectAddress == "No"){
+    // Send user to next page
+    res.redirect('/oftd/pscs-address-change/already-your-address.html')
+  } else {
+    res.redirect('/oftd/pscs-address-change/enter-manual-address.html')
+  }
+
+});
+
+
 // ROUTING TO YES OR NO ALREADY MOVED TO ADDRESS-PSCS
 
 router.post('/already-moved-pscs', function (req, res) {
