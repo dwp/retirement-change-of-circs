@@ -50,7 +50,14 @@ GOV.UK Prototype Kit
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Name on the account</th>
               <td class="govuk-table__cell">Ross Mcdonald</td>
-              <td class="govuk-table__cell" scope="col"> <button class="app-copy-button">Copy text</button> </td>
+              <td class="govuk-table__cell" scope="col"> 
+                
+                
+                
+                <button class="app-copy-button" data-clipboard-text="Ross Mcdonald">Copy text</button> 
+              
+              
+              </td>
               <!-- <td class="govuk-table__cell"><a href=" button type="submit" style="margin-left:2%" class="govuk-button govuk-button--secondary"> -->
               </a></td>
             </tr>
@@ -166,4 +173,54 @@ GOV.UK Prototype Kit
         </div>
       </div>
 
+      {% endblock %}
+
+      {% block pageScripts %}
+      {# import clipboard min js - this could be moved to global? #}
+      <script src="/public/javascripts/clipboard.min.js"></script>
+      <script>
+
+        /*
+                <button class="app-copy-button" data-clipboard-text="Ross Mcdonald">Copy text</button> 
+
+                Any button with a class app-copy-button will get the data-clipboard-text copied 
+        */
+
+        /*
+            Notes:
+
+            1. The button is currently generic, so will give no real context for a screen reader - i.e copy what text?
+
+            2. I've not attempted to attach any screen reader feedback, assume they should be informed of a the text change
+
+            3. It resets after 1 second
+        */
+
+        // make a new clipbaord based on the class
+        var clipboard = new ClipboardJS('.app-copy-button')
+
+        // do some things when sucessfull
+        clipboard.on('success', (event) => this.successAction(event))
+
+        // these are lifts from govuk copy button
+        function successAction(event) {
+          event.trigger.textContent = 'Code Copied';
+          // Reset button after 1 second
+          resetAction(event, 1000)
+        }
+
+      function resetAction(event, timeout = 0) {
+          event.clearSelection()
+
+          if (this.resetTimeoutId) {
+            window.clearTimeout(this.resetTimeoutId)
+          }
+
+          this.resetTimeoutId = window.setTimeout(() => {
+            event.trigger.textContent = 'Copy code';
+          }, timeout)
+        }
+
+
+      </script>
       {% endblock %}
