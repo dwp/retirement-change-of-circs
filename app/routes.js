@@ -61,6 +61,28 @@ router.post('/postcode-find', function (req, res) {
 
 });
 
+// ROUTING TO MATCHING ADDRESS OR MANUAL ENTRY
+router.post('/pscs-agent-action-address', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var selectPscsAgentActionAddress = req.session.data['pscs-agent-action-address']
+  console.log("high", req.session.data['pscs-agent-action-address'])
+
+  // Check whether the variable matches a condition
+  if (selectPscsAgentActionAddress == "Yes"){
+    // Send user to next page
+    res.redirect('/otfd-agent/address-change/task_list_confirm.html')
+  } else if (selectPscsAgentActionAddress == "No"){
+    // Send user to next page
+    res.redirect('/otfd-agent/address-change/task_list_closed.html')
+  } else if (selectPscsAgentActionAddress == "No2"){
+    // Send user to next page
+    res.redirect('/otfd-agent/address-change/task_list_closed-alt.html')
+  }
+  
+
+});
+
 // ROUTING TO RIGHT ADDRESS
 router.post('/select-an-address-pscs', function (req, res) {
 
