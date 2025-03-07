@@ -2920,7 +2920,7 @@ router.post('/manual-address-2', function (req, res) {
         res.redirect('/otfd-agent/2-0/task_list_confirm.html')
       } else if (selectPscsAgentAction == "No"){
         // Send user to next page
-        res.redirect('/otfd-agent/2-0/task_list_closed.html')
+        res.redirect('/otfd-agent/2-0/task_list_closed-alt.html')
       } else if (selectPscsAgentAction == "No2"){
         // Send user to next page
         res.redirect('/otfd-agent/2-0/task_list_closed-alt.html')

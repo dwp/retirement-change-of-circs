@@ -20,34 +20,49 @@ GOV.UK Prototype Kit
   </nav>
 
   <main class="govuk-main-wrapper">
-    {% include 'includes/_bar-receiving.html' %}
-
+    <!-- {% include 'includes/_bar-receiving.html' %}-->
+    {% include 'includes/_bar.html' %}
+          <p>This record is managed in PSCS</p>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <nav class="navigation-secondary govuk-!-margin-bottom-7">
+        <!-- <nav class="navigation-secondary govuk-!-margin-bottom-7">
           <ul>
             <li>
             <a class="active" href="">Tasks</a>
             </li>
           </ul>
-        </nav>
+        </nav> -->
 
-          <h2 class="govuk-heading-m">Outstanding tasks for this account
-          </h2>
+        <table class="govuk-table">
+          <h2 class="govuk-heading-m">Outstanding tasks for this account</h2>
 
-          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            <div class="govuk-summary-list__row" style="border-top: 1px solid #b1b4b6;padding-top:15px;">
-              <dd class="govuk-summary-list__value">
-                Method of payment (SP MOP)
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link govuk-!-font-size-19" href="update_bank_account.html">
-                  View<span class="govuk-visually-hidden"> task</span>
-                </a>
-              </dd>
-            </div>
-          </dl>
+
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="col" style="width: 25%">Date</th>
+              <th class="govuk-table__header " scope="col" style="width: 30%">Request</th>
+              <th class="govuk-table__header" scope="col" style="width: 20%">Channel</th>
+              <th class="govuk-table__header" scope="col" style="width: 15%"></th>
+  
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">03 march 2025</td>
+              <td class="govuk-table__cell">Method of payment (SP MOP)</td>
+              <td class="govuk-table__cell">Online</td>
+              <td class="govuk-table__cell" style="text-align: right;"><a href="update_bank_account.html">Details</a></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">28 Feb 20205</td>
+              <td class="govuk-table__cell">Change of Address (COA)</td>
+              <td class="govuk-table__cell">Online</td>
+              <td class="govuk-table__cell" style="text-align: right;"><a href="">Details</a></td>
+            </tr>
+          </tbody>
+        </table>
+
         </div>
       </div>
     </div>  
