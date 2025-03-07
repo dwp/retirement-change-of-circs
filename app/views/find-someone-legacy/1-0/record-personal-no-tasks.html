@@ -1,0 +1,44 @@
+{% extends "layout_noback_nowelsh" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{% include "includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{% include 'includes/_header-nav-find.html' %}
+
+{% block headEnd %}
+{% endblock %}
+
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-column-two-thirds"></div>
+  <nav class="hmrc-language-select" aria-label="Language switcher">
+
+  </nav>
+
+  <main class="govuk-main-wrapper">
+    <!-- {% include 'includes/_bar-receiving.html' %}-->
+    {% include 'includes/_bar.html' %}
+          <p><strong>This record is managed in PSCS</strong></p>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <!-- <nav class="navigation-secondary govuk-!-margin-bottom-7">
+          <ul>
+            <li>
+            <a class="active" href="">Tasks</a>
+            </li>
+          </ul>
+        </nav> -->
+
+        <h2 class="govuk-heading-m">Outstanding tasks for this account</h2>
+        </div>
+      </div>
+    </div>  
+{% endblock %}
+
+
+
