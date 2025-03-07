@@ -1,0 +1,81 @@
+{% extends "layout_noback_nowelsh" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{% include "includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+
+{% include 'includes/_header-nav-tasks.html' %}
+
+{% block headEnd %}
+
+</div>
+
+
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}
+
+
+<div class="govuk-width-container">
+  <nav class="hmrc-language-select" aria-label="Language switcher">
+  </nav>  
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+      <br>
+        <h1 class="govuk-heading-xl">Tasks</h1>
+
+        <form method="post">
+
+          <nav class="navigation-secondary">
+              <ul>
+                <li>
+                  <a href="get-a-task-claims">New claims</a>
+                </li>
+
+                <li>
+                  <a href="get-a-task-award">Award changes</a>
+                </li>
+
+                <li>
+                  <a href="get-a-task-alt">Alternative formats</a>
+                </li>
+
+                <li>
+                  <a href="get-a-task-bereavement">Bereavement</a>
+                </li>
+
+                <li>
+                  <a href="get-a-task">International</a>
+                </li>
+
+                <li>
+                  <a href="get-a-task-other">Other</a>
+                </li>
+
+                <li>
+                <a class="" href="task_list">Simple changes</a>
+                </li>
+
+              </ul>
+            </nav>
+            <br>
+            <br>
+
+
+</div>
+</div>
+
+
+
+</div>
+{% endblock %}
+
+
+
