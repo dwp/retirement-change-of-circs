@@ -1,4 +1,4 @@
-{% extends "layout_noback_nowelsh" %}
+{% extends "layout.html" %}
 
 {% block pageTitle %}
 GOV.UK Prototype Kit
@@ -18,7 +18,7 @@ GOV.UK Prototype Kit
   <nav class="hmrc-language-select" aria-label="Language switcher">
     <!-- <a href="#" class="govuk-back-link">Back</a> -->
     <ul class="hmrc-language-select__list">
-      <!-- <li class="hmrc-language-select__list-item">
+      <li class="hmrc-language-select__list-item">
         <span aria-current="true">English</span>
       </li>
       <li class="hmrc-language-select__list-item">
@@ -27,7 +27,7 @@ GOV.UK Prototype Kit
           <span aria-hidden="true">Cymraeg</span>
         </a>
       </li>
-    </ul> -->
+    </ul>
   </nav>  
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
@@ -41,7 +41,7 @@ GOV.UK Prototype Kit
         </div>
         <div class="govuk-notification-banner__content">
           <h3 class="govuk-notification-banner__heading">
-            Task closed - escalated or transferred in CAM / PSCS
+            Task closed
           </h3>
           </div>
       </div>
@@ -103,12 +103,12 @@ GOV.UK Prototype Kit
 
   </div>
   <div class="govuk-grid-column-one-quarter">
-        <h3 class="govuk-heading-l">101
+        <h3 class="govuk-heading-l">103
           <p class="govuk-body govuk-!-font-size-24">total tasks</p>
         </h3>
   </div>
   <div class="govuk-grid-column-one-quarter">
-        <h3 class="govuk-heading-l">86
+        <h3 class="govuk-heading-l">88
           <p class="govuk-body govuk-!-font-size-24">tasks ready to work</p>
         </h3>
   </div>
@@ -119,7 +119,7 @@ GOV.UK Prototype Kit
  
   <!-- <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-half">
-      <h1 class="govuk-heading-m">Update method of payment - version 2
+      <h1 class="govuk-heading-m">UUpdate method of payment - version 2
       <p class="govuk-body-l"><a href="update_bank_account_2.html" class="govuk-link"><b>Get next task</b></a></p></h1>
   
     </div>
@@ -141,5 +141,12 @@ GOV.UK Prototype Kit
 </div>
 
 
+
+    </div>
+
+<!-- 
+      {% endblock %} -->
+
+      {% block content %}
 
       {% endblock %}

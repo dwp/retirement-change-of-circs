@@ -5,7 +5,7 @@ import { Component } from 'govuk-frontend'
  * Copy button for code examples
  */
 class Copy extends Component {
-  static moduleName = 'app-copy'
+  static moduleName = 'app-copy-button'
 
   /**
    * Check if ClipboardJS is supported
@@ -32,7 +32,7 @@ class Copy extends Component {
 
     this.$button = document.createElement('button')
     this.$button.className = 'app-copy-button'
-    this.$button.textContent = 'Copy code'
+    this.$button.textContent = 'Copy text'
 
     this.$status = document.createElement('span')
     this.$status.className = 'govuk-visually-hidden'
@@ -55,7 +55,7 @@ class Copy extends Component {
    * @param {import('clipboard').Event} event - Clipboard event
    */
   successAction(event) {
-    this.$button.textContent = this.$status.textContent = 'Code copied'
+    this.$button.textContent = this.$status.textContent = 'Text copied'
     // Reset button after 5 seconds
     this.resetAction(event, 5000)
   }
@@ -75,7 +75,7 @@ class Copy extends Component {
 
     // Reset button after timeout
     this.resetTimeoutId = window.setTimeout(() => {
-      this.$button.textContent = 'Copy code'
+      this.$button.textContent = 'Copy text'
       this.$status.textContent = ''
     }, timeout)
   }
