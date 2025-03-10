@@ -4,6 +4,9 @@
 // 
 
 // Add extra styles here
+.hidden{
+  display: none;
+}
 
 @media (min-width: 40.0625em) {
     .govuk-summary-list__actions {

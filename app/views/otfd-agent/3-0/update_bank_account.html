@@ -20,6 +20,22 @@ GOV.UK Prototype Kit
 {% endblock %}
 
 
+<script>
+  document.addEventListener('click', ({ target }) => {
+    if (target.matches('button')) {
+
+      let identifier = target.id //identify the id of the button pressed
+      identifier = identifier.substring(0, identifier.length - 6); //remove the word button from the end
+      navigator.clipboard.writeText(document.getElementById(identifier).innerHTML); //copy the text from the relevant field
+      document.getElementById(identifier+'Message').classList.remove("hidden"); // display the relevant copied message
+      setTimeout(function() {
+          // Then we remove the copied message after 2 seconds.
+          document.getElementById(identifier+'Message').classList.add("hidden");
+      }, 5000);
+    }
+  });
+</script>
+
 
 <div class="govuk-width-container">
   <nav class="hmrc-language-select" aria-label="Language switcher">
@@ -56,25 +72,35 @@ GOV.UK Prototype Kit
           <strong>Receipt email sent to:</strong> ross.mcdonald@test.com
         </p>
 
-        
+      
 
         <h1 class="govuk-heading-l">1. Find them in CAM or PSCS</h1>
 
         <table class="govuk-table govuk-!-margin-bottom-9">
           <caption class="govuk-table__caption govuk-table__caption--m">Citizen details</caption>
-        
-
+          
+          
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Name</th>
-              <td class="govuk-table__cell">Ross Mcdonald</td>
-              <td class="govuk-table__cell" style="text-align: right;"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">Copy text <span class="govuk-visually-hidden">, for name, to clipboard</span></button></td> 
+              <td id="name" class="govuk-table__cell">Ross Mcdonald</td>
+              <td class="govuk-table__cell" style="text-align: right;">
+                <button id="nameButton" type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">Copy text <span class="govuk-visually-hidden">, for name, to clipboard</span></button>
+                <div id="nameMessage" role="alert" class="hidden">
+                  <span>Name copied</span>
+                </div>
+              </td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Nino</th>
-              <td class="govuk-table__cell">QQ 12 34 56 X</td>
-              <td class="govuk-table__cell" style="text-align: right;"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">Copy number<span class="govuk-visually-hidden">, nino, to clipboard</span></button></td> 
-              </tr>
+              <td id="nino" class="govuk-table__cell">QQ 12 34 56 X</td>
+              <td class="govuk-table__cell" style="text-align: right;">
+                <button id="ninoButton" type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">Copy number<span class="govuk-visually-hidden">, National Insurance number, to clipboard</span></button>
+                <div id="ninoMessage" role="alert" class="hidden">
+                  <span>National Insurance number copied</span>
+                </div>
+              </td> 
+            </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Home address</th>
               <td class="govuk-table__cell">
@@ -96,35 +122,60 @@ GOV.UK Prototype Kit
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Name on the account</th>
-              <td class="govuk-table__cell">Ross Mcdonald</td>
-              <td class="govuk-table__cell" style="text-align: right;"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">Copy text<span class="govuk-visually-hidden">, for name on the account, to clipboard</span></button></td>
-              <!-- <td class="govuk-table__cell" style="text-align: right;" scope="col"><button class="app-copy-button-alt" data-clipboard-text="Ross Mcdonald">Copy number<span class="govuk-visually-hidden">, for name on the account, to clipboard</span></button></td> -->
+              <td id="SPMOPname" class="govuk-table__cell">Ross Mcdonald</td>
+              <td class="govuk-table__cell" style="text-align: right;">
+                <button id="SPMOPnameButton" type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">Copy text <span class="govuk-visually-hidden">, for name, to clipboard</span></button>
+                <div id="SPMOPnameMessage" role="alert" class="hidden">
+                  <span>Name copied</span>
+                </div>
+              </td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Sort code</th>
-              <td class="govuk-table__cell">309430</td>
-              <td class="govuk-table__cell" style="text-align: right;"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">Copy number<span class="govuk-visually-hidden">, for sort code, to clipboard</span></button></td> 
+              <td id="sort" class="govuk-table__cell">309430</td>
+              <td class="govuk-table__cell" style="text-align: right;">
+                <button id="sortButton" type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">Copy number <span class="govuk-visually-hidden">, for sort code, to clipboard</span></button>
+                <div id="sortMessage" role="alert" class="hidden">
+                  <span>Sort code copied</span>
+                </div>
+              </td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Account number</th>
-              <td class="govuk-table__cell">00733445</td>
-              <td class="govuk-table__cell" style="text-align: right;"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">Copy number<span class="govuk-visually-hidden">, for account number, to clipboard</span></button></td> 
+              <td id="account" class="govuk-table__cell">00733445</td>
+              <td class="govuk-table__cell" style="text-align: right;">
+                <button id="accountButton" type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">Copy number <span class="govuk-visually-hidden">, for account number, to clipboard</span></button>
+                <div id="accountMessage" role="alert" class="hidden">
+                  <span>Account number copied</span>
+                </div>
+              </td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Building society roll number</th>
-              <td class="govuk-table__cell">1992738467</td>
-              <td class="govuk-table__cell" style="text-align: right;"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">Copy number<span class="govuk-visually-hidden">, for building society, to clipboard</span></button></td> 
+              <td id="roll" class="govuk-table__cell">1992738467</td>
+              <td class="govuk-table__cell" style="text-align: right;">
+                <button id="rollButton" type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">Copy number <span class="govuk-visually-hidden">, for Building society roll number, to clipboard</span></button>
+                <div id="rollMessage" role="alert" class="hidden">
+                  <span>Building society roll number copied</span>
+                </div>
+              </td>
             </tr>
+            
           </tbody>
         </table>
-          
+        
         <h1 class="govuk-heading-l">3. Add a note in CAM contact history about the action you have taken</h1>
         <table class="govuk-table govuk">     
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Note text</th>
-              <td class="govuk-table__cell">SP MOP details changed via MySP request</td>
-              <td class="govuk-table__cell" style="text-align: right;"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">Copy text<span class="govuk-visually-hidden">, for note, to clipboard</span></button></td> 
+              <td id="note" class="govuk-table__cell">SP MOP details changed via MySP request</td>
+              <td class="govuk-table__cell" style="text-align: right;">
+                <button id="noteButton" type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">Copy text <span class="govuk-visually-hidden">, for note, to clipboard</span></button>
+                <div id="noteMessage" role="alert" class="hidden">
+                  <span>Note copied</span>
+                </div>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -207,97 +258,7 @@ GOV.UK Prototype Kit
 {% endblock %}
 
 {% block pageScripts %}
-      {# import clipboard min js - this could be moved to global? #}
-      <script src="/public/javascripts/clipboard.min.js"></script>
-      <script>
 
-        /*
-                <button class="app-copy-button" data-clipboard-text="Ross Mcdonald">Copy text</button> 
-
-                Any button with a class app-copy-button will get the data-clipboard-text copied 
-        */
-
-        /*
-            Notes:
-
-            1. The button is currently generic, so will give no real context for a screen reader - i.e copy what text?
-
-            2. I've not attempted to attach any screen reader feedback, assume they should be informed of a the text change
-
-            3. It resets after 1 second
-        */
-
-        // make a new clipbaord based on the class
-        var clipboard = new ClipboardJS('.app-copy-button')
-
-        // do some things when sucessfull
-        clipboard.on('success', (event) => this.successAction(event))
-
-        // these are lifts from govuk copy button
-        function successAction(event) {
-          event.trigger.textContent = 'Text copied';
-          // Reset button after 1 second
-          resetAction(event,5000)
-        }
-
-      function resetAction(event, timeout = 0) {
-          event.clearSelection()
-
-          if (this.resetTimeoutId) {
-            window.clearTimeout(this.resetTimeoutId)
-          }
-
-          this.resetTimeoutId = window.setTimeout(() => {
-            event.trigger.textContent = 'Copy number';
-          }, timeout)
-        }
-      </script>
-
-<script src="/public/javascripts/clipboard.min.js"></script>
-<script>
-
-  /*
-          <button class="app-copy-button-alt" data-clipboard-text="Ross Mcdonald">Copy text</button> 
-
-          Any button with a class app-copy-button-alt will get the data-clipboard-text copied 
-  */
-
-  /*
-      Notes:
-
-      1. The button is currently generic, so will give no real context for a screen reader - i.e copy what text?
-
-      2. I've not attempted to attach any screen reader feedback, assume they should be informed of a the text change
-
-      3. It resets after 1 second
-  */
-
-  // make a new clipbaord based on the class
-  var clipboard = new ClipboardJS('.app-copy-button-alt')
-
-  // do some things when sucessfull
-  clipboard.on('success', (event) => this.successAction(event))
-
-  // these are lifts from govuk copy button
-  function successAction(event) {
-    event.trigger.textContent = 'Number copied';
-    // Reset button after 1 second
-    resetAction(event,5000)
-  }
-
-function resetAction(event, timeout = 0) {
-    event.clearSelection()
-
-    if (this.resetTimeoutId) {
-      window.clearTimeout(this.resetTimeoutId)
-    }
-
-    this.resetTimeoutId = window.setTimeout(() => {
-      event.trigger.textContent = 'Copy number';
-    }, timeout)
-  }
-</script>
-
-      
+     
 {% endblock %}
 
