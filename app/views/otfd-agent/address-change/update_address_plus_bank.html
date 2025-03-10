@@ -37,11 +37,12 @@ GOV.UK Prototype Kit
       <div class="govuk-grid-column-two-thirds">
         {% include 'includes/_bar.html' %}
         <p class="govuk-body">
-          A citizen has requested a change to their address. Review the request and update the details in CAM or PSCS.<br>
+          This pensioner has requested a change of address. Review the request and update the details in CAM or PSCS.<br>
         </p>
 
         <p class="govuk-body">
-          A receipt email was sent to abc@xyz.com.
+          <strong>Source:</strong> Online MySP request<br>
+          <strong>Receipt email sent to:</strong> ross.mcdonald@prototypemail.co.uk
         </p>
 
         
@@ -72,7 +73,7 @@ GOV.UK Prototype Kit
           </tbody>
         </table>
 
-        <h1 class="govuk-heading-l">2. Update method of payment (SP MOP) details </h1>
+        <h1 class="govuk-heading-l">2. Enter new method of payment (SP MOP) details </h1>
 
         <table class="govuk-table govuk-!-margin-bottom-9">
           <th class="govuk-table__header" scope="col"> New account details </th>
@@ -106,7 +107,7 @@ GOV.UK Prototype Kit
           </tbody>
         </table>
 
-        <h1 class="govuk-heading-l">3. Update change of address (SP COA) details </h1>
+        <h1 class="govuk-heading-l">3. Enter new address details </h1>
 
         <table class="govuk-table govuk-!-margin-bottom-9">
           <th class="govuk-table__header" scope="col"> New address details </th>
@@ -137,7 +138,7 @@ GOV.UK Prototype Kit
 
         
           
-        <h1 class="govuk-heading-l">4. Add a note about the action you have taken in CAM contact history </h1>
+        <h1 class="govuk-heading-l">4. Add a note in CAM contact history about the action you have taken </h1>
         <table class="govuk-table govuk">     
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
@@ -193,6 +194,9 @@ GOV.UK Prototype Kit
                   <label class="govuk-label govuk-radios__label" for="pscs-agent-action-address">
                     Escalated or transferred the task 
                   </label>
+                  <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                    Following normal BAU process
+                  </div>
                 </div>
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="pscs-agent-action-address" name="pscs-agent-action-address" type="radio" value="No2" {{ checked("pscs-agent-action-address", "No") }}>
