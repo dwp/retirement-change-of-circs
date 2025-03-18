@@ -2983,13 +2983,35 @@ router.post('/manual-address-2', function (req, res) {
       // Check whether the variable matches a condition
       if (selectPscsAgentAction == "Yes"){
         // Send user to next page
-        res.redirect('/otfd-agent/2-0/task_list_confirm.html')
+        res.redirect('/otfd-agent/3-0/task_list_confirm.html')
       } else if (selectPscsAgentAction == "No"){
         // Send user to next page
-        res.redirect('/otfd-agent/2-0/task_list_closed-alt.html')
+        res.redirect('/otfd-agent/3-0/task_list_closed.html')
       } else if (selectPscsAgentAction == "No2"){
         // Send user to next page
-        res.redirect('/otfd-agent/2-0/task_list_closed-alt.html')
+        res.redirect('/otfd-agent/3-0/task_list_closed-alt.html')
+      }
+      
+    
+    });
+
+    // ROUTING TO MATCHING ADDRESS OR MANUAL ENTRY
+    router.post('/pscs-agent-action-4', function (req, res) {
+
+      // Make a variable and give it the value from 'bank-or-build'
+      var selectPscsAgentAction = req.session.data['pscs-agent-action']
+      console.log("high", req.session.data['pscs-agent-action'])
+    
+      // Check whether the variable matches a condition
+      if (selectPscsAgentAction == "Yes"){
+        // Send user to next page
+        res.redirect('/otfd-agent/3-0/task_list_confirm.html')
+      } else if (selectPscsAgentAction == "No"){
+        // Send user to next page
+        res.redirect('/otfd-agent/3-0/task_list_closed.html')
+      } else if (selectPscsAgentAction == "No2"){
+        // Send user to next page
+        res.redirect('/otfd-agent/3-0/task_list_closed-alt.html')
       }
       
     
