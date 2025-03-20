@@ -3017,6 +3017,46 @@ router.post('/manual-address-2', function (req, res) {
     
     });
 
+    // ROUTING TO MATCHING ADDRESS OR MANUAL ENTRY
+    router.post('/received-letter', function (req, res) {
+
+      // Make a variable and give it the value from 'bank-or-build'
+      var selectReceivedLetter = req.session.data['received-letter']
+      console.log("high", req.session.data['received-letter'])
+    
+      // Check whether the variable matches a condition
+      if (selectReceivedLetter == "Yes"){
+        // Send user to next page
+        res.redirect('/oftd/2-0/privacy-notice.html')
+      } else if (selectReceivedLetter == "No"){
+        // Send user to next page
+        res.redirect('/oftd/2-0/findr/dob.html')
+      }
+      
+    
+    });
+
+    // ROUTING TO DOB eligibility
+    router.post('/passport-issued1', function (req, res) {
+
+      // Make a variable and give it the value from 'bank-or-build'
+      var selectPassportIssuedYear = req.session.data['passport-issued-year']
+      console.log("high", req.session.data['passport-issued-year'])
+    
+      // Check whether the variable matches a condition
+      if (selectPassportIssuedYear == "1956"){
+        // Send user to next page
+        res.redirect('/oftd/2-0/findr/do-you-want-to-mysp.html')
+    
+      } else if (selectPassportIssuedYear == "1955"){
+        // Send user to next page
+        res.redirect('/oftd/2-0/cannot-use-this-service-yet.html')
+    
+      }
+        
+
+});
+
         
 
   
