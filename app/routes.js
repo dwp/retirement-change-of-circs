@@ -3030,7 +3030,7 @@ router.post('/manual-address-2', function (req, res) {
         res.redirect('/oftd/2-0/privacy-notice.html')
       } else if (selectReceivedLetter == "No"){
         // Send user to next page
-        res.redirect('/oftd/2-0/findr/dob.html')
+        res.redirect('/oftd/2-0/find-someone/dob.html')
       }
       
     
@@ -3046,7 +3046,7 @@ router.post('/manual-address-2', function (req, res) {
       // Check whether the variable matches a condition
       if (selectPassportIssuedYear == "1956"){
         // Send user to next page
-        res.redirect('/oftd/2-0/findr/do-you-want-to-mysp.html')
+        res.redirect('/oftd/2-0/find-someone/do-you-want-to-continue.html')
     
       } else if (selectPassportIssuedYear == "1955"){
         // Send user to next page
