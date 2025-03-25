@@ -8,36 +8,41 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="/received-letter" method="post">
+    <form class="form" action="../privacy-notice" method="post">
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              <span class="govuk-caption-l">Check you can use this service</span>
-              Have you received a letter or email to say you can manage your State Pension online?
+              It is likely that you can manage your State Pension online
           </h1>
           </legend>
 
-          <div class="govuk-radios" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="received-letter-yes" name="received-letter" type="radio" value="Yes" {{ checked("received-letter", "Yes") }}>
-              <label class="govuk-label govuk-radios__label" for="received-letter-yes">
-                Yes
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="received-letter-no" name="received-letter" type="radio" value="No" {{ checked("received-letter", "No") }}>
-              <label class="govuk-label govuk-radios__label" for="received-letter-no">
-                No
-              </label>
-            </div>
-          </div>
+          <p class="govuk-body">
+            Most people with your date of birth can use this service, though some cannot.
+          </p>
+
+          <p class="govuk-body">
+            You will need to register with the service to confirm this.
+          </p>
+
+          <p class="govuk-body">
+            To register you will need ID such as:
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Passport</li>
+              <li>Driving licence</li>
+            </ul>
+          </p>
+
         </fieldset>
       </div>
 
-      <button class="govuk-button" data-module="govuk-button">
+      <button type="submit" class="govuk-button" data-module="govuk-button">
         Continue
       </button>
+
+      <p class="govuk-body">
+        <a href="../find-someone/eligibility.html">I do not want to register as this time</a>.
+      </p>
     </form>
 
     </div>
