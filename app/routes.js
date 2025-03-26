@@ -3046,7 +3046,7 @@ router.post('/manual-address-2', function (req, res) {
       // Check whether the variable matches a condition
       if (selectPassportIssuedYear == "1956"){
         // Send user to next page
-        res.redirect('/oftd/2-0/find-someone/do-you-want-to-continue.html')
+        res.redirect('/oftd/2-0/find-someone/likely-you-can-use-service.html')
     
       } else if (selectPassportIssuedYear == "1955"){
         // Send user to next page
