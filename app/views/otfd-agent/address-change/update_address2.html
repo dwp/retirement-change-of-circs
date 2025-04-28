@@ -35,14 +35,14 @@ GOV.UK Prototype Kit
           This record is managed in PSCS
         </p>
 
-        <h1 class="govuk-heading-xl">Update method of payment (SP MOP)</h1>
+        <h1 class="govuk-heading-xl">Update change of address (SP COA)</h1>
 
         <p class="govuk-body">
-          This claimant has requested a change to their payment details. Review the request and update the details in CAM or PSCS.<br>
+          This claimant has requested a change of address. Review the request and update the details in CAM or PSCS.<br>
         </p>
 
         <p class="govuk-body">
-          <strong>Method of payment (SP MOP) request online</strong>
+          <strong>Change of address (SP COA) request online</strong>
         </p>
         <p class="govuk-body">
           <strong>Receipt email sent to claimant</strong><br>ross.mcdonald@test.com
@@ -103,7 +103,7 @@ GOV.UK Prototype Kit
           </div>
         </dl>
 
-        <h2 class="govuk-heading-l">2. Enter new method of payment (SP MOP) details </h2>
+        <h2 class="govuk-heading-l">2. Enter new address (SP COA) details </h2>
         <!-- <h2 class="govuk-heading-m">Citizens details</h2> -->
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
@@ -115,17 +115,18 @@ GOV.UK Prototype Kit
             </dd>
 
             <!-- <span class="verified-badge verified">
-              <b>Verified</b> </span> -->
+              <b>Verified</b>
+            </span> -->
             
             <dd class="govuk-summary-list__actions">
 
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Name on the account
+              Line 1
             </dt>
             <dd id="name1" class="govuk-summary-list__value">
-              Ross Mcdonald
+              22 Circle Road
             </dd>
             <dd class="govuk-summary-list__actions">
 
@@ -136,44 +137,30 @@ GOV.UK Prototype Kit
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Sort code
+              Town or city
             </dt>
             <dd id="sort" class="govuk-summary-list__value">
-              309430
+              Sheffield
             </dd>
             <dd class="govuk-summary-list__actions">
 
-              <button id="sortButton" type="submit" class="govuk-button  govuk-button--secondary" data-module="govuk-button">Copy number <span class="govuk-visually-hidden">, for sort code, to clipboard</span></button>
+              <button id="sortButton" type="submit" class="govuk-button  govuk-button--secondary" data-module="govuk-button">Copy text <span class="govuk-visually-hidden">, for sort code, to clipboard</span></button>
                 <div id="sortMessage" class="hidden">Copy number<span class="govuk-visually-hidden">, for sort code, to clipboard</span></div>
                 <div id="sortCopyMessage" aria-live="assertive" class="hidden"><span>Number copied</span></div>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Account number
+              Postcode
             </dt>
             <dd id="account" class="govuk-summary-list__value">
-              22938447
+              S1 1BR
             </dd>
             <dd class="govuk-summary-list__actions">
 
-              <button id="accountButton" type="submit" class="govuk-button  govuk-button--secondary" data-module="govuk-button">Copy number <span class="govuk-visually-hidden">, account number, to clipboard</span></button>
+              <button id="accountButton" type="submit" class="govuk-button  govuk-button--secondary" data-module="govuk-button">Copy text <span class="govuk-visually-hidden">, account number, to clipboard</span></button>
                 <div id="accountMessage" class="hidden">Copy number<span class="govuk-visually-hidden">, for account number, to clipboard</span></div>
                 <div id="accountCopyMessage" aria-live="assertive" class="hidden"><span>Number copied</span></div>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Building society roll number
-            </dt>
-            <dd id="roll" class="govuk-summary-list__value">
-              9938847663
-            </dd>
-            <dd class="govuk-summary-list__actions">
-
-              <button id="rollButton" type="submit" class="govuk-button  govuk-button--secondary" data-module="govuk-button">Copy number <span class="govuk-visually-hidden">, for Building society roll number, to clipboard</span></button>
-                <div id="rollMessage" class="hidden">Copy number<span class="govuk-visually-hidden">, for Building society roll number, to clipboard</span></div>
-                <div id="rollCopyMessage" aria-live="assertive" class="hidden"><span>Number copied</span></div>
             </dd>
           </div>
         </dl>
@@ -186,13 +173,12 @@ GOV.UK Prototype Kit
               Note text
             </dt>
             <dd id="note" class="govuk-summary-list__value">
-              SP MOP details changed via MySP request
+              SP COA via MySP request
             </dd>
             <dd class="govuk-summary-list__actions">
               <button id="noteButton" type="submit" class="govuk-button  govuk-button--secondary" data-module="govuk-button">Copy text<span class="govuk-visually-hidden">, for note, to clipboard</span></button>
                 <div id="noteMessage" class="hidden">Copy text<span class="govuk-visually-hidden">, for note, to clipboard</span></div>
                 <div id="noteCopyMessage" aria-live="assertive" class="hidden"><span>Text copied</span></div>
-
           </div>
           
         </dl>
@@ -213,7 +199,7 @@ GOV.UK Prototype Kit
             </div>
           </fieldset>
         </div> 
-        <form class="form" action="/pscs-agent-action-4" method="post">
+        <form class="form" action="/pscs-agent-action-5" method="post">
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -224,7 +210,7 @@ GOV.UK Prototype Kit
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="pscs-agent-action" name="pscs-agent-action" type="radio" value="Yes" {{ checked("pscs-agent-action", "Yes") }}>
                   <label class="govuk-label govuk-radios__label" for="pscs-agent-action">
-                    Updated the method of payment 
+                    Updated the address
                   </label>
                   <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
                     This will send a confirmation email to the claimant.
