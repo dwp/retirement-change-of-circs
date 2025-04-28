@@ -14,10 +14,10 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">
-          In progress
+        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+          Completed
         </strong><br>
-        Open the front door - Agent Experience
+        Change of bank account - Legacy agent task
       </h1>
       <h2 class="govuk-heading-m">Set up custom data</h2>
       <div class="govuk-inset-text">
@@ -26,32 +26,43 @@
       </div>
 
       <h2 class="govuk-heading-m">Happy path end-to-end journey</h2>
-      <a href="holding_page.html" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">Start now</a>
-    
+      <a href="task_list.html" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">Start now</a>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Jump to a page in the journey
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="task_list.html">Task list</a></li>
+            <li><a href="update_bank_account.html">Task page - Update bank account</a>
+            <li><a href="task_list_confirm.html">Task completed</a>
+            <li><a href="task_list_closed-alt.html">Task closed</a>
+            <li><a href="task_list_closed.html">No action required</a></li>
+            <li><a href="task_list_returned.html">Task returned to queue</a></li>
+          </ul>
+          <h3 class="govuk-heading-s">Your State Pension details</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="your-state-pension.html">Your State Pension overview if status is 'Receiving State Pension'</a></li>
+            <li><a href="your-state-pension&issues.html">Your State Pension overview if status is <strong>anything other than</strong> 'Receiving State Pension'</a></li>
+          </ul>
+        </div>
+      </details>    
 
       <h2 class="govuk-heading-m">Version notes</h2>
 
       <h2 class="govuk-heading-s">Open the front door</h2>
       <ul class="govuk-list govuk-list--bullet">
+        <li>Iteration 2</li>
+        <li><a href="https://dwpdigital.atlassian.net/wiki/spaces/RBCCC/pages/133812977705/Open+The+Front+Door+OTFD+Agent+Experience+-+Change+bank+account" target="_blank">Design documentation</a></li>
         <li>Based on <a href="https://app.mural.co/t/dwpdigital7412/m/dwpdigital7412/1732110639028/d3c6ed9b0d89cdcb60d2eb707c64791cde75930e" target="_blank">workshops and ideation sessions</a>
-        <li><a href="" target="_blank">JIRA ticket for iterations</a></li>
         <li>Journey for agents processing a change of bank account details for PSCS citizens</li>
         <li>Tasks to come into task queue in order of oldest task first</li>
         <li>Agents must be able to navigate simple changes, view the request, and log appropriate action taken.</li>
       </ul>
 
-      <h3 class="govuk-heading-s">Findr</h3>
-        <ul class="govuk-list govuk-list--bullet">
-          <li><a href="task_list.html">Task list</a></li>
-          <li><a href="update_bank_account.html">Bank account change request</a></li>
-          <li><a href="update_bank_account_2.html">Bank account alt version</a></li>
-          <li><a href="update_bank_account_interrupt.html">Bank account interrupt page</a></li>
-          <li><a href="task_list_transferred.html">Task transferred</a></li>
-          <li><a href="task_list_returned.html">Task returned</li>
-          <li><a href="task_list_confirm.html">Task confirmed</a></li>
-        </ul>
-
-            <h2 class="govuk-heading-m">Additional pages</h2>
+      <h2 class="govuk-heading-m">Additional pages</h2>
       <ul class="govuk-list govuk-list--bullet">
         <li>TBC</li>
       </ul>
