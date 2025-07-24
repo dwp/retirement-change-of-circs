@@ -1,0 +1,18 @@
+include:
+  #.pre
+  - project: 'dwp/engineering/pipeline-solutions/gitlab/fragments/fragment-version-check'
+    ref: 2.4.0
+    file: 'ci-include-fragment-version-check.yml'
+  #code-quality
+  - project: 'dwp/engineering/pipeline-solutions/gitlab/fragments/gitleaks'
+    ref: 2.2.4
+    file: 'ci-include-gitleaks.yml'
+  - project: 'dwp/engineering/pipeline-solutions/gitlab/fragments/shell-check'
+    ref: 3-1-4
+    file: 'ci-include-shell-check.yml'
+  - project: 'dwp/engineering/pipeline-solutions/gitlab/fragments/todo-checker'
+    ref: 2-1-4
+    file: 'ci-include-todo-checker.yml'
+  - project: 'dwp/engineering/pipeline-solutions/gitlab/fragments/heroku-site-publish'
+    ref: 1-0-0
+    file: 'ci-include-heroku-site-publish-base.yml'

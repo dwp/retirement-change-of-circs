@@ -1,0 +1,17 @@
+stages:
+  - code-quality
+  - heroku-publish
+include:
+  - local: "/gitlab-ci/includes.yml"
+fragment-version-check:
+  extends: .fragment-version-check-template
+gitleaks:
+  extends: .gitleaks-template
+shell-check:
+  extends: .shell-check-template
+todo-check:
+  extends: .todo-check-template
+heroku-site-publish:
+  extends: .heroku-site-publish-template
+  variables:
+    HEROKU_APP_NAME: prototype-changes
