@@ -1,1 +1,10 @@
-{"serviceName":"Manage your State Pension"}
+{
+    "serviceName": "Manage your State Pension",
+  
+    "plugins" : {
+      "govuk-frontend" : {
+        "rebrand": true
+      }
+    }
+  }
+   

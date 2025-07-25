@@ -48,7 +48,7 @@
             Date of birth
           </dt>
           <dd class="govuk-summary-list__value">
-            1 July 1954
+            01/07/1954
           </dd>
 </div>
 <div class="govuk-summary-list__row">
@@ -69,17 +69,12 @@
 
 <p class="govuk-body">
   You can see what account your payments are currently being sent to by checking your statement for payments with the reference '{% if data['NINO'] %}
-  {{ data['NINO'] }}{% else %}QQ123456C{% endif %} DWP SP'. Or you can contact us by phone or post at:
-  <ul class="govuk-list govuk-list--bullet">
-    <li><a href="contact-pension-service" target="_blank">the Pension Service (opens in new tab)</a> if you live in England, Scotland or Wales</li>
-    <li><a href="https://www.nidirect.gov.uk/contacts/northern-ireland-pension-centre" target="_blank">the Northern Ireland Pension Centre (opens in new tab)</a> if you live in Northern Ireland</li>
-  </ul>
-</p>
+  {{ data['NINO'] }}{% else %}QQ123456C{% endif %} DWP SP'. Or you can call us on <strong>0800 731 0469</strong>.</p>
 
       <h2 class="govuk-heading-m">Payment schedule</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row" style="border-top: 1px solid #b1b4b6;padding-top:15px;">
-          <!-- <dt class="govuk-summary-list__key">
+          <dt class="govuk-summary-list__key">
             How often we pay your State Pension
           </dt>
           <dd class="govuk-summary-list__value">
@@ -88,42 +83,10 @@
             {% else %}
               Every 4 weeks<br>(13 payments a year)
             {% endif %}
-          </dd> -->
+          </dd>
           
         </div>
-
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Last payment date
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {% if data['next-payment-date'] %}
-              {{ data['next-payment-date'] }}
-            {% else %}
-              Friday 17 January 2025
-            {% endif %}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Last payment amount
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {% if data['next-payment-amount'] %}
-              {{ data['next-payment-amount'] | currency }}
-            {% else %}
-              £815.40
-            {% endif %}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-
-          </dd>
-        </div>
-
-        <!-- <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Next payment date
           </dt>
@@ -152,27 +115,36 @@
           <dd class="govuk-summary-list__actions">
 
           </dd>
-        </div> -->
+        </div>
       </dl>
       
+<div>
+      <div style="display:inline-block;width:100%;">
+        <h2 class="govuk-heading-m" style="float:left;">Contact details</h2>
+        <p class="govuk-body" style="float:right;vertical-align: baseline;">Not available yet</p>
+        </a>
+      </div>
+      <hr class="govuk-section-break govuk-section-break--visible">
+      <br>
+      <div style="display:inline-block;width:100%;">
+        <h2 class="govuk-heading-m" style="float:left;">Personal details</h2>
+        <p class="govuk-body" style="float:right;vertical-align: baseline;">Not available yet</p>
+        </a>
+      </div>
+      <hr class="govuk-section-break govuk-section-break--visible"></div>
+      <br>
+      <br>
+
       <h2 class="govuk-heading-m">
-        Telling us about other changes
+        If you need to tell us about other changes
       </h2>
       <p class="govuk-body">
-        To find out what changes you must report, and how to tell us about them, <a href="contact-pension-service.html" target="_blank">contact the Pension Service (opens in new tab)</a>.
+        To report other changes, like changing the address we send letters to, <a href="contact-pension-service.html" target="_blank">contact the Pension Service by phone or post (opens in new tab)</a>. 
       </p>
-      <p class="govuk-body">
-        If you live in Northern Ireland, <a href="https://www.nidirect.gov.uk/contacts/northern-ireland-pension-centre" target="_blank">contact the Northern Ireland Pension Centre by phone or post (opens in new tab)</a>.
-      </p>
-      <p class="govuk-body">
-        In the future you will be able to use this service to: 
-        <ul class="govuk-list govuk-list--bullet">
-          <li>update your personal details and contact details</li>
-          <li>change how often we pay your State Pension</li>
-        </ul> 
-      </p>
-    </div>    
-  </div>
+      
+          
+          
+          
 
       <!-- {% if data['correspondence-address'] %}
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">

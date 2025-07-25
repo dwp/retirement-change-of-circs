@@ -36,25 +36,62 @@
 
 {% block head %}
   {% include "includes/head.html" %}
+
+  <style>
+    .app-service-navigation .govuk-service-navigation__wrapper {
+      flex-grow: 1;
+    }
+    .app-sign-out {
+      margin-left: auto;
+      padding: 15px 0 10px;
+    }
+    .app-sign-out .govuk-button {
+      margin: 0;
+      width: auto;
+    }
+  </style>
+
 {% endblock %}
 
 {% block pageTitle %}
   GOV.UK Prototype Kit
 {% endblock %}
 
+{% set signOutButton %}
+  <li class="govuk-service-navigation__item app-sign-out">
+    {{ govukButton({
+      type: "button",
+      classes: "govuk-button--inverse",
+      text: "Sign out"
+    }) }}
+  </li>
+{% endset %}
+
 {% block header %}
-  {# Set serviceName in config.js. #}
-  {{ hmrcHeader({
-    "serviceName": "Manage your State Pension",
-    "serviceUrl" : "/",
-    containerClasses: "govuk-width-container",
-    "signOutHref" : "/frequency/1-0/signed-out.html"
+
+{{
+  govukHeader({
+  })
+}}
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+  {{ govukServiceNavigation({
+    classes: "app-service-navigation",
+    "serviceName": serviceName,
+    serviceUrl: "/",
+
+    slots: {
+      navigationEnd: signOutButton
+    }
+
+
+
   }) }}
   <div class="govuk-width-container">
     <div class="govuk-phase-banner">
       <p class="govuk-phase-banner__content">
         <strong class="govuk-tag govuk-phase-banner__content__tag">
-         PROTOTYPE
+          PROTOTYPE
         </strong>
         <span class="govuk-phase-banner__text">
           This is a new service — <a class='govuk-link' href='#'>your feedback will help us to improve it (opens in new tab)</a>
