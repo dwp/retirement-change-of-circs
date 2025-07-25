@@ -1,0 +1,93 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check what you can do in our service
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+  <style>
+    #more {display: none;}
+  </style>
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="" method="post">
+        <div class="govuk-form-group">
+          <h1 class="govuk-heading-xl">
+            Check what you can do in our service
+          </h1>
+
+          <p class="govuk-body">
+            We can use your date of birth, name, and postcode to tell you which changes you can report.
+          </p>
+
+          <p class="govuk-body">
+            This is a new service and some changes are not available to everyone..
+          </p>  
+
+          <div class="govuk-inset-text">
+            <p class="govuk-body">
+              If you've used this service before, you can <a href="privacy-notice.html">sign in</a>.
+            </p>
+            <p class="govuk-body">
+               You'll need the email address, mobile phone and password you used to register.
+            </p>
+          </div>
+
+
+        </div>
+        <a href="received-letter.html" role="button" draggable="false" class="govuk-button govuk-button" data-module="govuk-button">
+          Continue
+        </a>
+        <!-- <div class="govuk-inset-text">
+          <p class="govuk-body">
+            This service is also available in <a href="manage-state-pension&welsh">Welsh (Cymraeg)</a>.
+          </p>
+        </div> -->
+      </form>
+    </div>
+
+  </div>
+
+  {% endblock %}
+
+{% block footer %}
+
+  {{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "idv-recreated-pages/idv-placeholder",
+          text: "ID&V CODES REQUIRED (opens in new tab)",
+          attributes: {
+            target: "_blank"
+          }
+        },
+        {
+          href: "idv-recreated-pages/success",
+          text: "SKIP ID&V SUCCESS"
+        },
+        {
+          href: "https://govuk-prototype-kit.herokuapp.com/",
+          text: "GOV.UK Prototype Kit " + releaseVersion
+        },
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        }
+      ],
+      visuallyHiddenTitle: "Footer links"
+    }
+  }) }}
+
+{% endblock %}
