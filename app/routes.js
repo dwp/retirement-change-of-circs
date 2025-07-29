@@ -2692,6 +2692,50 @@ router.post('/postcode-4', function (req, res) {
 
 });
 
+// ROUTING TO ADDRESS RESULTS
+router.post('/postcode-5', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var changeManualPostcode = req.session.data['postcode-5']
+  console.log("high", req.session.data['postcode-5'])
+
+  // Check whether the variable matches a condition
+  if (changeManualPostcode == "YO3 1MJ"){
+    // Send user to next page
+    res.redirect('oftd/3-0/manage-state-pension-gysp2.html')
+
+  } else if (changeManualPostcode == "YO3 1MK"){
+    // Send user to next page
+    res.redirect('oftd/3-0/manage-state-pension-legacy.html')
+  
+  } else {
+    res.redirect('/oftd/3-0/cannot-make-changes-right-now.html')
+  }
+
+});
+
+// ROUTING TO ADDRESS RESULTS
+router.post('/name1', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var changeName = req.session.data['name1']
+  console.log("high", req.session.data['name'])
+
+  // Check whether the variable matches a condition
+  if (changeName == "YO31MR"){
+    // Send user to next page
+    res.redirect('oftd/3-0/manage-state-pension-gysp.html')
+
+  } else if (changeName == "YO3 1MZ"){
+    // Send user to next page
+    res.redirect('oftd/3-0/findr/manage-state-pension-legacy.html')
+  
+  } else {
+    res.redirect('/oftd/3-0/cannot-make-changes-right-now.html')
+  }
+
+});
+
 
 // ROUTING TO CORRESPONDENCE ADDRESS RESULTS
 router.post('/correspondence-postcode-1', function (req, res) {
@@ -3036,6 +3080,44 @@ router.post('/manual-address-2', function (req, res) {
     
     });
 
+    // ROUTING TO MATCHING ADDRESS OR MANUAL ENTRY
+    router.post('/received-letter2', function (req, res) {
+
+      // Make a variable and give it the value from 'bank-or-build'
+      var selectReceivedLetter = req.session.data['received-letter']
+      console.log("high", req.session.data['received-letter'])
+    
+      // Check whether the variable matches a condition
+      if (selectReceivedLetter == "Yes"){
+        // Send user to next page
+        res.redirect('/oftd/3-0/manage-state-pension-gysp2.html')
+      } else if (selectReceivedLetter == "No"){
+        // Send user to next page
+        res.redirect('/oftd/3-0/dob.html')
+      }
+      
+    
+    });
+
+      // ROUTING TO MATCHING ADDRESS OR MANUAL ENTRY
+      router.post('/received-letter3', function (req, res) {
+
+        // Make a variable and give it the value from 'bank-or-build'
+        var selectReceivedLetter = req.session.data['received-letter']
+        console.log("high", req.session.data['received-letter'])
+      
+        // Check whether the variable matches a condition
+        if (selectReceivedLetter == "Yes"){
+          // Send user to next page
+          res.redirect('/oftd/4-0/changes-you-can-report-gysp.html')
+        } else if (selectReceivedLetter == "No"){
+          // Send user to next page
+          res.redirect('/oftd/4-0/dob.html')
+        }
+        
+      
+      });
+
     // ROUTING TO DOB eligibility
     router.post('/passport-issued1', function (req, res) {
 
@@ -3051,6 +3133,48 @@ router.post('/manual-address-2', function (req, res) {
       } else if (selectPassportIssuedYear == "1955"){
         // Send user to next page
         res.redirect('/oftd/2-0/cannot-use-this-service-yet.html')
+    
+      }
+        
+
+});
+
+    // ROUTING TO DOB eligibility for all citizens journey
+    router.post('/dob1', function (req, res) {
+
+      // Make a variable and give it the value from 'bank-or-build'
+      var selectCitizenRecord = req.session.data['citizen-record-year']
+      console.log("high", req.session.data['citizen-record-year'])
+    
+      // Check whether the variable matches a condition
+      if (selectCitizenRecord == "1956"){
+        // Send user to next page
+        res.redirect('/oftd/3-0/name.html')
+    
+      } else if (selectCitizenRecord == "1955"){
+        // Send user to next page
+        res.redirect('/oftd/3-0/name.html')
+    
+      }
+        
+
+});
+
+    // ROUTING TO DOB eligibility for all citizens journey
+    router.post('/dob2', function (req, res) {
+
+      // Make a variable and give it the value from 'bank-or-build'
+      var selectCitizenRecord = req.session.data['citizen-record-year']
+      console.log("high", req.session.data['citizen-record-year'])
+    
+      // Check whether the variable matches a condition
+      if (selectCitizenRecord == "1956"){
+        // Send user to next page
+        res.redirect('/oftd/4-0/changes-you-can-report-gysp2.html')
+    
+      } else if (selectCitizenRecord == "1955"){
+        // Send user to next page
+        res.redirect('/oftd/4-0/changes-you-can-report-legacy.html')
     
       }
         
