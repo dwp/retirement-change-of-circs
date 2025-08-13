@@ -85,20 +85,7 @@
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row" style="border-top: 1px solid #b1b4b6;padding-top:15px;">
           <dt class="govuk-summary-list__key">
-            How often we pay your State Pension
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {% if data['payment-frequency'] %}
-              {{ data['payment-frequency'] }}
-            {% else %}
-              Every 4 weeks<br>(13 payments a year)
-            {% endif %}
-          </dd>
-          
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Next payment date
+            Last payment date
           </dt>
           <dd class="govuk-summary-list__value">
             {% if data['next-payment-date'] %}
@@ -113,7 +100,7 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Next payment amount
+            Last payment amount
           </dt>
           <dd class="govuk-summary-list__value">
             {% if data['next-payment-amount'] %}

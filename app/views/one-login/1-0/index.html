@@ -1,0 +1,96 @@
+{% extends "layout_nowelsh.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">
+          In progress
+        </strong><br>
+        One login authentication
+      </h1>
+      <h2 class="govuk-heading-m">Set up custom data</h2>
+      <div class="govuk-inset-text">
+        <p><a href="admin.html">Use this page to set up custom data</a> that will apply across the prototype journeys.</p>
+        <p>To clear any data entered, use the 'Clear data' link in the grey footer.</p>
+      </div>
+
+      <h2 class="govuk-heading-m">Happy path end-to-end journey</h2>
+      <a href="manage-state-pension-start.html" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">Start now</a>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Jump to a page in the journey
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="manage-state-pension-start.html">Manage your State Pension service start page</a>
+            <li><a href="received-letter.html">Have you received a letter or an email?</a>
+            <li><a href="dob.html">D.O.B</a>
+            <li><a href="likely-you-can-use-service.html">Likely you can use this service</a>
+            <li><a href="privacy-notice.html">How we use your information</a></li>
+            <li><a href="cannot-use-this-service-yet.html">Cannot use this service yet</a></li>
+            <li><a href="service-unavailable.html">Service unavailable</a></li>
+            <li><a href="cant-confirm-identity.html">Can't confirm identitiy</a></li>
+
+
+          </ul>
+          <h3 class="govuk-heading-s">One login owned pages</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="create-account.html">Create or sign in with a One Login</a></li>
+          </ul>
+        </div>
+      </details>
+
+      <h2 class="govuk-heading-m">Version notes</h2>
+
+      <h2 class="govuk-heading-s">One login authentication</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Iteration 1</li>
+        <li><a href="https://lucid.app/lucidspark/f44332fc-791e-4dbd-b902-a56ab74531da/edit?view_items=JwbFfqx6KXBN&invitationId=inv_be397c1e-4861-43bc-b997-dd7f65c04e73" target="_blank">Lucid board with designs</a></li>
+        <li><a href="https://dwpdigital.atlassian.net/browse/RFP-10759" target="_blank">JIRA ticket for UCD</a></li>
+      </ul>
+
+      <p class="govuk-body">Informing citizens of the new GOV.UK One Login that's being rolled out across government.</p>
+      <p class="govuk-body">It's important to let citizens know that even though they may have registered to use our service before, they will need to create a new .GOV.UK One Login to continue using our service.</p>
+      <p class="govuk-body">There is a 'sign in or create' link on the start page which will take citizens into the One Login service where they can either sign in or create an account</p>
+      <p class="govuk-body">Citizens can choose to sign in if they already have a GOV.UK One Login however they may not be able to use the service yet if their record is in a legacy system.</p>
+      <p class="govuk-body">Citizens can see what they will likely be able to do if they click on the start button which will take them through 2 questions to work out if they can use this service or not.</p>
+
+      <h2 class="govuk-heading-m">Error pages</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="cannot-use-this-service-yet.html">Cannot use this service yet</a></li>
+        <li><a href="service-unavailable.html">Service unavailable</a></li>
+        <li><a href="cant-confirm-identity.html">Can't confirm identitiy</a></li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Additional pages</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>TBC</li>
+      </ul>
+
+
+      <h2 class="govuk-heading-m">Alternative pages</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="">TODO</li>
+      </ul>
+
+      <!-- <h2 class="govuk-heading-m">Experimental design</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href=""></a></li>
+      </ul> -->
+
+{% endblock %}
+

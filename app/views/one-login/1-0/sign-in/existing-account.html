@@ -1,0 +1,64 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+You have a GOV.UK One Login - GOV.UK One Login
+{% endblock %}
+
+
+
+{% block beforeContent %}
+{% include "/includes/phase-banner.njk" %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/authentication/sign-in/check-phone" method="post">
+
+        <h2 class="govuk-heading-l">You have a GOV.UK One Login</h2>
+
+        <p class="govuk-body">There's already a GOV.UK One Login using <b>email@address.com</b></p>
+
+        <p class="govuk-body">Enter your password to sign in.</p>
+
+        <input type="hidden" name="_csrf" value="R5llNOhf-XOT-AHiIgPkphEHnEIHIHcEh0Wo">
+        <div class="govuk-show-password" data-module="show-password" data-disable-form-submit-check="false" data-show-text="Show" data-hide-text="Hide" data-show-full-text="Show password" data-hide-full-text="Hide password" data-announce-show="Your password is shown" data-announce-hide="Your password is hidden">
+                
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label" for="password">
+            Password
+          </label>
+        <div class="govuk-input__wrapper"><input class="govuk-input govuk-!-width-two-thirds govuk-password-input govuk-input--with-password" id="password" name="password" type="password" spellcheck="false" aria-describedby="password-hint" autocomplete="new-password" aria-autocomplete="list"><span class="govuk-input__icon govuk-input__icon--right" onclick="togglePasswordVisibility('password', this)"></span><span class="govuk-visually-hidden" aria-live="polite">Your password is hidden</span>
+        </div>
+        </div>
+            </div>
+
+            <button class="govuk-button" data-module="govuk-button">
+              Continue
+            </button>
+      
+      <p class="govuk-body">
+        <a href="/authentication/sign-in/check-email" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener">I’ve forgotten my password</a>
+    </p>
+
+      </form>
+    </div>
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/showPassword.js"></script>
+  <script>
+    // Initialize the ShowPassword module
+    var showPasswordElements = document.querySelectorAll('[data-module="show-password"]');
+    for (var i = 0; i < showPasswordElements.length; i++) {
+      new window.GOVUK.Modules.ShowPassword(showPasswordElements[i]).init();
+    }
+  </script>
+{% endblock %}
+

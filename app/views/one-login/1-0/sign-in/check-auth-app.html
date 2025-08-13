@@ -1,0 +1,50 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Enter the 6 digit security code shown in your authenticator app - GOV.UK One Login
+{% endblock %}
+
+
+
+{% block beforeContent %}
+{% include "/includes/phase-banner.njk" %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/ipv-core/id-screener" method="post">
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="event-name">
+            Enter the 6 digit security code shown in your authenticator app
+          </label>
+        </h1>
+        <input class="govuk-input govuk-!-width-one-quarter" id="event-name" name="eventName" type="text">
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            I do not have access to the authenticator app
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          You can securely <a href="/authentication/sign-in/change-security-codes/check-email">change how you get security codes</a>.
+        </div>
+      </details>
+      
+      </form>
+    </div>
+  </div>
+{% endblock %}

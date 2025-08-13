@@ -1,0 +1,60 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+You've created your GOV.UK One Login - GOV.UK One Login
+{% endblock %}
+
+
+
+{% block beforeContent %}
+{% include "/includes/phase-banner.njk" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+         
+      <form class="form" method="post">
+
+      <h1 class="govuk-heading-l">
+        You've created your GOV.UK One Login
+      </h1>
+
+      <p>Now continue to use the service.</p>
+
+   
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+    <div class="govuk-!-padding-bottom-3"></div>
+
+<div class="govuk-notification-banner govuk-notification-banner--journey-options" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header govuk-notification-banner__header--journey-options">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Prototype options
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-body">You can:</p>
+    <p class="govuk-body">
+      <a href="/authentication/create-account/emails/account-created-email" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">view created GOV.​UK One Login email (opens in new tab)</a>
+    </p>
+  </div>
+</div>
+
+<div class="govuk-!-padding-bottom-6"></div>
+
+</div>
+</div>
+
+{% endblock %}

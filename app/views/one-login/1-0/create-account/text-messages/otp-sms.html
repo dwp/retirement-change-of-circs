@@ -1,0 +1,71 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+{% set htmlClasses = "app-email" %}
+{% set bodyClasses = "app-email__body" %}
+{% block footer %}{% endblock %}
+
+{% block pageTitle %}
+Security code text message - GOV.UK One Login
+{% endblock %}
+
+{% block headIcons %}
+<link rel="icon" sizes="48x48" href="/plugin-assets/govuk-frontend/dist/govuk/assets/images/favicon.ico">
+<link rel="icon" sizes="any" href="/plugin-assets/govuk-frontend/dist/govuk/assets/images/favicon.svg" type="image/svg+xml">
+{% endblock %}
+
+{% block header %}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<h1 class="govuk-heading-l">
+  <span class="govuk-caption-l">Creating or signing in to a GOV.UK One Login</span>
+Security code text message
+</h1>
+
+<div class="email-message">
+  <table class="email-message-meta">
+    <tbody>
+          <tr>
+            <th scope="row">From</th>
+            <td>
+             GOV.UK
+            </td>
+          </tr>
+      
+        <tr>
+          <th scope="row">To</th>
+          <td>
+            <span class="placeholder-no-brackets background: #fd0;">Mobile number</span>
+          </td>
+        </tr>
+    
+    </tbody>
+  </table>
+  <div class="email-message-body govuk-!-margin-top-2 govuk-!-margin-bottom-0">
+    
+    {% if show_sender %}
+    <p class="sms-message-sender">
+      From: {{ sender }}
+    </p>
+  {% endif %}
+  {% if show_recipient %}
+    <p class="sms-message-recipient">
+      To: {{ recipient }}
+    </p>
+  {% endif %}
+  <div class="sms-message-wrapper">
+    <p class="govuk-body"><a href="#">890623</a> is your GOV.UK One Login security code.</p>
+    <p class="govuk-body">Your code expires in 15 minutes.</p>
+    <p class="govuk-body"><a href="#">890623</a> yw eich cod diogelwch GOV.UK One Login.</p>
+    <p class="govuk-body">Mae eich cod yn dod i ben mewn 15 munud.</p>
+  </div>
+  </div>
+</div>
+{% endblock %}

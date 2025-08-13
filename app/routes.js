@@ -2359,6 +2359,42 @@ router.post('/already-moved3', function (req, res) {
 
 });
 
+// ROUTING TO YES OR NO ALREADY MOVED TO ADDRESS
+
+router.post('/already-moved4', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var changeAlreadyMoved = req.session.data['already-moved']
+
+  // Check whether the variable matches a condition
+  if (changeAlreadyMoved == "Yes"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/temp-or-perm.html')
+  } else if (changeAlreadyMoved == "No"){
+    res.redirect('/coa-combined/coa-combined-v1/report-change-after-move.html')
+  }
+
+
+});
+
+// ROUTING TO PERMANENT OR TEMPORARY MOVE
+
+router.post('/perm-temp1', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var changePermOrTemp = req.session.data['perm-or-temp']
+
+  // Check whether the variable matches a condition
+  if (changePermOrTemp == "Yes"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/uk-address.html')
+  } else if (changePermOrTemp== "No"){
+    res.redirect('/coa-combined/coa-combined-v1/cant-update-temp-address.html')
+  }
+
+});
+
+
 // ROUTING TO YES OR NO HOME ADDRESS IN THE UK
 
 router.post('/uk-address', function (req, res) {
@@ -2423,6 +2459,23 @@ router.post('/uk-address4', function (req, res) {
     res.redirect('/contact/3-0/correspondence-address-v1/address-finder/find-address.html')
   } else if (changeUkAddress == "No"){
     res.redirect('/contact/3-0/correspondence-address-v1/you-cannot-change-your-address-online.html')
+  }
+
+});
+
+// ROUTING TO YES OR NO HOME ADDRESS IN THE UK
+
+router.post('/uk-address5', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var changeUkAddress = req.session.data['uk-address']
+
+  // Check whether the variable matches a condition
+  if (changeUkAddress == "Yes"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/address-finder/find-address.html')
+  } else if (changeUkAddress == "No"){
+    res.redirect('/coa-combined/coa-combined-v1/you-cannot-change-your-address-online.html')
   }
 
 });
@@ -3203,7 +3256,67 @@ router.post('/manual-address-2', function (req, res) {
     
     });
 
+
+        // ONELOGIN
+
+
+        //HOW TO GET SECURITY CODES
+        router.post('/get-security-code1', function (req, res) {
+
+          // Make a variable and give it the value from 'bank-or-build'
+          var selectTextMessage = req.session.data['security-code']
+          console.log("high", req.session.data['security-code'])
         
+          // Check whether the variable matches a condition
+          if (selectTextMessage == "Yes"){
+            // Send user to next page
+            res.redirect('/oftd/4-0/authentication/create-account/enter-phone-number.html')
+          } else if (selectTextMessage == "No"){
+            // Send user to next page
+            res.redirect('/oftd/4-0/authentication/create-account/auth-app.html')
+          }
+          
+        
+        });
+
+              // ROUTING TO MATCHING ADDRESS OR MANUAL ENTRY
+      router.post('/received-letter4', function (req, res) {
+
+        // Make a variable and give it the value from 'bank-or-build'
+        var selectReceivedLetter = req.session.data['received-letter']
+        console.log("high", req.session.data['received-letter'])
+      
+        // Check whether the variable matches a condition
+        if (selectReceivedLetter == "Yes"){
+          // Send user to next page
+          res.redirect('/one-login/1-0/privacy-notice.html')
+        } else if (selectReceivedLetter == "No"){
+          // Send user to next page
+          res.redirect('/one-login/1-0/dob.html')
+        }
+        
+      
+      });
+
+
+    // ROUTING TO DOB eligibility for all citizens journey
+    router.post('/dob3', function (req, res) {
+
+      // Make a variable and give it the value from 'bank-or-build'
+      var selectCitizenRecordYear = req.session.data['citizen-record-year']
+      console.log("high", req.session.data['citizen-record-year'])
+    
+      // Check whether the variable matches a condition
+      if (selectCitizenRecordYear == "1956"){
+        // Send user to next page
+        res.redirect('/one-login/1-0/likely-you-can-use-service.html')
+    
+      } else if (selectCitizenRecordYear == "1955"){
+        // Send user to next page
+        res.redirect('/one-login/1-0/cannot-use-this-service-yet.html')
+      }
+        
+});     
 
   
 

@@ -1,0 +1,89 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+{% set htmlClasses = "app-email" %}
+{% set bodyClasses = "app-email__body" %}
+{% block footer %}{% endblock %}
+
+{% block pageTitle %}
+Security code email - GOV.UK One Login
+{% endblock %}
+
+{% block headIcons %}
+<link rel="icon" sizes="48x48" href="/plugin-assets/govuk-frontend/dist/govuk/assets/images/favicon.ico">
+<link rel="icon" sizes="any" href="/plugin-assets/govuk-frontend/dist/govuk/assets/images/favicon.svg" type="image/svg+xml">
+{% endblock %}
+
+{% block header %}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<h1 class="govuk-heading-l">
+  <span class="govuk-caption-l">Creating or signing in to a GOV.UK One Login</span>
+  Security code email
+</h1>
+
+<div class="email-message">
+  <table class="email-message-meta">
+    <tbody>
+          <tr>
+            <th scope="row">From</th>
+            <td>
+             GOV.UK One Login
+            </td>
+          </tr>
+      
+        <tr>
+          <th scope="row">To</th>
+          <td>
+            <span class="placeholder-no-brackets background: #fd0;">Email address</span>
+          </td>
+        </tr>
+      
+      <tr class="email-message-meta">
+        <th scope="row">Subject</th>
+        <td>
+          Your security code for your GOV.UK One Login | Eich cod diogelwch ar gyfer eich GOV.UK One Login
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="email-message-body govuk-!-margin-top-2 govuk-!-margin-bottom-0">
+    <p class="govuk-body">
+      Use this security code to confirm the email address for your GOV.UK One Login.</p>
+    <div class="govuk-inset-text govuk-!-margin-top-0 govuk-!-margin-bottom-4">
+      778230
+    </div>
+    <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">The code will expire after one hour.</p>
+    <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">If you did not use this email address to create a GOV.UK One Login, you can ignore this email.</p>
+    <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">If you need help using the security code, you can contact us: <a href="#">https://signin.account.gov.uk/contact-us</a></p>
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-4  govuk-!-margin-top-4">
+
+    <p class="govuk-bodygovuk-!-margin-bottom-6">Do not reply to this email - it’s an automatic message from an unmonitored account.</p>
+    
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-4  govuk-!-margin-top-4">
+    
+    <h2 class="govuk-heading-m">Eich cod diogelwch ar gyfer eich GOV.​UK One Login</h2>
+    <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">Defnyddiwch y cod diogelwch hwn i gadarnhau eich cyfeiriad e-bost ar gyfer eich GOV.​UK One Login.</p>
+    <div class="govuk-inset-text govuk-!-margin-top-0 govuk-!-margin-bottom-4">
+      778230
+    </div>
+    <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">Bydd y cod yn dod i ben ar ôl awr.</p>
+    <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">Os na wnaethoch ddefnyddio’r cyfeiriad e-bost hwn i greu GOV.​UK One Login, gallwch anwybyddu’r e-bost hwn.</p>
+    <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">Os ydych angen help i ddefnyddio’r cod diogelwch, gallwch gysylltu â ni: <a href="#">https://signin.account.gov.uk/contact-us</a></p>
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-4  govuk-!-margin-top-4">
+    
+    <p class="govuk-bodygovuk-!-margin-bottom-6">Peidiwch ag ymateb i’r e-bost hwn – mae’n neges awtomatig o gyfrif heb ei fonitro.</p>
+    
+      </div>
+    </div>
+
+{% endblock %}
+
+

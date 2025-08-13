@@ -1,0 +1,40 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Enter your email address - GOV.UK One Login
+{% endblock %}
+
+{% set serviceName = ""%}
+
+{% block beforeContent %}
+{% include "/includes/phase-banner.njk" %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="check-email" method="post">
+
+      {{ govukInput({
+        label: {
+          text: "Enter your email address",
+          classes: "govuk-label--l",
+          isPageHeading: true
+        },
+        id: "email",
+        name: "email"
+      }) }}
+
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+  
+      </form>
+    </div>
+  </div>
+{% endblock %}

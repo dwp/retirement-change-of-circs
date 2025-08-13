@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Have you already moved into this property? - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/perm-temp1" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Do you pay any service charges?
+              </h1>
+            </legend>
+
+            <div id="ServiceCharges-hint" class="govuk-hint">
+              <p class="govuk-hint govuk-!-margin-top-0">
+                    Service charges can include:
+                  </p>
+                  <ul class="govuk-hint govuk-list govuk-list--bullet">
+                    <li>warden services</li>
+                    <li>caretaker services like gardening, maintenance and cleaning of communal areas</li>
+                    <li>use of a laundry room</li>
+                    <li>use of communal areas like a lounge or TV area</li>
+                  </ul>
+            </div>
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="carehome-yes" name="carehome" type="radio" value="Yes" {{ checked("carehome", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="carehome-yes">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="carehome-no" name="carehome" type="radio" value="No" {{ checked("carehome", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="carehome-no">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">
+        Get help
+      </h2>
+      <p><a href="../contact-pension-service&help" target="_blank">Contact us by phone to get help with the online service (opens in new tab)</a></p>
+    </div>
+  </div>
+
+{% endblock %}

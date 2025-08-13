@@ -1,0 +1,100 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Set up an authenticator app - GOV.UK One Login
+{% endblock %}
+
+
+
+{% block beforeContent %}
+{% include "/includes/phase-banner.njk" %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+
+<form class="form" action="/authentication/sign-in/change-security-codes/changed-security-codes-auth-app" method="post">
+
+<h1 class="govuk-heading-l">Set up an authenticator app</h1>
+      
+<p class="govuk-body">1. Open your authenticator app on your smartphone, tablet or computer.</p>
+
+        <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            I don’t have an authenticator app
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+        <p class="govuk-body">You can download an authenticator app for your smartphone or tablet from your app store.</p>
+        <p class="govuk-body">If you don’t have a smartphone or tablet, search online for an authenticator app for your computer.</p>
+        <p class="govuk-body">You can use any authenticator app.</p>
+        </div>
+      </details>
+      
+        <p class="govuk-body">2. Use your authenticator app to scan the QR code or type the secret key into your authenticator app. Some authenticator apps call the secret key a 'code.</p>
+      
+        <p class="govuk-body">
+          <img id="qr-code" src="data:image/png;base64,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" alt="QR Code Image">
+        </p>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              I cannot scan the QR code
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+
+            <p class="govuk-body">You can enter the secret key into your authenticator app instead.</p>
+
+            <p class="govuk-body">
+              Secret key: 
+              <span id="secret-key" class="govuk-body govuk-!-font-weight-bold govuk-!-display-block permit-reflow">UZ5T R7MN HXQD 5NSL HVIG HNW4 D47R OYGB</span>
+            </p>
+
+            <p class="govuk-body">Some authenticator apps call the secret key a 'code'.</p>
+         
+          </div>
+        </details>
+
+
+
+
+        
+      
+        <p class="govuk-body">3. The authenticator app will show a security code.</p>
+        <p class="govuk-body">4. Enter the security code.</p>
+      
+          <input type="hidden" name="_csrf" value="JSQCnzIk-24YOLekoVsgeGRj75LpM08IW08k">
+          <input type="hidden" name="_secretKey" value="UZ5TR7MNHXQD5NSLHVIGHNW4D47ROYGBS3CMBCDCCR4MWMPWGXBA">
+      
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="code">
+          Security code
+        </label>
+      
+        <div id="code-hint" class="govuk-hint">
+          This is the 6-digit number shown in your authenticator app
+        </div>
+      
+      <input class="govuk-input govuk-input--width-10 govuk-!-font-weight-bold" id="code" name="code" type="text" spellcheck="false" aria-describedby="code-hint" autocomplete="one-time-code" inputmode="numeric">
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+            
+      <p class="govuk-body">
+      <a href="/authentication/sign-in/change-security-codes/choose-security-code" class="govuk-link govuk-link--no-visited-state" rel="noreferrer">Get a code another way</a>
+      </p>
+
+    </form>
+    </div>
+  </div>
+{% endblock %}

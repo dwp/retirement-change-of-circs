@@ -1,0 +1,188 @@
+{% extends "layout_nowelsh.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">
+          In progress
+        </strong><br>
+        WIP: Change of address combined journey for SP & PC
+      </h1>
+      <h2 class="govuk-heading-m">Set up custom data</h2>
+      <div class="govuk-inset-text">
+        <p><a href="admin.html">Use this page to set up custom data</a> that will apply across the prototype journeys.</p>
+        <p>To clear any data entered, use the 'Clear data' link in the grey footer.</p>
+      </div>
+
+      <h2 class="govuk-heading-m">Happy path end-to-end journey</h2>
+      <a href="coa-combined-v1/your-state-pension.html" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">Start now</a>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Jump to a page in the journey
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <h3 class="govuk-heading-s">Pre OIDV</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="manage-state-pension.html">Mock GOV.UK start page</a></li>
+            <li><a href="how-did-you-find-the-service.html">How did you find out about this service?</a></li>
+            <li><a href="privacy-notice.html">Privacy notice</a></li>
+            <li><a href="cannot-use-service.html">You cannot use this service yet</a></li>
+          </ul>
+          <h3 class="govuk-heading-s">Your State Pension details</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="your-state-pension.html">Your State Pension overview if status is 'Receiving State Pension'</a></li>
+            <li><a href="your-state-pension&issues.html">Your State Pension overview if status is <strong>anything other than</strong> 'Receiving State Pension'</a></li>
+          </ul>
+          <h3 class="govuk-heading-s">Home phone change</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="change-home-phone/enter-home-phone.html">Enter new home phone</a></li>
+            <li><a href="change-home-phone/check-your-details.html">Check answers home phone</a></li>
+            <li><a href="change-home-phone/you-have-changed-your-contact-details.html">Home phone changed</a></li>
+          </ul>
+          <h3 class="govuk-heading-s">Remove only home phone</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="change-home-phone/remove-home-phone.html">Remove home phone</a></li>
+            <li><a href="change-home-phone/you-have-removed-your-only-home-phone-number.html">Home phone number removed</a></li>
+          </ul>
+          <h3 class="govuk-heading-s">Home phone add</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="change-home-phone/enter-home-phone-add.html">Enter home phone</a></li>
+            <li><a href="change-home-phone/check-your-details-add.html">Check answers add home phone</a></li>
+            <li><a href="change-home-phone/you-have-added-your-contact-details.html">Home phone number added</a></li>
+          </ul>
+          <h3 class="govuk-heading-s">Mobile phone change</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="change-mobile-phone/enter-mobile-phone.html">Enter new mobile phone</a></li>
+            <li><a href="change-mobile-phone/check-your-details-contact.html">Check answers mobile phone</a></li>
+            <li><a href="change-mobile-phone/you-have-changed-your-contact-details.html">Mobile phone changed</a></li>
+          </ul>
+          <h3 class="govuk-heading-s">Mobile phone remove</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="change-mobile-phone/remove-mobile-phone.html">Remove mobile phone</a></li>
+            <li><a href="change-mobile-phone/you-have-removed-your-contact-details.html">Mobile phone number removed</a></li>
+          </ul>
+          <h3 class="govuk-heading-s">Mobile phone add</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="change-mobile-phone/enter-mobile-phone-add.html">Add mobile phone</a></li>
+            <li><a href="change-mobile-phone/check-your-details-add.html">Check answers add mobile phone</a></li>
+            <li><a href="change-mobile-phone/you-have-added-your-contact-details.html">Mobile phone number added</a></li>
+          </ul>
+          <h3 class="govuk-heading-s">Work phone change</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="change-alt-phone/enter-alt-phone.html">Enter new work phone</a></li>
+            <li><a href="change-alt-phone/check-your-details.html">Check answers work phone</a></li>
+            <li><a href="change-alt-phone/you-have-changed-your-contact-details.html">work phone changed</a></li>
+          </ul>
+          <h3 class="govuk-heading-s">Work phone remove</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="change-alt-phone/remove-alt-phone.html">Remove work phone</a></li>
+            <li><a href="change-alt-phone/you-have-removed-your-contact-details.html">work phone number removed</a></li>
+          </ul>
+          <h3 class="govuk-heading-s">Work phone add</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="change-alt-phone/enter-alt-phone-add.html">Enter work phone</a></li>
+            <li><a href="change-alt-phone/check-your-details-add.html">Check answers add work phone</a></li>
+            <li><a href="change-alt-phone/you-have-added-your-contact-details.html">work phone number added</a></li>
+          </ul>
+          <h3 class="govuk-heading-s">Email address change</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="change-email-address/enter-email-address.html">Enter new email address</a></li>
+            <li><a href="change-email-address/check-your-details.html">Check answers email address</a></li>
+            <li><a href="change-email-address/you-have-changed-your-contact-details.html">Email address changed</a></li>
+          </ul>
+          <h3 class="govuk-heading-s">Remove only email address</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="change-email-address/remove-email-address.html">Remove email address</a></li>
+            <li><a href="change-email-address/you-have-removed-your-email-address.html">Email address removed</a></li>
+          </ul>
+          <h3 class="govuk-heading-s">Email address add</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="change-email-address/enter-email-address-add">Enter email address</a></li>
+            <li><a href="change-email-address/check-your-details-add.html">Check answers email address</a></li>
+            <li><a href="change-email-address/you-have-added-your-contact-details.html">Email address added</a></li>
+          </ul>
+          <h3 class="govuk-heading-s">Bank details change</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="change-bank/do-you-want-uk-account.html">Do you want to use a UK bank or building society account?</a></li>
+            <li><a href="change-bank/can-only-use-uk-account.html">You can only use this service with a UK bank or building society account</a></li>
+            <li><a href="change-bank/bank-or-building-society-details.html">Enter new bank details</a></li>
+            <li><a href="change-bank/check-your-details.html">Check your answers for bank details</a></li>
+            <li><a href="change-bank/you-have-changed-your-bank-details.html">Bank details changed</a></li>
+          </ul>
+          <h3 class="govuk-heading-s">Payment frequency change</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="change-frequency/change-how-often-we-will-pay-you.html">Select payment frequency</a></li>
+            <li><a href="change-frequency/check-how-often-we-will-pay-you.html">Check your answers for payment frequency</a></li>
+            <li><a href="change-frequency/you-have-changed-how-often-we-pay-you&1.html">Payment frequency changed - new deferral letter wording</a></li>
+          </ul>
+          <h3 class="govuk-heading-s">Get help</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="contact-pension-service.html">Get help - iterated version of GOV.UK contact Pension Service page</a></li>
+            <li><a href="contact-pension-service&welsh.html">Get help Welsh version - iterated version of Welsh GOV.UK contact Pension Service page</a></li>
+          </ul>
+          <h3 class="govuk-heading-s">Home address change</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="change-of-address/benefit-type.html">Are you on any benefits?</a></li>
+            <li><a href="change-email-address/check-your-details.html">Check answers email address</a></li>
+            <li><a href="change-email-address/you-have-changed-your-contact-details.html">Email address changed</a></li>
+          </ul>
+        </div>
+      </details>
+
+      <h2 class="govuk-heading-m">Version notes</h2>
+      <h2 class="govuk-heading-s">Change of contact details</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Based on <a href="https://app.mural.co/t/dwpdigital7412/m/dwpdigital7412/1705427676687/5f83f5f80078644571cc1b75261dc554f3944082?sender=u7945a63eec3e3fa9988e1807" target="_blank">feedback from 1st round of UR covering contact details</a> and <a href="https://app.mural.co/t/dwpdigital7412/m/dwpdigital7412/1706287613437/1c1ab808c56c7e585412ecbf0e65c40204e0b34b?sender=u7945a63eec3e3fa9988e1807" target="_blank">agent interviews</a> - Monday 15 to Thursday 25 Jan 2024</li>
+        <li><a href="https://dwpdigital.atlassian.net/browse/RBCCC-925" target="_blank">JIRA ticket for iterations</a></li>
+        <li>Remove journeys for only remaining home phone and only remaining email address</li>
+        <li>Adding a mobile phone as the only contact detail</li>
+      </ul>
+      <h2 class="govuk-heading-s">Change of address</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Based on <a href="https://app.mural.co/t/dwpdigital7412/m/dwpdigital7412/1682586597693/17fb52fb18524109a639f93a8eced427e1aae500?sender=u7945a63eec3e3fa9988e1807" target="_blank">workshops and requirements</a>
+        <li>Simple address change for citizen moving to another residential home</li>
+        <li>Excluding people who move into a care home or hospital</li>
+        <li>Journey for users who select an address that is already saved in GYSP</li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Additional pages</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="change-of-address/no-address-found.html" target="_blank">No results found screen</a>
+        <li>Simple address change for citizen moving to another residential home</li>
+        <li>Excluding people who move into a care home or hospital</li>
+        <li>Journey for users who select an address that is already saved in GYSP</li>
+      </ul>
+      <!-- <h2 class="govuk-heading-s">Exceptions for change of address</h2>
+      <p> Journeys for users who enter a duplicate address through address lookup and manual address entry</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="http://localhost:3000/contact/3-0/change-of-address/duplicate/uk-address" target="_blank"> Scenario 1 - Duplicate change of address through address lookup</a>
+        <li><a href="#" target="_blank">Scenario 2 - Duplicate change of address through manual address entry</a>
+      </ul>-->
+
+      <h2 class="govuk-heading-m">Alternative pages</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="">TODO</li>
+      </ul>
+
+      <!-- <h2 class="govuk-heading-m">Experimental design</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href=""></a></li>
+      </ul> -->
+
+{% endblock %}
+
+
+
