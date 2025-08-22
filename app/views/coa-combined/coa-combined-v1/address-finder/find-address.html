@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout_signed_in.html" %}
 
 {% block pageTitle %}
  Find an address - Manage your State Pension - GOV.UK
@@ -8,16 +8,16 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form method="post" action="/postcode-2">
+      <form method="post" action="/postcode-6">
         <h1 class="govuk-heading-l">What is your new address?</h1>
         <div class="govuk-form-group">
-          <label class="govuk-label" for="postcode-1">
+          <label class="govuk-label" for="postcode-6">
             Postcode
           </label>
           <div id="postcode-hint" class="govuk-hint">
             For example, AA3 1AB.
           </div>
-          <input class="govuk-input govuk-input--width-10" id="postcode-1" name="postcode-1" type="text" value="{{ data['postcode-1'] }}">
+          <input class="govuk-input govuk-input--width-10" id="postcode-6" name="postcode-6" type="text" value="{{ data['postcode-6'] }}">
         </div>
 
         <div class="govuk-form-group">

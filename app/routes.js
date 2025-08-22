@@ -2567,6 +2567,23 @@ router.post('/changed-residential-address3', function (req, res) {
 
 });
 
+// ROUTING TO RIGHT CONFIRMATION VERSION CHANGE OF ADDRESS
+router.post('/changed-residential-address4', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var changeSelectAnAddress = req.session.data['select-an-address']
+  console.log("high", req.session.data['select-an-address'])
+
+  // Check whether the variable matches a condition
+  if (changeSelectAnAddress == "Select1"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/you-have-changed-your-address-interruption.html')
+  } else {
+    res.redirect('/coa-combined/coa-combined-v1/you-have-changed-your-address.html')
+  }
+
+});
+
 // // ROUTING TO RIGHT CONFIRMATION VERSION CHANGE OF ADDRESS
 // router.post('/changed-residential-addres3', function (req, res) {
 
@@ -2768,6 +2785,28 @@ router.post('/postcode-5', function (req, res) {
 });
 
 // ROUTING TO ADDRESS RESULTS
+router.post('/postcode-6', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var changePostcode = req.session.data['postcode-6']
+  console.log("high", req.session.data['postcode-6'])
+
+  // Check whether the variable matches a condition
+  if (changePostcode == "YO3 1SQ"){
+    // Send user to next page
+    res.redirect('coa-combined/coa-combined-v1/address-finder/select-an-address.html')
+
+  } else if (changePostcode == "YO3 1MK"){
+    // Send user to next page
+    res.redirect('oftd/3-0/manage-state-pension-legacy.html')
+  
+  } else {
+    res.redirect('/oftd/3-0/cannot-make-changes-right-now.html')
+  }
+
+});
+
+// ROUTING TO ADDRESS RESULTS
 router.post('/name1', function (req, res) {
 
   // Make a variable and give it the value from 'bank-or-build'
@@ -2827,7 +2866,6 @@ router.post('/correspondence-postcode-1', function (req, res) {
   }
 
 });
-
 
 
   // ROUTING TO RIGHT ADDRESS
@@ -2921,6 +2959,29 @@ router.post('/select-an-address2', function (req, res) {
           }
         
         });
+
+  // ROUTING TO RIGHT ADDRESS
+  router.post('/select-an-address6', function (req, res) {
+
+    // Make a variable and give it the value from 'bank-or-build'
+    var selectAddress = req.session.data['select-an-address']
+    console.log("high", req.session.data['select-an-address'])
+  
+    // Check whether the variable matches a condition
+    if (selectAddress == "Select1"){
+      // Send user to next page
+      res.redirect('/coa-combined/coa-combined-v1/check-your-details.html')
+    } else if (selectAddress == "Select2"){
+      // Send user to next page
+      res.redirect('coa-combined/coa-combined-v1/check-your-details.html')
+    } else if (selectAddress == "No"){
+      // Send user to next page
+      res.redirect('coa-combined/coa-combined-v1/address-finder/already-your-address.html')
+    } else {
+      res.redirect('coa-combined/coa-combined-v1/address-finder/enter-manual-address.html')
+    }
+  
+  });      
 
   // ROUTING TO RIGHT ADDRESS
   router.post('/select-an-address6', function (req, res) {
@@ -3317,6 +3378,249 @@ router.post('/manual-address-2', function (req, res) {
       }
         
 });     
+
+// ROUTING TO DOB eligibility for all citizens journey
+router.post('/home-type-previous1', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var selectHomeType = req.session.data['home-type']
+  console.log("high", req.session.data['home-type'])
+
+  // Check whether the variable matches a condition
+  if (selectHomeType == "rented"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/housing-costs-previous.html')
+
+  } else if (selectHomeType == "owned"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/housing-costs-previous.html')
+
+  } else if (selectHomeType == "rent-own"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/housing-costs-previous.html')
+
+  } else if (selectHomeType == "caravan"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/housing-costs-previous.html')
+  } else if (selectHomeType == "other"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/housing-costs-previous.html')
+  }
+
+});
+
+
+   // ROUTING TO DOB eligibility for all citizens journey
+   router.post('/housing-costs-previous1', function (req, res) {
+
+    // Make a variable and give it the value from 'bank-or-build'
+    var selectHousingCostsPrevious = req.session.data['housing-costs-previous']
+    console.log("high", req.session.data['housing-costs-previous'])
+  
+    // Check whether the variable matches a condition
+    if (selectHousingCostsPrevious == "Yes"){
+      // Send user to next page
+      res.redirect('/coa-combined/coa-combined-v1/property-you-live-now.html')
+  
+    } else if (selectHousingCostsPrevious == "No"){
+      // Send user to next page
+      res.redirect('/coa-combined/coa-combined-v1/property-you-live-now.html')
+    
+    }
+      
+});     
+
+// ROUTING TO DOB eligibility for all citizens journey
+router.post('/home-type-now1', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var selectHomeType = req.session.data['home-type2']
+  console.log("high", req.session.data['home-type2'])
+
+  // Check whether the variable matches a condition
+  if (selectHomeType == "rented"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/housing-costs-new.html')
+
+  } else if (selectHomeType == "owned"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/housing-costs-new.html')
+
+  } else if (selectHomeType == "rent-own"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/housing-costs-new.html')
+
+  } else if (selectHomeType == "caravan"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/housing-costs-new.html')
+  } else if (selectHomeType == "other"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/housing-costs-new.html')
+  }
+
+});
+
+// ROUTING TO DOB eligibility for all citizens journey
+router.post('/housing-costs-new1', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var selectHousingCostsNew = req.session.data['housing-costs-new']
+  console.log("high", req.session.data['housing-costs-new'])
+
+  // Check whether the variable matches a condition
+  if (selectHousingCostsNew == "Yes"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/ground-rent.html')
+
+  } else if (selectHousingCostsNew == "No"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/ground-rent.html')
+  
+  }
+    
+});
+
+// ROUTING TO DOB eligibility for all citizens journey
+router.post('/ground-rent1', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var selectGroundRent = req.session.data['ground-rent']
+  console.log("high", req.session.data['ground-rent'])
+
+  // Check whether the variable matches a condition
+  if (selectGroundRent == "Yes"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/service-charges.html')
+
+  } else if (selectGroundRent == "No"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/service-charges.html')
+  
+  }
+    
+});    
+
+// ROUTING TO DOB eligibility for all citizens journey
+router.post('/service-charge1', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var selectServiceCharge = req.session.data['service-charge']
+  console.log("high", req.session.data['service-charge'])
+
+  // Check whether the variable matches a condition
+  if (selectServiceCharge == "Yes"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/do-you-have-a-mortgage.html')
+
+  } else if (selectServiceCharge == "No"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/do-you-have-a-mortgage.html')
+  
+  }
+    
+}); 
+
+// ROUTING TO DOB eligibility for all citizens journey
+router.post('/mortgage-or-loan1', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var selectMortgage = req.session.data['mortgage-or-loan']
+  console.log("high", req.session.data['mortgage-or-loan'])
+
+  // Check whether the variable matches a condition
+  if (selectMortgage == "Yes"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/do-you-get-smi.html')
+
+  } else if (selectMortgage == "No"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/does-anybody-live-with-you.html')
+  
+  }
+    
+});    
+
+// ROUTING TO DOB eligibility for all citizens journey
+router.post('/additional-people1', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var selectAdditionalPeople = req.session.data['additional-people']
+  console.log("high", req.session.data['additional-people'])
+
+  // Check whether the variable matches a condition
+  if (selectAdditionalPeople == "Yes"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/apply-for-housing-benefit.html')
+
+  } else if (selectAdditionalPeople == "No"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/apply-for-housing-benefit.html')
+  
+  }
+    
+});
+
+// ROUTING TO DOB eligibility for all citizens journey
+router.post('/get-smi-support1', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var selectGetSmiSupport = req.session.data['do-you-get-smi-support']
+  console.log("high", req.session.data['do-you-get-smi-support'])
+
+  // Check whether the variable matches a condition
+  if (selectGetSmiSupport == "Yes"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/does-anybody-live-with-you.html')
+
+  } else if (selectGetSmiSupport == "No"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/send-smi-support-info.html')
+  
+  }
+    
+});
+
+// ROUTING TO DOB eligibility for all citizens journey
+router.post('/want-smi-support1', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var selectWantSmi = req.session.data['want-smi-support']
+  console.log("high", req.session.data['want-smi-support'])
+
+  // Check whether the variable matches a condition
+  if (selectWantSmi == "Yes"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/does-anybody-live-with-you.html')
+
+  } else if (selectWantSmi == "No"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/does-anybody-live-with-you.html')
+  
+  }
+    
+});    
+
+// ROUTING TO DOB eligibility for all citizens journey
+router.post('/housing-benefit1', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var selectHousingBenefit = req.session.data['housing-benefit']
+  console.log("high", req.session.data['housing-benefit'])
+
+  // Check whether the variable matches a condition
+  if (selectHousingBenefit == "Yes"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/apply-for-housing-benefit.html')
+
+  } else if (selectHousingBenefit == "No"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/apply-for-housing-benefit.html')
+  
+  }
+    
+});    
+
+ 
 
   
 

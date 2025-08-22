@@ -1,25 +1,25 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you pay any service charges? - Manage your State Pension - GOV.UK
+  Did you have any housing costs/service charges where you previously lived? - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/service-charge1" method="post">
+      <form class="form" action="/housing-costs-previous1" method="post">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                Do you pay any service charges at your new address?
+                Did you have any housing costs/service charges where you previously lived?
               </h1>
             </legend>
 
             <div id="ServiceCharges-hint" class="govuk-hint">
               <p class="govuk-hint govuk-!-margin-top-0">
-                    Service charges can include:
+                    Housing costs are anything that isn't currently covered by housing benefit. This can include
                   </p>
                   <ul class="govuk-hint govuk-list govuk-list--bullet">
                     <li>warden services</li>
@@ -31,18 +31,17 @@
 
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="service-charge" name="service-charge" type="radio" value="Yes" {{ checked("service-charge", "Yes") }}>
-                <label class="govuk-label govuk-radios__label" for="service-charge-yes">
+                <input class="govuk-radios__input" id="housing-costs-previous" name="housing-costs-previous" type="radio" value="Yes" {{ checked("housing-costs-previous", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="housing-costs-previous-yes">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="service-charge" name="service-charge" type="radio" value="No" {{ checked("service-charge", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="service-charge-no">
+                <input class="govuk-radios__input" id="housing-costs-previous" name="housing-costs-previous" type="radio" value="No" {{ checked("housing-costs-previous", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="housing-costs-previous-no">
                   No
                 </label>
               </div>
-            </div>
           </fieldset>
         </div>
 

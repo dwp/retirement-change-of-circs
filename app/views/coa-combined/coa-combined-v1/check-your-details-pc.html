@@ -14,10 +14,14 @@
           {% endif %}  
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              Have you already moved into this property?
+              What best describes the property you previously lived at?
             </dt>
             <dd class="govuk-summary-list__value">
-              Yes
+              {% if data['home-type'] %}
+                {{ data['home-type'] }}
+              {% else %}
+                I rented it
+              {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="have-you-already-moved.html">
@@ -25,12 +29,110 @@
               </a>
             </dd>
           </div>
+
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              Is this move permanent or temporary?
+              Did you have any housing costs/service charges where you previously lived?
             </dt>
             <dd class="govuk-summary-list__value">
-              Permanent
+              {% if data['housing-costs-old'] %}
+                {{ data['housing-costs-old'] }}
+              {% else %}
+                Yes
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="temp-or-perm.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Which best describes the place where you live now?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['home-type2'] %}
+                {{ data['home-type2'] }}
+              {% else %}
+                I rent it
+              {% endif %} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="uk-address.html">
+                Change<span class="govuk-visually-hidden"> if your moving this property</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Do you have any housing costs where you live now?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['housing-costs-new'] %}
+                {{ data['housing-costs-new'] }}
+              {% else %}
+                Yes
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="temp-or-perm.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Do you pay ground rent at your new address?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['ground-rent'] %}
+                {{ data['ground-rent'] }}
+              {% else %}
+                Yes
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="temp-or-perm.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Do you pay any service charges at your new address?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['service-charges'] %}
+                {{ data['service-charges'] }}
+              {% else %}
+                Yes
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="temp-or-perm.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Do you have a mortgage or loan secured against your home?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['mortgage-orloan'] %}
+                {{ data['mortgage-loan'] }}
+              {% else %}
+                Yes
+              {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="temp-or-perm.html">
@@ -40,21 +142,60 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              Is your new address in the UK?
+              Do you currently get Support for Mortgage Interest (SMI)?
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['uk-address'] %}
-                {{ data['uk-address'] }}
+              {% if data['do-you-get-smi-support'] %}
+                {{ data['do-you-get-smi-support'] }}
               {% else %}
                 Yes
-              {% endif %}  
+              {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="uk-address.html">
-                Change<span class="govuk-visually-hidden"> if your moving this property</span>
+              <a class="govuk-link" href="temp-or-perm.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
               </a>
             </dd>
           </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Do you want us to send you some information about Support for Mortgage Interest (SMI)?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['want-smi-support'] %}
+                {{ data['want-smi-support'] }}
+              {% else %}
+                Yes
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="temp-or-perm.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Does anybody live with you at your new property?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['additional-people'] %}
+                {{ data['additional-people'] }}
+              {% else %}
+                Yes
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="temp-or-perm.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+
+
+
 
           {% if (data['select-an-address'] == "Select1") %}
           <div class="govuk-summary-list__row">
@@ -152,7 +293,6 @@
         <h2 class="govuk-heading-m">Submit your new details</h2>
         <p class="govuk-body">By submitting this change you are confirming that the information you are giving is complete and correct.</p>
 
-        
         <form action="/changed-residential-address4" method="post" novalidate>
           <input type="hidden" name="answers-checked" value="true">
           <button class="govuk-button" data-module="govuk-button">

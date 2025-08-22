@@ -1,14 +1,14 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Have you already moved into this property? - Manage your State Pension - GOV.UK
+  Do you pay ground rent at your new address? - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/perm-temp1" method="post">
+      <form class="form" action="/ground-rent1" method="post">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -27,14 +27,14 @@
 
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="carehome-yes" name="carehome" type="radio" value="Yes" {{ checked("carehome", "Yes") }}>
-                <label class="govuk-label govuk-radios__label" for="carehome-yes">
+                <input class="govuk-radios__input" id="ground-rent" name="ground-rent" type="radio" value="Yes" {{ checked("ground-rent", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="ground-rent-yes">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="carehome-no" name="carehome" type="radio" value="No" {{ checked("carehome", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="carehome-no">
+                <input class="govuk-radios__input" id="ground-rent" name="ground-rent" type="radio" value="No" {{ checked("ground-rent", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="ground-rent-no">
                   No
                 </label>
               </div>

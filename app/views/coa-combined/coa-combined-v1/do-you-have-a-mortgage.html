@@ -1,34 +1,37 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
- Select an address - Manage your State Pension - GOV.UK
+  Do you have a mortgage? - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
 
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/confirm-address1" method="post">
-        <p>2 addresses found for <b>wr11nl</b> and <b>1</b>. <a href="find-address.html">Search again</a></p>
+      <form class="form" action="/mortgage-or-loan1" method="post">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                Select an address
+                Do you have a mortgage or loan secured against your home?
               </h1>
             </legend>
+<!-- 
+            <p class="govuk-body">
+              You can only change your address after you have moved.
+            </p> -->
+
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="select-an-address-yes" name="select-an-address" type="radio" value="Yes" {{ checked("select-an-address", "Yes") }}>
-                <label class="govuk-label govuk-radios__label" for="select-an-address-yes">
-                  1 Square Street, York, YO3 1SQ
+                <input class="govuk-radios__input" id="mortgage-or-loan" name="mortgage-or-loan" type="radio" value="Yes" {{ checked("mortgage-or-loan", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="mortgage-or-loan-yes">
+                  Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="select-an-address-no" name="select-an-address" type="radio" value="No" {{ checked("select-an-address", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="select-an-address-no">
-                  10 Square Street, York, YO3 1SQ
+                <input class="govuk-radios__input" id="mortgage-or-loan" name="mortgage-or-loan" type="radio" value="No" {{ checked("mortgage-or-loan", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="mortgage-or-loan-no">
+                  No
                 </label>
               </div>
             </div>
@@ -36,11 +39,9 @@
         </div>
 
         <button class="govuk-button" data-module="govuk-button">
-          Use this address
+          Continue
         </button>
-        <p class="govuk-body govuk-!-margin-bottom-0"><a href="enter-manual-address.html" class="govuk-link">Enter address manually</a></p>
       </form>
-
 
     </div>
     <div class="govuk-grid-column-one-third">

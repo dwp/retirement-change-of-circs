@@ -1,32 +1,38 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Is the new addres in the UK? - Manage your State Pension - GOV.UK
+  Have you already moved into this property? - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/home-address" method="post">
+      <form class="form" action="/want-smi-support1" method="post">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                Is the new address in the UK?
+                Do you want us to send you some information about Support for Mortgage Interest (SMI)?
               </h1>
             </legend>
 
+            <div id="ServiceCharges-hint" class="govuk-hint">
+              <p class="govuk-hint govuk-!-margin-top-0">
+                This support is paid as a loan that you must repay when your home is sold or transferred.
+              </p>
+            </div>
+
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="home-address-yes" name="home-address" type="radio" value="Yes" {{ checked("home-address", "Yes") }}>
-                <label class="govuk-label govuk-radios__label" for="home-address-yes">
+                <input class="govuk-radios__input" id="want-smi-support" name="want-smi-support" type="radio" value="Yes" {{ checked("want-smi-support", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="want-smi-support-yes">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="home-address-no" name="home-address" type="radio" value="No" {{ checked("home-address", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="home-address-no">
+                <input class="govuk-radios__input" id="want-smi-support-no" name="want-smi-support" type="radio" value="No" {{ checked("want-smi-support", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="want-smi-support-no">
                   No
                 </label>
               </div>

@@ -1,39 +1,33 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Have you moved or have access to the property? - Manage your State Pension - GOV.UK
+  Are currently staying in staying in hospital? - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/property-access" method="post">
+      <form class="form" action="/hospital1" method="post">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                Have you already moved into this property?
+                Are currently staying in staying in hospital?
               </h1>
             </legend>
 
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="property-access-yes" name="property-access" type="radio" value="Yes" {{ checked("property-access", "Yes") }}>
-                <label class="govuk-label govuk-radios__label" for="property-access-yes">
+                <input class="govuk-radios__input" id="hospital-yes" name="hospital" type="radio" value="Yes" {{ checked("hospital", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="hospital-yes">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="property-access-yes" name="property-access" type="radio" value="Yes" {{ checked("property-access", "Yes") }}>
-                <label class="govuk-label govuk-radios__label" for="property-access-yes">
-                  Not yet but I have access
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="property-access-no" name="property-access" type="radio" value="No" {{ checked("property-access", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="property-access-no">
-                  No, and I don't have access yet
+                <input class="govuk-radios__input" id="hospital-no" name="hospital" type="radio" value="No" {{ checked("hospital", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="hospital-no">
+                  No
                 </label>
               </div>
             </div>
