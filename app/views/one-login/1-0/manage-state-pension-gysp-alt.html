@@ -1,5 +1,32 @@
 {% extends "layout.html" %}
 
+{% from "di-govuk-one-login-service-header/service-header.njk" import govukOneLoginServiceHeader %}
+
+{% block header %}
+  {{ govukOneLoginServiceHeader({
+    signOutLink: "/test-signout",
+    oneLoginLink: "/test-one-login",
+    rebrand: true,
+    serviceNavigationParams: { 
+      rebrand: true,
+      navigation: [
+      {
+        href: "#navigation1", 
+        text: "" 
+      },{
+        href: "#navigation2", 
+        text: "",
+        active: true
+      },{
+        href: "#navigation3", 
+        text: ""
+      }], 
+      serviceName: "Manage Your State Pension",
+      navigationLabel: "Test label" 
+    }
+  }) }}
+{% endblock %}
+
 {% block pageTitle %}
   What is your date of birth? - Manage your State Pension - GOV.UK
 {% endblock %}

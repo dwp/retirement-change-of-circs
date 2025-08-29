@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% set phaseBanner = 'true' %}
+{% set languageToggle = 'true' %}
+
+{% set title =  "Account home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      
+<h1 class="govuk-heading-xl" id="header">Your services</h1>
+
+<p class="govuk-body">You're signed in as <b>name@email.com</b></p>
+
+<h2 class="govuk-heading-m">Your accounts</h2>
+
+<ul class="govuk-list your-services__list ">
+        
+          
+  <li class="your-services__card">
+    <h3 class="govuk-heading-s your-services__card__heading" data-test-id="account-card-heading">Manage your State Pension</h3>
+    <div class="your-services__card__content">
+      <p class="govuk-body">You can use this service to: view and make changes</p>
+      <p class="govuk-body">
+        <a class="govuk-link govuk-link--no-visited-state" href="your-state-pension.html">Go to Manage your State Pension account</a>
+      </p>
+      <p class="govuk-body govuk-body your-services__card__last-used">Last used: 29 July 2025</p>
+    </div>
+  </li>
+
+</ul>
+
+<h2 class="govuk-heading-m">Other services you've used</h2>
+
+<ul class="govuk-list your-services__list">
+        
+          
+
+
+  <li class="your-services__card">
+    <div class="your-services__card__content">
+    <h3 class="govuk-heading-s govuk-!-font-weight-regular" data-test-id="service-card-heading">
+      <a class="govuk-link govuk-link--no-visited-state" href="#">Request a basic DBS check</a>
+    </h3>
+    <p class="govuk-body your-services__card__last-used">Last used: 12 March 2024</p>
+    </div>
+  </li>
+</ul>
+
+<div class="information-box">
+  <h2 class="govuk-heading-m">Services you can use with GOV.UK One Login</h2>
+  <p class="govuk-body">GOV.UK One Login is new. At the moment you can only use it to access some government services.</p>
+  <p class="govuk-body">In the future, you'll be able to use GOV.UK One Login to access all services on GOV.UK.</p>
+  <p class="govuk-body">See the <a class="govuk-link govuk-link--no-visited-state" href="https://www.gov.uk/using-your-gov-uk-one-login/services">services you can use with GOV.UK One Login</a>.</p>
+</div>
+
+
+  </div>
+</div>
+{% endblock %}

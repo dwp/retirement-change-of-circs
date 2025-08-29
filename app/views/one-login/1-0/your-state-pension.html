@@ -1,4 +1,39 @@
-{% extends "layout_noback.html" %}
+{% extends "layouts/main.html" %}
+
+{% from "di-govuk-one-login-service-header/service-header.njk" import govukOneLoginServiceHeader %}
+
+{% block header %}
+  {{ govukOneLoginServiceHeader({
+    signOutLink: "sign-out.html",
+    oneLoginLink: "/test-one-login",
+    rebrand: true,
+    serviceNavigationParams: { 
+      rebrand: true,
+      navigation: [
+      {
+        href: "#navigation1", 
+        text: "" 
+      },{
+        href: "#navigation2", 
+        text: "",
+        active: true
+      },{
+        href: "#navigation3", 
+        text: ""
+      }], 
+      serviceName: "Manage Your State Pension",
+      navigationLabel: "Test label" 
+    }
+  }) }}
+
+
+{% endblock %}
+
+{% block beforeContent %}
+{% include "/includes/phase-banner.njk" %}
+{% endblock %}
+
+
 
 {% block pageTitle %}
   Your State Pension - Manage your State Pension - GOV.UK

@@ -1,7 +1,36 @@
-{% extends "layout.html" %}
+{% extends "layout_noback.html" %}
 
-{% block pageTitle %}
-  Continue to use the service you want to use - Manage your State Pension - GOV.UK
+{% from "di-govuk-one-login-service-header/service-header.njk" import govukOneLoginServiceHeader %}
+
+{% block header %}
+  {{ govukOneLoginServiceHeader({
+    signOutLink: "sign-out.html",
+    oneLoginLink: "/https://example.service.gov.uk/",
+    rebrand: true,
+    serviceNavigationParams: { 
+      rebrand: true,
+      navigation: [
+      {
+        href: "#navigation1", 
+        text: "" 
+      },{
+        href: "#navigation2", 
+        text: "",
+        active: true
+      },{
+        href: "#navigation3", 
+        text: ""
+      }], 
+      serviceName: "",
+      navigationLabel: "Test label" 
+    }
+  }) }}
+
+
+{% endblock %}
+
+{% block beforeContent %}
+{% include "/includes/phase-banner.njk" %}
 {% endblock %}
 
 {% block content %}
@@ -29,7 +58,7 @@
 
 </div>
 
-  <div class="govuk-grid-column-one-third">
+  <!-- <div class="govuk-grid-column-one-third">
     <h2 class="govuk-heading-m">
       Get help
     </h2>
@@ -42,7 +71,7 @@
       Northern Ireland
     </h3>
     <p><a href="https://www.nidirect.gov.uk/contacts/nidirect-account-support" target="_blank">Contact us by phone to get help with the online service (opens in new tab)</a></p>
-  </div>
+  </div> -->
 </div>
 </div>
 

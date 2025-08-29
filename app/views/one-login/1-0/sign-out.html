@@ -1,4 +1,10 @@
-{% extends "layout.html" %}
+{% extends "layouts/main.html" %}
+
+{% set serviceName = ""%}
+
+{% block beforeContent %}
+{% include "/includes/phase-banner.njk" %}
+{% endblock %}
 
 {% block pageTitle %}
   You have signed out - Manage your State Pension - GOV.UK
@@ -13,7 +19,7 @@
     <h1 class="govuk-heading-l">You have signed out</h1>
 
     <p class="govuk-body">
-      To go back, <a href="/page-index/authentication/create-account" class="govuk-link">sign in to your GOV.UK One Login</a>.
+      To go back, <a href="create-account.html" class="govuk-link">sign in to your GOV.UK One Login</a>.
     </p>
 
     <p class="govuk-body">

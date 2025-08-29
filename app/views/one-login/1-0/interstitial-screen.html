@@ -1,12 +1,20 @@
-{% extends "layout.html" %}
+{% extends "layouts/main.html" %}
+
 
 {% block pageTitle %}
   Prove your identity with GOV.UK One Login - Manage your State Pension - GOV.UK
 {% endblock %}
 
+{% set serviceName = ""%}
+
+
+
+{% block beforeContent %}
+{% include "/includes/phase-banner.njk" %}
+{% endblock %}
+
+
 {% block content %}
-
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form class="form" action="create-account" method="post">
