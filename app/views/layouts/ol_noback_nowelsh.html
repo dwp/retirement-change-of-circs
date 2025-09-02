@@ -57,27 +57,33 @@
   GOV.UK Prototype Kit
 {% endblock %}
 
-
 {% block header %}
+{% from "di-govuk-one-login-service-header/service-header.njk" import govukOneLoginServiceHeader %}
 
-{{
-  govukHeader({
-  })
-}}
-{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+{{ govukOneLoginServiceHeader({
+  signOutLink: "sign-out.html",
+  oneLoginLink: "/test-one-login",
+  rebrand: true,
+  serviceNavigationParams: { 
+    rebrand: true,
+    navigation: [
+    {
+      href: "#navigation1", 
+      text: "" 
+    },{
+      href: "#navigation2", 
+      text: "",
+      active: true
+    },{
+      href: "#navigation3", 
+      text: ""
+    }], 
+    serviceName: "Manage Your State Pension",
+    navigationLabel: "Test label" 
+  }
+}) }}
 
-  {{ govukServiceNavigation({
-    classes: "app-service-navigation",
-    "serviceName": serviceName,
-    serviceUrl: "/",
-
-    slots: {
-      navigationEnd: signOutButton
-    }
-
-
-
-  }) }}
+  
   <div class="govuk-width-container">
     <div class="govuk-phase-banner">
       <p class="govuk-phase-banner__content">
@@ -92,29 +98,8 @@
   </div>
 {% endblock %}
 
-
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
 
-{% block beforeContent %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <a class="hidden govuk-back-link" href="javascript:window.history.back()">Back</a>
-  </div>
-  <div class="govuk-grid-column-one-third" style="float:right;">
-    {{
-      hmrcLanguageSelect({
-        language: 'en',
-        en: {
-          href: '?en'
-        },
-        cy: {
-          href: '?cy'
-        }
-      })
-    }}
-  </div>
-</div>
-{% endblock %}
 
 {% if useAutoStoreData %}
   {% block footer %}

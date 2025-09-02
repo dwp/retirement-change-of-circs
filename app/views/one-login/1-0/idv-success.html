@@ -1,37 +1,7 @@
 {% extends "layout_noback.html" %}
 
-{% from "di-govuk-one-login-service-header/service-header.njk" import govukOneLoginServiceHeader %}
-
-{% block header %}
-  {{ govukOneLoginServiceHeader({
-    signOutLink: "sign-out.html",
-    oneLoginLink: "/https://example.service.gov.uk/",
-    rebrand: true,
-    serviceNavigationParams: { 
-      rebrand: true,
-      navigation: [
-      {
-        href: "#navigation1", 
-        text: "" 
-      },{
-        href: "#navigation2", 
-        text: "",
-        active: true
-      },{
-        href: "#navigation3", 
-        text: ""
-      }], 
-      serviceName: "",
-      navigationLabel: "Test label" 
-    }
-  }) }}
 
 
-{% endblock %}
-
-{% block beforeContent %}
-{% include "/includes/phase-banner.njk" %}
-{% endblock %}
 
 {% block content %}
 
