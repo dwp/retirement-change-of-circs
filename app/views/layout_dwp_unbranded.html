@@ -44,8 +44,12 @@ GOV.UK Prototype Kit
 {% from "govuk/components/header/macro.njk" import govukHeader %}
 
 {{ govukHeader({
-  homepageUrl: "#"
+  homepageUrl: "/"
 }) }}
+{% endblock %}
+
+{% block beforeContent %}
+{% include "/includes/phase-banner.njk" %}
 {% endblock %}
 
 

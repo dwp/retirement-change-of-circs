@@ -1,4 +1,4 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/ol_main.html" %}
 
 {% block pageTitle %}
   Create a GOV.UK One Login or sign in - GOV.UK One Login
@@ -10,13 +10,30 @@
 
 {% block beforeContent %}
 {% include "/includes/phase-banner.njk" %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <a class="hidden govuk-back-link" href="javascript:window.history.back()">Back</a>
+  </div>
+  <div class="govuk-grid-column-one-third" style="float:right;">
+    {{
+      hmrcLanguageSelect({
+        language: 'en',
+        en: {
+          href: '?en'
+        },
+        cy: {
+          href: '?cy'
+        }
+      })
+    }}
+  </div>
+</div>
 {% endblock %}
 
 {% block content %}
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-  
 
       <h1 class="govuk-heading-l">Create your GOV.UK One Login or sign in</h1>
 
