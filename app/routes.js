@@ -2364,7 +2364,7 @@ router.post('/already-moved3', function (req, res) {
 router.post('/already-moved4', function (req, res) {
 
   // Make a variable and give it the value from 'remove-home-number'
-  var changeAlreadyMoved = req.session.data['already-moved']
+  var changeAlreadyMoved = req.session.data['contact']
 
   // Check whether the variable matches a condition
   if (changeAlreadyMoved == "Yes"){
@@ -2390,6 +2390,23 @@ router.post('/perm-temp1', function (req, res) {
     res.redirect('/coa-combined/coa-combined-v1/uk-address.html')
   } else if (changePermOrTemp== "No"){
     res.redirect('/coa-combined/coa-combined-v1/cant-update-temp-address.html')
+  }
+
+});
+
+// ROUTING TO PERMANENT OR TEMPORARY MOVE
+
+router.post('/perm-temp2', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var changePermOrTemp = req.session.data['perm-or-temp']
+
+  // Check whether the variable matches a condition
+  if (changePermOrTemp == "Yes"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/cant-update-temp-address-alt.html')
+  } else if (changePermOrTemp== "No"){
+    res.redirect('/coa-combined/coa-combined-v1/uk-address.html')
   }
 
 });
@@ -2959,29 +2976,7 @@ router.post('/select-an-address2', function (req, res) {
           }
         
         });
-
-  // ROUTING TO RIGHT ADDRESS
-  router.post('/select-an-address6', function (req, res) {
-
-    // Make a variable and give it the value from 'bank-or-build'
-    var selectAddress = req.session.data['select-an-address']
-    console.log("high", req.session.data['select-an-address'])
-  
-    // Check whether the variable matches a condition
-    if (selectAddress == "Select1"){
-      // Send user to next page
-      res.redirect('/coa-combined/coa-combined-v1/check-your-details.html')
-    } else if (selectAddress == "Select2"){
-      // Send user to next page
-      res.redirect('coa-combined/coa-combined-v1/check-your-details.html')
-    } else if (selectAddress == "No"){
-      // Send user to next page
-      res.redirect('coa-combined/coa-combined-v1/address-finder/already-your-address.html')
-    } else {
-      res.redirect('coa-combined/coa-combined-v1/address-finder/enter-manual-address.html')
-    }
-  
-  });      
+   
 
   // ROUTING TO RIGHT ADDRESS
   router.post('/select-an-address6', function (req, res) {
@@ -3010,7 +3005,31 @@ router.post('/select-an-address2', function (req, res) {
       res.redirect('/contact/3-0/correspondence-address-v1/address-finder/enter-manual-address.html')
     }
   
-  });        
+  });
+  
+   // ROUTING TO RIGHT ADDRESS
+   router.post('/select-an-address7', function (req, res) {
+
+    // Make a variable and give it the value from 'bank-or-build'
+    var selectAddress = req.session.data['select-an-address']
+    console.log("high", req.session.data['select-an-address'])
+  
+    // Check whether the variable matches a condition
+    if (selectAddress == "Select1"){
+      // Send user to next page
+      res.redirect('/coa-combined/coa-combined-v1/check-your-details.html')
+    } else if (selectAddress == "Select2"){
+      // Send user to next page
+      res.redirect('coa-combined/coa-combined-v1/do-you-live-in-a-care-home.html')
+    } else if (selectAddress == "Select3"){
+      // Send user to next page
+      res.redirect('coa-combined/coa-combined-v1/are-you-currently-staying-in-hospital.html')
+    } else if (selectAddress == "Select4"){
+      // Send user to next page
+      res.redirect('coa-combined/coa-combined-v1/this-is-a-prison.html')
+    }
+  
+  });   
 
 // ROUTING TO MATCHING ADDRESS OR MANUAL ENTRY
 router.post('/manual-address-1', function (req, res) {
@@ -3379,6 +3398,25 @@ router.post('/manual-address-2', function (req, res) {
         
 });     
 
+ // ROUTING TO DOB eligibility for all citizens journey
+ router.post('/move-date1', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var selectCitizenRecordYear = req.session.data['citizen-record-year']
+  console.log("high", req.session.data['citizen-record-year'])
+
+  // Check whether the variable matches a condition
+  if (selectCitizenRecordYear == "2025"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/temp-or-perm.html')
+
+  } else if (selectCitizenRecordYear == "2024"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/report-change-after-move.html')
+  }
+    
+});     
+
 // ROUTING TO DOB eligibility for all citizens journey
 router.post('/home-type-previous1', function (req, res) {
 
@@ -3618,8 +3656,47 @@ router.post('/housing-benefit1', function (req, res) {
   
   }
     
+});
+
+// ROUTING TO DOB eligibility for all citizens journey
+router.post('/care-home1', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var selectHousingBenefit = req.session.data['housing-benefit']
+  console.log("high", req.session.data['housing-benefit'])
+
+  // Check whether the variable matches a condition
+  if (selectHousingBenefit == "Yes"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/apply-for-housing-benefit.html')
+
+  } else if (selectHousingBenefit == "No"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/apply-for-housing-benefit.html')
+  
+  }
+    
 });    
 
+// ROUTING TO DOB eligibility for all citizens journey
+router.post('/hospital1', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var selectHousingBenefit = req.session.data['housing-benefit']
+  console.log("high", req.session.data['housing-benefit'])
+
+  // Check whether the variable matches a condition
+  if (selectHousingBenefit == "Yes"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/apply-for-housing-benefit.html')
+
+  } else if (selectHousingBenefit == "No"){
+    // Send user to next page
+    res.redirect('/coa-combined/coa-combined-v1/apply-for-housing-benefit.html')
+  
+  }
+    
+});   
  
 
   

@@ -1,136 +1,61 @@
-{#- We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework. -#}
-{%- set assetPath = '/govuk/assets' -%}
+{% extends "di-govuk-one-login-service-header/layouts/service-header.html" %}
+{% set govukRebrand = true %}
 
-{% extends "govuk/template.njk" %}
 
-{% from "govuk/components/accordion/macro.njk"           import govukAccordion %}
-{% from "govuk/components/back-link/macro.njk"           import govukBackLink %}
-{% from "govuk/components/breadcrumbs/macro.njk"         import govukBreadcrumbs %}
-{% from "govuk/components/button/macro.njk"              import govukButton %}
-{% from "govuk/components/character-count/macro.njk"     import govukCharacterCount %}
-{% from "govuk/components/checkboxes/macro.njk"          import govukCheckboxes %}
-{% from "govuk/components/cookie-banner/macro.njk"       import govukCookieBanner %}
-{% from "govuk/components/date-input/macro.njk"          import govukDateInput %}
-{% from "govuk/components/details/macro.njk"             import govukDetails %}
-{% from "govuk/components/error-message/macro.njk"       import govukErrorMessage %}
-{% from "govuk/components/error-summary/macro.njk"       import govukErrorSummary %}
-{% from "govuk/components/fieldset/macro.njk"            import govukFieldset %}
-{% from "govuk/components/file-upload/macro.njk"         import govukFileUpload %}
-{% from "govuk/components/input/macro.njk"               import govukInput %}
-{% from "govuk/components/inset-text/macro.njk"          import govukInsetText %}
-{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
-{% from "govuk/components/pagination/macro.njk"          import govukPagination %}
-{% from "govuk/components/panel/macro.njk"               import govukPanel %}
-{% from "govuk/components/phase-banner/macro.njk"        import govukPhaseBanner %}
-{% from "govuk/components/radios/macro.njk"              import govukRadios %}
-{% from "govuk/components/select/macro.njk"              import govukSelect %}
-{% from "govuk/components/skip-link/macro.njk"           import govukSkipLink %}
-{% from "govuk/components/summary-list/macro.njk"        import govukSummaryList %}
-{% from "govuk/components/table/macro.njk"               import govukTable %}
-{% from "govuk/components/tabs/macro.njk"                import govukTabs %}
-{% from "govuk/components/tag/macro.njk"                 import govukTag %}
-{% from "govuk/components/textarea/macro.njk"            import govukTextarea %}
-{% from "govuk/components/warning-text/macro.njk"        import govukWarningText %}
-{% from "hmrc/components/header/macro.njk"               import hmrcHeader %}
-{% from "hmrc/components/language-select/macro.njk"     import hmrcLanguageSelect %}
+{% set homepageLink = "www.bbc.co.uk" %}
 
-{% block head %}
-  {% include "includes/head.html" %}
-{% endblock %}
+{% set navigation = [
+  {
+    href: "#nav1",
+    text: ""
+  },
+  {
+    href: "#nav2",
+    text: "",
+    active: true
+  },
+  {
+    href: "#nav3",
+    text: ""
+  }
+]
+%} 
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
-{% endblock %}
-
-
-{% block header %}
-{% from "di-govuk-one-login-service-header/service-header.njk" import govukOneLoginServiceHeader %}
-
-{{ govukOneLoginServiceHeader({
-  signOutLink: "sign-out.html",
-  oneLoginLink: "/test-one-login",
-  rebrand: true,
-  serviceNavigationParams: { 
-    rebrand: true,
-    navigation: [
-    {
-      href: "#navigation1", 
-      text: "" 
-    },{
-      href: "#navigation2", 
-      text: "",
-      active: true
-    },{
-      href: "#navigation3", 
-      text: ""
-    }], 
-    serviceName: "Manage Your State Pension",
-    navigationLabel: "Test label" 
-  }
-}) }}
-
-
-  <div class="govuk-width-container">
-    <div class="govuk-phase-banner">
-      <p class="govuk-phase-banner__content">
-        <strong class="govuk-tag govuk-phase-banner__content__tag">
-          Prototype
-        </strong>
-        <span class="govuk-phase-banner__text">
-          This is a new service — <a class='govuk-link' href='#'>your feedback will help us to improve it (opens in new tab)</a>
-        </span>
-      </p>
-    </div>
-  </div>
+  {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-<div class="govuk-grid-row">
-
-  <div class="govuk-grid-column-one-third" style="float:right;">
-    {{
-      hmrcLanguageSelect({
-        language: 'en',
-        en: {
-          href: '?en'
-        },
-        cy: {
-          href: '?cy'
-        }
-      })
-    }}
+<div class="govuk-width-container">
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        Prototype
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service — <a class='govuk-link' href='#'>your feedback will help us to improve it (opens in new tab)</a>
+      </span>
+    </p>
   </div>
+</div>
+
+<div class="govuk-grid-row">
+<!-- <div class="govuk-grid-column-two-thirds">
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+</div> -->
+<div class="govuk-grid-column-one-third" style="float:right;">
+  {{
+    hmrcLanguageSelect({
+      language: 'en',
+      en: {
+        href: '?en'
+      },
+      cy: {
+        href: '?cy'
+      }
+    })
+  }}
+</div>
 </div>
 {% endblock %}
 
-{% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
-
-
-
-{% if useAutoStoreData %}
-  {% block footer %}
-    {{ govukFooter({
-      meta: {
-        items: [
-          {
-            href: "https://govuk-prototype-kit.herokuapp.com/",
-            text: "GOV.UK Prototype Kit " + releaseVersion
-          },
-          {
-            href: "/prototype-admin/clear-data",
-            text: "Clear data"
-          }
-        ],
-        visuallyHiddenTitle: "Footer links"
-      }
-    }) }}
-  {% endblock %}
-{% endif %}
-
-{% block bodyEnd %}
-  {% block scripts %}
-    {% include "includes/scripts.html" %}
-    {% block pageScripts %}{% endblock %}
-  {% endblock %}
-  <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
-{% endblock %}

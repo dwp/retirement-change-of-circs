@@ -1,4 +1,4 @@
-{% extends "layout_signed_in.html" %}
+{% extends "layouts/ol_signed_in.html" %}
 
 {% block pageTitle %}
  Select an address - Manage your State Pension - GOV.UK
@@ -9,7 +9,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/select-an-address6" method="post">
+      <form class="form" action="/select-an-address7" method="post">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -20,41 +20,35 @@
             <!-- <p>5 addresses found for <b>{{ data['postcode-1'] }}</b> and <b>1</b>. <a href="find-address.html">Search again</a></p> -->
             
 
-            {% if (data['postcode-1'] == "YO31SQ") %}
-            <p>5 addresses found for <b>{{ data['postcode-1'] }}</b> and <b>1</b>. <a href="find-address.html">Search again</a></p>
+            {% if (data['postcode-6'] == "YO3 1SQ") %}
+            <p>5 addresses found for <b>{{ data['postcode-6'] }}</b> and <b>1</b>. <a href="find-address.html">Search again</a></p>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="select-an-address-yes" name="select-an-address" type="radio" value="Select1" {{ checked("select-an-address", "Select1") }}>
-                <label class="govuk-label govuk-radios__label" for="select-an-address-yes">
+                <input class="govuk-radios__input" id="select-an-address" name="select-an-address" type="radio" value="Select1" {{ checked("select-an-address", "Select1") }}>
+                <label class="govuk-label govuk-radios__label" for="select-an-address">
                   1 Square Street, York, YO3 1SQ
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="select-an-address-no" name="select-an-address" type="radio" value="No" {{ checked("select-an-address", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="select-an-address-no">
+                <input class="govuk-radios__input" id="select-an-address" name="select-an-address" type="radio" value="Select2" {{ checked("select-an-address", "Select2") }}>
+                <label class="govuk-label govuk-radios__label" for="select-an-address">
                   10 Square Street, York, YO3 1SQ
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="select-an-address-no" name="select-an-address" type="radio" value="Select3" {{ checked("select-an-address", "Select3") }}>
-                <label class="govuk-label govuk-radios__label" for="select-an-address-no">
+                <input class="govuk-radios__input" id="select-an-address" name="select-an-address" type="radio" value="Select3" {{ checked("select-an-address", "Select3") }}>
+                <label class="govuk-label govuk-radios__label" for="select-an-address">
                   11 Square Street, York, YO3 1SQ
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="select-an-address-no" name="select-an-address" type="radio" value="No" {{ checked("select-an-address", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="select-an-address-no">
+                <input class="govuk-radios__input" id="select-an-address" name="select-an-address" type="radio" value="Select4" {{ checked("select-an-address", "Select4") }}>
+                <label class="govuk-label govuk-radios__label" for="select-an-address">
                   123 Square Street, York, YO3 1SQ
                 </label>
               </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="select-an-address-no" name="select-an-address" type="radio" value="No" {{ checked("select-an-address", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="select-an-address-no">
-                  13 Square Street, York, YO3 1SQ
-                </label>
-              </div>
             </div>            
-            {% else %}
+            <!-- {% else %}
             <p>5 addresses found for <b>YO31SQ</b> and <b>1</b>. <a href="find-address.html">Search again</a></p>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
@@ -88,7 +82,7 @@
                 </label>
               </div>
             </div>
-            {% endif %}
+            {% endif %} -->
 
             <!-- {% if (data['postcode-1'] == "YO3 1SQ") %}
             <div class="govuk-radios" data-module="govuk-radios">

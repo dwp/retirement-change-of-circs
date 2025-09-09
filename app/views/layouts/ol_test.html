@@ -39,7 +39,7 @@
   </div>
 </div>
 
-<!-- <div class="govuk-grid-row">
+<div class="govuk-grid-row">
 <div class="govuk-grid-column-two-thirds">
   <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 </div>
@@ -56,33 +56,6 @@
     })
   }}
 </div>
-</div> -->
-{% endblock %}
-
-{% block footer %}
-
-  {{ govukFooter({
-    meta: {
-      items: [
-        
-      {
-        href: "https://govuk-prototype-kit.herokuapp.com/",
-        text: "GOV.UK Prototype Kit " + releaseVersion
-      },
-      
-      {
-          href: "/manage-prototype",
-          text: "Manage Prototype"
-        },
-        
-        {
-          href: "/manage-prototype/clear-data",
-          text: "Clear data"
-        }
-      ],
-      visuallyHiddenTitle: "Footer links"
-    }
-  }) }}
-
+</div>
 {% endblock %}
 

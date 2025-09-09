@@ -1,14 +1,8 @@
-{% extends "layout_dwp_unbranded.html" %}
+{% extends "layouts/ol_main.html" %}
 
 {% block pageTitle %}
   Manage Your State Pension - GOV.UK One Login
 {% endblock %}
-
-{% set serviceName = ""%}
-
-
-
-
 
 
 {% block content %}
@@ -103,28 +97,24 @@
   </div>
   {% endblock %}
 
-{% block footer %}
+  {% block footer %}
 
   {{ govukFooter({
     meta: {
       items: [
-        {
-          href: "idv-recreated-pages/idv-placeholder",
-          text: "ID&V CODES REQUIRED (opens in new tab)",
-          attributes: {
-            target: "_blank"
-          }
+        
+      {
+        href: "https://govuk-prototype-kit.herokuapp.com/",
+        text: "GOV.UK Prototype Kit " + releaseVersion
+      },
+      
+      {
+          href: "/manage-prototype",
+          text: "Manage Prototype"
         },
+        
         {
-          href: "idv-recreated-pages/success",
-          text: "SKIP ID&V SUCCESS"
-        },
-        {
-          href: "https://govuk-prototype-kit.herokuapp.com/",
-          text: "GOV.UK Prototype Kit " + releaseVersion
-        },
-        {
-          href: "/prototype-admin/clear-data",
+          href: "/manage-prototype/clear-data",
           text: "Clear data"
         }
       ],
@@ -133,3 +123,5 @@
   }) }}
 
 {% endblock %}
+
+

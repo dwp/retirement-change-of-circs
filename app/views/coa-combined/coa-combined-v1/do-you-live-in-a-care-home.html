@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layouts/ol_signed_in.html" %}
 
 {% block pageTitle %}
   Do you permanently live in a care home? - Manage your State Pension - GOV.UK
@@ -19,13 +19,13 @@
 
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="carehome-yes" name="carehome" type="radio" value="Yes" {{ checked("carehome", "Yes") }}>
-                <label class="govuk-label govuk-radios__label" for="carehome-yes">
+                <input class="govuk-radios__input" id="carehome1" name="carehome" type="radio" value="Yes" {{ checked("carehome", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="carehome">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="carehome-no" name="carehome" type="radio" value="No" {{ checked("carehome", "No") }}>
+                <input class="govuk-radios__input" id="carehome1" name="carehome" type="radio" value="No" {{ checked("carehome", "No") }}>
                 <label class="govuk-label govuk-radios__label" for="carehome-no">
                   No
                 </label>
@@ -40,12 +40,12 @@
       </form>
 
     </div>
-    <div class="govuk-grid-column-one-third">
+    <!-- <div class="govuk-grid-column-one-third">
       <h2 class="govuk-heading-m">
         Get help
       </h2>
       <p><a href="../contact-pension-service&help" target="_blank">Contact us by phone to get help with the online service (opens in new tab)</a></p>
-    </div>
+    </div> -->
   </div>
 
 {% endblock %}
