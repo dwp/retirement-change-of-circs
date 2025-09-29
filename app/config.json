@@ -1,5 +1,5 @@
 {
-    "serviceName": "Manage your State Pension",
+    "serviceName": "Manage Your State Pension",
   
     "plugins" : {
       "govuk-frontend" : {

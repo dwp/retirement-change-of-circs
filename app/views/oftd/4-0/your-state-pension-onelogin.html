@@ -1,4 +1,5 @@
-{% extends "layout_noback.html" %}
+{% extends "layouts/ol_signed_in_noback.html" %}
+
 
 {% block pageTitle %}
   Your State Pension - Manage your State Pension - GOV.UK
@@ -159,11 +160,10 @@
           </dd>
           <dd class="govuk-summary-list__actions">
             <li class="govuk-summary-list__actions-list-item">
-              <a class="govuk-link" href="have-you-already-moved">Change<span class="govuk-visually-hidden"> address</span></a>
+              <a class="govuk-link" href="do-you-receive-other-benefits.html">Change<span class="govuk-visually-hidden"> address</span></a>
             </li>
           </dd>        
         </div>
-
         <div class="govuk-summary-list__row" style="border-top: 1px solid #b1b4b6;padding-top:0px;">
           <dt class="govuk-summary-list__key">
             Address we send letters to
@@ -172,12 +172,12 @@
             {% if data['current-correspondence-line-1'] %}
               {{ data['current-correspondence-line-1'] }}<br>
             {% else %}
-              <!-- 123 Square Street<br> -->
+              1 Dale Street<br>
             {% endif %}
             {% if data['current-correspondence-line-2'] %}
               {{ data['current-correspondence-line-2'] }}<br>
             {% else %}
-              <!-- York<br> -->
+              York<br>
             {% endif %}
             {% if data['current-correspondence-line-3'] %}
               {{ data['current-correspondence-line-3'] }}<br>
@@ -185,16 +185,18 @@
             {% if data['current-correspondence-postcode'] %}
               {{ data['current-correspondence-postcode'] }}
             {% else %}
-              Your home address <span class="govuk-visually-hidden"> address</span>
-              <!-- YO31SQ -->              
+              YO31ZF              
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
             <li class="govuk-summary-list__actions-list-item">
-              <a class="govuk-link" href="uk-address.html">Change<span class="govuk-visually-hidden"> address we send letters to</span></a>
+              <a class="govuk-link" href="what-address-should-we-send-letters-to.html">Change<span class="govuk-visually-hidden"> where we send letter to</span></a>
             </li>
           </dd>        
         </div>
+
+        
+           
       
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -410,14 +412,3 @@
       }
     }) }}
   {% endblock %}
-
-
-
-        
-
-
-
-    
-
-
-        

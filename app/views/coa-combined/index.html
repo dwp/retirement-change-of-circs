@@ -17,7 +17,7 @@
         <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">
           In progress
         </strong><br>
-        WIP: Change of address combined journey for SP & PC
+        Change of address for SP & PC <br>GySP citizen Phase 1 / v1
       </h1>
       <h2 class="govuk-heading-m">Set up custom data</h2>
       <div class="govuk-inset-text">
@@ -26,7 +26,7 @@
       </div>
 
       <h2 class="govuk-heading-m">Happy path end-to-end journey</h2>
-      <a href="coa-combined-v1/your-state-pension.html" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">Start now</a>
+      <a href="phase1/v1/your-state-pension" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">Start now</a>
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
@@ -43,51 +43,32 @@
           </ul>
           <h3 class="govuk-heading-s">Your State Pension details</h3>
           <ul class="govuk-list govuk-list--bullet">
-            <li><a href="your-state-pension.html">Your State Pension overview if status is 'Receiving State Pension'</a></li>
-            <li><a href="your-state-pension&issues.html">Your State Pension overview if status is <strong>anything other than</strong> 'Receiving State Pension'</a></li>
+            <li><a href="phase1/v1/your-state-pension.html">Your State Pension overview if status is 'Receiving State Pension'</a></li>
+            <li><a href="phase1/v1/your-state-pension&issues.html">Your State Pension overview if status is <strong>anything other than</strong> 'Receiving State Pension'</a></li>
           </ul>
         </div>
       </details>
 
       <h2 class="govuk-heading-m">Version notes</h2>
-      <h2 class="govuk-heading-s">Change of contact details</h2>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>Based on <a href="https://app.mural.co/t/dwpdigital7412/m/dwpdigital7412/1705427676687/5f83f5f80078644571cc1b75261dc554f3944082?sender=u7945a63eec3e3fa9988e1807" target="_blank">feedback from 1st round of UR covering contact details</a> and <a href="https://app.mural.co/t/dwpdigital7412/m/dwpdigital7412/1706287613437/1c1ab808c56c7e585412ecbf0e65c40204e0b34b?sender=u7945a63eec3e3fa9988e1807" target="_blank">agent interviews</a> - Monday 15 to Thursday 25 Jan 2024</li>
-        <li><a href="https://dwpdigital.atlassian.net/browse/RBCCC-925" target="_blank">JIRA ticket for iterations</a></li>
-        <li>Remove journeys for only remaining home phone and only remaining email address</li>
-        <li>Adding a mobile phone as the only contact detail</li>
-      </ul>
       <h2 class="govuk-heading-s">Change of address</h2>
       <ul class="govuk-list govuk-list--bullet">
-        <li>Based on <a href="https://app.mural.co/t/dwpdigital7412/m/dwpdigital7412/1682586597693/17fb52fb18524109a639f93a8eced427e1aae500?sender=u7945a63eec3e3fa9988e1807" target="_blank">workshops and requirements</a>
-        <li>Simple address change for citizen moving to another residential home</li>
+                <li><a href="https://dwpdigital.atlassian.net/browse/RFP-11921" target="_blank">JIRA ticket for iterations</a></li>
+        <li>Based on <a href="https://lucid.app/lucidspark/3b0c7614-835d-4dbb-9940-c9fc4e54e380/edit?invitationId=inv_6381c98f-c7b4-4fd7-8f88-624c1cd0f971" target="_blank">Lucid board for designs and workshops</a>
+        <li>Simple address change for citizen moving to another residential home </li>
         <li>Excluding people who move into a care home or hospital</li>
-        <li>Journey for users who select an address that is already saved in GYSP</li>
+        <li>Accounting for citizens who select a prison address</li>
       </ul>
 
       <h2 class="govuk-heading-m">Additional pages</h2>
       <ul class="govuk-list govuk-list--bullet">
-        <li><a href="change-of-address/no-address-found.html" target="_blank">No results found screen</a>
-        <li>Simple address change for citizen moving to another residential home</li>
-        <li>Excluding people who move into a care home or hospital</li>
-        <li>Journey for users who select an address that is already saved in GYSP</li>
+        <li><a href="" target="_blank">???</a>
       </ul>
-      <!-- <h2 class="govuk-heading-s">Exceptions for change of address</h2>
-      <p> Journeys for users who enter a duplicate address through address lookup and manual address entry</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li><a href="http://localhost:3000/contact/3-0/change-of-address/duplicate/uk-address" target="_blank"> Scenario 1 - Duplicate change of address through address lookup</a>
-        <li><a href="#" target="_blank">Scenario 2 - Duplicate change of address through manual address entry</a>
-      </ul>-->
+
 
       <h2 class="govuk-heading-m">Alternative pages</h2>
       <ul class="govuk-list govuk-list--bullet">
         <li><a href="">TODO</li>
       </ul>
-
-      <!-- <h2 class="govuk-heading-m">Experimental design</h2>
-      <ul class="govuk-list govuk-list--bullet">
-        <li><a href=""></a></li>
-      </ul> -->
 
 {% endblock %}
 
