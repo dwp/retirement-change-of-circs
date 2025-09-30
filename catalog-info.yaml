@@ -1,13 +1,13 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: prototype.interface.retirement-change-of-circs-prototype
+  name: retirement.change.of.circs.prototype
   title: Retirement-Change-Of-Circs-Prototype
   description: |
     MySP online service
 
   annotations:
-    gitlab.com/project-slug: dwp/user-centred-design/retirement-change-of-circs-prototype
+    gitlab.com/project-slug: https://gitlab.com/dwp/user-centred-design/retirement-change-of-circs-prototype
 
   labels:
     dwp.gov.uk/version: 1.0.0
