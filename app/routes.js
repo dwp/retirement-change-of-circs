@@ -2359,57 +2359,11 @@ router.post('/already-moved3', function (req, res) {
 
 });
 
-// ROUTING TO YES OR NO ALREADY MOVED TO ADDRESS
-
-router.post('/already-moved4', function (req, res) {
-
-  // Make a variable and give it the value from 'remove-home-number'
-  var changeAlreadyMoved = req.session.data['contact']
-
-  // Check whether the variable matches a condition
-  if (changeAlreadyMoved == "Yes"){
-    // Send user to next page
-    res.redirect('/coa-combined/coa-combined-v1/temp-or-perm.html')
-  } else if (changeAlreadyMoved == "No"){
-    res.redirect('/coa-combined/coa-combined-v1/report-change-after-move.html')
-  }
 
 
-});
 
-// ROUTING TO PERMANENT OR TEMPORARY MOVE
 
-router.post('/perm-temp1', function (req, res) {
 
-  // Make a variable and give it the value from 'remove-home-number'
-  var changePermOrTemp = req.session.data['perm-or-temp']
-
-  // Check whether the variable matches a condition
-  if (changePermOrTemp == "Yes"){
-    // Send user to next page
-    res.redirect('/coa-combined/coa-combined-v1/uk-address.html')
-  } else if (changePermOrTemp== "No"){
-    res.redirect('/coa-combined/coa-combined-v1/cant-update-temp-address.html')
-  }
-
-});
-
-// ROUTING TO PERMANENT OR TEMPORARY MOVE
-
-router.post('/perm-temp2', function (req, res) {
-
-  // Make a variable and give it the value from 'remove-home-number'
-  var changePermOrTemp = req.session.data['perm-or-temp']
-
-  // Check whether the variable matches a condition
-  if (changePermOrTemp == "Yes"){
-    // Send user to next page
-    res.redirect('/coa-combined/coa-combined-v1/cant-update-temp-address-alt.html')
-  } else if (changePermOrTemp== "No"){
-    res.redirect('/coa-combined/coa-combined-v1/uk-address.html')
-  }
-
-});
 
 
 // ROUTING TO YES OR NO HOME ADDRESS IN THE UK
@@ -2480,22 +2434,7 @@ router.post('/uk-address4', function (req, res) {
 
 });
 
-// ROUTING TO YES OR NO HOME ADDRESS IN THE UK
 
-router.post('/uk-address5', function (req, res) {
-
-  // Make a variable and give it the value from 'remove-home-number'
-  var changeUkAddress = req.session.data['uk-address']
-
-  // Check whether the variable matches a condition
-  if (changeUkAddress == "Yes"){
-    // Send user to next page
-    res.redirect('/coa-combined/coa-combined-v1/address-finder/find-address.html')
-  } else if (changeUkAddress == "No"){
-    res.redirect('/coa-combined/coa-combined-v1/you-cannot-change-your-address-online.html')
-  }
-
-});
 
 // // ROUTING TO CONFIRM NEW ADDRESS OR THE SAME ADDRESS
 // router.post('/select-an-address1', function (req, res) {
@@ -2584,39 +2523,6 @@ router.post('/changed-residential-address3', function (req, res) {
 
 });
 
-// ROUTING TO RIGHT CONFIRMATION VERSION CHANGE OF ADDRESS
-router.post('/changed-residential-address4', function (req, res) {
-
-  // Make a variable and give it the value from 'bank-or-build'
-  var changeSelectAnAddress = req.session.data['select-an-address']
-  console.log("high", req.session.data['select-an-address'])
-
-  // Check whether the variable matches a condition
-  if (changeSelectAnAddress == "Select1"){
-    // Send user to next page
-    res.redirect('/coa-combined/coa-combined-v1/you-have-changed-your-address-interruption.html')
-  } else {
-    res.redirect('/coa-combined/coa-combined-v1/you-have-changed-your-address.html')
-  }
-
-});
-
-// // ROUTING TO RIGHT CONFIRMATION VERSION CHANGE OF ADDRESS
-// router.post('/changed-residential-addres3', function (req, res) {
-
-//   // Make a variable and give it the value from 'bank-or-build'
-//   var changeOtherBenefits = req.session.data['other-benefits']
-//   console.log("high", req.session.data['other-benefits'])
-
-//   // Check whether the variable matches a condition
-//   if (changeOtherBenefits == "Yes"){
-//     // Send user to next page
-//     res.redirect('/contact/3-0/change-of-address-v3/you-have-changed-your-address-alt.html')
-//   } else {
-//     res.redirect('/contact/3-0/change-of-address-v3/you-have-changed-your-address.html')
-//   }
-
-// });
 
 // ROUTING TO RIGHT CONFIRMATION VERSION CHANGE OF ADDRESS
 router.post('/select-correspondence-address1', function (req, res) {
@@ -2801,27 +2707,7 @@ router.post('/postcode-5', function (req, res) {
 
 });
 
-// ROUTING TO ADDRESS RESULTS
-router.post('/postcode-6', function (req, res) {
 
-  // Make a variable and give it the value from 'bank-or-build'
-  var changePostcode = req.session.data['postcode-6']
-  console.log("high", req.session.data['postcode-6'])
-
-  // Check whether the variable matches a condition
-  if (changePostcode == "YO3 1SQ"){
-    // Send user to next page
-    res.redirect('coa-combined/coa-combined-v1/address-finder/select-an-address.html')
-
-  } else if (changePostcode == "YO3 1MK"){
-    // Send user to next page
-    res.redirect('oftd/3-0/manage-state-pension-legacy.html')
-  
-  } else {
-    res.redirect('/oftd/3-0/cannot-make-changes-right-now.html')
-  }
-
-});
 
 // ROUTING TO ADDRESS RESULTS
 router.post('/name1', function (req, res) {
@@ -3007,29 +2893,7 @@ router.post('/select-an-address2', function (req, res) {
   
   });
   
-   // ROUTING TO RIGHT ADDRESS
-   router.post('/select-an-address7', function (req, res) {
-
-    // Make a variable and give it the value from 'bank-or-build'
-    var selectAddress = req.session.data['select-an-address']
-    console.log("high", req.session.data['select-an-address'])
   
-    // Check whether the variable matches a condition
-    if (selectAddress == "Select1"){
-      // Send user to next page
-      res.redirect('/coa-combined/coa-combined-v1/check-your-details.html')
-    } else if (selectAddress == "Select2"){
-      // Send user to next page
-      res.redirect('coa-combined/coa-combined-v1/do-you-live-in-a-care-home.html')
-    } else if (selectAddress == "Select3"){
-      // Send user to next page
-      res.redirect('coa-combined/coa-combined-v1/are-you-currently-staying-in-hospital.html')
-    } else if (selectAddress == "Select4"){
-      // Send user to next page
-      res.redirect('coa-combined/coa-combined-v1/this-is-a-prison.html')
-    }
-  
-  });   
 
 // ROUTING TO MATCHING ADDRESS OR MANUAL ENTRY
 router.post('/manual-address-1', function (req, res) {
@@ -3698,6 +3562,8 @@ router.post('/hospital1', function (req, res) {
     
 });   
  
+require('./views/coa-combined/phase1/_routes')
+
 
   
 
