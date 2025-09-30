@@ -1,0 +1,70 @@
+
+{% extends "layouts/ol_signed_in.html" %}
+
+{% set pageName = "Add another person who lives with you" %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <p><a href="javascript:history.back()" class="govuk-back-link govuk-!-static-margin-0">Back</a></p>
+
+        <form method="post" >
+            <div class="govuk-form-group govuk-!-padding-top-7">
+              <h1 class="govuk-heading-l">
+                  Money today
+              </h1>
+
+
+                <div class="govuk-body">
+                    <p>
+                          You must include all the money that you both have in:
+                        <ul class="govuk-list govuk-list--bullet">
+                            {% for item in data['capitalTypes'] %}
+                                {%if item != 'shares' %}
+                                    <li>{{ item }}</li>
+                                {%endif%}
+                            {% endfor %}
+                        </ul>
+                    </p>
+                </div>
+
+                {%if data['route'] == '1'%}
+                    <div class="govuk-inset-text">
+                        If you do not enter anything for more than 1 hour, your application will time out and you will have to start again.
+                    </div>
+  {% endif %}
+                    <h2 class="govuk-label-wrapper">
+      <label class="govuk-label govuk-label--m" for="event-name">How much money do you and your partner have today?</label></h2>
+            <p {%if data['route'] == '1'%}class="govuk-hint"{%endif%}>
+                    Enter an amount in pounds and pence, for example, 100.00
+                </p>
+                <div class="govuk-input__wrapper">
+                    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                    <input class="govuk-input govuk-input--width-10" id="todayTotal" name="todayTotal" spellcheck="false">
+                </div>
+
+            </div>
+
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+
+        </form>
+
+
+</div>
+</div>
+
+{% endblock %}

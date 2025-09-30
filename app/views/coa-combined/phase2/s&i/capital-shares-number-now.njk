@@ -1,0 +1,47 @@
+
+{% extends "layouts/ol_signed_in.html" %}
+
+{% set pageName = "How many shares do you or your partner have in {{ data['shareCompany'] }} today?" %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <p><a href="javascript:history.back()" class="govuk-back-link govuk-!-static-margin-0">Back</a></p>
+
+        <form method="post" >
+            <div class="govuk-form-group govuk-!-padding-top-7">
+              <h1 class="govuk-heading-l">
+              <span class="govuk-caption-l">About your shares</span>
+                  How many shares do you or your partner have in {{ data['shareCompany'] }} today?
+              </h1>
+
+              <div class="govuk-input__wrapper">
+                  <input class="govuk-input govuk-input--width-5" id="sharesNumberToday" name="sharesNumberToday" spellcheck="false">
+              </div>
+              <p class="govuk-body govuk-!-padding-top-2"><a href="capital-shares-number-backdating?sharesNumberToday=I+do+not+know">I do not know</a></p>
+            </div>
+
+
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+
+        </form>
+
+
+</div>
+</div>
+
+{% endblock %}

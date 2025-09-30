@@ -1,0 +1,98 @@
+{% extends "layout_nowelsh.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">
+          In progress
+        </strong><br>
+        Open the front door for all citizens (GySP and Legacy records)
+      </h1>
+      <h2 class="govuk-heading-m">Change of address will be first release for GySP & Legacy citizens</h2>
+
+      <h2 class="govuk-heading-m">Set up custom data</h2>
+      <div class="govuk-inset-text">
+        <p><a href="admin.html">Use this page to set up custom data</a> that will apply across the prototype journeys.</p>
+        <p>To clear any data entered, use the 'Clear data' link in the grey footer.</p>
+      </div>
+
+      <h2 class="govuk-heading-m">Happy path end-to-end journey</h2>
+      <a href="contact-pension-service.html" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">Start now</a>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Jump to a page in the journey
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="contact-pension-service.html">Have you received a letter or an email?</a>
+            <li><a href="received-letter.html">Have you received a letter or an email?</a>
+            <li><a href="dob.html">D.O.B</a>
+            <li><a href="name.html">Name</a>
+            <li><a href="postcode.html">Postcode</a>
+            <li><a href="manage-state-pension-gysp2.html">Manage your State Pension homepage GySP</a></li>
+            <li><a href="manage-state-pension-legacy.html">Manage your State Pension homepage Legacy</a></li>
+            <li><a href="privacy-notice.html">How we use your information</a></li>
+            <li><a href="cannot-use-this-service-yet.html">Cannot use this service yet</a></li>
+          </ul>
+          <h3 class="govuk-heading-s">Your State Pension details</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="your-state-pension-legacy.html">Your State Pension overview if status is 'Receiving State Pension'</a></li>
+            <li><a href="your-state-pension&issues.html">Your State Pension overview if status is <strong>anything other than</strong> 'Receiving State Pension'</a></li>
+          </ul>
+        </div>
+      </details>
+
+      <h2 class="govuk-heading-m">Version notes</h2>
+
+      <h2 class="govuk-heading-s"></h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <!-- <li></li>
+        <li></li> -->
+      </ul>
+
+      <h2 class="govuk-heading-s">Open the front door</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Iteration 3</li>
+        <li>Allowing access into the GYSP service from a public link online</li>
+        <li>Change of address is a feature that can be accessed by both GySP and Legacy citizens and is the first release for legacy citizens</li>
+        <li><a href="https://dwpdigital.atlassian.net/browse/RFP-12025" target="_blank">JIRA ticket for this piece of work</a></li>
+        <li><a href="https://lucid.app/lucidspark/a9a81d22-05f1-462d-aba0-5db1b87a6c18/edit?invitationId=inv_2e596c53-ccc6-4645-8290-7e4469b80e70&page=0_0#" target="_blank">Lucid board for design and ideation</a></li>        
+        <li><a href="" target="_blank">Design documentation</a>        
+      </ul>
+
+      <h2 class="govuk-heading-m">Additional pages</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>TBC</li>
+      </ul>
+      <!-- <h2 class="govuk-heading-s">Exceptions for change of address</h2>
+      <p> Journeys for users who enter a duplicate address through address lookup and manual address entry</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="http://localhost:3000/contact/3-0/change-of-address/duplicate/uk-address" target="_blank"> Scenario 1 - Duplicate change of address through address lookup</a>
+        <li><a href="#" target="_blank">Scenario 2 - Duplicate change of address through manual address entry</a>
+      </ul>-->
+
+      <h2 class="govuk-heading-m">Alternative pages</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="">TODO</li>
+      </ul>
+
+      <!-- <h2 class="govuk-heading-m">Experimental design</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href=""></a></li>
+      </ul> -->
+
+{% endblock %}
+

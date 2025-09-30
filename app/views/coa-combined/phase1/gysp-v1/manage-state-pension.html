@@ -1,0 +1,127 @@
+{% extends "layouts/ol_main.html" %}
+
+{% block pageTitle %}
+  Manage Your State Pension - GOV.UK One Login
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+      <form class="form" action="received-letter" method="post">
+        <div class="govuk-form-group">
+
+          <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+            <div class="govuk-notification-banner__header">
+              <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                Important
+              </h2>
+            </div>
+            <div class="govuk-notification-banner__content">
+              <h3 class="govuk-notification-banner__heading">
+                We have changed how you sign in 
+              </h3>
+              <p class="govuk-body">GOV.UK One Login is the new way to sign in to government services.</p>
+              <p class="govuk-body">In the future you'll be able to use your GOV.UK One Login to access all the services on GOV.UK</p>
+            </div>
+          </div>
+
+          <h1 class="govuk-heading-l">
+            Manage your State Pension
+          </h1>
+
+          <p class="govuk-body">You must be getting your State Pension to use this service.</p>
+
+          <p class="govuk-body">You can use this service to view or change:</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <!-- <li>change your bank details</li> -->
+            <li>your phone number</li>
+            <li>your email address</li>
+            <li>how often we pay your State Pension</li>
+            <li>the address where you live</li>
+            <li>where we send your letters</li>
+            <li>when you'll get your next State Pension payment</li>
+          </ul>
+
+          <h2 class="govuk-heading-m">
+            If you have used this service before
+          </h2>
+
+          <p class="govuk-body">You will need a GOV.UK One Login to use this service. You will be able to create one if you do not already have one.</p>
+
+
+          <p class="govuk-body">
+            <a href="privacy-notice">Sign in or create a One Login</a>
+          </p>
+
+          <h2 class="govuk-heading-m">
+            If you have not used this service before
+          </h2>
+
+          <p class="govuk-body">
+            This service is new and can only be used by some people.
+          </p>
+
+          <p class="govuk-body">
+            Before you sign in we will check whether you can use the service.
+          </p>
+
+          <button class="govuk-button govuk-button--start" data-module="govuk-button">
+            Start now <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+            </svg>
+          </button>
+          
+
+          <div class="govuk-inset-text">
+            <p class="govuk-body">
+              This service is also available in <a href="">Welsh (Cymraeg)</a>.
+            </p>
+          </div>
+
+          <h2 class="govuk-heading-m">
+            If you need to contact us another way or tell us about other changes
+          </h2>
+
+          <p class="govuk-body">
+            If you live in England, Scotland or Wales <a href="">contact the Pension Service by phone or post</a>.
+          </p>
+
+          <p class="govuk-body">
+            If you live in Northern Ireland <a href="">contact the Northern Ireland Pension Centre by phone or post</a>.
+          </p>        
+      </form>
+    </div>
+  </div>
+  {% endblock %}
+
+  {% block footer %}
+
+  {{ govukFooter({
+    meta: {
+      items: [
+        
+      {
+        href: "https://govuk-prototype-kit.herokuapp.com/",
+        text: "GOV.UK Prototype Kit " + releaseVersion
+      },
+      
+      {
+          href: "/manage-prototype",
+          text: "Manage Prototype"
+        },
+        
+        {
+          href: "/manage-prototype/clear-data",
+          text: "Clear data"
+        }
+      ],
+      visuallyHiddenTitle: "Footer links"
+    }
+  }) }}
+
+{% endblock %}
+
+

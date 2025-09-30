@@ -1,0 +1,244 @@
+{% extends "layout_signed_in.html" %}
+
+{% block pageTitle %}
+ Select an address - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/select-an-address2" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Select an address 3
+              </h1>
+            </legend>
+            <p>2 addresses found for <b>{{ data['postcode-1'] }}</b> and <b>1</b>. <a href="find-address.html">Search again</a></p>
+
+            {% if (data['postcode-1'] == "YO31SQ") %}
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-an-address-yes" name="select-an-address" type="radio" value="Yes" {{ checked("select-an-address", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="select-an-address-yes">
+                  1 Square Street, York, YO3 1SQ
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-an-address-no" name="select-an-address" type="radio" value="No" {{ checked("select-an-address", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="select-an-address-no">
+                  10 Square Street, York, YO3 1SQ
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-an-address-no" name="select-an-address" type="radio" value="No" {{ checked("select-an-address", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="select-an-address-no">
+                  11 Square Street, York, YO3 1SQ
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-an-address-no" name="select-an-address" type="radio" value="No" {{ checked("select-an-address", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="select-an-address-no">
+                  12 Square Street, York, YO3 1SQ
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-an-address-no" name="select-an-address" type="radio" value="No" {{ checked("select-an-address", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="select-an-address-no">
+                  13 Square Street, York, YO3 1SQ
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-an-address-no" name="select-an-address" type="radio" value="No" {{ checked("select-an-address", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="select-an-address-no">
+                  14 Square Street, York, YO3 1SQ
+                </label>
+              </div>
+              <div class="govuk-radios__divider">or</div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-an-address-manual" name="select-an-address" type="radio" value="Manual" {{ checked("select-an-address", "Manual") }}>
+                <label class="govuk-label govuk-radios__label" for="select-an-address-manual">
+                  I want to enter my address manually
+                </label>
+              </div>      
+            </div>
+            {% endif %}
+
+            {% if (data['postcode-1'] == "YO3 1SQ") %}
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-an-address-yes" name="select-an-address" type="radio" value="Yes" {{ checked("select-an-address", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="select-an-address-yes">
+                  1 Square Street, York, YO3 1SQ
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-an-address-no" name="select-an-address" type="radio" value="No" {{ checked("select-an-address", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="select-an-address-no">
+                  10 Square Street, York, YO3 1SQ
+                </label>
+              </div>
+              <div class="govuk-radios__divider">or</div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-an-address-manual" name="select-an-address" type="radio" value="Manual" {{ checked("select-an-address", "Manual") }}>
+                <label class="govuk-label govuk-radios__label" for="select-an-address-manual">
+                  I want to enter my address manually
+                </label>
+              </div>      
+            </div>
+            {% endif %}
+
+            {% if (data['postcode-1'] == "yo31sq") %}
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-an-address-yes" name="select-an-address" type="radio" value="Yes" {{ checked("select-an-address", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="select-an-address-yes">
+                  1 Square Street, York, YO3 1SQ
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-an-address-no" name="select-an-address" type="radio" value="No" {{ checked("select-an-address", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="select-an-address-no">
+                  10 Square Street, York, YO3 1SQ
+                </label>
+              </div>
+              <div class="govuk-radios__divider">or</div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-an-address-manual" name="select-an-address" type="radio" value="Manual" {{ checked("select-an-address", "Manual") }}>
+                <label class="govuk-label govuk-radios__label" for="select-an-address-manual">
+                  I want to enter my address manually
+                </label>
+              </div>      
+            </div>
+            {% endif %}
+
+            {% if (data['postcode-1'] == "yo3 1sq") %}
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-an-address-yes" name="select-an-address" type="radio" value="Yes" {{ checked("select-an-address", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="select-an-address-yes">
+                  1 Square Street, York, YO3 1SQ
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-an-address-no" name="select-an-address" type="radio" value="No" {{ checked("select-an-address", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="select-an-address-no">
+                  10 Square Street, York, YO3 1SQ
+                </label>
+              </div>
+              <div class="govuk-radios__divider">or</div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-an-address-manual" name="select-an-address" type="radio" value="Manual" {{ checked("select-an-address", "Manual") }}>
+                <label class="govuk-label govuk-radios__label" for="select-an-address-manual">
+                  I want to enter my address manually
+                </label>
+              </div>         
+              
+            </div>
+            {% endif %}
+            
+            {% if (data['postcode-1'] == "E1 7ES") %}
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-an-address-yes" name="select-an-address" type="radio" value="Yes" {{ checked("select-an-address", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="select-an-address-yes">
+                 test
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-an-address-no" name="select-an-address" type="radio" value="No" {{ checked("select-an-address", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="select-an-address-no">
+                  test 2
+                </label>
+              </div>
+              <div class="govuk-radios__divider">or</div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-an-address-manual" name="select-an-address" type="radio" value="Manual" {{ checked("select-an-address", "Manual") }}>
+                <label class="govuk-label govuk-radios__label" for="select-an-address-manual">
+                  I want to enter my address manually
+                </label>
+              </div>      
+            </div>
+            {% endif %}
+
+            {% if (data['postcode-1'] == "222") %}
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-an-address-yes" name="select-an-address" type="radio" value="Yes" {{ checked("select-an-address", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="select-an-address-yes">
+                 test
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-an-address-no" name="select-an-address" type="radio" value="No" {{ checked("select-an-address", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="select-an-address-no">
+                  test 3535
+                </label>
+              </div>
+            </div>
+            {% endif %}
+          </fieldset>
+        </div>
+
+        <nav class="govuk-pagination" aria-label="Pagination">
+          <div class="govuk-pagination__prev">
+            <a class="govuk-link govuk-pagination__link" href="select-an-address2.html" rel="prev">
+              <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+              </svg>
+              <span class="govuk-pagination__link-title">
+                Previous<span class="govuk-visually-hidden"> page</span>
+              </span>
+            </a>
+          </div>
+          <ul class="govuk-pagination__list">
+            <li class="govuk-pagination__item">
+              <a class="govuk-link govuk-pagination__link" href="select-an-address.html" aria-label="Page 1">
+                1
+              </a>
+            </li>
+            <li class="govuk-pagination__item">
+              <a class="govuk-link govuk-pagination__link" href="select-an-address2.html" aria-label="Page 2" aria-current="page">
+                2
+              </a>
+            </li>
+            <li class="govuk-pagination__item govuk-pagination__item--current">
+              <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+                3
+              </a>
+            </li>
+          </ul>
+          <!-- <div class="govuk-pagination__next">
+            <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+              <span class="govuk-pagination__link-title">
+                Next<span class="govuk-visually-hidden"> page</span>
+              </span>
+              <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+              </svg>
+            </a>
+          </div> -->
+        </nav>
+        
+
+        <button class="govuk-button" data-module="govuk-button">
+          Use this address
+        </button>
+        <!-- <p class="govuk-body govuk-!-margin-bottom-0"><a href="enter-manual-address.html" class="govuk-link">Enter address manually</a></p> -->
+      </form>
+
+      
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">
+        Get help
+      </h2>
+      <p><a href="../contact-pension-service&help" target="_blank">Contact us by phone to get help with the online service (opens in new tab)</a></p>
+    </div>
+  </div>
+
+{% endblock %}

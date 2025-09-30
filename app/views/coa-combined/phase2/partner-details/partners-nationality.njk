@@ -1,0 +1,100 @@
+{% extends "layouts/ol_signed_in" %}
+
+
+{% set pageName = "What is your partners nationality?" %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p><a href="javascript:history.back()" class="govuk-back-link govuk-!-static-margin-0">Back</a></p>
+      <div class="govuk-grid-column-two-thirds" style="float:left;"></div>
+    </div>
+    <div class="govuk-grid-column-one-third" style="float:right;">
+      {{
+        hmrcLanguageSelect({
+          language: 'en',
+          en: {
+            href: '?en'
+          },
+          cy: {
+            href: '?cy'
+          }
+        })
+      }}
+    </div>
+  </div>
+
+      
+
+      <form class="form" action="/housing-costs-new1" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                What is your partners nationality?
+              </h1>
+            </legend>
+            
+
+            <div id="ServiceCharges-hint" class="govuk-hint">
+              <p class="govuk-hint govuk-!-margin-top-0">
+                Select the nationality that is on their passport o travel document
+              </p>
+            </div>
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="do-you-get-smi-support" name="do-you-get-smi-support" type="radio" value="Yes" {{ checked("do-you-get-smi-support", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="do-you-get-smi-support-yes">
+                  British
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="-do-you-get-smi-support" name="do-you-get-smi-support" type="radio" value="No" {{ checked("do-you-get-smi-support", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="do-you-get-smi-support-no">
+                  Irish
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="-do-you-get-smi-support" name="do-you-get-smi-support" type="radio" value="No" {{ checked("do-you-get-smi-support", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="do-you-get-smi-support-no">
+                  European economic area (EEA) or Swiss national
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="-do-you-get-smi-support" name="do-you-get-smi-support" type="radio" value="No" {{ checked("do-you-get-smi-support", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="do-you-get-smi-support-no">
+                  Something else
+                </label>
+              </div>
+            </div>             
+
+            
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+
+    </div>
+    <!-- <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">
+        Get help
+      </h2>
+      <p><a href="../contact-pension-service&help" target="_blank">Contact us by phone to get help with the online service (opens in new tab)</a></p>
+    </div> -->
+  </div>
+
+{% endblock %}

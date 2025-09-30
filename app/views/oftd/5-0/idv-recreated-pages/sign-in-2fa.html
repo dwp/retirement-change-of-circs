@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your phone - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  <!-- <a class="govuk-back-link" href="javascript:window.history.back()">Back</a> -->
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Check your phone</h1>
+      <p>We have sent you a text message with your security code.</p>
+      <p>It might take up to a minute to arrive.</p>
+      <p>The code will expire in 5 minutes.</p>
+
+      <!-- <form class="form" action="https://prototype-dth.herokuapp.com/idv/hmrciv/start-page?service-name=manage-your-state-pension" method="post"> -->
+      <form class="form" action="https://prototype-dth.herokuapp.com/idv/hmrciv/start-page?service-name=manage-your-state-pension" method="post">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="code">
+            Enter you security code
+          </label>
+          <input class="govuk-input" id="code" name="code" type="number" spellcheck="false">
+        </div>
+        
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+
+      <p><a href="#">I did not get a text message</a></p>
+
+      <p><a href="#">I cannot access the mobile phone number I use to sign in</a></p>
+    </div>
+  </div>
+
+{% endblock %}

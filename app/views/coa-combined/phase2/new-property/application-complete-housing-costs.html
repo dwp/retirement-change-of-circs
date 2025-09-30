@@ -1,0 +1,194 @@
+
+{% set serviceName = 'Apply for Pension Credit' %}
+{% extends "layouts/ol_signed_in" %}
+
+{% set pageName = "  Which account would you like us to pay your Pension Credit into?" %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- PRINT SCREEN DETAILS -->
+
+<style>
+
+  p {
+    color: black;
+  }
+  /* #main-content > div > div > form > button {display: none} */
+  /* #main-content > div > div > form > h1:nth-child(2) {display: none} */
+  /* #main-content > div > div > button {display: none} */
+
+  /* This is set to 0 globally for some reason, setting it back for this example */
+  .govuk-summary-list {
+    margin-bottom: 30px !important;
+  }
+
+  @media print {
+
+    #main-content > div > div > form > div.govuk-panel.govuk-panel--confirmation.govuk-\!-margin-top-8.govuk-\!-margin-bottom-6 {
+      margin:0%;
+      padding:0%;
+    }
+
+    #main-content > div > div > form > div.govuk-panel.govuk-panel--confirmation.govuk-\!-margin-top-8.govuk-\!-margin-bottom-6 > h1 {
+      color: black;
+      text-align:left;
+    }
+
+    #main-content > p > span {display: none}
+    body > div > div {display: none}
+    body > div > div {display: none}
+
+
+    .dont-print,
+    .govuk-header__logo,
+    .govuk-footer,
+    .govuk-summary-list__actions {
+      display: none;
+    }
+    .govuk-header__container {
+      border: 0;
+    }
+
+    /* Use desktop layout for summary list */
+    .govuk-summary-list {
+      display:table;
+      width:100%;
+      table-layout:fixed;
+      margin-bottom:30px
+    }
+    .govuk-summary-list__row {
+      display:table-row
+    }
+    .govuk-summary-list__key,
+    .govuk-summary-list__value {
+      display:table-cell;
+      padding-right:20px;
+      padding-top:10px;
+      padding-bottom:10px;
+      border-bottom:1px solid #b1b4b6
+    }
+    .govuk-summary-list__key {
+      width:30%
+    }
+    .govuk-summary-list__value {
+      width:50%
+    }
+    .govuk-summary-list__value:last-child {
+      width:70%
+    }
+  }
+</style>
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="pdf" method="post" class="form">
+
+
+<!-- -- -- -- -- -- -- Application sent -- -- -- -- -- -- -->
+<div>
+      {{ govukPanel({
+          titleText: "Application sent",
+          html: "Your reference number is (your / the applicant's)) National Insurance number",
+          classes:"govuk-!-margin-top-8"
+        }) }}
+</div>
+
+
+
+
+
+<h3 class="govuk-heading-l">What happens next</h3>
+          <p class="govuk-body">We are doing some final checks on your application. </p>
+            <p class="govuk-body">We will contact you by letter if we can award your Pension Credit. If we need more information, we will contact you by phone if you have provided a contact number, or letter if you have only provided an address.</p>
+
+
+
+
+        <h2 class="govuk-heading-m">What you need to do next</h2>
+
+
+                      <h3 class="govuk-heading-s">Send us information about your service charges and ground rent</h3>
+                      <p class="govuk-body">Send us a copy of the most recent ground rent invoice and the most recent service charge invoice, with an itemised breakdown of charges.</p>
+
+
+
+
+
+        <h3 class="govuk-heading-s">Post any requested documents to:</h3>
+
+
+              <div class="govuk-panel--address govuk-!-margin-top-2">
+                <p class="govuk-body">
+                  Northern Ireland Pension Centre<br>
+                  Mail Opening Unit<br>
+                  PO Box 42<br>
+                  Limavady<br>
+                  BT49 4AW</p>
+            </div>
+
+
+              <div class="govuk-panel--address govuk-!-margin-top-2">
+                <p class="govuk-body">
+                  The Pension Service 4<br>
+                  Mail Handling Site A<br>
+                  Wolverhampton<br>
+                  WV98 1AG</p>
+              </div>
+
+
+          <p class="govuk-body">Include (your/the applicant's) name and National Insurance number with anything you send. Any original documents will be returned to the address you have asked us to send any letters to.</p>
+
+
+    <h2 class="govuk-heading-l">Other help you could get</h2>
+    <p class="govuk-body">
+There is other help that you could get if you:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>have a disability</li>
+<li>care for someone for 35 hours or more a week</li>
+<li>need help with your living costs such as paying rent or Council Tax</li>
+<li>need help heating your home</li></ul>
+
+  <p class="govuk-body">To check what other help you could get, use one of these <a href="https://www.gov.uk/benefits-calculators">benefits calculators</a>.</p>
+
+    <h2 class="govuk-heading-l">Print or save</h2>
+
+    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">Print this page</button>
+      <p class="govuk-body"><a href="#" onClick="window.print();return false">Save this page</a> (PDF, 100KB)</p>
+
+    <h2 class="govuk-heading-l">Help us improve the Pension Credit online service</h2>
+      <p class="govuk-body govuk-!-margin-bottom-8"><a href="oidv-who">Take a short survey</a></p>
+  </div>
+</div>
+
+<!-- -- -- -- -- -- -- OIDV  -- -- -- -- -- -- -->
+
+<!-- {{ govukButton({
+name: "process-c-nil-task-list",
+value: "UF",
+checked: (data["process-c-nil-task-list"] == "UF"),
+text: "Continue",
+classes: "govuk-button",
+href: "oidv-start-check"
+}) }} -->
+
+
+    </form>
+  </div>
+</div>
+{% endblock %}

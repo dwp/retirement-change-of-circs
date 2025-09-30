@@ -1,0 +1,65 @@
+
+{% extends "layout_noback.html" %}
+
+{% block pageTitle %}
+  Get help using the online service
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+      <h1 class="govuk-heading-l">
+        Get help using the online service
+      </h1>
+      <p class="govuk-body">
+        Contact us if you need help or have questions about the change you are reporting.
+      </p>
+      <h2 class="govuk-heading-m">
+        If you live in England, Scotland or Wales
+      </h2>
+      <!-- <div style="border-left: 1px solid #b1b4b6; padding-left: 15px; margin-bottom: 30px; margin-top: 30px;"> -->
+        <p class="govuk-body">
+          Telephone: 0800 169 0154<br/>
+          Textphone: 0800 169 0254
+        </p>
+        <p class="govuk-body">
+          <a href="https://www.relayuk.bt.com/">Relay UK</a> (if you cannot hear or speak on the phone): 18001 then 0800 169 0154
+        </p>
+        <p class="govuk-body">
+          British Sign Language (BSL) <a href="https://connect.interpreterslive.co.uk/vrs?ilc=DWP">video relay service</a> if you’re on a computer - find out how to <a href="https://www.youtube.com/watch?v=oELNMfAvDxw" target="_blank">use the service on mobile or tablet (opens in new tab)</a>.
+        </p>
+        <p class="govuk-body">
+          Welsh language: 0800 169 0253<br/>
+          Welsh language textphone: 0800 169 0203
+        </p>
+        <p class="govuk-body">
+          Monday to Friday, 8am to 6pm (except public holidays)<br/>
+          <a href="https://www.gov.uk/call-charges">Find out about call charges</a>
+        </p>
+      <h2 class="govuk-heading-m">
+        If you live in Northern Ireland
+      </h2>
+<p class="govuk-body">
+Contact the <a href="https://www.nidirect.gov.uk/contacts/northern-ireland-pension-centre" target="_blank">Northern Ireland Pension Centre (opens in new tab)</a>.
+</p>
+
+      </div>
+</div>
+
+  <script>
+    function showFunction() {
+    var moreLinks = document.getElementById("more");
+    var linkText = document.getElementById("show-more");
+  
+    if (more.style.display === "none") {
+      linkText.innerHTML = "Show 2 more"; 
+      moreLinks.style.display = "none";
+    } else {
+      linkText.innerHTML = "Show fewer"; 
+      moreLinks.style.display = "inline";
+    }
+  }
+  </script>
+{% endblock %}

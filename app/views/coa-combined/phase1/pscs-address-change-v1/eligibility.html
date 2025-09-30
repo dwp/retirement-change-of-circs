@@ -1,0 +1,95 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Manage your State Pension
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+  <style>
+    #more {display: none;}
+  </style>
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="" method="post">
+        <div class="govuk-form-group">
+                <h1 class="govuk-heading-xl">
+          Check you can manage your State Pension online
+          </h1>
+
+                  <p class="govuk-body">
+            If you're using this service for the first time, you'll need to register.
+          </p>
+          <p class="govuk-body">
+          We will check that you can register by asking your:
+          </p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>date of birth</li>
+            <li>full name</li>
+            <li>postcode</li>
+          </ul>
+          <div class="govuk-inset-text">    <p class="govuk-body">
+            If you've used this service before, you can <a href="">sign in</a>.
+            </p>
+            <p class="govuk-body">
+              You'll need the email address, mobile phone and password you used to register.
+            </p></div>
+
+
+
+        </div>
+        <a href="dob" role="button" draggable="false" class="govuk-button govuk-button" data-module="govuk-button">
+          Continue
+        </a>
+        <div class="govuk-inset-text">
+          <p class="govuk-body">
+            This service is also available in <a href="manage-state-pension&welsh">Welsh (Cymraeg)</a>.
+          </p>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+  {% endblock %}
+
+{% block footer %}
+
+  {{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "idv-recreated-pages/idv-placeholder",
+          text: "ID&V CODES REQUIRED (opens in new tab)",
+          attributes: {
+            target: "_blank"
+          }
+        },
+        {
+          href: "idv-recreated-pages/success",
+          text: "SKIP ID&V SUCCESS"
+        },
+        {
+          href: "https://govuk-prototype-kit.herokuapp.com/",
+          text: "GOV.UK Prototype Kit " + releaseVersion
+        },
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        }
+      ],
+      visuallyHiddenTitle: "Footer links"
+    }
+  }) }}
+
+{% endblock %}

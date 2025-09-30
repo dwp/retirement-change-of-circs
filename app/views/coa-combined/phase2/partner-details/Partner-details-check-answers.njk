@@ -1,0 +1,76 @@
+{% extends "layouts/ol_signed_in.html" %}
+
+{% block pageTitle %}
+  Is your partner registered blind?? - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row ">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">Check your shares in {{ data['shareCompany'] }}</h1>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Company you have shares in
+            </dt>
+            <dd class="govuk-summary-list__value">
+            {% if data.sharesChange == 'yes'%}
+              {{ data.sharesList[data.record].sharesCompany }}
+            {% else %}
+              {{data['shareCompany']}}
+            {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">the company you have shares in</span></a>
+            </dd>
+          </div>
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              How many shares you have today
+            </dt>
+            {% if data.sharesChange == 'yes'%}
+              {{ data.sharesList[data.record].sharesToday }}
+            {% else %}
+            <dd class="govuk-summary-list__value">
+              {{data['sharesNumberToday']}}
+            </dd>
+            {% endif %}
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> how many shares you have in this company</span></a>
+            </dd>
+          </div>
+
+   
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            How many shares you had on {{ data['backdateDateString'] }}
+            </dt>
+            {% if data.sharesChange == 'yes'%}
+              {{ data.sharesList[data.record].sharesBackdating }}
+            {% else %}
+            <dd class="govuk-summary-list__value">
+              {{data['sharesNumberBackdating']}}
+            </dd>
+            {% endif %}
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> the date you were last issued shares in this company</span></a>
+            </dd>
+          </div>
+        </dl>
+
+        <form method="post" novalidate>
+          <input type="hidden" name="answers-checked" value="true">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+
+{% endblock %}

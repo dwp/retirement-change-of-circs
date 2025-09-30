@@ -1,0 +1,59 @@
+{% extends "layouts/ol_signed_in" %}
+
+{% block pageTitle %}
+  Do you pay ground rent at your new address? - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/ground-rent1" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Do you pay ground rent at your new address?
+              </h1>
+            </legend>
+
+            <p class="govuk-body">
+              You might pay ground rent if your home is a leasehold property.
+            </p>
+            <div id="ground-rent-hint" class="govuk-hint">
+              This includes if you own your own home through the shared ownsership scheme
+            </div>
+            
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="ground-rent" name="ground-rent" type="radio" value="Yes" {{ checked("ground-rent", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="ground-rent-yes">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="ground-rent" name="ground-rent" type="radio" value="No" {{ checked("ground-rent", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="ground-rent-no">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">
+        Get help
+      </h2>
+      <p><a href="../contact-pension-service&help" target="_blank">Contact us by phone to get help with the online service (opens in new tab)</a></p>
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Where would you like us to pay your State Pension? - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="check-your-details" method="post" novalidate>
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="email">
+            What is your email address?
+          </label>
+        </h1>
+        <!-- <p class="govuk-body">We need this to send you a confirmation that we have received your request and that your address has been updated.</p> -->
+        <div id="new-email-address-hint" class="govuk-hint">
+          We need this to send you a confirmation that we have received your request and that your account details have been updated.
+        </div>
+        <input class="govuk-input govuk-input--width-20" id="email" name="email" type="text" autocomplete="email" value="{{ data['email'] }}">
+      </div>
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+    <h2 class="govuk-heading-m">
+      Get help
+    </h2>
+    <p><a href="contact-pension-service&amp;help" target="_blank">Contact us by phone to get help with the online service (opens in new tab)</a></p>
+  </div>
+</div>
+
+
+</main>
+
+{% endblock %}

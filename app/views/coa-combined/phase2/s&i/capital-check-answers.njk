@@ -1,0 +1,114 @@
+
+{% extends "layouts/ol_signed_in.html" %}
+
+
+{% set pageName = "Check your shares in {{ data['shareCompany'] }}" %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row ">
+      <div class="govuk-grid-column-two-thirds">
+       <p><a href="javascript:history.back()" class="govuk-back-link govuk-!-static-margin-0">Back</a></p>
+
+        <h1 class="govuk-heading-l">Check your money and investments</h1>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          {%if data['capitalTypes']%}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Where you have money
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <ul class="govuk-list govuk-list--bullet">
+                {% for bullet in data['capitalTypes']%}
+                  <li>{{bullet}}</li>
+                {% endfor %}
+              </ul>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">where you or your partner keep your money</span></a>
+            </dd>
+          </div>
+          {%endif%}
+
+           {%if data['shareCount']%}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Companies you have shares in
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+            {% for shares in data['sharesList'] %}
+           
+            {{ shares.sharesCompany }}{% if loop.index != data['sharesList'].length%}, {% endif %}
+            
+            
+           
+            {%- endfor %}
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="capital-shares-add-another?capitalChange=yes">Change<span class="govuk-visually-hidden">the companies you and your partner have shares</span></a>
+            </dd>
+          </div>
+          {%endif%}
+
+          {%if data['todayTotal']%}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              How much money you have today
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £{{data['todayTotal']}}<br>
+              {{data['todayTotalInWords'].slice(0, -4) | capitalize}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">how much money you and your partner have today</span></a>
+            </dd>
+          </div>
+          {%endif%}
+
+
+
+          {%if data['tamTotal']%}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              How much money you had on <span class="no-wrap">{{data['backdateDateString'] | govukDate }}
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £{{data['tamTotal']}}<br>
+              {{data['tamTotalInWords'].slice(0, -4) | capitalize}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">how much money you and your partner had on {{data['backdateDateString']}}</span></a>
+            </dd>
+          </div>
+          {%endif%}
+
+         
+
+
+
+
+
+        </dl>
+
+        <form method="post">
+          <input type="hidden" name="answers-checked" value="true">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+
+{% endblock %}
