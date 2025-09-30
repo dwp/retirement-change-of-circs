@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
@@ -23,15 +24,66 @@ Create a GOV.UK One Login or sign in - GOV.UK One Login
       <p class="govuk-body">In the future, you’ll be able to use it to access all services on GOV.UK.</p>
 
       <p class="govuk-body">You’ll need:</p>
+=======
+{% extends "layouts/ol_main.html" %}
+
+{% block pageTitle %}
+  Create a GOV.UK One Login or sign in - GOV.UK One Login
+{% endblock %}
+
+{% set serviceName = ""%}
+
+
+
+{% block beforeContent %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <a class="hidden govuk-back-link" href="javascript:window.history.back()">Back</a>
+  </div>
+  <div class="govuk-grid-column-one-third" style="float:right;">
+    {{
+      hmrcLanguageSelect({
+        language: 'en',
+        en: {
+          href: '?en'
+        },
+        cy: {
+          href: '?cy'
+        }
+      })
+    }}
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Create your GOV.UK One Login or sign in</h1>
+
+      <p class="govuk-body">You can use your GOV.UK One Login to access some government services.</p>
+
+      <p class="govuk-body">In the future, you'll be able to use it to access all services on GOV.UK.</p>
+
+      <p class="govuk-body">You'll need:</p>
+>>>>>>> 9a89c3c97b8f40dfa1ee943972bbed7d9a017edf
       <ul class="govuk-list govuk-list--bullet">
         <li>an email address</li>
         <li>a way to get security codes - this can be a mobile phone number or an authenticator app</li>
       </ul>
 
+<<<<<<< HEAD
+=======
+      <!-- <p class="govuk-body">You can prove your identity after you've created you GOV.UK One Login. You only need to do this for some services.</p> -->
+
+>>>>>>> 9a89c3c97b8f40dfa1ee943972bbed7d9a017edf
       <div class="govuk-inset-text">
         You can also <a href="#" class="govuk-link govuk-link--no-visited-state">use GOV.UK One Login in Welsh (Cymraeg)</a>.
       </div>
 
+<<<<<<< HEAD
         <button value="create" name="optionSelected" class="govuk-button govuk-!-margin-right-3" data-module="govuk-button" id="create-account-link" formaction="/page-index/authentication/create-account/enter-email">
           Create a GOV.UK One Login
         </button>
@@ -73,3 +125,22 @@ Create a GOV.UK One Login or sign in - GOV.UK One Login
       }
     }) }}
   {% endblock %}
+=======
+        <a class="govuk-button govuk-!-margin-right-3" data-module="govuk-button" href="idv-success.html">
+          Create a GOV.UK One Login
+        </a>
+
+        <div>
+      
+        <a class="govuk-button govuk-button--secondary" data-module="govuk-button" id="sign-in-button" href="idv-success.html">
+          Sign in
+        </a>
+
+        <p class="govuk-body">
+          <a href="https://www.gov.uk/using-your-gov-uk-one-login/services" class="govuk-link govuk-link--no-visited-state" target="_blank">Services you can use with GOV.UK One Login  (opens in a new tab)</a>
+        </p>
+
+    </div>
+  </div>
+{% endblock %}
+>>>>>>> 9a89c3c97b8f40dfa1ee943972bbed7d9a017edf
