@@ -2,7 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: retirement.change.of.circs.prototype
-  title: Retirement-Change-Of-Circs-Prototype
+  title: Retirement-Change-of-Circs-Prototype
   description: |
     MySP online service
 
