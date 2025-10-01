@@ -30,6 +30,23 @@ router.post('/already-moved4', function (req, res) {
 
 });
 
+// ROUTING TO RIGHT CONFIRMATION VERSION CHANGE OF ADDRESS
+router.post('/changed-residential-address4', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var changeSelectAnAddress = req.session.data['select-an-address']
+  console.log("high", req.session.data['select-an-address'])
+
+  // Check whether the variable matches a condition
+  if (changeSelectAnAddress == "Select1"){
+    // Send user to next page
+    res.redirect('/coa-combined/phase1/gysp-v1/you-have-changed-your-address-alt.html')
+  } else {
+    res.redirect('/coa-combined/phase1/gysp-v1/you-have-changed-your-address.html')
+  }
+
+});
+
 // ROUTING TO TEMP OR PERM
 router.post('/when-did-you-move1', function (req, res) {
 
@@ -155,37 +172,7 @@ router.post('/postcode-6', function (req, res) {
 });
 
 
-// ROUTING TO RIGHT CONFIRMATION VERSION CHANGE OF ADDRESS
-router.post('/changed-residential-address4', function (req, res) {
 
-  // Make a variable and give it the value from 'bank-or-build'
-<<<<<<< HEAD
-  var changeSelectAnAddress = req.session.data['select-an-address']
-  console.log("high", req.session.data['select-an-address'])
-=======
-  var changeSelectAnAddress = req.session.data['select-address']
-  console.log("high", req.session.data['select-address'])
->>>>>>> 9a89c3c97b8f40dfa1ee943972bbed7d9a017edf
-
-  // Check whether the variable matches a condition
-  if (changeSelectAnAddress == "Select1"){
-    // Send user to next page
-<<<<<<< HEAD
-    res.redirect('/coa-combined/phase1/gysp-v1/you-have-changed-your-address-alt.html')
-  } else {
-    res.redirect('/coa-combined/phase1/gysp-v1/you-have-changed-your-address.html')
-=======
-    res.redirect('/coa-combined/phase1/gysp-v1/you-have-changed-your-address-multiple benefits.html')
-  }
-  else if (changeSelectAnAddress == "Select2"){
-    // Send user to next page
-    res.redirect('/coa-combined/phase1/gysp-v1/you-have-changed-your-address-sp-only.html')
-  } else {
-    res.redirect('/coa-combined/phase1/gysp-v1/you-have-changed-your-address-no-api.html')
->>>>>>> 9a89c3c97b8f40dfa1ee943972bbed7d9a017edf
-  }
-
-});
 
 // ROUTING TO YES OR NO ALREADY MOVED TO ADDRESS-PSCS
 
@@ -220,6 +207,23 @@ router.post('/uk-address-pscs1', function (req, res) {
   }
 
 });
+
+// ROUTING TO CONFIRM IF YOU WANT LETTER SENT TO RESIDENTIAL ADDRESS
+router.post('/send-letters2', function (req, res) {
+
+  // Make a variable and give it the value from '10 Washington Street, Worcester, WR1 1NL'
+  var changeSendLetters = req.session.data['select-correspondence-address']
+
+  // Check whether the variable matches a condition
+  if (changeSendLetters == "Select5"){
+    // Send user to next page
+    res.redirect('/contact/3-0/correspondence-address-v1/check-your-details')
+  } else if (changeSendLetters == "Select6"){
+    res.redirect('/contact/3-0/correspondence-address-v1/uk-address')
+  }
+
+});
+
 
 
 module.exports = router
