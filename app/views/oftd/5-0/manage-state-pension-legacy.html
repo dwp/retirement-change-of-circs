@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What is your date of birth? - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="received-letter" method="post">
+        <div class="govuk-form-group">
+          <h1 class="govuk-heading-xl">
+            You can report a change of bank details
+          </h1>
+          <p class="govuk-body">You must be getting your State Pension to use this service.</p>
+
+          <p class="govuk-body">You can use this service to change the account we pay your State Pension into.</p>
+
+          <p class="govuk-body">It can take us up to 8 working days to update your details.</p>
+
+          <p class="govuk-body">This is a new service. You'll be able to report other changes online in the future.</p>
+
+          <h2 class="govuk-heading-m">
+            If you have used this service before
+          </h2>
+
+          <div class="govuk-inset-text">
+            <p class="govuk-body">
+            If you've used this service before, you can <a href="privacy-notice.html">sign in</a>.
+            </p>
+            <p class="govuk-body">
+              You'll need the email address, mobile phone and password you used to register.
+            </p>
+          </div>
+
+          <h2 class="govuk-heading-m">If you have not used this service before </h2>
+          <!-- <p class="govuk-body">This service is new and can only be used by some people.</p> -->
+          <p class="govuk-body">You will need to answer some security questions to confirm your identity. This helps protect you from fraud.</p>        
+
+        </div>
+        <button class="govuk-button govuk-button--start" data-module="govuk-button">
+          Start now <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+          </svg>
+        </button>
+
+        <h2 class="govuk-heading-m">If you need to contact us another way or tell us about other changes</h2>
+        <p class="govuk-body">
+          If you live in England, Scotland or Wales <a href="contact-pension-service.html">contact the Pension Service by phone or post</a>.
+        </p>
+        <p class="govuk-body">
+          If you live in Northern Ireland, <a href="https://www.nidirect.gov.uk/contacts/northern-ireland-pension-centre">contact the Northern Ireland Pension Centre by phone or post</a>.
+        </p>
+
+        <div class="govuk-inset-text">
+          <p class="govuk-body">
+            This service is also available in <a href="manage-state-pension&welsh">Welsh (Cymraeg)</a>.
+          </p>
+        </div>
+        
+      </form>
+    </div>
+  </div>
+  {% endblock %}
+
+{% block footer %}
+
+  {{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "idv-recreated-pages/idv-placeholder",
+          text: "ID&V CODES REQUIRED (opens in new tab)",
+          attributes: {
+            target: "_blank"
+          }
+        },
+        {
+          href: "idv-recreated-pages/success",
+          text: "SKIP ID&V SUCCESS"
+        },
+        {
+          href: "https://govuk-prototype-kit.herokuapp.com/",
+          text: "GOV.UK Prototype Kit " + releaseVersion
+        },
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        }
+      ],
+      visuallyHiddenTitle: "Footer links"
+    }
+  }) }}
+
+{% endblock %}
