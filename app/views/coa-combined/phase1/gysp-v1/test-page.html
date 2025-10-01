@@ -1,0 +1,333 @@
+{% extends "layout_nowelsh.html" %}
+
+{% block pageTitle %}
+  Set up custom data, not in service - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" action="index">
+        <h1 class="govuk-heading-l">Enter custom data</h1>
+        <p>Any fields left blank here will use default data.</p>
+        <p>Any fields left blank here will use default data.</p>
+        <p>Any fields left blank here will use default data.</p>
+        <p>To clear any data entered, use the 'Clear data' link in the grey footer.</p>
+        <hr class="govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="full-name">
+            Full name
+          </label>
+          <input class="govuk-input" id="full-name" name="full-name" type="text" value="">
+        </div>
+        <hr class="govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+        <h2 class="govuk-heading-m">Payment schedule</h2>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="next-payment">
+            Next payment date
+          </label>
+            <div id="next-payment-hint" class="govuk-hint">
+              Make sure it's a Friday!!!
+            </div>
+            <div class="govuk-date-input" id="next-payment" name="next-payment">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="next-payment-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="next-payment-day" name="next-payment-day" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="next-payment-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="next-payment-month" name="next-payment-month" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="next-payment-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="next-payment-year" name="next-payment-year" type="text" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="next-payment-amount">
+            Next payment amount
+          </label>
+          <div class="govuk-input__wrapper">
+            <div class="govuk-input__prefix" aria-hidden="true">£</div>
+            <input class="govuk-input govuk-input--width-10" id="next-payment-amount" name="next-payment-amount" type="text" spellcheck="false" aria-describedby="currency-hint">
+          </div>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="payment-frequency">
+            Payment frequency
+          </label>
+          <select class="govuk-select" id="payment-frequency" name="payment-frequency">
+            <option value="Every 4 weeks (13 payments a year)">Every 4 weeks</option>
+            <option value="Every 2 weeks">Every 2 weeks</option>
+            <option value="Every week">Every week</option>
+          </select>
+        </div>
+        <hr class="govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+
+        <h2 class="govuk-heading-m">Change of payment frequency</h2>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="entitled-to2">
+            Is the user entitled to 2-weekly option?
+          </label>
+          <select class="govuk-select" id="entitled-to2" name="entitled-to2">
+            <option value="entitled">Yes</option>
+            <option value="not-entitled">No</option>
+          </select>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="entitled-to2">
+            Which confirmation page scenario would you like to show?
+          </label>
+          <select class="govuk-select" id="frequency-scenario-select" name="frequency-scenario-select">
+            <option value="1">Scenario 1 - Next payment, part-payment, new regular payment</option>
+            <option value="2">Scenario 2 - Part-payment, new regular payment</option>
+            <option value="3">Scenario 3 - Straight onto new regular payment</option>
+          </select>
+        </div>
+        <hr class="govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+        <!-- <hr style="border:1px dashed grey;" class="govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+        <h3 class="govuk-heading-s">Payments</h3>
+        <p>This info will appear on the confirmation page for the 3 different scenarios covered in a change of payment frequency. Amount and payment date will be same as what's been set above.</p>
+        <h3 class="govuk-heading-s">First or next payment</h3>
+        <p>This payment will appear in confirmation scenario 1, where the frequency change is made when their first or next payment is already marked as 'sent'</p>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="first-payment-period-start">
+              Date period the first or next payment covers
+            </label>
+            <div id="first-payment-period-hint" class="govuk-hint">
+              Enter dates as day number and month only, e.g. 9 January
+            </div>
+            <p><span style="float:left; display:block; width:50px; text-align:right; margin-right:8px; line-height: 2em;">From</span><input class="govuk-input govuk-input--width-20" id="first-payment-period-start" name="first-payment-period-start" type="text" value=""></p>
+            <p><span style="float:left; display:block; width:50px; text-align:right; margin-right:8px; line-height: 2em;">To</span><input class="govuk-input govuk-input--width-20" id="first-payment-period-end" name="first-payment-period-end" type="text" value=""></p>
+          </div>
+
+          <hr style="border:1px dashed grey;" class="govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+          <h3 class="govuk-heading-s">Part payment</h3>
+          <p>This will show as the part payment required in confirmation scenarios 1 and 2.</p>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="part-payment-amount-conf">
+              Part payment amount
+            </label>
+            <div id="part-payment-amount-conf-hint" class="govuk-hint">
+              Enter with pence, for example 25.99 or 104.00
+            </div>
+            <div class="govuk-input__wrapper">
+              <div class="govuk-input__prefix" aria-hidden="true">£</div>
+              <input class="govuk-input govuk-input--width-10" id="part-payment-amount-conf" name="part-payment-amount-conf" type="text" spellcheck="false" aria-describedby="currency-hint">
+            </div>
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="part-payment-date-conf">
+              Part payment date
+            </label>
+            <div id="part-payment-date-conf" class="govuk-hint">
+              Enter as day of week, day number, month and year, e.g. Monday 9 January 2023
+            </div>
+            <input class="govuk-input govuk-input--width-20" id="part-payment-date-conf" name="part-payment-date-conf" type="text" value="">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="part-payment-period-start">
+              Date period the part payment covers
+            </label>
+            <div id="part-payment-period-hint" class="govuk-hint">
+              Enter dates as day number and month only, e.g. 9 January
+            </div>
+            <p><span style="float:left; display:block; width:50px; text-align:right; margin-right:8px; line-height: 2em;">From</span><input class="govuk-input govuk-input--width-20" id="part-payment-period-start" name="part-payment-period-start" type="text" value=""></p>
+            <p><span style="float:left; display:block; width:50px; text-align:right; margin-right:8px; line-height: 2em;">To</span><input class="govuk-input govuk-input--width-20" id="part-payment-period-end" name="part-payment-period-end" type="text" value=""></p>
+          </div>
+
+          <hr style="border:1px dashed grey;" class="govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+          <h3 class="govuk-heading-s">Regular payment</h3>
+          <p>This payment shows in all 3 confirmation scenarios, and is what their regular payment will be going forward on the new payment frequency.</p>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="regular-payment-amount-conf">
+              Regular payment amount
+            </label>
+            <div id="regular-payment-amount-conf-hint" class="govuk-hint">
+              Enter with pence, for example 25.99 or 104.00
+            </div>
+            <div class="govuk-input__wrapper">
+              <div class="govuk-input__prefix" aria-hidden="true">£</div>
+              <input class="govuk-input govuk-input--width-10" id="regular-payment-amount-conf" name="regular-payment-amount-conf" type="text" spellcheck="false" aria-describedby="currency-hint">
+            </div>
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="regular-payment-date-conf">
+              Regular payment date
+            </label>
+            <div id="regular-payment-date-conf" class="govuk-hint">
+              Enter as day of week, day number, month and year, e.g. Monday 9 January 2023
+            </div>
+            <input class="govuk-input govuk-input--width-20" id="regular-payment-date-conf" name="regular-payment-date-conf" type="text" value="">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="regular-payment-date-conf">
+              Shortened date regular payment start from
+            </label>
+            <div id="regular-payment-date-conf" class="govuk-hint">
+              Enter as day number and month only, e.g. 9 January
+            </div>
+            <input class="govuk-input govuk-input--width-20" id="regular-payment-date-short" name="regular-payment-date-short" type="text" value="">
+          </div>
+        <hr class="govuk-!-margin-top-5 govuk-!-margin-bottom-5"> -->
+
+        <h2 class="govuk-heading-m">Current bank details</h2>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="current-account-holder">
+            Name on the account
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="current-account-holder" name="current-account-holder" type="text" value="">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="current-sort-code">
+            Sort code
+          </label>
+          <div id="sort-code-hint" class="govuk-hint">
+            Must be 6 digits long
+          </div>
+          <input class="govuk-input govuk-input--width-10" id="current-sort-code" name="current-sort-code" type="text" value="">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="current-account-number">
+            Account number
+          </label>
+          <div id="account-number-hint" class="govuk-hint">
+            Must be between 6 and 8 digits long
+          </div>
+          <input class="govuk-input govuk-input--width-20" id="current-account-number" name="current-account-number" type="text" value="">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="current-roll-number">
+            Building society roll number
+          </label>
+          <input class="govuk-input govuk-input--width-10" id="rcurrent-oll-number" name="current-roll-number" type="text" value="">
+        </div>
+        <hr class="govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+        <h2 class="govuk-heading-m">Contact details</h2>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="current-address-line1">
+            Address
+          </label>
+          <input class="govuk-input govuk-!-margin-bottom-3" id="current-address-line-1" name="current-address-line-1" type="text" value="">
+          <input class="govuk-input govuk-!-margin-bottom-3" id="current-address-line-2" name="current-address-line-2" type="text" value="">
+          <input class="govuk-input govuk-!-margin-bottom-3" id="current-address-line-3" name="current-address-line-3" type="text" value="">
+          <input class="govuk-input govuk-input--width-10" id="current-postcode" name="current-postcode" type="text" value="">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="correspondence-address-line1">
+            Correspondence address
+          </label>
+          <input class="govuk-input govuk-!-margin-bottom-3" id="correspondence-address-line-1" name="correspondence-address-line-1" type="text" value="">
+          <input class="govuk-input govuk-!-margin-bottom-3" id="correspondence-address-line-2" name="correspondence-address-line-2" type="text" value="">
+          <input class="govuk-input govuk-!-margin-bottom-3" id="correspondence-address-line-3" name="correspondence-address-line-3" type="text" value="">
+          <input class="govuk-input govuk-input--width-10" id="correspondence-postcode" name="correspondence-postcode" type="text" value="">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="current-home-phone">
+            Home phone number
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="current-home-phone" name="current-home-phone" type="text" value="">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="current-alt-phone">
+            Alternative phone number
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="current-alt-phone" name="current-alt-phone" type="text" value="">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="current-mobile-phone">
+            Mobile phone number
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="current-mobile-phone" name="current-mobile-phone" type="text" value="">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="current-email">
+            Email address
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="current-email-address" name="current-email-address" type="text" value="">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="show-letter-format">
+            Show alternative format for letters?
+          </label>
+          <div class="govuk-radios govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="show-letter-format-yes" name="show-letter-format" type="radio" value="show-letter-format-yes" data-aria-controls="conditional-letter"  {{ checked("show-letter-format", "show-letter-format-yes") }}>
+              <label class="govuk-label govuk-radios__label" for="show-letter-format-yes">
+                Yes
+              </label>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-letter">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="letter-format">
+                    Alternative format for letters
+                  </label>
+                  <select class="govuk-select" id="letter-format" name="letter-format">
+                    <option value="Audio cassette">Audio cassette</option>
+                    <option value="Audio CD">Audio CD</option>
+                    <option value="Audio MP3">Audio MP3</option>
+                    <option value="Braille">Braille</option>
+                    <option value="Large print">Large print</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="show-letter-format-no" name="show-letter-format" type="radio" value="show-letter-format-no"  {{ checked("show-letter-format", "show-letter-format-no") }}>
+              <label class="govuk-label govuk-radios__label" for="show-letter-format-no">
+                No
+              </label>
+            </div>
+          </div>
+        </div>
+        <hr class="govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+        <h2 class="govuk-heading-m">Personal details</h2>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="marital-status">
+            Marital status
+          </label>
+          <select class="govuk-select" id="marital-status" name="marital-status">
+            <option value="Never been married or in a civil partnership">Never been married or in a civil partnership</option>
+            <option value="Married">Married</option>
+            <option value="In a civil partnership">In a civil partnership</option>
+            <option value="Widowed">Widowed</option>
+            <option value="Divorced">Divorced</option>
+            <option value="Dissolved civil partnership">Dissolved civil partnership</option>
+          </select>
+        </div>
+        <hr class="govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+        <button class="govuk-button" data-module="govuk-button">
+          Set this data
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
