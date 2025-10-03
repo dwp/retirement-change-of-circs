@@ -45,21 +45,55 @@
 </div>
 </dl>
 
-<h2 class="govuk-heading-m">Bank or building society details</h2>
+<!-- <h2 class="govuk-heading-m">Bank or building society details</h2>
 <p class="govuk-body">
   <a href="can-we-pay.html">Tell us about a change to your bank or building society account details.</a> 
-</p>
+</p> -->
 
-<p class="govuk-body">
+<h2 class="govuk-heading-m">Payment schedule</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row" style="border-top: 1px solid #b1b4b6;padding-top:15px;">
+          <dt class="govuk-summary-list__key">
+            Last payment date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['next-payment-date'] %}
+              {{ data['next-payment-date'] }}
+            {% else %}
+              Friday 17 January 2025
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Last payment amount
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['next-payment-amount'] %}
+              {{ data['next-payment-amount'] | currency }}
+            {% else %}
+              £815.40
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
+        </div>
+      </dl>
+
+<!-- <p class="govuk-body">
   You can see what account your payments are currently being sent to by checking your statement for payments with the reference '{% if data['NINO'] %}
   {{ data['NINO'] }}{% else %}QQ123456C{% endif %} DWP SP'. Or you can contact us by phone or post at:
   <ul class="govuk-list govuk-list--bullet">
     <li><a href="contact-pension-service" target="_blank">the Pension Service (opens in new tab)</a> if you live in England, Scotland or Wales</li>
     <li><a href="https://www.nidirect.gov.uk/contacts/northern-ireland-pension-centre" target="_blank">the Northern Ireland Pension Centre (opens in new tab)</a> if you live in Northern Ireland</li>
   </ul>
-</p>
+</p> -->
 
-      <h2 class="govuk-heading-m">Payment schedule</h2>
+      <!-- <h2 class="govuk-heading-m">Payment schedule</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row" style="border-top: 1px solid #b1b4b6;padding-top:15px;">
           <dt class="govuk-summary-list__key">
@@ -104,7 +138,7 @@
 
           </dd>
         </div>
-      </dl>
+      </dl> -->
       
       <h2 class="govuk-heading-m">
         Telling us about other changes
@@ -119,6 +153,7 @@
         In the future you will be able to use this service to: 
         <ul class="govuk-list govuk-list--bullet">
           <li>update your personal details and contact details</li>
+          <li>update your bank or building society account details</li>
           <li>change how often we pay your State Pension</li>
         </ul> 
       </p>
