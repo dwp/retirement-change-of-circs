@@ -23,7 +23,7 @@ router.post('/already-moved4', function (req, res) {
   if (changeAlreadyMoved == "Yes"){
     // Send user to next page
     res.redirect('/coa-combined/phase1/gysp-v1/temp-or-perm.html')
-  } else if (changeAlreadyMoved == "undefined"){
+  } else if (changeAlreadyMoved == "No"){
     res.redirect('/coa-combined/phase1/gysp-v1/report-change-after-move.html')
   }
 
@@ -42,7 +42,7 @@ router.post('/changed-residential-address4', function (req, res) {
     // Send user to next page
     res.redirect('/coa-combined/phase1/gysp-v1/you-have-changed-your-address-alt.html')
   } else {
-    res.redirect('/coa-combined/phase1/gysp-v1/you-have-changed-your-address.html')
+    res.redirect('/coa-combined/phase1/gysp-v1/you-have-changed-your-address-2benefits.html')
   }
 
 });
