@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ What is your name? - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="#" method="post">
+        <div class="govuk-form-group">
+          <h1 class="govuk-heading-l">
+            We need to check your identity
+          </h1>
+          <p>
+            We will ask you for personal details, like your:
+          </p> 
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              name
+            </li>
+            <li>
+              date of birth
+            </li>
+            <li>
+              National Insurance number
+            </li>
+            <li>
+              postcode
+            </li>
+          </ul>
+          
+          <p>
+            We will check the details you give us with our records and then ask some security questions to confirm your identity.
+          </p>
+          
+        </div>
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+      <!-- <p><a href="#">I do not have this information</a></p> -->
+    </div>
+  </div>
+
+{% endblock %}
