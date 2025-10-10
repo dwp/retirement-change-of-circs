@@ -12,7 +12,7 @@ function addDays(date, days) {
 // ROUTING TO YES OR NO ALREADY RECEIVD LETTER
 
 
-router.post('/received-letter5', function (req, res) {
+router.post('/received-letter6', function (req, res) {
 
   // Make a variable and give it the value from 'received-letter'
   var selectReceivedLetter = req.session.data['received-letter']
@@ -21,17 +21,17 @@ router.post('/received-letter5', function (req, res) {
   // Check whether the variable matches a condition
   if (selectReceivedLetter == "Yes"){
     // Send user to next page
-          res.redirect('/oftd/5-0/changes-you-can-report-gysp.html')
+          res.redirect('/oftd/6-0/changes-you-can-report-gysp.html')
   } else if (selectReceivedLetter == "No"){
     // Send user to next page
-    res.redirect('/oftd/5-0/dob.html')
+    res.redirect('/oftd/6-0/dob.html')
    }
         
       
 });
 
 // ROUTING TO DOB eligibility for all citizens journey
-router.post('/dob4', function (req, res) {
+router.post('/dob5', function (req, res) {
 
   // Make a variable and give it the value from 'citizen-record-year'
   var selectCitizenRecordYear = req.session.data['citizen-record-year']
@@ -40,11 +40,11 @@ router.post('/dob4', function (req, res) {
   // Check whether the variable matches a condition
   if (selectCitizenRecordYear == "1956"){
     // Send user to next page
-    res.redirect('/oftd/5-0/changes-you-can-report-gysp2')
+    res.redirect('/oftd/6-0/changes-you-can-report-gysp2')
     
   } else if (selectCitizenRecordYear == "1955"){
     // Send user to next page
-    res.redirect('/oftd/5-0/changes-you-can-report-legacy')
+    res.redirect('/oftd/6-0/changes-you-can-report-legacy')
   }
         
 });     
