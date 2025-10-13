@@ -22,9 +22,9 @@ router.post('/already-moved4', function (req, res) {
   // Check whether the variable matches a condition
   if (changeAlreadyMoved == "Yes"){
     // Send user to next page
-    res.redirect('/coa-combined/phase1/gysp-v1/temp-or-perm.html')
+    res.redirectInternal('/coa-combined/phase1/gysp-v1/temp-or-perm.html')
   } else if (changeAlreadyMoved == "No"){
-    res.redirect('/coa-combined/phase1/gysp-v1/report-change-after-move.html')
+    res.redirectInternal('/coa-combined/phase1/gysp-v1/report-change-after-move.html')
   }
 
 
@@ -40,9 +40,9 @@ router.post('/changed-residential-address4', function (req, res) {
   // Check whether the variable matches a condition
   if (changeSelectAnAddress == "Select1"){
     // Send user to next page
-    res.redirect('/coa-combined/phase1/gysp-v1/you-have-changed-your-address-alt.html')
+    res.redirectInternal('/coa-combined/phase1/gysp-v1/you-have-changed-your-address-alt.html')
   } else {
-    res.redirect('/coa-combined/phase1/gysp-v1/you-have-changed-your-address-2benefits.html')
+    res.redirectInternal('/coa-combined/phase1/gysp-v1/you-have-changed-your-address-2benefits.html')
   }
 
 });
@@ -57,14 +57,14 @@ router.post('/when-did-you-move1', function (req, res) {
   // Check whether the variable matches a condition
   if (changeWhenDidYouMove == "2025"){
     // Send user to next page
-    res.redirect('coa-combined/phase1/gysp-v1/temp-or-perm.html')
+    res.redirectInternal('coa-combined/phase1/gysp-v1/temp-or-perm.html')
 
   } else if (changeWhenDidYouMove == "2024"){
     // Send user to next page
-    res.redirect('coa-combined/phase1/gysp-v1/report-change-after-move.html')
+    res.redirectInternal('coa-combined/phase1/gysp-v1/report-change-after-move.html')
 
   } else {
-    res.redirect('coa-combined/phase1/gysp-v1/temp-or-perm.html')
+    res.redirectInternal('coa-combined/phase1/gysp-v1/temp-or-perm.html')
   }
 
 });
@@ -79,9 +79,9 @@ router.post('/perm-temp1', function (req, res) {
   // Check whether the variable matches a condition
   if (changeSelectAnAddress == "Yes"){
     // Send user to next page
-    res.redirect('/coa-combined/phase1/gysp-v1/uk-address.html')
+    res.redirectInternal('/coa-combined/phase1/gysp-v1/uk-address.html')
   } else {
-    res.redirect('/coa-combined/phase1/gysp-v1/dont-need-to-update-your-address.html')
+    res.redirectInternal('/coa-combined/phase1/gysp-v1/dont-need-to-update-your-address.html')
   }
 
 });
@@ -99,9 +99,9 @@ router.post('/perm-temp2', function (req, res) {
   // Check whether the variable matches a condition
   if (changePermOrTemp == "Yes"){
     // Send user to next page
-    res.redirect('/coa-combined/phase1/v1/cant-update-temp-address-alt.html')
+    res.redirectInternal('/coa-combined/phase1/v1/cant-update-temp-address-alt.html')
   } else if (changePermOrTemp== "No"){
-    res.redirect('/coa-combined/phase1/v1/uk-address.html')
+    res.redirectInternal('/coa-combined/phase1/v1/uk-address.html')
   }
 
 });
@@ -118,9 +118,9 @@ router.post('/uk-address5', function (req, res) {
   // Check whether the variable matches a condition
   if (changeUkAddress == "Yes"){
     // Send user to next page
-    res.redirect('/coa-combined/phase1/gysp-v1/address-finder/find-address.html')
+    res.redirectInternal('/coa-combined/phase1/gysp-v1/address-finder/find-address.html')
   } else if (changeUkAddress == "No"){
-    res.redirect('/coa-combined/phase1/gysp-v1/you-cannot-change-your-address-online.html')
+    res.redirectInternal('/coa-combined/phase1/gysp-v1/you-cannot-change-your-address-online.html')
   }
 
 });
@@ -135,16 +135,16 @@ router.post('/uk-address5', function (req, res) {
     // Check whether the variable matches a condition
     if (selectAddress == "Select1"){
       // Send user to next page
-      res.redirect('/coa-combined/phase1/gysp-v1/check-your-details.html')
+      res.redirectInternal('/coa-combined/phase1/gysp-v1/check-your-details.html')
     } else if (selectAddress == "Select2"){
       // Send user to next page
-      res.redirect('coa-combined/phase1/gysp-v1/do-you-live-in-a-care-home.html')
+      res.redirectInternal('coa-combined/phase1/gysp-v1/do-you-live-in-a-care-home.html')
     } else if (selectAddress == "Select3"){
       // Send user to next page
-      res.redirect('coa-combined/phase1/gysp-v1/are-you-currently-staying-in-hospital.html')
+      res.redirectInternal('coa-combined/phase1/gysp-v1/are-you-currently-staying-in-hospital.html')
     } else if (selectAddress == "Select4"){
       // Send user to next page
-      res.redirect('coa-combined/phase1/gysp-v1/this-is-a-prison.html')
+      res.redirectInternal('coa-combined/phase1/gysp-v1/this-is-a-prison.html')
     }
   
   });   
@@ -159,14 +159,14 @@ router.post('/postcode-6', function (req, res) {
   // Check whether the variable matches a condition
   if (changePostcode == "YO3 1SQ"){
     // Send user to next page
-    res.redirect('coa-combined/phase1/gysp-v1/address-finder/select-an-address.html')
+    res.redirectInternal('coa-combined/phase1/gysp-v1/address-finder/select-an-address.html')
 
   } else if (changePostcode == "YO3 1MK"){
     // Send user to next page
-    res.redirect('oftd/3-0/manage-state-pension-legacy.html')
+    res.redirectInternal('oftd/3-0/manage-state-pension-legacy.html')
   
   } else {
-    res.redirect('/oftd/3-0/cannot-make-changes-right-now.html')
+    res.redirectInternal('/oftd/3-0/cannot-make-changes-right-now.html')
   }
 
 });
@@ -184,9 +184,9 @@ router.post('/already-moved-pscs1', function (req, res) {
   // Check whether the variable matches a condition
   if (changeAlreadyMoved == "Yes"){
     // Send user to next page
-    res.redirect('/coa-combined/phase1/pscs-address-change-v1/uk-address.html')
+    res.redirectInternal('/coa-combined/phase1/pscs-address-change-v1/uk-address.html')
   } else if (changeAlreadyMoved == "No"){
-    res.redirect('/coa-combined/phase1/pscs-address-change-v1/report-change-after-move.html')
+    res.redirectInternal('/coa-combined/phase1/pscs-address-change-v1/report-change-after-move.html')
   }
 
 });
@@ -201,9 +201,9 @@ router.post('/uk-address-pscs1', function (req, res) {
   // Check whether the variable matches a condition
   if (changeUKaddress == "Yes"){
     // Send user to next page
-    res.redirect('/coa-combined/phase1/pscs-address-change-v1/find-address.html')
+    res.redirectInternal('/coa-combined/phase1/pscs-address-change-v1/find-address.html')
   } else if (changeUKaddress == "No"){
-    res.redirect('/coa-combined/phase1/pscs-address-change-v1/you-cannot-change-your-address-online.html')
+    res.redirectInternal('/coa-combined/phase1/pscs-address-change-v1/you-cannot-change-your-address-online.html')
   }
 
 });
@@ -217,9 +217,9 @@ router.post('/send-letters2', function (req, res) {
   // Check whether the variable matches a condition
   if (changeSendLetters == "Select5"){
     // Send user to next page
-    res.redirect('/contact/3-0/correspondence-address-v1/check-your-details')
+    res.redirectInternal('/contact/3-0/correspondence-address-v1/check-your-details')
   } else if (changeSendLetters == "Select6"){
-    res.redirect('/contact/3-0/correspondence-address-v1/uk-address')
+    res.redirectInternal('/contact/3-0/correspondence-address-v1/uk-address')
   }
 
 });
