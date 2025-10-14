@@ -12,7 +12,6 @@
     "@govuk-prototype-kit/task-list": "2.0.0",
     "@ministryofjustice/frontend": "5.1.5",
     "@x-govuk/govuk-prototype-filters": "2.0.0",
-    "axios": "^1.12.2",
     "govuk-frontend": "5.11.2",
     "govuk-one-login-service-header": "github:govuk-one-login/service-header",
     "govuk-prototype-kit": "13.18.0",
