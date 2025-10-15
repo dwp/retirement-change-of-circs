@@ -35,10 +35,10 @@ router.post('/claim-date', function (req, res) {
   // Check whether the variable matches a condition
   if (claimYear <= "2016" && claimMonth <= "4" && claimDay <= "5") {
     // Send user to ineligible page
-    res.redirectInternal('/initial-ideas/1-0/ineligible')
+    res.redirect('/initial-ideas/1-0/ineligible')
   } else {
     // Send user to next page
-    res.redirectInternal('/initial-ideas/1-0/eligibility-2')
+    res.redirect('/initial-ideas/1-0/eligibility-2')
   }
 
 });
@@ -53,22 +53,22 @@ router.post('/postcode-find', function (req, res) {
   // Check whether the variable matches a condition
   if (findPostcode == "YO31SQ"){
     // Send user to next page
-    res.redirectInternal('oftd/pscs-address-change/select-an-address.html')
+    res.redirect('oftd/pscs-address-change/select-an-address.html')
 
   } else if (findPostcode == "YO3 1SQ"){
     // Send user to next page
-    res.redirectInternal('oftd/pscs-address-change/select-an-address.html')
+    res.redirect('oftd/pscs-address-change/select-an-address.html')
 
   } else if (findPostcode == "yo31sq"){
     // Send user to next page
-    res.redirectInternal('oftd/pscs-address-change/is-this-your-address.html')
+    res.redirect('oftd/pscs-address-change/is-this-your-address.html')
 
   } else if (findPostcode == "yo3 1sq"){
     // Send user to next page
-    res.redirectInternal('oftd/pscs-address-change/select-an-address.html')
+    res.redirect('oftd/pscs-address-change/select-an-address.html')
   
   } else {
-    res.redirectInternal('oftd/pscs-address-change/no-address-found.html')
+    res.redirect('oftd/pscs-address-change/no-address-found.html')
   }
 
 });
@@ -83,13 +83,13 @@ router.post('/pscs-agent-action-address', function (req, res) {
   // Check whether the variable matches a condition
   if (selectPscsAgentActionAddress == "Yes"){
     // Send user to next page
-    res.redirectInternal('/otfd-agent/address-change/task_list_confirm.html')
+    res.redirect('/otfd-agent/address-change/task_list_confirm.html')
   } else if (selectPscsAgentActionAddress == "No"){
     // Send user to next page
-    res.redirectInternal('/otfd-agent/address-change/task_list_closed.html')
+    res.redirect('/otfd-agent/address-change/task_list_closed.html')
   } else if (selectPscsAgentActionAddress == "No2"){
     // Send user to next page
-    res.redirectInternal('/otfd-agent/address-change/task_list_closed-alt.html')
+    res.redirect('/otfd-agent/address-change/task_list_closed-alt.html')
   }
   
 
@@ -105,15 +105,15 @@ router.post('/select-an-address-pscs', function (req, res) {
   // Check whether the variable matches a condition
   if (selectAddress == "Select1"){
     // Send user to next page
-    res.redirectInternal('/oftd/pscs-address-change/email-address.html')
+    res.redirect('/oftd/pscs-address-change/email-address.html')
   } else if (selectAddress == "Select3"){
     // Send user to next page
-    res.redirectInternal('/oftd/pscs-address-change/email-address.html')
+    res.redirect('/oftd/pscs-address-change/email-address.html')
   } else if (selectAddress == "No"){
     // Send user to next page
-    res.redirectInternal('/oftd/pscs-address-change/already-your-address.html')
+    res.redirect('/oftd/pscs-address-change/already-your-address.html')
   } else {
-    res.redirectInternal('/oftd/pscs-address-change/enter-manual-address.html')
+    res.redirect('/oftd/pscs-address-change/enter-manual-address.html')
   }
 
 });
@@ -129,9 +129,9 @@ router.post('/already-moved-pscs', function (req, res) {
   // Check whether the variable matches a condition
   if (changeAlreadyMoved == "Yes"){
     // Send user to next page
-    res.redirectInternal('/oftd/pscs-address-change/uk-address.html')
+    res.redirect('/oftd/pscs-address-change/uk-address.html')
   } else if (changeAlreadyMoved == "No"){
-    res.redirectInternal('/oftd/pscs-address-change/report-change-after-move.html')
+    res.redirect('/oftd/pscs-address-change/report-change-after-move.html')
   }
 
 });
@@ -146,9 +146,9 @@ router.post('/uk-address-pscs', function (req, res) {
   // Check whether the variable matches a condition
   if (changeUKaddress == "Yes"){
     // Send user to next page
-    res.redirectInternal('/oftd/pscs-address-change/find-address.html')
+    res.redirect('/oftd/pscs-address-change/find-address.html')
   } else if (changeUKaddress == "No"){
-    res.redirectInternal('/oftd/pscs-address-change/you-cannot-change-your-address-online.html')
+    res.redirect('/oftd/pscs-address-change/you-cannot-change-your-address-online.html')
   }
 
 });
@@ -164,10 +164,10 @@ router.post('/invited-answer', function (req, res) {
   // Check whether the variable matches a condition
   if (wereYouInvited == "letter"){
     // Send user to next page
-    res.redirectInternal('/initial-ideas/1-0/eligibility-3')
+    res.redirect('/initial-ideas/1-0/eligibility-3')
   } else {
     // Send user to ineligible page
-    res.redirectInternal('/initial-ideas/1-0/ineligible')
+    res.redirect('/initial-ideas/1-0/ineligible')
   }
 
 });
@@ -180,10 +180,10 @@ router.post('/can-we-pay', function (req, res) {
   // Check whether the variable matches a condition
   if (canWePay == "yes"){
     // Send user to next page
-    res.redirectInternal('/oftd/pscs-bank-details-1/uk-account')
+    res.redirect('/oftd/pscs-bank-details-1/uk-account')
   } else {
     // Send user to ineligible page
-    res.redirectInternal('/oftd/pscs-bank-details-1/call-us')
+    res.redirect('/oftd/pscs-bank-details-1/call-us')
   }
 
 });
@@ -194,10 +194,10 @@ router.post('/can-we-pay-2', function (req, res) {
   // Check whether the variable matches a condition
   if (canWePay2 == "yes"){
     // Send user to next page
-    res.redirectInternal('/oftd/pscs-bank-details-2/uk-account')
+    res.redirect('/oftd/pscs-bank-details-2/uk-account')
   } else {
     // Send user to ineligible page
-    res.redirectInternal('/oftd/pscs-bank-details-2/call-us')
+    res.redirect('/oftd/pscs-bank-details-2/call-us')
   }
 
 });
@@ -209,10 +209,10 @@ router.post('/uk-account-q', function (req, res) {
   // Check whether the variable matches a condition
   if (UKaccount == "yes"){
     // Send user to next page
-    res.redirectInternal('/oftd/pscs-bank-details-1/bank-or-building-society-details')
+    res.redirect('/oftd/pscs-bank-details-1/bank-or-building-society-details')
   } else {
     // Send user to ineligible page
-    res.redirectInternal('/oftd/pscs-bank-details-1/can-only-use-uk-account')
+    res.redirect('/oftd/pscs-bank-details-1/can-only-use-uk-account')
   }
 
 });
@@ -223,10 +223,10 @@ router.post('/uk-account-q-2', function (req, res) {
   // Check whether the variable matches a condition
   if (UKaccount == "yes"){
     // Send user to next page
-    res.redirectInternal('/oftd/pscs-bank-details-2/bank-or-building-society-details')
+    res.redirect('/oftd/pscs-bank-details-2/bank-or-building-society-details')
   } else {
     // Send user to ineligible page
-    res.redirectInternal('/oftd/pscs-bank-details-2/can-only-use-uk-account')
+    res.redirect('/oftd/pscs-bank-details-2/can-only-use-uk-account')
   }
 
 });
@@ -241,10 +241,10 @@ router.post('/bank-answer', function (req, res) {
   // Check whether the variable matches a condition
   if (needToUpdateBank == "yes"){
     // Send user to next page
-    res.redirectInternal('/initial-ideas/1-0/eligibility-4')
+    res.redirect('/initial-ideas/1-0/eligibility-4')
   } else {
     // Send user to ineligible page
-    res.redirectInternal('/initial-ideas/1-0/ineligible')
+    res.redirect('/initial-ideas/1-0/ineligible')
   }
 
 });
@@ -258,10 +258,10 @@ router.post('/overseas-answer', function (req, res) {
   // Check whether the variable matches a condition
   if (beenOverseas == "no"){
     // Send user to next page
-    res.redirectInternal('/initial-ideas/1-0/idv-placeholder')
+    res.redirect('/initial-ideas/1-0/idv-placeholder')
   } else {
     // Send user to ineligible page
-    res.redirectInternal('/initial-ideas/1-0/ineligible')
+    res.redirect('/initial-ideas/1-0/ineligible')
   }
 
 });
@@ -277,10 +277,10 @@ router.post('/change', function (req, res) {
   // Check whether the variable matches a condition
   if (changeAccount == "yes"){
     // Send user to next page
-    res.redirectInternal('/initial-ideas/1-0/bank-change-1')
+    res.redirect('/initial-ideas/1-0/bank-change-1')
   } else {
     // Send user to ineligible page
-    res.redirectInternal('/initial-ideas/1-0/end')
+    res.redirect('/initial-ideas/1-0/end')
   }
 
 });
@@ -294,9 +294,9 @@ router.post('/account-type', function (req, res) {
   // Check whether the variable matches a condition
   if (accountType == "uk-account"){
     // Send user to next page
-    res.redirectInternal('/initial-ideas/1-0/bank-change-2')
+    res.redirect('/initial-ideas/1-0/bank-change-2')
   } else {
-    res.redirectInternal('/initial-ideas/1-0/end-overseas')
+    res.redirect('/initial-ideas/1-0/end-overseas')
   }
 
 });
@@ -314,10 +314,10 @@ router.post('/claim-date1', function (req, res) {
   // Check whether the variable matches a condition
   if (claimYear <= "2016" && claimMonth <= "4" && claimDay <= "5") {
     // Send user to ineligible page
-    res.redirectInternal('/initial-ideas/1-1/ineligible')
+    res.redirect('/initial-ideas/1-1/ineligible')
   } else {
     // Send user to next page
-    res.redirectInternal('/initial-ideas/1-1/eligibility-2')
+    res.redirect('/initial-ideas/1-1/eligibility-2')
   }
 
 });
@@ -331,10 +331,10 @@ router.post('/invited-answer1', function (req, res) {
   // Check whether the variable matches a condition
   if (wereYouInvited == "letter"){
     // Send user to next page
-    res.redirectInternal('/initial-ideas/1-1/eligibility-4')
+    res.redirect('/initial-ideas/1-1/eligibility-4')
   } else {
     // Send user to ineligible page
-    res.redirectInternal('/initial-ideas/1-1/ineligible')
+    res.redirect('/initial-ideas/1-1/ineligible')
   }
 
 });
@@ -350,10 +350,10 @@ router.post('/overseas-answer1', function (req, res) {
   // Check whether the variable matches a condition
   if (beenOverseas == "no"){
     // Send user to next page
-    res.redirectInternal('/initial-ideas/1-1/idv-placeholder')
+    res.redirect('/initial-ideas/1-1/idv-placeholder')
   } else {
     // Send user to ineligible page
-    res.redirectInternal('/initial-ideas/1-1/ineligible')
+    res.redirect('/initial-ideas/1-1/ineligible')
   }
 
 });
@@ -369,10 +369,10 @@ router.post('/change1', function (req, res) {
   // Check whether the variable matches a condition
   if (changeAccount == "yes"){
     // Send user to next page
-    res.redirectInternal('/initial-ideas/1-1/bank-change-1')
+    res.redirect('/initial-ideas/1-1/bank-change-1')
   } else {
     // Send user to ineligible page
-    res.redirectInternal('/initial-ideas/1-1/end')
+    res.redirect('/initial-ideas/1-1/end')
   }
 
 });
@@ -386,9 +386,9 @@ router.post('/account-type1', function (req, res) {
   // Check whether the variable matches a condition
   if (accountType == "uk-account"){
     // Send user to next page
-    res.redirectInternal('/initial-ideas/1-1/bank-change-2')
+    res.redirect('/initial-ideas/1-1/bank-change-2')
   } else {
-    res.redirectInternal('/initial-ideas/1-1/end-overseas')
+    res.redirect('/initial-ideas/1-1/end-overseas')
   }
 
 });
@@ -406,10 +406,10 @@ router.post('/claim-date2', function (req, res) {
   // Check whether the variable matches a condition
   if (claimYear <= "2016" && claimMonth <= "4" && claimDay <= "5") {
     // Send user to ineligible page
-    res.redirectInternal('/initial-ideas/1-2/ineligible')
+    res.redirect('/initial-ideas/1-2/ineligible')
   } else {
     // Send user to next page
-    res.redirectInternal('/initial-ideas/1-2/eligibility-2')
+    res.redirect('/initial-ideas/1-2/eligibility-2')
   }
 
 });
@@ -423,10 +423,10 @@ router.post('/invited-answer2', function (req, res) {
   // Check whether the variable matches a condition
   if (wereYouInvited == "letter"){
     // Send user to next page
-    res.redirectInternal('/initial-ideas/1-2/idv-placeholder')
+    res.redirect('/initial-ideas/1-2/idv-placeholder')
   } else {
     // Send user to ineligible page
-    res.redirectInternal('/initial-ideas/1-2/ineligible')
+    res.redirect('/initial-ideas/1-2/ineligible')
   }
 
 });
@@ -442,10 +442,10 @@ router.post('/change2', function (req, res) {
   // Check whether the variable matches a condition
   if (changeAccount == "yes"){
     // Send user to next page
-    res.redirectInternal('/initial-ideas/1-2/bank-change-1')
+    res.redirect('/initial-ideas/1-2/bank-change-1')
   } else {
     // Send user to ineligible page
-    res.redirectInternal('/initial-ideas/1-2/end')
+    res.redirect('/initial-ideas/1-2/end')
   }
 
 });
@@ -459,9 +459,9 @@ router.post('/account-type2', function (req, res) {
   // Check whether the variable matches a condition
   if (accountType == "uk-account"){
     // Send user to next page
-    res.redirectInternal('/initial-ideas/1-2/bank-change-2')
+    res.redirect('/initial-ideas/1-2/bank-change-2')
   } else {
-    res.redirectInternal('/initial-ideas/1-2/end-overseas')
+    res.redirect('/initial-ideas/1-2/end-overseas')
   }
 
 });
@@ -478,10 +478,10 @@ router.post('/were-invited', function (req, res) {
   // Check whether the variable matches a condition
   if (wereYouInvited == "letter"){
     // Send user to next page
-    res.redirectInternal('/mvp/1-0/idv-cred-confusion')
+    res.redirect('/mvp/1-0/idv-cred-confusion')
   } else {
     // Send user to ineligible page
-    res.redirectInternal('/mvp/1-0/ineligible')
+    res.redirect('/mvp/1-0/ineligible')
   }
 
 });
@@ -495,10 +495,10 @@ router.post('/idv-redirect', function (req, res) {
   // Check whether the variable matches a condition
   if (idvRedirect == "sign-in"){
     // Send user to sign in IDV prototype page
-    res.redirectInternal('https://prototype-dth.herokuapp.com/auth/dev-ready/sign-in?service-name=manage-your-state-pension')
+    res.redirect('https://prototype-dth.herokuapp.com/auth/dev-ready/sign-in?service-name=manage-your-state-pension')
   } else {
     // Send user to register
-    res.redirectInternal('/mvp/1-0/idv-recreated-pages/register')
+    res.redirect('/mvp/1-0/idv-recreated-pages/register')
   }
 
 });
@@ -514,9 +514,9 @@ router.post('/account-type-mvp', function (req, res) {
   // Check whether the variable matches a condition
   if (accountType == "uk-account"){
     // Send user to next page
-    res.redirectInternal('/mvp/1-0/bank-change-2')
+    res.redirect('/mvp/1-0/bank-change-2')
   } else {
-    res.redirectInternal('/mvp/1-0/end-overseas')
+    res.redirect('/mvp/1-0/end-overseas')
   }
 
 });
@@ -533,10 +533,10 @@ router.post('/were-invited2', function (req, res) {
   // Check whether the variable matches a condition
   if (wereYouInvited == "letter"){
     // Send user to next page
-    res.redirectInternal('/mvp/2-0/idv-recreated-pages/sign-in')
+    res.redirect('/mvp/2-0/idv-recreated-pages/sign-in')
   } else {
     // Send user to ineligible page
-    res.redirectInternal('/mvp/2-0/ineligible')
+    res.redirect('/mvp/2-0/ineligible')
   }
 
 });
@@ -552,9 +552,9 @@ router.post('/account-type-mvp2', function (req, res) {
   // Check whether the variable matches a condition
   if (accountType == "uk-account"){
     // Send user to next page
-    res.redirectInternal('/mvp/2-0/bank-change-2')
+    res.redirect('/mvp/2-0/bank-change-2')
   } else {
-    res.redirectInternal('/mvp/2-0/end-overseas')
+    res.redirect('/mvp/2-0/end-overseas')
   }
 
 });
@@ -571,10 +571,10 @@ router.post('/were-invited3', function (req, res) {
   // Check whether the variable matches a condition
   if (wereYouInvited == "letter"){
     // Send user to next page
-    res.redirectInternal('/mvp/3-0/idv-recreated-pages/register')
+    res.redirect('/mvp/3-0/idv-recreated-pages/register')
   } else {
     // Send user to ineligible page
-    res.redirectInternal('/mvp/3-0/ineligible')
+    res.redirect('/mvp/3-0/ineligible')
   }
 
 });
@@ -590,9 +590,9 @@ router.post('/account-type-mvp3', function (req, res) {
   // Check whether the variable matches a condition
   if (accountType == "uk-account"){
     // Send user to next page
-    res.redirectInternal('/mvp/3-0/bank-change-2')
+    res.redirect('/mvp/3-0/bank-change-2')
   } else {
-    res.redirectInternal('/mvp/3-0/end-overseas')
+    res.redirect('/mvp/3-0/end-overseas')
   }
 
 });
@@ -609,10 +609,10 @@ router.post('/were-invited4', function (req, res) {
   // Check whether the variable matches a condition
   if (wereYouInvited == "letter"){
     // Send user to next page
-    res.redirectInternal('/mvp/4-0/idv-recreated-pages/register')
+    res.redirect('/mvp/4-0/idv-recreated-pages/register')
   } else {
     // Send user to ineligible page
-    res.redirectInternal('/mvp/4-0/cannot-use-service')
+    res.redirect('/mvp/4-0/cannot-use-service')
   }
 
 });
@@ -628,9 +628,9 @@ router.post('/account-type-mvp4', function (req, res) {
   // Check whether the variable matches a condition
   if (accountType == "uk-account"){
     // Send user to next page
-    res.redirectInternal('/mvp/4-0/bank-or-building-society-details')
+    res.redirect('/mvp/4-0/bank-or-building-society-details')
   } else {
-    res.redirectInternal('/mvp/4-0/can-only-use-uk-account.html')
+    res.redirect('/mvp/4-0/can-only-use-uk-account.html')
   }
 
 });
@@ -648,10 +648,10 @@ router.post('/were-invited5', function (req, res) {
   // Check whether the variable matches a condition
   if (wereYouInvited == "letter"){
     // Send user to next page
-    res.redirectInternal('/frequency/1-0/idv-recreated-pages/sign-in')
+    res.redirect('/frequency/1-0/idv-recreated-pages/sign-in')
   } else {
     // Send user to ineligible page
-    res.redirectInternal('/frequency/1-0/cannot-use-service')
+    res.redirect('/frequency/1-0/cannot-use-service')
   }
 
 });
@@ -667,9 +667,9 @@ router.post('/account-type5', function (req, res) {
   // Check whether the variable matches a condition
   if (accountType == "uk-account"){
     // Send user to next page
-    res.redirectInternal('/frequency/1-0/bank-or-building-society-details')
+    res.redirect('/frequency/1-0/bank-or-building-society-details')
   } else {
-    res.redirectInternal('/frequency/1-0/can-only-use-uk-account.html')
+    res.redirect('/frequency/1-0/can-only-use-uk-account.html')
   }
 
 });
@@ -685,9 +685,9 @@ router.post('/week', function (req, res) {
   // Check whether the variable matches a condition
   if (paidWeekly == "Yes"){
     // Send user to next page
-    res.redirectInternal('/frequency/1-0/check-your-details&frequency-single.html')
+    res.redirect('/frequency/1-0/check-your-details&frequency-single.html')
   } else {
-    res.redirectInternal('/frequency/1-0/payment-frequency-not-changed.html')
+    res.redirect('/frequency/1-0/payment-frequency-not-changed.html')
   }
 });
 
@@ -704,10 +704,10 @@ router.post('/were-invited6', function (req, res) {
   // Check whether the variable matches a condition
   if (wereYouInvited == "letter"){
     // Send user to next page
-    res.redirectInternal('/frequency/2-0/privacy-notice')
+    res.redirect('/frequency/2-0/privacy-notice')
   } else {
     // Send user to ineligible page
-    res.redirectInternal('/frequency/2-0/cannot-use-service')
+    res.redirect('/frequency/2-0/cannot-use-service')
   }
 
 });
@@ -723,9 +723,9 @@ router.post('/account-type6', function (req, res) {
   // Check whether the variable matches a condition
   if (accountType == "uk-account"){
     // Send user to next page
-    res.redirectInternal('/frequency/2-0/bank-or-building-society-details')
+    res.redirect('/frequency/2-0/bank-or-building-society-details')
   } else {
-    res.redirectInternal('/frequency/2-0/can-only-use-uk-account.html')
+    res.redirect('/frequency/2-0/can-only-use-uk-account.html')
   }
 
 });
@@ -741,9 +741,9 @@ router.post('/week2', function (req, res) {
   // Check whether the variable matches a condition
   if (paidWeekly == "Yes"){
     // Send user to next page
-    res.redirectInternal('/frequency/2-0/check-your-details&frequency-single.html')
+    res.redirect('/frequency/2-0/check-your-details&frequency-single.html')
   } else {
-    res.redirectInternal('/frequency/2-0/payment-frequency-not-changed.html')
+    res.redirect('/frequency/2-0/payment-frequency-not-changed.html')
   }
 
 });
@@ -760,10 +760,10 @@ router.post('/were-invited7', function (req, res) {
   // Check whether the variable matches a condition
   if (wereYouInvited == "letter"){
     // Send user to next page
-    res.redirectInternal('/frequency/3-0/privacy-notice')
+    res.redirect('/frequency/3-0/privacy-notice')
   } else {
     // Send user to ineligible page
-    res.redirectInternal('/frequency/3-0/cannot-use-service')
+    res.redirect('/frequency/3-0/cannot-use-service')
   }
 
 });
@@ -779,9 +779,9 @@ router.post('/account-type7', function (req, res) {
   // Check whether the variable matches a condition
   if (accountType == "uk-account"){
     // Send user to next page
-    res.redirectInternal('/frequency/3-0/bank-or-building-society-details')
+    res.redirect('/frequency/3-0/bank-or-building-society-details')
   } else {
-    res.redirectInternal('/frequency/3-0/can-only-use-uk-account.html')
+    res.redirect('/frequency/3-0/can-only-use-uk-account.html')
   }
 
 });
@@ -797,9 +797,9 @@ router.post('/week3', function (req, res) {
   // Check whether the variable matches a condition
   if (paidWeekly == "Yes"){
     // Send user to next page
-    res.redirectInternal('/frequency/3-0/check-your-details&frequency-single.html')
+    res.redirect('/frequency/3-0/check-your-details&frequency-single.html')
   } else {
-    res.redirectInternal('/frequency/3-0/payment-frequency-not-changed.html')
+    res.redirect('/frequency/3-0/payment-frequency-not-changed.html')
   }
 
 });
@@ -815,9 +815,9 @@ router.post('/how-often', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencySelected == "Every 4 weeks"){
     // Send user to next page
-    res.redirectInternal('/frequency/3-0/payment-frequency-not-changed.html')
+    res.redirect('/frequency/3-0/payment-frequency-not-changed.html')
   } else {
-    res.redirectInternal('/frequency/3-0/check-your-details&frequency.html')
+    res.redirect('/frequency/3-0/check-your-details&frequency.html')
   }
 
 });
@@ -834,10 +834,10 @@ router.post('/were-invited8', function (req, res) {
   // Check whether the variable matches a condition
   if (wereYouInvited == "letter"){
     // Send user to next page
-    res.redirectInternal('/frequency/4-0/privacy-notice')
+    res.redirect('/frequency/4-0/privacy-notice')
   } else {
     // Send user to ineligible page
-    res.redirectInternal('/frequency/4-0/cannot-use-service')
+    res.redirect('/frequency/4-0/cannot-use-service')
   }
 
 });
@@ -853,9 +853,9 @@ router.post('/account-type8', function (req, res) {
   // Check whether the variable matches a condition
   if (accountType == "uk-account"){
     // Send user to next page
-    res.redirectInternal('/frequency/4-0/bank-or-building-society-details')
+    res.redirect('/frequency/4-0/bank-or-building-society-details')
   } else {
-    res.redirectInternal('/frequency/4-0/can-only-use-uk-account.html')
+    res.redirect('/frequency/4-0/can-only-use-uk-account.html')
   }
 
 });
@@ -871,9 +871,9 @@ router.post('/week4', function (req, res) {
   // Check whether the variable matches a condition
   if (paidWeekly == "Yes"){
     // Send user to next page
-    res.redirectInternal('/frequency/4-0/check-your-details&frequency-single.html')
+    res.redirect('/frequency/4-0/check-your-details&frequency-single.html')
   } else {
-    res.redirectInternal('/frequency/4-0/payment-frequency-not-changed.html')
+    res.redirect('/frequency/4-0/payment-frequency-not-changed.html')
   }
 
 });
@@ -889,9 +889,9 @@ router.post('/how-often1', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencySelected == "Every 4 weeks"){
     // Send user to next page
-    res.redirectInternal('/frequency/4-0/payment-frequency-not-changed.html')
+    res.redirect('/frequency/4-0/payment-frequency-not-changed.html')
   } else {
-    res.redirectInternal('/frequency/4-0/check-your-details&frequency.html')
+    res.redirect('/frequency/4-0/check-your-details&frequency.html')
   }
 
 });
@@ -905,9 +905,9 @@ router.post('/how-often-alt', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencySelected == "Every 2 weeks"){
     // Send user to next page
-    res.redirectInternal('/frequency/4-0/payment-frequency-not-changed.html')
+    res.redirect('/frequency/4-0/payment-frequency-not-changed.html')
   } else {
-    res.redirectInternal('/frequency/4-0/check-your-details&frequency.html')
+    res.redirect('/frequency/4-0/check-your-details&frequency.html')
   }
 
 });
@@ -921,9 +921,9 @@ router.post('/how-often2', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencySelected == "Every 4 weeks"){
     // Send user to next page
-    res.redirectInternal('/frequency/4-0/payment-frequency-not-changed.html')
+    res.redirect('/frequency/4-0/payment-frequency-not-changed.html')
   } else {
-    res.redirectInternal('/frequency/4-0/check-your-details&frequency-single.html')
+    res.redirect('/frequency/4-0/check-your-details&frequency-single.html')
   }
 
 });
@@ -941,10 +941,10 @@ router.post('/were-invited9', function (req, res) {
   // Check whether the variable matches a condition
   if (wereYouInvited == "letter"){
     // Send user to next page
-    res.redirectInternal('/frequency/5-0/privacy-notice')
+    res.redirect('/frequency/5-0/privacy-notice')
   } else {
     // Send user to ineligible page
-    res.redirectInternal('/frequency/5-0/cannot-use-service')
+    res.redirect('/frequency/5-0/cannot-use-service')
   }
 
 });
@@ -960,9 +960,9 @@ router.post('/account-type9', function (req, res) {
   // Check whether the variable matches a condition
   if (accountType == "uk-account"){
     // Send user to next page
-    res.redirectInternal('/frequency/5-0/bank-or-building-society-details')
+    res.redirect('/frequency/5-0/bank-or-building-society-details')
   } else {
-    res.redirectInternal('/frequency/5-0/can-only-use-uk-account.html')
+    res.redirect('/frequency/5-0/can-only-use-uk-account.html')
   }
 
 });
@@ -980,9 +980,9 @@ router.post('/how-often5', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencySelected == "Every 4 weeks"){
     // Send user to next page
-    res.redirectInternal('/frequency/5-0/keep-how-often-we-will-pay-you.html')
+    res.redirect('/frequency/5-0/keep-how-often-we-will-pay-you.html')
   } else {
-    res.redirectInternal('/frequency/5-0/check-how-often-we-will-pay-you.html')
+    res.redirect('/frequency/5-0/check-how-often-we-will-pay-you.html')
   }
 
 });
@@ -996,9 +996,9 @@ router.post('/how-often-alt5', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencySelected == "Every 2 weeks"){
     // Send user to next page
-    res.redirectInternal('/frequency/5-0/keep-how-often-we-will-pay-you&alt.html')
+    res.redirect('/frequency/5-0/keep-how-often-we-will-pay-you&alt.html')
   } else {
-    res.redirectInternal('/frequency/5-0/check-how-often-we-will-pay-you.html')
+    res.redirect('/frequency/5-0/check-how-often-we-will-pay-you.html')
   }
 
 });
@@ -1012,9 +1012,9 @@ router.post('/how-often-single5', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencySelected == "Every 4 weeks"){
     // Send user to next page
-    res.redirectInternal('/frequency/5-0/keep-how-often-we-will-pay-you.html')
+    res.redirect('/frequency/5-0/keep-how-often-we-will-pay-you.html')
   } else {
-    res.redirectInternal('/frequency/5-0/check-how-often-we-will-pay-you.html')
+    res.redirect('/frequency/5-0/check-how-often-we-will-pay-you.html')
   }
 
 });
@@ -1033,10 +1033,10 @@ router.post('/were-invited10', function (req, res) {
   // Check whether the variable matches a condition
   if (wereYouInvited == "letter"){
     // Send user to next page
-    res.redirectInternal('/email-and-payment-schedule/1-0/privacy-notice')
+    res.redirect('/email-and-payment-schedule/1-0/privacy-notice')
   } else {
     // Send user to ineligible page
-    res.redirectInternal('/email-and-payment-schedule/1-0/cannot-use-service')
+    res.redirect('/email-and-payment-schedule/1-0/cannot-use-service')
   }
 
 });
@@ -1052,9 +1052,9 @@ router.post('/account-type10', function (req, res) {
   // Check whether the variable matches a condition
   if (accountType == "uk-account"){
     // Send user to next page
-    res.redirectInternal('/email-and-payment-schedule/1-0/bank-or-building-society-details')
+    res.redirect('/email-and-payment-schedule/1-0/bank-or-building-society-details')
   } else {
-    res.redirectInternal('/email-and-payment-schedule/1-0/can-only-use-uk-account.html')
+    res.redirect('/email-and-payment-schedule/1-0/can-only-use-uk-account.html')
   }
 
 });
@@ -1072,9 +1072,9 @@ router.post('/how-often6', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencySelected == "Every 4 weeks"){
     // Send user to next page
-    res.redirectInternal('/email-and-payment-schedule/1-0/keep-how-often-we-will-pay-you.html')
+    res.redirect('/email-and-payment-schedule/1-0/keep-how-often-we-will-pay-you.html')
   } else {
-    res.redirectInternal('/email-and-payment-schedule/1-0/frequency-email/would-you-like-email-confirmation.html')
+    res.redirect('/email-and-payment-schedule/1-0/frequency-email/would-you-like-email-confirmation.html')
   }
 
 });
@@ -1088,9 +1088,9 @@ router.post('/how-often-alt6', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencySelected == "Every 2 weeks"){
     // Send user to next page
-    res.redirectInternal('/email-and-payment-schedule/1-0/keep-how-often-we-will-pay-you&alt.html')
+    res.redirect('/email-and-payment-schedule/1-0/keep-how-often-we-will-pay-you&alt.html')
   } else {
-    res.redirectInternal('/email-and-payment-schedule/1-0/frequency-email/would-you-like-email-confirmation.html')
+    res.redirect('/email-and-payment-schedule/1-0/frequency-email/would-you-like-email-confirmation.html')
   }
 
 });
@@ -1104,9 +1104,9 @@ router.post('/how-often-single6', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencySelected == "Every 4 weeks"){
     // Send user to next page
-    res.redirectInternal('/email-and-payment-schedule/1-0/keep-how-often-we-will-pay-you.html')
+    res.redirect('/email-and-payment-schedule/1-0/keep-how-often-we-will-pay-you.html')
   } else {
-    res.redirectInternal('/email-and-payment-schedule/1-0/frequency-email/would-you-like-email-confirmation.html')
+    res.redirect('/email-and-payment-schedule/1-0/frequency-email/would-you-like-email-confirmation.html')
   }
 
 });
@@ -1120,9 +1120,9 @@ router.post('/email-conf-bank', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencyBankConf == "bank-confirmation-yes"){
     // Send user to next page
-    res.redirectInternal('/email-and-payment-schedule/1-0/bank-email/email.html')
+    res.redirect('/email-and-payment-schedule/1-0/bank-email/email.html')
   } else {
-    res.redirectInternal('/email-and-payment-schedule/1-0/check-your-details.html')
+    res.redirect('/email-and-payment-schedule/1-0/check-your-details.html')
   }
 
 });
@@ -1136,9 +1136,9 @@ router.post('/email-conf-frequency', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencyEmailConf == "frequency-confirmation-yes"){
     // Send user to next page
-    res.redirectInternal('/email-and-payment-schedule/1-0/frequency-email/email.html')
+    res.redirect('/email-and-payment-schedule/1-0/frequency-email/email.html')
   } else {
-    res.redirectInternal('/email-and-payment-schedule/1-0/check-how-often-we-will-pay-you.html')
+    res.redirect('/email-and-payment-schedule/1-0/check-how-often-we-will-pay-you.html')
   }
 
 });
@@ -1152,13 +1152,13 @@ router.post('/frequency-scenario', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencyScenario == "1"){
     // Send user to next page
-    res.redirectInternal('/email-and-payment-schedule/1-0/frequency-confirmations/you-have-changed-how-often-we-pay-you&1.html')
+    res.redirect('/email-and-payment-schedule/1-0/frequency-confirmations/you-have-changed-how-often-we-pay-you&1.html')
   } else if (frequencyScenario == "2"){
-    res.redirectInternal('/email-and-payment-schedule/1-0/frequency-confirmations/you-have-changed-how-often-we-pay-you&2.html')
+    res.redirect('/email-and-payment-schedule/1-0/frequency-confirmations/you-have-changed-how-often-we-pay-you&2.html')
   } else if (frequencyScenario == "3"){
-    res.redirectInternal('/email-and-payment-schedule/1-0/frequency-confirmations/you-have-changed-how-often-we-pay-you&3.html')
+    res.redirect('/email-and-payment-schedule/1-0/frequency-confirmations/you-have-changed-how-often-we-pay-you&3.html')
   } else {
-    res.redirectInternal('/email-and-payment-schedule/1-0/frequency-confirmations/you-have-changed-how-often-we-pay-you&1.html')
+    res.redirect('/email-and-payment-schedule/1-0/frequency-confirmations/you-have-changed-how-often-we-pay-you&1.html')
   }
 
 });
@@ -1176,10 +1176,10 @@ router.post('/were-invited11', function (req, res) {
   // Check whether the variable matches a condition
   if (wereYouInvited == "letter"){
     // Send user to next page
-    res.redirectInternal('/email-and-payment-schedule/2-0/privacy-notice')
+    res.redirect('/email-and-payment-schedule/2-0/privacy-notice')
   } else {
     // Send user to ineligible page
-    res.redirectInternal('/email-and-payment-schedule/2-0/cannot-use-service')
+    res.redirect('/email-and-payment-schedule/2-0/cannot-use-service')
   }
 
 });
@@ -1195,9 +1195,9 @@ router.post('/account-type11', function (req, res) {
   // Check whether the variable matches a condition
   if (accountType == "uk-account"){
     // Send user to next page
-    res.redirectInternal('/email-and-payment-schedule/2-0/bank-or-building-society-details')
+    res.redirect('/email-and-payment-schedule/2-0/bank-or-building-society-details')
   } else {
-    res.redirectInternal('/email-and-payment-schedule/2-0/can-only-use-uk-account.html')
+    res.redirect('/email-and-payment-schedule/2-0/can-only-use-uk-account.html')
   }
 
 });
@@ -1215,9 +1215,9 @@ router.post('/how-often7', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencySelected == "Every 4 weeks"){
     // Send user to next page
-    res.redirectInternal('/email-and-payment-schedule/2-0/keep-how-often-we-will-pay-you.html')
+    res.redirect('/email-and-payment-schedule/2-0/keep-how-often-we-will-pay-you.html')
   } else {
-    res.redirectInternal('/email-and-payment-schedule/2-0/frequency-email/would-you-like-email-confirmation.html')
+    res.redirect('/email-and-payment-schedule/2-0/frequency-email/would-you-like-email-confirmation.html')
   }
 
 });
@@ -1231,9 +1231,9 @@ router.post('/how-often-alt7', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencySelected == "Every 2 weeks"){
     // Send user to next page
-    res.redirectInternal('/email-and-payment-schedule/2-0/keep-how-often-we-will-pay-you&alt.html')
+    res.redirect('/email-and-payment-schedule/2-0/keep-how-often-we-will-pay-you&alt.html')
   } else {
-    res.redirectInternal('/email-and-payment-schedule/2-0/frequency-email/would-you-like-email-confirmation.html')
+    res.redirect('/email-and-payment-schedule/2-0/frequency-email/would-you-like-email-confirmation.html')
   }
 
 });
@@ -1247,9 +1247,9 @@ router.post('/how-often-single7', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencySelected == "Every 4 weeks"){
     // Send user to next page
-    res.redirectInternal('/email-and-payment-schedule/2-0/keep-how-often-we-will-pay-you.html')
+    res.redirect('/email-and-payment-schedule/2-0/keep-how-often-we-will-pay-you.html')
   } else {
-    res.redirectInternal('/email-and-payment-schedule/2-0/frequency-email/would-you-like-email-confirmation.html')
+    res.redirect('/email-and-payment-schedule/2-0/frequency-email/would-you-like-email-confirmation.html')
   }
 
 });
@@ -1263,9 +1263,9 @@ router.post('/email-conf-bank1', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencyBankConf == "bank-confirmation-yes"){
     // Send user to next page
-    res.redirectInternal('/email-and-payment-schedule/2-0/bank-email/email.html')
+    res.redirect('/email-and-payment-schedule/2-0/bank-email/email.html')
   } else {
-    res.redirectInternal('/email-and-payment-schedule/2-0/check-your-details.html')
+    res.redirect('/email-and-payment-schedule/2-0/check-your-details.html')
   }
 
 });
@@ -1279,9 +1279,9 @@ router.post('/email-conf-frequency1', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencyEmailConf == "frequency-confirmation-yes"){
     // Send user to next page
-    res.redirectInternal('/email-and-payment-schedule/2-0/frequency-email/email.html')
+    res.redirect('/email-and-payment-schedule/2-0/frequency-email/email.html')
   } else {
-    res.redirectInternal('/email-and-payment-schedule/2-0/check-how-often-we-will-pay-you.html')
+    res.redirect('/email-and-payment-schedule/2-0/check-how-often-we-will-pay-you.html')
   }
 
 });
@@ -1295,13 +1295,13 @@ router.post('/frequency-scenario1', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencyScenario == "1"){
     // Send user to next page
-    res.redirectInternal('/email-and-payment-schedule/2-0/frequency-confirmations/you-have-changed-how-often-we-pay-you&1.html')
+    res.redirect('/email-and-payment-schedule/2-0/frequency-confirmations/you-have-changed-how-often-we-pay-you&1.html')
   } else if (frequencyScenario == "2"){
-    res.redirectInternal('/email-and-payment-schedule/2-0/frequency-confirmations/you-have-changed-how-often-we-pay-you&2.html')
+    res.redirect('/email-and-payment-schedule/2-0/frequency-confirmations/you-have-changed-how-often-we-pay-you&2.html')
   } else if (frequencyScenario == "3"){
-    res.redirectInternal('/email-and-payment-schedule/2-0/frequency-confirmations/you-have-changed-how-often-we-pay-you&3.html')
+    res.redirect('/email-and-payment-schedule/2-0/frequency-confirmations/you-have-changed-how-often-we-pay-you&3.html')
   } else {
-    res.redirectInternal('/email-and-payment-schedule/2-0/frequency-confirmations/you-have-changed-how-often-we-pay-you&1.html')
+    res.redirect('/email-and-payment-schedule/2-0/frequency-confirmations/you-have-changed-how-often-we-pay-you&1.html')
   }
 
 });
@@ -1319,10 +1319,10 @@ router.post('/were-invited12', function (req, res) {
   // Check whether the variable matches a condition
   if (wereYouInvited == "letter"){
     // Send user to next page
-    res.redirectInternal('/contact/1-0/privacy-notice')
+    res.redirect('/contact/1-0/privacy-notice')
   } else {
     // Send user to ineligible page
-    res.redirectInternal('/contact/1-0/cannot-use-service')
+    res.redirect('/contact/1-0/cannot-use-service')
   }
 
 });
@@ -1338,9 +1338,9 @@ router.post('/account-type12', function (req, res) {
   // Check whether the variable matches a condition
   if (accountType == "uk-account"){
     // Send user to next page
-    res.redirectInternal('/contact/1-0/change-bank/bank-or-building-society-details')
+    res.redirect('/contact/1-0/change-bank/bank-or-building-society-details')
   } else {
-    res.redirectInternal('/contact/1-0/change-bank/can-only-use-uk-account.html')
+    res.redirect('/contact/1-0/change-bank/can-only-use-uk-account.html')
   }
 
 });
@@ -1358,9 +1358,9 @@ router.post('/how-often8', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencySelected == "Every 4 weeks"){
     // Send user to next page
-    res.redirectInternal('/contact/1-0/change-frequency/keep-how-often-we-will-pay-you.html')
+    res.redirect('/contact/1-0/change-frequency/keep-how-often-we-will-pay-you.html')
   } else {
-    res.redirectInternal('/contact/1-0/change-frequency/check-how-often-we-will-pay-you')
+    res.redirect('/contact/1-0/change-frequency/check-how-often-we-will-pay-you')
   }
 
 });
@@ -1374,9 +1374,9 @@ router.post('/how-often-alt8', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencySelected == "Every 2 weeks"){
     // Send user to next page
-    res.redirectInternal('/contact/1-0/change-frequency/keep-how-often-we-will-pay-you&alt.html')
+    res.redirect('/contact/1-0/change-frequency/keep-how-often-we-will-pay-you&alt.html')
   } else {
-    res.redirectInternal('/contact/1-0/change-frequency/check-how-often-we-will-pay-you')
+    res.redirect('/contact/1-0/change-frequency/check-how-often-we-will-pay-you')
   }
 
 });
@@ -1392,9 +1392,9 @@ router.post('/how-often-single8', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencySelected == "Every 4 weeks"){
     // Send user to next page
-    res.redirectInternal('/contact/2-0/change-frequency/keep-how-often-we-will-pay-you.html')
+    res.redirect('/contact/2-0/change-frequency/keep-how-often-we-will-pay-you.html')
   } else {
-    res.redirectInternal('/contact/2-0/change-frequency/check-how-often-we-will-pay-you')
+    res.redirect('/contact/2-0/change-frequency/check-how-often-we-will-pay-you')
   }
 
 });
@@ -1408,9 +1408,9 @@ router.post('/how-often9', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencySelected == "Every 4 weeks"){
     // Send user to next page
-    res.redirectInternal('/contact/2-0/change-frequency/keep-how-often-we-will-pay-you.html')
+    res.redirect('/contact/2-0/change-frequency/keep-how-often-we-will-pay-you.html')
   } else {
-    res.redirectInternal('/contact/2-0/change-frequency/check-how-often-we-will-pay-you')
+    res.redirect('/contact/2-0/change-frequency/check-how-often-we-will-pay-you')
   }
 
 });
@@ -1425,9 +1425,9 @@ router.post('/how-often-alt9', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencySelected == "Every 2 weeks"){
     // Send user to next page
-    res.redirectInternal('/contact/2-0/change-frequency/keep-how-often-we-will-pay-you&alt.html')
+    res.redirect('/contact/2-0/change-frequency/keep-how-often-we-will-pay-you&alt.html')
   } else {
-    res.redirectInternal('/contact/2-0/change-frequency/check-how-often-we-will-pay-you')
+    res.redirect('/contact/2-0/change-frequency/check-how-often-we-will-pay-you')
   }
 
 });
@@ -1441,9 +1441,9 @@ router.post('/how-often-single9', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencySelected == "Every 4 weeks"){
     // Send user to next page
-    res.redirectInternal('/contact/2-0/change-frequency/keep-how-often-we-will-pay-you.html')
+    res.redirect('/contact/2-0/change-frequency/keep-how-often-we-will-pay-you.html')
   } else {
-    res.redirectInternal('/contact/2-0/change-frequency/check-how-often-we-will-pay-you')
+    res.redirect('/contact/2-0/change-frequency/check-how-often-we-will-pay-you')
   }
 
 });
@@ -1459,13 +1459,13 @@ router.post('/frequency-scenario2', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencyScenario == "1"){
     // Send user to next page
-    res.redirectInternal('/contact/1-0/change-frequency/you-have-changed-how-often-we-pay-you&1.html')
+    res.redirect('/contact/1-0/change-frequency/you-have-changed-how-often-we-pay-you&1.html')
   } else if (frequencyScenario == "2"){
-    res.redirectInternal('/contact/1-0/change-frequency/you-have-changed-how-often-we-pay-you&2.html')
+    res.redirect('/contact/1-0/change-frequency/you-have-changed-how-often-we-pay-you&2.html')
   } else if (frequencyScenario == "3"){
-    res.redirectInternal('/contact/1-0/change-frequency/you-have-changed-how-often-we-pay-you&3.html')
+    res.redirect('/contact/1-0/change-frequency/you-have-changed-how-often-we-pay-you&3.html')
   } else {
-    res.redirectInternal('/contact/1-0/change-frequency/you-have-changed-how-often-we-pay-you&1.html')
+    res.redirect('/contact/1-0/change-frequency/you-have-changed-how-often-we-pay-you&1.html')
   }
 
 });
@@ -1479,13 +1479,13 @@ router.post('/frequency-scenario3', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencyScenario == "1"){
     // Send user to next page
-    res.redirectInternal('/contact/2-0/change-frequency/you-have-changed-how-often-we-pay-you&1.html')
+    res.redirect('/contact/2-0/change-frequency/you-have-changed-how-often-we-pay-you&1.html')
   } else if (frequencyScenario == "2"){
-    res.redirectInternal('/contact/2-0/change-frequency/you-have-changed-how-often-we-pay-you&2.html')
+    res.redirect('/contact/2-0/change-frequency/you-have-changed-how-often-we-pay-you&2.html')
   } else if (frequencyScenario == "3"){
-    res.redirectInternal('/contact/2-0/change-frequency/you-have-changed-how-often-we-pay-you&3.html')
+    res.redirect('/contact/2-0/change-frequency/you-have-changed-how-often-we-pay-you&3.html')
   } else {
-    res.redirectInternal('/contact/2-0/change-frequency/you-have-changed-how-often-we-pay-you&1.html')
+    res.redirect('/contact/2-0/change-frequency/you-have-changed-how-often-we-pay-you&1.html')
   }
 
 });
@@ -1500,9 +1500,9 @@ router.post('/email-conf-bank2', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencyBankConf == "bank-confirmation-yes"){
     // Send user to next page
-    res.redirectInternal('/contact/1-0/change-bank/bank-email/email.html')
+    res.redirect('/contact/1-0/change-bank/bank-email/email.html')
   } else {
-    res.redirectInternal('/contact/1-0/change-bank/check-your-details.html')
+    res.redirect('/contact/1-0/change-bank/check-your-details.html')
   }
 
 });
@@ -1517,9 +1517,9 @@ router.post('/email-conf-bank3', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencyBankConf == "bank-confirmation-yes"){
     // Send user to next page
-    res.redirectInternal('/contact/2-0/email-confirmation/email.html')
+    res.redirect('/contact/2-0/email-confirmation/email.html')
   } else {
-    res.redirectInternal('/contact/2-0/email-confirmation/email.html')
+    res.redirect('/contact/2-0/email-confirmation/email.html')
   }
 
 });
@@ -1533,9 +1533,9 @@ router.post('/email-conf-frequency2', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencyEmailConf == "frequency-confirmation-yes"){
     // Send user to next page
-    res.redirectInternal('/contact/1-0/change-frequency/frequency-email/email.html')
+    res.redirect('/contact/1-0/change-frequency/frequency-email/email.html')
   } else {
-    res.redirectInternal('/contact/1-0/change-frequency/check-how-often-we-will-pay-you.html')
+    res.redirect('/contact/1-0/change-frequency/check-how-often-we-will-pay-you.html')
   }
 
 });
@@ -1549,9 +1549,9 @@ router.post('/email-conf-phone1', function (req, res) {
   // Check whether the variable matches a condition
   if (phoneEmailConf == "phone-change-confirmation-yes"){
     // Send user to next page
-    res.redirectInternal('/contact/1-0/change-home-phone/email/email.html')
+    res.redirect('/contact/1-0/change-home-phone/email/email.html')
   } else {
-    res.redirectInternal('/contact/1-0/change-home-phone/check-your-details.html')
+    res.redirect('/contact/1-0/change-home-phone/check-your-details.html')
   }
 
 });
@@ -1565,9 +1565,9 @@ router.post('/email-conf-phone2', function (req, res) {
   // Check whether the variable matches a condition
   if (phoneEmailConf2 == "phone-add-confirmation-yes"){
     // Send user to next page
-    res.redirectInternal('/contact/1-0/change-home-phone/email-add/email.html')
+    res.redirect('/contact/1-0/change-home-phone/email-add/email.html')
   } else {
-    res.redirectInternal('/contact/1-0/change-home-phone/check-your-details-add.html')
+    res.redirect('/contact/1-0/change-home-phone/check-your-details-add.html')
   }
 
 });
@@ -1581,9 +1581,9 @@ router.post('/email-conf-phone3', function (req, res) {
   // Check whether the variable matches a condition
   if (phoneEmailConf3 == "phone-remove-confirmation-yes"){
     // Send user to next page
-    res.redirectInternal('/contact/1-0/change-home-phone/email-remove/email.html')
+    res.redirect('/contact/1-0/change-home-phone/email-remove/email.html')
   } else {
-    res.redirectInternal('/contact/1-0/change-home-phone/check-your-details-remove.html')
+    res.redirect('/contact/1-0/change-home-phone/check-your-details-remove.html')
   }
 
 });
@@ -1598,9 +1598,9 @@ router.post('/remove-home-number', function (req, res) {
   // Check whether the variable matches a condition
   if (removeHomeNumber == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/1-0/change-home-phone/check-your-details-remove.html')
+    res.redirect('/contact/1-0/change-home-phone/check-your-details-remove.html')
   } else if (removeHomeNumber == "No"){
-    res.redirectInternal('/contact/1-0/change-home-phone/do-not-remove.html')
+    res.redirect('/contact/1-0/change-home-phone/do-not-remove.html')
   }
 
 });
@@ -1614,9 +1614,9 @@ router.post('/remove-home-number2', function (req, res) {
   // Check whether the variable matches a condition
   if (removeHomeNumber == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/2-0/change-home-phone/check-your-details-remove.html')
+    res.redirect('/contact/2-0/change-home-phone/check-your-details-remove.html')
   } else if (removeHomeNumber == "No"){
-    res.redirectInternal('/contact/2-0/change-home-phone/do-not-remove.html')
+    res.redirect('/contact/2-0/change-home-phone/do-not-remove.html')
   }
 
 });
@@ -1630,9 +1630,9 @@ router.post('/remove-home-number3', function (req, res) {
   // Check whether the variable matches a condition
   if (removeHomeNumber == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/change-home-phone/we-cant-call-you.html')
+    res.redirect('/contact/3-0/change-home-phone/we-cant-call-you.html')
   } else if (removeHomeNumber == "No"){
-    res.redirectInternal('/contact/3-0/change-home-phone/do-not-remove.html')
+    res.redirect('/contact/3-0/change-home-phone/do-not-remove.html')
   }
 
 });
@@ -1646,9 +1646,9 @@ router.post('/remove-home-number4', function (req, res) {
   // Check whether the variable matches a condition
   if (removeHomeNumber == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/change-home-phone/you-have-removed-your-only-home-phone-number.html?new-home-phone&current-home-phone')
+    res.redirect('/contact/3-0/change-home-phone/you-have-removed-your-only-home-phone-number.html?new-home-phone&current-home-phone')
   } else if (removeHomeNumber == "No"){
-    res.redirectInternal('/contact/3-0/change-home-phone/do-not-remove.html')
+    res.redirect('/contact/3-0/change-home-phone/do-not-remove.html')
   }
 
 });
@@ -1662,9 +1662,9 @@ router.post('/remove-alt-number', function (req, res) {
   // Check whether the variable matches a condition
   if (removeAltNumber == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/1-0/change-alt-phone/check-your-details-remove.html')
+    res.redirect('/contact/1-0/change-alt-phone/check-your-details-remove.html')
   } else if (removeAltNumber == "No"){
-    res.redirectInternal('/contact/1-0/change-alt-phone/do-not-remove.html')
+    res.redirect('/contact/1-0/change-alt-phone/do-not-remove.html')
   }
 
 });
@@ -1678,9 +1678,9 @@ router.post('/remove-alt-number2', function (req, res) {
   // Check whether the variable matches a condition
   if (removeAltNumber == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/2-0/change-alt-phone/check-your-details-remove.html')
+    res.redirect('/contact/2-0/change-alt-phone/check-your-details-remove.html')
   } else if (removeAltNumber == "No"){
-    res.redirectInternal('/contact/2-0/change-alt-phone/do-not-remove.html')
+    res.redirect('/contact/2-0/change-alt-phone/do-not-remove.html')
   }
 
 });
@@ -1694,9 +1694,9 @@ router.post('/remove-mobile-number', function (req, res) {
   // Check whether the variable matches a condition
   if (removeMobileNumber == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/1-0/change-mobile-phone/check-your-details-remove.html')
+    res.redirect('/contact/1-0/change-mobile-phone/check-your-details-remove.html')
   } else if (removeMobileNumber == "No"){
-    res.redirectInternal('/contact/1-0/change-mobile-phone/do-not-remove.html')
+    res.redirect('/contact/1-0/change-mobile-phone/do-not-remove.html')
   }
 
 });
@@ -1710,9 +1710,9 @@ router.post('/remove-mobile-number2', function (req, res) {
   // Check whether the variable matches a condition
   if (removeMobileNumber == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/2-0/change-mobile-phone/check-your-details-remove.html')
+    res.redirect('/contact/2-0/change-mobile-phone/check-your-details-remove.html')
   } else if (removeMobileNumber == "No"){
-    res.redirectInternal('/contact/2-0/change-mobile-phone/do-not-remove.html')
+    res.redirect('/contact/2-0/change-mobile-phone/do-not-remove.html')
   }
 
 });
@@ -1726,9 +1726,9 @@ router.post('/remove-mobile-number3', function (req, res) {
   // Check whether the variable matches a condition
   if (removeMobileNumber == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/change-mobile-phone/you-have-removed-your-contact-details.html?new-mobile-phone&current-mobile-phone')
+    res.redirect('/contact/3-0/change-mobile-phone/you-have-removed-your-contact-details.html?new-mobile-phone&current-mobile-phone')
   } else if (removeMobileNumber == "No"){
-    res.redirectInternal('/contact/3-0/change-mobile-phone/do-not-remove.html')
+    res.redirect('/contact/3-0/change-mobile-phone/do-not-remove.html')
   }
 
 });
@@ -1742,9 +1742,9 @@ router.post('/remove-email-address', function (req, res) {
   // Check whether the variable matches a condition
   if (removeEmailAddress == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/1-0/change-email-address/check-your-details-remove.html')
+    res.redirect('/contact/1-0/change-email-address/check-your-details-remove.html')
   } else if (removeEmailAddress == "No"){
-    res.redirectInternal('/contact/1-0/change-email-address/do-not-remove.html')
+    res.redirect('/contact/1-0/change-email-address/do-not-remove.html')
   }
 
 });
@@ -1759,9 +1759,9 @@ router.post('/remove-email-address2', function (req, res) {
   // Check whether the variable matches a condition
   if (removeEmailAddress == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/2-0/change-email-address/check-your-details-remove.html')
+    res.redirect('/contact/2-0/change-email-address/check-your-details-remove.html')
   } else if (removeEmailAddress == "No"){
-    res.redirectInternal('/contact/2-0/change-email-address/do-not-remove.html')
+    res.redirect('/contact/2-0/change-email-address/do-not-remove.html')
   }
 
 });
@@ -1776,9 +1776,9 @@ router.post('/remove-email-address3', function (req, res) {
   // Check whether the variable matches a condition
   if (removeEmailAddress == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/change-email-address/you-have-removed-your-email-address.html?new-email-address&current-email-address')
+    res.redirect('/contact/3-0/change-email-address/you-have-removed-your-email-address.html?new-email-address&current-email-address')
   } else if (removeEmailAddress == "No"){
-    res.redirectInternal('/contact/3-0/change-email-address/do-not-remove.html')
+    res.redirect('/contact/3-0/change-email-address/do-not-remove.html')
   }
 
 });
@@ -1795,10 +1795,10 @@ router.post('/were-invited13', function (req, res) {
   // Check whether the variable matches a condition
   if (wereYouInvited == "letter"){
     // Send user to next page
-    res.redirectInternal('/contact/2-0/privacy-notice')
+    res.redirect('/contact/2-0/privacy-notice')
   } else {
     // Send user to ineligible page
-    res.redirectInternal('/contact/2-0/cannot-use-service')
+    res.redirect('/contact/2-0/cannot-use-service')
   }
 
 });
@@ -1812,10 +1812,10 @@ router.post('/were-invited14', function (req, res) {
   // Check whether the variable matches a condition
   if (wereYouInvited == "letter"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0//privacy-notice')
+    res.redirect('/contact/3-0//privacy-notice')
   } else {
     // Send user to ineligible page
-    res.redirectInternal('/contact/3-0/cannot-use-service')
+    res.redirect('/contact/3-0/cannot-use-service')
   }
 
 });
@@ -1829,10 +1829,10 @@ router.post('/were-invited15', function (req, res) {
   // Check whether the variable matches a condition
   if (wereYouInvited == "letter"){
     // Send user to next page
-    res.redirectInternal('/contact/mvp/privacy-notice')
+    res.redirect('/contact/mvp/privacy-notice')
   } else {
     // Send user to ineligible page
-    res.redirectInternal('/contact/mvp/cannot-use-service')
+    res.redirect('/contact/mvp/cannot-use-service')
   }
 
 });
@@ -1846,10 +1846,10 @@ router.post('/were-invited16', function (req, res) {
   // Check whether the variable matches a condition
   if (wereYouInvited == "letter"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/correspondence-address-v1/privacy-notice')
+    res.redirect('/contact/3-0/correspondence-address-v1/privacy-notice')
   } else {
     // Send user to ineligible page
-    res.redirectInternal('/contact/3-0/correspondence-address-v1/cannot-use-service')
+    res.redirect('/contact/3-0/correspondence-address-v1/cannot-use-service')
   }
 
 });
@@ -1863,10 +1863,10 @@ router.post('/were-invited17', function (req, res) {
   // Check whether the variable matches a condition
   if (wereYouInvited == "letter"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/change-of-address-v3/privacy-notice')
+    res.redirect('/contact/3-0/change-of-address-v3/privacy-notice')
   } else {
     // Send user to ineligible page
-    res.redirectInternal('/contact/3-0/change-of-address-v3/privacy-notice/cannot-use-service')
+    res.redirect('/contact/3-0/change-of-address-v3/privacy-notice/cannot-use-service')
   }
 
 });
@@ -1884,9 +1884,9 @@ router.post('/remove-email-address3', function (req, res) {
   // Check whether the variable matches a condition
   if (removeEmailAddress == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/change-email-address/we-cant-email-you.html')
+    res.redirect('/contact/3-0/change-email-address/we-cant-email-you.html')
   } else if (removeEmailAddress == "No"){
-    res.redirectInternal('/contact/3-0/change-email-address/do-not-remove.html')
+    res.redirect('/contact/3-0/change-email-address/do-not-remove.html')
   }
 
 });
@@ -1905,9 +1905,9 @@ router.post('/how-often10', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencySelected == "Every 4 weeks"){
     // Send user to next page
-    res.redirectInternal('/contact/mvp/change-frequency/keep-how-often-we-will-pay-you.html')
+    res.redirect('/contact/mvp/change-frequency/keep-how-often-we-will-pay-you.html')
   } else {
-    res.redirectInternal('/contact/mvp/change-frequency/check-how-often-we-will-pay-you')
+    res.redirect('/contact/mvp/change-frequency/check-how-often-we-will-pay-you')
   }
 
 });
@@ -1922,9 +1922,9 @@ router.post('/how-often-alt10', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencySelected == "Every 2 weeks"){
     // Send user to next page
-    res.redirectInternal('/contact/mvp/change-frequency/keep-how-often-we-will-pay-you&alt.html')
+    res.redirect('/contact/mvp/change-frequency/keep-how-often-we-will-pay-you&alt.html')
   } else {
-    res.redirectInternal('/contact/mvp/change-frequency/check-how-often-we-will-pay-you')
+    res.redirect('/contact/mvp/change-frequency/check-how-often-we-will-pay-you')
   }
 
 });
@@ -1938,9 +1938,9 @@ router.post('/how-often-single10', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencySelected == "Every 4 weeks"){
     // Send user to next page
-    res.redirectInternal('/contact/mvp/change-frequency/keep-how-often-we-will-pay-you.html')
+    res.redirect('/contact/mvp/change-frequency/keep-how-often-we-will-pay-you.html')
   } else {
-    res.redirectInternal('/contact/mvp/change-frequency/check-how-often-we-will-pay-you')
+    res.redirect('/contact/mvp/change-frequency/check-how-often-we-will-pay-you')
   }
 
 });
@@ -1954,13 +1954,13 @@ router.post('/frequency-scenario4', function (req, res) {
   // Check whether the variable matches a condition
   if (frequencyScenario == "1"){
     // Send user to next page
-    res.redirectInternal('/contact/mvp/change-frequency/you-have-changed-how-often-we-pay-you&1.html')
+    res.redirect('/contact/mvp/change-frequency/you-have-changed-how-often-we-pay-you&1.html')
   } else if (frequencyScenario == "2"){
-    res.redirectInternal('/contact/mvp/change-frequency/you-have-changed-how-often-we-pay-you&2.html')
+    res.redirect('/contact/mvp/change-frequency/you-have-changed-how-often-we-pay-you&2.html')
   } else if (frequencyScenario == "3"){
-    res.redirectInternal('/contact/mvp/change-frequency/you-have-changed-how-often-we-pay-you&3.html')
+    res.redirect('/contact/mvp/change-frequency/you-have-changed-how-often-we-pay-you&3.html')
   } else {
-    res.redirectInternal('/contact/mvp/change-frequency/you-have-changed-how-often-we-pay-you&1.html')
+    res.redirect('/contact/mvp/change-frequency/you-have-changed-how-often-we-pay-you&1.html')
   }
 
 });
@@ -1974,9 +1974,9 @@ router.post('/account-type13', function (req, res) {
   // Check whether the variable matches a condition
   if (accountType == "uk-account"){
     // Send user to next page
-    res.redirectInternal('/contact/mvp/change-bank/bank-or-building-society-details')
+    res.redirect('/contact/mvp/change-bank/bank-or-building-society-details')
   } else {
-    res.redirectInternal('/contact/mvp/change-bank/can-only-use-uk-account.html')
+    res.redirect('/contact/mvp/change-bank/can-only-use-uk-account.html')
   }
 
 });
@@ -1990,9 +1990,9 @@ router.post('/remove-home-number5', function (req, res) {
   // Check whether the variable matches a condition
   if (removeHomeNumber == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/mvp/change-home-phone/you-have-removed-your-contact-details.html?current-home-phone&new-home-phone')
+    res.redirect('/contact/mvp/change-home-phone/you-have-removed-your-contact-details.html?current-home-phone&new-home-phone')
   } else if (removeHomeNumber == "No"){
-    res.redirectInternal('/contact/mvp/change-home-phone/do-not-remove.html')
+    res.redirect('/contact/mvp/change-home-phone/do-not-remove.html')
   }
 
 });
@@ -2006,9 +2006,9 @@ router.post('/remove-alt-number3', function (req, res) {
   // Check whether the variable matches a condition
   if (removeAltNumber == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/mvp/change-alt-phone/you-have-removed-your-contact-details.html?new-alt-phone&current-alt-phone')
+    res.redirect('/contact/mvp/change-alt-phone/you-have-removed-your-contact-details.html?new-alt-phone&current-alt-phone')
   } else if (removeAltNumber == "No"){
-    res.redirectInternal('/contact/mvp/change-alt-phone/do-not-remove.html')
+    res.redirect('/contact/mvp/change-alt-phone/do-not-remove.html')
   }
 
 });
@@ -2022,9 +2022,9 @@ router.post('/remove-mobile-number4', function (req, res) {
   // Check whether the variable matches a condition
   if (removeMobileNumber == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/mvp/change-mobile-phone/you-have-removed-your-contact-details.html?current-mobile-phone&new-mobile-phone')
+    res.redirect('/contact/mvp/change-mobile-phone/you-have-removed-your-contact-details.html?current-mobile-phone&new-mobile-phone')
   } else if (removeMobileNumber == "No"){
-    res.redirectInternal('/contact/mvp/change-mobile-phone/do-not-remove.html')
+    res.redirect('/contact/mvp/change-mobile-phone/do-not-remove.html')
   }
 
 });
@@ -2039,9 +2039,9 @@ router.post('/remove-email-address4', function (req, res) {
   // Check whether the variable matches a condition
   if (removeEmailAddress == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/mvp/change-email-address/you-have-removed-your-contact-details.html?current-email-address&new-email-address')
+    res.redirect('/contact/mvp/change-email-address/you-have-removed-your-contact-details.html?current-email-address&new-email-address')
   } else if (removeEmailAddress == "No"){
-    res.redirectInternal('/contact/mvp/change-email-address/do-not-remove.html')
+    res.redirect('/contact/mvp/change-email-address/do-not-remove.html')
   }
 
 });
@@ -2056,9 +2056,9 @@ router.post('/home-address', function (req, res) {
   // Check whether the variable matches a condition
   if (changeHomeAddress == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/change-of-address/find-address.html')
+    res.redirect('/contact/3-0/change-of-address/find-address.html')
   } else if (changeHomeAddress == "No"){
-    res.redirectInternal('/contact/3-0/change-of-address/must-be-a-uk-address.html')
+    res.redirect('/contact/3-0/change-of-address/must-be-a-uk-address.html')
   }
 
 });
@@ -2073,9 +2073,9 @@ router.post('/home-address-duplicate', function (req, res) {
   // Check whether the variable matches a condition
   if (changeHomeAddress == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/change-of-address/duplicate/type-of-address.html')
+    res.redirect('/contact/3-0/change-of-address/duplicate/type-of-address.html')
   } else if (changeHomeAddress == "No"){
-    res.redirectInternal('/contact/3-0/cannot-use-service.html')
+    res.redirect('/contact/3-0/cannot-use-service.html')
   }
 
 });
@@ -2090,9 +2090,9 @@ router.post('/correspondence-address', function (req, res) {
   // Check whether the variable matches a condition
   if (changeCorrespondenceAddress == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/correspondence-address/access-to-the-property.html')
+    res.redirect('/contact/3-0/correspondence-address/access-to-the-property.html')
   } else if (changeCorrespondenceAddress == "No"){
-    res.redirectInternal('/contact/3-0/cannot-use-service.html')
+    res.redirect('/contact/3-0/cannot-use-service.html')
   }
 
 });
@@ -2106,9 +2106,9 @@ router.post('/type-of-address', function (req, res) {
   // Check whether the variable matches a condition
   if (changeTypeOfAddress == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/change-of-address/access-to-the-property.html')
+    res.redirect('/contact/3-0/change-of-address/access-to-the-property.html')
   } else if (changeTypeOfAddress == "No"){
-    res.redirectInternal('/contact/3-0/change-of-address/cannot-use-service.html')
+    res.redirect('/contact/3-0/change-of-address/cannot-use-service.html')
   }
 
 });
@@ -2122,9 +2122,9 @@ router.post('/type-of-address-duplicate', function (req, res) {
   // Check whether the variable matches a condition
   if (changeTypeOfAddress == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/change-of-address/duplicate/access-to-the-property.html')
+    res.redirect('/contact/3-0/change-of-address/duplicate/access-to-the-property.html')
   } else if (changeTypeOfAddress == "No"){
-    res.redirectInternal('/contact/3-0/cannot-use-service.html')
+    res.redirect('/contact/3-0/cannot-use-service.html')
   }
 
 });
@@ -2138,9 +2138,9 @@ router.post('/type-of-benefit', function (req, res) {
   // Check whether the variable matches a condition
   if (changeTypeOfBenefits == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/change-of-address/type-of-address-alt.html')
+    res.redirect('/contact/3-0/change-of-address/type-of-address-alt.html')
   } else if (changeTypeOfBenefits == "No"){
-    res.redirectInternal('/contact/3-0/change-of-address/type-of-address.html')
+    res.redirect('/contact/3-0/change-of-address/type-of-address.html')
   }
 
 });
@@ -2156,9 +2156,9 @@ router.post('/remove-correspondence-address', function (req, res) {
   // Check whether the variable matches a condition
   if (changeRemoveCorrespondenceAddress == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/correspondence-address/letters-will-be-sent-to.html')
+    res.redirect('/contact/3-0/correspondence-address/letters-will-be-sent-to.html')
   } else if (changeRemoveCorrespondenceAddress == "No"){
-    res.redirectInternal('/contact/3-0/correspondence-address/do-not-remove.html')
+    res.redirect('/contact/3-0/correspondence-address/do-not-remove.html')
   }
 
 });
@@ -2174,9 +2174,9 @@ router.post('/property-access', function (req, res) {
   // Check whether the variable matches a condition
   if (changePropertyAccess == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/change-of-address/uk-address.html')
+    res.redirect('/contact/3-0/change-of-address/uk-address.html')
   } else if (changePropertyAccess == "No"){
-    res.redirectInternal('/contact/3-0/change-of-address/report-change-after-move.html')
+    res.redirect('/contact/3-0/change-of-address/report-change-after-move.html')
   }
 
 });
@@ -2190,9 +2190,9 @@ router.post('/property-access-duplicate', function (req, res) {
   // Check whether the variable matches a condition
   if (changePropertyAccessDuplicate == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/change-of-address/duplicate/find-address.html')
+    res.redirect('/contact/3-0/change-of-address/duplicate/find-address.html')
   } else if (changePropertyAccessDuplicate == "No"){
-    res.redirectInternal('/contact/3-0/change-of-address/report-change-after-move.html')
+    res.redirect('/contact/3-0/change-of-address/report-change-after-move.html')
   }
 
 });
@@ -2207,9 +2207,9 @@ router.post('/correspondence-property-access', function (req, res) {
   // Check whether the variable matches a condition
   if (changeHomeAddress == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/correspondence-address/find-address.html')
+    res.redirect('/contact/3-0/correspondence-address/find-address.html')
   } else if (changeHomeAddress == "No"){
-    res.redirectInternal('/contact/3-0/report-change-after-move.html')
+    res.redirect('/contact/3-0/report-change-after-move.html')
   }
 
 });
@@ -2223,9 +2223,9 @@ router.post('/confirm-address1', function (req, res) {
   // Check whether the variable matches a condition
   if (selectAddress == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/change-of-address/confirm-address2.html')
+    res.redirect('/contact/3-0/change-of-address/confirm-address2.html')
   } else if (selectAddress == "No"){
-    res.redirectInternal('/contact/3-0/change-of-address/confirm-address1.html')
+    res.redirect('/contact/3-0/change-of-address/confirm-address1.html')
   }
 
 });
@@ -2244,9 +2244,9 @@ router.post('/other-benefits1', function (req, res) {
   // Check whether the variable matches a condition
   if (changeOtherBenefits == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/change-of-address-v2/benefits-disclaimer.html')
+    res.redirect('/contact/3-0/change-of-address-v2/benefits-disclaimer.html')
   } else if (changeOtherBenefits == "No, I only receive a State Pension"){
-    res.redirectInternal('/contact/3-0/change-of-address-v2/have-you-already-moved.html')
+    res.redirect('/contact/3-0/change-of-address-v2/have-you-already-moved.html')
   }
 
 });
@@ -2261,9 +2261,9 @@ router.post('/other-benefits2', function (req, res) {
   // Check whether the variable matches a condition
   if (changeOtherBenefits == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/change-of-address-v3/benefits-disclaimer.html')
+    res.redirect('/contact/3-0/change-of-address-v3/benefits-disclaimer.html')
   } else if (changeOtherBenefits == "No, I only receive a State Pension"){
-    res.redirectInternal('/contact/3-0/change-of-address-v3/have-you-already-moved.html')
+    res.redirect('/contact/3-0/change-of-address-v3/have-you-already-moved.html')
   }
 
 });
@@ -2278,9 +2278,9 @@ router.post('/other-benefits3', function (req, res) {
   // Check whether the variable matches a condition
   if (changeOtherBenefits == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/change-of-address-v1-1/benefits-disclaimer.html')
+    res.redirect('/contact/3-0/change-of-address-v1-1/benefits-disclaimer.html')
   } else if (changeOtherBenefits == "No, I only receive a State Pension"){
-    res.redirectInternal('/contact/3-0/change-of-address-v1-1/have-you-already-moved.html')
+    res.redirect('/contact/3-0/change-of-address-v1-1/have-you-already-moved.html')
   }
 
 });
@@ -2296,9 +2296,9 @@ router.post('/update-other-benefits1', function (req, res) {
   // Check whether the variable matches a condition
   if (changeUpdateOtherBenefits == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/change-of-address-v2/have-you-already-moved.html')
+    res.redirect('/contact/3-0/change-of-address-v2/have-you-already-moved.html')
   } else if (changeUpdateOtherBenefits == "No"){
-    res.redirectInternal('/contact/3-0/change-of-address-v2/get-help-to-report-your-change-of-address.html')
+    res.redirect('/contact/3-0/change-of-address-v2/get-help-to-report-your-change-of-address.html')
   }
 
 });
@@ -2313,9 +2313,9 @@ router.post('/update-other-benefits2', function (req, res) {
   // Check whether the variable matches a condition
   if (changeUpdateOtherBenefits == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/change-of-address-v1-1/have-you-already-moved.html')
+    res.redirect('/contact/3-0/change-of-address-v1-1/have-you-already-moved.html')
   } else if (changeUpdateOtherBenefits == "No"){
-    res.redirectInternal('/contact/3-0/change-of-address-v1-1/get-help-to-report-your-change-of-address.html')
+    res.redirect('/contact/3-0/change-of-address-v1-1/get-help-to-report-your-change-of-address.html')
   }
 
 });
@@ -2330,9 +2330,9 @@ router.post('/already-moved1', function (req, res) {
   // Check whether the variable matches a condition
   if (changeAlreadyMoved == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/change-of-address-v2/uk-address.html')
+    res.redirect('/contact/3-0/change-of-address-v2/uk-address.html')
   } else if (changeAlreadyMoved == "No"){
-    res.redirectInternal('/contact/3-0/change-of-address-v2/report-change-after-move.html')
+    res.redirect('/contact/3-0/change-of-address-v2/report-change-after-move.html')
   }
 
 });
@@ -2347,9 +2347,9 @@ router.post('/already-moved2', function (req, res) {
   // Check whether the variable matches a condition
   if (changeAlreadyMoved == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/change-of-address-v3/uk-address.html')
+    res.redirect('/contact/3-0/change-of-address-v3/uk-address.html')
   } else if (changeAlreadyMoved == "No"){
-    res.redirectInternal('/contact/3-0/change-of-address-v3/report-change-after-move.html')
+    res.redirect('/contact/3-0/change-of-address-v3/report-change-after-move.html')
   }
 
 });
@@ -2364,9 +2364,9 @@ router.post('/already-moved3', function (req, res) {
   // Check whether the variable matches a condition
   if (changeAlreadyMoved == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/change-of-address-v1-1/uk-address.html')
+    res.redirect('/contact/3-0/change-of-address-v1-1/uk-address.html')
   } else if (changeAlreadyMoved == "No"){
-    res.redirectInternal('/contact/3-0/change-of-address-v1-1/report-change-after-move.html')
+    res.redirect('/contact/3-0/change-of-address-v1-1/report-change-after-move.html')
   }
 
 });
@@ -2388,9 +2388,9 @@ router.post('/uk-address', function (req, res) {
   // Check whether the variable matches a condition
   if (changeUkAddress == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/change-of-address-v2/address-finder/find-address.html')
+    res.redirect('/contact/3-0/change-of-address-v2/address-finder/find-address.html')
   } else if (changeUkAddress == "No"){
-    res.redirectInternal('/contact/3-0/change-of-address-v2/you-cannot-change-your-address-online.html')
+    res.redirect('/contact/3-0/change-of-address-v2/you-cannot-change-your-address-online.html')
   }
 
 });
@@ -2405,9 +2405,9 @@ router.post('/uk-address2', function (req, res) {
   // Check whether the variable matches a condition
   if (changeUkAddress == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/change-of-address-v3/address-finder/find-address.html')
+    res.redirect('/contact/3-0/change-of-address-v3/address-finder/find-address.html')
   } else if (changeUkAddress == "No"){
-    res.redirectInternal('/contact/3-0/change-of-address-v3/you-cannot-change-your-address-online.html')
+    res.redirect('/contact/3-0/change-of-address-v3/you-cannot-change-your-address-online.html')
   }
 
 });
@@ -2422,9 +2422,9 @@ router.post('/uk-address3', function (req, res) {
   // Check whether the variable matches a condition
   if (changeUkAddress == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/change-of-address-v1-1/address-finder/find-address.html')
+    res.redirect('/contact/3-0/change-of-address-v1-1/address-finder/find-address.html')
   } else if (changeUkAddress == "No"){
-    res.redirectInternal('/contact/3-0/change-of-address-v1-1/you-cannot-change-your-address-online.html')
+    res.redirect('/contact/3-0/change-of-address-v1-1/you-cannot-change-your-address-online.html')
   }
 
 });
@@ -2439,9 +2439,9 @@ router.post('/uk-address4', function (req, res) {
   // Check whether the variable matches a condition
   if (changeUkAddress == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/correspondence-address-v1/address-finder/find-address.html')
+    res.redirect('/contact/3-0/correspondence-address-v1/address-finder/find-address.html')
   } else if (changeUkAddress == "No"){
-    res.redirectInternal('/contact/3-0/correspondence-address-v1/you-cannot-change-your-address-online.html')
+    res.redirect('/contact/3-0/correspondence-address-v1/you-cannot-change-your-address-online.html')
   }
 
 });
@@ -2457,11 +2457,11 @@ router.post('/uk-address4', function (req, res) {
 //   // Check whether the variable matches a condition
 //   if (selectAddress == "Yes"){
 //     // Send user to next page
-//     res.redirectInternal('/contact/3-0/change-of-address-v2/you-are-only-changing-the-address-where-you-live.html.html')
+//     res.redirect('/contact/3-0/change-of-address-v2/you-are-only-changing-the-address-where-you-live.html.html')
 //   } else if (selectAddress == "No"){
-//     res.redirectInternal('/contact/3-0/change-of-address-v2/address-finder/confirm-address2.html')
+//     res.redirect('/contact/3-0/change-of-address-v2/address-finder/confirm-address2.html')
 //   } else if (selectAddress == "Manual"){
-//     res.redirectInternal('/contact/3-0/change-of-address-v2/address-finder/confirm-address2.html')
+//     res.redirect('/contact/3-0/change-of-address-v2/address-finder/confirm-address2.html')
 //   }
 
 // });
@@ -2475,9 +2475,9 @@ router.post('/select-a-manual-address1', function (req, res) {
   // Check whether the variable matches a condition
   if (selectAddress == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/change-of-address-v2/address-finder/select-a-manual-address.html')
+    res.redirect('/contact/3-0/change-of-address-v2/address-finder/select-a-manual-address.html')
   } else if (selectAddress == "No"){
-    res.redirectInternal('/contact/3-0/change-of-address-v2/address-finder/confirm-address2.html')
+    res.redirect('/contact/3-0/change-of-address-v2/address-finder/confirm-address2.html')
   }
 
 });
@@ -2494,9 +2494,9 @@ router.post('/changed-residential-address', function (req, res) {
   // Check whether the variable matches a condition
   if (changeOtherBenefits == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/change-of-address-v2/you-have-changed-your-address-alt.html')
+    res.redirect('/contact/3-0/change-of-address-v2/you-have-changed-your-address-alt.html')
   } else {
-    res.redirectInternal('/contact/3-0/change-of-address-v2/you-have-changed-your-address.html')
+    res.redirect('/contact/3-0/change-of-address-v2/you-have-changed-your-address.html')
   }
 
 });
@@ -2511,9 +2511,9 @@ router.post('/changed-residential-address2', function (req, res) {
   // Check whether the variable matches a condition
   if (changeOtherBenefits == "Yes"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/change-of-address-v1-1/you-have-changed-your-address-alt.html')
+    res.redirect('/contact/3-0/change-of-address-v1-1/you-have-changed-your-address-alt.html')
   } else {
-    res.redirectInternal('/contact/3-0/change-of-address-v1-1/you-have-changed-your-address.html')
+    res.redirect('/contact/3-0/change-of-address-v1-1/you-have-changed-your-address.html')
   }
 
 });
@@ -2528,9 +2528,9 @@ router.post('/changed-residential-address3', function (req, res) {
   // Check whether the variable matches a condition
   if (changeSelectAnAddress == "Select3"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/change-of-address-v3/you-have-changed-your-address-alt.html')
+    res.redirect('/contact/3-0/change-of-address-v3/you-have-changed-your-address-alt.html')
   } else {
-    res.redirectInternal('/contact/3-0/change-of-address-v3/you-have-changed-your-address.html')
+    res.redirect('/contact/3-0/change-of-address-v3/you-have-changed-your-address.html')
   }
 
 });
@@ -2546,21 +2546,21 @@ router.post('/select-correspondence-address1', function (req, res) {
   // Check whether the variable matches a condition
   if (changeCorrespondenceAddress == "Select1"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/correspondence-address-v1/you-have-changed-your-address.html')
+    res.redirect('/contact/3-0/correspondence-address-v1/you-have-changed-your-address.html')
   } else if (changeCorrespondenceAddress == "Select3") {
     // Send user to next page
-    res.redirectInternal('/contact/3-0/correspondence-address-v1/you-have-changed-your-address-alt.html')
+    res.redirect('/contact/3-0/correspondence-address-v1/you-have-changed-your-address-alt.html')
   
   } else if (changeCorrespondenceAddress == "Select4") {
     // Send user to next page
-    res.redirectInternal('/contact/3-0/correspondence-address-v1/you-have-changed-your-address-alt.html')
+    res.redirect('/contact/3-0/correspondence-address-v1/you-have-changed-your-address-alt.html')
 
   } else if (changeCorrespondenceAddress == "Select5") {
     // Send user to next page
-    res.redirectInternal('/contact/3-0/correspondence-address-v1/you-have-changed-your-address-alt.html')
+    res.redirect('/contact/3-0/correspondence-address-v1/you-have-changed-your-address-alt.html')
   
   } else {
-    res.redirectInternal('/contact/3-0/correspondence-address-v1/you-have-changed-your-address.html')
+    res.redirect('/contact/3-0/correspondence-address-v1/you-have-changed-your-address.html')
   }
 
 });
@@ -2576,9 +2576,9 @@ router.post('/send-letters2', function (req, res) {
   // Check whether the variable matches a condition
   if (changeSendLetters == "Select5"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/correspondence-address-v1/check-your-details')
+    res.redirect('/contact/3-0/correspondence-address-v1/check-your-details')
   } else if (changeSendLetters == "Select6"){
-    res.redirectInternal('/contact/3-0/correspondence-address-v1/uk-address')
+    res.redirect('/contact/3-0/correspondence-address-v1/uk-address')
   }
 
 });
@@ -2595,22 +2595,22 @@ router.post('/postcode-1', function (req, res) {
   // Check whether the variable matches a condition
   if (changeManualPostcode == "YO31SQ"){
     // Send user to next page
-    res.redirectInternal('contact/3-0/change-of-address-v2/address-finder/select-an-address.html')
+    res.redirect('contact/3-0/change-of-address-v2/address-finder/select-an-address.html')
 
   } else if (changeManualPostcode == "YO3 1SQ"){
     // Send user to next page
-    res.redirectInternal('contact/3-0/change-of-address-v2/address-finder/select-an-address.html')
+    res.redirect('contact/3-0/change-of-address-v2/address-finder/select-an-address.html')
 
   } else if (changeManualPostcode == "yo31sq"){
     // Send user to next page
-    res.redirectInternal('contact/3-0/change-of-address-v2/address-finder/is-this-your-address.html')
+    res.redirect('contact/3-0/change-of-address-v2/address-finder/is-this-your-address.html')
 
   } else if (changeManualPostcode == "yo3 1sq"){
     // Send user to next page
-    res.redirectInternal('contact/3-0/change-of-address-v2/address-finder/select-an-address.html')
+    res.redirect('contact/3-0/change-of-address-v2/address-finder/select-an-address.html')
   
   } else {
-    res.redirectInternal('/contact/3-0/change-of-address-v2/address-finder/no-address-found.html')
+    res.redirect('/contact/3-0/change-of-address-v2/address-finder/no-address-found.html')
   }
 
 });
@@ -2625,22 +2625,22 @@ router.post('/postcode-2', function (req, res) {
   // Check whether the variable matches a condition
   if (changeManualPostcode == "YO31SQ"){
     // Send user to next page
-    res.redirectInternal('contact/3-0/change-of-address-v3/address-finder/select-an-address.html')
+    res.redirect('contact/3-0/change-of-address-v3/address-finder/select-an-address.html')
 
   } else if (changeManualPostcode == "YO3 1SQ"){
     // Send user to next page
-    res.redirectInternal('contact/3-0/change-of-address-v3/address-finder/select-an-address.html')
+    res.redirect('contact/3-0/change-of-address-v3/address-finder/select-an-address.html')
 
   } else if (changeManualPostcode == "yo31sq"){
     // Send user to next page
-    res.redirectInternal('contact/3-0/change-of-address-v3/address-finder/is-this-your-address.html')
+    res.redirect('contact/3-0/change-of-address-v3/address-finder/is-this-your-address.html')
 
   } else if (changeManualPostcode == "yo3 1sq"){
     // Send user to next page
-    res.redirectInternal('contact/3-0/change-of-address-v3/address-finder/select-an-address.html')
+    res.redirect('contact/3-0/change-of-address-v3/address-finder/select-an-address.html')
   
   } else {
-    res.redirectInternal('/contact/3-0/change-of-address-v3/address-finder/no-address-found.html')
+    res.redirect('/contact/3-0/change-of-address-v3/address-finder/no-address-found.html')
   }
 
 });
@@ -2655,22 +2655,22 @@ router.post('/postcode-3', function (req, res) {
   // Check whether the variable matches a condition
   if (changeManualPostcode == "YO31SQ"){
     // Send user to next page
-    res.redirectInternal('contact/3-0/change-of-address-v1-1/address-finder/select-an-address.html')
+    res.redirect('contact/3-0/change-of-address-v1-1/address-finder/select-an-address.html')
 
   } else if (changeManualPostcode == "YO3 1SQ"){
     // Send user to next page
-    res.redirectInternal('contact/3-0/change-of-address-v1-1/address-finder/select-an-address.html')
+    res.redirect('contact/3-0/change-of-address-v1-1/address-finder/select-an-address.html')
 
   } else if (changeManualPostcode == "yo31sq"){
     // Send user to next page
-    res.redirectInternal('contact/3-0/change-of-address-v1-1/address-finder/is-this-your-address.html')
+    res.redirect('contact/3-0/change-of-address-v1-1/address-finder/is-this-your-address.html')
 
   } else if (changeManualPostcode == "yo3 1sq"){
     // Send user to next page
-    res.redirectInternal('contact/3-0/change-of-address-v1-1/address-finder/select-an-address.html')
+    res.redirect('contact/3-0/change-of-address-v1-1/address-finder/select-an-address.html')
   
   } else {
-    res.redirectInternal('/contact/3-0/change-of-address-v1-1/address-finder/no-address-found.html')
+    res.redirect('/contact/3-0/change-of-address-v1-1/address-finder/no-address-found.html')
   }
 
 });
@@ -2685,14 +2685,14 @@ router.post('/postcode-4', function (req, res) {
   // Check whether the variable matches a condition
   if (changeManualPostcode == "YO31MN"){
     // Send user to next page
-    res.redirectInternal('oftd/1-0/findr/success.html')
+    res.redirect('oftd/1-0/findr/success.html')
 
   } else if (changeManualPostcode == "YO3 1MN"){
     // Send user to next page
-    res.redirectInternal('oftd/1-0/findr/success.html')
+    res.redirect('oftd/1-0/findr/success.html')
   
   } else {
-    res.redirectInternal('/oftd/1-0/cannot-make-changes-right-now.html')
+    res.redirect('/oftd/1-0/cannot-make-changes-right-now.html')
   }
 
 });
@@ -2707,14 +2707,14 @@ router.post('/postcode-5', function (req, res) {
   // Check whether the variable matches a condition
   if (changeManualPostcode == "YO3 1MJ"){
     // Send user to next page
-    res.redirectInternal('oftd/3-0/manage-state-pension-gysp2.html')
+    res.redirect('oftd/3-0/manage-state-pension-gysp2.html')
 
   } else if (changeManualPostcode == "YO3 1MK"){
     // Send user to next page
-    res.redirectInternal('oftd/3-0/manage-state-pension-legacy.html')
+    res.redirect('oftd/3-0/manage-state-pension-legacy.html')
   
   } else {
-    res.redirectInternal('/oftd/3-0/cannot-make-changes-right-now.html')
+    res.redirect('/oftd/3-0/cannot-make-changes-right-now.html')
   }
 
 });
@@ -2731,14 +2731,14 @@ router.post('/name1', function (req, res) {
   // Check whether the variable matches a condition
   if (changeName == "YO31MR"){
     // Send user to next page
-    res.redirectInternal('oftd/3-0/manage-state-pension-gysp.html')
+    res.redirect('oftd/3-0/manage-state-pension-gysp.html')
 
   } else if (changeName == "YO3 1MZ"){
     // Send user to next page
-    res.redirectInternal('oftd/3-0/findr/manage-state-pension-legacy.html')
+    res.redirect('oftd/3-0/findr/manage-state-pension-legacy.html')
   
   } else {
-    res.redirectInternal('/oftd/3-0/cannot-make-changes-right-now.html')
+    res.redirect('/oftd/3-0/cannot-make-changes-right-now.html')
   }
 
 });
@@ -2754,30 +2754,30 @@ router.post('/correspondence-postcode-1', function (req, res) {
   // Check whether the variable matches a condition
   if (changeManualPostcode == "YO31ZF"){
     // Send user to next page
-    res.redirectInternal('contact/3-0/correspondence-address-v1/address-finder/select-an-address.html')
+    res.redirect('contact/3-0/correspondence-address-v1/address-finder/select-an-address.html')
 
   } else if (changeManualPostcode == "YO3 1ZF"){
     // Send user to next page
-    res.redirectInternal('contact/3-0/correspondence-address-v1/address-finder/select-an-address.html')
+    res.redirect('contact/3-0/correspondence-address-v1/address-finder/select-an-address.html')
   
   } else if (changeManualPostcode == "YO31SQ"){
     // Send user to next page
-    res.redirectInternal('contact/3-0/correspondence-address-v1/address-finder/select-an-address.html')
+    res.redirect('contact/3-0/correspondence-address-v1/address-finder/select-an-address.html')
 
   } else if (changeManualPostcode == "yo31zf"){
     // Send user to next page
-    res.redirectInternal('contact/3-0/correspondence-address-v1/address-finder/is-this-your-address.html')
+    res.redirect('contact/3-0/correspondence-address-v1/address-finder/is-this-your-address.html')
 
   } else if (changeManualPostcode == "yo3 1zf"){
     // Send user to next page
-    res.redirectInternal('contact/3-0/correspondence-address-v1/address-finder/is-this-your-address.html')
+    res.redirect('contact/3-0/correspondence-address-v1/address-finder/is-this-your-address.html')
     
   } else if (changeManualPostcode == "YO31ZR"){
     // Send user to next page
-    res.redirectInternal('contact/3-0/correspondence-address-v1/address-finder/select-an-address.html')
+    res.redirect('contact/3-0/correspondence-address-v1/address-finder/select-an-address.html')
   
   } else {
-    res.redirectInternal('/contact/3-0/correspondence-address-v1/address-finder/no-address-found.html')
+    res.redirect('/contact/3-0/correspondence-address-v1/address-finder/no-address-found.html')
   }
 
 });
@@ -2793,15 +2793,15 @@ router.post('/select-an-address2', function (req, res) {
   // Check whether the variable matches a condition
   if (selectAddress == "Select1"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/change-of-address-v2/you-are-changing-the-address-where-you-live.html')
+    res.redirect('/contact/3-0/change-of-address-v2/you-are-changing-the-address-where-you-live.html')
   } else if (selectAddress == "Select2"){
     // Send user to next page
-    res.redirectInternal('contact/3-0/change-of-address-v2/you-are-changing-the-address-where-you-live.html')
+    res.redirect('contact/3-0/change-of-address-v2/you-are-changing-the-address-where-you-live.html')
   } else if (selectAddress == "No"){
     // Send user to next page
-    res.redirectInternal('contact/3-0/change-of-address-v2/address-finder/already-your-address.html')
+    res.redirect('contact/3-0/change-of-address-v2/address-finder/already-your-address.html')
   } else {
-    res.redirectInternal('/contact/3-0/change-of-address-v2/address-finder/enter-manual-address.html')
+    res.redirect('/contact/3-0/change-of-address-v2/address-finder/enter-manual-address.html')
   }
 
 });
@@ -2816,15 +2816,15 @@ router.post('/select-an-address2', function (req, res) {
     // Check whether the variable matches a condition
     if (selectAddress == "Select1"){
       // Send user to next page
-      res.redirectInternal('/contact/3-0/change-of-address-v2/check-your-details.html')
+      res.redirect('/contact/3-0/change-of-address-v2/check-your-details.html')
     } else if (selectAddress == "Select2"){
       // Send user to next page
-      res.redirectInternal('contact/3-0/change-of-address-v2/check-your-details.html')
+      res.redirect('contact/3-0/change-of-address-v2/check-your-details.html')
     } else if (selectAddress == "No"){
       // Send user to next page
-      res.redirectInternal('contact/3-0/change-of-address-v2/address-finder/already-your-address.html')
+      res.redirect('contact/3-0/change-of-address-v2/address-finder/already-your-address.html')
     } else {
-      res.redirectInternal('/contact/3-0/change-of-address-v2/address-finder/enter-manual-address.html')
+      res.redirect('/contact/3-0/change-of-address-v2/address-finder/enter-manual-address.html')
     }
   
   });
@@ -2839,15 +2839,15 @@ router.post('/select-an-address2', function (req, res) {
       // Check whether the variable matches a condition
       if (selectAddress == "Select1"){
         // Send user to next page
-        res.redirectInternal('/contact/3-0/change-of-address-v3/check-your-details.html')
+        res.redirect('/contact/3-0/change-of-address-v3/check-your-details.html')
       } else if (selectAddress == "Select3"){
         // Send user to next page
-        res.redirectInternal('contact/3-0/change-of-address-v3/check-your-details.html')
+        res.redirect('contact/3-0/change-of-address-v3/check-your-details.html')
       } else if (selectAddress == "No"){
         // Send user to next page
-        res.redirectInternal('contact/3-0/change-of-address-v3/address-finder/already-your-address.html')
+        res.redirect('contact/3-0/change-of-address-v3/address-finder/already-your-address.html')
       } else {
-        res.redirectInternal('/contact/3-0/change-of-address-v3/address-finder/enter-manual-address.html')
+        res.redirect('/contact/3-0/change-of-address-v3/address-finder/enter-manual-address.html')
       }
     
     });
@@ -2862,15 +2862,15 @@ router.post('/select-an-address2', function (req, res) {
           // Check whether the variable matches a condition
           if (selectAddress == "Select1"){
             // Send user to next page
-            res.redirectInternal('/contact/3-0/change-of-address-v1-1/check-your-details.html')
+            res.redirect('/contact/3-0/change-of-address-v1-1/check-your-details.html')
           } else if (selectAddress == "Select2"){
             // Send user to next page
-            res.redirectInternal('contact/3-0/change-of-address-v1-1/check-your-details.html')
+            res.redirect('contact/3-0/change-of-address-v1-1/check-your-details.html')
           } else if (selectAddress == "No"){
             // Send user to next page
-            res.redirectInternal('contact/3-0/change-of-address-v1-1/address-finder/already-your-address.html')
+            res.redirect('contact/3-0/change-of-address-v1-1/address-finder/already-your-address.html')
           } else {
-            res.redirectInternal('/contact/3-0/change-of-address-v1-1/address-finder/enter-manual-address.html')
+            res.redirect('/contact/3-0/change-of-address-v1-1/address-finder/enter-manual-address.html')
           }
         
         });
@@ -2886,21 +2886,21 @@ router.post('/select-an-address2', function (req, res) {
     // Check whether the variable matches a condition
     if (selectCorrespondenceAddress == "Select1"){
       // Send user to next page
-      res.redirectInternal('/contact/3-0/correspondence-address-v1/check-your-details.html')
+      res.redirect('/contact/3-0/correspondence-address-v1/check-your-details.html')
     } else if (selectCorrespondenceAddress == "Select2"){
       // Send user to next page
-      res.redirectInternal('contact/3-0/correspondence-address-v1/address-finder/already-sending-letters-here.html')
+      res.redirect('contact/3-0/correspondence-address-v1/address-finder/already-sending-letters-here.html')
     } else if (selectCorrespondenceAddress == "Select3"){
       // Send user to next page
-      res.redirectInternal('contact/3-0/correspondence-address-v1/check-your-details.html')
+      res.redirect('contact/3-0/correspondence-address-v1/check-your-details.html')
     } else if (selectCorrespondenceAddress == "Select4"){
       // Send user to next page
-      res.redirectInternal('contact/3-0/correspondence-address-v1/check-your-details.html')
+      res.redirect('contact/3-0/correspondence-address-v1/check-your-details.html')
     } else if (selectCorrespondenceAddress == "Select6"){
       // Send user to next page
-      res.redirectInternal('contact/3-0/correspondence-address-v1/check-your-details.html')
+      res.redirect('contact/3-0/correspondence-address-v1/check-your-details.html')
     } else {
-      res.redirectInternal('/contact/3-0/correspondence-address-v1/address-finder/enter-manual-address.html')
+      res.redirect('/contact/3-0/correspondence-address-v1/address-finder/enter-manual-address.html')
     }
   
   });
@@ -2917,10 +2917,10 @@ router.post('/manual-address-1', function (req, res) {
   // Check whether the variable matches a condition
   if (selectAddress == "Select2"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/change-of-address-v2/you-are-changing-the-address-where-you-live.html')
+    res.redirect('/contact/3-0/change-of-address-v2/you-are-changing-the-address-where-you-live.html')
   } else if (selectAddress == "Select3"){
     // Send user to next page
-    res.redirectInternal('contact/3-0/change-of-address-v2/you-are-changing-the-address-where-you-live.html')
+    res.redirect('contact/3-0/change-of-address-v2/you-are-changing-the-address-where-you-live.html')
   }
 
 });
@@ -2935,13 +2935,13 @@ router.post('/manual-address-2', function (req, res) {
   // Check whether the variable matches a condition
   if (selectAddress == "Select2"){
     // Send user to next page
-    res.redirectInternal('/contact/3-0/change-of-address-v3/check-your-details.html')
+    res.redirect('/contact/3-0/change-of-address-v3/check-your-details.html')
   } else if (selectAddress == "Select3"){
     // Send user to next page
-    res.redirectInternal('contact/3-0/change-of-address-v3/check-your-details.html')
+    res.redirect('contact/3-0/change-of-address-v3/check-your-details.html')
   } else if (selectAddress == "Select4"){
     // Send user to next page
-    res.redirectInternal('contact/3-0/change-of-address-v3/check-your-details.html')
+    res.redirect('contact/3-0/change-of-address-v3/check-your-details.html')
   }
 
 });
@@ -2956,10 +2956,10 @@ router.post('/manual-address-2', function (req, res) {
     // Check whether the variable matches a condition
     if (selectUpdateResidential == "Yes"){
       // Send user to next page
-      res.redirectInternal('/contact/3-0/change-of-address-v2/check-your-details.html')
+      res.redirect('/contact/3-0/change-of-address-v2/check-your-details.html')
     } else if (selectUpdateResidential == "No"){
       // Send user to next page
-      res.redirectInternal('contact/3-0/change-of-address-v2/contact-the-pension-service-to-change-your-address.html')
+      res.redirect('contact/3-0/change-of-address-v2/contact-the-pension-service-to-change-your-address.html')
     }
   
   });
@@ -2974,10 +2974,10 @@ router.post('/manual-address-2', function (req, res) {
       // Check whether the variable matches a condition
       if (selectUpdateResidential == "Yes"){
         // Send user to next page
-        res.redirectInternal('/contact/3-0/change-of-address-v3/check-your-details.html')
+        res.redirect('/contact/3-0/change-of-address-v3/check-your-details.html')
       } else if (selectUpdateResidential == "No"){
         // Send user to next page
-        res.redirectInternal('contact/3-0/change-of-address-v3/contact-the-pension-service-to-change-your-address.html')
+        res.redirect('contact/3-0/change-of-address-v3/contact-the-pension-service-to-change-your-address.html')
       }
     
     });
@@ -2992,13 +2992,13 @@ router.post('/manual-address-2', function (req, res) {
       // Check whether the variable matches a condition
       if (selectPscsAgentAction == "Yes"){
         // Send user to next page
-        res.redirectInternal('/otfd-agent/1-0/task_list_confirm.html')
+        res.redirect('/otfd-agent/1-0/task_list_confirm.html')
       } else if (selectPscsAgentAction == "No"){
         // Send user to next page
-        res.redirectInternal('/otfd-agent/1-0/task_list_closed-alt.html')
+        res.redirect('/otfd-agent/1-0/task_list_closed-alt.html')
       } else if (selectPscsAgentAction == "No2"){
         // Send user to next page
-        res.redirectInternal('/otfd-agent/1-0/task_list_closed-alt.html')
+        res.redirect('/otfd-agent/1-0/task_list_closed-alt.html')
       }
       
     
@@ -3014,13 +3014,13 @@ router.post('/manual-address-2', function (req, res) {
       // Check whether the variable matches a condition
       if (selectPscsAgentAction == "Yes"){
         // Send user to next page
-        res.redirectInternal('/otfd-agent/2-0/task_list_confirm.html')
+        res.redirect('/otfd-agent/2-0/task_list_confirm.html')
       } else if (selectPscsAgentAction == "No"){
         // Send user to next page
-        res.redirectInternal('/otfd-agent/2-0/task_list_closed-alt.html')
+        res.redirect('/otfd-agent/2-0/task_list_closed-alt.html')
       } else if (selectPscsAgentAction == "No2"){
         // Send user to next page
-        res.redirectInternal('/otfd-agent/2-0/task_list_closed-alt.html')
+        res.redirect('/otfd-agent/2-0/task_list_closed-alt.html')
       }
       
     
@@ -3036,13 +3036,13 @@ router.post('/manual-address-2', function (req, res) {
       // Check whether the variable matches a condition
       if (selectPscsAgentAction == "Yes"){
         // Send user to next page
-        res.redirectInternal('/otfd-agent/3-0/task_list_confirm.html')
+        res.redirect('/otfd-agent/3-0/task_list_confirm.html')
       } else if (selectPscsAgentAction == "No"){
         // Send user to next page
-        res.redirectInternal('/otfd-agent/3-0/task_list_closed.html')
+        res.redirect('/otfd-agent/3-0/task_list_closed.html')
       } else if (selectPscsAgentAction == "No2"){
         // Send user to next page
-        res.redirectInternal('/otfd-agent/3-0/task_list_closed-alt.html')
+        res.redirect('/otfd-agent/3-0/task_list_closed-alt.html')
       }
       
     
@@ -3058,13 +3058,13 @@ router.post('/manual-address-2', function (req, res) {
       // Check whether the variable matches a condition
       if (selectPscsAgentAction == "Yes"){
         // Send user to next page
-        res.redirectInternal('/otfd-agent/3-0/task_list_confirm.html')
+        res.redirect('/otfd-agent/3-0/task_list_confirm.html')
       } else if (selectPscsAgentAction == "No"){
         // Send user to next page
-        res.redirectInternal('/otfd-agent/3-0/task_list_closed.html')
+        res.redirect('/otfd-agent/3-0/task_list_closed.html')
       } else if (selectPscsAgentAction == "No2"){
         // Send user to next page
-        res.redirectInternal('/otfd-agent/3-0/task_list_closed-alt.html')
+        res.redirect('/otfd-agent/3-0/task_list_closed-alt.html')
       }
       
     
@@ -3080,10 +3080,10 @@ router.post('/manual-address-2', function (req, res) {
       // Check whether the variable matches a condition
       if (selectReceivedLetter == "Yes"){
         // Send user to next page
-        res.redirectInternal('/oftd/2-0/privacy-notice.html')
+        res.redirect('/oftd/2-0/privacy-notice.html')
       } else if (selectReceivedLetter == "No"){
         // Send user to next page
-        res.redirectInternal('/oftd/2-0/find-someone/dob.html')
+        res.redirect('/oftd/2-0/find-someone/dob.html')
       }
       
     
@@ -3099,10 +3099,10 @@ router.post('/manual-address-2', function (req, res) {
       // Check whether the variable matches a condition
       if (selectReceivedLetter == "Yes"){
         // Send user to next page
-        res.redirectInternal('/oftd/3-0/manage-state-pension-gysp2.html')
+        res.redirect('/oftd/3-0/manage-state-pension-gysp2.html')
       } else if (selectReceivedLetter == "No"){
         // Send user to next page
-        res.redirectInternal('/oftd/3-0/dob.html')
+        res.redirect('/oftd/3-0/dob.html')
       }
       
     
@@ -3118,10 +3118,10 @@ router.post('/manual-address-2', function (req, res) {
         // Check whether the variable matches a condition
         if (selectReceivedLetter == "Yes"){
           // Send user to next page
-          res.redirectInternal('/oftd/4-0/changes-you-can-report-gysp.html')
+          res.redirect('/oftd/4-0/changes-you-can-report-gysp.html')
         } else if (selectReceivedLetter == "No"){
           // Send user to next page
-          res.redirectInternal('/oftd/4-0/dob.html')
+          res.redirect('/oftd/4-0/dob.html')
         }
         
       
@@ -3137,11 +3137,11 @@ router.post('/manual-address-2', function (req, res) {
       // Check whether the variable matches a condition
       if (selectPassportIssuedYear == "1956"){
         // Send user to next page
-        res.redirectInternal('/oftd/2-0/find-someone/likely-you-can-use-service.html')
+        res.redirect('/oftd/2-0/find-someone/likely-you-can-use-service.html')
     
       } else if (selectPassportIssuedYear == "1955"){
         // Send user to next page
-        res.redirectInternal('/oftd/2-0/cannot-use-this-service-yet.html')
+        res.redirect('/oftd/2-0/cannot-use-this-service-yet.html')
     
       }
         
@@ -3158,11 +3158,11 @@ router.post('/manual-address-2', function (req, res) {
       // Check whether the variable matches a condition
       if (selectCitizenRecord == "1956"){
         // Send user to next page
-        res.redirectInternal('/oftd/3-0/name.html')
+        res.redirect('/oftd/3-0/name.html')
     
       } else if (selectCitizenRecord == "1955"){
         // Send user to next page
-        res.redirectInternal('/oftd/3-0/name.html')
+        res.redirect('/oftd/3-0/name.html')
     
       }
         
@@ -3179,11 +3179,11 @@ router.post('/manual-address-2', function (req, res) {
       // Check whether the variable matches a condition
       if (selectCitizenRecord == "1956"){
         // Send user to next page
-        res.redirectInternal('/oftd/4-0/changes-you-can-report-gysp2.html')
+        res.redirect('/oftd/4-0/changes-you-can-report-gysp2.html')
     
       } else if (selectCitizenRecord == "1955"){
         // Send user to next page
-        res.redirectInternal('/oftd/4-0/changes-you-can-report-legacy.html')
+        res.redirect('/oftd/4-0/changes-you-can-report-legacy.html')
     
       }
         
@@ -3200,13 +3200,13 @@ router.post('/manual-address-2', function (req, res) {
       // Check whether the variable matches a condition
       if (selectPscsAgentAction == "Yes"){
         // Send user to next page
-        res.redirectInternal('/otfd-agent/3-0/task_list_confirm.html')
+        res.redirect('/otfd-agent/3-0/task_list_confirm.html')
       } else if (selectPscsAgentAction == "No"){
         // Send user to next page
-        res.redirectInternal('/otfd-agent/3-0/task_list_closed.html')
+        res.redirect('/otfd-agent/3-0/task_list_closed.html')
       } else if (selectPscsAgentAction == "No2"){
         // Send user to next page
-        res.redirectInternal('/otfd-agent/3-0/task_list_closed-alt.html')
+        res.redirect('/otfd-agent/3-0/task_list_closed-alt.html')
       }
       
     
@@ -3226,10 +3226,10 @@ router.post('/manual-address-2', function (req, res) {
           // Check whether the variable matches a condition
           if (selectTextMessage == "Yes"){
             // Send user to next page
-            res.redirectInternal('/oftd/4-0/authentication/create-account/enter-phone-number.html')
+            res.redirect('/oftd/4-0/authentication/create-account/enter-phone-number.html')
           } else if (selectTextMessage == "No"){
             // Send user to next page
-            res.redirectInternal('/oftd/4-0/authentication/create-account/auth-app.html')
+            res.redirect('/oftd/4-0/authentication/create-account/auth-app.html')
           }
           
         
@@ -3245,10 +3245,10 @@ router.post('/manual-address-2', function (req, res) {
         // Check whether the variable matches a condition
         if (selectReceivedLetter == "Yes"){
           // Send user to next page
-          res.redirectInternal('/one-login/1-0/privacy-notice.html')
+          res.redirect('/one-login/1-0/privacy-notice.html')
         } else if (selectReceivedLetter == "No"){
           // Send user to next page
-          res.redirectInternal('/one-login/1-0/dob.html')
+          res.redirect('/one-login/1-0/dob.html')
         }
         
       
@@ -3265,11 +3265,11 @@ router.post('/manual-address-2', function (req, res) {
       // Check whether the variable matches a condition
       if (selectCitizenRecordYear == "1956"){
         // Send user to next page
-        res.redirectInternal('/one-login/1-0/likely-you-can-use-service.html')
+        res.redirect('/one-login/1-0/likely-you-can-use-service.html')
     
       } else if (selectCitizenRecordYear == "1955"){
         // Send user to next page
-        res.redirectInternal('/one-login/1-0/cannot-use-this-service-yet.html')
+        res.redirect('/one-login/1-0/cannot-use-this-service-yet.html')
       }
         
 });     
@@ -3284,11 +3284,11 @@ router.post('/manual-address-2', function (req, res) {
   // Check whether the variable matches a condition
   if (selectCitizenRecordYear == "2025"){
     // Send user to next page
-    res.redirectInternal('/coa-combined/coa-combined-v1/temp-or-perm.html')
+    res.redirect('/coa-combined/coa-combined-v1/temp-or-perm.html')
 
   } else if (selectCitizenRecordYear == "2024"){
     // Send user to next page
-    res.redirectInternal('/coa-combined/coa-combined-v1/report-change-after-move.html')
+    res.redirect('/coa-combined/coa-combined-v1/report-change-after-move.html')
   }
     
 });     
@@ -3303,22 +3303,22 @@ router.post('/home-type-previous1', function (req, res) {
   // Check whether the variable matches a condition
   if (selectHomeType == "rented"){
     // Send user to next page
-    res.redirectInternal('/coa-combined/coa-combined-v1/housing-costs-previous.html')
+    res.redirect('/coa-combined/coa-combined-v1/housing-costs-previous.html')
 
   } else if (selectHomeType == "owned"){
     // Send user to next page
-    res.redirectInternal('/coa-combined/coa-combined-v1/housing-costs-previous.html')
+    res.redirect('/coa-combined/coa-combined-v1/housing-costs-previous.html')
 
   } else if (selectHomeType == "rent-own"){
     // Send user to next page
-    res.redirectInternal('/coa-combined/coa-combined-v1/housing-costs-previous.html')
+    res.redirect('/coa-combined/coa-combined-v1/housing-costs-previous.html')
 
   } else if (selectHomeType == "caravan"){
     // Send user to next page
-    res.redirectInternal('/coa-combined/coa-combined-v1/housing-costs-previous.html')
+    res.redirect('/coa-combined/coa-combined-v1/housing-costs-previous.html')
   } else if (selectHomeType == "other"){
     // Send user to next page
-    res.redirectInternal('/coa-combined/coa-combined-v1/housing-costs-previous.html')
+    res.redirect('/coa-combined/coa-combined-v1/housing-costs-previous.html')
   }
 
 });
@@ -3334,11 +3334,11 @@ router.post('/home-type-previous1', function (req, res) {
     // Check whether the variable matches a condition
     if (selectHousingCostsPrevious == "Yes"){
       // Send user to next page
-      res.redirectInternal('/coa-combined/coa-combined-v1/property-you-live-now.html')
+      res.redirect('/coa-combined/coa-combined-v1/property-you-live-now.html')
   
     } else if (selectHousingCostsPrevious == "No"){
       // Send user to next page
-      res.redirectInternal('/coa-combined/coa-combined-v1/property-you-live-now.html')
+      res.redirect('/coa-combined/coa-combined-v1/property-you-live-now.html')
     
     }
       
@@ -3354,22 +3354,22 @@ router.post('/home-type-now1', function (req, res) {
   // Check whether the variable matches a condition
   if (selectHomeType == "rented"){
     // Send user to next page
-    res.redirectInternal('/coa-combined/coa-combined-v1/housing-costs-new.html')
+    res.redirect('/coa-combined/coa-combined-v1/housing-costs-new.html')
 
   } else if (selectHomeType == "owned"){
     // Send user to next page
-    res.redirectInternal('/coa-combined/coa-combined-v1/housing-costs-new.html')
+    res.redirect('/coa-combined/coa-combined-v1/housing-costs-new.html')
 
   } else if (selectHomeType == "rent-own"){
     // Send user to next page
-    res.redirectInternal('/coa-combined/coa-combined-v1/housing-costs-new.html')
+    res.redirect('/coa-combined/coa-combined-v1/housing-costs-new.html')
 
   } else if (selectHomeType == "caravan"){
     // Send user to next page
-    res.redirectInternal('/coa-combined/coa-combined-v1/housing-costs-new.html')
+    res.redirect('/coa-combined/coa-combined-v1/housing-costs-new.html')
   } else if (selectHomeType == "other"){
     // Send user to next page
-    res.redirectInternal('/coa-combined/coa-combined-v1/housing-costs-new.html')
+    res.redirect('/coa-combined/coa-combined-v1/housing-costs-new.html')
   }
 
 });
@@ -3384,11 +3384,11 @@ router.post('/housing-costs-new1', function (req, res) {
   // Check whether the variable matches a condition
   if (selectHousingCostsNew == "Yes"){
     // Send user to next page
-    res.redirectInternal('/coa-combined/coa-combined-v1/ground-rent.html')
+    res.redirect('/coa-combined/coa-combined-v1/ground-rent.html')
 
   } else if (selectHousingCostsNew == "No"){
     // Send user to next page
-    res.redirectInternal('/coa-combined/coa-combined-v1/ground-rent.html')
+    res.redirect('/coa-combined/coa-combined-v1/ground-rent.html')
   
   }
     
@@ -3404,11 +3404,11 @@ router.post('/ground-rent1', function (req, res) {
   // Check whether the variable matches a condition
   if (selectGroundRent == "Yes"){
     // Send user to next page
-    res.redirectInternal('/coa-combined/coa-combined-v1/service-charges.html')
+    res.redirect('/coa-combined/coa-combined-v1/service-charges.html')
 
   } else if (selectGroundRent == "No"){
     // Send user to next page
-    res.redirectInternal('/coa-combined/coa-combined-v1/service-charges.html')
+    res.redirect('/coa-combined/coa-combined-v1/service-charges.html')
   
   }
     
@@ -3424,11 +3424,11 @@ router.post('/service-charge1', function (req, res) {
   // Check whether the variable matches a condition
   if (selectServiceCharge == "Yes"){
     // Send user to next page
-    res.redirectInternal('/coa-combined/coa-combined-v1/do-you-have-a-mortgage.html')
+    res.redirect('/coa-combined/coa-combined-v1/do-you-have-a-mortgage.html')
 
   } else if (selectServiceCharge == "No"){
     // Send user to next page
-    res.redirectInternal('/coa-combined/coa-combined-v1/do-you-have-a-mortgage.html')
+    res.redirect('/coa-combined/coa-combined-v1/do-you-have-a-mortgage.html')
   
   }
     
@@ -3444,11 +3444,11 @@ router.post('/mortgage-or-loan1', function (req, res) {
   // Check whether the variable matches a condition
   if (selectMortgage == "Yes"){
     // Send user to next page
-    res.redirectInternal('/coa-combined/coa-combined-v1/do-you-get-smi.html')
+    res.redirect('/coa-combined/coa-combined-v1/do-you-get-smi.html')
 
   } else if (selectMortgage == "No"){
     // Send user to next page
-    res.redirectInternal('/coa-combined/coa-combined-v1/does-anybody-live-with-you.html')
+    res.redirect('/coa-combined/coa-combined-v1/does-anybody-live-with-you.html')
   
   }
     
@@ -3464,11 +3464,11 @@ router.post('/additional-people1', function (req, res) {
   // Check whether the variable matches a condition
   if (selectAdditionalPeople == "Yes"){
     // Send user to next page
-    res.redirectInternal('/coa-combined/coa-combined-v1/apply-for-housing-benefit.html')
+    res.redirect('/coa-combined/coa-combined-v1/apply-for-housing-benefit.html')
 
   } else if (selectAdditionalPeople == "No"){
     // Send user to next page
-    res.redirectInternal('/coa-combined/coa-combined-v1/apply-for-housing-benefit.html')
+    res.redirect('/coa-combined/coa-combined-v1/apply-for-housing-benefit.html')
   
   }
     
@@ -3484,11 +3484,11 @@ router.post('/get-smi-support1', function (req, res) {
   // Check whether the variable matches a condition
   if (selectGetSmiSupport == "Yes"){
     // Send user to next page
-    res.redirectInternal('/coa-combined/coa-combined-v1/does-anybody-live-with-you.html')
+    res.redirect('/coa-combined/coa-combined-v1/does-anybody-live-with-you.html')
 
   } else if (selectGetSmiSupport == "No"){
     // Send user to next page
-    res.redirectInternal('/coa-combined/coa-combined-v1/send-smi-support-info.html')
+    res.redirect('/coa-combined/coa-combined-v1/send-smi-support-info.html')
   
   }
     
@@ -3504,11 +3504,11 @@ router.post('/want-smi-support1', function (req, res) {
   // Check whether the variable matches a condition
   if (selectWantSmi == "Yes"){
     // Send user to next page
-    res.redirectInternal('/coa-combined/coa-combined-v1/does-anybody-live-with-you.html')
+    res.redirect('/coa-combined/coa-combined-v1/does-anybody-live-with-you.html')
 
   } else if (selectWantSmi == "No"){
     // Send user to next page
-    res.redirectInternal('/coa-combined/coa-combined-v1/does-anybody-live-with-you.html')
+    res.redirect('/coa-combined/coa-combined-v1/does-anybody-live-with-you.html')
   
   }
     
@@ -3524,11 +3524,11 @@ router.post('/housing-benefit1', function (req, res) {
   // Check whether the variable matches a condition
   if (selectHousingBenefit == "Yes"){
     // Send user to next page
-    res.redirectInternal('/coa-combined/coa-combined-v1/apply-for-housing-benefit.html')
+    res.redirect('/coa-combined/coa-combined-v1/apply-for-housing-benefit.html')
 
   } else if (selectHousingBenefit == "No"){
     // Send user to next page
-    res.redirectInternal('/coa-combined/coa-combined-v1/apply-for-housing-benefit.html')
+    res.redirect('/coa-combined/coa-combined-v1/apply-for-housing-benefit.html')
   
   }
     
@@ -3544,11 +3544,11 @@ router.post('/care-home1', function (req, res) {
   // Check whether the variable matches a condition
   if (selectHousingBenefit == "Yes"){
     // Send user to next page
-    res.redirectInternal('/coa-combined/coa-combined-v1/apply-for-housing-benefit.html')
+    res.redirect('/coa-combined/coa-combined-v1/apply-for-housing-benefit.html')
 
   } else if (selectHousingBenefit == "No"){
     // Send user to next page
-    res.redirectInternal('/coa-combined/coa-combined-v1/apply-for-housing-benefit.html')
+    res.redirect('/coa-combined/coa-combined-v1/apply-for-housing-benefit.html')
   
   }
     
@@ -3564,11 +3564,11 @@ router.post('/hospital1', function (req, res) {
   // Check whether the variable matches a condition
   if (selectHousingBenefit == "Yes"){
     // Send user to next page
-    res.redirectInternal('/coa-combined/coa-combined-v1/apply-for-housing-benefit.html')
+    res.redirect('/coa-combined/coa-combined-v1/apply-for-housing-benefit.html')
 
   } else if (selectHousingBenefit == "No"){
     // Send user to next page
-    res.redirectInternal('/coa-combined/coa-combined-v1/apply-for-housing-benefit.html')
+    res.redirect('/coa-combined/coa-combined-v1/apply-for-housing-benefit.html')
   
   }
     

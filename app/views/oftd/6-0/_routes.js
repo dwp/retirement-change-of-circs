@@ -21,10 +21,10 @@ router.post('/received-letter6', function (req, res) {
   // Check whether the variable matches a condition
   if (selectReceivedLetter == "Yes"){
     // Send user to next page
-          res.redirectInternal('/oftd/6-0/changes-you-can-report-gysp.html')
+          res.redirect('/oftd/6-0/changes-you-can-report-gysp.html')
   } else if (selectReceivedLetter == "No"){
     // Send user to next page
-    res.redirectInternal('/oftd/6-0/dob.html')
+    res.redirect('/oftd/6-0/dob.html')
    }
         
       
@@ -40,11 +40,11 @@ router.post('/dob5', function (req, res) {
   // Check whether the variable matches a condition
   if (selectCitizenRecordYear == "1956"){
     // Send user to next page
-    res.redirectInternal('/oftd/6-0/changes-you-can-report-gysp2')
+    res.redirect('/oftd/6-0/changes-you-can-report-gysp2')
     
   } else if (selectCitizenRecordYear == "1955"){
     // Send user to next page
-    res.redirectInternal('/oftd/6-0/changes-you-can-report-legacy')
+    res.redirect('/oftd/6-0/changes-you-can-report-legacy')
   }
         
 });     
