@@ -1,0 +1,136 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Create a GOV.UK One Login or sign in - GOV.UK One Login
+{% endblock %}
+
+
+
+{% block beforeContent %}
+{% include "includes/phase-banner.njk" %}
+{% endblock %}
+
+{% block content %}
+<main class="govuk-main-wrapper" id="main-content">
+          
+
+
+
+
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-three-quarters">
+  
+  
+  
+  
+  
+  
+          <form class="form" action="/transition/sign-in-with-govuk-one-login" method="post">
+  
+  
+              <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" data-govuk-notification-banner-init="">
+                  <div class="govuk-notification-banner__header">
+                    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                      Important
+                    </h2>
+                  </div>
+                  <div class="govuk-notification-banner__content">
+                    <p class="govuk-notification-banner__heading">
+                      <strong>GOV.UK One Login is the new way to sign in to government services</strong>
+                      </p><p>You can use a GOV.UK One Login to sign in to this service. You'll be able to create a GOV.UK One Login if you do not already have one.
+                      </p>
+  
+                      <!-- <p>You can use GOV.UK One Login to access to this service. You can create a GOV.UK One Login if you do not already have one.</p> -->
+  
+                  </div>
+                </div>
+  
+  
+              <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                          <h1 class="govuk-fieldset__heading">
+                              Sign in to your manage your State pension account
+                          </h1>
+                      </legend>
+  
+                      <!-- <br><div id="changedName-hint" class="govuk-hint">
+                          You can now only sign in using one of the following options. You cannot use your Universal Credit or Government Gateway account to sign in.
+                        </div>
+  
+                      <br> -->
+                      <div class="govuk-radios" data-module="govuk-radios" data-govuk-radios-init="">
+  
+                          <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="inRegister" name="signin" type="radio" aria-describedby="sign-in-item-hint" value="onelogin">
+                              <label class="govuk-label govuk-radios__label" for="inRegister">
+                                  <b>
+  
+                                      Sign in with or create a GOV.UK One Login</b>
+                              </label>
+                              <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+  
+                                  To help keep your information safe, you may be asked to prove your identity.
+  
+                              </div>
+                          </div>
+  
+  
+                          <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="register-account" name="signin" type="radio" value="code" aria-describedby="sign-in-3-item-hint">
+                              <label class="govuk-label govuk-radios__label" for="sign-in-3">
+                                  <b>Sign in with a security code</b>
+                              </label>
+                              <div id="sign-in-3-item-hint" class="govuk-hint govuk-radios__hint">
+                                  You can sign in using a security code if you have been sent one from DWP.
+                              </div>
+                          </div>
+  
+                      </div>
+  
+                  </fieldset>
+              </div>
+  
+  
+  
+  
+  
+              <button class="govuk-button" data-module="govuk-button" data-govuk-button-init="">
+                  Continue
+              </button>
+      </form>
+  
+  
+  
+  
+  
+      </div>
+  </div>
+  
+  
+          </main>
+
+{% endblock %}
+
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "state-pension-playback.html",
+            text: "Original overview page"
+          },
+          {
+            href: "https://govuk-prototype-kit.herokuapp.com/",
+            text: "GOV.UK Prototype Kit " + releaseVersion
+          },
+          {
+            href: "/prototype-admin/clear-data",
+            text: "Clear data"
+          }
+        ],
+        visuallyHiddenTitle: "Footer links"
+      }
+    }) }}
+  {% endblock %}

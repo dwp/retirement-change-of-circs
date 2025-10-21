@@ -3575,8 +3575,8 @@ router.post('/hospital1', function (req, res) {
 });   
  
 require('./views/coa-combined/phase1/_routes')
-require('./views/oftd/5-0/_routes')
-require('./views/oftd/6-0/_routes')
+require('./views/oftd/5-0-archive/_routes')
+require('./views/oftd/6-0-archive/_routes')
 
   
 

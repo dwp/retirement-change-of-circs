@@ -26,8 +26,27 @@ router.post('/received-letter5', function (req, res) {
     // Send user to next page
     res.redirect('/oftd/5-0/dob.html')
    }
+        
       
 });
 
+// ROUTING TO DOB eligibility for all citizens journey
+router.post('/dob4', function (req, res) {
+
+  // Make a variable and give it the value from 'citizen-record-year'
+  var selectCitizenRecordYear = req.session.data['citizen-record-year']
+  console.log("high", req.session.data['citizen-record-year'])
+    
+  // Check whether the variable matches a condition
+  if (selectCitizenRecordYear == "1956"){
+    // Send user to next page
+    res.redirect('/oftd/5-0/changes-you-can-report-gysp2')
+    
+  } else if (selectCitizenRecordYear == "1955"){
+    // Send user to next page
+    res.redirect('/oftd/5-0/changes-you-can-report-legacy')
+  }
+        
+});     
 
 module.exports = router
