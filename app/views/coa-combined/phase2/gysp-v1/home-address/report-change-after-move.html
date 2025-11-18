@@ -1,0 +1,30 @@
+{% extends "layout_noback.html" %}
+
+{% block pageTitle %}
+   You need to change your address once you have moved - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="bank-playback" method="post">
+      <div class="govuk-form-group">
+        <h1 class="govuk-heading-l">
+          You cannot change your home address
+        </h1>
+        <p class="govuk-body">
+          This is because your home address must be the property you are currently living in.
+        </p>
+        <p class="govuk-body">
+          When you have moved into your new address you can try again.
+        </p>
+        <div class="govuk-inset-text">
+          <a href="your-state-pension.html" class="govuk-link">Return to your State Pension details</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
