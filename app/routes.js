@@ -3200,13 +3200,13 @@ router.post('/manual-address-2', function (req, res) {
       // Check whether the variable matches a condition
       if (selectPscsAgentAction == "Yes"){
         // Send user to next page
-        res.redirect('/otfd-agent/3-0/task_list_confirm.html')
+        res.redirect('/otfd-agent/address-change/task_list_confirm.html')
       } else if (selectPscsAgentAction == "No"){
         // Send user to next page
-        res.redirect('/otfd-agent/3-0/task_list_closed.html')
+        res.redirect('/otfd-agent/address-change/task_list_closed.html')
       } else if (selectPscsAgentAction == "No2"){
         // Send user to next page
-        res.redirect('/otfd-agent/3-0/task_list_closed-alt.html')
+        res.redirect('/otfd-agent/address-change/task_list_closed-alt.html')
       }
       
     
