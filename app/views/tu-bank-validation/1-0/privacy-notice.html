@@ -1,0 +1,84 @@
+{% extends "layout_nosignout.html" %}
+
+{% block pageTitle %}
+  How we use your information - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="your-state-pension" method="post">
+        <div class="govuk-form-group">
+          <h1 class="govuk-heading-l">
+            How we use your information
+          </h1>
+          <p class="govuk-body">
+            We will treat your information carefully. We may use it for any of our purposes.
+          </p>
+          <p class="govuk-body">
+            To learn about your information rights and how we use information, see our <a class="govuk-link" href="https://www.gov.uk/government/organisations/department-for-work-pensions/about/personal-information-charter" target="_blank">personal information charter (opens in new tab)</a>.
+          </p>
+          <p class="govuk-body">
+            If you live in Northern Ireland, see the <a href="https://www.communities-ni.gov.uk/dfc-privacy-notice" target="_blank">Privacy Notice from the Department for Communities (opens in new tab)</a>.
+          </p>
+          <!-- PENSION CREDIT VERSION
+            <h1 class="govuk-heading-l">
+            How we will use your information
+          </h1>
+          <p class="govuk-body">
+            We will treat your information carefully. We may use it for any of our purposes. To learn about your information rights and how we use information, <a href="https://www.gov.uk/government/organisations/department-for-work-pensions/about/personal-information-charter">see our personal information charter (opens in new tab)</a>. (From Intranet)
+          </p>
+          <hr/>
+          <p class="govuk-body-l govuk-!-margin-bottom-6">
+            As well as the details you provide in your application, we will also use information we already hold about you (and your partner, if you live with one). (PC)
+          </p>
+          <p class="govuk-body govuk-!-margin-bottom-2">
+            We will use information:
+          </p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>that we already have about your State Pension and any benefits you receive</li>
+            <li>that we get from HMRC about your income and earnings</li>
+          </ul>
+          <p class="govuk-body">
+            To find out more about how we use information and your information rights, read our <a class="govuk-link" href="https://www.gov.uk/government/organisations/department-for-work-pensions/about/personal-information-charter" target="_blank">Personal Information Charter (opens in new tab)</a>.
+          </p>   -->
+        </div>
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+    </div>
+  </div>
+  {% endblock %}
+
+{% block footer %}
+
+  {{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "idv-recreated-pages/idv-placeholder",
+          text: "ID&V CODES REQUIRED (opens in new tab)",
+          attributes: {
+            target: "_blank"
+          }
+        },
+        {
+          href: "idv-recreated-pages/success",
+          text: "SKIP ID&V SUCCESS"
+        },
+        {
+          href: "https://govuk-prototype-kit.herokuapp.com/",
+          text: "GOV.UK Prototype Kit " + releaseVersion
+        },
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        }
+      ],
+      visuallyHiddenTitle: "Footer links"
+    }
+  }) }}
+
+{% endblock %}

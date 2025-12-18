@@ -1,0 +1,69 @@
+{% extends "layouts/ol_signed_in.html" %}
+
+{% block pageTitle %}
+  Who did you take out a credit or store card with? - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/current-resident1" method="post">
+        <div class="govuk-form-group">
+          <span class="govuk-caption-l">Confirm your identity - question 3 of 3</span>
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                You took out a credit or store card in September 2023 - who was it with?
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="less-than-1-year" name="current-resident" type="radio" value="less-than-a-year" {{ checked("current-resident", "less-than-a-year") }}>
+                <label class="govuk-label govuk-radios__label" for="uk-account">
+                  Less than 1 year
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="between-1-and-3-years" name="current-resident" type="radio" value="1-3-years" {{ checked("current-resident", "1-3-years") }}>
+                <label class="govuk-label govuk-radios__label" for="overseas">
+                  Between 1 and 3 years
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="over-3-and-up-to-5-years" name="current-resident" type="radio" value="3-5-years" {{ checked("current-resident", "3-5-years") }}>
+                <label class="govuk-label govuk-radios__label" for="overseas">
+                  Over 3 and up to 5 years
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="over-5 years-and-up-to-8-years" name="current-resident" type="radio" value="5-8-years" {{ checked("current-resident", "5-8-years") }}>
+                <label class="govuk-label govuk-radios__label" for="overseas">
+                  Over 5 years and up to 8 years
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="over-8-years" name="current-resident" type="radio" value="over-8-years" {{ checked("current-resident", "over-8-years") }}>
+                <label class="govuk-label govuk-radios__label" for="overseas">
+                  Over 8 years
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+
+    </div>
+    <!-- <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">
+        Get help
+      </h2>
+      <p><a href="contact-pension-service.html" target="_blank">Get help using the online service (opens in new tab)</a></p>
+    </div> -->
+  </div>
+
+{% endblock %}

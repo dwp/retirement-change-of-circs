@@ -1,0 +1,44 @@
+{% extends "layout_unavailable.html" %}
+
+{% block pageTitle %}
+  Sorry, the service is unavailable - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="bank-playback" method="post">
+        <div class="govuk-form-group">
+          <h1 class="govuk-heading-l">
+            Sorry, the service is unavailable
+          </h1>
+          <p class="govuk-body">
+            You will be able to use the service later.
+          </p>
+          <p class="govuk-body">
+            We have not saved your answers. When the service is available, you will have to start again.
+          </p>
+          <p class="govuk-body">
+            If you need to speak to someone about your State Pension, <a href="https://www.gov.uk/contact-pension-service">contact the Pension Service by phone</a>.
+          </p>
+          <p class="govuk-body">
+            If you live in Northern Ireland, <a href="https://www.nidirect.gov.uk/contacts/northern-ireland-pension-centre">contact the Northern Ireland Pension Centre by phone</a>.
+          </p>
+        </div>
+      </form>
+      <p class="govuk-body">
+        <a href="https://www.gov.uk/">Return to GOV.UK</a>
+      </p>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+        
+      }
+    }) }}
+  {% endblock %}

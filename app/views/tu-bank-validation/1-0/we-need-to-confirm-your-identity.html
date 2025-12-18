@@ -1,0 +1,32 @@
+{% extends "layout_noback_nosignout.html" %}
+
+{% block pageTitle %}
+  We need to confirm your identitiy - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">We need to ask you 3 questions to confirm your identity</h1>
+      <p class="govuk-body">
+        This is to protect you from fraud and make sure we pay your State Pension into the correct account.
+      </p> 
+      <p class="govuk-body">
+        These checks will not affect your credit score.
+      </p>
+      <p class="govuk-body">
+        DWP treats the security of your information very seriously. We do these checks to make sure that we are keeping your personal information safe. 
+      </p>
+
+      <form action="identity-check-q1" method="post" novalidate>
+          <input type="hidden" name="answers-checked" value="true">
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
