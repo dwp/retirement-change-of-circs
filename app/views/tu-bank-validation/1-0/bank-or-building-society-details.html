@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layouts/ol_signed_in.html" %}
 
 {% block pageTitle %}
   Where would you like us to pay your State Pension? - Manage your State Pension - GOV.UK
@@ -8,7 +8,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form method="post" action="check-your-details">
+      <form method="post" action="/bank-validation1">
         <h1 class="govuk-heading-l">Where would you like us to pay your State Pension?</h1>
         <div class="govuk-form-group">
           <label class="govuk-label" for="width-20">
@@ -54,12 +54,12 @@
       </form>
 
     </div>
-    <div class="govuk-grid-column-one-third">
+    <!-- <div class="govuk-grid-column-one-third">
       <h2 class="govuk-heading-m">
         Get help
       </h2>
-      <p><a href="contact-pension-service.html" target="_blank">Get help using the online service (opens in new tab)</a></p>
-    </div>
+      <p><a href="contact-pension-service&help.html" target="_blank">Contact us by phone to get help with the online service (opens in new tab)</a></p>
+    </div> -->
   </div>
 
 {% endblock %}

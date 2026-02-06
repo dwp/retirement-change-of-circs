@@ -1,0 +1,70 @@
+{% extends "layouts/ol_signed_in.html" %}
+
+{% block pageTitle %}
+  You took out a mobile phone contract in July 2020, which provider was it with? - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/mobile-phone-provider1" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <span class="govuk-caption-l">Verify your bank details - question 2 of 3</span>
+              <h1 class="govuk-fieldset__heading">
+                You took out a mobile phone contract in July 2020, which provider was it with?
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="02" name="mobile-phone-provider" type="radio" value="02" {{ checked("mobile-phone-provider", "02") }}>
+                <label class="govuk-label govuk-radios__label" for="02">
+                  02
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="tesco-mobile" name="mobile-phone-provider" type="radio" value="tesco-mobile" {{ checked("mobile-phone-provider", "tesco-mobile") }}>
+                <label class="govuk-label govuk-radios__label" for="tesco-mobile">
+                  Tesco mobile
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="vodafone" name="mobile-phone-provider" type="radio" value="vodafone" {{ checked("mobile-phone-provider", "vodafone") }}>
+                <label class="govuk-label govuk-radios__label" for="vodafone">
+                  Vodafone
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="virgin-mobile" name="mobile-phone-provider" type="radio" value="virgin-mobile" {{ checked("mobile-phone-provider", "virgin-mobile") }}>
+                <label class="govuk-label govuk-radios__label" for="virgin-mobile">
+                  Virgin mobile
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="three" name="stay-length" type="radio" value="three" {{ checked("stay-length", "three") }}>
+                <label class="govuk-label govuk-radios__label" for="three">
+                  Three
+                </label>
+              </div>
+            </div>
+            
+          </fieldset>
+        </div>
+        
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+
+    </div>
+    <!-- <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">
+        Get help
+      </h2>
+      <p><a href="contact-pension-service.html" target="_blank">Get help using the online service (opens in new tab)</a></p>
+    </div> -->
+  </div>
+
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends "layout_noback_nowelsh" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{% include "includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{% include 'includes/_header-nav-find.html' %}
+
+
+{% block content %}
+
+
+{% endblock %}
+
+<div class="govuk-width-container">   
+
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include './_namebar.html' %}
+
+      {{ govukBackLink({
+    "text": "Back",
+    "href": "javascript: window.history.go(-1)"
+  })
+}}
+    <br><br>
+    <h1 class="govuk-heading-l">Bank details change failed</h1>
+    <h2 class="govuk-heading-m">Details</h2>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          9 Janurary 2025
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Reason
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Failed Transunion checks
+        </dd>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+        
+{% endblock %}
+
+{% block pageScripts %}
+
+     
+{% endblock %}

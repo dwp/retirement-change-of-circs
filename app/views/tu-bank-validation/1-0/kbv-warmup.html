@@ -1,0 +1,45 @@
+{% extends "layouts/ol_signed_in_noback.html" %}
+
+{% block pageTitle %}
+  We need to ask you 3 questions to verify the bank details you've given us  - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="kbv-1" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                We need to ask you 3 questions to verify the bank details you've given us 
+              </h1>
+            </legend>
+            <p class="govuk-body">
+              We do this to protect you from fraud and make sure we pay your State Pension correctly. It will not affect your credit score.
+            </p>
+            <p class="govuk-body">
+              You'll need to answer all the questions in one go. 
+            </p>
+            <p class="govuk-body">
+              If you do not complete the questions, we will not be able to verify your bank details online but we'll tell you what to do next. 
+            </p>
+          </fieldset>
+        </div>
+        
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+
+    </div>
+    <!-- <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">
+        Get help
+      </h2>
+      <p><a href="contact-pension-service.html" target="_blank">Get help using the online service (opens in new tab)</a></p>
+    </div> -->
+  </div>
+
+{% endblock %}

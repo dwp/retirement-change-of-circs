@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layouts/ol_signed_in.html" %}
 
 {% block pageTitle %}
   You cannot use this service - Manage your State Pension - GOV.UK
@@ -8,7 +8,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="bank-playback" method="post">
+      <form class="form" action="" method="post">
         <div class="govuk-form-group">
           <h1 class="govuk-heading-l">
             You can only use this service with a UK bank or building society account
@@ -19,9 +19,11 @@
         </div>
       </form>
       <p class="govuk-body">
-        <a href="https://www.gov.uk/">Return to GOV.UK</a>
+        <a href="your-state-pension">Go back to your State Pension details</a>
       </p>
+    </div>
     </div>
   </div>
 
 {% endblock %}
+

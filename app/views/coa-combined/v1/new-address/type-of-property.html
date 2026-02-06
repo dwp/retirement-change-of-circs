@@ -1,0 +1,80 @@
+{% extends "layouts/ol_signed_in.html" %}
+
+{% block pageTitle %}
+  What type of property is it? - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/perm-temp3" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <span class="govuk-caption-l">Your new address</span>
+              <h1 class="govuk-fieldset__heading">
+                What type of property is it?
+              </h1>
+            </legend>
+
+            <!-- <p class="govuk-body">
+              You can only change your address after you have moved.
+            </p> -->
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="perm-or-temp" name="perm-or-temp" type="radio" value="Yes" {{ checked("perm-or-temp", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="perm-or-temp">
+                  House
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="perm-or-temp" name="perm-or-temp" type="radio" value="No" {{ checked("perm-or-temp", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="perm-or-temp">
+                  Flat or annexe
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="perm-or-temp" name="perm-or-temp" type="radio" value="No" {{ checked("perm-or-temp", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="perm-or-temp">
+                  Hospital
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="perm-or-temp" name="perm-or-temp" type="radio" value="No" {{ checked("perm-or-temp", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="perm-or-temp">
+                  Care home
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="perm-or-temp" name="perm-or-temp" type="radio" value="No" {{ checked("perm-or-temp", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="perm-or-temp">
+                  Caravan, houseboat or mobile home
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="perm-or-temp" name="perm-or-temp" type="radio" value="No" {{ checked("perm-or-temp", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="perm-or-temp">
+                  Other
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+
+    </div>
+    <!-- <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">
+        Get help
+      </h2>
+      <p><a href="../contact-pension-service&help" target="_blank">Contact us by phone to get help with the online service (opens in new tab)</a></p>
+    </div> -->
+  </div>
+
+{% endblock %}
