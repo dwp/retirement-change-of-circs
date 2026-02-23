@@ -1,16 +1,20 @@
 {
+  "name": "govuk-prototype-kit",
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "dev": "govuk-prototype-kit dev",
     "serve": "govuk-prototype-kit serve",
     "start": "govuk-prototype-kit start"
   },
-  "name": "govuk-prototype-kit",
   "dependencies": {
     "@dwp/dwp-frontend": "3.3.0",
     "@govuk-prototype-kit/common-templates": "2.0.1",
     "@govuk-prototype-kit/step-by-step": "2.2.3",
     "@govuk-prototype-kit/task-list": "2.0.0",
     "@ministryofjustice/frontend": "5.1.5",
+    "@x-govuk/govuk-prototype-filters": "^2.1.0",
     "axios": "^1.13.5",
     "govuk-frontend": "5.11.2",
     "govuk-prototype-kit": "13.16.2",
