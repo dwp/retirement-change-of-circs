@@ -1,39 +1,33 @@
 {% extends "layouts/ol_signed_in" %}
 
 {% block pageTitle %}
-  Do you currently get Support for Mortgage Interest (SMI)? - Manage your State Pension - GOV.UK
+  Do you have a mortgage? - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="check-your-details" method="post">
+      <form class="form" action="/mortgage-or-loan3" method="post">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <span class="govuk-caption-l">About where you live now</span>
               <h1 class="govuk-fieldset__heading">
-                Do you currently get Support for Mortgage Interest (SMI)?
+                Do you have a mortgage or loan secured against your home?
               </h1>
             </legend>
 
-            <div id="ServiceCharges-hint" class="govuk-hint">
-              <p class="govuk-hint govuk-!-margin-top-0">
-                You might have applied or an SMI loan if you were previously getting one or more qualifying benefits, such as Income support, income based Jobseeker's Allowance (JSA), income-related Employment and Support Allowance (ESA) or Universal Credit.
-              </p>
-            </div>
-
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="do-you-get-smi-support" name="do-you-get-smi-support" type="radio" value="Yes" {{ checked("do-you-get-smi-support", "Yes") }}>
-                <label class="govuk-label govuk-radios__label" for="do-you-get-smi-support">
+                <input class="govuk-radios__input" id="mortgage-or-loan" name="mortgage-or-loan" type="radio" value="Yes" {{ checked("mortgage-or-loan", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="mortgage-or-loan">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="do-you-get-smi-support" name="do-you-get-smi-support" type="radio" value="No" {{ checked("do-you-get-smi-support", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="do-you-get-smi-support">
+                <input class="govuk-radios__input" id="mortgage-or-loan" name="mortgage-or-loan" type="radio" value="No" {{ checked("mortgage-or-loan", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="mortgage-or-loan">
                   No
                 </label>
               </div>

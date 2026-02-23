@@ -11,6 +11,22 @@ function addDays(date, days) {
 
 // ROUTING TO IS THE BANK ACCOUNT IN THE UK
 
+// Run this code when a form is submitted to 'account-type-mvp'
+router.post('/owned-account1', function (req, res) {
+
+  // Make a variable and give it the value from 'bank-or-build'
+  var accountType = req.session.data['owned-account']
+
+  // Check whether the variable matches a condition
+  if (accountType == "own-account"){
+    // Send user to next page
+    res.redirect('/tu-bank-validation/1-0/bank-or-building-society-details.html')
+  } else {
+    res.redirect('/tu-bank-validation/1-0/can-only-use-an-account-you-own.html')
+  }
+
+});
+
 // Run this code when a form is submitted to 'account-type'
 router.post('/account-type14', function (req, res) {
 
@@ -41,6 +57,10 @@ router.post('/account-type14', function (req, res) {
         // Send user to next page
         res.redirect('/tu-bank-validation/1-0/check-your-details.html')
     
+      } else if (checkSortCode == "123457"){
+        // Send user to next page
+        res.redirect('tu-bank-validation/1-0/check-your-details.html')
+    
       } else if (checkSortCode == "000000"){
         // Send user to next page
         res.redirect('tu-bank-validation/1-0/check-your-details.html')
@@ -55,7 +75,7 @@ router.post('/account-type14', function (req, res) {
       
       } else if (checkSortCode == "000003"){
         // Send user to next page
-        res.redirect('tu-bank-validation/1-0/you-can-only-use-this-service-with-a-uk-account.html.html')
+        res.redirect('tu-bank-validation/1-0/you-can-only-use-this-service-with-a-uk-account.html')
     
       }
         
@@ -74,6 +94,10 @@ router.post('/account-type14', function (req, res) {
       if (checkSortCode == "123456"){
         // Send user to next page
         res.redirect('/tu-bank-validation/1-0/you-have-changed-your-bank-details.html')
+
+      }  else if (checkSortCode == "123457"){
+        // Send user to next page
+        res.redirect('tu-bank-validation/1-0/cannot-confirm-you-own-this-account.html')
     
       } else if (checkSortCode == "000000"){
         // Send user to next page
@@ -86,21 +110,29 @@ router.post('/account-type14', function (req, res) {
    // ROUTING TO KBV 2
     router.post('/stay-length1', function (req, res) {
 
-      // Make a variable and give it the value from 'sort-code'
-      var stayLength = req.session.data['stay-length']
-      console.log("high", req.session.data['stay-length'])
-    
-      // Check whether the variable matches a condition
-      if (stayLength == "less-than-a-year"){
-        // Send user to next page
-        res.redirect('/tu-bank-validation/1-0/kbv-2.html')
-    
-      } else if (stayLength == ""){
-        // Send user to next page
-        res.redirect('tu-bank-validation/1-0/we-cannot-find-this-account.html')
-    
-      }
-        
+      // Make a variable and give it the value from 'bank-or-build'
+  var currentResident = req.session.data['/current-resident']
+
+  // Check whether the variable matches a condition
+  if (currentResident == "less-than-a-year"){
+    // Send user to next page
+    res.redirect('/tu-bank-validation/1-0/identity-check-q2')
+  } else if (currentResident == "less-than-a-year"){
+    // Send user to next page
+    res.redirect('/tu-bank-validation/1-0/identity-check-q2.html')
+  } else if (currentResident == "1-3-years"){
+    // Send user to next page
+    res.redirect('/tu-bank-validation/1-0/identity-check-q2.html')
+  } else if (currentResident == "3-5-years"){
+    // Send user to next page
+    res.redirect('/tu-bank-validation/1-0/identity-check-q2.html')
+  } else if (currentResident == "0ver-8-years"){
+    // Send user to next page
+    res.redirect('/tu-bank-validation/1-0/identity-check-q2.html')
+  } else {
+    res.redirect('/tu-bank-validation/1-0/identity-check-q2.html')
+  }
+
 });
 
    // ROUTING TO KBV 3
@@ -122,6 +154,7 @@ router.post('/account-type14', function (req, res) {
       }
         
 });
+
 
 // ROUTING TO VALIDATION CHECK
     router.post('/store-card-provider1', function (req, res) {

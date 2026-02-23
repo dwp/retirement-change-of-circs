@@ -26,6 +26,7 @@
           </div>
           <input class="govuk-input govuk-input--width-10" id="sort-code" name="sort-code" type="text" value="{{ data['sort-code'] }}">
         </div>
+        
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="width-20">
@@ -52,6 +53,27 @@
         </button>
 
       </form>
+
+      <div class="govuk-notification-banner govuk-notification-banner--journey-options" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" data-govuk-notification-banner-init="">
+        <div class="govuk-notification-banner__header govuk-notification-banner__header--journey-options">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Prototype options
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <p class="govuk-body">Sort codes</p>
+          <p class="govuk-body">
+            <ul class="govuk-list govuk-list--bullet">
+              <li><strong>123456</strong> - Valid sort code (MVP) </li>
+              <li><strong>123457</strong> - Failure because the accounts do not match (MVP) </li>
+              <li><strong>000000</strong> - Invalid sort code </li>
+              <li><strong>000001</strong> - Cannot find account </li>
+              <li><strong>000002</strong> - Cannot pay money into this account </li>
+              <li><strong>000003</strong> - You can only use this service with a UK bank or building society account </li>
+            </ul>
+          </p>
+        </div>
+      </div>
 
     </div>
     <!-- <div class="govuk-grid-column-one-third">

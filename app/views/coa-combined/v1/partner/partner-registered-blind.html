@@ -8,31 +8,26 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/get-smi-support1" method="post">
+      <form class="form" action="partner-details-check-answers" method="post">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <span class="govuk-caption-l">Your partner</span>
               <h1 class="govuk-fieldset__heading">
-                Do you currently get Support for Mortgage Interest (SMI)?
+                Is your partner registered blind?
               </h1>
             </legend>
 
-            <div id="ServiceCharges-hint" class="govuk-hint">
-              <p class="govuk-hint govuk-!-margin-top-0">
-                You might have applied or an SMI laon if you were previously getting one or more qualifying benefits, such as Income support, income based Jobseeker's Allowance (JSA), income-related Employment and Support Allowance (ESA) or Universal Credit.
-              </p>
-            </div>
-
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="do-you-get-smi-support" name="do-you-get-smi-support" type="radio" value="Yes" {{ checked("do-you-get-smi-support", "Yes") }}>
-                <label class="govuk-label govuk-radios__label" for="do-you-get-smi-support-yes">
+                <input class="govuk-radios__input" id="partner-blind" name="partner-blind" type="radio" value="Yes" {{ checked("partner-blind", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="partner-blind-yes">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="-do-you-get-smi-support" name="do-you-get-smi-support" type="radio" value="No" {{ checked("do-you-get-smi-support", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="do-you-get-smi-support-no">
+                <input class="govuk-radios__input" id="partner-blind" name="partner-blind" type="radio" value="No" {{ checked("partner-blind", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="partner-blind-no">
                   No
                 </label>
               </div>

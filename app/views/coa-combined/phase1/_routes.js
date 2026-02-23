@@ -40,7 +40,7 @@ router.post('/changed-residential-address4', function (req, res) {
   // Check whether the variable matches a condition
   if (changeSelectAnAddress == "Select1"){
     // Send user to next page
-    res.redirect('/coa-combined/phase1/gysp-v1/you-have-changed-your-address-alt.html')
+    res.redirect('/coa-combined/phase1/gysp-v1/you-have-changed-your-address-sp-only.html')
   } else {
     res.redirect('/coa-combined/phase1/gysp-v1/you-have-changed-your-address-2benefits.html')
   }
@@ -144,7 +144,7 @@ router.post('/uk-address5', function (req, res) {
       res.redirect('coa-combined/phase1/gysp-v1/are-you-currently-staying-in-hospital.html')
     } else if (selectAddress == "Select4"){
       // Send user to next page
-      res.redirect('coa-combined/phase1/gysp-v1/this-is-a-prison.html')
+      res.redirect('coa-combined/phase1/gysp-v1/address-finder/this-is-a-prison.html')
     }
   
   });   

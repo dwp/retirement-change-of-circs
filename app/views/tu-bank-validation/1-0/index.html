@@ -26,7 +26,7 @@
       </div>
 
       <h2 class="govuk-heading-m">Happy path end-to-end journey</h2>
-      <a href="your-state-pension.html" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">Start now</a>
+      <a href="manage-state-pension.html" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">Start now</a>
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
@@ -37,6 +37,8 @@
           <h3 class="govuk-heading-s">Bank validation journey</h3>
           <ul class="govuk-list govuk-list--bullet">
             <li><a href="manage-state-pension.html">Manage Your State Pension start page</a></li>
+            <li><a href="do-you-own-the-account.html">Your State Pension account (playback if status is 'Receiving State Pension')</a></li>
+            <li><a href="can-only-use-an-account-you-own.html">Your State Pension account (playback if status is 'Receiving State Pension')</a></li>
             <li><a href="your-state-pension.html">Your State Pension account (playback if status is 'Receiving State Pension')</a></li>
             <li><a href="do-you-want-uk-account.html">Do you want to use a UK bank or building society account?</a></li>
             <li><a href="can-only-use-uk-account.html">You can only use this service with a UK bank or building society account</a></li>
@@ -63,14 +65,17 @@
         <li><a href="https://dwpdigital.atlassian.net/browse/RFP-10815" target="_blank">Epic for this piece of work</a></li>
         <li><a href="https://dwpdigital.atlassian.net/browse/RFP-12784" target="_blank">JIRA ticket for iterations</a></li>
         <li>Based on <a href="https://lucid.app/lucidspark/e507ec66-bfb8-4404-bb9d-0601ede1dc6b/edit?invitationId=inv_cb805d5c-a20c-4e13-805e-ce22b20ae61e&page=0_0#" target="_blank">Lucid board for designs and workshops</a>
-        <li>??????? </li>
+        <li>???????</li>
+        </ul>
 
         <h2 class="govuk-heading-s">Sort code entry for bank details</h2>
-        <li>Valid sort code <strong>123456</strong></li>
-        <li>Invalid sort code <strong>000000</strong></li>
-        <li>Cannot find account<strong>000001</strong></li>
-        <li>Cannot pay money into this account <strong>000002</strong></li>
-        <li>You can only use this service with a UK bank or building society account <strong>000003</strong></li>
+        <ul class="govuk-list govuk-list--bullet">
+        <li><strong>123456</strong> - Valid sort code (MVP) </li>
+        <li><strong>123457</strong> - Failure because the accounts do not match (MVP) </li>
+        <li><strong>000000</strong> - Invalid sort code </li>
+        <li><strong>000001</strong> - Cannot find account </li>
+        <li><strong>000002</strong> - Cannot pay money into this account </li>
+        <li><strong>000003</strong> - You can only use this service with a UK bank or building society account </li>
       </ul>
 
       <h2 class="govuk-heading-m">Additional pages</h2>

@@ -93,24 +93,6 @@
             </dd>
           </div>
 
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width:40%;">
-              When did you move to your new address?
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['citizen-record-year'] %}
-                {{ data['citizen-record-year'] }}
-              {% else %}
-                28 August 2025
-              {% endif %} 
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="when-did-you-move.html">
-                Change<span class="govuk-visually-hidden"> residential address</span>
-              </a>
-            </dd>
-          </div>
-
           {% if (data['select-an-address'] == "Select1") %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
@@ -202,7 +184,7 @@
           {% endif %}
         </dl>
      
-        <form action="../task-list2" method="post" novalidate>
+        <form action="task-list2" method="post" novalidate>
           <input type="hidden" name="answers-checked" value="true">
           <button class="govuk-button" data-module="govuk-button">
             Continue

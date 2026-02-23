@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layouts/ol_signed_in.html" %}
 
 {% block pageTitle %}
   Check your details - Manage your State Pension - GOV.UK
@@ -8,101 +8,102 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/bank-validation2" method="post">
-        <div class="govuk-form-group">
-      
+      <span class="govuk-caption-l">Your partner</span>
       <h1 class="govuk-heading-l">Check your details before you submit them</h1>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-          
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              UK account that you own
+              What is your housing status?
             </dt>
             <dd class="govuk-summary-list__value">
-              Yes
+              {% if data['housing-status'] %}
+                {{ data['housing-status'] }}
+              {% else %}
+                I pay housing costs and ground rent
+              {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="do-you-own-the-account.html">
-                Change<span class="govuk-visually-hidden"> if you want to use a UK bank or building society account</span>
+              <a class="govuk-link" href="housing-costs.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
               </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row" style="border:0;">
-            <dt class="govuk-summary-list__key" style="width:40%;">
-              New account details
-            </dt>
-            <dd class="govuk-summary-list__value">
-              
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="bank-or-building-society-details.html">
-                Change<span class="govuk-visually-hidden"> new account details</span>
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row" style="border:0;">
-            <dt class="govuk-summary-list__key" style="width:40%;">
-              Name on the account
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['account-holder'] %}
-                {{ data['account-holder'] }}
-              {% else %}
-                Masie Feeney
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row" style="border:0;">
-            <dt class="govuk-summary-list__key" style="width:40%;">
-              Sort code
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['sort-code'] %}
-                {{ data['sort-code'] }}
-              {% else %}
-              000000
-
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row" style="border:0;">
-            <dt class="govuk-summary-list__key" style="width:40%;">
-              Account number
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['account-number'] %}
-                {{ data['account-number'] }}
-              {% else %}
-
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              Building society roll number (if you have one)
+              How much did you pay for your property?
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['roll-number'] %}
-                {{ data['roll-number'] }}
+              {% if data['purchase-price'] %}
+                {{ data['purchase-price'] }}
               {% else %}
-                Not provided
+                
+              {% endif %} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="how-much-did-you-pay.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Do you pay housing costs or ground rent?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['housing-costs'] %}
+                {{ data['housing-costs'] }}
+              {% else %}
+                I pay housing costs and ground rent
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="housing-costs.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Do you have a mortgage or loan secured against your property?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['mortgage-or-loan'] %}
+                {{ data['mortgage-or-loan'] }}
+              {% else %}
+                Yes, I have a mortgage
+              {% endif %}  
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="do-you-have-a-mortgage.html">
+                Change<span class="govuk-visually-hidden"> if your moving this property</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Do you currently get Support for Mortgage Interest (SMI)?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['do-you-get-smi-support'] %}
+                {{ data['do-you-get-smi-support'] }}
+              {% else %}
+                Yes
+              {% endif %} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="do-you-get-smi.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
             </dd>
           </div>
         </dl>
         
-        <h2 class="govuk-heading-m">Submit your new details</h2>
-        <p class="govuk-body">By submitting this change you are confirming that the information you are giving is complete and correct.</p>
+     
+        <form action="../" method="post" novalidate>
+          <input type="hidden" name="answers-checked" value="true">
           <button class="govuk-button" data-module="govuk-button">
-            Confirm and submit
+            Continue
           </button>
         </form>
     </div>

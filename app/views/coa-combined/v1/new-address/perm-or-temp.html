@@ -33,11 +33,13 @@
                 <input class="govuk-radios__input" id="perm-or-temp" name="perm-or-temp" type="radio" value="No" {{ checked("perm-or-temp", "No") }}>
                 <label class="govuk-label govuk-radios__label" for="perm-or-temp">
                   Temporary move
+                  <div id="event-name-hint" class="govuk-hint">
+                    This means you'll live there for less than 52 weeks then move back to where you lived before.
+                  </div>
                 </label>
               </div>
             </div>
           </fieldset>
-        </div>
 
         <button class="govuk-button" data-module="govuk-button">
           Continue

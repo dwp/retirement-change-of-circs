@@ -3474,25 +3474,7 @@ router.post('/additional-people1', function (req, res) {
     
 });
 
-// ROUTING TO DOB eligibility for all citizens journey
-router.post('/get-smi-support1', function (req, res) {
 
-  // Make a variable and give it the value from 'bank-or-build'
-  var selectGetSmiSupport = req.session.data['do-you-get-smi-support']
-  console.log("high", req.session.data['do-you-get-smi-support'])
-
-  // Check whether the variable matches a condition
-  if (selectGetSmiSupport == "Yes"){
-    // Send user to next page
-    res.redirect('/coa-combined/coa-combined-v1/does-anybody-live-with-you.html')
-
-  } else if (selectGetSmiSupport == "No"){
-    // Send user to next page
-    res.redirect('/coa-combined/coa-combined-v1/send-smi-support-info.html')
-  
-  }
-    
-});
 
 // ROUTING TO DOB eligibility for all citizens journey
 router.post('/want-smi-support1', function (req, res) {

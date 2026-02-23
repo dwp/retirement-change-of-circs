@@ -1,33 +1,37 @@
 {% extends "layouts/ol_signed_in" %}
 
 {% block pageTitle %}
-  Do you have a mortgage? - Manage your State Pension - GOV.UK
+Do you live with a partner? - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/mortgage-or-loan2" method="post">
+      <form class="form" action="/partner1" method="post">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <span class="govuk-caption-l">About where you live now</span>
+              <span class="govuk-caption-l">Your partner</span>
               <h1 class="govuk-fieldset__heading">
-                Do you have a mortgage or loan secured against your home?
+                Do you live with a partner?
               </h1>
             </legend>
 
+            <!-- <p class="govuk-body">
+              You can only change your address after you have moved.
+            </p> -->
+
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="mortgage-or-loan" name="mortgage-or-loan" type="radio" value="Yes" {{ checked("mortgage-or-loan", "Yes") }}>
-                <label class="govuk-label govuk-radios__label" for="mortgage-or-loan">
+                <input class="govuk-radios__input" id="partner" name="partner" type="radio" value="Yes" {{ checked("partner", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="partner-yes">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="mortgage-or-loan" name="mortgage-or-loan" type="radio" value="No" {{ checked("mortgage-or-loan", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="mortgage-or-loan">
+                <input class="govuk-radios__input" id="partner-no" name="partner" type="radio" value="No" {{ checked("partner", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="partner-no">
                   No
                 </label>
               </div>

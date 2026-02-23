@@ -1,33 +1,37 @@
-{% extends "layouts/ol_signed_in" %}
+{% extends "layouts/ol_signed_in.html" %}
 
 {% block pageTitle %}
-  Do you have a mortgage? - Manage your State Pension - GOV.UK
+  Have you sold the property? - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/mortgage-or-loan2" method="post">
+      <form class="form" action="/sold-property1" method="post">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <span class="govuk-caption-l">About where you live now</span>
+              <span class="govuk-caption-l">Where you lived before</span>
               <h1 class="govuk-fieldset__heading">
-                Do you have a mortgage or loan secured against your home?
+                Have you sold the property?
               </h1>
             </legend>
 
+            <!-- <p class="govuk-body">
+              You can only change your address after you have moved.
+            </p> -->
+
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="mortgage-or-loan" name="mortgage-or-loan" type="radio" value="Yes" {{ checked("mortgage-or-loan", "Yes") }}>
-                <label class="govuk-label govuk-radios__label" for="mortgage-or-loan">
+                <input class="govuk-radios__input" id="sold-property" name="sold-property" type="radio" value="Yes" {{ checked("sold-property", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="sold-property">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="mortgage-or-loan" name="mortgage-or-loan" type="radio" value="No" {{ checked("mortgage-or-loan", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="mortgage-or-loan">
+                <input class="govuk-radios__input" id="sold-property" name="sold-property" type="radio" value="No" {{ checked("sold-property", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="sold-property">
                   No
                 </label>
               </div>
@@ -41,12 +45,12 @@
       </form>
 
     </div>
-    <div class="govuk-grid-column-one-third">
+    <!-- <div class="govuk-grid-column-one-third">
       <h2 class="govuk-heading-m">
         Get help
       </h2>
       <p><a href="../contact-pension-service&help" target="_blank">Contact us by phone to get help with the online service (opens in new tab)</a></p>
-    </div>
+    </div> -->
   </div>
 
 {% endblock %}

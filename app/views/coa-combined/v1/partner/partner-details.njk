@@ -9,7 +9,7 @@
   tag: {
     text: "Prototype"
   },
-  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  html: 'This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
 }) }}
 {% endblock %}
 
@@ -17,7 +17,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/housing-costs-new1" method="post">
+      <form class="form" action="partner-registered-blind" method="post">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -34,7 +34,7 @@
               <!-- <div id="searchString-hint" class="govuk-hint">
                 For example, 15 or Prospect Cottage.
               </div> -->
-              <input class="govuk-input govuk-!-width-two-thirds" id="searchString" name="searchString" type="text" aria-describedby="searchString-hint" value="{{ data['building-number-or-name'] }}">
+              <input class="govuk-input govuk-!-width-two-thirds" id="first-name" name="first-name" type="text" aria-describedby="searchString-hint" value="{{ data['first-name'] }}">
             </div>
 
              <div class="govuk-form-group">
@@ -44,7 +44,7 @@
               <!-- <div id="searchString-hint" class="govuk-hint">
                 For example, 15 or Prospect Cottage.
               </div> -->
-              <input class="govuk-input govuk-!-width-two-thirds" id="searchString" name="searchString" type="text" aria-describedby="searchString-hint" value="{{ data['building-number-or-name'] }}">
+              <input class="govuk-input govuk-!-width-two-thirds" id="last-name" name="last-name" type="text" aria-describedby="searchString-hint" value="{{ data['last-name'] }}">
             </div>
 
             <div class="govuk-form-group">
@@ -54,7 +54,7 @@
               <!-- <div id="searchString-hint" class="govuk-hint">
                 For example, 15 or Prospect Cottage.
               </div> -->
-              <input class="govuk-input govuk-!-width-two-thirds" id="searchString" name="searchString" type="text" aria-describedby="searchString-hint" value="{{ data['building-number-or-name'] }}">
+              <input class="govuk-input govuk-!-width-two-thirds" id="nino" name="nino" type="text" aria-describedby="searchString-hint" value="{{ data['nino'] }}">
             </div>
 
             <div class="govuk-date-input" id="citizen-record">
@@ -64,7 +64,7 @@
                   <label class="govuk-label govuk-date-input__label" for="citizen-record-day">
                     Day
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="citizen-record-day" name="citizen-record-day" type="text" inputmode="numeric" value="">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="citizen-record-day" name="citizen-record-day" type="text" inputmode="numeric" vvalue="{{ data['citizen-record-day'] }}">>
                 </div>
               </div>
               <div class="govuk-date-input__item">
@@ -72,7 +72,7 @@
                   <label class="govuk-label govuk-date-input__label" for="citizen-record-month">
                     Month
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="citizen-record-month" name="citizen-record-month" type="text" inputmode="numeric" value="">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="citizen-record-month" name="citizen-record-month" type="text" inputmode="numeric" value="{{ data['citizen-record-month'] }}">>
                 </div>
               </div>
               <div class="govuk-date-input__item">

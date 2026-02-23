@@ -1,0 +1,85 @@
+{% extends "layouts/ol_signed_in.html" %}
+
+{% block pageTitle %}
+  Check your details - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">About where you live now</span>
+      <h1 class="govuk-heading-l">Check your details before you submit them</h1>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              What is your housing status?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['housing-status'] %}
+                {{ data['housing-status'] }}
+              {% else %}
+                I pay housing costs and ground rent
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="housing-costs.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Do you pay housing costs or ground rent?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['housing-costs'] %}
+                {{ data['housing-costs'] }}
+              {% else %}
+                I pay housing costs and ground rent
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="housing-costs.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+        
+     
+        <form action="../" method="post" novalidate>
+          <input type="hidden" name="answers-checked" value="true">
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+    </div>
+  </div>
+
+{% endblock %}
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "../2-0/check-answers.html",
+            text: "Lighter declaration",
+            attributes: {
+              target: "_blank"
+            }
+          },
+          {
+            href: "https://govuk-prototype-kit.herokuapp.com/",
+            text: "GOV.UK Prototype Kit " + releaseVersion
+          },
+          {
+            href: "/prototype-admin/clear-data",
+            text: "Clear data"
+          }
+        ],
+        visuallyHiddenTitle: "Footer links"
+      }
+    }) }}
+  {% endblock %}

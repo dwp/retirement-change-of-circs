@@ -1,0 +1,39 @@
+
+{% extends "layout_noback.html" %}
+
+{% block pageTitle %}
+  Get help using the online service
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="bank-playback" method="post">
+      <div class="govuk-form-group">
+        <h1 class="govuk-heading-l">
+            Sorry, there is a problem with this service
+        </h1>
+        <p class="govuk-body">
+          If you need to report a change in your circumstances <a href="contact-pension-service.html">contact the Pension Service by phone or post</a>.
+        </p>
+      </div>
+    </form>
+    <div class="govuk-inset-text">
+      <a href="your-state-pension.html" class="govuk-link">Return to your State Pension details</a>
+    </div>
+
+    <div class="govuk-notification-banner govuk-notification-banner--journey-options" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" data-govuk-notification-banner-init="">
+          <div class="govuk-notification-banner__header govuk-notification-banner__header--journey-options">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+              Prototype options
+            </h2>
+          </div>
+          <div class="govuk-notification-banner__content">
+            <p class="govuk-body">
+              <a href="pension-credit-warm-up" target="_blank">Pension Credit warm up screen</a>.
+            </p>
+          </div>
+        </div>
+  </div>
+</div>
+{% endblock %}

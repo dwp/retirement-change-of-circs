@@ -1,20 +1,20 @@
 {% extends "layouts/ol_signed_in.html" %}
 
 {% block pageTitle %}
-  What type of property is it? - Manage your State Pension - GOV.UK
+  What was your housing status? - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/property-type1" method="post">
+      <form class="form" action="/housing-status2" method="post">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <span class="govuk-caption-l">Your new address</span>
+              <span class="govuk-caption-l">About where you lived before</span>
               <h1 class="govuk-fieldset__heading">
-                What type of property is it?
+                What was your housing status?
               </h1>
             </legend>
 
@@ -24,39 +24,32 @@
 
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="property-type" name="property-type" type="radio" value="house" {{ checked("property-type", "house") }}>
-                <label class="govuk-label govuk-radios__label" for="house">
-                  House
+                <input class="govuk-radios__input" id="previous-housing-status" name="previous-housing-status" type="radio" value="I owned my property (with or without a mortgage)" {{ checked("previous-housing-status", "owned") }}>
+                <label class="govuk-label govuk-radios__label" for="previous-housing-status">
+                  I owned my property (with or without a mortgage)
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="property-type" name="property-type" type="radio" value="flat" {{ checked("property-type", "flat") }}>
-                <label class="govuk-label govuk-radios__label" for="flat">
-                  Flat or annexe
+                <input class="govuk-radios__input" id="previous-housing-status" name="previous-housing-status" type="radio" value="I rented" {{ checked("previous-housing-status", "rented") }}>
+                <label class="govuk-label govuk-radios__label" for="previous-housing-status">
+                  I rented 
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="property-type" name="property-type" type="radio" value="hospital" {{ checked("property-type", "hospital") }}>
-                <label class="govuk-label govuk-radios__label" for="hspital">
-                  Hospital
+                <input class="govuk-radios__input" id="previous-housing-status" name="previous-housing-status" type="radio" value="I was renting and buying through a shared ownership scheme" {{ checked("previous-housing-status", "was-shared") }}>
+                <label class="govuk-label govuk-radios__label" for="previous-housing-status">
+                  I was renting and buying through a shared ownership scheme
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="property-type" name="property-type" type="radio" value="care home" {{ checked("property-type", "care-home") }}>
-                <label class="govuk-label govuk-radios__label" for="care-home">
-                  Care home
+                <input class="govuk-radios__input" id="previous-housing-status" name="previous-housing-status" type="radio" value="I lived in someone else's home without paying rent" {{ checked("previous-housing-status", "had-no-costs") }}>
+                <label class="govuk-label govuk-radios__label" for="previous-housing-status">
+                  I lived in someone else's home without paying rent
                 </label>
               </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="property-type" name="property-type" type="radio" value="Caravan" {{ checked("property-type", "Caravan") }}>
-                <label class="govuk-label govuk-radios__label" for="Caravan">
-                  Caravan, houseboat or mobile home
-                </label>
-              </div>
-
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="property-type" name="contact" type="radio" value="email" data-aria-controls="conditional-contact"{{ checked("property-type", "other") }}>
+                  <input class="govuk-radios__input" id="property-type" name="contact" type="radio" value="other" data-aria-controls="conditional-contact"{{ checked("property-type", "other") }}>
                   <label class="govuk-label govuk-radios__label" for="contact">
                     Other
                   </label>
@@ -72,7 +65,7 @@
               </div>
             </div>
           </fieldset>
-          </div>
+        </div>
 
         <button class="govuk-button" data-module="govuk-button">
           Continue
