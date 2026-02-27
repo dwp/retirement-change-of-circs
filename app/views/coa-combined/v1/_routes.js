@@ -169,7 +169,7 @@ router.post('/postcode-7', function (req, res) {
       res.redirect('coa-combined/v1/new-address/this-is-a-prison.html')
     } else if (selectAddress == "Select3"){
       // Send user to next page
-      res.redirect('coa-combined/v1/new-address/cannot-change-your-address-online.html')
+      res.redirect('coa-combined/v1/new-address/this-is-a-carehome-or-hospital.html')
     } else if (selectAddress == "Select4"){
       // Send user to next page
       res.redirect('coa-combined/v1/new-address/cannot-change-your-address-online.html')
