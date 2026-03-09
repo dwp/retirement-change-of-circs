@@ -189,22 +189,22 @@ router.post('/postcode-7', function (req, res) {
     console.log("high", req.session.data['property-type'])
   
     // Check whether the variable matches a condition
-    if (selectPropertyType == "house"){
+    if (selectPropertyType == "House"){
       // Send user to next page
       res.redirect('/coa-combined/v1/new-address/when-did-you-move.html')
-    } else if (selectPropertyType == "flat"){
+    } else if (selectPropertyType == "Flat"){
       // Send user to next page
       res.redirect('coa-combined/v1/new-address/when-did-you-move.html')
-    } else if (selectPropertyType == "hospital"){
+    } else if (selectPropertyType == "Hospital"){
       // Send user to next page
       res.redirect('coa-combined/v1/new-address/cannot-change-your-address-online.html')
-    } else if (selectPropertyType == "care home"){
+    } else if (selectPropertyType == "Care home"){
       // Send user to next page
       res.redirect('coa-combined/v1/new-address/cannot-change-your-address-online.html')
-    } else if (selectPropertyType == "caravan"){
+    } else if (selectPropertyType == "Caravan"){
       // Send user to next page
       res.redirect('coa-combined/v1/new-address/when-did-you-move.html')
-    } else if (selectPropertyType == "other"){
+    } else if (selectPropertyType == "Other"){
       // Send user to next page
       res.redirect('coa-combined/v1/new-address/this-is-a-prison.html')
     }

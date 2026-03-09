@@ -1,0 +1,75 @@
+{% extends "layouts/ol_signed_in.html" %}
+
+{% block pageTitle %}
+  How are you related? - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/property-type1" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <span class="govuk-caption-l">About {{ data['first-name'] }}</span>
+              <h1 class="govuk-fieldset__heading">
+                How are you related?
+              </h1>
+            </legend>
+
+            <!-- <p class="govuk-body">
+              You can only change your address after you have moved.
+            </p> -->
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="relation-type" name="relation-type" type="radio" value="parent" {{ checked("relation-type", "parent") }}>
+                <label class="govuk-label govuk-radios__label" for="parent">
+                  I'm their parent or step-parent
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="relation-type" name="relation-type" type="radio" value="grandparent" {{ checked("relation-type", "grandparent") }}>
+                <label class="govuk-label govuk-radios__label" for="grandparent">
+                  I'm their grandparent or step-grandparent
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="relation-type" name="relation-type" type="radio" value="siblings" {{ checked("relation-type", "siblings") }}>
+                <label class="govuk-label govuk-radios__label" for="siblings">
+                  We're siblings or step-siblings
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="relation-type" name="relation-type" type="radio" value="child" {{ checked("relation-type", "child") }}>
+                <label class="govuk-label govuk-radios__label" for="child">
+                  I'm their child or step-child
+                </label>
+              </div>
+              <div class="govuk-radios__divider">or</div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="relation-type" name="relation-type" type="radio" value="none" {{ checked("relation-type", "none") }}>
+                <label class="govuk-label govuk-radios__label" for="none">
+                  None of these
+                </label>
+              </div>
+            </div>
+          </fieldset>
+          </div>
+
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">
+        Get help
+      </h2>
+      <p><a href="../contact-pension-service&help" target="_blank">Contact us by phone to get help with the online service (opens in new tab)</a></p>
+    </div>
+  </div>
+
+{% endblock %}

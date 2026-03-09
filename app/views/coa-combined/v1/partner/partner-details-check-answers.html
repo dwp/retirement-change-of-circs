@@ -64,6 +64,23 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['nino'] %}
+                {{ data['nino'] }}
+              {% else %}
+                JC212121 C
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="partner-details.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
               Is your partner registered blind?
             </dt>
             <dd class="govuk-summary-list__value">

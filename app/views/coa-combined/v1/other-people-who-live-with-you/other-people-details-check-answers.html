@@ -9,16 +9,20 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <span class="govuk-caption-l">About where you live now</span>
-      <h1 class="govuk-heading-l">Check your details before you submit them</h1>
+      <h1 class="govuk-heading-l">Check {{ data['first-name']}} details before you submit them</h1>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           {% if (data['other-benefits'] == "Yes") %}
           {% endif %}  
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              Have you moved to your new address?
+              Name
             </dt>
             <dd class="govuk-summary-list__value">
-              Yes
+              {% if data['first-name'] %}
+                {{ data['first-name'] }}
+              {% else %}
+                Joanne Fincher
+              {% endif %} 
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="have-you-already-moved.html">
@@ -28,10 +32,14 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              Is this move permanent or temporary?
+              National insurance
             </dt>
             <dd class="govuk-summary-list__value">
-              Permanent
+              {% if data['nino'] %}
+                {{ data['nino'] }}
+              {% else %}
+                JC212121 C
+              {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="temp-or-perm.html">
@@ -41,13 +49,13 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              Is your new address in the UK?
+              Date of birth
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['uk-address'] %}
                 {{ data['uk-address'] }}
               {% else %}
-                Yes
+                01 03 1956
               {% endif %}  
             </dd>
             <dd class="govuk-summary-list__actions">
@@ -59,7 +67,7 @@
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              What type of property is it?
+              Are you related?
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['property-type'] %}
@@ -75,11 +83,63 @@
             </dd>
           </div>
 
-          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              How are you related?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['housing-status'] %}
+                {{ data['housing-status'] }}
+              {% else %}
+                I'm their parent or step-parent
+              {% endif %} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="housing-status.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              When did you move to your new address?
+              Do they work more than 16 hours a week?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['citizen-record-year'] %}
+                {{ data['citizen-record-year'] }}
+              {% else %}
+                Yes
+              {% endif %} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="when-did-you-move.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Are they in education?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['citizen-record-year'] %}
+                {{ data['citizen-record-year'] }}
+              {% else %}
+                Yes, full-time
+              {% endif %} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="when-did-you-move.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              What's your living situation?
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['citizen-record-year'] %}
@@ -95,96 +155,25 @@
             </dd>
           </div>
 
-          {% if (data['select-an-address'] == "Select1") %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              Home address 
+              When did this living situation start?
             </dt>
             <dd class="govuk-summary-list__value">
-              1 Square Street<br>
-              York<br>
-              YO3 1SQ
+              {% if data['citizen-record-year'] %}
+                {{ data['citizen-record-year'] }}
+              {% else %}
+                28 August 2025
+              {% endif %} 
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="address-finder/select-an-address.html">
-                Change<span class="govuk-visually-hidden"> your home address</span>
+              <a class="govuk-link" href="when-did-you-move.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
               </a>
             </dd>
           </div>
-          {% else %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width:40%;">
-              Home address 
-            </dt>
-            <dd class="govuk-summary-list__value">
-              1 Square Street<br>
-              York<br>
-              YO3 1SQ
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="address-finder/select-an-address.html">
-                Change<span class="govuk-visually-hidden"> your home address</span>
-              </a>
-            </dd>
-          </div>
-          {% endif %}
-          
-          {% if (data['select-an-address'] == "Select2") %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width:40%;">
-              Your address 
-            </dt>
-            <dd class="govuk-summary-list__value">
-              84 Square Street<br>
-              York<br>
-              YO3 1SQ
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="../change-of-address-v3/address-finder/matching-address-found.html">
-                Change<span class="govuk-visually-hidden"> your home address</span>
-              </a>
-            </dd>
-          </div>
-          {% endif %}
-
-          {% if (data['select-an-address'] == "Select3") %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width:40%;">
-              Your address 
-            </dt>
-            <dd class="govuk-summary-list__value">
-              11 Square Street<br>
-              York<br>
-              YO3 1SQ
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="../change-of-address-v3/address-finder/select-an-address.html">
-                Change<span class="govuk-visually-hidden"> your home address</span>
-              </a>
-            </dd>
-          </div>          
-          {% endif %}
-
-          {% if (data['select-an-address'] == "Select4") %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width:40%;">
-              Your address 
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['new-address-line-1'] }}<br>
-              {{ data['new-address-line-2'] }}<br>
-              {{ data['new-town-1'] }}<br>
-              {{ data['county-1'] }}<br>
-              {{ data['new-postcode-1'] }}<br>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="../change-of-address-v3/address-finder/select-an-address.html">
-                Change<span class="govuk-visually-hidden"> your home address</span>
-              </a>
-            </dd>
-          </div>          
-          {% endif %}
         </dl>
+
      
         <form action="../task-list2" method="post" novalidate>
           <input type="hidden" name="answers-checked" value="true">

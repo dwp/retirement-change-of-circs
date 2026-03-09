@@ -1,46 +1,43 @@
-{% extends "layouts/ol_signed_in" %}
+{% extends "layouts/ol_signed_in.html" %}
 
 {% block pageTitle %}
-  Are you responsible for any children or qualifying young people who live with you? - Manage your State Pension - GOV.UK
+  Do they work more than 16 hours a week? - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/ground-rent1" method="post">
+      <form class="form" action="/property-type1" method="post">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <span class="govuk-caption-l">About {{ data['first-name'] }}</span>
               <h1 class="govuk-fieldset__heading">
-                Are you responsible for any children or qualifying young people who live with you?
+                Do they work more than 16 hours a week?
               </h1>
             </legend>
 
-            <p class="govuk-body">
-              You might pay ground rent if your home is a leasehold property.
-            </p>
-            <div id="ground-rent-hint" class="govuk-hint">
-              This includes if you own your own home through the shared ownsership scheme
-            </div>
-            
+            <!-- <p class="govuk-body">
+              You can only change your address after you have moved.
+            </p> -->
 
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="ground-rent" name="ground-rent" type="radio" value="Yes" {{ checked("ground-rent", "Yes") }}>
-                <label class="govuk-label govuk-radios__label" for="ground-rent-yes">
+                <input class="govuk-radios__input" id="employed" name="employed" type="radio" value="Yes" {{ checked("employed", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="yes">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="ground-rent" name="ground-rent" type="radio" value="No" {{ checked("ground-rent", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="ground-rent-no">
+                <input class="govuk-radios__input" id="employed" name="employed" type="radio" value="Yes" {{ checked("employed", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="no">
                   No
                 </label>
               </div>
             </div>
           </fieldset>
-        </div>
+          </div>
 
         <button class="govuk-button" data-module="govuk-button">
           Continue

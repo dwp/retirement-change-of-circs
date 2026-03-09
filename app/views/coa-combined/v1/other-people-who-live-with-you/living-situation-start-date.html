@@ -1,7 +1,7 @@
 {% extends "layouts/ol_signed_in.html" %}
 
 {% block pageTitle %}
-  When did you move into your new address?? - Manage your State Pension - GOV.UK
+  When did this living situation start? - Manage your State Pension - GOV.UK
 {% endblock %}
 
 
@@ -13,14 +13,11 @@
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <span class="govuk-caption-l">About {{ data['first-name'] }}</span>
               <h1 class="govuk-fieldset__heading">
-                When did you move into your new address?
+                When did this living situation start?
               </h1>
             </legend>
-
-            <p class="govuk-body">
-              You can only change your address after you have moved.
-            </p>
 
             <div id="citizen-record-hint" class="govuk-hint">
              For example, 27 3 1958
@@ -64,12 +61,12 @@
       </p> -->
 
     </div>
-    <!-- <div class="govuk-grid-column-one-third">
+    <div class="govuk-grid-column-one-third">
       <h2 class="govuk-heading-m">
         Get help
       </h2>
       <p><a href="../contact-pension-service&help" target="_blank">Contact us by phone to get help with the online service (opens in new tab)</a></p>
-    </div> -->
+    </div>
   </div>
 
 {% endblock %}
