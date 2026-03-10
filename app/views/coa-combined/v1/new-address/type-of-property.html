@@ -54,22 +54,22 @@
                 </label>
               </div>
 
-              <div class="govuk-radios" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="property-type" name="contact" type="radio" value="email" data-aria-controls="conditional-contact"{{ checked("property-type", "other") }}>
-                  <label class="govuk-label govuk-radios__label" for="contact">
+              <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-type" name="property-type" type="radio" value="Other" data-aria-controls="conditional-contact"{{ checked("property-type", "other") }}>
+                  <label class="govuk-label govuk-radios__label" for="other">
                     Other
                   </label>
                 </div>
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
                   <div class="govuk-form-group">
-                    <label class="govuk-label" for="other">
+                    <!-- <label class="govuk-label" for="other">
                       What should this say?
-                    </label>
-                    <input class="govuk-input govuk-!-width-one-third" id="property-type" name="contactByEmail" type="email" spellcheck="false">
+                    </label> -->
+                    <input class="govuk-input govuk-!-width-one-third" id="property-type" name="other" type="text" spellcheck="false">
                   </div>
                 </div>
               </div>
+
             </div>
           </fieldset>
           </div>

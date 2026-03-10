@@ -13,17 +13,14 @@
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <span class="govuk-caption-l">Your new address</span>
               <h1 class="govuk-fieldset__heading">
                 When did you move into your new address?
               </h1>
             </legend>
 
-            <p class="govuk-body">
-              You can only change your address after you have moved.
-            </p>
-
-            <div id="citizen-record-hint" class="govuk-hint">
-             For example, 27 3 1958
+            <div id="move-date-hint" class="govuk-hint">
+             For example, 27 3 2007
             </div>
             <div class="govuk-date-input" id="citizen-record">
               <div class="govuk-date-input__item">
@@ -31,7 +28,7 @@
                   <label class="govuk-label govuk-date-input__label" for="citizen-record-day">
                     Day
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="citizen-record-day" name="citizen-record-day" type="text" inputmode="numeric" value="">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="citizen-record-day" name="citizen-record-day" type="text" inputmode="numeric" vvalue="{{ data['citizen-record-day'] }}">>
                 </div>
               </div>
               <div class="govuk-date-input__item">
@@ -39,7 +36,7 @@
                   <label class="govuk-label govuk-date-input__label" for="citizen-record-month">
                     Month
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="citizen-record-month" name="citizen-record-month" type="text" inputmode="numeric" value="">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="citizen-record-month" name="citizen-record-month" type="text" inputmode="numeric" value="{{ data['citizen-record-month'] }}">>
                 </div>
               </div>
               <div class="govuk-date-input__item">

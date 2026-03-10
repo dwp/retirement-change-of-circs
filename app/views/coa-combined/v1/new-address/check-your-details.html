@@ -21,7 +21,7 @@
               Yes
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="have-you-already-moved.html">
+              <a class="govuk-link" href="have-you-already-moved">
                 Change<span class="govuk-visually-hidden"> residential address</span>
               </a>
             </dd>
@@ -34,7 +34,7 @@
               Permanent
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="temp-or-perm.html">
+              <a class="govuk-link" href="temp-or-perm">
                 Change<span class="govuk-visually-hidden"> residential address</span>
               </a>
             </dd>
@@ -51,7 +51,7 @@
               {% endif %}  
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="uk-address.html">
+              <a class="govuk-link" href="uk-address">
                 Change<span class="govuk-visually-hidden"> if your moving this property</span>
               </a>
             </dd>
@@ -69,27 +69,24 @@
               {% endif %} 
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="type-of-property.html">
+              <a class="govuk-link" href="type-of-property">
                 Change<span class="govuk-visually-hidden"> residential address</span>
               </a>
             </dd>
           </div>
-
-          
-
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
               When did you move to your new address?
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['citizen-record-year'] %}
-                {{ data['citizen-record-year'] }}
+              {% if data['citizen-record-day']%}
+                {{data['citizen-record-day']}} {{data['citizen-record-month'] | monthName}} {{data['citizen-record-year']}}
               {% else %}
-                28 August 2025
-              {% endif %} 
+                1 March 2025
+              {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="when-did-you-move.html">
+              <a class="govuk-link" href="when-did-you-move">
                 Change<span class="govuk-visually-hidden"> residential address</span>
               </a>
             </dd>
@@ -106,7 +103,7 @@
               YO3 1SQ
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="address-finder/select-an-address.html">
+              <a class="govuk-link" href="address-finder/select-an-address">
                 Change<span class="govuk-visually-hidden"> your home address</span>
               </a>
             </dd>
@@ -122,7 +119,7 @@
               YO3 1SQ
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="address-finder/select-an-address.html">
+              <a class="govuk-link" href="address-finder/select-an-address">
                 Change<span class="govuk-visually-hidden"> your home address</span>
               </a>
             </dd>
@@ -140,7 +137,7 @@
               YO3 1SQ
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="../change-of-address-v3/address-finder/matching-address-found.html">
+              <a class="govuk-link" href="">
                 Change<span class="govuk-visually-hidden"> your home address</span>
               </a>
             </dd>
@@ -158,7 +155,7 @@
               YO3 1SQ
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="../change-of-address-v3/address-finder/select-an-address.html">
+              <a class="govuk-link" href="">
                 Change<span class="govuk-visually-hidden"> your home address</span>
               </a>
             </dd>
@@ -178,7 +175,7 @@
               {{ data['new-postcode-1'] }}<br>
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="../change-of-address-v3/address-finder/select-an-address.html">
+              <a class="govuk-link" href="">
                 Change<span class="govuk-visually-hidden"> your home address</span>
               </a>
             </dd>

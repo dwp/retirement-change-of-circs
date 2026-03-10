@@ -206,7 +206,7 @@ router.post('/postcode-7', function (req, res) {
       res.redirect('coa-combined/v1/new-address/when-did-you-move.html')
     } else if (selectPropertyType == "Other"){
       // Send user to next page
-      res.redirect('coa-combined/v1/new-address/this-is-a-prison.html')
+      res.redirect('coa-combined/v1/new-address/when-did-you-move.html')
     }
   
   });  
@@ -231,7 +231,7 @@ router.post('/postcode-7', function (req, res) {
     } else if (selectHousingStatus == "I live in someone else's home without paying rent"){
       // Send user to next page
       res.redirect('coa-combined/v1/task-list3')
-    } else if (selectHousingStatus == "Other"){
+    } else if (selectHousingStatus == "other"){
       // Send user to next page
       res.redirect('coa-combined/v1/where-you-live-now/when-did-you-move.html')
     }   
