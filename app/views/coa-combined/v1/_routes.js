@@ -408,7 +408,7 @@ router.post('/partner1', function (req, res) {
     // Send user to next page
     res.redirect('/coa-combined/v1/partner/partner-details.html')
   } else if (selectPartner == "No"){
-    res.redirect('/coa-combined/v1/partner/partner-details-check-answers.html')
+    res.redirect('/coa-combined/v1/where-you-live-now/shared/do-you-get-smi.html')
   }
 
 });
