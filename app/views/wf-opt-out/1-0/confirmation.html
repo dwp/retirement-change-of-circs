@@ -1,0 +1,37 @@
+{% extends "layouts/ol_signed_in.html" %}
+
+{% block pageTitle %}
+  Do you own the account? - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            Your request to opt out has been submitted
+          </h1>
+          <!-- <div class="govuk-panel__body">
+            Your reference number<br><strong>HDJ2123F</strong>
+          </div> -->
+        </div>
+        <p class="govuk-body">We will send you an email when you have been successfully opted out.</p>
+        <h2 class="govuk-heading-m">What happens next</h2>
+        <p class="govuk-body">
+         You will not get the Winter Fuel Payment for the 2026 to 2027 payment period or for any future payment periods.
+        </p>
+        <p class="govuk-body">
+         You can opt back in at any time by using this service.
+
+We will email each year to remind you that you have opted out and can choose to opt back in.
+        </p>
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
