@@ -6,18 +6,59 @@
 
 {% block content %}
 
- <h1 class="govuk-heading-l">
-        What is your email address ?
-      </h1>
-
-<div class="govuk-form-group">
-  <label class="govuk-label" for="email">
-    Email address
-  </label>
-  <div id="email-hint" class="govuk-hint">
-   We need this to send you a confirmation that we have received your request and that your address details have been updated.
-  </div>
-  <input class="govuk-input" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email">
+<div class="govuk-width-container">
+  <!-- <a href="#" class="govuk-back-link">Back</a> -->
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+        <h1 class="govuk-heading-l">Check your answers</h1>
+        <!-- <h2 class="govuk-heading-m">Application details</h2> -->
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Do you want to opt out of getting the Winter Fuel Payment?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              502135326
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">opt out</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What is your email address?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              For personal use
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence type</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Do you want reminders about opting in?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              72 Guild Street<br>London<br>SE23 6FH
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> home address</span></a>
+            </dd>
+          </div>
+        </dl>
+        <!-- <h2 class="govuk-heading-m">Now send your application</h2>
+        <p class="govuk-body">By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p> -->
+        <form action="/form-handler" method="post" novalidate>
+          <input type="hidden" name="answers-checked" value="true">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Confirm
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
 </div>
 
 {% endblock %}
