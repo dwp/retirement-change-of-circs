@@ -3577,3 +3577,8 @@ router.post('/wf-opt-out/1-0/check-answers', function (req, res) {
 router.post('/wf-opt-out/1-0/confirmaiton', function (req, res) {
   res.redirect('/wf-opt-out/1-0/confirmation');
 });
+
+
+router.post('/wf-opt-out/1-0/options', function (req, res) {
+  res.redirect('/wf-opt-out/1-0/manage-state-pension');
+});

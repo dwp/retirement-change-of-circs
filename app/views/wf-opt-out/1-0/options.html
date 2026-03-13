@@ -1,0 +1,29 @@
+{% extends "layouts/ol_signed_in.html" %}
+
+{% block pageTitle %}
+  Do you own the account? - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+ <h1 class="govuk-heading-l">
+            Options
+          </h1>
+
+           <h2 class="govuk-heading-m">
+            Options
+          </h2>
+
+ <p class="govuk-body">
+            Example <a href="">with a link</a>.
+          </p>
+
+          <form action="/wf-opt-out/1-0/options" method="post" novalidate>
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+  Go to Manage your State Pension
+</button>
+
+</form>
+
+
+{% endblock %}
