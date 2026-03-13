@@ -1,0 +1,37 @@
+{% extends "layouts/ol_signed_in.html" %}
+
+{% block pageTitle %}
+  Do you own the account? - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Do you want yearly reminders that you can opt back in?
+      </h1>
+    </legend>
+    <div id="changedName-hint" class="govuk-hint">
+     Reminders will be sent to the email address you have provided.
+    </div>
+    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="changedName">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="changedName-2">
+          No
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+{% endblock %}
