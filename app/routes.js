@@ -3565,3 +3565,11 @@ require('./views/tu-bank-validation/_routes')
   
 
 module.exports = router
+
+
+// ROUTING TO WF Opt Out
+
+
+router.post('/wf-opt-out/1-0/check-answers', function (req, res) {
+  res.redirect('/wf-opt-out/1-0/confirmation');
+});
