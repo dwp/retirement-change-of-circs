@@ -6,59 +6,80 @@
 
 {% block content %}
 
-<div class="govuk-width-container">
-  <!-- <a href="#" class="govuk-back-link">Back</a> -->
-  <main class="govuk-main-wrapper " id="main-content" role="main">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds-from-desktop">
-        <h1 class="govuk-heading-l">Check your answers</h1>
-        <!-- <h2 class="govuk-heading-m">Application details</h2> -->
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Do you want to opt out of getting the Winter Fuel Payment?
-            </dt>
-            <dd class="govuk-summary-list__value">
-              502135326
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">opt out</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              What is your email address?
-            </dt>
-            <dd class="govuk-summary-list__value">
-              For personal use
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> licence type</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Do you want reminders about opting in?
-            </dt>
-            <dd class="govuk-summary-list__value">
-              72 Guild Street<br>London<br>SE23 6FH
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> home address</span></a>
-            </dd>
-          </div>
-        </dl>
-        <!-- <h2 class="govuk-heading-m">Now send your application</h2>
-        <p class="govuk-body">By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p> -->
-        <form action="/wf-opt-out/1-0/confirmation" method="post" novalidate>
-          <input type="hidden" name="answers-checked" value="true">
-          <button type="submit" class="govuk-button" data-module="govuk-button">
-            Confirm
-          </button>
-        </form>
-      </div>
-    </div>
-  </main>
-</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
 
+      <h1 class="govuk-heading-xl">
+        Check your answers
+      </h1>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Do you want to be opted out of getting the Winter Fuel Payments?"
+            },
+            value: {
+              text: data['do-you-want-to-opt-out']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Do you want to be opted out of getting the Winter Fuel Payments?"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "What is your email address?"
+            },
+            value: {
+              text: data['email']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "What is your email address?"
+                  
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Do you want reminders about opting in?"
+            },
+            value: {
+              text: data['do-you-want-reminders']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Do you want reminders about opting in?"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <form action="/wf-opt-out/1-0/confirmaiton" method="post" novalidate>
+
+        {{ govukButton({
+          text: "Confirm"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
 {% endblock %}

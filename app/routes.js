@@ -3574,6 +3574,6 @@ router.post('/wf-opt-out/1-0/check-answers', function (req, res) {
   res.redirect('/wf-opt-out/1-0/check-answers');
 });
 
-router.post('/wf-opt-out/1-0/confirmation', function (req, res) {
+router.post('/wf-opt-out/1-0/confirmaiton', function (req, res) {
   res.redirect('/wf-opt-out/1-0/confirmation');
 });
