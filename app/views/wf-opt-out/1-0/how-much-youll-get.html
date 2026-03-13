@@ -1,0 +1,251 @@
+
+{% extends "layout_dwp_unbranded.html" %}
+
+{% block pageTitle %}
+  Mainstream guide example
+{% endblock %}
+
+
+
+{% block beforeContent %}
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Benefits</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link">Benefits and financial support if you're on a low income</a>
+      </li>
+    </ol>
+  </div>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Winter Fuel Payment
+      </h1>
+
+      <aside class="app-mainstream-guide-contents-list" role="complementary">
+        <nav class="app-contents-list" aria-label="Pages in this guide" role="navigation">
+          <h2 class="app-contents-list__title">
+            Contents
+          </h2>
+          <ol class="app-contents-list__list">
+            <li class="app-contents-list__list-item app-contents-list__list-item--dashed app-contents-list__list-item--active">
+              <a href="overview">
+                Overview
+              </a>
+            </li>
+            <li class="app-contents-list__list-item app-contents-list__list-item--dashed">
+              <a href="eligibility">
+                Eligibility
+              </a>
+            </li>
+            <li aria-current="true" class="app-contents-list__list-item app-contents-list__list-item--dashed">
+                How much you'll get
+            </li>
+            <li class="app-contents-list__list-item app-contents-list__list-item--dashed">
+              <a href="how-to-claim">
+                Check if you need to claim
+              </a>
+            </li>
+            <li class="app-contents-list__list-item app-contents-list__list-item--dashed">
+              <a href="if-you-live-abroad">
+                If you live abroad
+              </a>
+            </li>
+            <li class="app-contents-list__list-item app-contents-list__list-item--dashed">
+              <a href="when-youll-get-paid">
+                When you'll get paid
+              </a>
+            </li>
+            <li class="app-contents-list__list-item app-contents-list__list-item--dashed">
+              <a href="report-a-change">
+                Report a change or cancel your payment
+              </a>
+            </li>
+          </ol>
+        </nav>
+      </aside>
+
+    </div>
+
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds app-mainstream-guide-body">
+      
+      <h2 class="govuk-heading-m" style="font-size:27px">
+        How much you'll get
+      </h2>
+      
+      <p>You’ll get a letter in October or November telling you how much Winter Fuel Payment you’ll get, <a href="eligibility">if you're eligible</a>.</p>
+     <p>The amount you get is based on when you were born and your circumstances between 19 to 25 September 2022. This is called the ‘qualifying week’.</p>
+     
+
+    <div class="govuk-inset-text">The amounts listed include a 'Pensioner Cost of Living Payment'. This is between £150 and £300. You’ll only get this extra amount in winter 2022 to 2023.</div>
+
+    <p>Any money you get will not affect your other benefits and is tax free.</p>
+
+    <h2 class="govuk-heading-s" style="font-size:24px">
+      If you live alone or no one you live with is eligible for the Winter Fuel Payment
+    </h2>
+    <p>You’ll get either:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>£500 if you were born between 26 September 1942 and 25 September 1956</li>
+      <li>£600 if you were born before 26 September 1942</li>
+    </ul>
+
+    <h2 class="govuk-heading-s" style="font-size:24px">
+      If you live with someone who's eligible for the Winter Fuel Payment
+    </h2>
+    <p>Your payment may be different if you get one of the following benefits:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Pension Credit</li>
+      <li>Income Support</li>
+      <li>income-based Jobseeker's Allowance (JSA)</li>
+      <li>income-related Employment and Support Allowance (ESA)</li>
+    </ul>
+
+    <h2 class="govuk-heading-s" style="font-size:19px">
+      If you do not get any of the benefits
+    </h2>
+    <p>You’ll get a payment of:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>£250 if you were born between 26 September 1942 and 25 September 1956</li>
+      <li>£350 if you were born before 26 September 1942 but the person you live with was born after 25 September 1956</li>
+      <li>£300 if you and the person you live with were both born before 26 September 1942</li>
+    </ul>
+    
+    <h2 class="govuk-heading-s" style="font-size:19px">
+      If you and your partner jointly claim any of the benefits
+    </h2>
+    <p>One of you will get a payment of either:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>£500 if both of you were born between 26 September 1942 and 25 September 1956</li>
+      <li>£600 if one or both of you were born before 26 September 1942</li>
+    </ul>
+    <div class="govuk-inset-text">You’ll be paid into the bank account your benefits are usually paid into.</div>
+
+    <h2 class="govuk-heading-s" style="font-size:19px">
+      If you get any of the benefits (not as part of a joint claim)
+    </h2>
+    <p>You’ll get a payment of either:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>£500 if you were born between 26 September 1942 and 25 September 1956</li>
+      <li>£600 if you were born before 26 September 1942</li>
+    </ul>
+   
+
+    <h2 class="govuk-heading-s" style="font-size:24px">
+      If you live in a care home
+    </h2>
+    <p>If you live in a care home and <a href="eligibility">you're eligible</a> you'll get either:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>£250 if you were born between 26 September 1942 and 25 September 1956</li>
+      <li>£300 if you were born before 26 September 1942</li>
+    </ul>
+   
+
+      <nav class="app-pagination" role="navigation" aria-label="Pagination">
+        <ul class="app-pagination__list">
+          <li class="app-pagination__item app-pagination__item--previous">
+            <a href="eligibility" class="govuk-link app-pagination__link" rel="prev">
+              <span class="app-pagination__link-title">
+                <svg class="app-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+                  <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+                </svg>
+                <span class="app-pagination__link-text">
+                  Previous
+                </span>
+              </span>
+              <span class="app-pagination__link-divider visually-hidden">:</span>
+              <span class="app-pagination__link-label">
+                Eligibility
+              </span>
+            </a>
+          </li>
+          <li class="app-pagination__item app-pagination__item--next">
+            <a href="how-to-claim" class="govuk-link app-pagination__link" rel="next">
+              <span class="app-pagination__link-title">
+                <svg class="app-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+                  <path d="m10.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                </svg>
+                <span class="app-pagination__link-text">
+                  Next
+                </span>
+              </span>
+              <span class="app-pagination__link-divider visually-hidden">:</span>
+              <span class="app-pagination__link-label">
+                Check if you need to claim
+              </span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <p>
+        <a href="https://www.gov.uk/winter-fuel-payment/print">
+          View a printable version of the whole guide
+        </a>
+      </p>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-s" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="https://www.gov.uk/benefits-calculators">
+                Benefits calculator
+              </a>
+            </li>
+            <li>
+              <a href="https://www.gov.uk/cold-weather-payment">
+                Cold Weather Payment
+              </a>
+            </li>
+            <li>
+              <a href="https://www.gov.uk/the-warm-home-discount-scheme">
+                Warm Home Discount Scheme
+              </a>
+            </li>
+            <li>
+              <a href="https://www.gov.uk/pension-credit">
+                Pension Credit
+              </a>
+            </li>
+            <li>
+              <a href="https://www.gov.uk/apply-for-elderly-person-bus-pass">
+                Apply for an older person's bus pass
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+
+  </main>
+</div>
+
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}
