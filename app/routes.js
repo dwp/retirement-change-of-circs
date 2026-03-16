@@ -3594,3 +3594,12 @@ router.post('/wf-opt-out/1-0/login-password', function (req, res) {
 router.post('/wf-opt-out/1-0/do-you-want-reminders', function (req, res) {
   res.redirect('/wf-opt-out/1-0/check-answers');
 });
+
+router.post('/wf-opt-out/1-0/email', function (req, res) {
+  res.redirect('/wf-opt-out/1-0/do-you-want-reminders');
+});
+
+
+router.post('/wf-opt-out/1-0/do-you-want-to-opt-out', function (req, res) {
+  res.redirect('/wf-opt-out/1-0/email');
+});
