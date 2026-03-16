@@ -11,10 +11,15 @@
  <form class="form" action="/wf-opt-out/1-0/do-you-want-reminders" method="post">
   <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-      <h1 class="govuk-fieldset__heading">
-        Do you want yearly reminders that you can opt back in?
-      </h1>
+      {% if data['decision'] == 'yes' %}
+  <h1 class="govuk-fieldset__heading">Do you want yearly reminders that you can opt back in?</h1>
+{% elif data['reminders'] == 'no' %}
+ <h1 class="govuk-fieldset__heading">Do you want yearly reminders that you can opt back out?</h1>
+{% else %}
+  <p>No selection was made.</p>
+{% endif %}
     </legend>
+    
     <div id="reminders" class="govuk-hint">
      Reminders will be sent to the email address you have provided.
     </div>
