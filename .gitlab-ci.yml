@@ -14,4 +14,4 @@ todo-check:
 heroku-site-publish:
   extends: .heroku-site-publish-template
   variables:
-    HEROKU_APP_NAME: prototype-changes
+    HEROKU_APP_NAME: https://retirement-change-of-circs-92d810dacffb.herokuapp.com/
