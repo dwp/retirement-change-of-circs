@@ -12,9 +12,13 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <div class="govuk-panel govuk-panel--confirmation">
-          <h1 class="govuk-panel__title">
-            Your request to opt out has been submitted
-          </h1>
+{% if data['decision'] == 'no' %}
+ <h1 class="govuk-panel__title">You have requested not to be opted out</h1>
+{% elif data['reminders'] == 'yes' %}
+<h1 class="govuk-panel__title">You have asked to be opted out</h1>
+{% else %}
+ <h1>No selection has been made</h1>
+{% endif %}
           <!-- <div class="govuk-panel__body">
             Your reference number<br><strong>HDJ2123F</strong>
           </div> -->
