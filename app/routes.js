@@ -3590,3 +3590,7 @@ router.post('/wf-opt-out/1-0/login-email', function (req, res) {
 router.post('/wf-opt-out/1-0/login-password', function (req, res) {
   res.redirect('/wf-opt-out/1-0/your-state-pension');
 });
+
+router.post('/wf-opt-out/1-0/do-you-want-reminders', function (req, res) {
+  res.redirect('/wf-opt-out/1-0/check-answers');
+});
