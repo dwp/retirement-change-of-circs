@@ -13,7 +13,7 @@
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       {% if data['decision'] == 'yes' %}
   <h1 class="govuk-fieldset__heading">Do you want yearly reminders that you can opt back in?</h1>
-{% elif data['reminders'] == 'no' %}
+{% elif data['decision'] == 'no' %}
  <h1 class="govuk-fieldset__heading">Do you want yearly reminders that you can opt back out?</h1>
 {% else %}
   <p>No selection was made.</p>

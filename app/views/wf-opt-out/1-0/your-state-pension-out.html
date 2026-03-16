@@ -387,29 +387,56 @@
         Winter Fuel Payment
       </h2>    
 
+
 <dl class="govuk-summary-list">
+
   <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Winter Fuel payment
-    </dt>
+    <dt class="govuk-summary-list__key">Winter Fuel payment</dt>
     <dd class="govuk-summary-list__value">
-      You have opted out of getting Winter Fuel Payment
+      {% if data['decision'] == 'yes' %}
+        You are opted out
+      {% elif data['decision'] == 'no' %}
+        You are opted in
+      {% else %}
+        Not selected
+      {% endif %}
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+     <a class="govuk-link" href="/wf-opt-out/1-0/do-you-want-to-opt-out">Change</span>
+      </a>
     </dd>
   </div>
+
   <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Email reminders
-    </dt>
+    <dt class="govuk-summary-list__key">Reminders</dt>
     <dd class="govuk-summary-list__value">
-      You will not get reminders about opting in
+      {% if data['reminders'] == 'yes' %}
+        You will get reminders
+      {% elif data['reminders'] == 'no' %}
+        You will not get reminders
+      {% else %}
+        Not selected
+      {% endif %}
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+      <a class="govuk-link" href="/wf-opt-out/1-0/do-you-want-reminders">Change</span>
+      </a>
     </dd>
   </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Email address</dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['email'] or 'Not provided' }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+     <a class="govuk-link" href="/wf-opt-out/1-0/email">Change</span>
+      </a>
+    </dd>
+  </div>
+
+</dl>
+
   
   <div class="govuk-summary-list__row">
 
