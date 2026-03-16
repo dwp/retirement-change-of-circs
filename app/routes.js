@@ -3582,3 +3582,11 @@ router.post('/wf-opt-out/1-0/confirmaiton', function (req, res) {
 router.post('/wf-opt-out/1-0/options', function (req, res) {
   res.redirect('/wf-opt-out/1-0/manage-state-pension');
 });
+
+router.post('/wf-opt-out/1-0/login-email', function (req, res) {
+  res.redirect('/wf-opt-out/1-0/login-password');
+});
+
+router.post('/wf-opt-out/1-0/login-password', function (req, res) {
+  res.redirect('/wf-opt-out/1-0/your-state-pension');
+});
