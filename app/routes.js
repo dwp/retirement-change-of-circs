@@ -3571,11 +3571,11 @@ module.exports = router
 
 
 router.post('/wf-opt-out/1-0/check-answers', function (req, res) {
-  res.redirect('/wf-opt-out/1-0/check-answers');
+  res.redirect('/wf-opt-out/1-0/confirmation');
 });
 
 router.post('/wf-opt-out/1-0/confirmaiton', function (req, res) {
-  res.redirect('/wf-opt-out/1-0/confirmation');
+  res.redirect('/wf-opt-out/1-0/your-state-pension-out');
 });
 
 
