@@ -14,7 +14,7 @@
         <div class="govuk-panel govuk-panel--confirmation">
 {% if data['decision'] == 'no' %}
  <h1 class="govuk-panel__title">You have requested not to be opted out</h1>
-{% elif data['reminders'] == 'yes' %}
+{% elif data['decision'] == 'yes' %}
 <h1 class="govuk-panel__title">You have asked to be opted out</h1>
 {% else %}
  <h1>No selection has been made</h1>

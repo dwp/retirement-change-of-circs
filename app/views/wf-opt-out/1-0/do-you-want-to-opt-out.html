@@ -7,26 +7,26 @@
 {% block content %}
 
 <div class="govuk-form-group">
-  <form class="form" action="/wf-opt-out/1-0/do-you-want-to-opt-out" method="post">
+  <form class="form" action="/wf-opt-out/1-0/do-you-want-to-opt-out-2" method="post">
   <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-      <h1 class="govuk-fieldset__heading">
-        Do you want to be opted out of getting the Winter Fuel Payment?
+     <h1 class="govuk-fieldset__heading">
+        Do you want to be opted out of Winter Fuel payments?
       </h1>
     </legend>
-    <div id="changedName-hint" class="govuk-hint">
-     Opting out of Winter Fuel payment will not affect your State Pension.
+    <div id="decision" class="govuk-hint">
+     Opting out will not affect your State Pension.
     </div>
     <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="decision-yes" name="decision" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="decision-out">
+        <label class="govuk-label govuk-radios__label" for="decision-yes">
           Yes
         </label>
       </div>
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="decision-no" name="decision" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="decision-in">
+        <label class="govuk-label govuk-radios__label" for="decision-no">
           No
         </label>
       </div>

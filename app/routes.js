@@ -3600,6 +3600,16 @@ router.post('/wf-opt-out/1-0/email', function (req, res) {
 });
 
 
-router.post('/wf-opt-out/1-0/do-you-want-to-opt-out', function (req, res) {
+router.post('/wf-opt-out/1-0/do-you-want-to-opt-out-2', function (req, res) {
   res.redirect('/wf-opt-out/1-0/email');
 });
+
+router.post('/wf-opt-out/1-0/your-state-pension', function (req, res) {
+  res.redirect('/wf-opt-out/1-0/do-you-want-to-opt-out');
+});
+
+router.post('/wf-opt-out/1-0/do-you-want-to-opt-out', function (req, res) {
+  res.redirect('/wf-opt-out/1-0/do-you-want-to-opt-out');
+});
+
+
