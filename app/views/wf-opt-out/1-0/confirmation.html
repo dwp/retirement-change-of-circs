@@ -70,12 +70,15 @@
 <!-- DYNAMIC TEXT: YOU WILL/WONT BE REMINDED -->
 
  <p class="govuk-body">
-          {% if data['reminders'] == 'yes' %}
- <p class="govuk-body">We will email each year to remind you that you have opted {in out} and can choose to opt back {in/out}.</p>
-{% elif data['reminders'] == 'no' %}
-  <!-- <p>You chose not to receive reminders.</p> -->
+ 
+{% if data['reminders'] == 'yes' and data['decision'] == 'yes' %}
+  <p class="govuk-body">We will email each year to remind you that you have opted out and can choose to opt back in.</p>
+
+{% elif data['reminders'] == 'yes' and data['decision'] == 'no' %}
+  <p class="govuk-body">We will remind you that you can opt out using this service.</p>
+
 {% else %}
- <p>No selection has been made</p>
+  <p class="govuk-body">No selection has been made</p>
 {% endif %}
 
 
