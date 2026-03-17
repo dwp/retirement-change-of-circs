@@ -8,41 +8,43 @@
 
 
 <div class="govuk-form-group">
- <form class="form" action="/wf-opt-out/1-0/do-you-want-reminders" method="post">
-  <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-      {% if data['decision'] == 'yes' %}
-  <h1 class="govuk-fieldset__heading">Do you want yearly reminders that you can opt back in?</h1>
-{% elif data['decision'] == 'no' %}
- <h1 class="govuk-fieldset__heading">Do you want yearly reminders that you can opt back out?</h1>
-{% else %}
-  <p>No selection was made.</p>
-{% endif %}
-    </legend>
-    
-    <div id="reminders" class="govuk-hint">
-     Reminders will be sent to the email address you have provided.
-    </div>
-    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="reminders" name="reminders" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="reminders-yes">
-          Yes
-        </label>
+  <form class="form" action="/wf-opt-out/1-0/do-you-want-reminders" method="post" aria-describedby="reminders-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        {% if data['decision'] == 'yes' %}
+          <h1 class="govuk-fieldset__heading">Do you want yearly reminders that you can opt back in?</h1>
+        {% elif data['decision'] == 'no' %}
+          <h1 class="govuk-fieldset__heading">Do you want yearly reminders that you can opt back out?</h1>
+        {% else %}
+          <h1 class="govuk-fieldset__heading">Do you want yearly reminders?</h1>
+        {% endif %}
+      </legend>
+
+      <div id="reminders-hint" class="govuk-hint">
+        Reminders will be sent to the email address you have provided.
       </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="reminders" name="reminders" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="reminders-no">
-          No
-        </label>
+
+      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="reminders-yes" name="reminders" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="reminders-yes">Yes</label>
+        </div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="reminders-no" name="reminders" type="radio" value="no">
+          <label class="govuk-label govuk-radios__label" for="reminders-no">No</label>
+        </div>
+
       </div>
-    </div>
-  </fieldset>
+    </fieldset>
+
+    <br>
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Continue
+    </button>
+
+  </form>
 </div>
 
- <button type="submit" class="govuk-button" data-module="govuk-button">
-  Continue
-</button>
-</form>
 
 {% endblock %}
