@@ -3613,3 +3613,18 @@ router.post('/wf-opt-out/1-0/do-you-want-to-opt-out', function (req, res) {
 });
 
 
+router.post('/wf-opt-out/1-0/how-we-use-info', function (req, res) {
+  res.redirect('/wf-opt-out/1-0/sign-in-with-onelogin');
+});
+
+router.post('/wf-opt-out/1-0/sign-in-with-onelogin', function (req, res) {
+  res.redirect('/wf-opt-out/1-0/sign-in');
+});
+
+router.post('/wf-opt-out/1-0/sign-in', function (req, res) {
+  res.redirect('/wf-opt-out/1-0/login-email');
+});
+
+
+
+

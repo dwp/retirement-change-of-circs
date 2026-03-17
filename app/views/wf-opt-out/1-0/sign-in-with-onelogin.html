@@ -1,0 +1,50 @@
+{% extends "layouts/ol_signed_in.html" %}
+
+{% block pageTitle %}
+  Do you own the account? - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+ <h1 class="govuk-heading-l">
+            Sign in with GOV.UK One Login
+          </h1>
+
+          <p>You need to sign in with your GOV.UK One Login. If you do not have a GOV.UK One Login, you'll need to create one.</p>
+          
+           <h2 class="govuk-heading-l">
+            Prove your identity
+          </h2>
+          
+          <p>To help keep your information safe, you may be asked to prove your identity.</p>
+          <p>You'll need:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>a valid photo ID, such as a passport of driving licence</li>
+</ul>
+
+          <p class="govuk-body">Or, if you haven't got photo ID, you can still prove your identity with:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>your bank or building society account details</li>
+  <li>your National Insurance number</li>
+</ul>
+
+     <h2 class="govuk-heading-l">
+           If you already have a GOV.UK One Login
+          </h2>
+
+          <p>Sign in to GOV.UK One Login with the details you've previously set up</p>
+
+          <form action="/wf-opt-out/1-0/sign-in-with-onelogin" method="post" novalidate>
+            <br>
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+</form>
+</form>
+</div>
+
+{% endblock %}
