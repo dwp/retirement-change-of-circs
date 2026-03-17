@@ -6,24 +6,34 @@
 
 {% block content %}
 
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
  <h1 class="govuk-heading-l">
-            Options
+            Using Manage your State Pension
           </h1>
 
-           <h2 class="govuk-heading-m">
-            Options
-          </h2>
+          <p>Manage your State Pension is the quickest way to be opted in or out of getting the Winter Fuel Payment.
 
- <p class="govuk-body">
-            Example <a href="">with a link</a>.
-          </p>
+You can only use Manage your State Pension if you are getting State Pension.</p>
 
           <form action="/wf-opt-out/1-0/options" method="post" novalidate>
           <button type="submit" class="govuk-button" data-module="govuk-button">
-  Go to Manage your State Pension
+  Continue
 </button>
 
-</form>
+           <h2 class="govuk-heading-m">
+            If you are not getting State Pension or were born after 1955
+          </h2>
 
+ <p class="govuk-body">
+           You may not be able to use the Manage your State Pension service to opt in or out of the Winter Fuel Payment. 
+
+You should use the <a href="https://submit.forms.service.gov.uk/preview-draft/7964/opt-out-of-winter-fuel-payment/u639RUx3">online form</a> or <a href="/wf-opt-out/1-0/report-a-change">contact the Winter Fuel Payment Centre.</a>
+          </p>
+
+</form>
+</form>
+</div>
 
 {% endblock %}
