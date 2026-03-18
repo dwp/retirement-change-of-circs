@@ -1,4 +1,4 @@
-{% extends "layouts/ol_signed_in.html" %}
+{% extends "layout.html" %}
 
 {% block pageTitle %}
   Check your details - Manage your State Pension - GOV.UK
@@ -8,123 +8,118 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-l">About where you live now</span>
+      <form class="form" action="/bank-validation-3" method="post">
+        <div class="govuk-form-group">
+      
       <h1 class="govuk-heading-l">Check your details before you submit them</h1>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-          {% if (data['partner'] == "Yes") %}
+          
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              Do you live with a partner?
+              UK account that is yours
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['partner'] %}
-                {{ data['partner'] }}
-              {% else %}
-                James Avery
-              {% endif %}
+              Yes
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="do-you-live-with-a-partner.html">
-                Change<span class="govuk-visually-hidden"> residential address</span>
+              <a class="govuk-link" href="do-you-own-the-account.html">
+                Change<span class="govuk-visually-hidden"> if you want to use a UK bank or building society account</span>
               </a>
             </dd>
           </div>
+          <div class="govuk-summary-list__row" style="border:0;">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              New account details
+            </dt>
+            <dd class="govuk-summary-list__value">
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="bank-or-building-society-details.html">
+                Change<span class="govuk-visually-hidden"> new account details</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row" style="border:0;">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Name on the account
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['account-holder'] %}
+                {{ data['account-holder'] }}
+              {% else %}
+                Masie Feeney
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row" style="border:0;">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Sort code
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['sort-code'] %}
+                {{ data['sort-code'] }}
+              {% else %}
+              000000
 
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width:40%;">
-              Name
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['partner-record-day']%}
-                {{ data['first-name']}} {{ data['last-name'] }}
-              {% else %}
-                Mark Davies
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="partner-details.html">
-                Change<span class="govuk-visually-hidden"> residential address</span>
-              </a>
             </dd>
           </div>
-          <div class="govuk-summary-list__row">
+          <div class="govuk-summary-list__row" style="border:0;">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              National insurance number
+              Account number
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['nino'] %}
-                {{ data['nino'] }}
+              {% if data['account-number'] %}
+                {{ data['account-number'] }}
               {% else %}
-                JC212121 C
+              12345678
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="partner-details.html">
-                Change<span class="govuk-visually-hidden"> residential address</span>
-              </a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              Date of birth
+              Building society roll number (if you have one)
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['partner-record-day']%}
-                {{data['partner-record-day']}} {{data['partner-record-month'] | monthName}} {{data['partner-record-year']}}
+              {% if data['roll-number'] %}
+                {{ data['roll-number'] }}
               {% else %}
-                1 March 2025
+                Not provided
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="partner-details.html">
-                Change<span class="govuk-visually-hidden"> residential address</span>
-              </a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              Is your partner registered blind?
+              Email address
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['partner-blind'] %}
-                {{ data['partner-blind'] }}
+              {% if data['email'] %}
+                {{ data['email'] }}
               {% else %}
-                Yes, I have a mortgage
-              {% endif %}  
+                johnsmith@email.com
+              {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="partner-registered-blind.html">
-                Change<span class="govuk-visually-hidden"> if your moving this property</span>
-              </a>
-            </dd>     
-          {% else %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width:40%;">
-              Do you live with a partner?
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['partner'] %}
-                {{ data['partner'] }}
-                {% else %}
-                  No
-                {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="do-you-live-with-a-partner.html">
-                Change<span class="govuk-visually-hidden"> your home address</span>
+              <a class="govuk-link" href="email-address.html">
+                Change<span class="govuk-visually-hidden"> your email address</span>
               </a>
             </dd>
           </div>
-          {% endif %}
-          </dl>
-
+        </dl>
         
-        
-     
-        <form action="../" method="post" novalidate>
-          <input type="hidden" name="answers-checked" value="true">
+        <h2 class="govuk-heading-m">Submit your new details</h2>
+        <p class="govuk-body">By submitting this change you are confirming that the information you are giving is complete and correct.</p>
           <button class="govuk-button" data-module="govuk-button">
-            Continue
+            Confirm and submit
           </button>
         </form>
     </div>

@@ -1,0 +1,125 @@
+{% extends "layouts/ol_signed_in_noback.html" %}
+
+{% block pageTitle %}
+  We cannot find this account - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">We cannot find this account</h1>
+
+      <div class="govuk-inset-text">
+        Check the sort code and account number and try again
+      </div>
+        
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="width:40%;">
+            Name on the account
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['account-holder'] %}
+                {{ data['account-holder'] }}
+              {% else %}
+                M Jones
+              {% endif %}
+          </dd>
+          <!-- <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="have-you-already-moved.html">
+              Change<span class="govuk-visually-hidden"> residential address</span>
+            </a>
+          </dd> -->
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Sort code
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['sort-code'] %}
+                {{ data['sort-code'] }}
+              {% else %}
+                000000
+              {% endif %}
+            </dd>
+            <!-- <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="temp-or-perm.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd> -->
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Account number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['account-number'] %}
+                {{ data['account-number'] }}
+              {% else %}
+                12345678
+              {% endif %}
+            </dd>
+            <!-- <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="uk-address.html">
+                Change<span class="govuk-visually-hidden"> if your moving this property</span>
+              </a>
+            </dd> -->
+          </div>
+
+          
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Bank or building society
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['roll-number'] %}
+                {{ data['roll-number'] }}
+              {% else %}
+                Not provided
+              {% endif %}
+            </dd>
+            <!-- <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="uk-address.html">
+                Change<span class="govuk-visually-hidden"> if your moving this property</span>
+              </a>
+            </dd> -->
+          </div>
+        </dl>
+
+        <form action="bank-or-building-society-details" method="post" novalidate>
+          <input type="hidden" name="answers-checked" value="true">
+          <button class="govuk-button" data-module="govuk-button">
+            Change account details
+          </button>
+        </form>
+    </div>
+  </div>
+
+{% endblock %}
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "../2-0/check-answers.html",
+            text: "Lighter declaration",
+            attributes: {
+              target: "_blank"
+            }
+          },
+          {
+            href: "https://govuk-prototype-kit.herokuapp.com/",
+            text: "GOV.UK Prototype Kit " + releaseVersion
+          },
+          {
+            href: "/prototype-admin/clear-data",
+            text: "Clear data"
+          }
+        ],
+        visuallyHiddenTitle: "Footer links"
+      }
+    }) }}
+  {% endblock %}
