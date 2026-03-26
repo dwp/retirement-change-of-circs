@@ -413,6 +413,17 @@ router.post('/partner1', function (req, res) {
 
 });
 
+router.post('/coa-combined/v1/new-address/check-your-details', function (req, res) {
+req.session.data['outofUKStatus']="completed"
+  res.redirect('/coa-combined/v1/task-list.html')
+
+
+});
+
+
+
+
+
 
 
 

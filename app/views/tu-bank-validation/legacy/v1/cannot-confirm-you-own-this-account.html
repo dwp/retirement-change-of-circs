@@ -1,7 +1,7 @@
 {% extends "layouts/ol_signed_in_nolinks.html" %}
 
 {% block pageTitle %}
-  We cannot confirm you own this account - Manage your State Pension - GOV.UK
+  We cannot confirm this is your account - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
@@ -14,7 +14,12 @@
             We cannot confirm this is your account
           </h1>
           <p class="govuk-body">
-            If you want us to pay your State Pension into this account <a href="">contact us by phone or post</a>.
+            If you want us to pay your State Pension into this account contact:
+          </p>
+          <p class="govuk-body">
+            <ul class="govuk-list govuk-list--bullet">
+            <li><a href="contact-pension-service.html">the Pension Service</a> if you live in England, Scotland or Wales.</li>
+            <li><a href="https://www.nidirect.gov.uk/contacts/northern-ireland-pension-centre">the Northern Ireland Pension Centre</a> if you live in Northern Ireland</li>
           </p>  
         </div>
       </form>
@@ -22,7 +27,7 @@
   </div>
 
   <div class="govuk-inset-text">
-    <a href="../your-state-pension&updated.html" class="govuk-link">Return to your State Pension details</a>
+        <a href="your-state-pension" class="govuk-link">Return to Your State Pension details</a>
   </div>
         
         

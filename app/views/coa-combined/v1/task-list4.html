@@ -29,10 +29,12 @@
                 <li class="govuk-task-list__item govuk-task-list__item--with-link">
                     <div class="govuk-task-list__name-and-hint">
                     <a class="govuk-link govuk-task-list__link" href="
-                        {% if data.outofUKStatus == 'completed' or data.outofUKStatus == 'inprogress' %}
+                        {% if data.outofUKStatus == 'completed' %}
+                            application-restart-section?section=outofUk
+                        {% elif data.outofUKStatus == 'inprogress' %}
                             application-restart-section?section=outofUk
                         {% else %}
-                            have-you-already-moved/have-you-already-moved?outofUKStatus=inprogress
+                            new-address/have-you-already-moved?outofUKStatus=inprogress
                         {% endif %}
                     " aria-describedby="company-details-5-status">
                         Your new address

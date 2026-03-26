@@ -92,7 +92,7 @@ router.post('/can-we-pay-3', function (req, res) {
       // Check whether the variable matches a condition
       if (checkSortCode == "123456"){
         // Send user to next page
-        res.redirect('/tu-bank-validation/legacy/v1/confirm-change-request-clash.html')
+        res.redirect('/tu-bank-validation/legacy/v1/confirm-change-request.html')
 
       }  else if (checkSortCode == "123457"){
         // Send user to next page
