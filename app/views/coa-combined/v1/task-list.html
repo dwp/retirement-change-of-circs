@@ -93,20 +93,22 @@
                 <li class="govuk-task-list__item govuk-task-list__item--with-link">
                     <div class="govuk-task-list__name-and-hint">
                     <a class="govuk-link govuk-task-list__link" href="
-                        {% if data.outofUKStatus == 'completed' or data.outofUKStatus == 'inprogress' %}
+                        {% if data.livedBefore == 'completed' %}
+                            application-restart-section?section=outofUk
+                        {% elif data.livedBefore == 'inprogress' %}
                             application-restart-section?section=outofUk
                         {% else %}
-                            outofUK/outofuk?outofUKStatus=inprogress
+                            where-you-live-now/housing-status?livedBefore=inprogress
                         {% endif %}
                     " aria-describedby="company-details-5-status">
-                        About where you lived before
+                        About where you live now
                     </a>
                     </div>
-                    {% if data.outofUKStatus == 'completed' %}
+                    {% if data.livedBefore == 'completed' %}
                         <div class="govuk-task-list__status" id="company-details-1-status">
                             Completed
                         </div>
-                    {% elif data.outofUKStatus == 'inprogress'%}
+                    {% elif data.livedBefore == 'inprogress'%}
                         <div class="govuk-task-list__status" id="company-details-5-status">
                             <strong class="govuk-tag govuk-tag--orange">
                                 In progress

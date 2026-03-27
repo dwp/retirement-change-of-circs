@@ -427,6 +427,16 @@ req.session.data['liveNow']="completed"
 
 });
 
+router.post('/coa-combined/v1/where-you-lived-before/owned/check-your-details', function (req, res) {
+req.session.data['livedBefore']="completed"
+  res.redirect('/coa-combined/v1/task-list.html')
+
+
+});
+
+
+
+
 
 
 
