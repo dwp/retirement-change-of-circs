@@ -29,22 +29,22 @@
                 <li class="govuk-task-list__item govuk-task-list__item--with-link">
                     <div class="govuk-task-list__name-and-hint">
                     <a class="govuk-link govuk-task-list__link" href="
-                        {% if data.outofUKStatus == 'completed' %}
+                        {% if data.newAddress == 'completed' %}
                             application-restart-section?section=outofUk
-                        {% elif data.outofUKStatus == 'inprogress' %}
+                        {% elif data.newAddress == 'inprogress' %}
                             application-restart-section?section=outofUk
                         {% else %}
-                            new-address/have-you-already-moved?outofUKStatus=inprogress
+                            new-address/have-you-already-moved?newAddress=inprogress
                         {% endif %}
                     " aria-describedby="company-details-5-status">
                         Your new address
                     </a>
                     </div>
-                    {% if data.outofUKStatus == 'completed' %}
+                    {% if data.newAddress == 'completed' %}
                         <div class="govuk-task-list__status" id="company-details-1-status">
                             Completed
                         </div>
-                    {% elif data.outofUKStatus == 'inprogress'%}
+                    {% elif data.newAddress == 'inprogress'%}
                         <div class="govuk-task-list__status" id="company-details-5-status">
                             <strong class="govuk-tag govuk-tag--orange">
                                 In progress
@@ -61,20 +61,22 @@
                 <li class="govuk-task-list__item govuk-task-list__item--with-link">
                     <div class="govuk-task-list__name-and-hint">
                     <a class="govuk-link govuk-task-list__link" href="
-                        {% if data.outofUKStatus == 'completed' or data.outofUKStatus == 'inprogress' %}
+                        {% if data.liveNow == 'completed' %}
+                            application-restart-section?section=outofUk
+                        {% elif data.liveNow == 'inprogress' %}
                             application-restart-section?section=outofUk
                         {% else %}
-                            outofUK/outofuk?outofUKStatus=inprogress
+                            where-you-live-now/housing-status?liveNow=inprogress
                         {% endif %}
                     " aria-describedby="company-details-5-status">
                         About where you live now
                     </a>
                     </div>
-                    {% if data.outofUKStatus == 'completed' %}
+                    {% if data.liveNow == 'completed' %}
                         <div class="govuk-task-list__status" id="company-details-1-status">
                             Completed
                         </div>
-                    {% elif data.outofUKStatus == 'inprogress'%}
+                    {% elif data.liveNow == 'inprogress'%}
                         <div class="govuk-task-list__status" id="company-details-5-status">
                             <strong class="govuk-tag govuk-tag--orange">
                                 In progress

@@ -414,7 +414,14 @@ router.post('/partner1', function (req, res) {
 });
 
 router.post('/coa-combined/v1/new-address/check-your-details', function (req, res) {
-req.session.data['outofUKStatus']="completed"
+req.session.data['newAddress']="completed"
+  res.redirect('/coa-combined/v1/task-list.html')
+
+
+});
+
+router.post('/coa-combined/v1/where-you-live-now/owned/check-your-details', function (req, res) {
+req.session.data['liveNow']="completed"
   res.redirect('/coa-combined/v1/task-list.html')
 
 
