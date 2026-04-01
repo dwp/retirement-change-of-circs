@@ -75,7 +75,7 @@
       <h2 class="govuk-heading-m">Payment schedule</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row" style="border-top: 1px solid #b1b4b6;padding-top:15px;">
-          <dt class="govuk-summary-list__key">
+          <!-- <dt class="govuk-summary-list__key">
             How often we pay your State Pension
           </dt>
           <dd class="govuk-summary-list__value">
@@ -84,10 +84,42 @@
             {% else %}
               Every 4 weeks<br>(13 payments a year)
             {% endif %}
-          </dd>
+          </dd> -->
           
         </div>
+
         <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Last payment date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['next-payment-date'] %}
+              {{ data['next-payment-date'] }}
+            {% else %}
+              Friday 17 January 2025
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Last payment amount
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['next-payment-amount'] %}
+              {{ data['next-payment-amount'] | currency }}
+            {% else %}
+              £815.40
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
+        </div>
+
+        <!-- <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Next payment date
           </dt>
@@ -95,7 +127,7 @@
             {% if data['next-payment-date'] %}
               {{ data['next-payment-date'] }}
             {% else %}
-            Friday 17 January 2025
+              Friday 17 January 2025
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
@@ -116,7 +148,7 @@
           <dd class="govuk-summary-list__actions">
 
           </dd>
-        </div>
+        </div> -->
       </dl>
       
       <h2 class="govuk-heading-m">
