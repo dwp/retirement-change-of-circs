@@ -21,31 +21,31 @@
             <dl class="govuk-summary-list govuk-!-margin-bottom-9">
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  {% if data['first-name'] %}
-                  {{ data['first-name'] }}
+                  {% if data['partner-record-day']%}
+                    {{ data['first-name']}} {{ data['last-name'] }}
                   {% else %}
-                    Julia avery  
-                  {% endif %} 
+                    Mark Davies
+                  {% endif %}
                 </dt>
                 
                 <dd class="govuk-summary-list__actions">
                   {% if data['first-name'] %}
                   <ul class="govuk-summary-list__actions-list">  
                     <li class="govuk-summary-list__actions-list-item">
-                      <a class="govuk-link" href="change-home-phone/enter-home-phone.html">Change<span class="govuk-visually-hidden"> home phone number</span></a>
+                      <a class="govuk-link" href="do-you-live-with-a-partner.html">Change<span class="govuk-visually-hidden"> partner</span></a>
                     </li>
                     <li class="govuk-summary-list__actions-list-item">
-                      <a class="govuk-link" href="change-home-phone/remove-home-phone.html">Remove<span class="govuk-visually-hidden"> home phone number</span></a>
+                      <a class="govuk-link" href="partner-remove.html">Remove<span class="govuk-visually-hidden"> partner</span></a>
                     </li>
                   </ul>
             
                   {% else %}
                   <ul class="govuk-summary-list__actions-list">  
                     <li class="govuk-summary-list__actions-list-item">
-                      <a class="govuk-link" href="change-home-phone/enter-home-phone.html">Change<span class="govuk-visually-hidden"> home phone number</span></a>
+                      <a class="govuk-link" href="change-home-phone/enter-home-phone.html">Change<span class="govuk-visually-hidden"> partner</span></a>
                     </li>
                     <li class="govuk-summary-list__actions-list-item">
-                      <a class="govuk-link" href="change-home-phone/remove-home-phone.html">Remove<span class="govuk-visually-hidden"> home phone number</span></a>
+                      <a class="govuk-link" href="partner-remove.html">Remove<span class="govuk-visually-hidden"> partner</span></a>
                     </li>
                   </ul>
                   {% endif %}
@@ -54,9 +54,9 @@
             </dl>
           </fieldse>
           
-          <button class="govuk-button" data-module="govuk-button">
-            Continue
-          </button>
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
         </div>
        </form>
       </div>

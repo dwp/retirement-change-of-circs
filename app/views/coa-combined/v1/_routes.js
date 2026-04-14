@@ -10,9 +10,55 @@ function addDays(date, days) {
 
   // Add your routes here - above the module.exports line
 
-// ROUTING TO YES OR NO ALREADY MOVED TO ADDRESS
 
-router.post('/already-moved5', function (req, res) {
+
+///////////////////////////////////
+//////// TASK LIST STATUS//////////
+///////////////////////////////////
+
+router.post('/coa-combined/v1/new-address/check-your-details', function (req, res) {
+req.session.data['newAddress']="completed"
+  res.redirect('/coa-combined/v1/task-list.html')
+
+
+});
+
+router.post('/coa-combined/v1/where-you-live-now/rent/rent-check-your-details', function (req, res) {
+req.session.data['liveNow']="completed"
+  res.redirect('/coa-combined/v1/task-list.html')
+
+
+});
+
+router.post('/coa-combined/v1/partner/partner-check-your-details', function (req, res) {
+req.session.data['partnerDetails']="completed"
+  res.redirect('/coa-combined/v1/task-list.html')
+
+
+});
+
+router.post('/coa-combined/v1/s&i/capital-check-answers', function (req, res) {
+req.session.data['savingsInvestments']="completed"
+  res.redirect('/coa-combined/v1/task-list.html')
+
+
+});
+
+////////////////////////////////////////
+////////////////////////////////////////
+//////////////// HOME //////////////////
+////////////////////////////////////////
+////////////////////////////////////////
+
+
+////////////////////////////////////////
+///////////// NEW ADDRESS //////////////
+////////////////////////////////////////
+
+
+// ROUTING FOR HAVE YOU ALREADY MOVED
+
+router.post('/coa-combined/v1/new-address/have-you-already-moved', function (req, res) {
 
   // Make a variable and give it the value from 'already moved'
   var changeAlreadyMoved = req.session.data['already-moved']
@@ -29,42 +75,72 @@ router.post('/already-moved5', function (req, res) {
 
 });
 
-// ROUTING TO RIGHT CONFIRMATION VERSION CHANGE OF ADDRESS
-router.post('/changed-residential-address4', function (req, res) {
 
-  // Make a variable and give it the value from 'bank-or-build'
-  var changeSelectAnAddress = req.session.data['select-an-address']
-  console.log("high", req.session.data['select-an-address'])
+// ROUTING FOR PERM OR TEMP
+router.post('/coa-combined/v1/new-address/perm-or-temp', function (req, res) {
 
-  // Check whether the variable matches a condition
-  if (changeSelectAnAddress == "Select1"){
-    // Send user to next page
-    res.redirect('/coa-combined/v1/you-have-changed-your-address-alt.html')
-  } else {
-    res.redirect('/coa-combined/v1/you-have-changed-your-address-2benefits.html')
-  }
+  // Make a variable and give it the value from 'already moved'
+  var perOrTemp = req.session.data['perm-or-temp']
+    console.log("high", req.session.data['perm-or-temp'])
 
-});
-
-// ROUTING TO PERMANENT OR TEMPORARY MOVE
-router.post('/perm-temp3', function (req, res) {
-
-  // Make a variable and give it the value from 'bank-or-build'
-  var changeSelectAnAddress = req.session.data['perm-or-temp']
-  console.log("high", req.session.data['perm-or-temp'])
 
   // Check whether the variable matches a condition
-  if (changeSelectAnAddress == "Yes"){
+  if (perOrTemp == "Yes"){
     // Send user to next page
     res.redirect('/coa-combined/v1/new-address/uk-address.html')
-  } else {
+  } else if (perOrTemp == "No"){
     res.redirect('/coa-combined/v1/new-address/dont-need-to-update-your-address.html')
   }
 
 });
 
-// ROUTING TO WHEN DID YOU MOVE
-router.post('/when-did-you-move1', function (req, res) {
+// ROUTING FOR ADDRESS IN THE UK
+
+router.post('/coa-combined/v1/new-address/uk-address', function (req, res) {
+
+  // Make a variable and give it the value from 'uk-address'
+  var changeUkAddress = req.session.data['uk-address']
+        console.log("high", req.session.data['uk-address'])
+
+
+  // Check whether the variable matches a condition
+  if (changeUkAddress == "Yes"){
+    // Send user to next page
+    res.redirect('/coa-combined/v1/new-address/type-of-property.html')
+  } else if (changeUkAddress == "No"){
+    res.redirect('/coa-combined/v1/new-address/you-cannot-change-your-address-online.html')
+  }
+
+});
+
+// ROUTING FOR PROPERTY TYPE
+
+router.post('/coa-combined/v1/new-address/type-of-property', function (req, res) {
+
+  // Make a variable and give it the value from 'uk-address'
+  var propertyType = req.session.data['property-type']
+        console.log("high", req.session.data['property-type'])
+
+
+  // Check whether the variable matches a condition
+  if (propertyType == "House"){
+    // Send user to next page
+    res.redirect('/coa-combined/v1/new-address/when-did-you-move.html')
+  } else if (propertyType == "Flat"){
+    res.redirect('/coa-combined/v1/new-address/when-did-you-move.html')
+  } else if (propertyType == "Hospital"){
+    res.redirect('/coa-combined/v1/new-address/cannot-change-your-address-online.html')
+  } else if (propertyType == "Care home"){
+    res.redirect('/coa-combined/v1/new-address/cannot-change-your-address-online.html')
+  } else if (propertyType == "Caravan"){
+    res.redirect('/coa-combined/v1/new-address/when-did-you-move.html')
+  } else if (propertyType == "Other"){
+    res.redirect('/coa-combined/v1/new-address/when-did-you-move.html')
+  } 
+});
+
+// ROUTING FOR WHEN DID YOU MOVE
+router.post('/coa-combined/v1/new-address/when-did-you-move', function (req, res) {
 
   // Make a variable and give it the value from 'citizen-record-year'
   var changeWhenDidYouMove = req.session.data['citizen-record-year']
@@ -73,195 +149,89 @@ router.post('/when-did-you-move1', function (req, res) {
   // Check whether the variable matches a condition
   if (changeWhenDidYouMove == "2025"){
     // Send user to next page
-    res.redirect('coa-combined/v1/temp-or-perm.html')
+    res.redirect('/coa-combined/v1/new-address/address-finder/find-address.html')
 
-  } else if (changeWhenDidYouMove == "2024"){
+  } else if (changeWhenDidYouMove == "2027"){
     // Send user to next page
-    res.redirect('coa-combined/v1/report-change-after-move.html')
+    res.redirect('/coa-combined/v1/new-address/report-change-after-move.html')
 
   } else {
-    res.redirect('coa-combined/v1/temp-or-perm.html')
+    res.redirect('/coa-combined/v1/new-address/address-finder/find-address.html')
   }
 
 });
 
+// ROUTING FOR WHAT IS YOUR NEW ADDRESS
+router.post('/coa-combined/v1/new-address/address-finder/find-address', function (req, res) {
 
-
-
-// ROUTING TO PERMANENT OR TEMPORARY MOVE
-
-router.post('/perm-temp2', function (req, res) {
-
-  // Make a variable and give it the value from 'perm-or-temp'
-  var changePermOrTemp = req.session.data['perm-or-temp']
-        console.log("high", req.session.data['perm-or-temp'])
-
-
-  // Check whether the variable matches a condition
-  if (changePermOrTemp == "Yes"){
-    // Send user to next page
-    res.redirect('/coa-combined/v1/cant-update-temp-address-alt.html')
-  } else if (changePermOrTemp== "No"){
-    res.redirect('/coa-combined/v1/uk-address.html')
-  }
-
-});
-
-// ROUTING TO YES OR NO HOME ADDRESS IN THE UK
-
-router.post('/uk-address6', function (req, res) {
-
-  // Make a variable and give it the value from 'uk-address'
-  var changeUkAddress = req.session.data['uk-address']
-        console.log("high", req.session.data['uk-address'])
-
-  // Check whether the variable matches a condition
-  if (changeUkAddress == "Yes"){
-    // Send user to next page
-    res.redirect('/coa-combined/v1/new-address/type-of-property.html')
-
-  } else if (changeUkAddress == "No"){
-    res.redirect('/coa-combined/v1/new-address/you-cannot-change-your-address-online.html')
-  }
-
-});
-
-// ROUTING TO ADDRESS RESULTS
-router.post('/postcode-7', function (req, res) {
-
-  // Make a variable and give it the value from 'postcode-7'
-  var changePostcode = req.session.data['postcode-7']
+  // Make a variable and give it the value from 'citizen-record-year'
+  var changeEnterPostcode = req.session.data['postcode-7']
   console.log("high", req.session.data['postcode-7'])
 
   // Check whether the variable matches a condition
-  if (changePostcode == "YO3 1MJ"){
+  if (changeEnterPostcode == "YO3 1MJ"){
     // Send user to next page
-    res.redirect('coa-combined/v1/new-address/address-finder/select-an-address.html')
+    res.redirect('/coa-combined/v1/new-address/address-finder/select-an-address.html')
 
-  } else if (changePostcode == "YO3 1MK"){
+  } else if (changeEnterPostcode == "YO3 1MK"){
     // Send user to next page
-    res.redirect('coa-combined/v1/new-address/address-finder/no-address-found.html')
-  
-  } else if (changePostcode == "YO3 1ML"){
+    res.redirect('/coa-combined/v1/new-address/address-finder/no-address-found.html')
+
+  } else if (changeEnterPostcode == "YO3 1ML"){
     // Send user to next page
-    res.redirect('coa-combined/v1/new-address/address-finder/already-your-address.html')
-  
-  } else if (changePostcode == "YO3 1MM"){
+    res.redirect('/coa-combined/v1/new-address/address-finder/already-your-address.html')
+
+    } else if (changeEnterPostcode == "YO3 1MM"){
     // Send user to next page
-    res.redirect('coa-combined/v1/new-address/address-finder/address-single-result.html')
-  
+    res.redirect('/coa-combined/v1/new-address/address-finder/address-single-result.html')
+
+  } else {
+    res.redirect('/coa-combined/v1/new-address/address-finder/select-an-address.html')
   }
+
 });
 
- // ROUTING TO RIGHT ADDRESS
-   router.post('/select-an-address8', function (req, res) {
+// ROUTING FOR SELECT AN ADDRESS
+router.post('/coa-combined/v1/new-address/address-finder/select-an-address', function (req, res) {
 
-    // Make a variable and give it the value from 'select-ADDRESS'
-    var selectAddress = req.session.data['select-address']
-    console.log("high", req.session.data['select-address'])
+  // Make a variable and give it the value from 'select-address'
+  var selectAddress = req.session.data['select-address']
+  console.log("high", req.session.data['select-address'])
+
+  // Check whether the variable matches a condition
+  if (selectAddress == "Select1"){
+    // Send user to next page
+    res.redirect('/coa-combined/v1/new-address/check-your-details.html')
+
+  } else if (selectAddress == "Select2"){
+    // Send user to next page
+    res.redirect('/coa-combined/v1/new-address/address-finder/already-your-address.html')
+
+  } else if (selectAddress == "Select3"){
+    // Send user to next page
+    res.redirect('/coa-combined/v1/new-address/address-finder/address-single-result.html')
+
+  } else if (selectAddress == "Select4"){
+    // Send user to next page
+    res.redirect('/coa-combined/v1/new-address/address-finder/this-is-a-prison.html')
+
+   } else if (selectAddress == "Select5"){
+    // Send user to next page
+    res.redirect('/coa-combined/v1/new-address/cannot-change-your-address-online.html')
+
+  } else {
+    res.redirect('/coa-combined/v1/new-address/address-finder/check-your-details.html')
+  }
+
+});
+
+
   
-    // Check whether the variable matches a condition
-    if (selectAddress == "Select1"){
-      // Send user to next page
-      res.redirect('/coa-combined/v1/new-address/check-your-details.html')
-    } else if (selectAddress == "Select2"){
-      // Send user to next page
-      res.redirect('coa-combined/v1/new-address/this-is-a-prison.html')
-    } else if (selectAddress == "Select3"){
-      // Send user to next page
-      res.redirect('coa-combined/v1/new-address/this-is-a-carehome-or-hospital.html')
-    } else if (selectAddress == "Select4"){
-      // Send user to next page
-      res.redirect('coa-combined/v1/new-address/cannot-change-your-address-online.html')
-    } else if (selectAddress == "Select5"){
-      // Send user to next page
-      res.redirect('coa-combined/v1/new-address/cannot-change-your-address-online.html')
-    }
-  
-  });
 
+////////////////////////////////
+//////// OWNED PROPERTY ////////
+////////////////////////////////
 
-  // ROUTING TO PROPERTY TYPE
-   router.post('/property-type1', function (req, res) {
-
-    // Make a variable and give it the value from 'property-type'
-    var selectPropertyType = req.session.data['property-type']
-    console.log("high", req.session.data['property-type'])
-  
-    // Check whether the variable matches a condition
-    if (selectPropertyType == "House"){
-      // Send user to next page
-      res.redirect('/coa-combined/v1/new-address/when-did-you-move.html')
-    } else if (selectPropertyType == "Flat"){
-      // Send user to next page
-      res.redirect('coa-combined/v1/new-address/when-did-you-move.html')
-    } else if (selectPropertyType == "Hospital"){
-      // Send user to next page
-      res.redirect('coa-combined/v1/new-address/cannot-change-your-address-online.html')
-    } else if (selectPropertyType == "Care home"){
-      // Send user to next page
-      res.redirect('coa-combined/v1/new-address/cannot-change-your-address-online.html')
-    } else if (selectPropertyType == "Caravan"){
-      // Send user to next page
-      res.redirect('coa-combined/v1/new-address/when-did-you-move.html')
-    } else if (selectPropertyType == "Other"){
-      // Send user to next page
-      res.redirect('coa-combined/v1/new-address/when-did-you-move.html')
-    }
-  
-  });  
-
-  // ROUTING TO HOUSING STATUS
-   router.post('/housing-status1', function (req, res) {
-
-    // Make a variable and give it the value from 'property-type'
-    var selectHousingStatus = req.session.data['housing-status']
-    console.log("high", req.session.data['housing-status'])
-  
-    // Check whether the variable matches a condition
-    if (selectHousingStatus == "I own the property (with or without a mortgage)"){
-      // Send user to next page
-      res.redirect('/coa-combined/v1/where-you-live-now/owned/how-much-did-you-pay.html')
-    } else if (selectHousingStatus == "I rent"){
-      // Send user to next page
-      res.redirect('coa-combined/v1/where-you-live-now/rent/housing-costs.html')
-    } else if (selectHousingStatus == "I'm renting and buying through a shared ownership scheme"){
-      // Send user to next page
-      res.redirect('coa-combined/v1/where-you-live-now/shared/how-much-did-you-pay.html')
-    } else if (selectHousingStatus == "I live in someone else's home without paying rent"){
-      // Send user to next page
-      res.redirect('coa-combined/v1/task-list3')
-    } else if (selectHousingStatus == "other"){
-      // Send user to next page
-      res.redirect('coa-combined/v1/where-you-live-now/when-did-you-move.html')
-    }   
-  });
-
-  // ROUTING TO HOUSING STATUS WHERE YOU LIVED BEFORE
-   router.post('/housing-status2', function (req, res) {
-
-    // Make a variable and give it the value from 'previous-housing-status'
-    var selectHousingStatus = req.session.data['previous-housing-status']
-    console.log("high", req.session.data['previous-housing-status'])
-  
-    // Check whether the variable matches a condition
-    if (selectHousingStatus == "I owned my property (with or without a mortgage)"){
-      // Send user to next page
-      res.redirect('/coa-combined/v1/where-you-lived-before/owned/sold-the-property.html')
-    } else if (selectHousingStatus == "I rented"){
-      // Send user to next page
-      res.redirect('coa-combined/v1/where-you-live-now/rent/housing-costs.html')
-    } else if (selectHousingStatus == "I was renting and buying through a shared ownership scheme"){
-      // Send user to next page
-      res.redirect('coa-combined/v1/where-you-live-now/shared/how-much-did-you-pay.html')
-    } else if (selectHousingStatus == "I lived in someone else's home without paying rent"){
-      // Send user to next page
-      res.redirect('coa-combined/v1/task-list3')
-    } else if (selectHousingStatus == "Other"){
-      // Send user to next page
-      res.redirect('coa-combined/v1/where-you-live-now/when-did-you-move.html')
-    }   
-  });
 
   // ROUTING TO HOUSING STATUS HAVE YOU SOLD THE PROPERTY
    router.post('/sold-property1', function (req, res) {
@@ -276,52 +246,11 @@ router.post('/postcode-7', function (req, res) {
       res.redirect('/coa-combined/v1/where-you-lived-before/owned/money-from-sale.html')
     } else if (selectSoldProperty == "No"){
       // Send user to next page
-      res.redirect('coa-combined/v1/where-you-live-now/rent/housing-costs.html')
+      res.redirect('/coa-combined/v1/where-you-lived-before/owned/money-from-sale.html')
     } 
   });
 
-  // ROUTING TO YES OR NO HOME ADDRESS IN THE UK
-
-router.post('/uk-address6', function (req, res) {
-
-  // Make a variable and give it the value from 'uk-address'
-  var changeUkAddress = req.session.data['uk-address']
-        console.log("high", req.session.data['uk-address'])
-
-
-  // Check whether the variable matches a condition
-  if (changeUkAddress == "Yes"){
-    // Send user to next page
-    res.redirect('/coa-combined/v1/new-address/type-of-property.html')
-  } else if (changeUkAddress == "No"){
-    res.redirect('/coa-combined/v1/new-address/you-cannot-change-your-address-online.html')
-  }
-
-});
-
-// ROUTING TO WHEN DID YOU MOVE
-router.post('/when-did-you-move2', function (req, res) {
-
-  // Make a variable and give it the value from 'citizen-record-year'
-  var changeWhenDidYouMove = req.session.data['citizen-record-year']
-  console.log("high", req.session.data['citizen-record-year'])
-
-  // Check whether the variable matches a condition
-  if (changeWhenDidYouMove == "2025"){
-    // Send user to next page
-    res.redirect('coa-combined/v1/new-address/address-finder/find-address.html')
-
-  } else if (changeWhenDidYouMove == "2024"){
-    // Send user to next page
-    res.redirect('coa-combined/v1/report-change-after-move.html')
-
-  } else {
-    res.redirect('coa-combined/v1/new-address/address-finder/find-address.html')
-  }
-
-});
-
-// ROUTING TO YES OR NO MORTGAGE OR LOAN
+  // ROUTING TO YES OR NO MORTGAGE OR LOAN
 
 router.post('/mortgage-or-loan2', function (req, res) {
 
@@ -358,6 +287,32 @@ router.post('/get-smi-support1', function (req, res) {
   }
     
 });
+
+
+  
+
+// ROUTING TO WHEN DID YOU MOVE
+router.post('/coa-combined/v1/about-here-you-live-now/owned/address-finder/find-address.html', function (req, res) {
+
+  // Make a variable and give it the value from 'citizen-record-year'
+  var changeWhenDidYouMove = req.session.data['citizen-record-year']
+  console.log("high", req.session.data['citizen-record-year'])
+
+  // Check whether the variable matches a condition
+  if (changeWhenDidYouMove == "2025"){
+    // Send user to next page
+    res.redirect('coa-combined/v1/new-address/address-finder/find-address.html')
+
+  } else if (changeWhenDidYouMove == "2024"){
+    // Send user to next page
+    res.redirect('coa-combined/v1/report-change-after-move.html')
+
+  } else {
+    res.redirect('coa-combined/v1/new-address/address-finder/find-address.html')
+  }
+
+});
+
 
 // ROUTING TO SMI ON CURRENT PROPERTY
 router.post('/get-smi-support2', function (req, res) {
@@ -396,8 +351,120 @@ router.post('/mortgage-or-loan3', function (req, res) {
 
 });
 
+
+
+// ROUTING TO YES OR NO FOR REMOVING HOME PHONE NUMBER
+router.post('/remove-partner-1', function (req, res) {
+
+  // Make a variable and give it the value from 'remove-home-number'
+  var removePartner = req.session.data['remove-partner']
+
+  // Check whether the variable matches a condition
+  if (removePartner == "Yes"){
+    // Send user to next page
+    res.redirect('/contact/mvp/change-home-phone/you-have-removed-your-contact-details.html?current-home-phone&new-home-phone')
+  } else if (removePartner == "No"){
+    res.redirect('/contact/mvp/change-home-phone/do-not-remove.html')
+  }
+
+});
+
+
+
+
+
+
+
+
+
+////////////////////////////////////
+/////// WHERE YOU LIVE NOW /////////
+////////////////////////////////////
+
+// ROUTING TO HOUSING STATUS
+   router.post('/housing-status1', function (req, res) {
+
+    // Make a variable and give it the value from 'property-type'
+    var selectHousingStatus = req.session.data['housing-status']
+    console.log("high", req.session.data['housing-status'])
+  
+    // Check whether the variable matches a condition
+    if (selectHousingStatus == "I own the property (with or without a mortgage)"){
+      // Send user to next page
+      res.redirect('/coa-combined/v1/where-you-live-now/owned/how-much-did-you-pay.html')
+    } else if (selectHousingStatus == "I rent"){
+      // Send user to next page
+      res.redirect('coa-combined/v1/where-you-live-now/rent/housing-costs.html')
+    } else if (selectHousingStatus == "I'm renting and buying through a shared ownership scheme"){
+      // Send user to next page
+      res.redirect('coa-combined/v1/where-you-live-now/shared/how-much-did-you-pay.html')
+    } else if (selectHousingStatus == "I live in someone else's home without paying rent"){
+      // Send user to next page
+      res.redirect('coa-combined/v1/task-list3')
+    } else if (selectHousingStatus == "other"){
+      // Send user to next page
+      res.redirect('coa-combined/v1/where-you-live-now/when-did-you-move.html')
+    }   
+  });
+
+
+/////////////////////////////
+////////// RENT ////////////
+////////////////////////////
+
+ 
+
+
+  // ROUTING TO HOUSING STATUS WHERE YOU LIVED BEFORE
+   router.post('/housing-status2', function (req, res) {
+
+    // Make a variable and give it the value from 'previous-housing-status'
+    var selectHousingStatus = req.session.data['previous-housing-status']
+    console.log("high", req.session.data['previous-housing-status'])
+  
+    // Check whether the variable matches a condition
+    if (selectHousingStatus == "I owned my property (with or without a mortgage)"){
+      // Send user to next page
+      res.redirect('/coa-combined/v1/where-you-lived-before/owned/sold-the-property.html')
+    } else if (selectHousingStatus == "I rented"){
+      // Send user to next page
+      res.redirect('coa-combined/v1/where-you-live-now/rent/housing-costs.html')
+    } else if (selectHousingStatus == "I was renting and buying through a shared ownership scheme"){
+      // Send user to next page
+      res.redirect('coa-combined/v1/where-you-live-now/shared/how-much-did-you-pay.html')
+    } else if (selectHousingStatus == "I lived in someone else's home without paying rent"){
+      // Send user to next page
+      res.redirect('coa-combined/v1/task-list3')
+    } else if (selectHousingStatus == "Other"){
+      // Send user to next page
+      res.redirect('coa-combined/v1/where-you-live-now/when-did-you-move.html')
+    }   
+  });
+
+   //ROUTING FROM HOUSING COSTS TO CHECK YOUR DETAILS
+router.post('/coa-combined/v1/where-you-live-now/rent/housing-costs', function (req, res) {
+  res.redirect('/coa-combined/v1/where-you-live-now/rent/rent-check-your-details.html')
+
+
+});
+
+
+/////////////////////////////////////////////////////
+/////////////////////////////////////////////////////
+////////////// PEOPLE WHO LIVE WITH YOU//////////////
+/////////////////////////////////////////////////////
+/////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////
+////////////// PARTNER //////////////
+/////////////////////////////////////
+
+
+
 // ROUTING TO HAVING A PARTNER
-router.post('/partner1', function (req, res) {
+router.post('/coa-combined/v1/partner/do-you-live-with-a-partner', function (req, res) {
 
   // Make a variable and give it the value from 'uk-address'
   var selectPartner = req.session.data['partner']
@@ -408,45 +475,52 @@ router.post('/partner1', function (req, res) {
     // Send user to next page
     res.redirect('/coa-combined/v1/partner/partner-details.html')
   } else if (selectPartner == "No"){
-    res.redirect('/coa-combined/v1/partner/partner-details-check-answers.html')
+    res.redirect('/coa-combined/v1/partner/partner-check-your-details.html')
   }
 
 });
 
-router.post('/coa-combined/v1/new-address/check-your-details', function (req, res) {
-req.session.data['newAddress']="completed"
-  res.redirect('/coa-combined/v1/task-list.html')
+// ROUTING FROM PARTNER DETAILS TO REGISTERED BLIND
+router.post('/coa-combined/v1/partner/partner-details', function (req, res) {
+  res.redirect('/coa-combined/v1/partner/partner-registered-blind.html')
 
 
 });
 
-router.post('/coa-combined/v1/where-you-live-now/owned/check-your-details', function (req, res) {
-req.session.data['liveNow']="completed"
-  res.redirect('/coa-combined/v1/task-list.html')
-
-
-});
-
-router.post('/coa-combined/v1/where-you-lived-before/owned/check-your-details', function (req, res) {
-req.session.data['livedBefore']="completed"
-  res.redirect('/coa-combined/v1/task-list.html')
+// ROUTING FROM PARTNER DETAILS TO REGISTERED BLIND
+router.post('/coa-combined/v1/partner/partner-registered-blind', function (req, res) {
+  res.redirect('/coa-combined/v1/partner/partner-check-your-details.html')
 
 
 });
 
 
 
+////////////////////////////////////////
+////////////////////////////////////////
+////////////// YOUR MONEY //////////////
+////////////////////////////////////////
+////////////////////////////////////////
 
 
 
+///////////////////////////////////////////////
+/////////// SAVINGS AND INVESTMENTS////////////
+///////////////////////////////////////////////
+
+// ROUTING FROM SELECT INVESTMENTS TO MONEY YOU HAVE TODAY
+router.post('/coa-combined/v1/s&i/capital-select-capital', function (req, res) {
+  res.redirect('/coa-combined/v1/s&i/capital-total-today.html')
 
 
+});
+
+// ROUTING FROM SELECT INVESTMENTS TO MONEY YOU HAVE TODAY
+router.post('/coa-combined/v1/s&i/capital-total-today', function (req, res) {
+  res.redirect('/coa-combined/v1/s&i/capital-check-answers.html')
 
 
-
-
-
-
+});
 
 
 

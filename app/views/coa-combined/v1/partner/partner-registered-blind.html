@@ -1,14 +1,14 @@
-{% extends "layouts/ol_signed_in" %}
+{% extends "layouts/ol_signed_in.html" %}
 
 {% block pageTitle %}
-  Is your partner registered blind?? - Manage your State Pension - GOV.UK
+  Have you already moved into this property? - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="partner-details-check-answers" method="post">
+      <form class="form" method="post">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -17,6 +17,7 @@
                 Is your partner registered blind?
               </h1>
             </legend>
+
 
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
@@ -35,7 +36,7 @@
           </fieldset>
         </div>
 
-        <button class="govuk-button" data-module="govuk-button">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
           Continue
         </button>
       </form>

@@ -6,13 +6,14 @@
 {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <!-- <p><a href="javascript:history.back()" class="govuk-back-link govuk-!-static-margin-0">Back</a></p> -->
-
+      <form class="form"  method="post">
+        <div class="govuk-form-group">
         <form method="post" >
 
         <div class="govuk-form-group govuk-!-padding-top-7">
         <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <span class="govuk-caption-l">Savings an Investments</span>
             <h1 class="govuk-fieldset__heading">
                 {{pageName}}
             </h1>
@@ -38,7 +39,7 @@
                     </label>
                 </div>
                 <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="capitalTypes-" name="capitalTypes" type="checkbox" value="ISAs">
+                    <input class="govuk-checkboxes__input" id="capitalTypes-3" name="capitalTypes" type="checkbox" value="ISAs">
                     <label class="govuk-label govuk-checkboxes__label" for="capitalTypes-">
                         Individual Savings Accounts (ISAs)<br>
                         <span class="govuk-hint">Including cash ISAs, Lifetime ISAs, stocks and shares ISAs, and innovative finance ISAs.</span>
@@ -101,6 +102,7 @@
             </div>
         </fieldset>
         </div>
+    </div>
 
         <button type="submit" class="govuk-button" data-module="govuk-button">
             Continue
@@ -108,6 +110,14 @@
 
         </form>
 
+        
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">
+        Get help
+      </h2>
+      <p><a href="../contact-pension-service&help" target="_blank">Contact us by phone to get help with the online service (opens in new tab)</a></p>
     </div>
 </div>
 

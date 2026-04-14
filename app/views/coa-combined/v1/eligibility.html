@@ -1,0 +1,107 @@
+{% extends "layouts/ol_signed_in.html" %}
+
+{% block pageTitle %}
+  Have you already moved into this property? - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="pension-credit-warm-up" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <span class="govuk-caption-l"></span>
+              <h1 class="govuk-fieldset__heading">
+                We need more information about your move
+              </h1>
+            </legend>
+            <div><br>
+
+            <h2 class="govuk-heading-s">Do you rent where you live now?</h2>      
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="rent-now" name="rent-now" type="radio" value="Yes" {{ checked("rent-now", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="about-your-move">
+                  Yes
+                </label>
+                <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="rent-now" name="rent-now" type="radio" value="Yes" {{ checked("rent-now", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="about-your-move">
+                  No
+                </label>
+              </div>
+              </div>
+            </div>
+            <br><br>
+
+            <h2 class="govuk-heading-s">Did you rent where you lived before?</h2>      
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="rent-before" name="rent-before" type="radio" value="Yes" {{ checked("rent-before", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="about-your-move">
+                  Yes
+                </label>
+                <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="rent-before" name="rent-before" type="radio" value="No" {{ checked("rent-before", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="about-your-move">
+                  No
+                </label>
+              </div>
+              </div>
+              
+            </div>
+            <br><br>
+
+            <h2 class="govuk-heading-s">Do you live alone, or only with your husband, wife or partner?</h2>      
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="partner-only" name="partner-only" type="radio" value="No" {{ checked("partner-only", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="about-your-move">
+                  Yes
+                </label>
+                <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="partner-only" name="partner-only" type="radio" value="No" {{ checked("partner-only", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="about-your-move">
+                  No
+                </label>
+              </div>
+              </div>
+              
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+      <div class="govuk-notification-banner govuk-notification-banner--journey-options" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" data-govuk-notification-banner-init="">
+        <div class="govuk-notification-banner__header govuk-notification-banner__header--journey-options">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Prototype options
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <p class="govuk-body">Journeys</p>
+          <p class="govuk-body">
+            <ul class="govuk-list govuk-list--bullet">
+              <li><a href="pension-credit-warm-up.html">Citizen meets requirements</a></li>
+              <li><a href="../phase1/gysp-v1/have-you-already-moved.html">Citizen doesnt meet requirements</a></li>
+            </ul>
+          </p>
+        </div>
+      </div>
+
+    </div>
+    
+    <!-- <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">
+        Get help
+      </h2>
+      <p><a href="../contact-pension-service&help" target="_blank">Contact us by phone to get help with the online service (opens in new tab)</a></p>
+    </div> -->
+  </div>
+
+{% endblock %}

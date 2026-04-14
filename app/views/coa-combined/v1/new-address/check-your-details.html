@@ -8,7 +8,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-l">About where you live now</span>
+      <span class="govuk-caption-l">Your new address</span>
       <h1 class="govuk-heading-l">Check your details before you submit them</h1>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           {% if (data['other-benefits'] == "Yes") %}
@@ -108,6 +108,56 @@
               </a>
             </dd>
           </div>
+
+          {% elif (data['select-an-address'] == "Select2") %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Home address 
+            </dt>
+            <dd class="govuk-summary-list__value">
+              1 Square Street<br>
+              York<br>
+              YO3 1SQ
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="address-finder/select-an-address">
+                Change<span class="govuk-visually-hidden"> your home address</span>
+              </a>
+            </dd>
+          </div>
+          {% elif (data['select-an-address'] == "Select3") %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Home address 
+            </dt>
+            <dd class="govuk-summary-list__value">
+              1 Square Street<br>
+              York<br>
+              YO3 1SQ
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="address-finder/select-an-address">
+                Change<span class="govuk-visually-hidden"> your home address</span>
+              </a>
+            </dd>
+          </div>
+          {% elif (data['select-an-address'] == "Select4") %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Home address 
+            </dt>
+            <dd class="govuk-summary-list__value">
+              1 Square Street<br>
+              York<br>
+              YO3 1SQ
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="address-finder/select-an-address">
+                Change<span class="govuk-visually-hidden"> your home address</span>
+              </a>
+            </dd>
+          </div>
+
           {% else %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
@@ -124,62 +174,6 @@
               </a>
             </dd>
           </div>
-          {% endif %}
-          
-          {% if (data['select-an-address'] == "Select2") %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width:40%;">
-              Your address 
-            </dt>
-            <dd class="govuk-summary-list__value">
-              84 Square Street<br>
-              York<br>
-              YO3 1SQ
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="">
-                Change<span class="govuk-visually-hidden"> your home address</span>
-              </a>
-            </dd>
-          </div>
-          {% endif %}
-
-          {% if (data['select-an-address'] == "Select3") %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width:40%;">
-              Your address 
-            </dt>
-            <dd class="govuk-summary-list__value">
-              11 Square Street<br>
-              York<br>
-              YO3 1SQ
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="">
-                Change<span class="govuk-visually-hidden"> your home address</span>
-              </a>
-            </dd>
-          </div>          
-          {% endif %}
-
-          {% if (data['select-an-address'] == "Select4") %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width:40%;">
-              Your address 
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['new-address-line-1'] }}<br>
-              {{ data['new-address-line-2'] }}<br>
-              {{ data['new-town-1'] }}<br>
-              {{ data['county-1'] }}<br>
-              {{ data['new-postcode-1'] }}<br>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="">
-                Change<span class="govuk-visually-hidden"> your home address</span>
-              </a>
-            </dd>
-          </div>          
           {% endif %}
         </dl>
      

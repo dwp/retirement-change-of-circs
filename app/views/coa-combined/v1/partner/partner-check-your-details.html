@@ -1,0 +1,157 @@
+{% extends "layouts/ol_signed_in.html" %}
+
+{% block pageTitle %}
+  Check your details - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Your partner</span>
+      <h1 class="govuk-heading-l">Check your details before you submit them</h1>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          {% if (data['partner'] == "Yes") %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Do you live with a partner?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['partner'] %}
+                {{ data['partner'] }}
+              {% else %}
+                James Avery
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="do-you-live-with-a-partner.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['partner-record-day']%}
+                {{ data['first-name']}} {{ data['last-name'] }}
+              {% else %}
+                Mark Davies
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="partner-details.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              National insurance number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['nino'] %}
+                {{ data['nino'] }}
+              {% else %}
+                JC212121 C
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="partner-details.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['partner-record-day']%}
+                {{data['partner-record-day']}} {{data['partner-record-month'] | monthName}} {{data['partner-record-year']}}
+              {% else %}
+                1 March 2025
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="partner-details.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Is your partner registered blind?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['partner-blind'] %}
+                {{ data['partner-blind'] }}
+              {% else %}
+                Yes, I have a mortgage
+              {% endif %}  
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="partner-registered-blind.html">
+                Change<span class="govuk-visually-hidden"> if your moving this property</span>
+              </a>
+            </dd>     
+          {% else %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Do you live with a partner?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['partner'] %}
+                {{ data['partner'] }}
+                {% else %}
+                  No
+                {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="do-you-live-with-a-partner.html">
+                Change<span class="govuk-visually-hidden"> your home address</span>
+              </a>
+            </dd>
+          </div>
+          {% endif %}
+          </dl>
+
+        
+        
+     
+        <form method="post" novalidate>
+          <input type="hidden" name="answers-checked" value="true">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+        </form>
+    </div>
+  </div>
+
+{% endblock %}
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "../2-0/check-answers.html",
+            text: "Lighter declaration",
+            attributes: {
+              target: "_blank"
+            }
+          },
+          {
+            href: "https://govuk-prototype-kit.herokuapp.com/",
+            text: "GOV.UK Prototype Kit " + releaseVersion
+          },
+          {
+            href: "/prototype-admin/clear-data",
+            text: "Clear data"
+          }
+        ],
+        visuallyHiddenTitle: "Footer links"
+      }
+    }) }}
+  {% endblock %}

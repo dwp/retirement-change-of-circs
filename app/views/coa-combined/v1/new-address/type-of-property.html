@@ -8,7 +8,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/property-type1" method="post">
+      <form class="form" method="post">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -37,13 +37,13 @@
               </div>
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="property-type" name="property-type" type="radio" value="Hospital" {{ checked("property-type", "hospital") }}>
-                <label class="govuk-label govuk-radios__label" for="hspital">
+                <label class="govuk-label govuk-radios__label" for="hospital">
                   Hospital
                 </label>
               </div>
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="property-type" name="property-type" type="radio" value="Care home" {{ checked("property-type", "care-home") }}>
-                <label class="govuk-label govuk-radios__label" for="care-home">
+                <label class="govuk-label govuk-radios__label" for="carehome">
                   Care home
                 </label>
               </div>
@@ -72,7 +72,7 @@
           </fieldset>
           </div>
 
-        <button class="govuk-button" data-module="govuk-button">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
           Continue
         </button>
       </form>
