@@ -1,0 +1,49 @@
+{% extends "layouts/ol_signed_in.html" %}
+
+{% block pageTitle %}
+  Confirmation
+{% endblock %}
+
+{% block beforeContent %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-panel govuk-panel--confirmation">
+ <h1 class="govuk-panel__title">Your request to opt out has been submitted</h1>
+</div>
+
+<p class="govuk-body">We will send you an email when you have been successfully opted out.</p>
+<p class="govuk-body"><strong>What happens next</strong></p>
+<p class="govuk-body">You will not get the Winter Fuel Payment. You will stay opted out unless you tell us you want to opt back in.</p>
+<p class="govuk-body">You can opt back in at any time by contacting the Winter Fuel Payment Centre.</p>
+
+          
+
+
+ <p class="govuk-body">
+ 
+{% if data['reminders'] == 'yes' and data['decision'] == 'yes' %}
+  <p class="govuk-body">We will email each year to remind you that you have opted out and can choose to opt back in.</p>
+
+{% elif data['reminders'] == 'yes' and data['decision'] == 'no' %}
+  <p class="govuk-body">We will remind you that you can opt out using this service.</p>
+
+{% else %}
+  <!-- <p class="govuk-body">No selection has been made</p> -->
+{% endif %}
+
+
+
+
+        <div class="govuk-inset-text">
+  <a href ="/wf-opt-out/2-0/your-state-pension">View your State Pension and Winter Fuel Payment details</a>
+</div>
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends "layout_nowelsh.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+         Complete
+        </strong><br>
+        Winter Fuel opt out (GySP)
+      </h1>
+      <h2 class="govuk-heading-m">Set up custom data</h2>
+      <div class="govuk-inset-text">
+        <p><a href="admin.html">Use this page to set up custom data</a> that will apply across the prototype journeys.</p>
+        <p>To clear any data entered, use the 'Clear data' link in the grey footer.</p>
+      </div>
+
+      <h2 class="govuk-heading-m">Happy path end-to-end journey</h2>
+      <a href="report-a-change.html" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">Start now</a>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Jump to a page in the journey
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <h3 class="govuk-heading-s">Opt out journey</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/wf-opt-out/2-0/report-a-change">GOV.UK guidance page</a></li>
+            <li><a href="/wf-opt-out/2-0/options">Opt Out landing page</a></li>
+           <li><a href="/wf-opt-out/2-0/options-second">Signing in to MySP</a></li>
+            <li><a href="/wf-opt-out/2-0/sign-in">Create a GOV.UK One Login or sign in
+</a></li>
+            <li><a href="/wf-opt-out/2-0/login-email">Enter email address to sign in</a></li>
+            <li><a href="/wf-opt-out/2-0/login-password">Enter password to sign in</a></li>
+            <li><a href="/wf-opt-out/2-0/login-text">Enter text code to sign in</a></li>
+            <li><a href="/wf-opt-out/2-0/sign-in-successful">Signed in confirmation</a></li>
+            <li><a href="/wf-opt-out/2-0/email">Submit a request to opt out</a></li>           
+            <li><a href="/wf-opt-out/2-0/check-answers" target="_blank">Check your answers</a>
+            <li><a href="/wf-opt-out/2-0/confirmation" target="_blank">Confirmation of opt out request</a>
+            <li><a href="/wf-opt-out/2-0/your-state-pension" target="_blank">MySP Overview page</a>
+          </ul>
+        </div>
+      </details>
+
+      <h2 class="govuk-heading-m">Version notes</h2>
+      <h2 class="govuk-heading-s">Opting out of winter fuel payments in MySP</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="https://dwpdigital.atlassian.net/browse/RS-1968">Epic for this piece of work</a></li>
+        <!-- <li>JIRA ticket for iterations TBC</li> -->
+        <li>Based on <a href="https://lucid.app/lucidspark/24bb7a34-3fcd-47bc-9b66-82427ee32740/edit?invitationId=inv_cb607dd9-caaa-4251-9f1e-1e528a11c2cc" target="_blank">Lucid board for designs and workshops</a>
+        <li><a href="https://dwpdigital.atlassian.net/wiki/spaces/RD1/pages/134208488049">Design documentation</a>
+        </ul>
+      </ul>
+<!-- 
+      <h2 class="govuk-heading-m">Additional pages</h2>
+      <h2 class="govuk-heading-s">Bank validation errors</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="we-cannot-find-this-account.html" target="_blank">We cannot find this account</a>
+        <li><a href="we-cannot-pay-money-to-this-account.html" target="_blank">We cannot pay money to this account</a>
+        <li><a href="you-can-only-use-this-service-with-a-uk-account.html" target="_blank">You can only use this service with a UK bank or building society account</a>
+        <li><a href="can-only-use-an-account-you-own.html">Can only use an account thats yours</a></li>
+        <li><a href="cannot-confirm-you-own-this-account.html">We cannot confirm you own this account</a></li>    
+      </ul>
+
+
+      <h2 class="govuk-heading-m">Alternative pages</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="">TODO</li>
+      </ul> -->
+
+{% endblock %}
+
+
+

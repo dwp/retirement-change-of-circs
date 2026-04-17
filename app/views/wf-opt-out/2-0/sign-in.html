@@ -1,0 +1,54 @@
+{% extends "layout_dwp_unbranded" %}
+
+{% block pageTitle %}
+One login
+{% endblock %}
+
+{% block content %}
+<!-- 
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %} -->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+     Create a GOV.UK One Login or sign in
+    </h1>
+
+    <p>You can use your GOV.UK One Login to access some government services.</p>
+    <p>In the future, you'll be able to use it to access all services on GOV.UK.</p>
+
+    <p>You'll need:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>an email address</li>
+      <li>a way to get security codes - this can be a mobile phone number or an authenticator app</li>
+    </ul>
+
+    <div class="govuk-inset-text">
+      You can also use <a href="#">GOV.UK One Login in Welsh.</a>
+    </div>
+
+    <form action="/wf-opt-out/2-0/sign-in" method="post" novalidate>
+      <br>
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Create your GOV.UK One Login
+      </button>
+
+          <form action="/wf-opt-out/2-0/sign-in" method="post" novalidate>
+      <br>
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Sign in
+      </button>
+
+      <p><a href="https://home.account.gov.uk/services-using-one-login">Services you can use with GOV.UK One Login
+          (opens in new tab)
+        </a></p>
+
+
+    </form>
+    </form>
+  </div>
+  
+  {% endblock %}

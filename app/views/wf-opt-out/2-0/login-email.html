@@ -1,0 +1,39 @@
+{% extends "layout_dwp_unbranded" %}
+
+{% block pageTitle %}
+  One Login email
+{% endblock %}
+
+{% block content %}
+
+<!-- 
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %} -->
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+ <h1 class="govuk-heading-l">
+        Enter your email address to sign in to your GOV.UK One Login
+      </h1>
+
+<div class="govuk-form-group">
+  <form class="form" action="/wf-opt-out/2-0/login-email" method="post">
+  <!-- <label class="govuk-label" for="email">
+    Email address
+  </label>
+  <div id="email-hint" class="govuk-hint">
+   We need this to send you a confirmation that we have received your request and that your address details have been updated.
+  </div> -->
+  <input class="govuk-input" id="login-email" name="login-email" type="login-email" spellcheck="false" aria-describedby="email-hint" autocomplete="email">
+
+</div>
+
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+</form>
+
+
+
+{% endblock %}

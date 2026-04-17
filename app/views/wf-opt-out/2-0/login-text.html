@@ -1,0 +1,38 @@
+{% extends "layout_dwp_unbranded" %}
+
+{% block pageTitle %}
+  One Login text code
+{% endblock %}
+
+{% block content %}
+
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+ <h1 class="govuk-heading-l">
+        Check your phone
+      </h1>
+
+      <div class="govuk-inset-text">
+  We have sent a code to your phone number ending <strong>123</strong>
+</div>
+
+<p>It might take a few minutes to arrive. The code will expire after 15 minutes.</p>
+
+<div class="govuk-form-group">
+    <form class="form" action="/wf-opt-out/2-0/login-text" method="post">
+  <label class="govuk-label" for="width-10">
+    Enter the 6 digit security code
+  </label>
+  <input class="govuk-input govuk-input--width-10" id="width-10" name="width10" type="text">
+
+</div>
+
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+</form>
+
+
+
+{% endblock %}

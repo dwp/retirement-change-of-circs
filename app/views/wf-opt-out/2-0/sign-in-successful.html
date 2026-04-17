@@ -1,0 +1,91 @@
+{% extends "layout_dwp_unbranded" %}
+
+{% block pageTitle %}
+One login successful 
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+     You have already proved your identity
+    </h1>
+
+    <p>You have already proved your identity with GOV.UK One Login. You would have done this online or in person at the Post Office.</p>
+    <p>You can now continue to the service you need to use.</p>
+
+     <h2 class="govuk-heading-m">
+      Check your details
+    </h2>
+
+    <p>You submitted the following details when you proved your identity. You might want to check your details are still correct if you've not signed in to GOV.UK One Login in a while.</p>
+
+<p>Some of these details might be used to automatically fill in forms within the service you need to use.</p>
+
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Full name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      A Jones
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+     Current home address
+    </dt>
+    <dd class="govuk-summary-list__value">
+      6 April 1961
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="govuk-summary-list__value">
+      123 Square Street<br>York<br>YO3 1SQ
+    </dd>
+  </div>
+</dl>
+
+<details class="govuk-details" closed="">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      If your details are wrong
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p><strong>If your details have changed</strong></p>
+    <p>Your proof of identity is still valid even if your details have changed.</p>
+     <p>You do not need to update your details to continue to the service you need to use.
+</p>
+  <p>When you continue, GOV.UK One Login will share your saved details with the service.
+</p>
+  <p>If you need to, you can <a href="url">update your details.</a>
+</p>
+  <p><strong>If there is a mistake in your name
+</strong>
+</p>
+  <p><a href="url">Contact the GOV.UK One Login team (opens in new tab)</a> if there is a mistake in your name. For example, if your name is missing letters or a hyphen.
+</p>
+<p>Do not try to update your details or prove your identity again unless the GOV.UK One Login team has told you to.</p>
+
+  </div>
+</details>
+
+
+    <form action="/wf-opt-out/2-0/sign-in-successful" method="post" novalidate>
+      <br>
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
+    </form>
+  </div>
+
+  {% endblock %}

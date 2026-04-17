@@ -1,0 +1,50 @@
+{% extends "layouts/ol_signed_in.html" %}
+
+{% block pageTitle %}
+  Email address
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+ <h1 class="govuk-heading-l">
+        Submit a request to opt out of the Winter Fuel Payment
+      </h1>
+
+      <p>You will not get any more Winter Fuel Payments unless you opt back in.</p>
+         <p>Opting out does not affect your State Pension.</p>
+
+ <h2 class="govuk-heading-m">
+        What is your email address?
+      </h2>
+
+<div class="govuk-form-group">
+  <form class="form" action="/wf-opt-out/2-0/email" method="post">
+  <!-- <label class="govuk-label" for="email">
+    Email address
+  </label> -->
+  <div id="email-hint" class="govuk-hint">
+   We need this to send you a confirmation that we have received your request and let you know when your request has been completed.
+  </div>
+  <input class="govuk-input" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email">
+
+</div>
+
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+</form>
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">
+        Get help
+      </h2>
+      <p><a href="" target="_blank">Get help using the online service (opens in new tab)</a></p>
+    </div>
+  </div>
+
+
+{% endblock %}

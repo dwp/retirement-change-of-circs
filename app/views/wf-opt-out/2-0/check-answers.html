@@ -1,0 +1,55 @@
+{% extends "layouts/ol_signed_in.html" %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+
+    <h1 class="govuk-heading-xl">
+      Check your answers before submitting your opt out request
+    </h1>
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "What is your email address?"
+      },
+      value: {
+        text: data['email']
+      },
+      actions: {
+        items: [
+          {
+            href: "/wf-opt-out/2-0/email",
+            text: "Change",
+            visuallyHiddenText: "What is your email address?"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+
+
+    <h2 class="govuk-heading-m">Submit your opt out request</h2>
+    <p class="govuk-body">By submitting this request you confirm that you do not want to receive the Winter Fuel
+      Payment. You will not get this payment until you opt back in.</p>
+    <p class="govuk-body">Once submitted you cannot use this service to opt back in. You must contact the Winter Fuel
+      Payment Centre.</p>
+    <form action="/wf-opt-out/2-0/check-answers" method="post" novalidate>
+      <input type="hidden" name="answers-checked" value="true">
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Confirm and submit
+      </button>
+    </form>
+
+
+  </div>
+</div>
+{% endblock %}
