@@ -3628,6 +3628,38 @@ router.post('/wf-opt-out/1-0/sign-in', function (req, res) {
   res.redirect('/wf-opt-out/1-0/login-email');
 });
 
+router.post('/wf-opt-out/2-0/sign-in', function (req, res) {
+  res.redirect('/wf-opt-out/2-0/login-email');
+});
+
+router.post('/wf-opt-out/2-0/login-email', function (req, res) {
+  res.redirect('/wf-opt-out/2-0/login-password');
+});
+
+router.post('/wf-opt-out/2-0/login-password', function (req, res) {
+  res.redirect('/wf-opt-out/2-0/login-text');
+});
+
+router.post('/wf-opt-out/2-0/login-text', function (req, res) {
+  res.redirect('/wf-opt-out/2-0/sign-in-successful');
+});
+
+router.post('/wf-opt-out/2-0/sign-in-successful', function (req, res) {
+  res.redirect('/wf-opt-out/2-0/email');
+});
+
+router.post('/wf-opt-out/2-0/email', function (req, res) {
+  res.redirect('/wf-opt-out/2-0/check-answers');
+});
+
+router.post('/wf-opt-out/2-0/check-answers', function (req, res) {
+  res.redirect('/wf-opt-out/2-0/confirmation');
+});
+
+router.post('/wf-opt-out/2-0/confirmation', function (req, res) {
+  res.redirect('/wf-opt-out/2-0/your-state-pension');
+});
+
 
 
 
