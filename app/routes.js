@@ -3645,7 +3645,7 @@ router.post('/wf-opt-out/2-0/login-text', function (req, res) {
 });
 
 router.post('/wf-opt-out/2-0/sign-in-successful', function (req, res) {
-  res.redirect('/wf-opt-out/2-0/email');
+  res.redirect('/wf-opt-out/2-0/your-state-pension');
 });
 
 router.post('/wf-opt-out/2-0/email', function (req, res) {
