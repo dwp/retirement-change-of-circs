@@ -1,8 +1,8 @@
 
-{% set serviceName = 'Apply for Pension Credit' %}
+{% set serviceName = 'Manage your State Pension' %}
 {% extends "/layouts/main.html" %}
 
-{% set pageName = "Does anyone aged 19 or under live with you?" %}
+{% set pageName = "Do they work for more than 16 hours per week?" %}
 
 {% block beforeContent %}
 {{ govukPhaseBanner({
@@ -27,11 +27,12 @@
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                     <span class="govuk-caption-l">Your partner</span>
                 <h1 class="govuk-fieldset__heading">
-                    Are you sure you want to remove {% if data['first-name']%}
+                    Does {% if data['first-name']%}
                 {{ data['first-name']}} {{ data['last-name'] }}
               {% else %}
                 Mark Davies
-              {% endif %}?
+              {% endif %}
+              work for more than 16 hours per week?
                 </h1>
                 </legend>
                 <!-- <p class="govuk-body govuk-hint" id="hint">Children are under age 16. A qualifying young person is aged 16 to 19 and in non-advanced full-time education or training.</p> -->
@@ -39,14 +40,14 @@
 
                 <div class="govuk-radios govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="partnerRemove" name="partnerRemove" type="radio" value="Yes">
-                    <label class="govuk-label govuk-radios__label" for="partnerRemove">
+                    <input class="govuk-radios__input" id="partnerWork" name="partnerWork" type="radio" value="Yes">
+                    <label class="govuk-label govuk-radios__label" for="partnerWork">
                     Yes
                     </label>
                 </div>
                 <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="partnerRemove" name="partnerRemove" type="radio" value="No">
-                    <label class="govuk-label govuk-radios__label" for="partnerRemove">
+                    <input class="govuk-radios__input" id="partnerWork" name="partnerWork" type="radio" value="No">
+                    <label class="govuk-label govuk-radios__label" for="partnerWork">
                     No
                     </label>
                 </div>

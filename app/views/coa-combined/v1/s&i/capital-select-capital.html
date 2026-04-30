@@ -13,15 +13,26 @@
         <div class="govuk-form-group govuk-!-padding-top-7">
         <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                <span class="govuk-caption-l">Savings an Investments</span>
+                <span class="govuk-caption-l">Savings and investments</span>
+
+                {%if data['partner'] == 'Yes'%}
             <h1 class="govuk-fieldset__heading">
-                {{pageName}}
+                Do you or your partner have money in any of these?
             </h1>
             </legend>
             <div class="govuk-hint">
                 Select all options that are relevant to you both.
             </div>
-
+            {% else %}
+            <h1 class="govuk-fieldset__heading">
+                Do you have money in any of these?
+            </h1>
+            </legend>
+            <div class="govuk-hint">
+                Select all options that are relevant to you.
+            </div>
+            {% endif %}      
+            
             <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                 <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="capitalTypes" name="capitalTypes" type="checkbox" value="bank and building society accounts">

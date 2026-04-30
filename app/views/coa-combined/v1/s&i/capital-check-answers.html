@@ -2,7 +2,7 @@
 {% extends "layouts/ol_signed_in.html" %}
 
 
-{% set pageName = "Check your shares in {{ data['shareCompany'] }}" %}
+{% set pageName = "Check your answers about your money and investments" %}
 
 {% block beforeContent %}
 {{ govukPhaseBanner({
@@ -18,16 +18,23 @@
 <div class="govuk-grid-row ">
       <div class="govuk-grid-column-two-thirds">
        <p><a href="javascript:history.back()" class="govuk-back-link govuk-!-static-margin-0">Back</a></p>
-       <span class="govuk-caption-l">Savings an Investments</span>
+       <span class="govuk-caption-l">Savings and investments</span>
 
-        <h1 class="govuk-heading-l">Check your money and investments</h1>
+        <h1 class="govuk-heading-l">Check your answers about your money and investments</h1>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
           {%if data['capitalTypes']%}
           <div class="govuk-summary-list__row">
+            {%if data['partner'] == 'Yes'%}
+            <dt class="govuk-summary-list__key">
+              Where you and your partner have money
+            </dt>
+
+            {% else%}
             <dt class="govuk-summary-list__key">
               Where you have money
             </dt>
+            {%endif%}
             <dd class="govuk-summary-list__value">
               <ul class="govuk-list govuk-list--bullet">
                 {% for bullet in data['capitalTypes']%}
@@ -42,10 +49,16 @@
           {%endif%}
 
           {%if data['todayTotal']%}
-          <div class="govuk-summary-list__row">
+            <div class="govuk-summary-list__row">
+            {%if data['partner'] == 'Yes'%}
             <dt class="govuk-summary-list__key">
-              How much money you have today
+              Money you and your partner have today
             </dt>
+            {% else%}
+            <dt class="govuk-summary-list__key">
+              Money you have today
+            </dt>
+            {% endif %}
 
             <dd class="govuk-summary-list__value">
               £{% if data['todayTotal'] %}
@@ -58,10 +71,16 @@
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="capital-total-today">Change<span class="govuk-visually-hidden">where you or your partner keep your money</span></a>
             </dd>
-          </div>
-          {%endif%}
-
-          
+            </div>
+          {% else %}
+          <dd class="govuk-summary-list__value">
+              £{% if data['todayTotal'] %}
+                {{ data['todayTotal'] }}
+              {% else %}
+                3000
+              {% endif %}
+          </dd>
+        {%endif%}
 
         </dl>
 

@@ -1,7 +1,7 @@
-{% extends "layouts/ol_signed_in" %}
+{% extends "layouts/ol_signed_in.html" %}
 
 {% block pageTitle %}
-Do you live with a partner? - Manage your State Pension - GOV.UK
+  Has [partner name] been in hospital for a period of more than four weeks? - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
@@ -14,27 +14,26 @@ Do you live with a partner? - Manage your State Pension - GOV.UK
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <span class="govuk-caption-l">Your partner</span>
               <h1 class="govuk-fieldset__heading">
-                Do you live with a partner?
+                Has {% if data['first-name']%}
+                {{ data['first-name']}} {{ data['last-name'] }}
+              {% else %}
+                Mark Davies
+                {% endif %}
+                been in hospital for a period of more than four weeks?
               </h1>
             </legend>
-            <div id="account-number-hint" class="govuk-hint">
-              A partner is a husband, wife, civil partner or someone you are in a relationship with. If you have a partner you do not live with we do not need to ask about them.
-            </div>
 
-            <!-- <p class="govuk-body">
-              You can only change your address after you have moved.
-            </p> -->
 
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="partner" name="partner" type="radio" value="Yes" {{ checked("partner", "Yes") }}>
-                <label class="govuk-label govuk-radios__label" for="partner-yes">
+                <input class="govuk-radios__input" id="partner-hospital-stay" name="partner-hospital-stay" type="radio" value="Yes" {{ checked("partner-hospital-stay", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="partner-blind-yes">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="partner" name="partner" type="radio" value="No" {{ checked("partner", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="partner-no">
+                <input class="govuk-radios__input" id="ppartner-hospital-stay" name="partner-hospital-stay" type="radio" value="No" {{ checked("partner-hospital-stay", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="partner-blind-no">
                   No
                 </label>
               </div>

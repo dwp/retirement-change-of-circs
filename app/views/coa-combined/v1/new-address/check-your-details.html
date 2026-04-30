@@ -1,7 +1,7 @@
 {% extends "layouts/ol_signed_in.html" %}
 
 {% block pageTitle %}
-  Check your details - Manage your State Pension - GOV.UK
+  Check your answers about your new address - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
@@ -9,13 +9,13 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <span class="govuk-caption-l">Your new address</span>
-      <h1 class="govuk-heading-l">Check your details before you submit them</h1>
+      <h1 class="govuk-heading-l">Check your answers about your new address</h1>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           {% if (data['other-benefits'] == "Yes") %}
           {% endif %}  
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              Have you moved to your new address?
+              Already moved
             </dt>
             <dd class="govuk-summary-list__value">
               Yes
@@ -28,7 +28,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              Is this move permanent or temporary?
+              Permanent or temporary
             </dt>
             <dd class="govuk-summary-list__value">
               Permanent
@@ -41,7 +41,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              Is your new address in the UK?
+              UK address 
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['uk-address'] %}
@@ -59,7 +59,7 @@
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              What type of property is it?
+              Property type
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['property-type'] %}
@@ -76,7 +76,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              When did you move to your new address?
+              Date moved
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['citizen-record-day']%}
@@ -95,7 +95,7 @@
           {% if (data['select-an-address'] == "Select1") %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              Home address 
+              New address
             </dt>
             <dd class="govuk-summary-list__value">
               1 Square Street<br>

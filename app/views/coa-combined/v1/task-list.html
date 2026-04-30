@@ -1,4 +1,4 @@
-{% extends "layouts/ol_signed_in" %}
+{% extends "layouts/ol_signed_in_noback" %}
 
 {% block pageTitle %}
   Change your address for State Pension and Pension Credit - Manage your State Pension - GOV.UK
@@ -8,7 +8,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="" method="post">
+      <form class="form" method="post">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -69,7 +69,7 @@
                             where-you-live-now/rent/housing-costs?liveNow=inprogress
                         {% endif %}
                     " aria-describedby="company-details-5-status">
-                        About where you live now
+                        Where you live now
                     </a>
                     </div>
                     {% if data.liveNow == 'completed' %}
@@ -90,38 +90,6 @@
                         </div>
                     {%endif%}
                 </li>
-                <!-- <li class="govuk-task-list__item govuk-task-list__item--with-link">
-                    <div class="govuk-task-list__name-and-hint">
-                    <a class="govuk-link govuk-task-list__link" href="
-                        {% if data.livedBefore == 'completed' %}
-                            application-restart-section?section=outofUk
-                        {% elif data.livedBefore == 'inprogress' %}
-                            application-restart-section?section=outofUk
-                        {% else %}
-                            where-you-live-now/housing-status?livedBefore=inprogress
-                        {% endif %}
-                    " aria-describedby="company-details-5-status">
-                        About where you lived before
-                    </a>
-                    </div>
-                    {% if data.livedBefore == 'completed' %}
-                        <div class="govuk-task-list__status" id="company-details-1-status">
-                            Completed
-                        </div>
-                    {% elif data.livedBefore == 'inprogress'%}
-                        <div class="govuk-task-list__status" id="company-details-5-status">
-                            <strong class="govuk-tag govuk-tag--orange">
-                                In progress
-                            </strong>
-                        </div>
-                    {% else %}
-                        <div class="govuk-task-list__status" id="company-details-5-status">
-                            <strong class="govuk-tag govuk-tag--blue">
-                                Not started yet
-                            </strong>
-                        </div>
-                    {%endif%}
-                </li> -->
             </ul>
 
             <h2 class="govuk-heading-m">People who live with you</h2>
@@ -157,27 +125,36 @@
                         </div>
                     {%endif%}
                 </li>
+            </ul>
 
-                <!-- <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <h2 class="govuk-heading-m">Your money</h2>
+            <ul class="govuk-task-list">
+                
+
+            {% if data.partnerDetails == 'completed' %}
+
+                <li class="govuk-task-list__item govuk-task-list__item--with-link">
                     <div class="govuk-task-list__name-and-hint">
                     <a class="govuk-link govuk-task-list__link" href="
-                        {% if data.outofUKStatus == 'completed' or data.outofUKStatus == 'inprogress' %}
-                            application-restart-section?section=outofUk
+                        {% if data.savingsInvestments == 'completed' %}
+                            s&i/capital-select-capital?section=savingsInvestments
+                        {% elif data.savingsInvestments == 'inprogress' %}
+                            s&i/capital-select-capital?section=savingsInvestments
                         {% else %}
-                            outofUK/outofuk?outofUKStatus=inprogress
+                            s&i/capital-select-capital?savingsInvestments=inprogress
                         {% endif %}
                     " aria-describedby="company-details-5-status">
-                        Children or qualifying young people
+                        Savings and investments
                     </a>
                     </div>
-                    {% if data.outofUKStatus == 'completed' %}
+                    {% if data.savingsInvestments == 'completed' %}
                         <div class="govuk-task-list__status" id="company-details-1-status">
                             Completed
                         </div>
-                    {% elif data.outofUKStatus == 'inprogress'%}
+                    {% elif data.savingsInvestments == 'inprogress'%}
                         <div class="govuk-task-list__status" id="company-details-5-status">
-                            <strong class="govuk-tag govuk-tag--orange">
-                                In progress
+                            <strong class="govuk-tag govuk-tag--blue">
+                                Not started yet
                             </strong>
                         </div>
                     {% else %}
@@ -188,42 +165,7 @@
                         </div>
                     {%endif%}
                 </li>
-                <li class="govuk-task-list__item govuk-task-list__item--with-link">
-                    <div class="govuk-task-list__name-and-hint">
-                    <a class="govuk-link govuk-task-list__link" href="
-                        {% if data.outofUKStatus == 'completed' or data.outofUKStatus == 'inprogress' %}
-                            application-restart-section?section=outofUk
-                        {% else %}
-                            outofUK/outofuk?outofUKStatus=inprogress
-                        {% endif %}
-                    " aria-describedby="company-details-5-status">
-                        Other people who live with you
-                    </a>
-                    </div>
-                    {% if data.outofUKStatus == 'completed' %}
-                        <div class="govuk-task-list__status" id="company-details-1-status">
-                            Completed
-                        </div>
-                    {% elif data.outofUKStatus == 'inprogress'%}
-                        <div class="govuk-task-list__status" id="company-details-5-status">
-                            <strong class="govuk-tag govuk-tag--orange">
-                                In progress
-                            </strong>
-                        </div>
-                    {% else %}
-                        <div class="govuk-task-list__status" id="company-details-5-status">
-                            <strong class="govuk-tag govuk-tag--blue">
-                                Not started yet
-                            </strong>
-                        </div>
-                    {%endif%}
-                </li> -->
-            </ul>
-
-            <h2 class="govuk-heading-m">Your money</h2>
-            <ul class="govuk-task-list">
-
-
+                {% else %}
                 <li class="govuk-task-list__item govuk-task-list__item--with-link">
                     <div class="govuk-task-list__name-and-hint">
                     <a class="govuk-link govuk-task-list__link" href="
@@ -249,28 +191,45 @@
                             </strong>
                         </div>
                     {% else %}
-                        <div class="govuk-task-list__status" id="company-details-5-status">
-                            <strong class="govuk-tag govuk-tag--blue">
-                                Not started yet
-                            </strong>
+                        <div class="govuk-task-list__status govuk-task-list__status--cannot-start-yet" id="application-details-3-status">
+                            Cannot start yet
                         </div>
                     {%endif%}
                 </li>
+                {%endif%}
             </ul>
 
 
+            {% if data.newAddress == 'completed' and data.liveNow and data.partnerDetails and data.savingsInvestments == 'completed' %}
+
+            <h2 class="govuk-heading-m">Submit your new details</h2>
+            <p class="govuk-body">By submitting this change you are confirming that the information you are giving is complete and correct.</p>
+
+        <form method="post" novalidate>
+          <input type="hidden" name="answers-checked" value="true">
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+        <div class="govuk-inset-text">
+                <a href="your-state-pension.html" class="govuk-link">Return to your State Pension details</a>
+            </div>
+        {% else %}
 
             <h2 class="govuk-heading-m">If you need help</h2>
-        <p class="govuk-body">
-          If you need help or want to tell us about your change of address another way,  <a href="https://www.gov.uk/contact-pension-service/report-changes" class="govuk-link" target="_blank">contact the Pension Service by phone or post (opens in a new tab)</a>.
-        </p>
-        <div class="govuk-inset-text">
-          <a href="your-state-pension.html" class="govuk-link">Return to your State Pension details</a>
-        </div>
+            <p class="govuk-body">
+                If you need help or want to tell us about your change of address another way,  <a href="https://www.gov.uk/contact-pension-service/report-changes" class="govuk-link" target="_blank">contact the Pension Service by phone or post (opens in a new tab)</a>.
+            </p>
+
+            <div class="govuk-inset-text">
+                <a href="your-state-pension.html" class="govuk-link">Return to your State Pension details</a>
+            </div>
 
         </fieldset>
+        {%endif%}
         </div>
     </div>
+    
     <!-- <div class="govuk-grid-column-one-third">
       <h2 class="govuk-heading-m">
         Get help

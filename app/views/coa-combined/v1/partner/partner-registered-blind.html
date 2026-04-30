@@ -14,7 +14,12 @@
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <span class="govuk-caption-l">Your partner</span>
               <h1 class="govuk-fieldset__heading">
-                Is your partner registered blind?
+                Is {% if data['first-name']%}
+                {{ data['first-name']}} {{ data['last-name'] }}
+              {% else %}
+                Mark Davies
+                {% endif %}
+                registered blind?
               </h1>
             </legend>
 

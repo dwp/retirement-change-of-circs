@@ -1,7 +1,7 @@
 {% extends "layouts/ol_signed_in" %}
 
 {% block pageTitle %}
-Do you live with a partner? - Manage your State Pension - GOV.UK
+Money today - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
@@ -12,15 +12,17 @@ Do you live with a partner? - Manage your State Pension - GOV.UK
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <span class="govuk-caption-l">Your partner</span>
+              <span class="govuk-caption-l">Savings and investments</span>
+
+              {%if data['partner'] == 'Yes'%}
               <h1 class="govuk-fieldset__heading">
-                Do you live with a partner?
+                Money you and your partner have today
               </h1>
             </legend>
 
                 <div class="govuk-body">
                     <p>
-                          You must include all the money that you both have in:
+                          Include all the money that you have in:
                         <ul class="govuk-list govuk-list--bullet">
                             {% for item in data['capitalTypes'] %}
                                 {%if item != 'shares' %}
@@ -30,13 +32,7 @@ Do you live with a partner? - Manage your State Pension - GOV.UK
                         </ul>
                     </p>
                 </div>
-
-                {%if data['route'] == '1'%}
-                    <div class="govuk-inset-text">
-                        If you do not enter anything for more than 1 hour, your application will time out and you will have to start again.
-                    </div>
-  {% endif %}
-                    <h2 class="govuk-label-wrapper">
+                                   <h2 class="govuk-label-wrapper">
       <label class="govuk-label govuk-label--m" for="event-name">How much money do you and your partner have today?</label></h2>
             <p {%if data['route'] == '1'%}class="govuk-hint"{%endif%}>
                     Enter an amount in pounds and pence, for example, 100.00
@@ -47,7 +43,46 @@ Do you live with a partner? - Manage your State Pension - GOV.UK
                 </div>
 
             </div>
-            <div>
+
+                {% else %}
+                <h1 class="govuk-fieldset__heading">
+                Money today
+              </h1>
+            </legend>
+
+            
+
+                <div class="govuk-body">
+                    <p>
+                          Include all the money that you have in:
+                        <ul class="govuk-list govuk-list--bullet">
+                            {% for item in data['capitalTypes'] %}
+                                {%if item != 'shares' %}
+                                    <li>{{ item }}</li>
+                                {%endif%}
+                            {% endfor %}
+                        </ul>
+                    </p>
+                </div>
+              
+
+                {%if data['route'] == '1'%}
+                    <div class="govuk-inset-text">
+                        If you do not enter anything for more than 1 hour, your application will time out and you will have to start again.
+                    </div>
+                    {% endif %}
+                    <h2 class="govuk-label-wrapper">
+      <label class="govuk-label govuk-label--m" for="event-name">How much money do you have today?</label></h2>
+            <p {%if data['route'] == '1'%}class="govuk-hint"{%endif%}>
+                    Enter an amount in pounds and pence, for example, 100.00
+                </p>
+                <div class="govuk-input__wrapper">
+                    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                    <input class="govuk-input govuk-input--width-10" id="todayTotal" name="todayTotal" spellcheck="false" type="numeric">
+                </div>
+            </div>
+
+              {% endif %}
 
         <button type="submit" class="govuk-button" data-module="govuk-button">
           Continue
@@ -55,7 +90,6 @@ Do you live with a partner? - Manage your State Pension - GOV.UK
       </form>
     </div>
     
-  </div>
   <div class="govuk-grid-column-one-third">
       <h2 class="govuk-heading-m">
         Get help

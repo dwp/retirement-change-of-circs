@@ -12,9 +12,11 @@ function addDays(date, days) {
 
 
 
-///////////////////////////////////
-//////// TASK LIST STATUS//////////
-///////////////////////////////////
+//////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+//////////////// TASK LIST STATUSES //////////////////
+//////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
 
 router.post('/coa-combined/v1/new-address/check-your-details', function (req, res) {
 req.session.data['newAddress']="completed"
@@ -30,7 +32,7 @@ req.session.data['liveNow']="completed"
 
 });
 
-router.post('/coa-combined/v1/partner/partner-check-your-details', function (req, res) {
+router.post('/coa-combined/v1/partner/partner-added', function (req, res) {
 req.session.data['partnerDetails']="completed"
   res.redirect('/coa-combined/v1/task-list.html')
 
@@ -43,6 +45,35 @@ req.session.data['savingsInvestments']="completed"
 
 
 });
+
+  //ROUTING FROM PENSION CREDIT WARM UP TO TASK LIST
+router.post('/coa-combined/v1/task-list', function (req, res) {
+  res.redirect('/coa-combined/v1/confirmation-screen.html')
+
+
+});
+
+///////////////////////////////////////////////
+///////////////////////////////////////////////
+//////////////// ELIGIBILITY //////////////////
+///////////////////////////////////////////////
+///////////////////////////////////////////////
+
+  //ROUTING ELIGIBILITY TO PENSION CREDIT WARM UP
+router.post('/coa-combined/v1/eligibility', function (req, res) {
+  res.redirect('/coa-combined/v1/pension-credit-warm-up.html')
+
+
+});
+
+  //ROUTING FROM PENSION CREDIT WARM UP TO TASK LIST
+router.post('/coa-combined/v1/pension-credit-warm-up', function (req, res) {
+  res.redirect('/coa-combined/v1/task-list.html')
+
+
+});
+
+
 
 ////////////////////////////////////////
 ////////////////////////////////////////
@@ -222,6 +253,14 @@ router.post('/coa-combined/v1/new-address/address-finder/select-an-address', fun
   } else {
     res.redirect('/coa-combined/v1/new-address/address-finder/check-your-details.html')
   }
+
+});
+
+
+  // ROUTING FOR SINGLE ADDRESS RESULT
+router.post('/coa-combined/v1/new-address/address-finder/address-single-result', function (req, res) {
+  res.redirect('/coa-combined/v1/new-address/address-finder/check-your-details.html')
+
 
 });
 
@@ -480,20 +519,102 @@ router.post('/coa-combined/v1/partner/do-you-live-with-a-partner', function (req
 
 });
 
+// // ROUTING FROM PARTNER DETAILS
+// router.post('/coa-combined/v1/partner/partner-details', function (req, res) {
+
+//   // Make a variable and give it the value from 'partner-record-year'
+//   var selectPartner = req.session.data['partner-record-year']
+//         console.log("high", req.session.data['partner-record-year'])
+
+//   // Check whether the variable matches a condition
+//   if (selectPartner == "2000"){
+//     // Send user to next page
+//     res.redirect('/coa-combined/v1/partner/partner-details.html')
+//   } else {
+//     res.redirect('/coa-combined/v1/partner/do-they-work.html')
+//   }
+
+// });
+
 // ROUTING FROM PARTNER DETAILS TO REGISTERED BLIND
 router.post('/coa-combined/v1/partner/partner-details', function (req, res) {
+  res.redirect('/coa-combined/v1/partner/partner-work.html')
+
+
+});
+
+// ROUTING FROM PARTNER WORK TO EDUCATION
+router.post('/coa-combined/v1/partner/partner-work', function (req, res) {
+  res.redirect('/coa-combined/v1/partner/partner-in-education.html')
+
+
+});
+
+// ROUTING FROM PARTNER IN EDUCATION TO HOSPITAL STAY
+router.post('/coa-combined/v1/partner/partner-in-education', function (req, res) {
+  res.redirect('/coa-combined/v1/partner/partner-hospital-stay.html')
+
+
+});
+
+// ROUTING FROM PARTNER HOSPITAL STAY TO REGISTERED BLIND
+router.post('/coa-combined/v1/partner/partner-hospital-stay', function (req, res) {
   res.redirect('/coa-combined/v1/partner/partner-registered-blind.html')
 
 
 });
 
-// ROUTING FROM PARTNER DETAILS TO REGISTERED BLIND
+
+
+
+
+// ROUTING FROM REGISTERED BLIND TO CHECK YOUR DETAILS
 router.post('/coa-combined/v1/partner/partner-registered-blind', function (req, res) {
   res.redirect('/coa-combined/v1/partner/partner-check-your-details.html')
 
 
 });
 
+// ROUTING FROM CHECK YOUR DETAILS TO PARTNER ADDED
+router.post('/coa-combined/v1/partner/partner-check-your-details', function (req, res) {
+  res.redirect('/coa-combined/v1/partner/partner-added.html')
+
+
+});
+
+// ROUTING FROM PARTNER CHECK DETAILS
+router.post('/coa-combined/v1/partner/partner-check-details', function (req, res) {
+
+  // Make a variable and give it the value from 'partner-record-year'
+  var checkPartner = req.session.data['partner']
+        console.log("high", req.session.data['partner'])
+
+  // Check whether the variable matches a condition
+  if (checkPartner == "Yes"){
+    // Send user to next page
+    res.redirect('/coa-combined/v1/partner/partner-added.html')
+  } else {
+    res.redirect('/coa-combined/v1/partner/partner-registered-blind.html')
+  }
+
+});
+
+// ROUTING FROM remove partner
+router.post('/coa-combined/v1/partner/partner-remove', function (req, res) {
+
+  // Make a variable and give it the value from 'partner-record-year'
+  var partnerRemove = req.session.data['partnerRemove']
+        console.log("high", req.session.data['partnerRemove'])
+
+  // Check whether the variable matches a condition
+  if (partnerRemove == "Yes"){
+    // Send user to next page
+    res.redirect('/coa-combined/v1/partner/do-you-live-with-a-partner.html')
+  } else {
+    res.redirect('/coa-combined/v1/partner/partner-added.html')
+  }
+
+});
 
 
 ////////////////////////////////////////

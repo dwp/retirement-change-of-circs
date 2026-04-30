@@ -1,26 +1,32 @@
 {% extends "layouts/ol_signed_in.html" %}
 
 {% block pageTitle %}
-  Check your details - Manage your State Pension - GOV.UK
+  Check your answers about your partner - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <form method="post" novalidate>
       <span class="govuk-caption-l">Your partner</span>
-      <h1 class="govuk-heading-l">Check your details before you submit them</h1>
+      <h1 class="govuk-heading-l">Check your answers about {% if data['first-name']%}
+                {{ data['first-name']}} {{ data['last-name'] }}
+              {% else %}
+                Mark Davies
+              {% endif %}
+        </h1>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           {% if (data['partner'] == "Yes") %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              Do you live with a partner?
+              Live with partner
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['partner'] %}
                 {{ data['partner'] }}
               {% else %}
-                James Avery
+                Yes
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
@@ -35,7 +41,7 @@
               Name
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['partner-record-day']%}
+              {% if data['first-name']%}
                 {{ data['first-name']}} {{ data['last-name'] }}
               {% else %}
                 Mark Davies
@@ -49,7 +55,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              National insurance number
+              National Insurance number
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['nino'] %}
@@ -81,15 +87,71 @@
               </a>
             </dd>
           </div>
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              Is your partner registered blind?
+              Works more than 16 hours per week
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['partnerWork'] %}
+                {{ data['partnerWork'] }}
+              {% else %}
+                no
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="partner-work.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              In education
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['partnerEducation'] %}
+                {{ data['partnerEducation'] }}
+              {% else %}
+                no
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="partner-in-education.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Stayed in hospital for more than 28 days
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['partner-hospital-stay'] %}
+                {{ data['partner-hospital-stay'] }}
+              {% else %}
+                no
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="partner-hospital-stay.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+          
+          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Registered blind
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['partner-blind'] %}
                 {{ data['partner-blind'] }}
               {% else %}
-                Yes, I have a mortgage
+                Yes
               {% endif %}  
             </dd>
             <dd class="govuk-summary-list__actions">
@@ -97,10 +159,10 @@
                 Change<span class="govuk-visually-hidden"> if your moving this property</span>
               </a>
             </dd>     
-          {% else %}
+          {% elif (data['partner'] == "No") %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              Do you live with a partner?
+              Live with partner
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['partner'] %}
@@ -115,13 +177,154 @@
               </a>
             </dd>
           </div>
+          {% else %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Live with partner
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['partner'] %}
+                {{ data['partner'] }}
+              {% else %}
+                Yes
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="do-you-live-with-a-partner.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['first-name']%}
+                {{ data['first-name']}} {{ data['last-name'] }}
+              {% else %}
+                Mark Davies
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="partner-details.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              National Insurance number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['nino'] %}
+                {{ data['nino'] }}
+              {% else %}
+                JC212121 C
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="partner-details.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['partner-record-day']%}
+                {{data['partner-record-day']}} {{data['partner-record-month'] | monthName}} {{data['partner-record-year']}}
+              {% else %}
+                1 March 2025
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="partner-details.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Works more than 16 hours per week
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['partnerWork'] %}
+                {{ data['partnerWork'] }}
+              {% else %}
+                No
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="partner-work.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              In education
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['partnerEducation'] %}
+                {{ data['partnerEducation'] }}
+              {% else %}
+                No
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="partner-in-education.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Stayed in hospital for more than 28 days
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['partner-hospital-stay'] %}
+                {{ data['partner-hospital-stay'] }}
+              {% else %}
+                No
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="partner-hospital-stay.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+          
+          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Registered blind
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['partner-blind'] %}
+                {{ data['partner-blind'] }}
+              {% else %}
+                Yes
+              {% endif %}  
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="partner-registered-blind.html">
+                Change<span class="govuk-visually-hidden"> if your moving this property</span>
+              </a>
+            </dd>   
           {% endif %}
           </dl>
 
         
         
      
-        <form method="post" novalidate>
+        
           <input type="hidden" name="answers-checked" value="true">
           <button type="submit" class="govuk-button" data-module="govuk-button">
           Continue

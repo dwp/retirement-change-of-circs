@@ -1,40 +1,45 @@
 {% extends "layouts/ol_signed_in.html" %}
 
 {% block pageTitle %}
-  We need to ask you some questions so that we can pay you the right amount of Pension Credit - Manage your State Pension - GOV.UK
+  	Changing your address when you get State Pension and Pension Credit - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="task-list" method="post">
+      <form class="form" method="post">
         <div class="govuk-form-group">
           <h1 class="govuk-heading-l">
-            We need to ask you some questions so that we can pay you the right amount of Pension Credit
+            	Changing your address when you get State Pension and Pension Credit
           </h1>
           <p class="govuk-body">
-            If you're changing your home address (where you live) and you get Pension Credit, we'll ask you about:
+            We need to ask some questions to make sure you get the right amount of Pension Credit. We will ask about:
           </p>
           <ul class="govuk-list govuk-list--bullet">
-            <li>where you live now</li>
-            <li>where you lived before</li>
-            <li>your partner</li>
-            <!-- <li>other people who live with you</li> -->
-            <li>savings and investments</li>
+            <li>your new address</li>
+            <li>service charges and ground rent</li>
+            <li>your partner's date of birth and National Insurance number</li>
+            <li>how much money you and your partner have in bank and savings accounts</li>
           </ul>
 
           <h2 class="govuk-heading-m">
-            What you may need
+            Before you continue
           </h2>
 
           
           <p class="govuk-body">
-            You may want to gather any documents that will help you tell us about your situation.
+            You will need to answer all the questions in one go. You cannot save your answers and return later.
           </p>
+
+          <p class="govuk-body">
+            For security we will sign you out after 30 minutes of inactivity.
+          </p>
+
+          
           
         </div>
-        <button class="govuk-button" data-module="govuk-button">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
           Continue
         </button>
         

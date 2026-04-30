@@ -2,7 +2,7 @@
 {% extends "layouts/ol_signed_in.html" %}
 
 
-{% set pageName = "Tell us about your partner" %}
+{% set pageName = "Your partner's details" %}
 
 {% block beforeContent %}
 {{ govukPhaseBanner({
@@ -23,7 +23,7 @@
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <span class="govuk-caption-l">Your partner</span>
               <h1 class="govuk-fieldset__heading">
-                Tell us about your partner
+                Your partner's details
               </h1>
             </legend>
             
@@ -50,7 +50,7 @@
 
             <div class="govuk-form-group">
               <label class="govuk-label" for="nino">
-                National insurance number
+                National insurance number (if you know it)
               </label>
               <!-- <div id="searchString-hint" class="govuk-hint">
                 For example, 15 or Prospect Cottage.
@@ -102,6 +102,24 @@
       </h2>
       <p><a href="../contact-pension-service&help" target="_blank">Contact us by phone to get help with the online service (opens in new tab)</a></p>
     </div>
+    </div>
+
+    <!-- <div class="govuk-notification-banner govuk-notification-banner--journey-options" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" data-govuk-notification-banner-init="">
+        <div class="govuk-notification-banner__header govuk-notification-banner__header--journey-options">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Prototype options
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <p class="govuk-body">DoB</p>
+          <p class="govuk-body">
+            <ul class="govuk-list govuk-list--bullet">
+              <li><strong>1955</strong> - Happy path </li>
+              <li><strong>1965</strong> - Partner not eligible </li>
+            </ul>
+          </p>
+        </div>
+      </div> -->
   </div>
 
 {% endblock %}
