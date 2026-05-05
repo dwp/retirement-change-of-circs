@@ -1,7 +1,7 @@
 {% extends "layouts/ol_signed_in.html" %}
 
 {% block pageTitle %}
-  Have you already moved into this property? - Manage your State Pension - GOV.UK
+  Does your partner agree to be added to your Pension Credit claim? - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
@@ -14,26 +14,26 @@
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <span class="govuk-caption-l">Your partner</span>
               <h1 class="govuk-fieldset__heading">
-                Is {% if data['first-name']%}
+                Does {% if data['first-name']%}
                 {{ data['first-name']}}
               {% else %}
                 Mark Davies
                 {% endif %}
-                registered blind?
+                agree to be added to your Pension Credit claim?
               </h1>
             </legend>
 
 
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="partner-blind" name="partner-blind" type="radio" value="Yes" {{ checked("partner-blind", "Yes") }}>
-                <label class="govuk-label govuk-radios__label" for="partner-blind-yes">
+                <input class="govuk-radios__input" id="partner-agree" name="partner-agree" type="radio" value="Yes" {{ checked("partner-agree", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="partner-agree-yes">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="partner-blind" name="partner-blind" type="radio" value="No" {{ checked("partner-blind", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="partner-blind-no">
+                <input class="govuk-radios__input" id="partner-agree" name="partner-agree" type="radio" value="No" {{ checked("partner-agree", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="partner-agree-no">
                   No
                 </label>
               </div>

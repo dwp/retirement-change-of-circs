@@ -564,6 +564,23 @@ router.post('/coa-combined/v1/partner/partner-hospital-stay', function (req, res
 
 });
 
+// ROUTING TO PARTNER AGREE
+router.post('/coa-combined/v1/partner/partner-agree', function (req, res) {
+
+  // Make a variable and give it the value from 'uk-address'
+  var selectPartnerAgree = req.session.data['partner-agree']
+        console.log("high", req.session.data['partner-agree'])
+
+  // Check whether the variable matches a condition
+  if (selectPartnerAgree == "Yes"){
+    // Send user to next page
+    res.redirect('/coa-combined/v1/partner/partner-details.html')
+  } else if (selectPartnerAgree == "No"){
+    res.redirect('/coa-combined/v1/partner/partner-not-agree.html')
+  }
+
+});
+
 
 
 
