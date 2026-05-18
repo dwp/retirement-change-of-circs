@@ -1,6 +1,6 @@
 
-{% set serviceName = 'Apply for Pension Credit' %}
-{% extends "/layouts/main.html" %}
+{% set serviceName = 'Manage you State Pension' %}
+{% extends "layouts/ol_signed_in.html" %}
 
 {% set pageName = "Does anyone aged 19 or under live with you?" %}
 
@@ -30,7 +30,7 @@
                     Are you sure you want to remove{% if data['first-name']%}
                 {{ data['first-name']}}
               {% else %}
-                Mark Davies
+                Mark
               {% endif %}?
                 </h1>
                 </legend>

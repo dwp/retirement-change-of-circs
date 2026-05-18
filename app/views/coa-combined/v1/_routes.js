@@ -46,12 +46,32 @@ req.session.data['savingsInvestments']="completed"
 
 });
 
-  //ROUTING FROM PENSION CREDIT WARM UP TO TASK LIST
-router.post('/coa-combined/v1/task-list', function (req, res) {
-  res.redirect('/coa-combined/v1/confirmation-screen.html')
+router.post('/coa-combined/v1/how-we-contact-you/provide-email-check-your-details', function (req, res) {
+req.session.data['data.contactYou']="completed"
+  res.redirect('/coa-combined/v1/task-list.html')
 
 
 });
+
+  //ROUTING FROM COMPLETE TASK LIST TO CONFIRMATION SCREENS
+router.post('/coa-combined/v1/task-list', function (req, res) {
+
+
+  // Make a variable and give it the value from 'partner'
+  var submitChange = req.session.data['partner']
+    console.log("high", req.session.data['partner'])
+
+
+  // Check whether the variable matches a condition
+  if (submitChange == "Yes"){
+    // Send user to next page
+    res.redirect('/coa-combined/v1/confirmation-screen-further-action-needed-1.html')
+  } else if (submitChange == "No"){
+    res.redirect('/coa-combined/v1/confirmation-screen-1.html')
+  }
+
+});
+
 
 ///////////////////////////////////////////////
 ///////////////////////////////////////////////
@@ -592,15 +612,16 @@ router.post('/coa-combined/v1/partner/partner-registered-blind', function (req, 
 
 });
 
-// ROUTING FROM CHECK YOUR DETAILS TO PARTNER ADDED
-router.post('/coa-combined/v1/partner/partner-check-your-details', function (req, res) {
-  res.redirect('/coa-combined/v1/partner/partner-added.html')
+// // ROUTING FROM CHECK YOUR DETAILS TO PARTNER ADDED
+// router.post('/coa-combined/v1/partner/partner-check-your-details', function (req, res) {
+//   res.redirect('/coa-combined/v1/partner/partner-added.html')
 
 
-});
+// });
+
 
 // ROUTING FROM PARTNER CHECK DETAILS
-router.post('/coa-combined/v1/partner/partner-check-details', function (req, res) {
+router.post('/coa-combined/v1/partner/partner-check-your-details', function (req, res) {
 
   // Make a variable and give it the value from 'partner-record-year'
   var checkPartner = req.session.data['partner']
@@ -611,7 +632,7 @@ router.post('/coa-combined/v1/partner/partner-check-details', function (req, res
     // Send user to next page
     res.redirect('/coa-combined/v1/partner/partner-added.html')
   } else {
-    res.redirect('/coa-combined/v1/partner/partner-registered-blind.html')
+    res.redirect('/coa-combined/v1/task-list.html')
   }
 
 });
@@ -660,8 +681,41 @@ router.post('/coa-combined/v1/s&i/capital-total-today', function (req, res) {
 
 });
 
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+////////////// HOW WE CONTACT YOU //////////////
+////////////////////////////////////////////////
+////////////////////////////////////////////////
 
 
+
+///////////////////////////////////////////////
+/////////// HOW WE WILL CONTACT YOU////////////
+///////////////////////////////////////////////
+
+// ROUTING FROM WHAT EMAIL SHOULD WE USE TO DEFAULT EMAIL
+router.post('/coa-combined/v1/how-we-contact-you/provide-email-address', function (req, res) {
+
+  // Make a variable and give it the value from 'email-type'
+  var provideEmail = req.session.data['email-type']
+        console.log("high", req.session.data['email-type'])
+
+  // Check whether the variable matches a condition
+  if (provideEmail == "My current email address"){
+    // Send user to next page
+    res.redirect('/coa-combined/v1/how-we-contact-you/provide-email-check-your-details.html')
+  } else {
+    res.redirect('/coa-combined/v1/how-we-contact-you/save-email-address.html')
+  }
+
+});
+
+// ROUTING FROM SELECT INVESTMENTS TO MONEY YOU HAVE TODAY
+router.post('/coa-combined/v1/how-we-contact-you/provide-email-address', function (req, res) {
+  res.redirect('/coa-combined/v1/how-we-contact-you/save-email-address.html.html')
+
+
+});
 
 
 module.exports = router

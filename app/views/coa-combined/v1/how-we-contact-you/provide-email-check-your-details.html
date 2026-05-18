@@ -1,31 +1,31 @@
 {% extends "layouts/ol_signed_in.html" %}
 
 {% block pageTitle %}
-  Check your answers about where you live now - Manage your State Pension - GOV.UK
+  Check your answers about how we contact you - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-l">Where you live now</span>
-      <h1 class="govuk-heading-l">Check your answers about where you live now</h1>
+      <span class="govuk-caption-l">How we contact you</span>
+      <h1 class="govuk-heading-l">Check your answers about how we contact you</h1>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              Service charges and ground rent 
+              Email we will use
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['housing-costs'] %}
-                {{ data['housing-costs'] }}
+              {% if data['new-email'] %}
+                {{ data['new-email'] }}
               {% else %}
-                I pay service charges and ground rent
+                adam@dwp.gov.uk
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="housing-costs.html">
-                Change<span class="govuk-visually-hidden"> residential address</span>
+              <a class="govuk-link" href="">
+                Change<span class="govuk-visually-hidden"> email address</span>
               </a>
             </dd>
           </div>

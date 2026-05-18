@@ -1,6 +1,6 @@
 
-{% set serviceName = 'Manage your State Pension' %}
-{% extends "/layouts/main.html" %}
+{% set serviceName = 'Manage you State Pension' %}
+{% extends "layouts/ol_signed_in.html" %}
 
 {% set pageName = "Do they work for more than 16 hours per week?" %}
 
@@ -30,7 +30,7 @@
                     Does {% if data['first-name']%}
                 {{ data['first-name']}}
               {% else %}
-                Mark Davies
+                Mark
               {% endif %}
               work for more than 16 hours per week?
                 </h1>

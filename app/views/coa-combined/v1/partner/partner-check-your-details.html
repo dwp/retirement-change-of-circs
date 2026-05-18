@@ -10,12 +10,19 @@
     <div class="govuk-grid-column-two-thirds">
       <form method="post" novalidate>
       <span class="govuk-caption-l">Your partner</span>
+      {% if (data['partner'] == "Yes") %}
       <h1 class="govuk-heading-l">Check your answers about {% if data['first-name']%}
                 {{ data['first-name']}}
+                {% elif (data['partner'] == "No") %}
+                your partner
               {% else %}
-                Mark Davies
+                Mark
               {% endif %}
         </h1>
+        {% else %}
+        <h1 class="govuk-heading-l">Check your answers about your partner
+        </h1>
+        {% endif %}
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           {% if (data['partner'] == "Yes") %}
           <div class="govuk-summary-list__row">
@@ -44,7 +51,7 @@
               {% if data['first-name']%}
                 {{ data['first-name']}} {{ data['last-name'] }}
               {% else %}
-                Mark Davies
+                Mark
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
@@ -108,13 +115,13 @@
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              In education
+              Education
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['partnerEducation'] %}
                 {{ data['partnerEducation'] }}
               {% else %}
-                no
+                No
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
@@ -126,7 +133,7 @@
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              Stayed in hospital for more than 28 days
+              In hospital more than 28 days
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['partner-hospital-stay'] %}
@@ -203,7 +210,7 @@
               {% if data['first-name']%}
                 {{ data['first-name']}} {{ data['last-name'] }}
               {% else %}
-                Mark Davies
+                Mark
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">

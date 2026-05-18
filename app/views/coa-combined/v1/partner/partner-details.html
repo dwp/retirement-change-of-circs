@@ -1,16 +1,7 @@
+{% extends "layouts/ol_signed_in" %}
 
-{% extends "layouts/ol_signed_in.html" %}
-
-
-{% set pageName = "Your partner's details" %}
-
-{% block beforeContent %}
-{{ govukPhaseBanner({
-  tag: {
-    text: "Prototype"
-  },
-  html: 'This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-}) }}
+{% block pageTitle %}
+Do you live with a partner? - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
@@ -50,7 +41,7 @@
 
             <div class="govuk-form-group">
               <label class="govuk-label" for="nino">
-                National insurance number (if you know it)
+                National Insurance number (if you know it)
               </label>
               <!-- <div id="searchString-hint" class="govuk-hint">
                 For example, 15 or Prospect Cottage.

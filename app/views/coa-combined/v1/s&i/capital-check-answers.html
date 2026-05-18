@@ -27,7 +27,7 @@
           <div class="govuk-summary-list__row">
             {%if data['partner'] == 'Yes'%}
             <dt class="govuk-summary-list__key">
-              Where you and your partner have money
+              Where you and {{ data['first-name']}} have money
             </dt>
 
             {% else%}
@@ -52,7 +52,7 @@
             <div class="govuk-summary-list__row">
             {%if data['partner'] == 'Yes'%}
             <dt class="govuk-summary-list__key">
-              Money you and your partner have today
+              Money you and {{ data['first-name']}} have today
             </dt>
             {% else%}
             <dt class="govuk-summary-list__key">

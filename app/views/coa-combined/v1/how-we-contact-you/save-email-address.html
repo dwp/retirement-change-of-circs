@@ -1,0 +1,73 @@
+{% extends "layouts/ol_signed_in.html" %}
+
+{% block pageTitle %}
+  Would you like to make this email you default email address? - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <span class="govuk-caption-l">How we contact you</span>
+              <h1 class="govuk-fieldset__heading">
+                Would you like to make this email you default email address?
+              </h1>
+            </legend>
+
+            <p class="govuk-body-l">
+              {% if data['new-email']%}
+                {{ data['new-email']}}
+
+                {% else %}
+                james.maloney@dwp.gov.uk
+                {% endif %}
+              
+            </p>
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="email-type" name="email-type" type="radio" value="Yes, update my email address" {{ checked("email-type", "new-email") }}>
+                <label class="govuk-label govuk-radios__label" for="new-email">
+                  Yes, update my email address
+                </label>
+                <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                  {% if data['new-email']%}
+                {{ data['new-email']}}
+
+                {% else %}
+                james.maloneydwp.gov.uk
+                {% endif %}
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="email-type" name="email-type" type="radio" value="No, keep using my current email address for future notifications" {{ checked("email-type", "current-email") }}>
+                <label class="govuk-label govuk-radios__label" for="current-email">
+                  No, keep using my current email address for future notifications
+                </label>
+                <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                  adam@dwp.gov.uk
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          </div>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">
+        Get help
+      </h2>
+      <p><a href="../contact-pension-service&help" target="_blank">Contact us by phone to get help with the online service (opens in new tab)</a></p>
+    </div>
+  </div>
+
+{% endblock %}

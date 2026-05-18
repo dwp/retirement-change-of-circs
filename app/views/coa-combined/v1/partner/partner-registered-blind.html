@@ -1,3 +1,5 @@
+
+{% set serviceName = 'Manage you State Pension' %}
 {% extends "layouts/ol_signed_in.html" %}
 
 {% block pageTitle %}
@@ -17,7 +19,7 @@
                 Is {% if data['first-name']%}
                 {{ data['first-name']}}
               {% else %}
-                Mark Davies
+                Mark
                 {% endif %}
                 registered blind?
               </h1>

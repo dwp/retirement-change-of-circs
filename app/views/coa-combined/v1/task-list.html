@@ -19,7 +19,7 @@
             </legend>
 
             <p class="govuk-body">
-              You can complete the sections in any order. You cannot save your answers and return later.
+              You need to complete all sections to change your address. You cannot save your answers and return later.
             </p>
 
             <h2 class="govuk-heading-m">Your home</h2>
@@ -199,26 +199,98 @@
                 {%endif%}
             </ul>
 
+            <h2 class="govuk-heading-m">How we contact you</h2>
+            <ul class="govuk-task-list">
+                
+
+            {% if data.partnerDetails == 'completed' %}
+
+                <li class="govuk-task-list__item govuk-task-list__item--with-link">
+                    <div class="govuk-task-list__name-and-hint">
+                    <a class="govuk-link govuk-task-list__link" href="
+                        {% if data.contactYou == 'completed' %}
+                            how-we-contact-you/provide-email-address?section=contactYou
+                        {% elif data.contactYou == 'inprogress' %}
+                            how-we-contact-you/provide-email-address?section=contactYou
+                        {% else %}
+                            how-we-contact-you/provide-email-address?contactYou=inprogress
+                        {% endif %}
+                    " aria-describedby="company-details-5-status">
+                        How we will contact you
+                    </a>
+                    </div>
+                    {% if data.contactYou == 'completed' %}
+                        <div class="govuk-task-list__status" id="company-details-1-status">
+                            Completed
+                        </div>
+                    {% elif data.contactYou == 'inprogress'%}
+                        <div class="govuk-task-list__status" id="company-details-5-status">
+                            <strong class="govuk-tag govuk-tag--blue">
+                                Not started yet
+                            </strong>
+                        </div>
+                    {% else %}
+                        <div class="govuk-task-list__status" id="company-details-5-status">
+                            <strong class="govuk-tag govuk-tag--blue">
+                                Not started yet
+                            </strong>
+                        </div>
+                    {%endif%}
+                </li>
+                {% else %}
+                <li class="govuk-task-list__item govuk-task-list__item--with-link">
+                    <div class="govuk-task-list__name-and-hint">
+                    <a class="govuk-link govuk-task-list__link" href="
+                        {% if data.contactYou == 'completed' %}
+                            how-we-contact-you/provide-email-address?section=contactYou
+                        {% elif data.contactYou == 'inprogress' %}
+                            how-we-contact-you/provide-email-address?section=contactYou
+                        {% else %}
+                            how-we-contact-you/provide-email-address?contactYou=inprogress
+                        {% endif %}
+                    " aria-describedby="company-details-5-status">
+                        How we will contact you
+                    </a>
+                    </div>
+                    {% if data.contactYou == 'completed' %}
+                        <div class="govuk-task-list__status" id="company-details-1-status">
+                            Completed
+                        </div>
+                    {% elif data.contactYou == 'inprogress'%}
+                        <div class="govuk-task-list__status" id="company-details-5-status">
+                            <strong class="govuk-tag govuk-tag--orange">
+                                In progress
+                            </strong>
+                        </div>
+                    {% else %}
+                        <div class="govuk-task-list__status" id="company-details-5-status">
+                            <strong class="govuk-tag govuk-tag--blue">
+                                Not started yet
+                            </strong>
+                        </div>
+                    {%endif%}
+                </li>
+                {%endif%}
+            </ul>
+
 
             {% if data.newAddress == 'completed' and data.liveNow and data.partnerDetails and data.savingsInvestments == 'completed' %}
 
             <h2 class="govuk-heading-m">Submit your new details</h2>
             <p class="govuk-body">By submitting this change you are confirming that the information you are giving is complete and correct.</p>
+            
 
-        <form method="post" novalidate>
-          <input type="hidden" name="answers-checked" value="true">
-          <button class="govuk-button" data-module="govuk-button">
-            Continue
-          </button>
-        </form>
-        <div class="govuk-inset-text">
-                <a href="your-state-pension.html" class="govuk-link">Return to your State Pension details</a>
-            </div>
-        {% else %}
+            <form method="post" novalidate>
+                <input type="hidden" name="answers-checked" value="true">
+                <button class="govuk-button" data-module="govuk-button">
+                    Confirm and submit
+                </button>
+            </form>
+
 
             <h2 class="govuk-heading-m">If you need help</h2>
             <p class="govuk-body">
-                If you need help or want to tell us about your change of address another way,  <a href="https://www.gov.uk/contact-pension-service/report-changes" class="govuk-link" target="_blank">contact the Pension Service by phone or post (opens in a new tab)</a>.
+                If you need help or want to tell us about your change of address another way,  <a href="https://www.gov.uk/contact-pension-service/report-changes" class="govuk-link" target="_blank">contact the Pension Service by phone or post (opens in new tab)</a>.
             </p>
 
             <div class="govuk-inset-text">
@@ -226,6 +298,17 @@
             </div>
 
         </fieldset>
+
+        {% else %}
+        <h2 class="govuk-heading-m">If you need help</h2>
+            <p class="govuk-body">
+                If you need help or want to tell us about your change of address another way,  <a href="https://www.gov.uk/contact-pension-service/report-changes" class="govuk-link" target="_blank">contact the Pension Service by phone or post (opens in new tab)</a>.
+            </p>
+
+            <div class="govuk-inset-text">
+                <a href="your-state-pension.html" class="govuk-link">Return to your State Pension details</a>
+            </div>
+
         {%endif%}
         </div>
     </div>

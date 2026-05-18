@@ -5,7 +5,7 @@ module.exports = function redirectInternal(options = {}) {
   const { basePrefix = '/', defaultFallback = '/start' } = options;
 
   return function (req, res, next) {
-    res.redirectInternalInternal = function (target, fallback = defaultFallback, status = 303) {
+    res.redirectInternal = function (target, fallback = defaultFallback, status = 303) {
       if (typeof target !== 'string') return res.redirectInternal(status, fallback);
 
       const clean = target.trim();

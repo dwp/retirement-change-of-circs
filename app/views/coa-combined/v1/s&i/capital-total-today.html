@@ -16,13 +16,13 @@ Money today - Manage your State Pension - GOV.UK
 
               {%if data['partner'] == 'Yes'%}
               <h1 class="govuk-fieldset__heading">
-                Money you and your partner have today
+                Money you and {{ data['first-name']}} have today
               </h1>
             </legend>
 
                 <div class="govuk-body">
                     <p>
-                          Include all the money that you have in:
+                          You must include all the money that you both have in:
                         <ul class="govuk-list govuk-list--bullet">
                             {% for item in data['capitalTypes'] %}
                                 {%if item != 'shares' %}
@@ -33,7 +33,7 @@ Money today - Manage your State Pension - GOV.UK
                     </p>
                 </div>
                                    <h2 class="govuk-label-wrapper">
-      <label class="govuk-label govuk-label--m" for="event-name">How much money do you and your partner have today?</label></h2>
+      <label class="govuk-label govuk-label--m" for="event-name">How much money do you and {{ data['first-name']}} have today?</label></h2>
             <p {%if data['route'] == '1'%}class="govuk-hint"{%endif%}>
                     Enter an amount in pounds and pence, for example, 100.00
                 </p>
@@ -46,7 +46,7 @@ Money today - Manage your State Pension - GOV.UK
 
                 {% else %}
                 <h1 class="govuk-fieldset__heading">
-                Money today
+                Money you have today
               </h1>
             </legend>
 
@@ -54,7 +54,7 @@ Money today - Manage your State Pension - GOV.UK
 
                 <div class="govuk-body">
                     <p>
-                          Include all the money that you have in:
+                          You must include all the money you have in:
                         <ul class="govuk-list govuk-list--bullet">
                             {% for item in data['capitalTypes'] %}
                                 {%if item != 'shares' %}
