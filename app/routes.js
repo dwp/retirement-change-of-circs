@@ -3661,5 +3661,30 @@ router.post('/wf-opt-out/2-0/confirmation', function (req, res) {
 });
 
 
+// WF 3-0
+
+router.post('/wf-opt-out/3-0/sign-in-with-onelogin', function (req, res) {
+  res.redirect('/wf-opt-out/3-0/sign-in');
+});
+
+router.post('/wf-opt-out/3-0/options-second', function (req, res) {
+  res.redirect('/wf-opt-out/3-0/sign-in');
+});
+
+router.post('/wf-opt-out/3-0/sign-in', function (req, res) {
+  res.redirect('/wf-opt-out/3-0/your-state-pension');
+});
+
+router.post('/wf-opt-out/3-0/email', function (req, res) {
+  res.redirect('/wf-opt-out/3-0/check-answers');
+});
+
+router.post('/wf-opt-out/3-0/check-answers', function (req, res) {
+  res.redirect('/wf-opt-out/3-0/confirmation');
+});
+
+router.post('/wf-opt-out/3-0/confirmation', function (req, res) {
+  res.redirect('/wf-opt-out/3-0/your-state-pension');
+});
 
 
