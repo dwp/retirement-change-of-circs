@@ -15,3 +15,10 @@ heroku-site-publish:
   extends: .heroku-site-publish-template
   variables:
     HEROKU_APP_NAME: prototype-changes
+
+
+install-dependencies:
+  image: node:18
+  stage: build
+  script:
+    - npm install
