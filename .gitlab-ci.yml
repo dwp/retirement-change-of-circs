@@ -1,24 +1,51 @@
-stages:
-  - code-quality
-  - heroku-publish
-include:
-  - local: "/gitlab-ci/includes.yml"
-fragment-version-check:
-  extends: .fragment-version-check-template
-gitleaks:
-  extends: .gitleaks-template
-shell-check:
-  extends: .shell-check-template
-todo-check:
-  extends: .todo-check-template
-heroku-site-publish:
-  extends: .heroku-site-publish-template
-  variables:
-    HEROKU_APP_NAME: prototype-changes
+default:
+  interruptible: true
+  retry:
+    max: 2
+    when:
+      - unknown_failure
+      - script_failure
+      - api_failure
+      - stuck_or_timeout_failure
+      - runner_system_failure
+      - job_execution_timeout
+      - scheduler_failure
+      - data_integrity_failure
+  tags:
+    - docker
 
+workflow:
+  auto_cancel:
+    on_new_commit: interruptible
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      when: always
+    - if: $CI_COMMIT_BRANCH && $CI_OPEN_MERGE_REQUESTS && $CI_PIPELINE_SOURCE != "scheduled"
+      when: never
+    - if: $CI_COMMIT_BRANCH
+      when: always
 
-install-dependencies:
-  image: node:18
-  stage: build
+variables:
+  HEROKU_APP_NAME: prototype-changes
+
+set_heroku_build_config:
+  stage: .pre
+  image: curlimages/curl:latest
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
   script:
-    - npm install
+    - |
+      curl --fail --request PATCH "https://api.heroku.com/apps/${HEROKU_APP_NAME}/config-vars" \
+        --header "Content-Type: application/json" \
+        --header "Accept: application/vnd.heroku+json; version=3" \
+        --header "Authorization: Bearer ${HEROKU_API_KEY}" \
+        --data "{
+          \"NPM_TOKEN\": \"${NPM_TOKEN}\",
+          \"USE_NPM_INSTALL\": \"false\"
+        }"
+
+include:
+  - project: dwp/engineering/pipeline-solutions/gitlab/functions
+    ref: 7.0.5
+    file:
+      - functions/base-mr.gitlab-ci.yml
