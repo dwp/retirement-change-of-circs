@@ -5,13 +5,13 @@
     "npm": "10.x"
   },
   "scripts": {
-    "heroku-prebuild": "npm config set @dwp-govuk:registry https://gitlab.com/api/v4/projects/82735932/packages/npm/ && npm config set //gitlab.com/api/v4/projects/82735932/packages/npm/:_authToken $NPM_TOKEN",
+    "heroku-prebuild": "npm config set @dwp-govuk:registry https://gitlab.com/api/v4/projects/82735932/packages/npm/ && npm config set //gitlab.com/api/v4/projects/82735932/packages/npm/:_authToken ${NPM_TOKEN}",
     "dev": "govuk-prototype-kit dev",
     "serve": "govuk-prototype-kit serve",
     "start": "govuk-prototype-kit start"
   },
   "dependencies": {
-    "@dwp/dwp-frontend": "3.3.0",
+    "@dwp/dwp-frontend": "^4.1.0",
     "@govuk-prototype-kit/common-templates": "2.0.1",
     "@govuk-prototype-kit/step-by-step": "2.2.3",
     "@govuk-prototype-kit/task-list": "2.0.0",
