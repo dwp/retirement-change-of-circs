@@ -5,7 +5,6 @@
     "npm": "10.x"
   },
   "scripts": {
-    "heroku-prebuild": "npm config set @dwp-govuk:registry https://gitlab.com/api/v4/projects/82735932/packages/npm/ && npm config set //gitlab.com/api/v4/projects/82735932/packages/npm/:_authToken ${NPM_TOKEN}",
     "dev": "govuk-prototype-kit dev",
     "serve": "govuk-prototype-kit serve",
     "start": "govuk-prototype-kit start"
@@ -13,13 +12,12 @@
   "dependencies": {
     "@dwp/dwp-frontend": "^4.1.0",
     "@govuk-prototype-kit/common-templates": "2.0.1",
-    "@govuk-prototype-kit/step-by-step": "2.2.3",
     "@govuk-prototype-kit/task-list": "2.0.0",
     "@ministryofjustice/frontend": "5.1.5",
     "@x-govuk/govuk-prototype-filters": "^2.1.0",
     "axios": "^1.15.2",
     "govuk-frontend": "5.11.2",
-    "govuk-prototype-kit": "npm:@dwp-govuk/govuk-prototype-kit@13.20.2",
+    "govuk-prototype-kit": "^13.20.2",
     "hmrc-frontend": "6.86.0",
     "jquery": "3.7.1",
     "notifications-node-client": "8.2.1",
