@@ -27,7 +27,7 @@
                   Yes
                 </label>
                 <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="rent-now" name="rent-now" type="radio" value="Yes" {{ checked("rent-now", "Yes") }}>
+                <input class="govuk-radios__input" id="rent-now" name="rent-now" type="radio" value="No" {{ checked("rent-now", "No") }}>
                 <label class="govuk-label govuk-radios__label" for="about-your-move">
                   No
                 </label>
@@ -57,7 +57,7 @@
             <h2 class="govuk-heading-s">Do you live alone, or only with your husband, wife or partner?</h2>      
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="partner-only" name="partner-only" type="radio" value="No" {{ checked("partner-only", "No") }}>
+                <input class="govuk-radios__input" id="partner-only" name="partner-only" type="radio" value="Yes" {{ checked("partner-only", "Yes") }}>
                 <label class="govuk-label govuk-radios__label" for="about-your-move">
                   Yes
                 </label>
@@ -73,11 +73,11 @@
           </fieldset>
         </div>
 
-        <button class="govuk-button" data-module="govuk-button">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
           Continue
         </button>
       </form>
-      <div class="govuk-notification-banner govuk-notification-banner--journey-options" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" data-govuk-notification-banner-init="">
+      <!-- <div class="govuk-notification-banner govuk-notification-banner--journey-options" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" data-govuk-notification-banner-init="">
         <div class="govuk-notification-banner__header govuk-notification-banner__header--journey-options">
           <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
             Prototype options
@@ -92,7 +92,7 @@
             </ul>
           </p>
         </div>
-      </div>
+      </div> -->
 
     </div>
     

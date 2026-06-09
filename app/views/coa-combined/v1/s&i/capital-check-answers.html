@@ -60,11 +60,16 @@
             </dt>
             {% endif %}
 
-            <dd class="govuk-summary-list__value">
-              £{% if data['todayTotal'] %}
-                {{ data['todayTotal'] }}
+            <ul class="govuk-list govuk-list--bullet">
+                {% if data['todayTotal'] %}
+                £{{data['todayTotal']}}
+                <p class="govuk-hint">{{data['todayTotal|toWords']}}</p>
+              </ul>
+
+            
               {% else %}
-                3000
+                £3000
+                <p class="govuk-hint">Three thousand pounds</p>
               {% endif %}
             </dd>
             
@@ -85,7 +90,7 @@
               </ul>
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="capital-select-capital">Change<span class="govuk-visually-hidden">where you or your partner keep your money</span></a>
+              <a class="govuk-link" href="capital-total-today">Change<span class="govuk-visually-hidden">where you or your partner keep your money</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -96,10 +101,11 @@
             <dd class="govuk-summary-list__value">
               <ul class="govuk-list govuk-list--bullet">
                 £3000
+                <p class="govuk-hint">Three thousand pounds</p>
               </ul>
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="capital-select-capital">Change<span class="govuk-visually-hidden">where you or your partner keep your money</span></a>
+              <a class="govuk-link" href="capital-total-today">Change<span class="govuk-visually-hidden">where you or your partner keep your money</span></a>
             </dd>
           </div>
         {%endif%}

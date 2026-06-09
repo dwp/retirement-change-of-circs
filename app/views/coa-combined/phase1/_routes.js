@@ -10,6 +10,13 @@ function addDays(date, days) {
 
   // Add your routes here - above the module.exports line
 
+    //ROUTING FROM PENSION CREDIT WARM UP TO TASK LIST
+router.post('/coa-combined/phase1/gysp-v1/manage-state-pension', function (req, res) {
+  res.redirect('/coa-combined/phase1/gysp-v1/your-state-pension')
+
+
+});
+
 // ROUTING TO YES OR NO ALREADY MOVED TO ADDRESS
 
 router.post('/already-moved4', function (req, res) {

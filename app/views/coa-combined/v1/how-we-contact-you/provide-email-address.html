@@ -19,9 +19,7 @@
             </legend>
 
             <p class="govuk-body">
-              We need this to send you a confirmation that we have received your request and that your address details have been updated. If you give us a different email address, we will only use it to your address details have been updated.
-            </p>
-
+              We need this to let you know that your address details have been updated for State Pension. We will also let you know that we have received your request to update your address details for Pension Credit.
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="email-type" name="email-type" type="radio" value="My current email address" {{ checked("email-type", "current-email") }}>
@@ -36,15 +34,15 @@
               <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="email-type" name="email-type" type="radio" value="Enter a new email address" data-aria-controls="conditional-contact"{{ checked("email-type", "new-email") }}>
                   <label class="govuk-label govuk-radios__label" for="new-email">
-                    Enter a new email address
+                    A different email address
                   </label>
                 </div>
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
                   <div class="govuk-form-group">
-                    <!-- <label class="govuk-label" for="other">
-                      What should this say?
-                    </label> -->
-                    <input class="govuk-input govuk-!-width-one-third" id="new-email" name="other" type="text" spellcheck="false">
+                    <label class="govuk-label" for="new-email">
+                      Enter an email address
+                    </label>
+                    <input class="govuk-input govuk-!-width-one-third" id="new-email" name="new-email" type="text" spellcheck="false">
                   </div>
                 </div>
             </div>

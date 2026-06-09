@@ -39,6 +39,15 @@ req.session.data['partnerDetails']="completed"
 
 });
 
+router.post('/coa-combined/v1/partner/partner-check-your-details', function (req, res) {
+req.session.data['partnerDetails']="completed"
+  res.redirect('/coa-combined/v1/task-list.html')
+
+
+});
+
+
+
 router.post('/coa-combined/v1/s&i/capital-check-answers', function (req, res) {
 req.session.data['savingsInvestments']="completed"
   res.redirect('/coa-combined/v1/task-list.html')
@@ -47,7 +56,7 @@ req.session.data['savingsInvestments']="completed"
 });
 
 router.post('/coa-combined/v1/how-we-contact-you/provide-email-check-your-details', function (req, res) {
-req.session.data['data.contactYou']="completed"
+req.session.data['contactYou']="completed"
   res.redirect('/coa-combined/v1/task-list.html')
 
 
@@ -79,12 +88,27 @@ router.post('/coa-combined/v1/task-list', function (req, res) {
 ///////////////////////////////////////////////
 ///////////////////////////////////////////////
 
-  //ROUTING ELIGIBILITY TO PENSION CREDIT WARM UP
-router.post('/coa-combined/v1/eligibility', function (req, res) {
-  res.redirect('/coa-combined/v1/pension-credit-warm-up.html')
+  //ROUTING FROM COMPLETE TASK LIST TO CONFIRMATION SCREENS
+
+  router.post('/coa-combined/v1/eligibility', function (req, res) {
+
+   if ((req.body['rent-now'] === 'No')  || (req.body['rent-before'] === 'No') || (req.body['partner-only'] === 'No')){
+    res.redirect('/coa-combined/phase1/gysp-v1/have-you-already-moved')
+  } else {
+    res.redirect('/coa-combined/v1/pension-credit-warm-up')
+  }
+
+  });
 
 
-});
+
+//   //ROUTING ELIGIBILITY TO PENSION CREDIT WARM UP
+// router.post('/coa-combined/v1/eligibility', function (req, res) {
+//   res.redirect('/coa-combined/v1/pension-credit-warm-up.html')
+
+
+// });
+ 
 
   //ROUTING FROM PENSION CREDIT WARM UP TO TASK LIST
 router.post('/coa-combined/v1/pension-credit-warm-up', function (req, res) {
@@ -693,26 +717,11 @@ router.post('/coa-combined/v1/s&i/capital-total-today', function (req, res) {
 /////////// HOW WE WILL CONTACT YOU////////////
 ///////////////////////////////////////////////
 
-// ROUTING FROM WHAT EMAIL SHOULD WE USE TO DEFAULT EMAIL
-router.post('/coa-combined/v1/how-we-contact-you/provide-email-address', function (req, res) {
 
-  // Make a variable and give it the value from 'email-type'
-  var provideEmail = req.session.data['email-type']
-        console.log("high", req.session.data['email-type'])
-
-  // Check whether the variable matches a condition
-  if (provideEmail == "My current email address"){
-    // Send user to next page
-    res.redirect('/coa-combined/v1/how-we-contact-you/provide-email-check-your-details.html')
-  } else {
-    res.redirect('/coa-combined/v1/how-we-contact-you/save-email-address.html')
-  }
-
-});
 
 // ROUTING FROM SELECT INVESTMENTS TO MONEY YOU HAVE TODAY
 router.post('/coa-combined/v1/how-we-contact-you/provide-email-address', function (req, res) {
-  res.redirect('/coa-combined/v1/how-we-contact-you/save-email-address.html.html')
+  res.redirect('/coa-combined/v1/how-we-contact-you/provide-email-check-your-details.html')
 
 
 });
