@@ -31,9 +31,7 @@
 {% from "govuk/components/tag/macro.njk"                 import govukTag %}
 {% from "govuk/components/textarea/macro.njk"            import govukTextarea %}
 {% from "govuk/components/warning-text/macro.njk"        import govukWarningText %}
-{% from "hmrc-frontend/src/hmrc/components/language-select/macro.njk" import hmrcLanguageSelect %}
-{% from "hmrc-frontend/src/hmrc/components/header/macro.njk" import hmrcHeader %}
-{% block head %}
+{% from "hmrc/components/service-navigation-language-select/macro.njk" import hmrcServiceNavigationLanguageSelect %}{% block head %}
   {% include "includes/head.html" %}
 
   <style>
