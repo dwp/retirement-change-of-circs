@@ -1,3 +1,7 @@
 {
-    "livePreview.defaultPreviewPath": "/app/views/contact/1-0/change-home-phone/check-your-details-add.html"
+    "livePreview.defaultPreviewPath": "/app/views/contact/1-0/change-home-phone/check-your-details-add.html",
+    "search.exclude": {
+        "**/*.code-search": false,
+        "**/node_modules": false
+    }
 }

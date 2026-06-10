@@ -18,7 +18,7 @@
     "axios": "^1.17.0",
     "govuk-frontend": "^6.2.0",
     "govuk-prototype-kit": "npm:@dwp-govuk/govuk-prototype-kit@13.20.2",
-    "hmrc-frontend": "7.19.0",
+    "hmrc-frontend": "^7.19.0",
     "jquery": "4.0.0",
     "notifications-node-client": "8.4.0",
     "qs": "6.15.2"
