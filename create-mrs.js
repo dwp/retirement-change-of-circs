@@ -50,7 +50,7 @@ if (help) {
 // (rest of script unchanged)
 `;
 
-async function gitlabFetch(url, options = {}) {
+var gitlabFetch = async function (url, options = {}) {
   urlObject = new URL(url)
 
   const allowedDomains = [GITLAB_API];
