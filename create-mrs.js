@@ -119,7 +119,7 @@ async function createBranch(projectId, defaultBranch) {
 
 async function createCommit(projectId, defaultBranch) {
   const options = {
-    headers = HEADERS,
+    headers : HEADERS,
     method: "POST",
     body: JSON.stringify({
       branch: BRANCH_NAME,
