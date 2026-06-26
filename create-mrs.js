@@ -50,21 +50,25 @@ if (help) {
 `;
 
 async function gitlabFetch(url, options = {}) {
-  const res = await fetch(url, {
-    ...options,
-    headers: {
-      "PRIVATE-TOKEN": GITLAB_TOKEN,
-      "Content-Type": "application/json",
-      ...options.headers,
-    },
-  });
+  if (url.startsWith(GITLAB_API)) {
+    const res = await fetch(url, {
+      ...options,
+      headers: {
+        "PRIVATE-TOKEN": GITLAB_TOKEN,
+        "Content-Type": "application/json",
+        ...options.headers,
+      },
+    });
 
-  if (!res.ok) {
-    const text = await res.text();
-    throw new Error(`${res.status} ${res.statusText}: ${text}`);
+    if (!res.ok) {
+      const text = await res.text();
+      throw new Error(`${res.status} ${res.statusText}: ${text}`);
+    }
+
+    return res.json();
   }
-
-  return res.json();
+  else throw new Error(`${url} was not to recognized gitlab domain`)
+  
 }
 
 // Get all projects in group (handles pagination)
