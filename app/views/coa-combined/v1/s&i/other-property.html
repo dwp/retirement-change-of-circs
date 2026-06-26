@@ -1,16 +1,7 @@
+{% extends "layouts/ol_signed_in" %}
 
-{% set serviceName = 'Manage you State Pension' %}
-{% extends "layouts/ol_signed_in.html" %}
-
-{% set pageName = "Do they work for more than 16 hours per week?" %}
-
-{% block beforeContent %}
-{{ govukPhaseBanner({
-  tag: {
-    text: "Beta"
-  },
-  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-}) }}
+{% block pageTitle %}
+Money today - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
@@ -18,22 +9,30 @@
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-
-        <p><a href="javascript:history.back()" class="govuk-back-link govuk-!-static-margin-0">Back</a></p>
-
         <form method="post" >
-            <div class="govuk-form-group govuk-!-padding-top-7">
+            <div class="govuk-form-group ">
             <fieldset class="govuk-fieldset" aria-describedby="hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                    <span class="govuk-caption-l">Your partner</span>
-                <h1 class="govuk-fieldset__heading">
-                    Does {% if data['first-name']%}
-                {{ data['first-name']}}
-              {% else %}
-                Mark
-              {% endif %}
-              get any money from self employed work?
-                </h1>
+                    <span class="govuk-caption-l">Money and investments</span>
+                  {%if data['partner'] == 'Yes'%}
+            <h1 class="govuk-fieldset__heading">
+                Do you or {{ data['first-name']}} own any other property or land other than your main home?
+            </h1>
+            </legend>
+            <!-- <div class="govuk-hint">
+                This money might not affect your Pension Credit if it's work such as
+                repairing the roof or altering a bathroom to make it accessible.
+            </div> -->
+            {% else %}
+            <h1 class="govuk-fieldset__heading">
+                Do you own any other property or land other than your main home?
+            </h1>
+            </legend>
+            <!-- <div class="govuk-hint">
+                This money might not affect your Pension Credit if it's work such as
+                repairing the roof or altering a bathroom to make it accessible.
+            </div> -->
+            {% endif %} 
                 </legend>
                 <!-- <p class="govuk-body govuk-hint" id="hint">Children are under age 16. A qualifying young person is aged 16 to 19 and in non-advanced full-time education or training.</p> -->
                 

@@ -17,19 +17,19 @@
 
                 {%if data['partner'] == 'Yes'%}
             <h1 class="govuk-fieldset__heading">
-                Do you or {{ data['first-name']}} have money in any of these?
+                Have you or{{ data['first-name']}} ever had any of these payments and payouts?
             </h1>
             </legend>
             <div class="govuk-hint">
-                Select all options that are relevant to you both.
+                We might be able to ignore these amounts when working out your Pension Credit. Select and that apply.
             </div>
             {% else %}
             <h1 class="govuk-fieldset__heading">
-                Do you have money in any of these?
+                Have you ever had any of these payments and payouts?
             </h1>
             </legend>
             <div class="govuk-hint">
-                Select all options that are relevant to you.
+                We might be able to ignore these amounts when working out your Pension Credit. Select and that apply.
             </div>
             {% endif %}      
             
@@ -37,67 +37,62 @@
                 <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="capitalTypes" name="capitalTypes" type="checkbox" value="bank and building society accounts">
                     <label class="govuk-label govuk-checkboxes__label" for="capitalTypes">
-                    Bank or building society accounts<br>
-                    <span class="govuk-hint">Such as current accounts, savings accounts, and deposit accounts.</span>
+                        Money to help you live independently in your own home or the community
                     </label>
                 </div>
                 <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="capitalTypes-2" name="capitalTypes" type="checkbox" value="credit union and Post Office accounts">
                     <label class="govuk-label govuk-checkboxes__label" for="capitalTypes-2">
-                    Credit union or Post Office accounts<br>
-                    <span class="govuk-hint">Such as current accounts, savings accounts, and deposit accounts.</span>
-
+                        Compensation or repayments relating to DWP benefits, where the wrong ammount was paid, or where they were paid late
                     </label>
                 </div>
                 <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="capitalTypes-3" name="capitalTypes" type="checkbox" value="ISAs">
                     <label class="govuk-label govuk-checkboxes__label" for="capitalTypes-">
-                        Individual Savings Accounts (ISAs)<br>
-                        <span class="govuk-hint">Including cash ISAs, Lifetime ISAs, stocks and shares ISAs, and innovative finance ISAs.</span>
-
+                        Money you were paid in errors in Council Tax Reduction
                     </label>
                 </div>
                 <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="capitalTypes-4" name="capitalTypes" type="checkbox" value="cash at home or somewhere else">
                     <label class="govuk-label govuk-checkboxes__label" for="capitalTypes-4">
-                    Cash at home or somewhere else<br>
+                    Money you were paid because you were affected by a terrorist incident
                     </label>
                 </div>
                 <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="capitalTypes-5" name="capitalTypes" type="checkbox" value="Premium Bonds or other NS&I products">
                     <label class="govuk-label govuk-checkboxes__label" for="capitalTypes-5">
-                Premium Bonds or other National Savings and Investment (NS&I) products<br>
+                        Money from a home insurance policy to cover lost or damaged personal possessions
                     </label>
                 </div>
                 <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="capitalTypes-6" name="capitalTypes" type="checkbox" value="income bonds or capital bonds">
                     <label class="govuk-label govuk-checkboxes__label" for="capitalTypes-6">
-                  Income bonds or capital bonds
+                        Compensation for the affects of a vaccine or a blood infection, such as vCJD or HIV
                     </label>
                 </div>
 
                 <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="capitalTypes-7" name="capitalTypes" type="checkbox" value="outside the UK in cash, investments or accounts">
                     <label class="govuk-label govuk-checkboxes__label" for="capitalTypes-7">
-                        Outside the UK, in cash, investments or accounts<br>
+                        Money from a personal injury claim
                     </label>
                 </div>
                 <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="capitalTypes-8" name="capitalTypes" type="checkbox" value="shares">
                     <label class="govuk-label govuk-checkboxes__label" for="capitalTypes-8">
-                    Shares
+                    Compensation related to World War 2 or service in the armed forces
                     </label>
                 </div>
                 <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="capitalTypes-9" name="capitalTypes" type="checkbox" value="unit trusts">
                     <label class="govuk-label govuk-checkboxes__label" for="capitalTypes-9">
-                    Unit trusts
+                    Money from the Windrush Compensation Scheme
                     </label>
                 </div>
                 <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="capitalTypes-10" name="capitalTypes" type="checkbox" value="other accounts and investments">
                     <label class="govuk-label govuk-checkboxes__label" for="capitalTypes-10">
-                    Other accounts and investments
+                    A payment from the LGBT Financial Recognition Scheme
                     </label>
                 </div>
 

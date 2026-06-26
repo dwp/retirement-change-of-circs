@@ -10,10 +10,11 @@
     <div class="govuk-grid-column-two-thirds">
       <div class="govuk-panel govuk-panel--confirmation">
         <h1 class="govuk-panel__title">
-          Your home address has been updated for State Pension
+          	We will update your home address for State Pension within the next 8 days
         </h1>
       </div>
-      <p class="govuk-body">Your home address for State Pension has been updated to:</p>
+      <p class="govuk-body">We have sent you a confirmation email.</p>
+      <p class="govuk-body">Your home address for State Pension will be updated to:</p>
 
       {% if (data['select-an-address'] == "Select1") %}   
       <p class="govuk-body">
@@ -52,27 +53,12 @@
         {{ data['new-postcode-1'] }}<br>
         {% endif %}
 
-        <p class="govuk-body">We will send you a letter to confirm you have changed your home address.</p>
-
-  <h2 class="govuk-heading-s">Contacting us</h2>
+        <h2 class="govuk-heading-m">What happens next</h2>
         <p class="govuk-body">
-          You may need to contact us:
-          <ul class="govuk-list govuk-list--bullet">
-            <li>if you are getting any other benefits using your old address</li>
-            <li>if you have applied for any benefits using your old address</li>
-            <li>to change the address we send letters to</li>
-            <li>to find out what other changes you must report, and how to tell us about them</li>
-          </ul>
-        </p>
-          <p class="govuk-body">You can contact us at <a href="contact-pension-service" target="_blank">the Pension Service (opens in new tab)</a>.
-          <!-- <ul class="govuk-list govuk-list--bullet">
-            <li><a href="contact-pension-service" target="_blank">the Pension Service (opens in new tab)</a> if you live in England, Scotland or Wales</li>
-            <li><a href="https://www.nidirect.gov.uk/contacts/northern-ireland-pension-centre" target="_blank">the Northern Ireland Pension Centre (opens in new tab)</a> if you live in Northern Ireland</li>
-          </ul> -->
+          We will send you an email when we have changed your address for State Pension. This will be within the next 8 days.
         </p>
 
-  
-  <h2 class="govuk-heading-m">
+      <h2 class="govuk-heading-m">
         Help improve this service
       </h2>
       <p class="govuk-body">
@@ -86,6 +72,10 @@
       <p class="govuk-body">
         <a href="signed-out.html">Sign out</a>
       </p>
+        <a href="receipt-email" class="govuk-link">Prototype link - email</a>
+        </div>
+
+
       </div>
     </div>
   </div>

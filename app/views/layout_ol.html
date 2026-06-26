@@ -32,6 +32,8 @@
 {% from "govuk/components/textarea/macro.njk"            import govukTextarea %}
 {% from "govuk/components/warning-text/macro.njk"        import govukWarningText %}
 {% from "hmrc/components/service-navigation-language-select/macro.njk" import hmrcServiceNavigationLanguageSelect %}
+{% from "language-toggle/macro.njk"                      import dwpLanguageToggle %}
+
 {% block head %}
   {% include "includes/head.html" %}
 
@@ -103,17 +105,15 @@
     <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
   </div>
   <div class="govuk-grid-column-one-third">
-    {{
-      hmrcLanguageSelect({
-        language: 'en',
-        en: {
-          href: '?en'
-        },
-        cy: {
-          href: '?cy'
-        }
-      })
-    }}
+  {{
+        dwpLanguageToggle({
+            selectedLang: "en",
+            href: {
+                en: "#",
+                cy: "#"
+            }
+        })
+}}
   </div>
 </div>
 {% endblock %}

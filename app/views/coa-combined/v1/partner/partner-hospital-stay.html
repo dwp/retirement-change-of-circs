@@ -14,27 +14,39 @@
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <span class="govuk-caption-l">Your partner</span>
               <h1 class="govuk-fieldset__heading">
-                Has {% if data['first-name']%}
+                Have you or {% if data['first-name']%}
                 {{ data['first-name']}}
               {% else %}
                 Mark
                 {% endif %}
-                been in hospital for a period of more than 28 days?
+                had any overnight stays in hospital since [date]?
               </h1>
             </legend>
 
 
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="partner-hospital-stay" name="partner-hospital-stay" type="radio" value="Yes" {{ checked("partner-hospital-stay", "Yes") }}>
+                <input class="govuk-radios__input" id="partner-hospital-stay" name="partner-hospital-stay" type="radio" value="Neither of us have" {{ checked("partner-hospital-stay", "Yes") }}>
                 <label class="govuk-label govuk-radios__label" for="partner-blind-yes">
-                  Yes
+                  Neither of us have
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="ppartner-hospital-stay" name="partner-hospital-stay" type="radio" value="No" {{ checked("partner-hospital-stay", "No") }}>
+                <input class="govuk-radios__input" id="partner-hospital-stay" name="partner-hospital-stay" type="radio" value="I have" {{ checked("partner-hospital-stay", "No") }}>
                 <label class="govuk-label govuk-radios__label" for="partner-blind-no">
-                  No
+                  I have
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="partner-hospital-stay" name="partner-hospital-stay" type="radio" value="No" {{ checked("partner-hospital-stay", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="partner-blind-no">
+                  {{ data['first-name']}} has
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="partner-hospital-stay" name="partner-hospital-stay" type="radio" value="No" {{ checked("partner-hospital-stay", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="partner-blind-no">
+                  We both have
                 </label>
               </div>
             </div>

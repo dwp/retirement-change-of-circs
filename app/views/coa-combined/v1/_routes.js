@@ -457,9 +457,6 @@ router.post('/remove-partner-1', function (req, res) {
 
 
 
-
-
-
 ////////////////////////////////////
 /////// WHERE YOU LIVE NOW /////////
 ////////////////////////////////////
@@ -700,10 +697,33 @@ router.post('/coa-combined/v1/s&i/capital-select-capital', function (req, res) {
 
 // ROUTING FROM SELECT INVESTMENTS TO MONEY YOU HAVE TODAY
 router.post('/coa-combined/v1/s&i/capital-total-today', function (req, res) {
+  res.redirect('/coa-combined/v1/s&i/other-property.html')
+
+
+});
+
+// ROUTING FROM SELECT INVESTMENTS TO MONEY YOU HAVE TODAY
+router.post('/coa-combined/v1/s&i/other-property', function (req, res) {
+  res.redirect('/coa-combined/v1/s&i/property-repairs.html')
+
+
+});
+
+// ROUTING FROM SELECT INVESTMENTS TO MONEY YOU HAVE TODAY
+router.post('/coa-combined/v1/s&i/property-repairs', function (req, res) {
+  res.redirect('/coa-combined/v1/s&i/disregards.html')
+
+
+});
+
+// ROUTING FROM SELECT INVESTMENTS TO MONEY YOU HAVE TODAY
+router.post('/coa-combined/v1/s&i/disregards', function (req, res) {
   res.redirect('/coa-combined/v1/s&i/capital-check-answers.html')
 
 
 });
+
+
 
 ////////////////////////////////////////////////
 ////////////////////////////////////////////////

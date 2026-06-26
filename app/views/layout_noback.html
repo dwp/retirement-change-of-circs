@@ -32,7 +32,9 @@
 {% from "govuk/components/textarea/macro.njk"            import govukTextarea %}
 {% from "govuk/components/warning-text/macro.njk"        import govukWarningText %}
 {% from "hmrc/components/service-navigation-language-select/macro.njk" import hmrcServiceNavigationLanguageSelect %}{% block head %}
-  {% include "includes/head.html" %}
+{% from "language-toggle/macro.njk"                      import dwpLanguageToggle %}
+
+{% include "includes/head.html" %}
 
   <style>
     .app-service-navigation .govuk-service-navigation__wrapper {
@@ -116,17 +118,15 @@
     <a class="hidden govuk-back-link" href="javascript:window.history.back()">Back</a>
   </div>
   <div class="govuk-grid-column-one-third" style="float:right;">
-    {{
-      hmrcLanguageSelect({
-        language: 'en',
-        en: {
-          href: '?en'
-        },
-        cy: {
-          href: '?cy'
-        }
-      })
-    }}
+  {{
+        dwpLanguageToggle({
+            selectedLang: "en",
+            href: {
+                en: "#",
+                cy: "#"
+            }
+        })
+}}
   </div>
 </div>
 {% endblock %}
