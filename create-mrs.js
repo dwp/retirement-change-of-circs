@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import fs from "node:fs";
+import { URL } from "node:url";
 
 const GITLAB_TOKEN = process.env.GITLAB_TOKEN;
 const GROUP_ID = "111210875";
@@ -50,26 +51,30 @@ if (help) {
 `;
 
 async function gitlabFetch(url, options = {}) {
-  if (url.startsWith(GITLAB_API)) {
-    const res = await fetch(url, {
-      ...options,
-      headers: {
-        "PRIVATE-TOKEN": GITLAB_TOKEN,
-        "Content-Type": "application/json",
-        ...options.headers,
-      },
-    });
+  urlObject = new URL(url)
 
-    if (!res.ok) {
-      const text = await res.text();
-      throw new Error(`${res.status} ${res.statusText}: ${text}`);
-    }
-
-    return res.json();
+  const allowedDomains = [GITLAB_API];
+  if (!allowedDomains.includes(urlObject.hostname)) {
+      throw new Error('Domain not allowed');
   }
-  else throw new Error(`${url} was not to recognized gitlab domain`)
-  
+
+  const res = await fetch(urlObject, {
+    ...options,
+    headers: {
+      "PRIVATE-TOKEN": GITLAB_TOKEN,
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(`${res.status} ${res.statusText}: ${text}`);
+  }
+
+  return res.json();
 }
+
 
 // Get all projects in group (handles pagination)
 async function getAllProjects() {
