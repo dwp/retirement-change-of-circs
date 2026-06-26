@@ -2,10 +2,15 @@
 
 import fs from "node:fs";
 import { URL } from "node:url";
+import { request } from "node:https";
 
 const GITLAB_TOKEN = process.env.GITLAB_TOKEN;
 const GROUP_ID = "111210875";
 const GITLAB_API = "https://gitlab.com/api/v4";
+const HEADERS = {
+      "PRIVATE-TOKEN": GITLAB_TOKEN,
+      "Content-Type": "application/json"
+}
 
 if (!GITLAB_TOKEN) {
   console.error("Missing GITLAB_TOKEN environment variable");
@@ -50,22 +55,14 @@ if (help) {
 // (rest of script unchanged)
 `;
 
-var gitlabFetch = async function (url, options = {}) {
-  urlObject = new URL(url)
-
-  const allowedDomains = [GITLAB_API];
-  if (!allowedDomains.includes(urlObject.hostname)) {
+var gitlabFetch = async function (req) {
+  
+  const allowedDomains = [new URL(GITLAB_API).hostname];
+  if (!allowedDomains.includes(req.url.hostname)) {
       throw new Error('Domain not allowed');
   }
 
-  const res = await fetch(urlObject, {
-    ...options,
-    headers: {
-      "PRIVATE-TOKEN": GITLAB_TOKEN,
-      "Content-Type": "application/json",
-      ...options.headers,
-    },
-  });
+  const res = await fetch(req);
 
   if (!res.ok) {
     const text = await res.text();
@@ -82,8 +79,13 @@ async function getAllProjects() {
   let projects = [];
 
   while (true) {
+    const options = {
+      headers: HEADERS
+    }
+    const req = new Request(`${GITLAB_API}/groups/${GROUP_ID}/projects?per_page=100&page=${page}`, options)
+
     const result = await gitlabFetch(
-      `${GITLAB_API}/groups/${GROUP_ID}/projects?per_page=100&page=${page}`
+      req
     );
 
     if (result.length === 0) break;
@@ -97,16 +99,17 @@ async function getAllProjects() {
 
 async function createBranch(projectId, defaultBranch) {
   try {
-    await gitlabFetch(
-      `${GITLAB_API}/projects/${projectId}/repository/branches`,
-      {
+    const options = {
+        headers: HEADERS,
         method: "POST",
         body: JSON.stringify({
           branch: BRANCH_NAME,
           ref: defaultBranch,
         }),
-      }
-    );
+    }
+    const req = new Request(`${GITLAB_API}/projects/${projectId}/repository/branches`, options)
+    
+    await gitlabFetch(req);
   } catch (err) {
     if (!err.message.includes("already exists")) {
       throw err;
@@ -115,36 +118,41 @@ async function createBranch(projectId, defaultBranch) {
 }
 
 async function createCommit(projectId, defaultBranch) {
-  await gitlabFetch(
-    `${GITLAB_API}/projects/${projectId}/repository/commits`,
-    {
-      method: "POST",
-      body: JSON.stringify({
-        branch: BRANCH_NAME,
-        commit_message: "Add migration script",
-        actions: [
-          {
-            action: "create",
-            file_path: FILE_PATH,
-            content: FILE_CONTENT,
-          },
-        ],
-      }),
-    }
-  );
+  const options = {
+    headers = HEADERS,
+    method: "POST",
+    body: JSON.stringify({
+      branch: BRANCH_NAME,
+      commit_message: "Add migration script",
+      actions: [
+        {
+          action: "create",
+          file_path: FILE_PATH,
+          content: FILE_CONTENT,
+        },
+      ],
+    }),
+  }
+  
+  const req = new Request(`${GITLAB_API}/projects/${projectId}/repository/commits`, options)
+  
+  await gitlabFetch(req);  
 }
 
 async function createMR(projectId, defaultBranch) {
   try {
-    await gitlabFetch(`${GITLAB_API}/projects/${projectId}/merge_requests`, {
+    const options = {
+      headers: HEADERS,
       method: "POST",
       body: JSON.stringify({
         source_branch: BRANCH_NAME,
         target_branch: defaultBranch,
         title: MR_TITLE,
         description: MR_DESC,
-      }),
-    });
+      })
+    }
+    const req = new Request(`${GITLAB_API}/projects/${projectId}/merge_requests`, options)
+    await gitlabFetch(req);
   } catch (err) {
     if (!err.message.includes("already exists")) {
       throw err;
