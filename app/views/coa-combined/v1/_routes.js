@@ -579,6 +579,13 @@ router.post('/coa-combined/v1/partner/do-you-live-with-a-partner', function (req
 
 // ROUTING FROM PARTNER DETAILS TO REGISTERED BLIND
 router.post('/coa-combined/v1/partner/partner-details', function (req, res) {
+  res.redirect('/coa-combined/v1/partner/partner-dob.html')
+
+
+});
+
+// ROUTING FROM PARTNER DETAILS TO REGISTERED BLIND
+router.post('/coa-combined/v1/partner/partner-dob', function (req, res) {
   res.redirect('/coa-combined/v1/partner/partner-work.html')
 
 

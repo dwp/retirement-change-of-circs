@@ -14,53 +14,44 @@
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <span class="govuk-caption-l">Where you live now</span>
               <h1 class="govuk-fieldset__heading">
-                Service charges and ground rent
+                Do you pay any service charges?
               </h1>
             </legend>
-
-            <h2 class="govuk-heading-m">
-            Service charges
-          </h2>
-
 
               <p class="govuk-body">Service charges can include:</p>
                 <p class="govuk-body">
                 <ul class="govuk-list govuk-list--bullet">
                   <li>warden and caretaker services like gardening, maintenance and cleaning of communal areas</li>
-                  <li>insurance charges for the building (not for personal possessions)</li>
+                  <li>caretaker services like gardening, maintenance and cleaning of communal areas</li>
+
+                  <li>insurance charges - compulsory for structure of building, not for personal possessions</li>
                   <li>use of a lift or laundry room</li>
                   <li>use of communal areas like a lounge or tv area</li>
                   <li>removal of refuse</li>
                 </ul>
               </p>
 
-              <h2 class="govuk-heading-m">
-            Ground rent
-          </h2>
-          <p class="govuk-body">You might pay ground rent if your home is a leasehold property.</p>
-
+<!-- 
           <h2 class="govuk-heading-m">
-            Do you pay service charges or ground rent?
-          </h2>
+            Do you pay service charges
+          </h2> -->
             
-          
-
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="housing-costs" name="housing-costs" type="radio" value="I pay service charges and ground rent" {{ checked("housing-costs", "Select1") }}>
+                <input class="govuk-radios__input" id="housing-costs" name="housing-costs" type="radio" value="Yes" {{ checked("housing-costs", "Select1") }}>
                 <label class="govuk-label govuk-radios__label" for="housing-costs">
-                  I pay service charges and ground rent
+                  Yes
                 </label>
               </div>
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="housing-costs" name="housing-costs" type="radio" value="I only pay service charges" {{ checked("housing-costs", "Select2") }}>
+                <input class="govuk-radios__input" id="housing-costs" name="housing-costs" type="radio" value="No" {{ checked("housing-costs", "Select2") }}>
                 <label class="govuk-label govuk-radios__label" for="housing-costs">
-                  I only pay service charges
+                 No
                 </label>
               </div>
 
-              <div class="govuk-radios__item">
+              <!-- <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="housing-costs" name="housing-costs" type="radio" value="I only pay ground rent" {{ checked("housing-costs", "Select3") }}>
                 <label class="govuk-label govuk-radios__label" for="housing-costs">
                   I only pay ground rent
@@ -72,7 +63,7 @@
                 <label class="govuk-label govuk-radios__label" for="housing-costs">
                   I do not pay service charges or ground rent
                 </label>
-              </div>
+              </div> -->
             </div>            
           </fieldset>
         </div>
