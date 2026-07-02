@@ -1,0 +1,45 @@
+{% extends "layouts/ol_signed_in.html" %}
+
+{% block pageTitle %}
+ You cannot use this service
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+ <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        You cannot use this service to opt out of the Winter Fuel Payment
+      </h1>
+    </legend>
+           <p class="govuk-body">
+If you do not live in England, Wales or Northern Ireland you are not eligible for the Winter Fuel Payment and do not need to opt out.</p>
+    </p>
+
+    <div class="govuk-inset-text">
+  <a href="/wf-opt-out/3-0/your-state-pension">Return to your State Pension details</a>
+</div>
+
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h2 class="govuk-fieldset__heading">
+        If you live in Scotland
+      </h2>
+    </legend>
+
+        <p class="govuk-body">
+          Pension Age Winter Heating Payment has replaced the Winter Fuel Payment for people in Scotland.</p>
+   
+     <p class="govuk-body"> You can choose to <a href="https://www.mygov.scot/pension-age-winter-heating-payment/opt-out-of-payment">opt out of getting Pension Age Winter Heating Payment.</a>
+    </p>
+    </div>
+  </fieldset>
+</div>
+</form>
+  </div>
+
+
+{% endblock %}

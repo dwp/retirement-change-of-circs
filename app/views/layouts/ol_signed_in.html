@@ -1,6 +1,7 @@
 {#- We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework. -#}
 {%- set assetPath = '/govuk/assets' -%}
 
+
 {% extends "govuk/template.njk" %}
 
 {% from "govuk/components/accordion/macro.njk"           import govukAccordion %}
@@ -32,9 +33,9 @@
 {% from "govuk/components/tag/macro.njk"                 import govukTag %}
 {% from "govuk/components/textarea/macro.njk"            import govukTextarea %}
 {% from "govuk/components/warning-text/macro.njk"        import govukWarningText %}
-{% from "hmrc/components/service-navigation-language-select/macro.njk" import hmrcServiceNavigationLanguageSelect %}{% block head %}
 {% from "language-toggle/macro.njk"                      import dwpLanguageToggle %}
 
+{% block head %}
   {% include "includes/head.html" %}
 
   <style>
@@ -52,6 +53,7 @@
   </style>
 
 {% endblock %}
+
 
 {% block pageTitle %}
   GOV.UK Prototype Kit
