@@ -1,0 +1,211 @@
+{% extends "layouts/ol_signed_in.html" %}
+
+{% block pageTitle %}
+  Check your details - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">About where you live now</span>
+      <h1 class="govuk-heading-l">Check {{ data['first-name']}} details before you submit them</h1>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          {% if (data['other-benefits'] == "Yes") %}
+          {% endif %}  
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['first-name'] %}
+                {{ data['first-name'] }}
+              {% else %}
+                Joanne Fincher
+              {% endif %} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="have-you-already-moved.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              National insurance
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['nino'] %}
+                {{ data['nino'] }}
+              {% else %}
+                JC212121 C
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="temp-or-perm.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['uk-address'] %}
+                {{ data['uk-address'] }}
+              {% else %}
+                01 03 1956
+              {% endif %}  
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="uk-address.html">
+                Change<span class="govuk-visually-hidden"> if your moving this property</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Are you related?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['property-type'] %}
+                {{ data['property-type'] }}
+              {% else %}
+                Yes
+              {% endif %} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="type-of-property.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              How are you related?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['housing-status'] %}
+                {{ data['housing-status'] }}
+              {% else %}
+                I'm their parent or step-parent
+              {% endif %} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="housing-status.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Do they work more than 16 hours a week?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['citizen-record-year'] %}
+                {{ data['citizen-record-year'] }}
+              {% else %}
+                Yes
+              {% endif %} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="when-did-you-move.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Are they in education?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['citizen-record-year'] %}
+                {{ data['citizen-record-year'] }}
+              {% else %}
+                Yes, full-time
+              {% endif %} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="when-did-you-move.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              What's your living situation?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['citizen-record-year'] %}
+                {{ data['citizen-record-year'] }}
+              {% else %}
+                28 August 2025
+              {% endif %} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="when-did-you-move.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              When did this living situation start?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['citizen-record-year'] %}
+                {{ data['citizen-record-year'] }}
+              {% else %}
+                28 August 2025
+              {% endif %} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="when-did-you-move.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+     
+        <form action="../task-list2" method="post" novalidate>
+          <input type="hidden" name="answers-checked" value="true">
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+    </div>
+  </div>
+
+{% endblock %}
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "../2-0/check-answers.html",
+            text: "Lighter declaration",
+            attributes: {
+              target: "_blank"
+            }
+          },
+          {
+            href: "https://govuk-prototype-kit.herokuapp.com/",
+            text: "GOV.UK Prototype Kit " + releaseVersion
+          },
+          {
+            href: "/prototype-admin/clear-data",
+            text: "Clear data"
+          }
+        ],
+        visuallyHiddenTitle: "Footer links"
+      }
+    }) }}
+  {% endblock %}

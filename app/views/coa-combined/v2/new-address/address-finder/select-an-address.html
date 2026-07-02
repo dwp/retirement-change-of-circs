@@ -1,0 +1,141 @@
+{% extends "layouts/ol_signed_in.html" %}
+
+{% block pageTitle %}
+ Select an address - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <span class="govuk-caption-l">Your new address</span>
+              <h1 class="govuk-fieldset__heading">
+                Select an address
+              </h1>
+            </legend>
+            
+
+            {% if (data['postcode-7'] == "YO3 1MJ") %}
+            <p>5 addresses found for <b>{{ data['postcode-7'] }}</b> and <b>1</b>. <a href="find-address.html">Search again</a></p>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-address" name="select-address" type="radio" value="Select1" {{ checked("select-address", "Select1") }}>
+                <label class="govuk-label govuk-radios__label" for="select-address">
+                  1 Square Street, York, YO3 1MJ
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-address" name="select-address" type="radio" value="Select2" {{ checked("select-address", "Select2") }}>
+                <label class="govuk-label govuk-radios__label" for="select-address">
+                  10 Square Street, York, YO3 1MJ
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-address" name="select-address" type="radio" value="Select3" {{ checked("select-address", "Select3") }}>
+                <label class="govuk-label govuk-radios__label" for="select-address">
+                  11 Square Street, York, YO3 1MJ
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-address" name="select-address" type="radio" value="Select4" {{ checked("select-address", "Select4") }}>
+                <label class="govuk-label govuk-radios__label" for="select-address">
+                  123 Square Street, York, YO3 1MJ
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-address" name="select-address" type="radio" value="Select5" {{ checked("select-address", "Select5") }}>
+                <label class="govuk-label govuk-radios__label" for="select-address">
+                  1234 Square Street, York, YO3 1MJ
+                </label>
+              </div>
+            </div>            
+            {% else %}
+            <p>5 addresses found for <b>YO3 1MJ</b> and <b>1</b>. <a href="find-address.html">Search again</a></p>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-address" name="select-address" type="radio" value="Select1" {{ checked("select-address", "Select1") }}>
+                <label class="govuk-label govuk-radios__label" for="select-address">
+                  1 Square Street, York, YO3 1MJ
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-address" name="select-address" type="radio" value="Select2" {{ checked("select-address", "Select2") }}>
+                <label class="govuk-label govuk-radios__label" for="select-address">
+                  10 Square Street, York, YO3 1MJ
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-address" name="select-address" type="radio" value="Select3" {{ checked("select-address", "Select3") }}>
+                <label class="govuk-label govuk-radios__label" for="select-address">
+                  11 Square Street, York, YO3 1MJ
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-address" name="select-address" type="radio" value="Select4" {{ checked("select-address", "Select4") }}>
+                <label class="govuk-label govuk-radios__label" for="select-address">
+                  123 Square Street, York, YO3 1MJ
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-address" name="select-address" type="radio" value="Select5" {{ checked("select-address", "Select5") }}>
+                <label class="govuk-label govuk-radios__label" for="select-address">
+                  1234 Square Street, York, YO3 1MJ
+                </label>
+              </div>
+            </div>     
+            {% endif %}
+          </fieldset>
+        </div>
+
+
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Use this address
+        </button>
+        <p class="govuk-body govuk-!-margin-bottom-0">If your address is not listed <a href="https://www.gov.uk/contact-pension-service" class="govuk-link" target="_blank"> contact the Pension Service by phone or post (opens in new tab)</a>.</p>
+      </form>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">
+        Get help
+      </h2>
+      <p><a href="../contact-pension-service&help" target="_blank">Contact us by phone to get help with the online service (opens in new tab)</a></p>
+    </div>
+  </div>
+  
+
+  <br>
+  <br>
+
+  <!-- <div class="govuk-notification-banner govuk-notification-banner--journey-options" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" data-govuk-notification-banner-init="">
+          <div class="govuk-notification-banner__header govuk-notification-banner__header--journey-options">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+              Prototype options
+            </h2>
+          </div>
+          <div class="govuk-notification-banner__content">
+
+            <p class="govuk-body">
+              <ul class="govuk-list govuk-list--bullet">
+                <li><a href="this-is-a-prison.html" target="">This is a prison address</a></li>
+                <li><a href="../this-is-a-carehome-or-hospital" target="">This is a care home or hospital</a></li>
+              </ul>
+            </p>
+          </div>
+      </div>
+    </div> -->
+  </div>  
+
+  
+    
+    
+  </div>
+  </div>
+  </div>
+
+{% endblock %}

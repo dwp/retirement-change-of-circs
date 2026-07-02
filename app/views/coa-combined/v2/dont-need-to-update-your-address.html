@@ -1,0 +1,39 @@
+<<<<<<< HEAD
+{% extends "layouts/ol_signed_in_noback.html" %}
+=======
+{% extends "layouts/ol_signed_in.html" %}
+>>>>>>> 9a89c3c97b8f40dfa1ee943972bbed7d9a017edf
+
+{% block pageTitle %}
+   You need to change your address once you have moved - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="bank-playback" method="post">
+      <div class="govuk-form-group">
+        <h1 class="govuk-heading-l">
+          You do not need to update your home address
+        </h1>
+        <p class="govuk-body">
+          This is because your home address must be your permanent address. That is somewhere you plan to live for at least 6 months.
+        </p>
+        <p class="govuk-body">
+          You can still <a href="/contact/3-0/correspondence-address-v1/uk-address" class="govuk-link">update the address we send your letters to</a>.
+        </p>
+
+        <p class="govuk-body">
+          If you move to a permanent address you can use this service to let us know.
+        </p>
+
+        <div class="govuk-inset-text">
+          <a href="your-state-pension.html" class="govuk-link">Return to your State Pension details</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

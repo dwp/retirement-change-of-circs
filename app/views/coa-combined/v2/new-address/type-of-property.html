@@ -1,0 +1,89 @@
+{% extends "layouts/ol_signed_in.html" %}
+
+{% block pageTitle %}
+  What type of property is it? - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <span class="govuk-caption-l">Your new address</span>
+              <h1 class="govuk-fieldset__heading">
+                What type of property is it?
+              </h1>
+            </legend>
+
+            <!-- <p class="govuk-body">
+              You can only change your address after you have moved.
+            </p> -->
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="property-type" name="property-type" type="radio" value="House" {{ checked("property-type", "House") }}>
+                <label class="govuk-label govuk-radios__label" for="house">
+                  House or bungalow
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="property-type" name="property-type" type="radio" value="Flat" {{ checked("property-type", "flat") }}>
+                <label class="govuk-label govuk-radios__label" for="flat">
+                  Flat, apartment or annexe
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="property-type" name="property-type" type="radio" value="Hospital" {{ checked("property-type", "hospital") }}>
+                <label class="govuk-label govuk-radios__label" for="hospital">
+                  Hospital
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="property-type" name="property-type" type="radio" value="Care home" {{ checked("property-type", "care-home") }}>
+                <label class="govuk-label govuk-radios__label" for="carehome">
+                  Care home
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="property-type" name="property-type" type="radio" value="Caravan" {{ checked("property-type", "Caravan") }}>
+                <label class="govuk-label govuk-radios__label" for="Caravan">
+                  Caravan, houseboat or mobile home
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-type" name="property-type" type="radio" value="Other" data-aria-controls="conditional-contact"{{ checked("property-type", "other") }}>
+                  <label class="govuk-label govuk-radios__label" for="other">
+                    Other
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                  <div class="govuk-form-group">
+                    <!-- <label class="govuk-label" for="other">
+                      What should this say?
+                    </label> -->
+                    <input class="govuk-input govuk-!-width-one-third" id="property-type" name="other" type="text" spellcheck="false">
+                  </div>
+                </div>
+            </div>
+          </fieldset>
+          </div>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">
+        Get help
+      </h2>
+      <p><a href="../contact-pension-service&help" target="_blank">Contact us by phone to get help with the online service (opens in new tab)</a></p>
+    </div>
+  </div>
+
+{% endblock %}

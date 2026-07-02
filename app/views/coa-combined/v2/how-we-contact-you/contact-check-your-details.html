@@ -1,0 +1,102 @@
+{% extends "layouts/ol_signed_in.html" %}
+
+{% block pageTitle %}
+  Check your answers about how we contact you - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">How we contact you</span>
+      <h1 class="govuk-heading-l">Check your answers about how we contact you</h1>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Email address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['new-email'] %}
+               A different email address
+              <div id="signIn-item-hint" class="govuk-hint">
+              {{ data['new-email'] }}
+            </div>   
+              {% else %}
+              My current email address
+              <div id="signIn-item-hint" class="govuk-hint">
+              adam@dwp.gov.uk
+            </div>          
+
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="provide-email-address.html">
+                Change<span class="govuk-visually-hidden"> email address</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Phone number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {%if data['phoneType'] == mobile-number'%}
+              Home phone
+              <div id="signIn-item-hint" class="govuk-hint">
+                0161 827 3866
+            </div>
+              {% elif data['phoneType'] == 'mobile-number'%}
+              Mobile phone number
+              <div id="signIn-item-hint" class="govuk-hint">
+                0779374837
+              </div>
+              {% endif %}
+              Mobile phone number
+              <div id="signIn-item-hint" class="govuk-hint">
+                0779374837
+              </div>
+              <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="provide-phone-number.html">
+                Change<span class="govuk-visually-hidden"> phone number</span>
+              </a>
+            </dd>
+            </div>
+        </dl>
+        
+     
+        <form method="post">
+          <input type="hidden" name="answers-checked" value="true">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+    </div>
+  </div>
+
+{% endblock %}
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "../2-0/check-answers.html",
+            text: "Lighter declaration",
+            attributes: {
+              target: "_blank"
+            }
+          },
+          {
+            href: "https://govuk-prototype-kit.herokuapp.com/",
+            text: "GOV.UK Prototype Kit " + releaseVersion
+          },
+          {
+            href: "/prototype-admin/clear-data",
+            text: "Clear data"
+          }
+        ],
+        visuallyHiddenTitle: "Footer links"
+      }
+    }) }}
+  {% endblock %}

@@ -1,0 +1,84 @@
+
+{% extends "layouts/ol_signed_in.html" %}
+
+{% set pageName = "Add another person who lives with you" %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <p><a href="javascript:history.back()" class="govuk-back-link govuk-!-static-margin-0">Back</a></p>
+    <h1 class="govuk-heading-l govuk-!-padding-top-7">
+      You have added shares in {{ data['sharesList'].length | plural("company")}}
+    </h1>
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Companies you have shares in</th>
+          <th scope="col" class="govuk-table__header"><div class="govuk-visually-hidden">Actions</div></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+          {% for shares in data['sharesList'] %}
+           
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">{{ shares.sharesCompany }}</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric"><a href="capital-shares-check-answers?record={{loop.index0}}&sharesChange=yes">Change</a>  |  <a href="#">Delete</a></td>
+            </tr>
+           
+          {%- endfor %}
+      </tbody>
+    </table>
+
+
+
+     <form method="post" >
+        <div class="govuk-form-group govuk-body govuk-!-margin-top-9">
+        <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+Do you or your partner have shares in another company?            </h2>
+            </legend>
+
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="addanother" name="addanother" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="addanother">
+                Yes
+                </label>
+            </div>
+            <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="addanother-2" name="addanother" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="addanother-2">
+                No
+                </label>
+            </div>
+
+            </div>
+        </fieldset>
+        </div>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+        </button>
+
+        </form>
+
+
+
+  </div>
+</div>
+
+{% endblock %}

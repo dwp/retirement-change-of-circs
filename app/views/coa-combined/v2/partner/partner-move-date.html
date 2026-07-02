@@ -1,0 +1,93 @@
+{% extends "layouts/ol_signed_in.html" %}
+
+{% block pageTitle %}
+  Partner date of birth? - Manage your State Pension - GOV.UK
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <span class="govuk-caption-l">Your partner</span>
+              <h1 class="govuk-fieldset__heading">
+                What is {% if data['first-name']%}
+                {{ data['first-name']}}'s'
+                  {% else %}
+                    Marks
+                  {% endif %}
+                  date of birth?
+                </h1>
+              </legend>
+              <div id="passport-issued-hint" class="govuk-hint">
+                For example, 27 3 2007
+              </div>
+  
+            <div class="govuk-date-input" id="partner-record">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="partner-record-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="partner-record-day" name="partner-record-day" type="text" inputmode="numeric" vvalue="{{ data['partner-record-day'] }}">>
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="partner-record-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="partner-record-month" name="partner-record-month" type="text" inputmode="numeric" value="{{ data['partner-record-month'] }}">>
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="partner-record-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="partner-record-year" name="partner-record-year" type="text" inputmode="numeric" value="{{ data['partner-record-year'] }}">>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+
+      <!-- <p class="govuk-body">
+        <a href="report-change-after-move.html" class="govuk-link">I have not moved yet</a>.
+      </p> -->
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">
+        Get help
+      </h2>
+      <p><a href="contact-pension-service&help" target="_blank">Contact us by phone to get help with the online service (opens in new tab)</a></p>
+    </div>
+  </div>
+
+  <!-- <div class="govuk-notification-banner govuk-notification-banner--journey-options" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" data-govuk-notification-banner-init="">
+        <div class="govuk-notification-banner__header govuk-notification-banner__header--journey-options">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Prototype options
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <p class="govuk-body">Date moved</p>
+          <p class="govuk-body">
+            <ul class="govuk-list govuk-list--bullet">
+              <li><strong>2025</strong> - Happy path </li>
+            </ul>
+          </p>
+        </div>
+      </div> -->
+
+{% endblock %}

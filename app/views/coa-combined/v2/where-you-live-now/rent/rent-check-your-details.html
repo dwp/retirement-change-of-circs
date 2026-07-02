@@ -1,47 +1,40 @@
 {% extends "layouts/ol_signed_in.html" %}
 
 {% block pageTitle %}
-  Check your answers about how we contact you - Manage your State Pension - GOV.UK
+  Check your answers about where you live now - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-l">How we contact you</span>
-      <h1 class="govuk-heading-l">Check your answers about how we contact you</h1>
+      <span class="govuk-caption-l">Where you live now</span>
+      <h1 class="govuk-heading-l">Check your answers about where you live now</h1>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              Email address
+              Service charges
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['new-email'] %}
-               A different email address
-              <div id="signIn-item-hint" class="govuk-hint">
-              {{ data['new-email'] }}
-            </div>   
+              {% if data['housing-costs'] %}
+                {{ data['housing-costs'] }}
               {% else %}
-              My current email address
-              <div id="signIn-item-hint" class="govuk-hint">
-              adam@dwp.gov.uk
-            </div>          
-
+                Yes
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="provide-email-address.html">
-                Change<span class="govuk-visually-hidden"> email address</span>
+              <a class="govuk-link" href="housing-costs.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
               </a>
             </dd>
           </div>
         </dl>
         
      
-        <form method="post">
+        <form method="post" novalidate>
           <input type="hidden" name="answers-checked" value="true">
-          <button type="submit" class="govuk-button" data-module="govuk-button">
+          <button class="govuk-button" data-module="govuk-button">
             Continue
           </button>
         </form>

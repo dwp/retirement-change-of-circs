@@ -1,0 +1,57 @@
+{% extends "layouts/ol_signed_in" %}
+
+{% block pageTitle %}
+  Are you responsible for any children or qualifying young people who live with you? - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <span class="govuk-caption-l">Children or qualifying young people</span>
+              <h1 class="govuk-fieldset__heading">
+                Are you responsible for any children or qualifying young people who live with you?
+              </h1>
+            </legend>
+
+            <div id="young-people-hint" class="govuk-hint">
+              Children are under age 16. A qualifying young person is aged 16 to 19 and in non-advanced fulltime education or training
+            </div>
+            
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="young-people" name="young-people" type="radio" value="Yes" {{ checked("young-people", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="young-people-yes">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="young-people" name="young-people" type="radio" value="No" {{ checked("young-people", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="young-people-no">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">
+        Get help
+      </h2>
+      <p><a href="../contact-pension-service&help" target="_blank">Contact us by phone to get help with the online service (opens in new tab)</a></p>
+    </div>
+  </div>
+
+{% endblock %}

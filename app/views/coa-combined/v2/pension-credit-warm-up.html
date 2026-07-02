@@ -1,0 +1,93 @@
+{% extends "layouts/ol_signed_in.html" %}
+
+{% block pageTitle %}
+  	Changing your address when you get State Pension and Pension Credit - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" method="post">
+        <div class="govuk-form-group">
+          <h1 class="govuk-heading-l">
+            	Changing your address when you get State Pension and Pension Credit
+          </h1>
+          <p class="govuk-body">
+            We need to ask some questions to make sure you get the right amount of Pension Credit. We will ask about:
+          </p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>your new address</li>
+            <li>service charges</li>
+            <li>your partner's date of birth and National Insurance number</li>
+            <li>how much money you and your partner have in bank and savings accounts</li>
+            <li>your contact details</li>
+          </ul>
+
+          <h2 class="govuk-heading-m">
+            Before you continue
+          </h2>
+
+          
+          <p class="govuk-body">
+            You will need to answer all the questions in one go. You cannot save your answers and return later.
+          </p>
+
+          <p class="govuk-body">
+            For security we will sign you out after 30 minutes of inactivity.
+          </p>
+
+          
+          
+        </div>
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+        
+        <!-- <div class="govuk-notification-banner govuk-notification-banner--journey-options" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" data-govuk-notification-banner-init="">
+          <div class="govuk-notification-banner__header govuk-notification-banner__header--journey-options">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+              Prototype options
+            </h2>
+          </div>
+          <div class="govuk-notification-banner__content">
+            <p class="govuk-body">
+              <a href="../phase1/gysp-v1/have-you-already-moved.html" target="">Benefits API failure</a>.
+            </p>
+          </div>
+        </div> -->
+      </form>
+    </div>
+  </div>
+  {% endblock %}
+
+{% block footer %}
+
+  {{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "idv-recreated-pages/idv-placeholder",
+          text: "ID&V CODES REQUIRED (opens in new tab)",
+          attributes: {
+            target: "_blank"
+          }
+        },
+        {
+          href: "idv-recreated-pages/success",
+          text: "SKIP ID&V SUCCESS"
+        },
+        {
+          href: "https://govuk-prototype-kit.herokuapp.com/",
+          text: "GOV.UK Prototype Kit " + releaseVersion
+        },
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        }
+      ],
+      visuallyHiddenTitle: "Footer links"
+    }
+  }) }}
+
+{% endblock %}

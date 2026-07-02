@@ -1,0 +1,100 @@
+{% extends "layouts/ol_signed_in" %}
+
+{% block pageTitle %}
+Money today - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <span class="govuk-caption-l">Money and investments</span>
+
+              {%if data['partner'] == 'Yes'%}
+              <h1 class="govuk-fieldset__heading">
+                Money you and {{ data['first-name']}} have today
+              </h1>
+            </legend>
+
+                <div class="govuk-body">
+                    <p>
+                          You must include all the money that you both have in:
+                        <ul class="govuk-list govuk-list--bullet">
+                            {% for item in data['capitalTypes'] %}
+                                {%if item != 'shares' %}
+                                    <li>{{ item }}</li>
+                                {%endif%}
+                            {% endfor %}
+                        </ul>
+                    </p>
+                </div>
+                                   <h2 class="govuk-label-wrapper">
+      <label class="govuk-label govuk-label--m" for="event-name">How much money do you and {{ data['first-name']}} have today?</label></h2>
+            <p {%if data['route'] == '1'%}class="govuk-hint"{%endif%}>
+                    Enter an amount in pounds and pence, for example, 100.00
+                </p>
+                <div class="govuk-input__wrapper">
+                    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                    <input class="govuk-input govuk-input--width-10" id="todayTotal" name="todayTotal" spellcheck="false" type="numeric">
+                </div>
+
+            </div>
+
+                {% else %}
+                <h1 class="govuk-fieldset__heading">
+                Money you have today
+              </h1>
+            </legend>
+
+            
+
+                <div class="govuk-body">
+                    <p>
+                          You must include all the money you have in:
+                        <ul class="govuk-list govuk-list--bullet">
+                            {% for item in data['capitalTypes'] %}
+                                {%if item != 'shares' %}
+                                    <li>{{ item }}</li>
+                                {%endif%}
+                            {% endfor %}
+                        </ul>
+                    </p>
+                </div>
+              
+
+                {%if data['route'] == '1'%}
+                    <div class="govuk-inset-text">
+                        If you do not enter anything for more than 1 hour, your application will time out and you will have to start again.
+                    </div>
+                    {% endif %}
+                    <h2 class="govuk-label-wrapper">
+      <label class="govuk-label govuk-label--m" for="event-name">How much money do you have today?</label></h2>
+            <p {%if data['route'] == '1'%}class="govuk-hint"{%endif%}>
+                    Enter an amount in pounds and pence, for example, 100.00
+                </p>
+                <div class="govuk-input__wrapper">
+                    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                    <input class="govuk-input govuk-input--width-10" id="todayTotal" name="todayTotal" spellcheck="false" type="numeric">
+                </div>
+            </div>
+
+              {% endif %}
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+    </div>
+    
+  <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">
+        Get help
+      </h2>
+      <p><a href="../contact-pension-service&help" target="_blank">Contact us by phone to get help with the online service (opens in new tab)</a></p>
+    </div>
+
+{% endblock %}

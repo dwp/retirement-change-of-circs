@@ -1,0 +1,70 @@
+
+{% set serviceName = 'Manage you State Pension' %}
+{% extends "layouts/ol_signed_in.html" %}
+
+{% set pageName = "Does anyone aged 19 or under live with you?" %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <p><a href="javascript:history.back()" class="govuk-back-link govuk-!-static-margin-0">Back</a></p>
+
+        <form method="post" >
+            <div class="govuk-form-group govuk-!-padding-top-7">
+            <fieldset class="govuk-fieldset" aria-describedby="hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <span class="govuk-caption-l">Your partner</span>
+                <h1 class="govuk-fieldset__heading">
+                    Are you sure you want to remove{% if data['first-name']%}
+                {{ data['first-name']}}
+              {% else %}
+                Mark
+              {% endif %}?
+                </h1>
+                </legend>
+                <!-- <p class="govuk-body govuk-hint" id="hint">Children are under age 16. A qualifying young person is aged 16 to 19 and in non-advanced full-time education or training.</p> -->
+                
+
+                <div class="govuk-radios govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="partnerRemove" name="partnerRemove" type="radio" value="Yes">
+                    <label class="govuk-label govuk-radios__label" for="partnerRemove">
+                    Yes
+                    </label>
+                </div>
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="partnerRemove" name="partnerRemove" type="radio" value="No">
+                    <label class="govuk-label govuk-radios__label" for="partnerRemove">
+                      No
+                    </label>
+                </div>
+                </div>
+            </fieldset>
+            </div>
+
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+        </form>
+</div>
+<div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">
+        Get help
+      </h2>
+      <p><a href="../contact-pension-service&help" target="_blank">Contact us by phone to get help with the online service (opens in new tab)</a></p>
+    </div>
+</div>
+
+{% endblock %}

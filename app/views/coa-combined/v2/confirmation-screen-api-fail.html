@@ -1,0 +1,99 @@
+{% extends "layout_noback.html" %}
+
+{% block pageTitle %}
+  Your home address has been updated for State Pension - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          Your home address has been updated for State Pension
+        </h1>
+      </div>
+      <h2 class="govuk-heading-s">Your home address has been updated to:</h2>
+
+      <p class="govuk-body">
+        1 Square Street<br>
+        York<br>
+        YO3 1SQ	<br>
+ 
+
+        <p class="govuk-body">We will send you a letter to confirm you have changed your home address.</p>
+
+
+        <h2 class="govuk-heading-s">Contacting us</h2>
+        <p class="govuk-body">
+          You may need to contact us:
+          <ul class="govuk-list govuk-list--bullet">
+            <li>if you are getting any other benefits using your old address</li>
+            <li>if you have applied for any benefits using your old address</li>
+            <li>to change the address we send letters to find out what other changed you must report, and how to tell us about them</li>
+            <li>to find out what other changes you must report, and how to tell us about them</li>
+          </ul>
+        </p>
+          <p class="govuk-body">You can contact us at:
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="contact-pension-service" target="_blank">the Pension Service (opens in new tab)</a> if you live in England, Scotland or Wales</li>
+            <li><a href="https://www.nidirect.gov.uk/contacts/northern-ireland-pension-centre" target="_blank">the Northern Ireland Pension Centre (opens in new tab)</a> if you live in Northern Ireland</li>
+          </ul>
+  
+      <h2 class="govuk-heading-s">What happens next</h2>
+
+        <p class="govuk-body">
+          Based on your answers, we need more information from you.
+        </p>
+        <p class="govuk-body">
+          We will be in contact with you either by phone or we will send you forms to fill out.
+        </p>
+
+        
+
+
+
+      <h2 class="govuk-heading-m">
+        Help improve this service
+      </h2>
+      <p class="govuk-body">
+        This is a new service. Help us improve it and <a href="#">give your feedback (opens in new tab)</a>.
+      </p>
+      <!-- <div class="govuk-inset-text">
+        <a href="../your-state-pension&updated.html" class="govuk-link">Return to your State Pension details</a>
+      </div> -->
+      <div class="govuk-inset-text">
+      <a href="your-state-pension&updated.html">Return to Your State Pension details.</a></div>
+      <p class="govuk-body">
+        <a href="signed-out.html">Sign out</a>
+      </p>
+      <p class="govuk-body">
+      <a href="confirmation-screen" target="_blank">Confirmation screen - No action needed (opens in new tab)</a><br>
+      <a href="confirmation-screen-further-action-needed" target="_blank">Confirmation screen - Further action needed (opens in new tab)</a>
+      
+      </p>
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "https://govuk-prototype-kit.herokuapp.com/",
+            text: "GOV.UK Prototype Kit " + releaseVersion
+          },
+          {
+            href: "/prototype-admin/clear-data",
+            text: "Clear data"
+          }
+        ],
+        visuallyHiddenTitle: "Footer links"
+      }
+    }) }}
+  {% endblock %}
+ÍÍ

@@ -1,0 +1,213 @@
+{% extends "layouts/ol_signed_in.html" %}
+
+{% block pageTitle %}
+  Check your answers about your new address - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Your new address</span>
+      <h1 class="govuk-heading-l">Check your answers about your new address</h1>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          {% if (data['other-benefits'] == "Yes") %}
+          {% endif %}  
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Already moved
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Yes
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="have-you-already-moved">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Permanent or temporary
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Permanent
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="temp-or-perm">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              UK address 
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['uk-address'] %}
+                {{ data['uk-address'] }}
+              {% else %}
+                Yes
+              {% endif %}  
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="uk-address">
+                Change<span class="govuk-visually-hidden"> if your moving this property</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Property type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['property-type'] %}
+                {{ data['property-type'] }}
+              {% else %}
+                Yes
+              {% endif %} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="type-of-property">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Date moved
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['citizen-record-day']%}
+                {{data['citizen-record-day']}} {{data['citizen-record-month'] | monthName}} {{data['citizen-record-year']}}
+              {% else %}
+                1 March 2025
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="when-did-you-move">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+
+          {% if (data['select-address'] == "Select1") %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              New address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              1 Square Street<br>
+              York<br>
+              YO3 1SQ
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="address-finder/select-an-address">
+                Change<span class="govuk-visually-hidden"> your home address</span>
+              </a>
+            </dd>
+          </div>
+
+          {% elif (data['select-an-address'] == "Select2") %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              New address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              1 Square Street<br>
+              York<br>
+              YO3 1SQ
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="address-finder/select-an-address">
+                Change<span class="govuk-visually-hidden"> your home address</span>
+              </a>
+            </dd>
+          </div>
+          {% elif (data['select-address'] == "Select3") %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              New address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              1 Square Street<br>
+              York<br>
+              YO3 1SQ
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="address-finder/select-an-address">
+                Change<span class="govuk-visually-hidden"> your home address</span>
+              </a>
+            </dd>
+          </div>
+          {% elif (data['select-address'] == "Select4") %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              New address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              1 Square Street<br>
+              York<br>
+              YO3 1SQ
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="address-finder/select-an-address">
+                Change<span class="govuk-visually-hidden"> your home address</span>
+              </a>
+            </dd>
+          </div>
+
+          {% else %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              New address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              1 Square Street<br>
+              York<br>
+              YO3 1SQ
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="address-finder/select-an-address">
+                Change<span class="govuk-visually-hidden"> your home address</span>
+              </a>
+            </dd>
+          </div>
+          {% endif %}
+        </dl>
+     
+        <form method="post" novalidate>
+          <input type="hidden" name="answers-checked" value="true">
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+    </div>
+  </div>
+
+{% endblock %}
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "../2-0/check-answers.html",
+            text: "Lighter declaration",
+            attributes: {
+              target: "_blank"
+            }
+          },
+          {
+            href: "https://govuk-prototype-kit.herokuapp.com/",
+            text: "GOV.UK Prototype Kit " + releaseVersion
+          },
+          {
+            href: "/prototype-admin/clear-data",
+            text: "Clear data"
+          }
+        ],
+        visuallyHiddenTitle: "Footer links"
+      }
+    }) }}
+  {% endblock %}

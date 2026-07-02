@@ -1,0 +1,71 @@
+{% extends "layouts/ol_signed_in.html" %}
+
+{% block pageTitle %}
+ Find an address - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" method="post">
+        <span class="govuk-caption-l">Your new address</span>
+        <h1 class="govuk-heading-l">What is your new address?</h1>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="postcode-7">
+            Postcode
+          </label>
+          <div id="postcode-hint" class="govuk-hint">
+            For example, AA3 1AB.
+          </div>
+          <input class="govuk-input govuk-input--width-10" id="postcode-7" name="postcode-7" type="text" value="{{ data['postcode-7'] }}">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="building-name">
+            Building number or name
+          </label>
+          <div id="searchString-hint" class="govuk-hint">
+            For example, 15 or Prospect Cottage
+          </div>
+          <input class="govuk-input govuk-!-width-two-thirds" id="searchString" name="searchString" type="text" aria-describedby="searchString-hint" value="{{ data['building-number-or-name'] }}">
+        </div>
+
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Find address
+        </button>
+        
+        <!-- <p class="govuk-body govuk-!-margin-bottom-0"><a href="enter-manual-address.html" class="govuk-link">Enter address manually</a></p> -->
+
+      </form>
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">
+        Get help
+      </h2>
+      <p><a href="../contact-pension-service&help.html" target="_blank">Contact us by phone to get help with the online service (opens in new tab)</a></p>
+    </div>
+  </div>
+
+  <!-- <div class="govuk-notification-banner govuk-notification-banner--journey-options" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" data-govuk-notification-banner-init="">
+        <div class="govuk-notification-banner__header govuk-notification-banner__header--journey-options">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Prototype options
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <p class="govuk-body">Postcodes</p>
+          <p class="govuk-body">
+            <ul class="govuk-list govuk-list--bullet">
+              <li><strong>YO3 1MJ</strong> - Happy path </li>
+              <li><strong>YO3 1MK</strong> - No address found </li>
+              <li><strong>YO3 1ML</strong> - Already the address we have for you </li>
+              <li><strong>YO3 1MM</strong> - Single result </li>
+            </ul>
+          </p>
+        </div>
+      </div> -->
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "layouts/ol_signed_in.html" %}
+
+{% block pageTitle %}
+   You cannot change your address - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="bank-playback" method="post">
+      <div class="govuk-form-group">
+        <span class="govuk-caption-l">Your new address</span>
+        <h1 class="govuk-heading-l">
+          You cannot change your address
+        </h1>
+        <p class="govuk-body">
+          This is because your address must be where you live now.
+        </p>
+        <p class="govuk-body">
+          When you have moved into your new address use this service to tell us.
+        </p>
+        <div class="govuk-inset-text">
+          <a href="../your-state-pension.html" class="govuk-link">Return to your State Pension details</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
