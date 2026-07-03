@@ -1,4 +1,4 @@
-{% extends "layout_nowelsh.html" %}
+{% extends "layouts/ol_signed_in.html" %}
 
 {% block pageTitle %}
   Home – GOV.UK Prototype Kit
@@ -26,7 +26,7 @@
       </div>
 
       <h2 class="govuk-heading-m">Happy path end-to-end journey</h2>
-      <a href="/wf-opt-out/3-0/sign-in-with-onelogin" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">Start now</a>
+      <a href="/wf-opt-out/3-0/how-we-use-info" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">Start now</a>
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
@@ -36,10 +36,12 @@
         <div class="govuk-details__text">
           <h3 class="govuk-heading-s">Opt out journey</h3>
           <ul class="govuk-list govuk-list--bullet">
-            <li><a href="/wf-opt-out/3-0/sign-in-with-onelogin" target="_blank">Standard One Login journey</a> 
-              <li><a href="/wf-opt-out/3-0/sign-in" target="_blank">Standard One Login journey - sign in</a> 
+            <li><a href="/wf-opt-out/3-0/how-we-use-info" target="_blank">Standard One Login journey - How we use info</a> 
+            <li><a href="/wf-opt-out/3-0/sign-in-with-onelogin" target="_blank">Standard One Login journey - Sign in</a> 
+              <li><a href="/wf-opt-out/3-0/sign-in" target="_blank">Standard One Login journey - Create account</a> 
             <li><a href="/wf-opt-out/3-0/your-state-pension" target="_blank">MySP Overview page</a>
-            <li><a href="/wf-opt-out/3-0/email">Submit a request to opt out</a></li>           
+            <li><a href="/wf-opt-out/3-0/where-you-live">Where you live</a></li>  
+              <li><a href="/wf-opt-out/3-0/email">Submit a request to opt out</a></li>           
             <li><a href="/wf-opt-out/3-0/check-answers" target="_blank">Check your answers</a>
             <li><a href="/wf-opt-out/3-0/confirmation" target="_blank">Confirmation of request to opt out</a>
           </ul>
