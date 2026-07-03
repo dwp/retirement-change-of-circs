@@ -1,0 +1,49 @@
+{% extends "layouts/ol_signed_in.html" %}
+
+{% block pageTitle %}
+  Where you live
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+ <form class="form" action="/wf-opt-out/3-0/where-you-live" method="post">
+
+{{ govukRadios({
+  name: "where-you-live",
+  value: data['where-you-live'],
+  fieldset: {
+    legend: {
+      text: "Do you live in England, Wales or Northern Ireland?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+</form>
+
+</form>
+  </fieldset>
+</div>
+</form>
+  </div>
+
+
+{% endblock %}

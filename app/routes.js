@@ -3675,6 +3675,20 @@ router.post('/wf-opt-out/3-0/sign-in', function (req, res) {
   res.redirect('/wf-opt-out/3-0/your-state-pension');
 });
 
+
+router.post('/wf-opt-out/3-0/where-you-live', function(request, response) {
+
+  const country = request.session.data['where-you-live']
+
+  if (country === 'yes') {
+    return response.redirect('/wf-opt-out/3-0/email')
+  } else {
+    return response.redirect('/wf-opt-out/3-0/you-cannot-use-this-service')
+  }
+
+})
+
+
 router.post('/wf-opt-out/3-0/email', function (req, res) {
   res.redirect('/wf-opt-out/3-0/check-answers');
 });

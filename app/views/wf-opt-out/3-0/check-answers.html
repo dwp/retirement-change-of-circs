@@ -13,27 +13,40 @@ Check your answers
       Check your answers before submitting your request
     </h1>
 
-{{ govukSummaryList({
-  rows: [
-    {
-      key: {
-        text: "Email address"
-      },
-      value: {
-        text: data['email']
-      },
-      actions: {
-        items: [
-          {
-            href: "/wf-opt-out/3-0/email",
-            text: "Change",
-            visuallyHiddenText: "Email address"
-          }
-        ]
-      }
-    }
-  ]
-}) }}
+
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Where you live
+    </dt>
+    <dd class="govuk-summary-list__value">
+      England, Wales or Northern Ireland
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="/wf-opt-out/3-0/where-you-live">
+        Change<span class="govuk-visually-hidden"> where you live</span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Email address
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['email'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="/wf-opt-out/3-0/email">
+        Change<span class="govuk-visually-hidden"> email address</span>
+      </a>
+    </dd>
+  </div>
+
+</dl>
+
 
 
 
