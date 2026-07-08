@@ -13,85 +13,7 @@
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           {% if (data['other-benefits'] == "Yes") %}
           {% endif %}  
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width:40%;">
-              Already moved
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Yes
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="have-you-already-moved">
-                Change<span class="govuk-visually-hidden"> residential address</span>
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width:40%;">
-              Permanent or temporary
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Permanent
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="temp-or-perm">
-                Change<span class="govuk-visually-hidden"> residential address</span>
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width:40%;">
-              UK address 
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['uk-address'] %}
-                {{ data['uk-address'] }}
-              {% else %}
-                Yes
-              {% endif %}  
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="uk-address">
-                Change<span class="govuk-visually-hidden"> if your moving this property</span>
-              </a>
-            </dd>
-          </div>
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width:40%;">
-              Property type
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['property-type'] %}
-                {{ data['property-type'] }}
-              {% else %}
-                Yes
-              {% endif %} 
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="type-of-property">
-                Change<span class="govuk-visually-hidden"> residential address</span>
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width:40%;">
-              Date moved
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['citizen-record-day']%}
-                {{data['citizen-record-day']}} {{data['citizen-record-month'] | monthName}} {{data['citizen-record-year']}}
-              {% else %}
-                1 March 2025
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="when-did-you-move">
-                Change<span class="govuk-visually-hidden"> residential address</span>
-              </a>
-            </dd>
-          </div>
-
+          
           {% if (data['select-address'] == "Select1") %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
@@ -175,6 +97,23 @@
             </dd>
           </div>
           {% endif %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Service charges
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['housing-costs'] %}
+                {{ data['housing-costs'] }}
+              {% else %}
+                Yes
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="housing-costs">
+                Change<span class="govuk-visually-hidden"> your home address</span>
+              </a>
+            </dd>
+          </div>
         </dl>
      
         <form method="post" novalidate>

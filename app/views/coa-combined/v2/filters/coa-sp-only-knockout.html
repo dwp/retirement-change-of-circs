@@ -1,0 +1,38 @@
+{% extends "layouts/ol_signed_in.html" %}
+
+{% block pageTitle %}
+   You cannot use this service to change your address - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+      <div class="govuk-form-group">
+        <!-- <span class="govuk-caption-l">Eligibility</span> -->
+        <h1 class="govuk-heading-l">
+          You can change your address for State Pension only
+        </h1>
+
+        <p class="govuk-body">Based on what you told us we will need more information from you relating to your Pension Credit.</p>
+        <p class="govuk-body">You can continue to update your address for State Pension.</p>
+        <p class="govuk-body">Once you have changed your address we will give you next steps on how to do this for Pension Credit.</p>
+
+        
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+
+        <p class="govuk-body">If you would like to change your address for State Pension and Pension Credit contact <a href="https://www.gov.uk/contact-pension-service/report-changes">contact the Pension Service</a>.</p>
+
+        
+        <div class="govuk-inset-text">
+          <a href="../your-state-pension.html" class="govuk-link">Return to your State Pension details</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

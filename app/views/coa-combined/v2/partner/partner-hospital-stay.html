@@ -18,8 +18,13 @@
                 {{ data['first-name']}}
               {% else %}
                 Mark
-                {% endif %}
-                had any overnight stays in hospital since [date]?
+              {% endif %}
+                had any overnight stays in hospital since
+                {% if data['partner-record-day']%}
+                {{data['partner-record-day']}} {{data['partner-record-month'] | monthName}} {{data['partner-record-year']}}?
+                {% else %}
+                12 January?
+              {% endif %}
               </h1>
             </legend>
 
@@ -38,13 +43,13 @@
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="partner-hospital-stay" name="partner-hospital-stay" type="radio" value="No" {{ checked("partner-hospital-stay", "No") }}>
+                <input class="govuk-radios__input" id="partner-hospital-stay" name="partner-hospital-stay" type="radio" value="{{ data['first-name']}} has" {{ checked("partner-hospital-stay", "No") }}>
                 <label class="govuk-label govuk-radios__label" for="partner-blind-no">
                   {{ data['first-name']}} has
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="partner-hospital-stay" name="partner-hospital-stay" type="radio" value="No" {{ checked("partner-hospital-stay", "No") }}>
+                <input class="govuk-radios__input" id="partner-hospital-stay" name="partner-hospital-stay" type="radio" value="We both have" {{ checked("partner-hospital-stay", "No") }}>
                 <label class="govuk-label govuk-radios__label" for="partner-blind-no">
                   We both have
                 </label>

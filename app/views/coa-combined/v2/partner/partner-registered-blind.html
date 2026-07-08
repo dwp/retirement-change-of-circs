@@ -28,25 +28,25 @@
 
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="partner-blind" name="partner-blind" type="radio" value="Yes" {{ checked("partner-blind", "Yes") }}>
+                <input class="govuk-radios__input" id="partner-blind" name="partner-blind" type="radio" value="Neither of us are" {{ checked("partner-blind", "Yes") }}>
                 <label class="govuk-label govuk-radios__label" for="partner-blind-yes">
                   Neither of us are
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="partner-blind" name="partner-blind" type="radio" value="No" {{ checked("partner-blind", "No") }}>
+                <input class="govuk-radios__input" id="partner-blind" name="partner-blind" type="radio" value="I am" {{ checked("partner-blind", "No") }}>
                 <label class="govuk-label govuk-radios__label" for="partner-blind-no">
                   I am
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="partner-blind" name="partner-blind" type="radio" value="No" {{ checked("partner-blind", "No") }}>
+                <input class="govuk-radios__input" id="partner-blind" name="partner-blind" type="radio" value="{{ data['first-name']}} is" {{ checked("partner-blind", "No") }}>
                 <label class="govuk-label govuk-radios__label" for="partner-blind-no">
                  {{ data['first-name']}} is
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="partner-blind" name="partner-blind" type="radio" value="No" {{ checked("partner-blind", "No") }}>
+                <input class="govuk-radios__input" id="partner-blind" name="partner-blind" type="radio" value="We both are" {{ checked("partner-blind", "No") }}>
                 <label class="govuk-label govuk-radios__label" for="partner-blind-no">
                   We both are
                 </label>

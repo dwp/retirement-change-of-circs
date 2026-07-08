@@ -1,7 +1,7 @@
 {% extends "layouts/ol_signed_in.html" %}
 
 {% block pageTitle %}
-  Have you already moved into this property? - Manage your State Pension - GOV.UK
+Have you moved into your new address? - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
@@ -12,9 +12,9 @@
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <span class="govuk-caption-l">Your new address</span>
+              <span class="govuk-caption-l">Eligibility</span>
               <h1 class="govuk-fieldset__heading">
-                Is the move permanent or temporary?
+                Have you moved into your new address?
               </h1>
             </legend>
 
@@ -24,22 +24,20 @@
 
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="perm-or-temp" name="perm-or-temp" type="radio" value="Yes" {{ checked("perm-or-temp", "Yes") }}>
-                <label class="govuk-label govuk-radios__label" for="perm-or-temp">
-                  Permanent move
+                <input class="govuk-radios__input" id="already-moved-yes" name="already-moved" type="radio" value="Yes" {{ checked("already-moved", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="property-access-yes">
+                  Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="perm-or-temp" name="perm-or-temp" type="radio" value="No" {{ checked("perm-or-temp", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="perm-or-temp">
-                  Temporary move
-                  <!-- <div id="event-name-hint" class="govuk-hint">
-                    This means you expect to live there for less than 52 weeks then move back to where you lived before.
-                  </div> -->
+                <input class="govuk-radios__input" id="already-moved-no" name="already-moved" type="radio" value="No" {{ checked("already-moved", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="already-moved-no">
+                  No
                 </label>
               </div>
             </div>
-          </fieldset><br><br>
+          </fieldset>
+        </div>
 
         <button type="submit" class="govuk-button" data-module="govuk-button">
           Continue
@@ -47,7 +45,6 @@
       </form>
 
     </div>
-  </div>
     <div class="govuk-grid-column-one-third">
       <h2 class="govuk-heading-m">
         Get help

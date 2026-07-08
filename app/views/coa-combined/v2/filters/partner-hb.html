@@ -1,7 +1,7 @@
-{% extends "layouts/ol_signed_in.html" %}
+{% extends "layouts/ol_signed_in" %}
 
 {% block pageTitle %}
-  Have you already moved into this property? - Manage your State Pension - GOV.UK
+Does your partner receive housing benefit? - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
@@ -12,11 +12,14 @@
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <span class="govuk-caption-l">Your new address</span>
+              <span class="govuk-caption-l">Eligibility</span>
               <h1 class="govuk-fieldset__heading">
-                Have you moved into your new address?
+                Does your partner receive housing benefit?
               </h1>
             </legend>
+            <div id="account-number-hint" class="govuk-hint">
+              A partner is a husband, wife, civil partner or someone you are in a relationship with. If you have a partner you do not live with we do not need to ask about them.
+            </div>
 
             <!-- <p class="govuk-body">
               You can only change your address after you have moved.
@@ -24,14 +27,14 @@
 
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="already-moved-yes" name="already-moved" type="radio" value="Yes" {{ checked("already-moved", "Yes") }}>
-                <label class="govuk-label govuk-radios__label" for="property-access-yes">
+                <input class="govuk-radios__input" id="partner-hb" name="partner-hb" type="radio" value="Yes" {{ checked("partner-hb", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="partner-yes">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="already-moved-no" name="already-moved" type="radio" value="No" {{ checked("already-moved", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="already-moved-no">
+                <input class="govuk-radios__input" id="partner-hb" name="partner-hb" type="radio" value="No" {{ checked("partner-hb", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="partner-no">
                   No
                 </label>
               </div>
@@ -49,7 +52,7 @@
       <h2 class="govuk-heading-m">
         Get help
       </h2>
-      <p><a href="contact-pension-service&help" target="_blank">Contact us by phone to get help with the online service (opens in new tab)</a></p>
+      <p><a href="../contact-pension-service&help" target="_blank">Contact us by phone to get help with the online service (opens in new tab)</a></p>
     </div>
   </div>
 

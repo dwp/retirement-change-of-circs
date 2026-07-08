@@ -12,7 +12,7 @@
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <span class="govuk-caption-l">Your new address</span>
+              <span class="govuk-caption-l">Eligibility</span>
               <h1 class="govuk-fieldset__heading">
                 What type of property is it?
               </h1>
@@ -23,7 +23,7 @@
             </p> -->
 
             <div class="govuk-radios" data-module="govuk-radios">
-              <div class="govuk-radios__item">
+              <!-- <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="property-type" name="property-type" type="radio" value="House" {{ checked("property-type", "House") }}>
                 <label class="govuk-label govuk-radios__label" for="house">
                   House or bungalow
@@ -40,7 +40,7 @@
                 <label class="govuk-label govuk-radios__label" for="hospital">
                   Hospital
                 </label>
-              </div>
+              </div> -->
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="property-type" name="property-type" type="radio" value="Care home" {{ checked("property-type", "care-home") }}>
                 <label class="govuk-label govuk-radios__label" for="carehome">
@@ -57,7 +57,7 @@
               <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="property-type" name="property-type" type="radio" value="Other" data-aria-controls="conditional-contact"{{ checked("property-type", "other") }}>
                   <label class="govuk-label govuk-radios__label" for="other">
-                    Other
+                    None of these
                   </label>
                 </div>
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
