@@ -2,7 +2,7 @@
 {%- set assetPath = '/govuk/assets' -%}
 
 
-{% extends "govuk/template.njk" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 
 {% from "govuk/components/accordion/macro.njk"           import govukAccordion %}
 {% from "govuk/components/back-link/macro.njk"           import govukBackLink %}
@@ -155,9 +155,8 @@
 {% endif %}
 
 {% block bodyEnd %}
-  {% block scripts %}
-    {% include "includes/scripts.html" %}
-    {% block pageScripts %}{% endblock %}
-  {% endblock %}
+{{ super() }}
+  {% block pageScripts %}{% endblock %}
+
   <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
 {% endblock %}
