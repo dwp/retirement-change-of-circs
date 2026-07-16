@@ -23,19 +23,19 @@
             </p> -->
 
             <div class="govuk-radios" data-module="govuk-radios">
-              <!-- <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="property-type" name="property-type" type="radio" value="House" {{ checked("property-type", "House") }}>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="property-type" name="property-type" type="radio" value="House, bungalow, flat or apartment" {{ checked("property-type", "House") }}>
                 <label class="govuk-label govuk-radios__label" for="house">
-                  House or bungalow
+                  House, bungalow, flat or apartment
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="property-type" name="property-type" type="radio" value="Flat" {{ checked("property-type", "flat") }}>
+                <input class="govuk-radios__input" id="property-type" name="property-type" type="radio" value="Self contained flat, apartment or annexe which is attached to someone's property" {{ checked("property-type", "flat") }}>
                 <label class="govuk-label govuk-radios__label" for="flat">
-                  Flat, apartment or annexe
+                  Self contained flat, apartment or annexe which is attached to someone's property
                 </label>
               </div>
-              <div class="govuk-radios__item">
+              <!-- <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="property-type" name="property-type" type="radio" value="Hospital" {{ checked("property-type", "hospital") }}>
                 <label class="govuk-label govuk-radios__label" for="hospital">
                   Hospital
@@ -48,25 +48,20 @@
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="property-type" name="property-type" type="radio" value="Caravan" {{ checked("property-type", "Caravan") }}>
+                <input class="govuk-radios__input" id="property-type" name="property-type" type="radio" value="Caravan, houseboat or mobile home" {{ checked("property-type", "Caravan") }}>
                 <label class="govuk-label govuk-radios__label" for="Caravan">
                   Caravan, houseboat or mobile home
                 </label>
               </div>
 
+              <div class="govuk-radios__divider">or</div>
+             
+
               <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="property-type" name="property-type" type="radio" value="Other" data-aria-controls="conditional-contact"{{ checked("property-type", "other") }}>
-                  <label class="govuk-label govuk-radios__label" for="other">
-                    None of these
+                  <input class="govuk-radios__input" id="property-type" name="property-type" type="radio" value="Property type not listed" {{ checked("property-type", "other") }}>
+                  <label class="govuk-label govuk-radios__label" for="Property type not listed">
+                    Property type not listed
                   </label>
-                </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
-                  <div class="govuk-form-group">
-                    <!-- <label class="govuk-label" for="other">
-                      What should this say?
-                    </label> -->
-                    <input class="govuk-input govuk-!-width-one-third" id="property-type" name="other" type="text" spellcheck="false">
-                  </div>
                 </div>
             </div>
           </fieldset>

@@ -32,12 +32,6 @@ req.session.data['liveNow']="completed"
 
 });
 
-router.post('/coa-combined/v1/partner/partner-added', function (req, res) {
-req.session.data['partnerDetails']="completed"
-  res.redirect('/coa-combined/v1/task-list.html')
-
-
-});
 
 router.post('/coa-combined/v1/partner/partner-check-your-details', function (req, res) {
 req.session.data['partnerDetails']="completed"

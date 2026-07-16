@@ -23,7 +23,7 @@
               {% endif %} 
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="sp-or-pc">
+              <a class="govuk-link" href="pension-credit-warm-up">
                 Change<span class="govuk-visually-hidden"> residential address</span>
               </a>
             </dd>
@@ -54,7 +54,7 @@
               </a>
             </dd>
           </div> 
-          <div class="govuk-summary-list__row">
+          <!-- <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
               Already moved
             </dt>
@@ -66,7 +66,7 @@
                 Change<span class="govuk-visually-hidden"> residential address</span>
               </a>
             </dd>
-          </div>
+          </div> -->
           
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
@@ -105,7 +105,7 @@
               Property type
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['property-type'] %}
+              {% if data['property-type']  %}
                 {{ data['property-type'] }}
               {% else %}
                 Yes
@@ -122,8 +122,8 @@
               Date moved
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['citizen-record-day']%}
-                {{data['citizen-record-day']}} {{data['citizen-record-month'] | monthName}} {{data['citizen-record-year']}}
+              {% if data['date-moved-day']%}
+                {{data['date-moved-day']}} {{data['date-moved-month'] | monthName}} {{data['date-moved-year']}}
               {% else %}
                 1 March 2025
               {% endif %}
@@ -134,19 +134,20 @@
               </a>
             </dd>
           </div>
+          {% if (data['live-with-partner'] == "Yes") %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
               Live with a partner
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['property-type'] %}
-                {{ data['property-type'] }}
+              {% if data['partner'] %}
+                {{ data['partner'] }}
               {% else %}
                 Yes
               {% endif %} 
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="type-of-property">
+              <a class="govuk-link" href="live-with-a-partner">
                 Change<span class="govuk-visually-hidden"> residential address</span>
               </a>
             </dd>
@@ -195,7 +196,7 @@
               {% if data['partner-record-day']%}
                 {{data['partner-record-day']}} {{data['partner-record-month'] | monthName}} {{data['partner-record-year']}}
               {% else %}
-                1 March 2025
+                18 February 1954
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
@@ -221,25 +222,40 @@
               </a>
             </dd>
           </div>
+          {% else %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Live with a partner
+            </dt>
+            <dd class="govuk-summary-list__value">
+                {{ data['live-with-partner'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="live-with-a-partner">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+          {%endif%}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
               Anyone else live with you
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['property-type'] %}
-                {{ data['property-type'] }}
+              {% if data['other-people'] %}
+                {{ data['other-people'] }}
               {% else %}
                 No
               {% endif %} 
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="type-of-property">
+              <a class="govuk-link" href="live-with-other-people">
                 Change<span class="govuk-visually-hidden"> residential address</span>
               </a>
             </dd>
           </div>
 
-          {% if (data['select-address'] == "Select1") %}
+          <!-- {% if (data['select-address'] == "Select1") %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
               New address
@@ -321,12 +337,12 @@
               </a>
             </dd>
           </div>
-          {% endif %}
+          {% endif %} -->
         </dl>
      
         <form method="post" novalidate>
           <input type="hidden" name="answers-checked" value="true">
-          <button class="govuk-button" data-module="govuk-button">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
             Continue
           </button>
         </form>

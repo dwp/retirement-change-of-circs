@@ -14,7 +14,7 @@
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <span class="govuk-caption-l">Your partner</span>
+              <span class="govuk-caption-l">You and your partner</span>
               <h1 class="govuk-fieldset__heading">
                 Are either you or {% if data['first-name']%}
                 {{ data['first-name']}}
@@ -27,28 +27,29 @@
 
 
             <div class="govuk-radios" data-module="govuk-radios">
+              
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="partner-blind" name="partner-blind" type="radio" value="Neither of us are" {{ checked("partner-blind", "Yes") }}>
+                <input class="govuk-radios__input" id="partner-blind" name="partner-blind" type="radio" value="Yes, I am" {{ checked("partner-blind", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="partner-blind-no">
+                  Yes, I am
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="partner-blind" name="partner-blind" type="radio" value="Yes, {{ data['first-name']}} is" {{ checked("partner-blind", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="partner-blind-no">
+                 Yes, {{ data['first-name']}} is
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="partner-blind" name="partner-blind" type="radio" value="Yes, we both are" {{ checked("partner-blind", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="partner-blind-no">
+                  Yes, we both are
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="partner-blind" name="partner-blind" type="radio" value="No" {{ checked("partner-blind", "Yes") }}>
                 <label class="govuk-label govuk-radios__label" for="partner-blind-yes">
-                  Neither of us are
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="partner-blind" name="partner-blind" type="radio" value="I am" {{ checked("partner-blind", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="partner-blind-no">
-                  I am
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="partner-blind" name="partner-blind" type="radio" value="{{ data['first-name']}} is" {{ checked("partner-blind", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="partner-blind-no">
-                 {{ data['first-name']}} is
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="partner-blind" name="partner-blind" type="radio" value="We both are" {{ checked("partner-blind", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="partner-blind-no">
-                  We both are
+                  No
                 </label>
               </div>
             </div>

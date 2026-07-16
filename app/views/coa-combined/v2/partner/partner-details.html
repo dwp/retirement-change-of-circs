@@ -1,7 +1,7 @@
 {% extends "layouts/ol_signed_in" %}
 
 {% block pageTitle %}
-Do you live with a partner? - Manage your State Pension - GOV.UK
+About your partner - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
@@ -12,9 +12,9 @@ Do you live with a partner? - Manage your State Pension - GOV.UK
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <span class="govuk-caption-l">Your partner</span>
+              <span class="govuk-caption-l">You and your partner</span>
               <h1 class="govuk-fieldset__heading">
-                Your partner's details
+                About your partner
               </h1>
             </legend>
             
@@ -31,12 +31,12 @@ Do you live with a partner? - Manage your State Pension - GOV.UK
 
             <div class="govuk-form-group">
               <label class="govuk-label" for="middle-name">
-                Middle name(s)
+                Middle name (optional)
               </label>
               <!-- <div id="searchString-hint" class="govuk-hint">
                 For example, 15 or Prospect Cottage.
               </div> -->
-              <input class="govuk-input govuk-!-width-two-thirds" id="last-name" name="last-name" type="text" aria-describedby="searchString-hint" value="{{ data['last-name'] }}">
+              <input class="govuk-input govuk-!-width-two-thirds" id="middle-name" name="middle-name" type="text" aria-describedby="searchString-hint" value="{{ data['middle-name'] }}">
             </div>
 
              <div class="govuk-form-group">
@@ -63,7 +63,7 @@ Do you live with a partner? - Manage your State Pension - GOV.UK
 
             <div class="govuk-form-group">
               <label class="govuk-label" for="nino">
-                National Insurance number (if you know it)
+                National Insurance number (optional)
               </label>
               <!-- <div id="searchString-hint" class="govuk-hint">
                 For example, 15 or Prospect Cottage.
@@ -71,7 +71,7 @@ Do you live with a partner? - Manage your State Pension - GOV.UK
               <input class="govuk-input govuk-!-width-two-thirds" id="nino" name="nino" type="text" aria-describedby="searchString-hint" value="{{ data['nino'] }}">
             </div>
 
-            <div class="govuk-date-input" id="partner-record">
+            <!-- <div class="govuk-date-input" id="partner-record">
               <p>Date of birth</p>
               <div class="govuk-date-input__item">
                 <div class="govuk-form-group">
@@ -97,7 +97,7 @@ Do you live with a partner? - Manage your State Pension - GOV.UK
                   <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="partner-record-year" name="partner-record-year" type="text" inputmode="numeric" value="{{ data['partner-record-year'] }}">>
                 </div>
               </div>
-            </div>
+            </div> -->
 
             
           </fieldset>

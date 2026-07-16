@@ -9,23 +9,17 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form method="post" novalidate>
-      <span class="govuk-caption-l">Your partner</span>
-      {% if (data['partner'] == "Yes") %}
-      <h1 class="govuk-heading-l">Check your answers about {% if data['first-name']%}
+        <span class="govuk-caption-l">You and your partner</span>
+      <h1 class="govuk-heading-l">Check your answers about you and {% if data['first-name']%}
                 {{ data['first-name']}}
-                {% elif (data['partner'] == "No") %}
-                your partner
               {% else %}
                 Mark
               {% endif %}
         </h1>
-        {% else %}
-        <h1 class="govuk-heading-l">Check your answers about your partner
-        </h1>
-        {% endif %}
+
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           {% if (data['partner'] == "Yes") %}
-          <div class="govuk-summary-list__row">
+          <!-- <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
               Live with partner
             </dt>
@@ -41,7 +35,7 @@
                 Change<span class="govuk-visually-hidden"> residential address</span>
               </a>
             </dd>
-          </div>
+          </div> -->
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
@@ -49,9 +43,9 @@
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['first-name']%}
-                {{ data['first-name']}} {{ data['last-name'] }}
+                {{ data['first-name']}} {{ data['middle-name'] }} {{ data['last-name'] }}
               {% else %}
-                Mark
+                Mark Davies
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
@@ -60,6 +54,25 @@
               </a>
             </dd>
           </div>
+
+          {% if data['partner-other-name']%}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Any other last names
+            </dt>
+            <dd class="govuk-summary-list__value">
+                {{ data['partner-other-name']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="partner-details.html">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+          {% else %}
+          {% endif %}             
+
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
               National Insurance number
@@ -77,7 +90,7 @@
               </a>
             </dd>
           </div>
-          <div class="govuk-summary-list__row">
+          <!-- <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
               Date of birth
             </dt>
@@ -93,7 +106,7 @@
                 Change<span class="govuk-visually-hidden"> residential address</span>
               </a>
             </dd>
-          </div>
+          </div> -->
 
           <!-- <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
@@ -152,7 +165,7 @@
           
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              Registered blind
+              Registered blind or severely sight impaired 
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['partner-blind'] %}
@@ -292,7 +305,7 @@
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              Stayed in hospital for more than 28 days
+              Overnight stay in hospital
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['partner-hospital-stay'] %}

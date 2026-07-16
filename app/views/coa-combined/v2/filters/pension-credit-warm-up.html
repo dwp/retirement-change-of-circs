@@ -14,14 +14,20 @@
             	Changing your address when you get State Pension and Pension Credit
           </h1>
           <p class="govuk-body">
-            We need to ask some questions to make sure you get the right amount of Pension Credit. We will ask about:
+            We need to ask you some questions to update your State Pension address and to make sure you get the right amount of Pension Credit. We will ask about:<br>
           </p>
           <ul class="govuk-list govuk-list--bullet">
             <li>your new address</li>
             <li>service charges</li>
+            <li>how much money you have in bank and savings accounts</li>
+            <li>your contact details</li>
+          </ul>
+
+          <p class="govuk-body">
+            If you have a partner, we will ask about:</p>
+          <ul class="govuk-list govuk-list--bullet">
             <li>your partner's date of birth and National Insurance number</li>
             <li>how much money you and your partner have in bank and savings accounts</li>
-            <li>your contact details</li>
           </ul>
 
           <h2 class="govuk-heading-m">
@@ -34,8 +40,30 @@
           </p>
 
           <p class="govuk-body">
-            For security we will sign you out after 30 minutes of inactivity.
+            For security, we will sign you out after 30 minutes of inactivity.
           </p>
+
+          <h2 class="govuk-heading-m">
+            Would you like to update your address for State Pension and Pension Credit?
+          </h2>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-benefit" name="select-benefit" type="radio" value="Yes" {{ checked("select-benefit", "Yes") }}>
+                <label class="govuk-label govuk-radios__label" for="select-benefit-yes">
+                  Yes, update my address for State Pension and Pension Credit
+                </label>
+                <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                  We will need more information from you to check if there will be a change to your Pension Credit entitlement.
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="select-benefit" name="select-benefit" type="radio" value="No" {{ checked("select-benefit", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="select-benefit-no">
+                  No, update my address for State Pension only
+                </label>
+              </div>
+            </div>
 
           
           

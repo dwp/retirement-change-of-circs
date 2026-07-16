@@ -1,0 +1,27 @@
+{% extends "layouts/ol_signed_in_noback.html" %}
+
+{% block pageTitle %}
+   You cannot use this service to change your address - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+      <div class="govuk-form-group">
+        <h1 class="govuk-heading-l">
+          You cannot change your address online
+        </h1>
+
+        <p class="govuk-body">If your new address is not in the UK <a href="https://www.gov.uk/international-pension-centre">contact the International Pension Centre</a>.</p>
+        
+        <div class="govuk-inset-text">
+          <a href="your-state-pension.html" class="govuk-link">Return to your State Pension details</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

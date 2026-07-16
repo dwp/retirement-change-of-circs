@@ -30,8 +30,6 @@
                     <a class="govuk-link govuk-task-list__link" href="
                         {% if data.eligibilityQuestions == 'completed' or data.eligibilityQuestions == 'inprogress' %}
                             filters/rent-now?section=eligibilityQuestions
-                        {% elif data.eligibilityQuestions == 'inprogress' %}
-                            filters/rent-now?section=eligibilityQuestions
                         {% else %}
                             filters/rent-now?eligibilityQuestions=inprogress
                         {% endif %}
@@ -66,12 +64,10 @@
                 <li class="govuk-task-list__item govuk-task-list__item--with-link">
                     <div class="govuk-task-list__name-and-hint">
                     <a class="govuk-link govuk-task-list__link" href="
-                        {% if data.newAddress == 'completed' %}
-                            new-address/address-finder/find-address?section=newAddress
-                        {% elif data.newAddress == 'inprogress' %}
+                        {% if data.newAddress == 'completed' or data.newAddress == 'inprogress' %}
                             new-address/address-finder/find-address?section=newAddress
                         {% else %}
-                            nnew-address/address-finder/find-address?newAddress=inprogress
+                            new-address/address-finder/find-address?newAddress=inprogress
                         {% endif %}
                     " aria-describedby="company-details-5-status">
                         Your new address
@@ -95,55 +91,24 @@
                         </div>
                     {%endif%}
                 </li>
-                <!-- <li class="govuk-task-list__item govuk-task-list__item--with-link">
-                    <div class="govuk-task-list__name-and-hint">
-                    <a class="govuk-link govuk-task-list__link" href="
-                        {% if data.liveNow == 'completed' %}
-                            where-you-live-now/rent/housing-costs?section=liveNow
-                        {% elif data.liveNow == 'inprogress' %}
-                            where-you-live-now/rent/housing-costs?section=liveNow
-                        {% else %}
-                            where-you-live-now/rent/housing-costs?liveNow=inprogress
-                        {% endif %}
-                    " aria-describedby="company-details-5-status">
-                        Where you live now
-                    </a>
-                    </div>
-                    {% if data.liveNow == 'completed' %}
-                        <div class="govuk-task-list__status" id="company-details-1-status">
-                            Completed
-                        </div>
-                    {% elif data.liveNow == 'inprogress'%}
-                        <div class="govuk-task-list__status" id="company-details-5-status">
-                            <strong class="govuk-tag govuk-tag--orange">
-                                In progress
-                            </strong>
-                        </div>
-                    {% else %}
-                        <div class="govuk-task-list__status" id="company-details-5-status">
-                            <strong class="govuk-tag govuk-tag--blue">
-                                Not started yet
-                            </strong>
-                        </div>
-                    {%endif%}
-                </li> -->
+
             </ul>
 
-            {% if (data['partner'] == "Yes") %}
+            {% if (data['live-with-partner'] == "Yes") %}
 
-            <h2 class="govuk-heading-m">People who live with you</h2>
+            <h2 class="govuk-heading-m">Your household</h2>
             <ul class="govuk-task-list">
 
                 <li class="govuk-task-list__item govuk-task-list__item--with-link">
                     <div class="govuk-task-list__name-and-hint">
                     <a class="govuk-link govuk-task-list__link" href="
                         {% if data.partnerDetails == 'completed' or data.partnerDetails == 'inprogress' %}
-                            partner/do-you-live-with-a-partner?section=partner
+                            partner/partner-details?section=partnerDetails
                         {% else %}
-                            partner/do-you-live-with-a-partner?partnerDetails=inprogress
+                            partner/partner-details?partnerDetails=inprogress
                         {% endif %}
                     " aria-describedby="company-details-5-status">
-                        Your partner
+                        You and your partner
                     </a>
                     </div>
                     {% if data.partnerDetails == 'completed' %}
@@ -166,43 +131,11 @@
                 </li>
             </ul>
             {% else %}
-            <h2 class="govuk-heading-m">People who live with you</h2>
-            <ul class="govuk-task-list">
-
-                <li class="govuk-task-list__item govuk-task-list__item--with-link">
-                    <div class="govuk-task-list__name-and-hint">
-                    <a class="govuk-link govuk-task-list__link" href="
-                        {% if data.partnerDetails == 'completed' or data.partnerDetails == 'inprogress' %}
-                            partner/partner-details?section=partner
-                        {% else %}
-                            partner/partner-details?partnerDetails=inprogress
-                        {% endif %}
-                    " aria-describedby="company-details-5-status">
-                        Your partner
-                    </a>
-                    </div>
-                    {% if data.partnerDetails == 'completed' %}
-                        <div class="govuk-task-list__status" id="company-details-1-status">
-                            Completed
-                        </div>
-                    {% elif data.partnerDetails == 'inprogress'%}
-                        <div class="govuk-task-list__status" id="company-details-5-status">
-                            <strong class="govuk-tag govuk-tag--orange">
-                                In progress
-                            </strong>
-                        </div>
-                    {% else %}
-                        <div class="govuk-task-list__status" id="company-details-5-status">
-                            <strong class="govuk-tag govuk-tag--blue">
-                                Not started yet
-                            </strong>
-                        </div>
-                    {%endif%}
+            {%endif%}
                 </li>
             </ul>
-            {% endif %}
 
-            <h2 class="govuk-heading-m">Your money</h2>
+            <h2 class="govuk-heading-m">Your money and investments</h2>
             <ul class="govuk-task-list">
                 
 
@@ -211,42 +144,7 @@
                 <li class="govuk-task-list__item govuk-task-list__item--with-link">
                     <div class="govuk-task-list__name-and-hint">
                     <a class="govuk-link govuk-task-list__link" href="
-                        {% if data.savingsInvestments == 'completed' %}
-                            s&i/capital-select-capital?section=savingsInvestments
-                        {% elif data.savingsInvestments == 'inprogress' %}
-                            s&i/capital-select-capital?section=savingsInvestments
-                        {% else %}
-                            s&i/capital-select-capital?savingsInvestments=inprogress
-                        {% endif %}
-                    " aria-describedby="company-details-5-status">
-                        Money and investments
-                    </a>
-                    </div>
-                    {% if data.savingsInvestments == 'completed' %}
-                        <div class="govuk-task-list__status" id="company-details-1-status">
-                            Completed
-                        </div>
-                    {% elif data.savingsInvestments == 'inprogress'%}
-                        <div class="govuk-task-list__status" id="company-details-5-status">
-                            <strong class="govuk-tag govuk-tag--blue">
-                                Not started yet
-                            </strong>
-                        </div>
-                    {% else %}
-                        <div class="govuk-task-list__status" id="company-details-5-status">
-                            <strong class="govuk-tag govuk-tag--blue">
-                                Not started yet
-                            </strong>
-                        </div>
-                    {%endif%}
-                </li>
-                {% else %}
-                <li class="govuk-task-list__item govuk-task-list__item--with-link">
-                    <div class="govuk-task-list__name-and-hint">
-                    <a class="govuk-link govuk-task-list__link" href="
-                        {% if data.savingsInvestments == 'completed' %}
-                            s&i/capital-select-capital?section=savingsInvestments
-                        {% elif data.savingsInvestments == 'inprogress' %}
+                        {% if data.savingsInvestments == 'completed' or data.savingsInvestments == 'inprogress'%}
                             s&i/capital-select-capital?section=savingsInvestments
                         {% else %}
                             s&i/capital-select-capital?savingsInvestments=inprogress
@@ -266,64 +164,53 @@
                             </strong>
                         </div>
                     {% else %}
-                        <!-- <div class="govuk-task-list__status govuk-task-list__status--cannot-start-yet" id="application-details-3-status">
+                    <div class="govuk-task-list__status" id="company-details-5-status">
+                            <strong class="govuk-tag govuk-tag--blue">
+                                Not started yet
+                            </strong>
+                        </div>                        
+                    {%endif%}
+                </li>
+            {% else %}
+                <li class="govuk-task-list__item govuk-task-list__item--with-link">
+                    <div class="govuk-task-list__name-and-hint">
+                    <a class="govuk-link govuk-task-list__link" href="
+                        {% if data.savingsInvestments == 'completed' or data.savingsInvestments == 'inprogress'%}
+                            s&i/capital-select-capital?section=savingsInvestments
+                        {% else %}s&i/capital-select-capital?savingsInvestments=inprogress
+                        {% endif %}
+                    " aria-describedby="company-details-5-status">
+                        Your money and investments
+                    </a>
+                    </div>
+                    {% if data.savingsInvestments == 'completed' %}
+                        <div class="govuk-task-list__status" id="company-details-1-status">
+                            Completed
+                        </div>
+                    {% elif data.savingsInvestments == 'inprogress'%}
+                        <div class="govuk-task-list__status" id="company-details-5-status">
+                            <strong class="govuk-tag govuk-tag--orange">
+                                In progress
+                            </strong>
+                        </div>
+                    {% else %}
+                        <div class="govuk-task-list__status govuk-task-list__status--cannot-start-yet" id="application-details-3-status">
                             Cannot start yet
-                        </div> -->
-                        <div class="govuk-task-list__status" id="company-details-5-status">
-                            <strong class="govuk-tag govuk-tag--blue">
-                                Not started yet
-                            </strong>
                         </div>
+                        
                     {%endif%}
                 </li>
-                {%endif%}
+            {%endif%}
             </ul>
 
-            <h2 class="govuk-heading-m">How we contact you</h2>
+            <h2 class="govuk-heading-m">Contact details</h2>
             <ul class="govuk-task-list">
-                
 
-            {% if data.partnerDetails == 'completed' %}
 
                 <li class="govuk-task-list__item govuk-task-list__item--with-link">
                     <div class="govuk-task-list__name-and-hint">
                     <a class="govuk-link govuk-task-list__link" href="
-                        {% if data.contactYou == 'completed' %}
-                            how-we-contact-you/provide-email-address?section=contactYou
-                        {% elif data.contactYou == 'inprogress' %}
-                            how-we-contact-you/provide-email-address?section=contactYou
-                        {% else %}
-                            how-we-contact-you/provide-email-address?contactYou=inprogress
-                        {% endif %}
-                    " aria-describedby="company-details-5-status">
-                        How we will contact you
-                    </a>
-                    </div>
-                    {% if data.contactYou == 'completed' %}
-                        <div class="govuk-task-list__status" id="company-details-1-status">
-                            Completed
-                        </div>
-                    {% elif data.contactYou == 'inprogress'%}
-                        <div class="govuk-task-list__status" id="company-details-5-status">
-                            <strong class="govuk-tag govuk-tag--blue">
-                                Not started yet
-                            </strong>
-                        </div>
-                    {% else %}
-                        <div class="govuk-task-list__status" id="company-details-5-status">
-                            <strong class="govuk-tag govuk-tag--blue">
-                                Not started yet
-                            </strong>
-                        </div>
-                    {%endif%}
-                </li>
-                {% else %}
-                <li class="govuk-task-list__item govuk-task-list__item--with-link">
-                    <div class="govuk-task-list__name-and-hint">
-                    <a class="govuk-link govuk-task-list__link" href="
-                        {% if data.contactYou == 'completed' %}
-                            how-we-contact-you/provide-email-address?section=contactYou
-                        {% elif data.contactYou == 'inprogress' %}
+                        {% if data.contactYou == 'completed' or data.contactYou == 'inprogress'%}
                             how-we-contact-you/provide-email-address?section=contactYou
                         {% else %}
                             how-we-contact-you/provide-email-address?contactYou=inprogress
@@ -350,11 +237,10 @@
                         </div>
                     {%endif%}
                 </li>
-                {%endif%}
             </ul>
 
 
-            {% if data.newAddress == 'completed' and data.liveNow and data.partnerDetails and data.savingsInvestments and data.contactYou  == 'completed' %}
+            {% if data.contactYou  == 'completed' %}
 
             <h2 class="govuk-heading-m">Submit your new details</h2>
             <p class="govuk-body">By submitting this change you are confirming that the information you are giving is complete and correct.</p>
@@ -366,16 +252,6 @@
                     Confirm and submit
                 </button>
             </form>
-
-
-            <!-- <h2 class="govuk-heading-m">If you need help</h2>
-            <p class="govuk-body">
-                If you need help or want to tell us about your change of address another way,  <a href="https://www.gov.uk/contact-pension-service/report-changes" class="govuk-link" target="_blank">contact the Pension Service by phone or post (opens in new tab)</a>.
-            </p>
-
-            <div class="govuk-inset-text">
-                <a href="your-state-pension.html" class="govuk-link">Return to your State Pension details</a>
-            </div> -->
 
         </fieldset>
 

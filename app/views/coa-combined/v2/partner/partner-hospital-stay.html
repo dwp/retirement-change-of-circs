@@ -12,7 +12,11 @@
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              {% if (data['partner'] == "Yes") %}
+              <span class="govuk-caption-l">You and your partner</span>
+              {% else %}
               <span class="govuk-caption-l">Your partner</span>
+              {% endif %}
               <h1 class="govuk-fieldset__heading">
                 Have you or {% if data['first-name']%}
                 {{ data['first-name']}}
@@ -23,37 +27,36 @@
                 {% if data['partner-record-day']%}
                 {{data['partner-record-day']}} {{data['partner-record-month'] | monthName}} {{data['partner-record-year']}}?
                 {% else %}
-                12 January?
+                12 August 2026
               {% endif %}
               </h1>
             </legend>
 
-
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="partner-hospital-stay" name="partner-hospital-stay" type="radio" value="Neither of us have" {{ checked("partner-hospital-stay", "Yes") }}>
+                <input class="govuk-radios__input" id="partner-hospital-stay" name="partner-hospital-stay" type="radio" value="Yes, I have" {{ checked("partner-hospital-stay", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="partner-blind-no">
+                  Yes, I have
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="partner-hospital-stay" name="partner-hospital-stay" type="radio" value="Yes, {{ data['first-name']}} has" {{ checked("partner-hospital-stay", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="partner-blind-no">
+                  Yes, {{ data['first-name']}} has
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="partner-hospital-stay" name="partner-hospital-stay" type="radio" value="Yes, we both have" {{ checked("partner-hospital-stay", "No") }}>
+                <label class="govuk-label govuk-radios__label" for="partner-blind-no">
+                  Yes, we both have
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="partner-hospital-stay" name="partner-hospital-stay" type="radio" value="No" {{ checked("partner-hospital-stay", "Yes") }}>
                 <label class="govuk-label govuk-radios__label" for="partner-blind-yes">
-                  Neither of us have
+                  No
                 </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="partner-hospital-stay" name="partner-hospital-stay" type="radio" value="I have" {{ checked("partner-hospital-stay", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="partner-blind-no">
-                  I have
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="partner-hospital-stay" name="partner-hospital-stay" type="radio" value="{{ data['first-name']}} has" {{ checked("partner-hospital-stay", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="partner-blind-no">
-                  {{ data['first-name']}} has
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="partner-hospital-stay" name="partner-hospital-stay" type="radio" value="We both have" {{ checked("partner-hospital-stay", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="partner-blind-no">
-                  We both have
-                </label>
-              </div>
+              </div>        
             </div>
           </fieldset>
         </div>
