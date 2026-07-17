@@ -42,7 +42,7 @@
               Phone number
             </dt>
             <dd class="govuk-summary-list__value">
-              {%if data['phoneType'] == mobile-number'%}
+              {% if data['phoneType'] == 'home-phone-number'%}
               Home phone
               <div id="signIn-item-hint" class="govuk-hint">
                 0161 827 3866
@@ -52,11 +52,13 @@
               <div id="signIn-item-hint" class="govuk-hint">
                 0779374837
               </div>
-              {% endif %}
-              Mobile phone number
+              {% elif data['phoneType'] == 'new-phone-number'%}
+              A different phone number
               <div id="signIn-item-hint" class="govuk-hint">
                 0779374837
               </div>
+              {% endif %}
+              
               <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="provide-phone-number.html">
                 Change<span class="govuk-visually-hidden"> phone number</span>

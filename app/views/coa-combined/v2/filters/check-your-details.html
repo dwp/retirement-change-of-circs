@@ -193,8 +193,8 @@
               Partner date of birth
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['partner-record-day']%}
-                {{data['partner-record-day']}} {{data['partner-record-month'] | monthName}} {{data['partner-record-year']}}
+              {% if data['partner-dob-day']%}
+                {{data['partner-dob-day']}} {{data['partner-dob-month'] | monthName}} {{data['partner-dob-year']}}
               {% else %}
                 18 February 1954
               {% endif %}

@@ -14,9 +14,10 @@ Money today - Manage your State Pension - GOV.UK
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <span class="govuk-caption-l">Money and investments</span>
 
-              {%if data['partner'] == 'Yes'%}
+              {%if data['live-with-partner'] == 'Yes'%}
               <h1 class="govuk-fieldset__heading">
-                Money you and {{ data['first-name']}} have today
+                Money today
+                <!-- Money you and {{ data['first-name']}} have today -->
               </h1>
             </legend>
 

@@ -94,18 +94,21 @@ router.post('/coa-combined/v2/task-list', function (req, res) {
   const todayTotal = Number(req.session.data['todayTotal']);
   var selectHousingCosts = req.session.data['housing-costs'];
   var totalSavings = req.session.data['capitalTypes'];
+  var otherProperty = req.session.data['other-property'];
 
 
   
   // Check whether the variable matches a condition
-    if (todayTotal > 10000 || selectHousingCosts == "Yes") {
+    if (todayTotal > 10000 || otherProperty == "Yes") {
     // Send user to next page
-    res.redirect('/coa-combined/v2/confirmation-2.html')
+    res.redirect('/coa-combined/v2/confirmation-action-needed-1.html')
   } else {
     res.redirect('/coa-combined/v2/confirmation-1.html')
   }
 
 });
+
+
 
 
 ///////////////////////////////////////////////
@@ -390,9 +393,9 @@ router.post('/coa-combined/v2/filters/partner-move', function (req, res) {
 // // ROUTING FROM PARTNER DOB
 router.post('/coa-combined/v2/filters/partner-dob', function (req, res) {
 
-  // Make a variable and give it the value from 'partner-record-year'
-  var partnerYear = req.session.data['partner-record-year']
-        console.log("high", req.session.data['partner-record-year'])
+  // Make a variable and give it the value from 'partner-dob-year'
+  var partnerYear = req.session.data['partner-dob-year']
+        console.log("high", req.session.data['partner-dob-year'])
 
   // Check whether the variable matches a condition
   if (partnerYear > 1956){
@@ -901,7 +904,7 @@ router.post('/coa-combined/v2/s&i/capital-total-today', function (req, res) {
   res.redirect('/coa-combined/v2/s&i/other-property.html')
 
     // Make a variable and give it the value from 'partner-record-year'
-  var totalSavings= req.session.data['partner']
+  var todayTotal= req.session.data['partner']
         console.log("high", req.session.data['partner'])
 
 
@@ -926,10 +929,40 @@ router.post('/coa-combined/v2/s&i/capital-total-today', function (req, res) {
 
 
 
+// // ROUTING FROM SELECT INVESTMENTS TO MONEY YOU HAVE TODAY
+// router.post('/coa-combined/v2/s&i/other-property', function (req, res) {
+//   res.redirect('/coa-combined/v2/s&i/capital-check-answers.html')
+
+
+// });
+
 // ROUTING FROM SELECT INVESTMENTS TO MONEY YOU HAVE TODAY
 router.post('/coa-combined/v2/s&i/other-property', function (req, res) {
   res.redirect('/coa-combined/v2/s&i/capital-check-answers.html')
 
+      // Make a variable and give it the value from 'partner-record-year'
+  var otherProperty= req.session.data['otherProperty']
+        console.log("high", req.session.data['otherProperty'])
+
+
+});
+
+
+// ROUTING FROM SELECT INVESTMENTS TO MONEY YOU HAVE TODAY
+router.post('/coa-combined/v2/s&i/other-property', function (req, res) {
+  res.redirect('/coa-combined/v2/s&i/capital-check-answers.html')
+
+      // Make a variable and give it the value from 'partner-record-year'
+  var otherProperty= req.session.data['otherProperty']
+        console.log("high", req.session.data['otherProperty'])
+
+         // Check whether the variable matches a condition
+  if (otherProperty == "Yes"){
+    // Send user to next page
+    res.redirect('/coa-combined/v2/s&i/capital-check-answers.html')
+  } else if (otherProperty == "No"){
+    res.redirect('/coa-combined/v2/s&i/capital-check-answers.html')
+  }
 
 });
 

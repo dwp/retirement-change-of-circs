@@ -22,7 +22,7 @@
               We need this if we need to contact you for further information about your Pension Credit. We will not use it to update your records. If you want to update your contact details, you can do so through Manage Your State Pension homepage.
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="phoneType" name="phoneType" type="radio" value="Home phone number" {{ checked("phoneType", "home-phone-number") }}>
+                <input class="govuk-radios__input" id="phoneType" name="phoneType" type="radio" value="home-phone-number" {{ checked("phoneType", "home-phone-number") }}>
                 <label class="govuk-label govuk-radios__label" for="home-phone-number">
                   Home phone number
                 </label>
@@ -32,7 +32,7 @@
               </div>
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="phoneType" name="phoneType" type="radio" value="Mobile phone number" {{ checked("phoneType", "mobile-number") }}>
+                <input class="govuk-radios__input" id="phoneType" name="phoneType" type="radio" value="mobile-number" {{ checked("phoneType", "mobile-number") }}>
                 <label class="govuk-label govuk-radios__label" for="mobile-number">
                   Mobile number
                 </label>
@@ -42,24 +42,21 @@
               </div>
 
               <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="phoneType" name="phoneType" type="radio" value="A different phone number" data-aria-controls="conditional-contact"{{ checked("phoneType", "new-phone") }}>
-                  <label class="govuk-label govuk-radios__label" for="new-phone">
-                    A different phone number
+                <input class="govuk-radios__input" id="phoneType" name="phoneType" type="radio" value="new-phone-number" data-aria-controls="conditional-contact-2" {{ checked("phoneType", "new-phone-number") }}>
+                <label class="govuk-label govuk-radios__label" for="new-phone-number">
+                  A different phone number
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="new-phone-number">
+                    Enter a phone number
                   </label>
+                  <input class="govuk-input govuk-!-width-one-third" id="new-phone-number" name="new-phone-number" type="tel" autocomplete="tel">
                 </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="new-email">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="phoneType">
-                      Enter an email address
-                    </label>
-                    <input class="govuk-input govuk-!-width-one-third" id="new-email" name="new-email" type="text" spellcheck="false">
-                  </div>
-                </div>
-            </div>
+              </div>
           </fieldset>
           </div>
-
-          
 
         <button type="submit" class="govuk-button" data-module="govuk-button">
           Continue

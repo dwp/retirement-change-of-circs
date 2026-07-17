@@ -14,15 +14,19 @@ Do you live with a partner? - Manage your State Pension - GOV.UK
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <span class="govuk-caption-l">Eligibility</span>
               <h1 class="govuk-fieldset__heading">
-                Did your partner move into the new property at the same time as you?
+                Did your partner move into the new property on {{data['date-moved-day']}} {{data['date-moved-month'] | monthName}} {{data['date-moved-year']}}?
               </h1>
             </legend>
-            <p class="govuk-body">
+            <!-- <p class="govuk-body">
               Date you told us you moved into the new property
               <div id="account-number-hint" class="govuk-hint">
-              01 January 2026
+              {% if data['date-moved-day']%}
+                {{data['date-moved-day']}} {{data['date-moved-month'] | monthName}} {{data['date-moved-year']}}?
+              {% else %}
+               01 July 2026 
+              {% endif %} 
             </div>
-            </p>
+            </p> -->
 
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">

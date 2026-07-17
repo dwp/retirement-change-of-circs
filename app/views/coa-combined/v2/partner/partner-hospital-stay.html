@@ -12,11 +12,7 @@
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              {% if (data['partner'] == "Yes") %}
               <span class="govuk-caption-l">You and your partner</span>
-              {% else %}
-              <span class="govuk-caption-l">Your partner</span>
-              {% endif %}
               <h1 class="govuk-fieldset__heading">
                 Have you or {% if data['first-name']%}
                 {{ data['first-name']}}
@@ -24,8 +20,8 @@
                 Mark
               {% endif %}
                 had any overnight stays in hospital since
-                {% if data['partner-record-day']%}
-                {{data['partner-record-day']}} {{data['partner-record-month'] | monthName}} {{data['partner-record-year']}}?
+                {% if data['date-moved-day']%}
+                {{data['date-moved-day']}} {{data['date-moved-month'] | monthName}} {{data['date-moved-year']}}?
                 {% else %}
                 12 August 2026
               {% endif %}

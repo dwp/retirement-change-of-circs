@@ -30,30 +30,27 @@
                   adam@dwp.gov.uk
                 </div>
               </div>
-
+              
               <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="email-type" name="email-type" type="radio" value="Enter a new email address" data-aria-controls="conditional-contact"{{ checked("email-type", "new-email") }}>
-                  <label class="govuk-label govuk-radios__label" for="email-type">
-                    A different email address
+                <input class="govuk-radios__input" id="email-type" name="email-type" type="radio" value="new-email" data-aria-controls="conditional-contact" {{ checked("email-type", "new-email") }}>
+                <label class="govuk-label govuk-radios__label" for="new-email">
+                  A different email address
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="new-email">
+                    Enter an email address
                   </label>
+                  <input class="govuk-input govuk-!-width-one-third" id="new-email" name="new-email" type="email" spellcheck="false" autocomplete="email">
                 </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="new-email">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="email-type">
-                      Enter an email address
-                    </label>
-                    <input class="govuk-input govuk-!-width-one-third" id="new-email" name="new-email" type="text" spellcheck="false">
-                  </div>
-                </div>
-            </div>
-          </fieldset>
+              </div>
+            </fieldset>
           </div>
-
           
-
-        <button type="submit" class="govuk-button" data-module="govuk-button">
-          Continue
-        </button>
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
       </form>
 
     </div>
