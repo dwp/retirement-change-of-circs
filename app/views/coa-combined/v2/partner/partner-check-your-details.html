@@ -19,7 +19,7 @@
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           {% if (data['partner'] == "Yes") %}
-          <!-- <div class="govuk-summary-list__row">
+          <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
               Live with partner
             </dt>
@@ -32,10 +32,10 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="do-you-live-with-a-partner.html">
-                Change<span class="govuk-visually-hidden"> residential address</span>
+                Change<span class="govuk-visually-hidden"> partner details</span>
               </a>
             </dd>
-          </div> -->
+          </div>
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
@@ -50,7 +50,7 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="partner-details.html">
-                Change<span class="govuk-visually-hidden"> residential address</span>
+                Change<span class="govuk-visually-hidden"> partner details</span>
               </a>
             </dd>
           </div>
@@ -65,7 +65,7 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="partner-details.html">
-                Change<span class="govuk-visually-hidden"> residential address</span>
+                Change<span class="govuk-visually-hidden"> partner details</span>
               </a>
             </dd>
           </div>
@@ -86,7 +86,7 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="partner-details.html">
-                Change<span class="govuk-visually-hidden"> residential address</span>
+                Change<span class="govuk-visually-hidden"> partner details</span>
               </a>
             </dd>
           </div>
@@ -103,7 +103,7 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="partner-details.html">
-                Change<span class="govuk-visually-hidden"> residential address</span>
+                Change<span class="govuk-visually-hidden"> partner details</span>
               </a>
             </dd>
           </div> -->
@@ -121,7 +121,7 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="partner-work.html">
-                Change<span class="govuk-visually-hidden"> residential address</span>
+                Change<span class="govuk-visually-hidden"> partner details</span>
               </a>
             </dd>
           </div> -->
@@ -139,7 +139,7 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="partner-in-education.html">
-                Change<span class="govuk-visually-hidden"> residential address</span>
+                Change<span class="govuk-visually-hidden"> partner details</span>
               </a>
             </dd>
           </div> -->
@@ -157,7 +157,7 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="partner-hospital-stay.html">
-                Change<span class="govuk-visually-hidden"> residential address</span>
+                Change<span class="govuk-visually-hidden"> partner details</span>
               </a>
             </dd>
           </div>
@@ -176,7 +176,7 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="partner-registered-blind.html">
-                Change<span class="govuk-visually-hidden"> if your moving this property</span>
+                Change<span class="govuk-visually-hidden"> partner details</span>
               </a>
             </dd>     
           {% elif (data['partner'] == "No") %}
@@ -193,7 +193,7 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="do-you-live-with-a-partner.html">
-                Change<span class="govuk-visually-hidden"> your address</span>
+                Change<span class="govuk-visually-hidden"> partner details</span>
               </a>
             </dd>
           </div>
@@ -211,7 +211,7 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="do-you-live-with-a-partner.html">
-                Change<span class="govuk-visually-hidden"> residential address</span>
+                Change<span class="govuk-visually-hidden"> partner details</span>
               </a>
             </dd>
           </div>
@@ -221,7 +221,7 @@
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['first-name']%}
-                {{ data['first-name']}} {{ data['last-name'] }}
+                {{ data['first-name']}} {{ data['middle-name'] }} {{ data['last-name'] }}
               {% else %}
                 Mark
               {% endif %}
@@ -232,6 +232,22 @@
               </a>
             </dd>
           </div>
+          {% if data['partner-other-name']%}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Any other last names
+            </dt>
+            <dd class="govuk-summary-list__value">
+                {{ data['partner-other-name']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="partner-details.html">
+                Change<span class="govuk-visually-hidden"> partner details</span>
+              </a>
+            </dd>
+          </div>
+          {% else %}
+          {% endif %}     
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
               National Insurance number
