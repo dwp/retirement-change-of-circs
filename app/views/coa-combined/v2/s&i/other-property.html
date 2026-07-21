@@ -16,7 +16,7 @@ Money today - Manage your State Pension - GOV.UK
                     <span class="govuk-caption-l">Money and investments</span>
                   {%if data['live-with-partner'] == 'Yes'%}
             <h1 class="govuk-fieldset__heading">
-                Do you or {{ data['first-name']}} own any property or land other than the home you live in?
+                Do you or {{ data['first-name']}} own any property or land?
             </h1>
             </legend>
             <!-- <div class="govuk-hint">
@@ -25,7 +25,7 @@ Money today - Manage your State Pension - GOV.UK
             </div> -->
             {% else %}
             <h1 class="govuk-fieldset__heading">
-                Do you own any property or land other than the home you live in?
+                Do you own any property or land?
             </h1>
             </legend>
             <!-- <div class="govuk-hint">
@@ -40,13 +40,13 @@ Money today - Manage your State Pension - GOV.UK
                 <div class="govuk-radios govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="other-property" name="other-property" type="radio" value="Yes" {{ checked("other-property", "Yes") }}>
-                    <label class="govuk-label govuk-radios__label" for="other-property">
+                    <label class="govuk-label govuk-radios__label" for="Yes">
                     Yes
                     </label>
                 </div>
                 <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="other-property" name="other-property" type="radio" value="No" {{ checked("other-property", "No") }}>
-                    <label class="govuk-label govuk-radios__label" for="other-property">
+                    <label class="govuk-label govuk-radios__label" for="No">
                     No
                     </label>
                 </div>

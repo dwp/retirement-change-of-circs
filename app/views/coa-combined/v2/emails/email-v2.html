@@ -1,0 +1,102 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block pageTitle %}
+  Email template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+    {{ govukHeader() }}
+
+{% endblock %}
+
+{% block content %}
+
+  <tr id="contents">
+            <td style="font-family: Helvetica, Arial, sans-serif;">
+                <table width="100%" cellspacing="0" cellpadding="0" style="background: #FFFFFF;">
+                    
+                    <tbody><tr>
+                        
+                        <td style="font-family: Helvetica, Arial, sans-serif; padding: 25px 20px 20px;">
+                            <h1 style="margin: 0 0 30px; font-size: 36px;">Your address for State Pension has been updated</h1>
+
+                            <div class="govuk-inset-text">
+                                <p class="govuk-body">
+                                    123 Square Street<br>
+                                    York <br>
+                                    YO3 1SQ</a>.
+                                </p>
+                            </div>
+
+                            <h2 class="govuk-heading-m">We need more information from you</h2>
+                            <p class="govuk-body">To make sure we are paying you the correct amount of Pension Credit, we need more information from you.</p>
+                            <p class="govuk-body">We will contact you by phone or we will send you forms to fill out.</p>
+
+                            <h2 class="govuk-heading-m">If your circumstances change</h2>
+                            <p class="govuk-body">You need to tell us if you, or anyone who lives with you:</p>
+                            <ul class="govuk-list govuk-list--bullet">
+                            <li>goes into hospital or moves into a care home</li>
+                            <li>has a change to their income, for example they stop working, or you start getting another pension or social security benefit</li>
+                            <li>leaves England, Scotland and Wales for more than 4 weeks</li>
+                            <li>goes to prison or are held in legal custody</li>
+                            <li>changes their name</li>
+                            <li>has their immigration status changed</li>
+                            </ul>
+
+                            <p class="govuk-body">We also need to know if:</p>
+                            <ul class="govuk-list govuk-list--bullet">
+                            <li>you get married or form a civil partnership </li>
+                            <li>you get divorced or your civil partnership is dissolved</li>
+                            <li>anyone moves in or out of your home</li>
+                            <li>you become a carer for someone</li>
+                            <li>someone starts caring for you</li>
+                            <li>someone you live with dies</li>
+                            <li>you change address</li>
+                            <li>you want to change your contact details</li>
+                            <li>you want us to pay you into a different bank account</li>
+                            <li>there is a change to the amount you pay in service charges or ground rent</li>
+                            <li>your money and investments go above £10,000</li>
+                            </ul>
+
+                            <p class="govuk-body">We may stop or reduce your payments, and you may have to pay back money, if you:</p>
+                            <ul class="govuk-list govuk-list--bullet">
+                            <li>do not report a change straight away</li>
+                            <li>give wrong information</li>
+                            <li>are paid too much</li>
+                            </ul>
+
+                            <p class="govuk-body">Some changes will increase the amount of Pension Credit you could get.</p>
+                            <p class="govuk-body">Call us if you are not sure if you need to report a change.</p>
+
+                            <p class="govuk-body">If you live in England, Scotland or Wales:</p>
+                            <ul class="govuk-list govuk-list--bullet">
+                            <li>call us on <a href="" class="govuk-link">0800 731 0469</a></li>
+                            <li><p class="govuk-body"><a href="https://www.gov.uk/contact-pension-service/report-changes" class="govuk-link">go to GOV.UK to find other ways to report changes</a></p></li>
+                            </ul>
+
+                            <p class="govuk-body">If you live in England, Scotland or Wales:</p>
+                            <ul class="govuk-list govuk-list--bullet">
+                            <li>call us on <a href="" class="govuk-link">0800 587 0892</a></li>
+                            <li><p class="govuk-body"><a href="https://www.nidirect.gov.uk/contacts/northern-ireland-pension-centre" class="govuk-link">go to nidirect to find other ways to report changes</a></p></li>
+                            </ul>
+
+                            <p class="govuk-body">Do not reply to this email.</p>
+            
+                        </td>
+                        
+                    </tr>
+                </tbody></table>
+            </td>
+        </tr>
+
+        <form class="form" action="" method="post">
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+      </form>
+
+{% endblock %}
+
+{% block footer  %}
+{% endblock %}

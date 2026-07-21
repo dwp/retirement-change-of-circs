@@ -75,8 +75,8 @@
 
             <dd class="govuk-summary-list__value">
               <ul class="govuk-list govuk-list--bullet">
-                {% if data['otherProperty'] %}
-                {{ data['otherProperty'] }}
+                {% if data['other-property'] == 'Yes' %}
+                {{ data['other-property'] }}
               {% else %}
                 No
               {% endif %}

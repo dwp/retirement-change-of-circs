@@ -254,7 +254,7 @@ router.post('/coa-combined/v2/filters/perm-or-temp', function (req, res) {
   // Check whether the variable matches a condition
   if (perOrTemp == "Yes"){
     // Send user to next page
-    res.redirect('/coa-combined/v2/filters/type-of-property.html')
+    res.redirect('/coa-combined/v2/filters/when-did-you-move.html')
   } else if (perOrTemp == "No"){
     res.redirect('/coa-combined/v2/filters/you-cannot-change-pc-address-online.html')
   }
@@ -263,29 +263,29 @@ router.post('/coa-combined/v2/filters/perm-or-temp', function (req, res) {
 
 
 
-// ROUTING FOR PROPERTY TYPE TO WHEN DID YOU MOVE
+// // ROUTING FOR PROPERTY TYPE TO WHEN DID YOU MOVE
 
-router.post('/coa-combined/v2/filters/type-of-property', function (req, res) {
+// router.post('/coa-combined/v2/filters/type-of-property', function (req, res) {
 
-  // Make a variable and give it the value from 'uk-address'
-  var propertyType = req.session.data['property-type']
-        console.log("high", req.session.data['property-type'])
+//   // Make a variable and give it the value from 'uk-address'
+//   var propertyType = req.session.data['property-type']
+//         console.log("high", req.session.data['property-type'])
 
 
-  // Check whether the variable matches a condition
-  if (propertyType == "House, bungalow, flat or apartment"){
-    // Send user to next page
-    res.redirect('/coa-combined/v2/filters/when-did-you-move.html')
-  } else if (propertyType == "Self contained flat, apartment or annexe which is attached to someone's property"){
-    res.redirect('/coa-combined/v2/filters/when-did-you-move.html')
-  } else if (propertyType == "Care home"){
-    res.redirect('/coa-combined/v2/filters/cannot-change-your-address-online.html')
-  } else if (propertyType == "Caravan, houseboat or mobile home"){
-    res.redirect('/coa-combined/v2/filters/coa-sp-only-knockout.html')
-  } else if (propertyType == "Property type not listed"){
-    res.redirect('/coa-combined/v2/filters/when-did-you-move.html')
-  } 
-});
+//   // Check whether the variable matches a condition
+//   if (propertyType == "House, bungalow, flat or apartment"){
+//     // Send user to next page
+//     res.redirect('/coa-combined/v2/filters/when-did-you-move.html')
+//   } else if (propertyType == "Self contained flat, apartment or annexe which is attached to someone's property"){
+//     res.redirect('/coa-combined/v2/filters/when-did-you-move.html')
+//   } else if (propertyType == "Care home"){
+//     res.redirect('/coa-combined/v2/filters/cannot-change-your-address-online.html')
+//   } else if (propertyType == "Caravan, houseboat or mobile home"){
+//     res.redirect('/coa-combined/v2/filters/coa-sp-only-knockout.html')
+//   } else if (propertyType == "Property type not listed"){
+//     res.redirect('/coa-combined/v2/filters/when-did-you-move.html')
+//   } 
+// });
 
 // ROUTING FOR WHEN DID YOU MOVE
 router.post('/coa-combined/v2/filters/when-did-you-move', function (req, res) {
@@ -1009,7 +1009,7 @@ router.post('/coa-combined/v2/how-we-contact-you/provide-email-address', functio
 
 // ROUTING FROM SELECT INVESTMENTS TO MONEY YOU HAVE TODAY
 router.post('/coa-combined/v2/how-we-contact-you/provide-phone-number', function (req, res) {
-  res.redirect('/coa-combined/v2/how-we-contact-you/contact-check-your-details.html.html')
+  res.redirect('/coa-combined/v2/how-we-contact-you/contact-check-your-details.html')
 
 
 });
@@ -1034,6 +1034,28 @@ router.post('/coa-combined/v2/how-we-contact-you/provide-phone-number', function
 
 
 // });
+
+
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+////////////// EMAILS ////////////////////////
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+
+// ROUTING FROM SELECT INVESTMENTS TO MONEY YOU HAVE TODAY
+router.post('/coa-combined/v2/emails/email-v1', function (req, res) {
+  res.redirect('/coa-combined/v2/your-state-pension&updated.html')
+
+
+});
+
+// ROUTING FROM SELECT INVESTMENTS TO MONEY YOU HAVE TODAY
+router.post('/coa-combined/v2/emails/email-v2', function (req, res) {
+  res.redirect('/coa-combined/v2/your-state-pension&updated.html')
+
+
+});
+
 
 
 module.exports = router
