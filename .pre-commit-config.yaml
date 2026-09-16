@@ -87,7 +87,7 @@ repos:
       - id: check-gitlab-ci
       - id: check-renovate
 
-  - repo: https://gitlab.com/dwp/secure-development/dwp-cli
+  - repo: https://dwp.gitlab-dedicated.com/dwp/secure-development/dwp-cli
     rev: v3.15.3
     hooks:
       - id: check-catalog-info
