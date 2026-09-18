@@ -1,14 +1,10 @@
 {
-  "name": "retirement-change-of-circs",
-  "engines": {
-    "node": "22.x",
-    "npm": "10.x"
-  },
+  
   "scripts": {
     "dev": "govuk-prototype-kit dev",
     "serve": "govuk-prototype-kit serve",
-    "start": "govuk-prototype-kit start",
-    "heroku-prebuild": "npm config set @dwp-govuk:registry https://gitlab.com/api/v4/projects/82735932/packages/npm/ --location=project && npm config set //gitlab.com/api/v4/projects/82735932/packages/npm/:_authToken $NPM_TOKEN --location=project"
+    "start": "govuk-prototype-kit start"
+    
   },
   "dependencies": {
     "@dwp/dwp-frontend": "^4.1.0",
@@ -17,7 +13,7 @@
     "@x-govuk/govuk-prototype-filters": "^2.1.0",
     "axios": "^1.17.0",
     "govuk-frontend": "^6.2.0",
-    "govuk-prototype-kit": "npm:@dwp-govuk/govuk-prototype-kit@13.20.2",
+    "govuk-prototype-kit": "13.20.4",
     "hmrc-frontend": "^7.19.0",
     "jquery": "4.0.0",
     "notifications-node-client": "8.4.0",
@@ -30,3 +26,4 @@
   }
   
 }
+
