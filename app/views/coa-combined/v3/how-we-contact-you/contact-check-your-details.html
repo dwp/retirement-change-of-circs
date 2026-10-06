@@ -1,15 +1,15 @@
 {% extends "layouts/ol_signed_in.html" %}
 
 {% block pageTitle %}
-  Check your answers about how we contact you - Manage your State Pension - GOV.UK
+  Check your answers about how we will contact you - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-l">How we contact you</span>
-      <h1 class="govuk-heading-l">Check your answers about how we contact you</h1>
+      <span class="govuk-caption-l">How we will contact you</span>
+      <h1 class="govuk-heading-l">Check your answers about how we will contact you</h1>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           
           <div class="govuk-summary-list__row">
@@ -18,14 +18,14 @@
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['new-email'] %}
-               A different email address
-              <div id="signIn-item-hint" class="govuk-hint">
               {{ data['new-email'] }}
+              <div id="signIn-item-hint" class="govuk-hint">
+              A different email address
             </div>   
               {% else %}
-              My current email address
+              joey@dwp.gov.uk
               <div id="signIn-item-hint" class="govuk-hint">
-              adam@dwp.gov.uk
+              This is the email address we have for you.
             </div>          
 
               {% endif %}
@@ -43,9 +43,9 @@
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['phoneType'] == 'home-phone-number'%}
-              Home phone
+              0161 827 3866
               <div id="signIn-item-hint" class="govuk-hint">
-                0161 827 3866
+                Mobile number
             </div>
               {% elif data['phoneType'] == 'mobile-number'%}
               Mobile phone number

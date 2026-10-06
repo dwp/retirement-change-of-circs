@@ -1,0 +1,93 @@
+{% extends "layout_noback.html" %}
+
+{% block pageTitle %}
+  Your address has been updated for State Pension - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          Your address has been updated
+        </h1>
+      </div>
+      <!-- <h2 class="govuk-heading-s">Your address for State pensions has been updated to:</h2> -->
+      <p class="govuk-body">Your address for State Pension and Pension Credit has been updated to:</p>
+
+      <p class="govuk-body">
+        1 Square Street<br>
+        York<br>
+        YO3 1SQ	<br>
+ 
+
+        <p class="govuk-body">We will send you an email confirmation to confirm you have changed your address.</p>
+
+        <h2 class="govuk-heading-s">Housing Benefit</h2>
+
+        <p class="govuk-body">
+          You will need to contact your local authority if you are receiving or wish to apply for housing benefits.
+        </p>
+
+        <!-- <p class="govuk-body">
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="https://www.gov.uk/pension-credit/change-of-circumstances" target="_blank">Pension Credit (opens in new tab)</a>.</li>
+            <li><a href="https://www.gov.uk/attendance-allowance/report-change-in-circumstances" target="_blank">Attendance allowance (opens in new tab)</a>.</li>
+          </ul> 
+        </p>
+
+        <p class="govuk-body">
+          Your claims might be stopped or reduced if you do not report a change straight away. Some changes will increase the amount of benefits you get.
+        </p> -->
+        <!-- <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-visually-hidden">Warning</span>
+            If you do not report your address change to each benefit department your claim might be stopped.
+          </strong>
+        </div> -->
+
+      <h2 class="govuk-heading-m">
+        Help improve this service
+      </h2>
+      <p class="govuk-body">
+        This is a new service. Help us improve it and <a href="#">give your feedback (opens in new tab)</a>.
+      </p>
+      <!-- <div class="govuk-inset-text">
+        <a href="../your-state-pension&updated.html" class="govuk-link">Return to your State Pension details</a>
+      </div> -->
+      <div class="govuk-inset-text">
+      <a href="your-state-pension&updated.html">Return to Your State Pension details.</a></div>
+      <p class="govuk-body">
+        <a href="signed-out.html">Sign out</a>
+      </p>
+      <p class="govuk-body">
+      <a href="emails/email-v1.html" target="_blank">Email confirmation</a>
+      </p>
+      </div>
+      
+    </div>
+  </div>
+
+
+{% endblock %}
+
+{% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "https://govuk-prototype-kit.herokuapp.com/",
+            text: "GOV.UK Prototype Kit " + releaseVersion
+          },
+          {
+            href: "/prototype-admin/clear-data",
+            text: "Clear data"
+          }
+        ],
+        visuallyHiddenTitle: "Footer links"
+      }
+    }) }}
+  {% endblock %}
+ÍÍ

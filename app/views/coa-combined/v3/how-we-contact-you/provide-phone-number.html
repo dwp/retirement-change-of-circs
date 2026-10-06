@@ -12,32 +12,32 @@
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <span class="govuk-caption-l">How we contact you</span>
+              <span class="govuk-caption-l">How we will contact you</span>
               <h1 class="govuk-fieldset__heading">
                 What phone number should we call you on?
               </h1>
             </legend>
 
             <p class="govuk-body">
-              We need this if we need to contact you for further information about your Pension Credit. We will not use it to update your records. If you want to update your contact details, you can do so through Manage Your State Pension homepage. </p>
+              If we need more information about this change, we will contact you on this phone number. This must be your own phone number. </p>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="phoneType" name="phoneType" type="radio" value="home-phone-number" {{ checked("phoneType", "home-phone-number") }}>
                 <label class="govuk-label govuk-radios__label" for="home-phone-number">
-                  Home phone number
+                  0161 827 3847
                 </label>
                 <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
-                  0161 827 3847
+                  This is the telephone number we have for you.
                 </div>
               </div>
 
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="phoneType" name="phoneType" type="radio" value="mobile-number" {{ checked("phoneType", "mobile-number") }}>
                 <label class="govuk-label govuk-radios__label" for="mobile-number">
-                  Mobile number
+                  0779387483
                 </label>
                 <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
-                  0779387483
+                  This is the mobile number we have for you.
                 </div>
               </div>
 
@@ -46,6 +46,9 @@
                 <label class="govuk-label govuk-radios__label" for="new-phone-number">
                   A different phone number
                 </label>
+                <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                  This will not change the numbers we have for you. 
+                </div>
               </div>
               <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
                 <div class="govuk-form-group">

@@ -1,0 +1,34 @@
+{% extends "layouts/ol_signed_in.html" %}
+
+{% block pageTitle %}
+   You cannot change your address for Pension Credit online  - Manage your State Pension - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+      <div class="govuk-panel govuk-panel--interruption">
+          <h1 class="govuk-panel__title">
+            You cannot change your address for Pension Credit online 
+          </h1>
+          <div class="govuk-panel__body">
+            <p class="govuk-body">You can continue to update your address for State Pension online.</p>
+            <p class="govuk-body">You need to call us to change your address for Pension Credit over the phone. <a class="govuk-link govuk-link--inverse" href="https://www.gov.uk/contact-pension-service/report-changes" target="_blank">Contact the Pension Service by phone (opens in new tab)</a>.</p>
+
+          </div>
+          <div class="govuk-panel__actions">
+            <div class="govuk-button-group">
+              <a href="../simple-address/address-finder/find-address.html" role="button" draggable="false" class="govuk-button govuk-button--inverse" data-module="govuk-button">
+                Continue
+              </a>
+            </div>
+          </div>
+        </div>
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}

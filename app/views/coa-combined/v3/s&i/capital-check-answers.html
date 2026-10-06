@@ -16,7 +16,7 @@
 
           {%if data['capitalTypes']%}
           <div class="govuk-summary-list__row">
-            {%if data['partner'] == 'Yes'%}
+            {%if data['live-with-partner'] == 'Yes'%}
             <dt class="govuk-summary-list__key">
               Where you and {{ data['first-name']}} have money
             </dt>
@@ -41,7 +41,7 @@
 
           {%if data['todayTotal']%}
             <div class="govuk-summary-list__row">
-            {%if data['partner'] == 'Yes'%}
+            {%if data['live-with-partner'] == 'Yes'%}
             <dt class="govuk-summary-list__key">
               Money you and {{ data['first-name']}} have today
             </dt>
@@ -70,7 +70,7 @@
 
             <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Own any property or land
+              Own any other property or land
             </dt>
 
             <dd class="govuk-summary-list__value">
@@ -159,7 +159,7 @@
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Own any property or land
+              Own any other property or land
             </dt>
 
             <dd class="govuk-summary-list__value">
@@ -172,7 +172,7 @@
               </ul>
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="other-property">Change<span class="govuk-visually-hidden">own any property or land</span></a>
+              <a class="govuk-link" href="other-property">Change<span class="govuk-visually-hidden">Own any other property or land</span></a>
             </dd>
           </div>
           <!-- <div class="govuk-summary-list__row">

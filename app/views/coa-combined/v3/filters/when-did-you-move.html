@@ -2,7 +2,7 @@
 when-did-you-move{% extends "layouts/ol_signed_in.html" %}
 
 {% block pageTitle %}
-  Do you know when you moved into the property? - Manage your State Pension - GOV.UK
+  What date did you move into the property? - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
@@ -15,7 +15,7 @@ when-did-you-move{% extends "layouts/ol_signed_in.html" %}
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <span class="govuk-caption-l">Eligibility</span>
               <h1 class="govuk-fieldset__heading">
-                Do you know when you moved into the property?
+                What date did you move into the property?
               </h1>
             </legend>
 
@@ -23,55 +23,41 @@ when-did-you-move{% extends "layouts/ol_signed_in.html" %}
               You can only change your address after you have moved.
             </p> -->
 
-            <div class="govuk-radios" data-module="govuk-radios">
-              
-              <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="date-moved" name="date-moved" type="radio" value="yes" data-aria-controls="conditional-contact"{{ checked("date-moved", "yes") }}>
-                  <label class="govuk-label govuk-radios__label" for="yes">
-                    Yes
+            <div id="partner-record-hint" class="govuk-hint">
+             For example, 27 3 2007
+            </div>
+            <div class="govuk-date-input" id="partner-dob">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="date-moved-day">
+                    Day
                   </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-moved-day" name="date-moved-day" type="text" inputmode="numeric" value="">
                 </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
-                  <div id="passport-issued-hint" class="govuk-hint">
-                    For example, 27 3 2007
-                  </div>
-                  <div class="govuk-date-input" id="date-moved-day">
-                    <div class="govuk-date-input__item">
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="date-moved-day">
-                          Day
-                        </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-moved-day" name="date-moved-day" type="text" inputmode="numeric">
-                      </div>
-                    </div>
-                    <div class="govuk-date-input__item" id="passport-issued-month">
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="date-moved-month">
-                          Month
-                        </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-moved-month" name="date-moved-month" type="text" inputmode="numeric">
-                      </div>
-                    </div>
-                    <div class="govuk-date-input__item" id="date-moved-year">
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="date-moved-year">
-                          Year
-                        </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-moved-year" name="date-moved-year" type="text" inputmode="numeric">
-                      </div>
-                    </div>
-                  </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="date-moved-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-moved-month" name="date-moved-month" type="text" inputmode="numeric" value="">
                 </div>
-
-                <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="date-moved" name="date-moved" type="radio" value="No" {{ checked("date-moved", "No") }}>
-                <label class="govuk-label govuk-radios__label" for="No">
-                  No
-                </label>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="date-moved-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-moved-year" name="date-moved-year" type="text" inputmode="numeric" value="{{ data['partner-record-year'] }}">>
+                </div>
               </div>
             </div>
           </fieldset>
+          
           </div>
+          <p class="govuk-body">
+            <a href="coa-sp-only-knockout2" class="govuk-link">I am not sure</a>
+          </p>
 
         <button type="submit" class="govuk-button" data-module="govuk-button">
           Continue

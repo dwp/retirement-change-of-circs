@@ -1,15 +1,15 @@
 {% extends "layouts/ol_signed_in.html" %}
 
 {% block pageTitle %}
-  Check your answers about your new address - Manage your State Pension - GOV.UK
+  Check your answers about your change - Manage your State Pension - GOV.UK
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-l">Eligibility</span>
-      <h1 class="govuk-heading-l">Check your answers about your eligibility</h1>
+      <span class="govuk-caption-l">About your change</span>
+      <h1 class="govuk-heading-l">Check your answers about your change</h1>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
@@ -30,13 +30,43 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              Rent the place you are telling us about
+              Already moved
             </dt>
             <dd class="govuk-summary-list__value">
               Yes
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="rent-now">
+              <a class="govuk-link" href="have-you-already-moved">
+                Change<span class="govuk-visually-hidden"> residential address</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Address in the UK
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['uk-address'] %}
+                {{ data['uk-address'] }}
+              {% else %}
+                Yes
+              {% endif %}  
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="uk-address">
+                Change<span class="govuk-visually-hidden"> if your moving this property</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width:40%;">
+              Permanent or temporary move
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Permanent
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="temp-or-perm">
                 Change<span class="govuk-visually-hidden"> residential address</span>
               </a>
             </dd>
@@ -53,52 +83,20 @@
                 Change<span class="govuk-visually-hidden"> residential address</span>
               </a>
             </dd>
-          </div> 
-          <!-- <div class="govuk-summary-list__row">
+          </div>
+          <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              Already moved
+              Rent the place you are telling us about
             </dt>
             <dd class="govuk-summary-list__value">
               Yes
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="have-you-already-moved">
+              <a class="govuk-link" href="rent-now">
                 Change<span class="govuk-visually-hidden"> residential address</span>
               </a>
             </dd>
-          </div> -->
-          
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width:40%;">
-              UK address 
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['uk-address'] %}
-                {{ data['uk-address'] }}
-              {% else %}
-                Yes
-              {% endif %}  
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="uk-address">
-                Change<span class="govuk-visually-hidden"> if your moving this property</span>
-              </a>
-            </dd>
-          </div>
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width:40%;">
-              Permanent or temporary
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Permanent
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="temp-or-perm">
-                Change<span class="govuk-visually-hidden"> residential address</span>
-              </a>
-            </dd>
-          </div>
+          </div>          
 <!-- 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
@@ -155,7 +153,7 @@
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              Partner live at previous property
+              Partner lived at previous property
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['partner-pp'] %}
@@ -173,7 +171,7 @@
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              Partner move to the new property with you
+              Partner move to the new property on {{data['date-moved-day']}} {{data['date-moved-month'] | monthName}} {{data['date-moved-year']}}
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['partner-move'] %}
@@ -190,7 +188,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="width:40%;">
-              Partner date of birth
+              Partner's date of birth
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['partner-dob-day']%}

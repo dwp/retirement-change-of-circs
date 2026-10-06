@@ -19,7 +19,7 @@
             </legend>
 
             <p class="govuk-body">
-              You need to complete all sections to change your address. You cannot save your answers and return later.
+              This is a list of tasks you need to complete to change your address. You cannot save your answers and return later.
             </p>
 
             <h2 class="govuk-heading-m">Eligibility</h2>
@@ -27,17 +27,21 @@
 
                 <li class="govuk-task-list__item govuk-task-list__item--with-link">
                     <div class="govuk-task-list__name-and-hint">
-                    <a class="govuk-link govuk-task-list__link" href="
+                        About your change
+                    <!-- <a class="govuk-link govuk-task-list__link" href="
                         {% if data.eligibilityQuestions == 'completed' or data.eligibilityQuestions == 'inprogress' %}
-                            filters/rent-now?section=eligibilityQuestions
+                            filters/have-you-moved?section=eligibilityQuestions
                         {% else %}
-                            filters/rent-now?eligibilityQuestions=inprogress
+                            filters/have-you-moved??eligibilityQuestions=inprogress
                         {% endif %}
-                    " aria-describedby="company-details-5-status">
-                        Eligibility
+                    " aria-describedby="company-details-5-status"> -->
+                        
                     </a>
                     </div>
-                    {% if data.eligibilityQuestions == 'completed' %}
+                        <div class="govuk-task-list__status" id="company-details-1-status">
+                            Completed
+                        </div>
+                    <!-- {% if data.eligibilityQuestions == 'completed' %}
                         <div class="govuk-task-list__status" id="company-details-1-status">
                             Completed
                         </div>
@@ -53,7 +57,7 @@
                                 Not started yet
                             </strong>
                         </div>
-                    {%endif%}
+                    {%endif%} -->
                 </li>
             </ul>
 
@@ -216,7 +220,7 @@
                             how-we-contact-you/provide-email-address?contactYou=inprogress
                         {% endif %}
                     " aria-describedby="company-details-5-status">
-                        How we contact you
+                        How we will contact you
                     </a>
                     </div>
                     {% if data.contactYou == 'completed' %}
@@ -254,11 +258,14 @@
             </form>
 
         </fieldset>
+        <div class="govuk-inset-text">
+                <a href="your-state-pension.html" class="govuk-link">Return to your State Pension details</a>
+            </div>
 
         {% else %}
-        <h2 class="govuk-heading-m">If you need help</h2>
+        <h2 class="govuk-heading-m">Other ways to change your address</h2>
             <p class="govuk-body">
-                If you need help or want to tell us about your change of address another way,  <a href="https://www.gov.uk/contact-pension-service/report-changes" class="govuk-link" target="_blank">contact the Pension Service by phone or post (opens in new tab)</a>.
+                If you want to tell us about your change of address another way,  <a href="https://www.gov.uk/contact-pension-service/report-changes" class="govuk-link" target="_blank">contact the Pension Service by phone or post (opens in new tab)</a>.
             </p>
 
             <div class="govuk-inset-text">

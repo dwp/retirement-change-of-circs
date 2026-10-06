@@ -18,59 +18,59 @@ function addDays(date, days) {
 //////////////////////////////////////////////////////
 //////////////////////////////////////////////////////
 
-router.post('/coa-combined/v2/filters/check-your-details', function (req, res) {
+router.post('/coa-combined/v3/filters/check-your-details', function (req, res) {
 req.session.data['eligibilityQuestions']="completed"
-  res.redirect('/coa-combined/v2/task-list.html')
+  res.redirect('/coa-combined/v3/task-list.html')
 
 
 });
 
-router.post('/coa-combined/v2/new-address/check-your-details', function (req, res) {
+router.post('/coa-combined/v3/new-address/check-your-details', function (req, res) {
 req.session.data['newAddress']="completed"
-  res.redirect('/coa-combined/v2/task-list.html')
+  res.redirect('/coa-combined/v3/task-list.html')
 
 
 });
 
-router.post('/coa-combined/v2/where-you-live-now/rent/rent-check-your-details', function (req, res) {
+router.post('/coa-combined/v3/where-you-live-now/rent/rent-check-your-details', function (req, res) {
 req.session.data['liveNow']="completed"
-  res.redirect('/coa-combined/v2/task-list.html')
+  res.redirect('/coa-combined/v3/task-list.html')
 
 
 });
 
-// router.post('/coa-combined/v2/partner/partner-added', function (req, res) {
+// router.post('/coa-combined/v3/partner/partner-added', function (req, res) {
 // req.session.data['partnerDetails']="completed"
-//   res.redirect('/coa-combined/v2/task-list.html')
+//   res.redirect('/coa-combined/v3/task-list.html')
 
 
 // });
 
-router.post('/coa-combined/v2/partner/partner-check-your-details', function (req, res) {
+router.post('/coa-combined/v3/partner/partner-check-your-details', function (req, res) {
 req.session.data['partnerDetails']="completed"
-  res.redirect('/coa-combined/v2/task-list.html')
+  res.redirect('/coa-combined/v3/task-list.html')
 
 
 });
 
 
 
-router.post('/coa-combined/v2/s&i/capital-check-answers', function (req, res) {
+router.post('/coa-combined/v3/s&i/capital-check-answers', function (req, res) {
 req.session.data['savingsInvestments']="completed"
-  res.redirect('/coa-combined/v2/task-list.html')
+  res.redirect('/coa-combined/v3/task-list.html')
 
 
 });
 
-router.post('/coa-combined/v2/how-we-contact-you/contact-check-your-details', function (req, res) {
+router.post('/coa-combined/v3/how-we-contact-you/contact-check-your-details', function (req, res) {
 req.session.data['contactYou']="completed"
-  res.redirect('/coa-combined/v2/task-list.html')
+  res.redirect('/coa-combined/v3/task-list.html')
 
 
 });
 
 //   //ROUTING FROM COMPLETE TASK LIST TO CONFIRMATION SCREENS
-// router.post('/coa-combined/v2/task-list', function (req, res) {
+// router.post('/coa-combined/v3/task-list', function (req, res) {
 
 
 //   // Make a variable and give it the value from 'live-with-partner'
@@ -81,15 +81,15 @@ req.session.data['contactYou']="completed"
 //   // Check whether the variable matches a condition
 //   if (submitChange == "Yes"){
 //     // Send user to next page
-//     res.redirect('/coa-combined/v2/confirmation-screen-further-action-needed-1.html')
+//     res.redirect('/coa-combined/v3/confirmation-screen-further-action-needed-1.html')
 //   } else if (submitChange == "No"){
-//     res.redirect('/coa-combined/v2/confirmation-screen-1.html')
+//     res.redirect('/coa-combined/v3/confirmation-screen-1.html')
 //   }
 
 // });
 
 // ROUTING FROM PARTNER CHECK DETAILS
-router.post('/coa-combined/v2/task-list', function (req, res) {
+router.post('/coa-combined/v3/task-list', function (req, res) {
 
   const todayTotal = Number(req.session.data['todayTotal']);
   var selectHousingCosts = req.session.data['housing-costs'];
@@ -101,9 +101,9 @@ router.post('/coa-combined/v2/task-list', function (req, res) {
   // Check whether the variable matches a condition
     if (todayTotal > 10000 || otherProperty == "Yes") {
     // Send user to next page
-    res.redirect('/coa-combined/v2/confirmation-action-needed-1.html')
+    res.redirect('/coa-combined/v3/confirmation-action-needed-1.html')
   } else {
-    res.redirect('/coa-combined/v2/confirmation-1.html')
+    res.redirect('/coa-combined/v3/confirmation-1.html')
   }
 
 });
@@ -120,28 +120,8 @@ router.post('/coa-combined/v2/task-list', function (req, res) {
   //ROUTING FROM SP + PC to PENSION CREDIT WARM UP
 
 
-// router.post('/coa-combined/v2/filters/pension-credit-warm-up', function (req, res) {
-
-//   // Make a variable and give it the value from 'select-benefit
-//   var selectBenefitType = req.session.data['select-benefit']
-//     console.log("high", req.session.data['select-benefit'])
-
-
-//   // Check whether the variable matches a condition
-//   if (selectBenefitType == "Yes"){
-//     // Send user to next page
-//     res.redirect('/coa-combined/v2/filters/pension-credit-warm-up.html')
-//   } else if (selectBenefitType == "No"){
-//     res.redirect('/coa-combined/phase1/gysp-v1/have-you-already-moved.html')
-//   }
-
-// });
-
-
- 
-
-  //ROUTING FROM PENSION CREDIT WARM UP TO RENT NOW
-router.post('/coa-combined/v2/filters/pension-credit-warm-up', function (req, res) {
+  //ROUTING FROM PENSION CREDIT WARM UP TO HAVE YOU MOVED
+router.post('/coa-combined/v3/filters/pension-credit-warm-up', function (req, res) {
   // Make a variable and give it the value from 'select-benefit
   var selectBenefitType = req.session.data['select-benefit']
     console.log("high", req.session.data['select-benefit'])
@@ -150,64 +130,88 @@ router.post('/coa-combined/v2/filters/pension-credit-warm-up', function (req, re
   // Check whether the variable matches a condition
   if (selectBenefitType == "Yes"){
     // Send user to next page
-    res.redirect('/coa-combined/v2/filters/rent-now.html')
+    res.redirect('/coa-combined/v3/filters/have-you-moved.html')
   } else if (selectBenefitType == "No"){
-    res.redirect('/coa-combined/phase1/gysp-v1/have-you-already-moved.html')
+    res.redirect('/coa-combined/v3/filters/have-you-moved.html')
   }
 
 });
 
+  //ROUTING FROM HAVE YOU MOVED TO UK ADDRESS
+router.post('/coa-combined/v3/filters/have-you-moved', function (req, res) {
+  // Make a variable and give it the value from 'already-moved
+  var selectIfMoved = req.session.data['already-moved']
+    console.log("high", req.session.data['already-moved'])
+
+
+  // Check whether the variable matches a condition
+  if (selectIfMoved == "Yes"){
+    // Send user to next page
+    res.redirect('/coa-combined/v3/filters/uk-address.html')
+  } else if (selectIfMoved == "No"){
+    res.redirect('/coa-combined/v3/filters/coa-sp-only-knockout2.html')
+  }
+
+});
+
+// ROUTING FOR ADDRESS IN THE UK TP PERM OR TEMP
+
+router.post('/coa-combined/v3/filters/uk-address', function (req, res) {
+
+// Make a variable and give it the value from 'already moved'
+  var changeUkAddress = req.session.data['uk-address']
+  
+    console.log("high", req.session.data['uk-address'])
+
+
+  // Check whether the variable matches a condition
+  if (changeUkAddress == "Yes"){
+    // Send user to next page
+    res.redirect('/coa-combined/v3/filters/perm-or-temp.html')
+  } else if (changeUkAddress == "No"){
+    res.redirect('/coa-combined/v3/filters/you-cannot-change-pc-address-online.html')
+  }
+
+});
+
+// ROUTING FOR PERM OR TEMP to UK ADDRESS
+router.post('/coa-combined/v3/filters/perm-or-temp', function (req, res) {
+
+    // Make a variable and give it the value from 'uk-address'
+var perOrTemp = req.session.data['perm-or-temp']
+var selectBenefitType = req.session.data['select-benefit']
+
+console.log('perOrTemp:', perOrTemp)
+console.log('selectBenefitType:', selectBenefitType)
+
+if (perOrTemp === "Yes" && selectBenefitType === "Yes") {
+  res.redirect('/coa-combined/v3/filters/rent-before.html')
+
+} else if (perOrTemp === "Yes" && selectBenefitType === "No") {
+  res.redirect('/coa-combined/v3/simple-address/address-finder/find-address.html')
+
+} else if (perOrTemp === "No") {
+  res.redirect('/coa-combined/v3/filters/coa-sp-only-knockout2.html')
+}
+
+});
+
+  
+
+
+
   //ROUTING FROM PENSION CREDIT WARM UP TO RENT NOW
-router.post('/coa-combined/v2/filters/coa-sp-only-knockout', function (req, res) {
+router.post('/coa-combined/v3/filters/coa-sp-only-knockout2', function (req, res) {
   res.redirect('/coa-combined/phase1/gysp-v1/have-you-already-moved.html')
 
 
 });
 
 
- //ROUTING FROM RENT NOW TO RENT BEFORE
 
-router.post('/coa-combined/v2/filters/rent-now', function (req, res) {
+// ROUTING FOR RENT BEFORE TO RENT NOW
 
-  // Make a variable and give it the value from 'select-benefit
-  var selectRentNow = req.session.data['rent-now']
-    console.log("high", req.session.data['rent-now'])
-
-
-  // Check whether the variable matches a condition
-  if (selectRentNow == "Yes"){
-    // Send user to next page
-    res.redirect('/coa-combined/v2/filters/rent-before.html')
-  } else if (selectRentNow == "No"){
-    res.redirect('/coa-combined/v2/filters/coa-sp-only-knockout.html')
-  }
-
-});
-
-
-
-//  //ROUTING FROM RENT BEFORE TO HAVE YOU MOVED
-
-// router.post('/coa-combined/v2/filters/rent-before', function (req, res) {
-
-//   // Make a variable and give it the value from 'select-benefit
-//   var selectRentBefore = req.session.data['rent-before']
-//     console.log("high", req.session.data['rent-before'])
-
-
-//   // Check whether the variable matches a condition
-//   if (selectRentBefore == "Yes"){
-//     // Send user to next page
-//     res.redirect('/coa-combined/v2/filters/have-you-moved.html')
-//   } else if (selectRentBefore == "No"){
-//     res.redirect('/coa-combined/v2/filters/coa-sp-only-knockout.html')
-//   }
-
-// });
-
-// ROUTING FOR HAVE YOU ALREADY MOVED TO UK ADDRESS
-
-router.post('/coa-combined/v2/filters/rent-before', function (req, res) {
+router.post('/coa-combined/v3/filters/rent-before', function (req, res) {
 
   // Make a variable and give it the value from 'select-benefit'
   var selectRentBefore = req.session.data['rent-before']
@@ -217,55 +221,41 @@ router.post('/coa-combined/v2/filters/rent-before', function (req, res) {
   // Check whether the variable matches a condition
   if (selectRentBefore == "Yes"){
     // Send user to next page
-    res.redirect('/coa-combined/v2/filters/uk-address.html')
+    res.redirect('/coa-combined/v3/filters/rent-now.html')
   } else if (selectRentBefore == "No"){
-    res.redirect('/coa-combined/v2/filters/coa-sp-only-knockout.html')
+    res.redirect('/coa-combined/v3/filters/coa-sp-only-knockout2.html')
   }
 
 });
 
-// ROUTING FOR ADDRESS IN THE UK
+ //ROUTING FROM RENT NOW TO WHEN DID YOU MOVE
 
-router.post('/coa-combined/v2/filters/uk-address', function (req, res) {
+router.post('/coa-combined/v3/filters/rent-now', function (req, res) {
 
-  // Make a variable and give it the value from 'uk-address'
-  var changeUkAddress = req.session.data['uk-address']
-        console.log("high", req.session.data['uk-address'])
+  // Make a variable and give it the value from 'select-benefit
+  var selectRentNow = req.session.data['rent-now']
+    console.log("high", req.session.data['rent-now'])
 
 
   // Check whether the variable matches a condition
-  if (changeUkAddress == "Yes"){
+  if (selectRentNow == "Yes"){
     // Send user to next page
-    res.redirect('/coa-combined/v2/filters/perm-or-temp.html')
-  } else if (changeUkAddress == "No"){
-    res.redirect('/coa-combined/v2/filters/you-cannot-change-international-address.html')
+    res.redirect('/coa-combined/v3/filters/when-did-you-move.html')
+  } else if (selectRentNow == "No"){
+    res.redirect('/coa-combined/v3/filters/coa-sp-only-knockout2.html')
   }
 
 });
 
-// ROUTING FOR PERM OR TEMP
-router.post('/coa-combined/v2/filters/perm-or-temp', function (req, res) {
-
-  // Make a variable and give it the value from 'already moved'
-  var perOrTemp = req.session.data['perm-or-temp']
-    console.log("high", req.session.data['perm-or-temp'])
 
 
-  // Check whether the variable matches a condition
-  if (perOrTemp == "Yes"){
-    // Send user to next page
-    res.redirect('/coa-combined/v2/filters/when-did-you-move.html')
-  } else if (perOrTemp == "No"){
-    res.redirect('/coa-combined/v2/filters/you-cannot-change-pc-address-online.html')
-  }
 
-});
 
 
 
 // // ROUTING FOR PROPERTY TYPE TO WHEN DID YOU MOVE
 
-// router.post('/coa-combined/v2/filters/type-of-property', function (req, res) {
+// router.post('/coa-combined/v3/filters/type-of-property', function (req, res) {
 
 //   // Make a variable and give it the value from 'uk-address'
 //   var propertyType = req.session.data['property-type']
@@ -275,20 +265,20 @@ router.post('/coa-combined/v2/filters/perm-or-temp', function (req, res) {
 //   // Check whether the variable matches a condition
 //   if (propertyType == "House, bungalow, flat or apartment"){
 //     // Send user to next page
-//     res.redirect('/coa-combined/v2/filters/when-did-you-move.html')
+//     res.redirect('/coa-combined/v3/filters/when-did-you-move.html')
 //   } else if (propertyType == "Self contained flat, apartment or annexe which is attached to someone's property"){
-//     res.redirect('/coa-combined/v2/filters/when-did-you-move.html')
+//     res.redirect('/coa-combined/v3/filters/when-did-you-move.html')
 //   } else if (propertyType == "Care home"){
-//     res.redirect('/coa-combined/v2/filters/cannot-change-your-address-online.html')
+//     res.redirect('/coa-combined/v3/filters/cannot-change-your-address-online.html')
 //   } else if (propertyType == "Caravan, houseboat or mobile home"){
-//     res.redirect('/coa-combined/v2/filters/coa-sp-only-knockout.html')
+//     res.redirect('/coa-combined/v3/filters/coa-sp-only-knockout2.html')
 //   } else if (propertyType == "Property type not listed"){
-//     res.redirect('/coa-combined/v2/filters/when-did-you-move.html')
+//     res.redirect('/coa-combined/v3/filters/when-did-you-move.html')
 //   } 
 // });
 
-// ROUTING FOR WHEN DID YOU MOVE
-router.post('/coa-combined/v2/filters/when-did-you-move', function (req, res) {
+// ROUTING FOR WHEN DID YOU MOVE TO DO YOU LIVE WITH A PARTNER
+router.post('/coa-combined/v3/filters/when-did-you-move', function (req, res) {
 
   // Make a variable and give it the value from 'date-moved'
   var changeWhenDidYouMove = req.session.data['date-moved']
@@ -297,20 +287,20 @@ router.post('/coa-combined/v2/filters/when-did-you-move', function (req, res) {
   // Check whether the variable matches a condition
   if (changeWhenDidYouMove == "Yes"){
     // Send user to next page
-    res.redirect('/coa-combined/v2/filters/live-with-a-partner.html')
+    res.redirect('/coa-combined/v3/filters/live-with-a-partner.html')
 
   } else if (changeWhenDidYouMove == "No"){
     // Send user to next page
-    res.redirect('/coa-combined/v2/filters/coa-sp-only-knockout.html')
+    res.redirect('/coa-combined/v3/filters/coa-sp-only-knockout2.html')
 
   } else {
-    res.redirect('/coa-combined/v2/filters/live-with-a-partner.html')
+    res.redirect('/coa-combined/v3/filters/live-with-a-partner.html')
   }
 
 });
 
 // ROUTING FROM HAVING A PARTNER
-router.post('/coa-combined/v2/filters/live-with-a-partner', function (req, res) {
+router.post('/coa-combined/v3/filters/live-with-a-partner', function (req, res) {
 
   // Make a variable and give it the value from 'uk-address'
   var selectPartner = req.session.data['live-with-partner']
@@ -319,15 +309,15 @@ router.post('/coa-combined/v2/filters/live-with-a-partner', function (req, res) 
   // Check whether the variable matches a condition
   if (selectPartner == "Yes"){
     // Send user to next page
-    res.redirect('/coa-combined/v2/filters/partner-live-at-previous-property.html')
+    res.redirect('/coa-combined/v3/filters/partner-live-at-previous-property.html')
   } else if (selectPartner == "No"){
-    res.redirect('/coa-combined/v2/filters/live-with-other-people.html')
+    res.redirect('/coa-combined/v3/filters/live-with-other-people.html')
   }
 
 });
 
 // ROUTING FOR CAREHOME
-router.post('/coa-combined/v2/filters/live-in-a-carehome', function (req, res) {
+router.post('/coa-combined/v3/filters/live-in-a-carehome', function (req, res) {
 
   // Make a variable and give it the value from 'already moved'
   var liveCarehome = req.session.data['live-in-carehome']
@@ -337,7 +327,7 @@ router.post('/coa-combined/v2/filters/live-in-a-carehome', function (req, res) {
   // Check whether the variable matches a condition
   if (liveCarehome == "Yes"){
     // Send user to next page
-    res.redirect('/coa-combined/v2/filters/cannot-change-your-address-online.html')
+    res.redirect('/coa-combined/v3/filters/cannot-change-your-address-online.html')
   } else if (liveCarehome == "No"){
     res.redirect('')
   }
@@ -347,7 +337,7 @@ router.post('/coa-combined/v2/filters/live-in-a-carehome', function (req, res) {
 
 // ROUTING FROM PARTNER AT PREVIOUS PROPERTY
 
-router.post('/coa-combined/v2/filters/partner-live-at-previous-property', function (req, res) {
+router.post('/coa-combined/v3/filters/partner-live-at-previous-property', function (req, res) {
 
   // Make a variable and give it the value from 'uk-address'
   var selectPartnerPP = req.session.data['partner-pp']
@@ -356,16 +346,16 @@ router.post('/coa-combined/v2/filters/partner-live-at-previous-property', functi
   // Check whether the variable matches a condition
   if (selectPartnerPP == "Yes"){
     // Send user to next page
-    res.redirect('/coa-combined/v2/filters/partner-move.html')
+    res.redirect('/coa-combined/v3/filters/partner-move.html')
   } else if (selectPartnerPP == "No"){
-    res.redirect('/coa-combined/v2/filters/coa-sp-only-knockout.html')
+    res.redirect('/coa-combined/v3/filters/coa-sp-only-knockout2.html')
   }
 
 });
 
 // ROUTING FROM PARTNER MOVE
 
-router.post('/coa-combined/v2/filters/partner-move', function (req, res) {
+router.post('/coa-combined/v3/filters/partner-move', function (req, res) {
 
   // Make a variable and give it the value from 'uk-address'
   var selectPartnerMove = req.session.data['partner-move']
@@ -374,9 +364,9 @@ router.post('/coa-combined/v2/filters/partner-move', function (req, res) {
   // Check whether the variable matches a condition
   if (selectPartnerMove == "Yes"){
     // Send user to next page
-    res.redirect('/coa-combined/v2/filters/partner-dob.html')
+    res.redirect('/coa-combined/v3/filters/partner-dob.html')
   } else if (selectPartnerMove == "No"){
-    res.redirect('/coa-combined/v2/filters/coa-sp-only-knockout.html')
+    res.redirect('/coa-combined/v3/filters/coa-sp-only-knockout2.html')
   }
 
 });
@@ -384,14 +374,14 @@ router.post('/coa-combined/v2/filters/partner-move', function (req, res) {
 // ROUTING FROM PARTNER DOB
 
 //   //ROUTING FROM PENSION CREDIT WARM UP TO RENT NOW
-// router.post('/coa-combined/v2/filters/partner-dob', function (req, res) {
-//   res.redirect('/coa-combined/v2/filters/partner-hb.html')
+// router.post('/coa-combined/v3/filters/partner-dob', function (req, res) {
+//   res.redirect('/coa-combined/v3/filters/partner-hb.html')
 
 
 // });
 
 // // ROUTING FROM PARTNER DOB
-router.post('/coa-combined/v2/filters/partner-dob', function (req, res) {
+router.post('/coa-combined/v3/filters/partner-dob', function (req, res) {
 
   // Make a variable and give it the value from 'partner-dob-year'
   var partnerYear = req.session.data['partner-dob-year']
@@ -400,16 +390,16 @@ router.post('/coa-combined/v2/filters/partner-dob', function (req, res) {
   // Check whether the variable matches a condition
   if (partnerYear > 1956){
     // Send user to next page
-    res.redirect('/coa-combined/v2/filters/coa-sp-only-knockout.html')
+    res.redirect('/coa-combined/v3/filters/coa-sp-only-knockout2.html')
   } else {
-    res.redirect('/coa-combined/v2/filters/live-with-other-people.html')
+    res.redirect('/coa-combined/v3/filters/live-with-other-people.html')
   }
 
 });
 
 // ROUTING FROM PARTNER HB
 
-router.post('/coa-combined/v2/filters/partner-hb', function (req, res) {
+router.post('/coa-combined/v3/filters/partner-hb', function (req, res) {
 
   // Make a variable and give it the value from 'uk-address'
   var selectPartnerHB = req.session.data['partner-hb']
@@ -418,16 +408,16 @@ router.post('/coa-combined/v2/filters/partner-hb', function (req, res) {
   // Check whether the variable matches a condition
   if (selectPartnerHB == "Yes"){
     // Send user to next page
-    res.redirect('/coa-combined/v2/filters/live-with-other-people.html')
+    res.redirect('/coa-combined/v3/filters/live-with-other-people.html')
   } else if (selectPartnerHB == "No"){
-    res.redirect('/coa-combined/v2/filters/coa-sp-only-knockout.html')
+    res.redirect('/coa-combined/v3/filters/coa-sp-only-knockout2.html')
   }
 
 });
 
 // ROUTING FROM OTHER PEOPLE
 
-router.post('/coa-combined/v2/filters/live-with-other-people', function (req, res) {
+router.post('/coa-combined/v3/filters/live-with-other-people', function (req, res) {
 
   // Make a variable and give it the value from 'uk-address'
   var selectOtherPeople = req.session.data['other-people']
@@ -436,9 +426,9 @@ router.post('/coa-combined/v2/filters/live-with-other-people', function (req, re
   // Check whether the variable matches a condition
   if (selectOtherPeople == "Yes"){
     // Send user to next page
-    res.redirect('/coa-combined/v2/filters/coa-sp-only-knockout.html')
+    res.redirect('/coa-combined/v3/filters/coa-sp-only-knockout2.html')
   } else if (selectOtherPeople == "No"){
-    res.redirect('/coa-combined/v2/filters/check-your-details.html')
+    res.redirect('/coa-combined/v3/filters/check-your-details.html')
   }
 
 });
@@ -447,8 +437,8 @@ router.post('/coa-combined/v2/filters/live-with-other-people', function (req, re
 // ROUTING FROM CHECK YOUR DETAILS
 
   //ROUTING FROM PENSION CREDIT WARM UP TO RENT NOW
-router.post('/coa-combined/v2/filters/check-your-details', function (req, res) {
-  res.redirect('/coa-combined/v2/task-list.html')
+router.post('/coa-combined/v3/filters/check-your-details', function (req, res) {
+  res.redirect('/coa-combined/v3/task-list.html')
 
 
 });
@@ -475,7 +465,7 @@ router.post('/coa-combined/v2/filters/check-your-details', function (req, res) {
 
 
 // ROUTING FOR WHAT IS YOUR NEW ADDRESS
-router.post('/coa-combined/v2/new-address/address-finder/find-address', function (req, res) {
+router.post('/coa-combined/v3/new-address/address-finder/find-address', function (req, res) {
 
   // Make a variable and give it the value from 'citizen-record-year'
   var changeEnterPostcode = req.session.data['postcode-7']
@@ -484,28 +474,28 @@ router.post('/coa-combined/v2/new-address/address-finder/find-address', function
   // Check whether the variable matches a condition
   if (changeEnterPostcode == "YO3 1MJ"){
     // Send user to next page
-    res.redirect('/coa-combined/v2/new-address/address-finder/select-an-address.html')
+    res.redirect('/coa-combined/v3/new-address/address-finder/select-an-address.html')
 
   } else if (changeEnterPostcode == "YO3 1MK"){
     // Send user to next page
-    res.redirect('/coa-combined/v2/new-address/address-finder/no-address-found.html')
+    res.redirect('/coa-combined/v3/new-address/address-finder/no-address-found.html')
 
   } else if (changeEnterPostcode == "YO3 1ML"){
     // Send user to next page
-    res.redirect('/coa-combined/v2/new-address/address-finder/already-your-address.html')
+    res.redirect('/coa-combined/v3/new-address/address-finder/already-your-address.html')
 
     } else if (changeEnterPostcode == "YO3 1MM"){
     // Send user to next page
-    res.redirect('/coa-combined/v2/new-address/address-finder/address-single-result.html')
+    res.redirect('/coa-combined/v3/new-address/address-finder/address-single-result.html')
 
   } else {
-    res.redirect('/coa-combined/v2/new-address/address-finder/select-an-address.html')
+    res.redirect('/coa-combined/v3/new-address/address-finder/select-an-address.html')
   }
 
 });
 
 // ROUTING FOR SELECT AN ADDRESS
-router.post('/coa-combined/v2/new-address/address-finder/select-an-address', function (req, res) {
+router.post('/coa-combined/v3/new-address/address-finder/select-an-address', function (req, res) {
 
   // Make a variable and give it the value from 'select-address'
   var selectAddress = req.session.data['select-address']
@@ -514,48 +504,48 @@ router.post('/coa-combined/v2/new-address/address-finder/select-an-address', fun
   // Check whether the variable matches a condition
   if (selectAddress == "Select1"){
     // Send user to next page
-    res.redirect('/coa-combined/v2/new-address/housing-costs.html')
+    res.redirect('/coa-combined/v3/new-address/housing-costs.html')
 
   } else if (selectAddress == "Select2"){
     // Send user to next page
-    res.redirect('/coa-combined/v2/new-address/address-finder/already-your-address.html')
+    res.redirect('/coa-combined/v3/new-address/address-finder/already-your-address.html')
 
   } else if (selectAddress == "Select3"){
     // Send user to next page
-    res.redirect('/coa-combined/v2/new-address/address-finder/address-single-result.html')
+    res.redirect('/coa-combined/v3/new-address/address-finder/address-single-result.html')
 
   } else if (selectAddress == "Select4"){
     // Send user to next page
-    res.redirect('/coa-combined/v2/new-address/address-finder/this-is-a-prison.html')
+    res.redirect('/coa-combined/v3/new-address/address-finder/this-is-a-prison.html')
 
    } else if (selectAddress == "Select5"){
     // Send user to next page
-    res.redirect('/coa-combined/v2/new-address/cannot-change-your-address-online.html')
+    res.redirect('/coa-combined/v3/new-address/cannot-change-your-address-online.html')
 
   } else {
-    res.redirect('/coa-combined/v2/new-address/address-finder/check-your-details.html')
+    res.redirect('/coa-combined/v3/new-address/address-finder/check-your-details.html')
   }
 
 });
 
 
   // ROUTING FOR SINGLE ADDRESS RESULT
-router.post('/coa-combined/v2/new-address/address-finder/address-single-result', function (req, res) {
-  res.redirect('/coa-combined/v2/new-address/address-finder/housing-costs.html')
+router.post('/coa-combined/v3/new-address/address-finder/address-single-result', function (req, res) {
+  res.redirect('/coa-combined/v3/new-address/address-finder/housing-costs.html')
 
 
 });
 
 //    //ROUTING FROM HOUSING COSTS TO CHECK YOUR DETAILS
-// router.post('/coa-combined/v2/new-address/housing-costs', function (req, res) {
-//   res.redirect('/coa-combined/v2/new-address/check-your-details.html')
+// router.post('/coa-combined/v3/new-address/housing-costs', function (req, res) {
+//   res.redirect('/coa-combined/v3/new-address/check-your-details.html')
 
 
 // });
 
-   //ROUTING FROM HOUSING COSTS TO CHECK YOUR DETAILS
+   //ROUTING FROM HOUSING COSTS TO HOUSING TYPE
 
-router.post('/coa-combined/v2/new-address/housing-costs', function (req, res) {
+router.post('/coa-combined/v3/new-address/housing-costs', function (req, res) {
 
   // Make a variable and give it the value from 'uk-address'
   var selectHousingCosts = req.session.data['housing-costs']
@@ -564,9 +554,47 @@ router.post('/coa-combined/v2/new-address/housing-costs', function (req, res) {
   // Check whether the variable matches a condition
   if (selectHousingCosts == "Yes"){
     // Send user to next page
-    res.redirect('/coa-combined/v2/new-address/check-your-details.html')
+    res.redirect('/coa-combined/v3/new-address/caravan-or-houseboat.html')
   } else if (selectHousingCosts == "No"){
-    res.redirect('/coa-combined/v2/new-address/check-your-details.html')
+    res.redirect('/coa-combined/v3/new-address/caravan-or-houseboat.html')
+  }
+
+});
+
+// });
+
+   //ROUTING FROM HOUSING TYPE TO GROUND RENT
+
+router.post('/coa-combined/v3/new-address/caravan-or-houseboat', function (req, res) {
+
+  // Make a variable and give it the value from 'uk-address'
+  var selectCaravan = req.session.data['caravan-or-houseboat']
+        console.log("high", req.session.data['caravan-or-houseboat'])
+
+  // Check whether the variable matches a condition
+  if (selectCaravan == "Yes"){
+    // Send user to next page
+    res.redirect('/coa-combined/v3/new-address/ground-rent.html')
+  } else if (selectCaravan == "No"){
+    res.redirect('/coa-combined/v3/new-address/check-your-details.html')
+  }
+
+});
+
+   //ROUTING FROM GROUND RENT TO CYA
+
+router.post('/coa-combined/v3/new-address/ground-rent', function (req, res) {
+
+  // Make a variable and give it the value from 'uk-address'
+  var selectGroundRent = req.session.data['ground-rent']
+        console.log("high", req.session.data['ground-rent'])
+
+  // Check whether the variable matches a condition
+  if (selectGroundRent == "Yes"){
+    // Send user to next page
+    res.redirect('/coa-combined/v3/new-address/check-your-details.html')
+  } else if (selectGroundRent == "No"){
+    res.redirect('/coa-combined/v3/new-address/check-your-details.html')
   }
 
 });
@@ -589,10 +617,10 @@ router.post('/coa-combined/v2/new-address/housing-costs', function (req, res) {
     // Check whether the variable matches a condition
     if (selectSoldProperty == "Yes"){
       // Send user to next page
-      res.redirect('/coa-combined/v2/where-you-lived-before/owned/money-from-sale.html')
+      res.redirect('/coa-combined/v3/where-you-lived-before/owned/money-from-sale.html')
     } else if (selectSoldProperty == "No"){
       // Send user to next page
-      res.redirect('/coa-combined/v2/where-you-lived-before/owned/money-from-sale.html')
+      res.redirect('/coa-combined/v3/where-you-lived-before/owned/money-from-sale.html')
     } 
   });
 
@@ -607,9 +635,9 @@ router.post('/mortgage-or-loan2', function (req, res) {
   // Check whether the variable matches a condition
   if (selectMortgageLoan == "Yes"){
     // Send user to next page
-    res.redirect('/coa-combined/v2/where-you-live-now/owned/do-you-get-smi.html')
+    res.redirect('/coa-combined/v3/where-you-live-now/owned/do-you-get-smi.html')
   } else if (selectMortgageLoan == "No"){
-    res.redirect('/coa-combined/v2/where-you-live-now/owned/do-you-get-smi.html')
+    res.redirect('/coa-combined/v3/where-you-live-now/owned/do-you-get-smi.html')
   }
 
 });
@@ -624,11 +652,11 @@ router.post('/get-smi-support1', function (req, res) {
   // Check whether the variable matches a condition
   if (selectGetSmiSupport == "Yes"){
     // Send user to next page
-    res.redirect('/coa-combined/v2/where-you-live-now/owned/check-your-details.html')
+    res.redirect('/coa-combined/v3/where-you-live-now/owned/check-your-details.html')
 
   } else if (selectGetSmiSupport == "No"){
     // Send user to next page
-    res.redirect('/coa-combined/v2/where-you-live-now/owned/check-your-details.html')
+    res.redirect('/coa-combined/v3/where-you-live-now/owned/check-your-details.html')
   
   }
     
@@ -638,7 +666,7 @@ router.post('/get-smi-support1', function (req, res) {
   
 
 // ROUTING TO WHEN DID YOU MOVE
-router.post('/coa-combined/v2/about-here-you-live-now/owned/address-finder/find-address.html', function (req, res) {
+router.post('/coa-combined/v3/about-here-you-live-now/owned/address-finder/find-address.html', function (req, res) {
 
   // Make a variable and give it the value from 'citizen-record-year'
   var changeWhenDidYouMove = req.session.data['citizen-record-year']
@@ -647,14 +675,14 @@ router.post('/coa-combined/v2/about-here-you-live-now/owned/address-finder/find-
   // Check whether the variable matches a condition
   if (changeWhenDidYouMove == "2025"){
     // Send user to next page
-    res.redirect('coa-combined/v2/new-address/address-finder/find-address.html')
+    res.redirect('coa-combined/v3/new-address/address-finder/find-address.html')
 
   } else if (changeWhenDidYouMove == "2024"){
     // Send user to next page
-    res.redirect('coa-combined/v2/report-change-after-move.html')
+    res.redirect('coa-combined/v3/report-change-after-move.html')
 
   } else {
-    res.redirect('coa-combined/v2/new-address/address-finder/find-address.html')
+    res.redirect('coa-combined/v3/new-address/address-finder/find-address.html')
   }
 
 });
@@ -682,19 +710,19 @@ router.post('/coa-combined/v2/about-here-you-live-now/owned/address-finder/find-
     // Check whether the variable matches a condition
     if (selectHousingStatus == "I own the property (with or without a mortgage)"){
       // Send user to next page
-      res.redirect('/coa-combined/v2/where-you-live-now/owned/how-much-did-you-pay.html')
+      res.redirect('/coa-combined/v3/where-you-live-now/owned/how-much-did-you-pay.html')
     } else if (selectHousingStatus == "I rent"){
       // Send user to next page
-      res.redirect('coa-combined/v2/where-you-live-now/rent/housing-costs.html')
+      res.redirect('coa-combined/v3/where-you-live-now/rent/housing-costs.html')
     } else if (selectHousingStatus == "I'm renting and buying through a shared ownership scheme"){
       // Send user to next page
-      res.redirect('coa-combined/v2/where-you-live-now/shared/how-much-did-you-pay.html')
+      res.redirect('coa-combined/v3/where-you-live-now/shared/how-much-did-you-pay.html')
     } else if (selectHousingStatus == "I live in someone else's home without paying rent"){
       // Send user to next page
-      res.redirect('coa-combined/v2/task-list3')
+      res.redirect('coa-combined/v3/task-list3')
     } else if (selectHousingStatus == "other"){
       // Send user to next page
-      res.redirect('coa-combined/v2/where-you-live-now/when-did-you-move.html')
+      res.redirect('coa-combined/v3/where-you-live-now/when-did-you-move.html')
     }   
   });
 
@@ -716,19 +744,19 @@ router.post('/coa-combined/v2/about-here-you-live-now/owned/address-finder/find-
     // Check whether the variable matches a condition
     if (selectHousingStatus == "I owned my property (with or without a mortgage)"){
       // Send user to next page
-      res.redirect('/coa-combined/v2/where-you-lived-before/owned/sold-the-property.html')
+      res.redirect('/coa-combined/v3/where-you-lived-before/owned/sold-the-property.html')
     } else if (selectHousingStatus == "I rented"){
       // Send user to next page
-      res.redirect('coa-combined/v2/where-you-live-now/rent/housing-costs.html')
+      res.redirect('coa-combined/v3/where-you-live-now/rent/housing-costs.html')
     } else if (selectHousingStatus == "I was renting and buying through a shared ownership scheme"){
       // Send user to next page
-      res.redirect('coa-combined/v2/where-you-live-now/shared/how-much-did-you-pay.html')
+      res.redirect('coa-combined/v3/where-you-live-now/shared/how-much-did-you-pay.html')
     } else if (selectHousingStatus == "I lived in someone else's home without paying rent"){
       // Send user to next page
-      res.redirect('coa-combined/v2/task-list3')
+      res.redirect('coa-combined/v3/task-list3')
     } else if (selectHousingStatus == "Other"){
       // Send user to next page
-      res.redirect('coa-combined/v2/where-you-live-now/when-did-you-move.html')
+      res.redirect('coa-combined/v3/where-you-live-now/when-did-you-move.html')
     }   
   });
 
@@ -752,7 +780,7 @@ router.post('/coa-combined/v2/about-here-you-live-now/owned/address-finder/find-
 
 
 // // ROUTING FROM PARTNER DETAILS
-// router.post('/coa-combined/v2/partner/partner-details', function (req, res) {
+// router.post('/coa-combined/v3/partner/partner-details', function (req, res) {
 
 //   // Make a variable and give it the value from 'partner-record-year'
 //   var selectPartner = req.session.data['partner-record-year']
@@ -761,50 +789,50 @@ router.post('/coa-combined/v2/about-here-you-live-now/owned/address-finder/find-
 //   // Check whether the variable matches a condition
 //   if (selectPartner == "2000"){
 //     // Send user to next page
-//     res.redirect('/coa-combined/v2/partner/partner-details.html')
+//     res.redirect('/coa-combined/v3/partner/partner-details.html')
 //   } else {
-//     res.redirect('/coa-combined/v2/partner/do-they-work.html')
+//     res.redirect('/coa-combined/v3/partner/do-they-work.html')
 //   }
 
 // });
 
 // ROUTING FROM PARTNER DETAILS TO REGISTERED BLIND
-router.post('/coa-combined/v2/partner/partner-details', function (req, res) {
-  res.redirect('/coa-combined/v2/partner/partner-hospital-stay.html')
+router.post('/coa-combined/v3/partner/partner-details', function (req, res) {
+  res.redirect('/coa-combined/v3/partner/partner-hospital-stay.html')
 
 
 });
 
 // ROUTING FROM PARTNER DETAILS TO REGISTERED BLIND
-router.post('/coa-combined/v2/partner/partner-dob', function (req, res) {
-  res.redirect('/coa-combined/v2/partner/partner-work.html')
+router.post('/coa-combined/v3/partner/partner-dob', function (req, res) {
+  res.redirect('/coa-combined/v3/partner/partner-work.html')
 
 
 });
 
 // ROUTING FROM PARTNER WORK TO EDUCATION
-router.post('/coa-combined/v2/partner/partner-work', function (req, res) {
-  res.redirect('/coa-combined/v2/partner/partner-in-education.html')
+router.post('/coa-combined/v3/partner/partner-work', function (req, res) {
+  res.redirect('/coa-combined/v3/partner/partner-in-education.html')
 
 
 });
 
 // ROUTING FROM PARTNER IN EDUCATION TO HOSPITAL STAY
-router.post('/coa-combined/v2/partner/partner-in-education', function (req, res) {
-  res.redirect('/coa-combined/v2/partner/partner-hospital-stay.html')
+router.post('/coa-combined/v3/partner/partner-in-education', function (req, res) {
+  res.redirect('/coa-combined/v3/partner/partner-hospital-stay.html')
 
 
 });
 
 // ROUTING FROM PARTNER HOSPITAL STAY TO REGISTERED BLIND
-router.post('/coa-combined/v2/partner/partner-hospital-stay', function (req, res) {
-  res.redirect('/coa-combined/v2/partner/partner-registered-blind.html')
+router.post('/coa-combined/v3/partner/partner-hospital-stay', function (req, res) {
+  res.redirect('/coa-combined/v3/partner/partner-registered-blind.html')
 
 
 });
 
 // ROUTING TO PARTNER AGREE
-router.post('/coa-combined/v2/partner/partner-agree', function (req, res) {
+router.post('/coa-combined/v3/partner/partner-agree', function (req, res) {
 
   // Make a variable and give it the value from 'uk-address'
   var selectPartnerAgree = req.session.data['partner-agree']
@@ -813,9 +841,9 @@ router.post('/coa-combined/v2/partner/partner-agree', function (req, res) {
   // Check whether the variable matches a condition
   if (selectPartnerAgree == "Yes"){
     // Send user to next page
-    res.redirect('/coa-combined/v2/partner/partner-details.html')
+    res.redirect('/coa-combined/v3/partner/partner-details.html')
   } else if (selectPartnerAgree == "No"){
-    res.redirect('/coa-combined/v2/partner/partner-not-agree.html')
+    res.redirect('/coa-combined/v3/partner/partner-not-agree.html')
   }
 
 });
@@ -825,22 +853,22 @@ router.post('/coa-combined/v2/partner/partner-agree', function (req, res) {
 
 
 // ROUTING FROM REGISTERED BLIND TO CHECK YOUR DETAILS
-router.post('/coa-combined/v2/partner/partner-registered-blind', function (req, res) {
-  res.redirect('/coa-combined/v2/partner/partner-check-your-details.html')
+router.post('/coa-combined/v3/partner/partner-registered-blind', function (req, res) {
+  res.redirect('/coa-combined/v3/partner/partner-check-your-details.html')
 
 
 });
 
 // // ROUTING FROM CHECK YOUR DETAILS TO PARTNER ADDED
-// router.post('/coa-combined/v2/partner/partner-check-your-details', function (req, res) {
-//   res.redirect('/coa-combined/v2/partner/partner-added.html')
+// router.post('/coa-combined/v3/partner/partner-check-your-details', function (req, res) {
+//   res.redirect('/coa-combined/v3/partner/partner-added.html')
 
 
 // });
 
 
 // ROUTING FROM PARTNER CHECK DETAILS
-router.post('/coa-combined/v2/partner/partner-check-your-details', function (req, res) {
+router.post('/coa-combined/v3/partner/partner-check-your-details', function (req, res) {
 
   // Make a variable and give it the value from 'partner-record-year'
   var checkPartner = req.session.data['partner']
@@ -849,15 +877,15 @@ router.post('/coa-combined/v2/partner/partner-check-your-details', function (req
   // Check whether the variable matches a condition
   if (checkPartner == "Yes"){
     // Send user to next page
-    res.redirect('/coa-combined/v2/partner/partner-added.html')
+    res.redirect('/coa-combined/v3/partner/partner-added.html')
   } else {
-    res.redirect('/coa-combined/v2/task-list.html')
+    res.redirect('/coa-combined/v3/task-list.html')
   }
 
 });
 
 // // ROUTING FROM remove partner
-// router.post('/coa-combined/v2/partner/partner-remove', function (req, res) {
+// router.post('/coa-combined/v3/partner/partner-remove', function (req, res) {
 
 //   // Make a variable and give it the value from 'partner-record-year'
 //   var partnerRemove = req.session.data['partnerRemove']
@@ -866,9 +894,9 @@ router.post('/coa-combined/v2/partner/partner-check-your-details', function (req
 //   // Check whether the variable matches a condition
 //   if (partnerRemove == "Yes"){
 //     // Send user to next page
-//     res.redirect('/coa-combined/v2/partner/do-you-live-with-a-partner.html')
+//     res.redirect('/coa-combined/v3/partner/do-you-live-with-a-partner.html')
 //   } else {
-//     res.redirect('/coa-combined/v2/partner/partner-added.html')
+//     res.redirect('/coa-combined/v3/partner/partner-added.html')
 //   }
 
 // });
@@ -887,8 +915,8 @@ router.post('/coa-combined/v2/partner/partner-check-your-details', function (req
 ///////////////////////////////////////////////
 
 // ROUTING FROM SELECT INVESTMENTS TO MONEY YOU HAVE TODAY
-router.post('/coa-combined/v2/s&i/capital-select-capital', function (req, res) {
-  res.redirect('/coa-combined/v2/s&i/capital-total-today.html')
+router.post('/coa-combined/v3/s&i/capital-select-capital', function (req, res) {
+  res.redirect('/coa-combined/v3/s&i/capital-total-today.html')
 
       // Make a variable and give it the value from 'partner-record-year'
   var totalSavings= req.session.data['capitalTypes']
@@ -900,8 +928,8 @@ router.post('/coa-combined/v2/s&i/capital-select-capital', function (req, res) {
 
 
 // ROUTING FROM SELECT INVESTMENTS TO MONEY YOU HAVE TODAY
-router.post('/coa-combined/v2/s&i/capital-total-today', function (req, res) {
-  res.redirect('/coa-combined/v2/s&i/other-property.html')
+router.post('/coa-combined/v3/s&i/capital-total-today', function (req, res) {
+  res.redirect('/coa-combined/v3/s&i/other-property.html')
 
     // Make a variable and give it the value from 'partner-record-year'
   var todayTotal= req.session.data['partner']
@@ -911,7 +939,7 @@ router.post('/coa-combined/v2/s&i/capital-total-today', function (req, res) {
 });
 
 // // ROUTING FROM remove partner
-// router.post('/coa-combined/v2/s&i/capital-total-today', function (req, res) {
+// router.post('/coa-combined/v3/s&i/capital-total-today', function (req, res) {
 
 //   // Make a variable and give it the value from 'partner-record-year'
 //   var todayTotal = req.session.data['todayTotal']
@@ -920,9 +948,9 @@ router.post('/coa-combined/v2/s&i/capital-total-today', function (req, res) {
 //   // Check whether the variable matches a condition
 //   if (todayTotal > 10000){
 //     // Send user to next page
-//     res.redirect('/coa-combined/v2/s&i/capital-check-answers.html')
+//     res.redirect('/coa-combined/v3/s&i/capital-check-answers.html')
 //   } else {
-//     res.redirect('/coa-combined/v2/s&i/disregards.html')
+//     res.redirect('/coa-combined/v3/s&i/disregards.html')
 //   }
 
 // });
@@ -930,15 +958,15 @@ router.post('/coa-combined/v2/s&i/capital-total-today', function (req, res) {
 
 
 // // ROUTING FROM SELECT INVESTMENTS TO MONEY YOU HAVE TODAY
-// router.post('/coa-combined/v2/s&i/other-property', function (req, res) {
-//   res.redirect('/coa-combined/v2/s&i/capital-check-answers.html')
+// router.post('/coa-combined/v3/s&i/other-property', function (req, res) {
+//   res.redirect('/coa-combined/v3/s&i/capital-check-answers.html')
 
 
 // });
 
 // ROUTING FROM SELECT INVESTMENTS TO MONEY YOU HAVE TODAY
-router.post('/coa-combined/v2/s&i/other-property', function (req, res) {
-  res.redirect('/coa-combined/v2/s&i/capital-check-answers.html')
+router.post('/coa-combined/v3/s&i/other-property', function (req, res) {
+  res.redirect('/coa-combined/v3/s&i/capital-check-answers.html')
 
       // Make a variable and give it the value from 'partner-record-year'
   var otherProperty= req.session.data['otherProperty']
@@ -949,8 +977,8 @@ router.post('/coa-combined/v2/s&i/other-property', function (req, res) {
 
 
 // ROUTING FROM SELECT INVESTMENTS TO MONEY YOU HAVE TODAY
-router.post('/coa-combined/v2/s&i/other-property', function (req, res) {
-  res.redirect('/coa-combined/v2/s&i/capital-check-answers.html')
+router.post('/coa-combined/v3/s&i/other-property', function (req, res) {
+  res.redirect('/coa-combined/v3/s&i/capital-check-answers.html')
 
       // Make a variable and give it the value from 'partner-record-year'
   var otherProperty= req.session.data['otherProperty']
@@ -959,9 +987,9 @@ router.post('/coa-combined/v2/s&i/other-property', function (req, res) {
          // Check whether the variable matches a condition
   if (otherProperty == "Yes"){
     // Send user to next page
-    res.redirect('/coa-combined/v2/s&i/capital-check-answers.html')
+    res.redirect('/coa-combined/v3/s&i/capital-check-answers.html')
   } else if (otherProperty == "No"){
-    res.redirect('/coa-combined/v2/s&i/capital-check-answers.html')
+    res.redirect('/coa-combined/v3/s&i/capital-check-answers.html')
   }
 
 });
@@ -971,15 +999,15 @@ router.post('/coa-combined/v2/s&i/other-property', function (req, res) {
 
 
 // // ROUTING FROM SELECT INVESTMENTS TO MONEY YOU HAVE TODAY
-// router.post('/coa-combined/v2/s&i/property-repairs', function (req, res) {
-//   res.redirect('/coa-combined/v2/s&i/disregards.html')
+// router.post('/coa-combined/v3/s&i/property-repairs', function (req, res) {
+//   res.redirect('/coa-combined/v3/s&i/disregards.html')
 
 
 // });
 
 // // ROUTING FROM SELECT INVESTMENTS TO MONEY YOU HAVE TODAY
-// router.post('/coa-combined/v2/s&i/disregards', function (req, res) {
-//   res.redirect('/coa-combined/v2/s&i/capital-check-answers.html')
+// router.post('/coa-combined/v3/s&i/disregards', function (req, res) {
+//   res.redirect('/coa-combined/v3/s&i/capital-check-answers.html')
 
 
 // });
@@ -1001,15 +1029,15 @@ router.post('/coa-combined/v2/s&i/other-property', function (req, res) {
 
 
 // ROUTING FROM SELECT INVESTMENTS TO MONEY YOU HAVE TODAY
-router.post('/coa-combined/v2/how-we-contact-you/provide-email-address', function (req, res) {
-  res.redirect('/coa-combined/v2/how-we-contact-you/provide-phone-number.html')
+router.post('/coa-combined/v3/how-we-contact-you/provide-email-address', function (req, res) {
+  res.redirect('/coa-combined/v3/how-we-contact-you/provide-phone-number.html')
 
 
 });
 
 // ROUTING FROM SELECT INVESTMENTS TO MONEY YOU HAVE TODAY
-router.post('/coa-combined/v2/how-we-contact-you/provide-phone-number', function (req, res) {
-  res.redirect('/coa-combined/v2/how-we-contact-you/contact-check-your-details.html')
+router.post('/coa-combined/v3/how-we-contact-you/provide-phone-number', function (req, res) {
+  res.redirect('/coa-combined/v3/how-we-contact-you/contact-check-your-details.html')
 
 
 });
@@ -1029,8 +1057,8 @@ router.post('/coa-combined/v2/how-we-contact-you/provide-phone-number', function
 // {% if data.contactYou  == 'completed' %}
 
 // // ROUTING FROM SELECT INVESTMENTS TO MONEY YOU HAVE TODAY
-// router.post('/coa-combined/v2/how-we-contact-you/provide-phone-number', function (req, res) {
-//   res.redirect('/coa-combined/v2/how-we-contact-you/contact-check-your-details.html.html')
+// router.post('/coa-combined/v3/how-we-contact-you/provide-phone-number', function (req, res) {
+//   res.redirect('/coa-combined/v3/how-we-contact-you/contact-check-your-details.html.html')
 
 
 // });
@@ -1043,15 +1071,135 @@ router.post('/coa-combined/v2/how-we-contact-you/provide-phone-number', function
 //////////////////////////////////////////////
 
 // ROUTING FROM SELECT INVESTMENTS TO MONEY YOU HAVE TODAY
-router.post('/coa-combined/v2/emails/email-v1', function (req, res) {
-  res.redirect('/coa-combined/v2/your-state-pension&updated.html')
+router.post('/coa-combined/v3/emails/email-v1', function (req, res) {
+  res.redirect('/coa-combined/v3/your-state-pension&updated.html')
 
 
 });
 
 // ROUTING FROM SELECT INVESTMENTS TO MONEY YOU HAVE TODAY
-router.post('/coa-combined/v2/emails/email-v2', function (req, res) {
-  res.redirect('/coa-combined/v2/your-state-pension&updated.html')
+router.post('/coa-combined/v3/emails/email-v3', function (req, res) {
+  res.redirect('/coa-combined/v3/your-state-pension&updated.html')
+
+
+});
+
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+////////////// SIMPLE ADDRESS CAPTURE //////////
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+
+
+
+///////////////////////////////////////////////
+/////////// HOW WE WILL CONTACT YOU////////////
+///////////////////////////////////////////////
+
+
+
+// ROUTING FOR WHAT IS YOUR NEW ADDRESS
+router.post('/coa-combined/v3/simple-address/address-finder/find-address', function (req, res) {
+
+  // Make a variable and give it the value from 'citizen-record-year'
+  var changeEnterPostcode = req.session.data['postcode']
+  console.log("high", req.session.data['postcode'])
+
+  // Check whether the variable matches a condition
+  if (changeEnterPostcode == "YO3 1MJ"){
+    // Send user to next page
+    res.redirect('/coa-combined/v3/simple-address/address-finder/select-an-address.html')
+
+  } else if (changeEnterPostcode == "YO3 1MK"){
+    // Send user to next page
+    res.redirect('/coa-combined/v3/simple-address/address-finder/no-address-found.html')
+
+  } else if (changeEnterPostcode == "YO3 1ML"){
+    // Send user to next page
+    res.redirect('/coa-combined/v3/simple-address/address-finder/already-your-address.html')
+
+    } else if (changeEnterPostcode == "YO3 1MM"){
+    // Send user to next page
+    res.redirect('/coa-combined/v3/simple-address/address-finder/address-single-result.html')
+
+  } else {
+    res.redirect('/coa-combined/v3/simple-address/address-finder/select-an-address.html')
+  }
+
+});
+
+// ROUTING FOR SELECT AN ADDRESS
+router.post('/coa-combined/v3/simple-address/address-finder/select-an-address', function (req, res) {
+
+  // Make a variable and give it the value from 'select-address'
+  var selectAddress = req.session.data['select-address']
+  console.log("high", req.session.data['select-address'])
+
+  // Check whether the variable matches a condition
+  if (selectAddress == "Select1"){
+    // Send user to next page
+    res.redirect('/coa-combined/v3/simple-address/housing-costs.html')
+
+  } else if (selectAddress == "Select2"){
+    // Send user to next page
+    res.redirect('/coa-combined/v3/simple-address/address-finder/already-your-address.html')
+
+  } else if (selectAddress == "Select3"){
+    // Send user to next page
+    res.redirect('/coa-combined/v3/simple-address/address-finder/address-single-result.html')
+
+  } else if (selectAddress == "Select4"){
+    // Send user to next page
+    res.redirect('/coa-combined/v3/simple-address/address-finder/this-is-a-prison.html')
+
+   } else if (selectAddress == "Select5"){
+    // Send user to next page
+    res.redirect('/coa-combined/v3/simple-address/cannot-change-your-address-online.html')
+
+  } else {
+    res.redirect('/coa-combined/v3/simple-address/address-finder/check-your-details.html')
+  }
+
+});
+
+// ROUTING FOR SELECT AN ADDRESS
+router.post('/coa-combined/v3/simple-address/address-finder/select-an-address', function (req, res) {
+
+  // Make a variable and give it the value from 'select-address'
+  var selectAddress = req.session.data['select-address']
+  console.log("high", req.session.data['select-address'])
+
+  // Check whether the variable matches a condition
+  if (selectAddress == "Select1"){
+    // Send user to next page
+    res.redirect('/coa-combined/v3/simple-address/housing-costs.html')
+
+  } else if (selectAddress == "Select2"){
+    // Send user to next page
+    res.redirect('/coa-combined/v3/simple-address/address-finder/already-your-address.html')
+
+  } else if (selectAddress == "Select3"){
+    // Send user to next page
+    res.redirect('/coa-combined/v3/simple-address/address-finder/address-single-result.html')
+
+  } else if (selectAddress == "Select4"){
+    // Send user to next page
+    res.redirect('/coa-combined/v3/simple-address/address-finder/this-is-a-prison.html')
+
+   } else if (selectAddress == "Select5"){
+    // Send user to next page
+    res.redirect('/coa-combined/v3/simple-address/cannot-change-your-address-online.html')
+
+  } else {
+    res.redirect('/coa-combined/v3/simple-addressaddress-finder/check-your-details.html')
+  }
+
+});
+
+
+  // ROUTING FOR SINGLE ADDRESS RESULT
+router.post('/coa-combined/v3/simple-address/address-finder/address-single-result', function (req, res) {
+  res.redirect('/coa-combined/v3/simple-address/check-your-details.html')
 
 
 });
